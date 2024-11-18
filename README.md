@@ -5,6 +5,7 @@
 - Analyse de situations sociales complexes via l'analyse des réseaux d'acteurs
 - Maîtrise d'outils statistiques et numériques pour l'analyse de données
 - Spécialisation en réseaux sociaux et Web
+
 **Licence Sociologie (_2020 - 2023_)**
 - Regard analytique et critique sur le mondne social contemporain
 
