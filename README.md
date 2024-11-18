@@ -24,4 +24,6 @@
 
 ### Projets
 ![Dossier noblesse] (/mesdocuments/dossier_noblesse.pdf)
+![Dossier réseaux personnels] (/mesdocuments/dossier_réseauxpersonnels.pdf)
+
 
