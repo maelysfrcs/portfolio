@@ -29,9 +29,32 @@
 [Projet 3 - Dossier Noblesse](/mesdocuments/dossier_noblesse.pdf)
 [Projet 4 - Dossier Réseaux Personnels](/mesdocuments/dossier_réseauxpersonnels.pdf)
 
-testetsetsetste
-
-minima:
-  social_links:
-    - { platform: linkedin, user_url: "https://www.linkedin.com/in/maelys-francois/" }
-    - { platform: mail, user_url: "mailto:maelys@example.com" }
+<div class="contact-info">
+  <h2>Contactez-moi</h2>
+  <ul>
+    <li>
+      <strong>LinkedIn :</strong> 
+      <a href="https://www.linkedin.com/in/maelys-francois" target="_blank">
+        <button style="background-color:#2596be; color:white; padding:10px 20px; border-radius:5px; border:none;">
+          Voir mon profil LinkedIn
+        </button>
+      </a>
+    </li>
+    <li>
+      <strong>Email :</strong> 
+      <a href="mailto:maelys@example.com">
+        <button style="background-color:#2596be; color:white; padding:10px 20px; border-radius:5px; border:none;">
+          Envoyer un email
+        </button>
+      </a>
+    </li>
+    <li>
+      <strong>Téléphone :</strong> 
+      <a href="tel:+33612345678">
+        <button style="background-color:#2596be; color:white; padding:10px 20px; border-radius:5px; border:none;">
+          Appeler le +33 6 12 34 56 78
+        </button>
+      </a>
+    </li>
+  </ul>
+</div>
