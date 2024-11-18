@@ -31,3 +31,7 @@
 
 
 
+minima:
+  social_links:
+    - { platform: linkedin,  user_url: "[https://github.com/jekyll/jekyl](https://www.linkedin.com/in/ma\%C3\%ABlys-fran\%C3\%A7ois/)" }
+    - { platform: twitter, user_url: "https://twitter.com/jekyllrb" }
