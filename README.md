@@ -34,7 +34,7 @@
   <ul>
     <li>
       <strong>LinkedIn :</strong> 
-      <a href="https://www.linkedin.com/in/maelys-francois" target="_blank">
+      <a href="[[https://www.linkedin.com/in/maelys-francois](https://www.linkedin.com/in/ma\%C3\%ABlys-fran\%C3\%A7ois/)" target="_blank](https://www.linkedin.com/in/ma\%C3\%ABlys-fran\%C3\%A7ois/)">
         <button style="background-color:#2596be; color:white; padding:10px 20px; border-radius:5px; border:none;">
           Voir mon profil LinkedIn
         </button>
@@ -42,7 +42,7 @@
     </li>
     <li>
       <strong>Email :</strong> 
-      <a href="mailto:maelys@example.com">
+      <a href="mailto:maelys.francois31@gmail.com">
         <button style="background-color:#2596be; color:white; padding:10px 20px; border-radius:5px; border:none;">
           Envoyer un email
         </button>
@@ -50,9 +50,9 @@
     </li>
     <li>
       <strong>Téléphone :</strong> 
-      <a href="tel:+33612345678">
+      <a href="tel:+330626511009">
         <button style="background-color:#2596be; color:white; padding:10px 20px; border-radius:5px; border:none;">
-          Appeler le +33 6 12 34 56 78
+          Appeler le +33 6 26 51 10 09
         </button>
       </a>
     </li>
