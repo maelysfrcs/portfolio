@@ -23,8 +23,10 @@
   - Proposition des pistes d'améliroation et des supports de communication
 
 ### Projets
-[![Dossier noblesse](/mesdocuments/dossier_noblesse.pdf)](/mesdocuments/dossier_noblesse.pdf)
-[![Dossier réseaux personnels](/mesdocuments/dossier_réseauxpersonnels.pdf)](/mesdocuments/dossier_réseauxpersonnels.pdf)
+[![Projet 1](/mesdocuments/dossier_topicmodeling.pdf)](/mesdocuments.dossier_topicmodeling.pdf)
+[![Projet 2](/mesdocuments/dossier_jamovi.pdf)](/mesdocuments.dossier_jamovi.pdf)
+[![Projet 3](/mesdocuments/dossier_noblesse.pdf)](/mesdocuments/dossier_noblesse.pdf)
+[![Projet 4](/mesdocuments/dossier_réseauxpersonnels.pdf)](/mesdocuments/dossier_réseauxpersonnels.pdf)
 
 
 
