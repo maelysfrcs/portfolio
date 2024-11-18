@@ -12,6 +12,7 @@
 ### Expériences
 **Enquête-école - Enquêtrice
 @ Toulouse Tech Transfer (_Octobre 2024 - Maintenant_)**
+
 **Stage - Chargée d'étude en sociologie
 @ CNRS-IPBS (_Avril 2024 - Septembre 2024_)**
 - Conduite d'une enquête sur l'état des discriminations et de la qualité de vie au travail au sein d'un laboratoire.
