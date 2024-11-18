@@ -1,6 +1,6 @@
 # À la recherche d'un stage de Social Data Analyst
 
-### <span style="color:#2596be;">🎓 Formations</span>
+### <span style="color:#2596BE;">🎓 Formations</span>
 **Master Sociologie | Parcours Réseaux et Sociétés (RESO) (_2023 - 2025_)**
 - Analyse de situations sociales complexes via l'analyse des réseaux d'acteurs
 - Maîtrise d'outils statistiques et numériques pour l'analyse de données
@@ -9,7 +9,7 @@
 **Licence Sociologie (_2020 - 2023_)**
 - Regard analytique et critique sur le mondne social contemporain
 
-### <span style="color:#2596be;">💼 Expériences</span>
+### <span style="color:#2596BE;">💼 Expériences</span>
 **Enquête-école - Enquêtrice
 @ Toulouse Tech Transfer (_Octobre 2024 - Maintenant_)**
 
@@ -22,7 +22,7 @@
   - Production d'un rapport de synthèse anonymisé
   - Proposition des pistes d'améliroation et des supports de communication
 
-### <span style="color:#2596be;">📂 Projets</span>
+### <span style="color:#2596BE;">📂 Projets</span>
 
 [Projet 1 - Dossier Topic Modeling](/mesdocuments/dossier_topicmodeling.pdf)
 [Projet 2 - Dossier Jamovi](/mesdocuments/dossier_jamovi.pdf)
