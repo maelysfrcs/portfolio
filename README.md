@@ -1,6 +1,6 @@
 # À la recherche d'un stage de Social Data Analyst
 
-### <span style="color:#1E3A8A;">🎓 Formations</span>
+### <span style="color:#5B9BD5;">🎓 Formations</span>
 **Master Sociologie | Parcours Réseaux et Sociétés (RESO) (_2023 - 2025_)**
 - Analyse de situations sociales complexes via l'analyse des réseaux d'acteurs
 - Maîtrise d'outils statistiques et numériques pour l'analyse de données
