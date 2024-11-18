@@ -23,10 +23,11 @@
   - Proposition des pistes d'améliroation et des supports de communication
 
 ### <span style="color:blue;">📂 Projets</span>
-[![Projet 1](/mesdocuments/dossier_topicmodeling.pdf)](/mesdocuments.dossier_topicmodeling.pdf)
-[![Projet 2](/mesdocuments/dossier_jamovi.pdf)](/mesdocuments.dossier_jamovi.pdf)
-[![Projet 3](/mesdocuments/dossier_noblesse.pdf)](/mesdocuments/dossier_noblesse.pdf)
-[![Projet 4](/mesdocuments/dossier_réseauxpersonnels.pdf)](/mesdocuments/dossier_réseauxpersonnels.pdf)
+
+[Projet 1 - Dossier Topic Modeling](/mesdocuments/dossier_topicmodeling.pdf)
+[Projet 2 - Dossier Jamovi](/mesdocuments/dossier_jamovi.pdf)
+[Projet 3 - Dossier Noblesse](/mesdocuments/dossier_noblesse.pdf)
+[Projet 4 - Dossier Réseaux Personnels](/mesdocuments/dossier_réseauxpersonnels.pdf)
 
 
 
