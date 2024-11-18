@@ -50,7 +50,7 @@
     </li>
     <li>
       <strong>Téléphone :</strong> 
-      <a href="tel:+330626511009">
+      <a href="tel:+33626511009">
         <button style="background-color:#2596be; color:white; padding:10px 20px; border-radius:5px; border:none;">
           Appeler le +33 6 26 51 10 09
         </button>
