@@ -34,7 +34,7 @@
   <ul>
     <li>
       <strong>LinkedIn :</strong> 
-      <a href="[https://www.linkedin.com/in/maelys-francois](https://www.linkedin.com/in/ma\%C3\%ABlys-fran\%C3\%A7ois/)" target="_blank">
+      <a href="https://www.linkedin.com/in/ma\%C3\%ABlys-fran\%C3\%A7ois/" target="_blank">
         <button style="background-color:#2596be; color:white; padding:10px 20px; border-radius:5px; border:none;">
           Voir mon profil LinkedIn
         </button>
