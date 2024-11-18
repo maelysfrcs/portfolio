@@ -9,7 +9,7 @@
 **Licence Sociologie (_2020 - 2023_)**
 - Regard analytique et critique sur le mondne social contemporain
 
-### <span style="color:#1E3A8A;">💼 Expériences</span>
+### <span style="color:#5B9BD5;">💼 Expériences</span>
 **Enquête-école - Enquêtrice
 @ Toulouse Tech Transfer (_Octobre 2024 - Maintenant_)**
 
