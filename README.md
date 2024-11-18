@@ -30,8 +30,7 @@
 [Projet 4 - Dossier Réseaux Personnels](/mesdocuments/dossier_réseauxpersonnels.pdf)
 
 
-
 minima:
   social_links:
-    - { platform: linkedin,  user_url: "[https://github.com/jekyll/jekyl](https://www.linkedin.com/in/ma\%C3\%ABlys-fran\%C3\%A7ois/)" }
-    - { platform: twitter, user_url: "https://twitter.com/jekyllrb" }
+    - { platform: linkedin, user_url: "https://www.linkedin.com/in/maelys-francois/" }
+    - { platform: mail, user_url: "mailto:maelys@example.com" }
