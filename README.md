@@ -38,21 +38,3 @@
   <p><img src="/screenshot.png"/></p>
 </div>
 
-<style>
-  /* Style pour le bouton */
-  .button {
-    display: inline-block;
-    padding: 10px 20px;
-    margin: 10px 0;
-    background-color: #007bff;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
-    text-align: center;
-  }
-
-  .button:hover {
-    background-color: #0056b3;
-  }
-</style>
