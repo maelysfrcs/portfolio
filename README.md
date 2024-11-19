@@ -33,8 +33,6 @@
   <p><a href="https://www.linkedin.com/in/maelys-fran%C3%A7ois-xxxxxx" class="button">Mon LinkedIn</a></p>
 
   <!-- Bouton Email -->
-  <p><a href="mailto:maelys.francois31@gmail.com" class="button">Contacter par Email</a></p>
+  <p><a href="mailto:maelys.francois31@gmail.com" class="button">Email</a></p>
 
-  <p><img src="/screenshot.png"/></p>
-</div>
 
