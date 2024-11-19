@@ -30,8 +30,9 @@
 [Projet 4 - Dossier Réseaux Personnels](/mesdocuments/dossier_réseauxpersonnels.pdf)
 
 
-  <!-- Bouton LinkedIn -->
-  <p><a href="https://www.linkedin.com/in/maelys-fran%C3%A7ois-xxxxxx" class="button">Mon LinkedIn</a></p>
+<!-- Bouton LinkedIn -->
+<p><a href="https://www.linkedin.com/in/maelys-fran%C3%A7ois-xxxxxx" class="button linkedin">Mon LinkedIn</a></p>
 
-  <!-- Bouton Email -->
-  <p><a href="mailto:maelys.francois31@gmail.com" class="button">Mon Email</a></p>
+<!-- Bouton Email -->
+<p><a href="mailto:maelys.francois31@gmail.com" class="button email">Mon Email</a></p>
+
