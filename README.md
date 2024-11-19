@@ -29,32 +29,40 @@
 [Projet 3 - Dossier Noblesse](/mesdocuments/dossier_noblesse.pdf)
 [Projet 4 - Dossier Réseaux Personnels](/mesdocuments/dossier_réseauxpersonnels.pdf)
 
-<div class="contact-info">
-  <h2>Contactez-moi</h2>
-  <ul>
-    <li>
-      <strong>LinkedIn :</strong> 
-      <a href="https://www.linkedin.com/in/ma\%C3\%ABlys-fran\%C3\%A7ois/" target="_blank">
-        <button style="background-color:#2596be; color:white; padding:10px 20px; border-radius:5px; border:none;">
-          Voir mon profil LinkedIn
-        </button>
-      </a>
-    </li>
-    <li>
-      <strong>Email :</strong> 
-      <a href="mailto:maelys.francois31@gmail.com">
-        <button style="background-color:#2596be; color:white; padding:10px 20px; border-radius:5px; border:none;">
-          Envoyer un email
-        </button>
-      </a>
-    </li>
-    <li>
-      <strong>Téléphone :</strong> 
-      <a href="tel:+33612233445">
-        <button style="background-color:#2596be; color:white; padding:10px 20px; border-radius:5px; border:none;">
-          Appeler le +33 6 12 23 34 45
-        </button>
-      </a>
-    </li>
-  </ul>
+
+<!--contact-->
+<div align="center">
+  <p><em><strong>Disclaimer:</strong> The information here may vary depending on the version you're using.<br/>
+  Please refer to the <code>README.md</code> bundled within the theme-gem for information specific to your version or by pointing
+  your browser to the Git tag corresponding to your version. e.g. https://github.com/jekyll/minima/blob/v2.5.0/README.md.<br/>
+  Running <code>bundle show minima</code> will provide you with the local path to your current theme version.</em></p>
+  <img src="/readme_banner.svg"/>
+  <p>It's Jekyll's default (and first) theme. It's what you get when you run <code>jekyll new</code>.</p>
+  
+  <!-- Bouton LinkedIn -->
+  <p><a href="https://www.linkedin.com/in/maelys-fran%C3%A7ois-xxxxxx" class="button">Mon LinkedIn</a></p>
+
+  <!-- Bouton Email -->
+  <p><a href="mailto:maelys.francois31@gmail.com" class="button">Contacter par Email</a></p>
+
+  <p><img src="/screenshot.png"/></p>
 </div>
+
+<style>
+  /* Style pour le bouton */
+  .button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px 0;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    text-align: center;
+  }
+
+  .button:hover {
+    background-color: #0056b3;
+  }
+</style>
