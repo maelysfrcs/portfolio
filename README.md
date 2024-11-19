@@ -78,7 +78,6 @@
   
 </head>
 <body>
-  <h1>Bienvenue sur mon Portfolio</h1>
   
   <!-- Bouton LinkedIn avec icône -->
   <p><a href="https://www.linkedin.com/in/ma%C3%ABlys-fran%C3%A7ois" class="button linkedin"><i class="fab fa-linkedin"></i> Mon LinkedIn</a></p>  
