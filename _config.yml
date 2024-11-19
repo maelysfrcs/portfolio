@@ -3,3 +3,11 @@ logo: /mesdocuments/photocv.PNG
 description: Disponible à partir de février 2025 et pour une durée de 4 à 6 mois.
 show_downloads: true
 theme: jekyll-theme-minimal
+sass:
+  style: compressed
+
+# Si tu veux ajouter ton propre fichier CSS personnalisé
+theme: jekyll-theme-minimal
+url: "https://maelysfrancois.github.io"
+css:
+  - "/assets/css/styles.css"
