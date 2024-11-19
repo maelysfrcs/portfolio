@@ -81,7 +81,7 @@
   <h1>Bienvenue sur mon Portfolio</h1>
   
   <!-- Bouton LinkedIn avec icône -->
-  <p><a href="https://www.linkedin.com/in/ma\%C3\%ABlys-fran\%C3\%A7ois/" class="button linkedin"><i class="fab fa-linkedin"></i>Mon LinkedIn</a></p>
+  <p><a href="[https://www.linkedin.com/in/ma\%C3\%ABlys-fran\%C3\%A7ois/](https://www.linkedin.com/in/ma%C3%ABlys-fran%C3%A7ois/)" class="button linkedin"><i class="fab fa-linkedin"></i>Mon LinkedIn</a></p>
 
   <!-- Bouton Email avec icône -->
   <p><a href="mailto:maelys.francois31@gmail.com" class="button email"><i class="fas fa-envelope"></i>Mon Email</a></p>
