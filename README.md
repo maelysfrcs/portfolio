@@ -29,6 +29,43 @@
 [Projet 3 - Dossier Noblesse](/mesdocuments/dossier_noblesse.pdf)
 [Projet 4 - Dossier Réseaux Personnels](/mesdocuments/dossier_réseauxpersonnels.pdf)
 
+### <span style="color:#2596BE;">📂 Projets</span>
+
+**[Projet 1 - Dossier Topic Modeling](/mesdocuments/dossier_topicmodeling.pdf)**  
+Sujet : Étude comparative des représentations médiatiques des jeux-vidéos et leur monétisation à l'échelle locale et internationale.  
+Méthode : Analyse thématique par NLP, LDA, et analyse des cooccurrences.  
+Logiciels : Python, Google Colaboratory, Europresse.  
+Livrable : Rapport analytique comprenant les distributions thématiques, comparaisons par région et visualisations des résultats.
+Graphique :
+Code : 
+
+**[Projet 2 - Dossier Jamovi](/mesdocuments/dossier_jamovi.pdf)**  
+Sujet : Extraction de thématiques à partir de corpus de données textuelles sur la santé mentale et l'isolement en France et au Japon.  
+Méthode : Analyse statistique des différences de santé mentale (isolement, déprime) entre le Japon et la France en utilisant des statistiques descriptives, des tests de fiabilité (α de Cronbach), des tests de corrélation (χ² et V de Cramer), et des tests d'homogénéité (ANOVA, test de Levene).  
+Logiciels : Jamovi pour l'analyse des données statistiques.  
+Livrable : Rapport statistique illustré de tableaux, graphiques et tests statistiques.
+Graphique : 
+Code : 
+
+
+**[Projet 3 - Dossier Noblesse](/mesdocuments/dossier_noblesse.pdf)**  
+Sujet : Extraction de thématiques à partir de corpus de données textuelles sur les réseaux de la noblesse européenne avant, pendant et après la Révolution française.  
+Méthode : Analyse des réseaux sociaux (méthode quantitative), calcul des densités, centralités d’intermédiarité, Odd-Ratio, distances géodésiques, visualisation avec des graphiques (matrices, Shrink).  
+Logiciels : R 
+Livrable : Rapport détaillant les résultats de l’analyse, incluant des visualisations (graphes des mariages, Shrink des alliances familiales, distances géodésiques), et une interprétation des évolutions des réseaux familiaux.
+Graphique : 
+Code : 
+
+
+**[Projet 4 - Dossier Réseaux Personnels](/mesdocuments/dossier_réseauxpersonnels.pdf)**  
+Sujet : Extraction de thématiques à partir de corpus de données textuelles sur les trajectoires de vie et les sociabilités d'un individu.  
+Méthode : Entretien qualitatif avec extraction manuelle des thématiques à partir des récits de vie et des relations sociales, utilisant l’analyse du réseau social de l'individu.  
+Logiciels : Network Canvas (pour l'analyse du réseau) et Excel (pour la création de tableaux et la répartition des genres).  
+Livrable : Rapport sociologique avec une analyse des thématiques extraites des entretiens et une présentation du réseau social de l'enquêté sous forme de graphique.
+Graphique : 
+Code : 
+
+
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
