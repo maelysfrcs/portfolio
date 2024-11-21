@@ -98,12 +98,12 @@
 
 **Stage - Chargée d'étude en sociologie
 @ CNRS-IPBS (_Avril 2024 - Septembre 2024_)**
-- Conduite d'une enquête sur l'état des discriminations et de la qualité de vie au travail au sein d'un laboratoire.
+- Conduite d'une enquête sur l'état des discriminations et de la qualité de vie au travail, au sein d'un laboratoire.
   - Opérationnalisation et conduite d'un questionnaire
   - Analyse de données
   - Passation d'entretiens
   - Production d'un rapport de synthèse anonymisé
-  - Proposition des pistes d'améliroation et des supports de communication
+  - Proposition de pistes d'amélioration et de supports de communication
 
 ### <span style="color:#2596BE;">📂 Projets</span>
 
