@@ -1,6 +1,5 @@
 # À la recherche d'un stage de Social Data Analyst
 
-
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
@@ -11,7 +10,8 @@
   <style>
     /* Style général des boutons */
     .button {
-      display: inline-block;
+      display: inline-block; /* Affichage en ligne pour être côte à côte */
+      margin-right: 10px; /* Espacement entre les boutons */
       padding: 12px 25px;
       font-size: 16px;
       font-weight: bold;
@@ -49,14 +49,23 @@
   
 </head>
 <body>
-  <!-- Bouton LinkedIn avec icône -->
-  <p><a href="https://www.linkedin.com/in/ma%C3%ABlys-fran%C3%A7ois" class="button linkedin"><i class="fab fa-linkedin"></i> Mon LinkedIn</a></p>
-  <!-- Bouton Email avec icône -->
-  <p><a href="mailto:maelys.francois31@gmail.com" class="button email"><i class="fas fa-envelope"></i> Mon Email</a></p>
+  <!-- Boutons côte à côte -->
+  <p>
+    <a href="https://www.linkedin.com/in/ma%C3%ABlys-fran%C3%A7ois" class="button linkedin">
+      <i class="fab fa-linkedin"></i> Mon LinkedIn
+    </a>
+    <a href="mailto:maelys.francois31@gmail.com" class="button email">
+      <i class="fas fa-envelope"></i> Mon Email
+    </a>
+  </p>
+
   <!-- Ajouter le lien vers Font Awesome pour les icônes -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
 </body>
 </html>
+
+
+
 
 
 
