@@ -24,7 +24,7 @@
 
 ### <span style="color:#2596BE;">📂 Projets</span>
 
-#### **[Projet 1 - Étude comparative des représentations médiatiques des jeux-vidéos et leur monétisation à l'échelle locale et internationale - Topic Modeling](/mesdocuments/dossier_topicmodeling.pdf)**  
+#### **[1 - Étude comparative des représentations médiatiques des jeux-vidéos et leur monétisation à l'échelle locale et internationale - <u>Topic Modeling</u>](/mesdocuments/dossier_topicmodeling.pdf)**  
 **Méthode :** Analyse thématique par NLP et analyse des cooccurrences.  
 **Logiciels :** Python, Google Colaboratory, Europresse.  
 **Livrable :** Rapport analytique comprenant les distributions thématiques, comparaisons par région et visualisations des résultats.  
