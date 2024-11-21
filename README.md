@@ -37,7 +37,7 @@
 **Logiciels :** Jamovi pour l'analyse des données statistiques.  
 **Livrable :** Rapport statistique illustré de tableaux, graphiques et tests statistiques.  
 **Graphique :** À ajouter.  
-**Code :** À ajouter.  
+**Code :** [Graphique - Statistiques descriptives](/mesdocuments/statistiquesdescriptives.JPG).  
 
 ---
 
