@@ -35,8 +35,7 @@
 **Méthode :** Analyse thématique par NLP et analyse des cooccurrences.  
 **Logiciels :** Python, Google Colaboratory, Europresse.  
 **Livrable :** Rapport analytique comprenant les distributions thématiques, comparaisons par région et visualisations des résultats.  
-**Graphique :** À ajouter.  
-**Code :** À ajouter.  
+**Graphique :** [Graphique - Représentation hiérarchique avec écart-type](/mesdocuments/representationhierarchique_ecart-type.JPG)
 
 ---
 
