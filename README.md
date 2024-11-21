@@ -136,5 +136,5 @@
 **Méthode :** Entretiens qualitatifs avec extraction manuelle des thématiques des récits de vie et des relations sociales ; analyse du réseau social de l'individu.  
 **Logiciels :** Network Canvas (analyse du réseau) et Excel (tableaux et répartition des genres).  
 **Livrable :** Rapport sociologique avec une analyse des thématiques et une présentation graphique du réseau social de l'enquêté.  
-**Graphique :** [Graphique - Visualisation réseau personnel](/mesdocuments/reseauxpersonnels.png)  
+**Graphique :** [Visualisation réseau personnel](/mesdocuments/reseauxpersonnels.png)  
 
