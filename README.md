@@ -115,7 +115,7 @@
 
 ---
 
-#### **[2 - Extraction de thématiques à partir de corpus de données textuelles sur la santé mentale et l'isolement en France et au Japon - <u>Jamovi</u>](/mesdocuments/dossier_jamovi.pdf)**  
+#### **[2 - Extraction de thématiques à partir de corpus de données textuelles sur la santé mentale et l'isolement, en France et au Japon - <u>Jamovi</u>](/mesdocuments/dossier_jamovi.pdf)**  
 **Méthode :** Analyse statistique des différences de santé mentale (isolement, déprime) entre le Japon et la France en utilisant des statistiques descriptives, des tests de fiabilité (α de Cronbach), des tests de corrélation (χ² et V de Cramer), et des tests d'homogénéité (ANOVA, test de Levene).  
 **Logiciels :** Jamovi pour l'analyse des données statistiques.  
 **Livrable :** Rapport statistique illustré de tableaux, graphiques et tests statistiques.  
