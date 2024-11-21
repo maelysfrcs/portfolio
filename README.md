@@ -44,7 +44,7 @@
 **Méthode :** Analyse des réseaux sociaux, calcul des densités, centralités d’intermédiarité, Odd-Ratio, distances géodésiques, visualisations graphiques.  
 **Logiciels :** R.  
 **Livrable :** Rapport détaillant les résultats, visualisations (graphes des mariages, Shrink des alliances familiales, distances géodésiques), et interprétation des évolutions des réseaux familiaux.  
-**Graphique :** [Graphique - Visualisation réseau](/mesdocuments/visualisation.JPG)  
+**Graphique :** [Graphique - Visualisation réseau complet](/mesdocuments/visualisation.JPG)  
 **Code :** [Code R](/mesdocuments/noblesseeuropenne.R).  
 
 ---
@@ -53,9 +53,7 @@
 **Méthode :** Entretiens qualitatifs avec extraction manuelle des thématiques des récits de vie et des relations sociales ; analyse du réseau social de l'individu.  
 **Logiciels :** Network Canvas (analyse du réseau) et Excel (tableaux et répartition des genres).  
 **Livrable :** Rapport sociologique avec une analyse des thématiques et une présentation graphique du réseau social de l'enquêté.  
-**Graphique :** À ajouter.  
-**Code :** À ajouter.  
-
+**Graphique :** [Graphique - Visualisation réseau personnel](/mesdocuments/reseauxpersonnels.JPG)  
 
 
 <html lang="fr">
