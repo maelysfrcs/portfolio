@@ -32,7 +32,7 @@
 
 ---
 
-#### **[Projet 2 - Extraction de thématiques à partir de corpus de données textuelles sur la santé mentale et l'isolement en France et au Japon - Jamovi](/mesdocuments/dossier_jamovi.pdf)**  
+#### **[2 - Extraction de thématiques à partir de corpus de données textuelles sur la santé mentale et l'isolement en France et au Japon - <u>Jamovi</u>](/mesdocuments/dossier_jamovi.pdf)**  
 **Méthode :** Analyse statistique des différences de santé mentale (isolement, déprime) entre le Japon et la France en utilisant des statistiques descriptives, des tests de fiabilité (α de Cronbach), des tests de corrélation (χ² et V de Cramer), et des tests d'homogénéité (ANOVA, test de Levene).  
 **Logiciels :** Jamovi pour l'analyse des données statistiques.  
 **Livrable :** Rapport statistique illustré de tableaux, graphiques et tests statistiques.  
@@ -40,7 +40,7 @@
 
 ---
 
-#### **[Projet 3 - Étude des réseaux de la noblesse européenne avant, pendant et après la Révolution française - R](/mesdocuments/dossier_noblesse.pdf)**   
+#### **[3 - Étude des réseaux de la noblesse européenne avant, pendant et après la Révolution française - <u>R</u>](/mesdocuments/dossier_noblesse.pdf)**   
 **Méthode :** Analyse des réseaux sociaux, calcul des densités, centralités d’intermédiarité, Odd-Ratio, distances géodésiques, visualisations graphiques.  
 **Logiciels :** R.  
 **Livrable :** Rapport détaillant les résultats, visualisations (graphes des mariages, Shrink des alliances familiales, distances géodésiques), et interprétation des évolutions des réseaux familiaux.  
@@ -49,7 +49,7 @@
 
 ---
 
-#### **[Projet 4 - Étude des trajectoires de vie et des sociabilités d'un individu - Network Canvas et Excel](/mesdocuments/dossier_réseauxpersonnels.pdf)**  
+#### **[4 - Étude des trajectoires de vie et des sociabilités d'un individu - <u>Network Canvas et Excel</u>](/mesdocuments/dossier_réseauxpersonnels.pdf)**  
 **Méthode :** Entretiens qualitatifs avec extraction manuelle des thématiques des récits de vie et des relations sociales ; analyse du réseau social de l'individu.  
 **Logiciels :** Network Canvas (analyse du réseau) et Excel (tableaux et répartition des genres).  
 **Livrable :** Rapport sociologique avec une analyse des thématiques et une présentation graphique du réseau social de l'enquêté.  
