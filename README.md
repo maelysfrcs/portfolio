@@ -94,7 +94,7 @@
 
 ### <span style="color:#2596BE;">💼 Expériences</span>
 **Enquête-école - Enquêtrice
-@ Toulouse Tech Transfer (_Octobre 2024 - Maintenant_)**
+@ Toulouse Tech Transfer (_Octobre 2024 à ce jour_)**
 
 **Stage - Chargée d'étude en sociologie
 @ CNRS-IPBS (_Avril 2024 - Septembre 2024_)**
