@@ -41,6 +41,16 @@
       background-color: #b43d19; /* Couleur plus foncée au survol */
     }
 
+    /* Style du bouton CV */
+    .button.cv {
+      background-color: #4CAF50; /* Couleur du bouton CV */
+      color: white;
+    }
+
+    .button.cv:hover {
+      background-color: #45a049; /* Couleur plus foncée au survol */
+    }
+
     /* Ajouter un peu d'espace entre l'icône et le texte */
     .button i {
       margin-right: 8px;
@@ -57,12 +67,16 @@
     <a href="mailto:maelys.francois31@gmail.com" class="button email">
       <i class="fas fa-envelope"></i> Mon Email
     </a>
+    <a href="/mesdocuments/cv.pdf" class="button cv" target="_blank">
+      <i class="fas fa-file-pdf"></i> Mon CV
+    </a>
   </p>
 
   <!-- Ajouter le lien vers Font Awesome pour les icônes -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
 </body>
 </html>
+
 
 
 
