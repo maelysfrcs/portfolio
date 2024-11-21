@@ -45,7 +45,7 @@
 **Méthode :** Analyse des réseaux sociaux, calcul des densités, centralités d’intermédiarité, Odd-Ratio, distances géodésiques, visualisations graphiques.  
 **Logiciels :** R.  
 **Livrable :** Rapport détaillant les résultats, visualisations (graphes des mariages, Shrink des alliances familiales, distances géodésiques), et interprétation des évolutions des réseaux familiaux.  
-**Graphique :** À ajouter.  
+**Graphique :** [Graphique - Visualisation réseau (/mesdocuments/visualisation.JPG)  
 **Code :** À ajouter.  
 
 ---
