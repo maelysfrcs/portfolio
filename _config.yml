@@ -1,10 +1,13 @@
 title: Maëlys François
 logo: /mesdocuments/photocv.PNG
 description: Disponible à partir de février 2025 et pour une durée de 4 à 6 mois.
+cv_url: "/mesdocuments/cv_maelysfrancois.pdf" # Lien relatif ou absolu vers votre CV
+cv_text: "Lien vers mon CV"                  # Texte à afficher pour le lien
 show_downloads: true
 theme: jekyll-theme-minimal
 sass:
   style: compressed
+
 
 # Si tu veux ajouter ton propre fichier CSS personnalisé
 theme: jekyll-theme-minimal
