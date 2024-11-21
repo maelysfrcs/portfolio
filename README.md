@@ -24,13 +24,6 @@
 
 ### <span style="color:#2596BE;">📂 Projets</span>
 
-[Projet 1 - Dossier Topic Modeling](/mesdocuments/dossier_topicmodeling.pdf)
-[Projet 2 - Dossier Jamovi](/mesdocuments/dossier_jamovi.pdf)
-[Projet 3 - Dossier Noblesse](/mesdocuments/dossier_noblesse.pdf)
-[Projet 4 - Dossier Réseaux Personnels](/mesdocuments/dossier_réseauxpersonnels.pdf)
-
-### <span style="color:#2596BE;">📂 Projets</span>
-
 #### **[Projet 1 - Étude comparative des représentations médiatiques des jeux-vidéos et leur monétisation à l'échelle locale et internationale - Topic Modeling](/mesdocuments/dossier_topicmodeling.pdf)**  
 **Méthode :** Analyse thématique par NLP et analyse des cooccurrences.  
 **Logiciels :** Python, Google Colaboratory, Europresse.  
