@@ -124,7 +124,7 @@
 ---
 
 #### **[3 - Étude des réseaux de la noblesse européenne avant, pendant et après la Révolution française - <u>R</u>](/mesdocuments/dossier_noblesse.pdf)**   
-**Méthode :** Analyse des réseaux sociaux, calcul des densités, centralités d’intermédiarité, Odd-Ratio, distances géodésiques, visualisations graphiques.  
+**Méthode :** Analyse des réseaux sociaux, calcul des densités, centralités d’intermédiarité, Odd-Ratio, distances géodésiques et visualisations graphiques.  
 **Logiciels :** R.  
 **Livrable :** Rapport détaillant les résultats, visualisations (graphes des mariages, Shrink des alliances familiales, distances géodésiques), et interprétation des évolutions des réseaux familiaux.  
 **Graphique :** [Visualisation réseau complet](/mesdocuments/visualisation.jpg)
