@@ -133,7 +133,7 @@
 ---
 
 #### **[4 - Étude des trajectoires de vie et des sociabilités d'un individu - <u>Network Canvas et Excel</u>](/mesdocuments/dossier_réseauxpersonnels.pdf)**  
-**Méthode :** Entretiens qualitatifs avec extraction manuelle des thématiques des récits de vie et des relations sociales ; analyse du réseau social de l'individu.  
+**Méthode :** Enquête qualitative avec extraction manuelle des thématiques des récits de vie et des relations sociales ; analyse du réseau social de l'individu.  
 **Logiciels :** Network Canvas (analyse du réseau) et Excel (tableaux et répartition des genres).  
 **Livrable :** Rapport sociologique avec une analyse des thématiques et une présentation graphique du réseau social de l'enquêté.  
 **Graphique :** [Visualisation réseau personnel](/mesdocuments/reseauxpersonnels.png)  
