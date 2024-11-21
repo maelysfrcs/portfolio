@@ -85,12 +85,12 @@
 
 ### <span style="color:#2596BE;">🎓 Formations</span>
 **Master Sociologie | Parcours Réseaux et Sociétés (RESO) (_2023 - 2025_)**
-- Analyse de situations sociales complexes via l'analyse des réseaux d'acteurs
+- Analyse de situations sociales complexes via l'analyse de réseaux d'acteurs
 - Maîtrise d'outils statistiques et numériques pour l'analyse de données
 - Spécialisation en réseaux sociaux et Web
 
 **Licence Sociologie (_2020 - 2023_)**
-- Regard analytique et critique sur le mondne social contemporain
+- Regard analytique et critique sur le monde social contemporain
 
 ### <span style="color:#2596BE;">💼 Expériences</span>
 **Enquête-école - Enquêtrice
