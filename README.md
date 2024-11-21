@@ -36,8 +36,7 @@
 **Méthode :** Analyse statistique des différences de santé mentale (isolement, déprime) entre le Japon et la France en utilisant des statistiques descriptives, des tests de fiabilité (α de Cronbach), des tests de corrélation (χ² et V de Cramer), et des tests d'homogénéité (ANOVA, test de Levene).  
 **Logiciels :** Jamovi pour l'analyse des données statistiques.  
 **Livrable :** Rapport statistique illustré de tableaux, graphiques et tests statistiques.  
-**Graphique :** À ajouter.  
-**Code :** [Graphique - Statistiques descriptives](/mesdocuments/statistiquesdescriptives.JPG).  
+**Graphique :** [Graphique - Statistiques descriptives](/mesdocuments/statistiquesdescriptives.JPG).  
 
 ---
 
@@ -46,7 +45,7 @@
 **Logiciels :** R.  
 **Livrable :** Rapport détaillant les résultats, visualisations (graphes des mariages, Shrink des alliances familiales, distances géodésiques), et interprétation des évolutions des réseaux familiaux.  
 **Graphique :** [Graphique - Visualisation réseau (/mesdocuments/visualisation.JPG)  
-**Code :** À ajouter.  
+**Code :** [Code R](/mesdocuments/noblesseeuropenne.R).  
 
 ---
 
