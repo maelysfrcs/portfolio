@@ -127,7 +127,7 @@
 **Méthode :** Analyse des réseaux sociaux, calcul des densités, centralités d’intermédiarité, Odd-Ratio, distances géodésiques et visualisations graphiques.  
 **Logiciels :** R.  
 **Livrable :** Rapport détaillant les résultats, visualisations (graphes des mariages, Shrink des alliances familiales, distances géodésiques), et interprétation des évolutions des réseaux familiaux.  
-**Graphique :** [Visualisation réseau complet](/mesdocuments/visualisation.jpg)
+**Graphique :** [Visualisation réseau complet](/mesdocuments/visualisation.jpg)  
 **Code :** [Code R](/mesdocuments/noblesseeuropeenne.R) 
 
 ---
