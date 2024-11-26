@@ -67,9 +67,9 @@
     <a href="mailto:maelys.francois31@gmail.com" class="button email">
       <i class="fas fa-envelope"></i> Mon Email
     </a>
-    <a href="/mesdocuments/cv.pdf" class="button cv" target="_blank">
-      <i class="fas fa-file-pdf"></i> Mon CV
-    </a>
+    <a href="mesdocuments/cv.pdf" class="button cv" target="_blank" rel="noopener noreferrer">
+  <i class="fas fa-file-pdf"></i> Mon CV
+</a>
   </p>
 
   <!-- Ajouter le lien vers Font Awesome pour les icônes -->
