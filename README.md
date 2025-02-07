@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mon Portfolio</title>
 
-  <!-- CSS intégré -->
+  <!-- CSS -->
   <style>
-    /* Conteneur global */
+    /* Styles généraux */
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -15,24 +15,26 @@
       background-color: #f9f9f9;
     }
 
-    /* Section Profil */
-    .profile-section {
+    /* Conteneur principal */
+    .container {
       max-width: 800px;
       margin: auto;
       padding: 20px;
       background-color: white;
       border-radius: 8px;
       box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      transition: opacity 0.5s ease-in-out;
     }
 
-    /* Section Projets : pleine largeur */
+    /* Section Projets : Plein écran après disparition du profil */
     .projects-section {
       width: 100%;
       padding: 40px 10%;
       background-color: #ffffff;
+      transition: margin 0.5s ease-in-out;
     }
 
-    /* Titres des sections */
+    /* Titres */
     h2 {
       color: #2596BE;
     }
@@ -50,45 +52,30 @@
       transition: all 0.3s ease;
     }
 
-    .button.linkedin {
-      background-color: #0077b5;
-      color: white;
+    .button.linkedin { background-color: #0077b5; color: white; }
+    .button.linkedin:hover { background-color: #005f84; }
+
+    .button.email { background-color: #e44d26; color: white; }
+    .button.email:hover { background-color: #b43d19; }
+
+    .button.cv { background-color: #4CAF50; color: white; }
+    .button.cv:hover { background-color: #45a049; }
+
+    /* Disparition du profil */
+    .hidden {
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
     }
 
-    .button.linkedin:hover {
-      background-color: #005f84;
-    }
-
-    .button.email {
-      background-color: #e44d26;
-      color: white;
-    }
-
-    .button.email:hover {
-      background-color: #b43d19;
-    }
-
-    .button.cv {
-      background-color: #4CAF50;
-      color: white;
-    }
-
-    .button.cv:hover {
-      background-color: #45a049;
-    }
-
-    .button i {
-      margin-right: 8px;
-    }
   </style>
 </head>
 <body>
 
-  <!-- Section Profil -->
-  <div class="profile-section">
+  <!-- Conteneur Profil -->
+  <div class="container" id="profile-section">
     <h1>À la recherche d'un stage de Social Data Analyst</h1>
-    
-    <!-- Boutons côte à côte -->
+
+    <!-- Boutons -->
     <p>
       <a href="https://www.linkedin.com/in/ma%C3%ABlys-fran%C3%A7ois" class="button linkedin">
         <i class="fab fa-linkedin"></i> Mon LinkedIn
@@ -128,8 +115,8 @@
     </ul>
   </div>
 
-  <!-- Section Projets : pleine largeur -->
-  <div class="projects-section">
+  <!-- Section Projets -->
+  <div class="projects-section" id="projects-section">
     <h2>📂 Projets</h2>
 
     <h3>1 - Étude des Représentations Médiatiques des Jeux Vidéo et leur Monétisation</h3>
@@ -141,21 +128,25 @@
 
     <p><strong>Représentation hiérarchique avec écart-type :</strong></p>
     <img src="/mesdocuments/representationhierarchique_ecart-type.JPG" alt="Représentation hiérarchique" width="80%">
-
-    <h3>2 - Extraction de thématiques sur la Santé Mentale et l’Isolement (France & Japon)</h3>
-    <p><strong>Méthode :</strong> Analyse statistique (ANOVA, χ², tests de fiabilité).</p>
-    <p><strong>Logiciels :</strong> Jamovi.</p>
-    <p><strong>Livrable :</strong> Rapport statistique illustré de tableaux, graphiques et tests statistiques.</p>
-    <img src="/mesdocuments/statistiquesdescriptives.png" alt="Statistiques descriptives" width="80%">
-
-    <h3>3 - Analyse des Réseaux de la Noblesse Européenne avant et après la Révolution Française</h3>
-    <p><strong>Méthode :</strong> Analyse des réseaux sociaux (centralité, densité, distances géodésiques).</p>
-    <p><strong>Logiciels :</strong> R (igraph).</p>
-    <p><strong>Livrable :</strong> Rapport détaillant les résultats, visualisations et interprétation des réseaux familiaux.</p>
-    <img src="/mesdocuments/visualisation.jpg" alt="Visualisation réseau complet" width="80%">
   </div>
+
+  <!-- JavaScript : Masquer la section Profil en scrollant -->
+  <script>
+    document.addEventListener("scroll", function() {
+      var profileSection = document.getElementById("profile-section");
+      var projectsSection = document.getElementById("projects-section");
+      var position = projectsSection.getBoundingClientRect().top;
+
+      if (position < window.innerHeight * 0.3) {
+        profileSection.classList.add("hidden");
+      } else {
+        profileSection.classList.remove("hidden");
+      }
+    });
+  </script>
 
   <!-- Ajouter Font Awesome pour les icônes -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+
 </body>
 </html>
