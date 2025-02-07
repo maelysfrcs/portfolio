@@ -15,18 +15,18 @@
       background-color: #f9f9f9;
     }
 
-    /* Conteneur principal */
-    .container {
+    /* Conteneur du profil (à masquer en scrollant) */
+    .profile-container {
       max-width: 800px;
       margin: auto;
       padding: 20px;
       background-color: white;
       border-radius: 8px;
       box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-      transition: opacity 0.5s ease-in-out;
+      transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
     }
 
-    /* Section Projets : Plein écran après disparition du profil */
+    /* Section Projets : Pleine largeur une fois le profil masqué */
     .projects-section {
       width: 100%;
       padding: 40px 10%;
@@ -61,10 +61,11 @@
     .button.cv { background-color: #4CAF50; color: white; }
     .button.cv:hover { background-color: #45a049; }
 
-    /* Disparition du profil */
+    /* Effet de disparition */
     .hidden {
       opacity: 0;
-      transition: opacity 0.5s ease-in-out;
+      transform: translateY(-20px);
+      pointer-events: none; /* Désactive les interactions */
     }
 
   </style>
@@ -72,7 +73,7 @@
 <body>
 
   <!-- Conteneur Profil -->
-  <div class="container" id="profile-section">
+  <div class="profile-container" id="profile-container">
     <h1>À la recherche d'un stage de Social Data Analyst</h1>
 
     <!-- Boutons -->
@@ -133,14 +134,14 @@
   <!-- JavaScript : Masquer la section Profil en scrollant -->
   <script>
     document.addEventListener("scroll", function() {
-      var profileSection = document.getElementById("profile-section");
+      var profileContainer = document.getElementById("profile-container");
       var projectsSection = document.getElementById("projects-section");
       var position = projectsSection.getBoundingClientRect().top;
 
       if (position < window.innerHeight * 0.3) {
-        profileSection.classList.add("hidden");
+        profileContainer.classList.add("hidden");
       } else {
-        profileSection.classList.remove("hidden");
+        profileContainer.classList.remove("hidden");
       }
     });
   </script>
