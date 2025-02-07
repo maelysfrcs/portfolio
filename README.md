@@ -1,21 +1,81 @@
 # À la recherche d'un stage de Social Data Analyst
 
-<p align="center">
-  <img src="mesdocuments/photo_profil.jpg" width="150px">
-</p>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mon Portfolio</title>
+   
+  <!-- CSS intégré pour les boutons -->
+  <style>
+    /* Style général des boutons */
+    .button {
+      display: inline-block; /* Affichage en ligne pour être côte à côte */
+      margin-right: 10px; /* Espacement entre les boutons */
+      padding: 12px 25px;
+      font-size: 16px;
+      font-weight: bold;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+    }
 
-<p align="center">
-  <a href="https://www.linkedin.com/in/ma%C3%ABlys-fran%C3%A7ois" class="button linkedin">
-    <i class="fab fa-linkedin"></i> Mon LinkedIn
-  </a>
-  <a href="mailto:maelys.francois31@gmail.com" class="button email">
-    <i class="fas fa-envelope"></i> Mon Email
-  </a>
-  <a href="mesdocuments/cv.pdf" class="button cv">
-    <i class="fas fa-file-pdf"></i> Mon CV
-  </a>
-</p>
+    /* Style du bouton LinkedIn */
+    .button.linkedin {
+      background-color: #0077b5; /* Couleur de LinkedIn */
+      color: white;
+    }
 
+    .button.linkedin:hover {
+      background-color: #005f84; /* Couleur plus foncée au survol */
+    }
+
+    /* Style du bouton Email */
+    .button.email {
+      background-color: #e44d26; /* Couleur de l'email */
+      color: white;
+    }
+
+    .button.email:hover {
+      background-color: #b43d19; /* Couleur plus foncée au survol */
+    }
+
+    /* Style du bouton CV */
+    .button.cv {
+      background-color: #4CAF50; /* Couleur du bouton CV */
+      color: white;
+    }
+
+    .button.cv:hover {
+      background-color: #45a049; /* Couleur plus foncée au survol */
+    }
+
+    /* Ajouter un peu d'espace entre l'icône et le texte */
+    .button i {
+      margin-right: 8px;
+    }
+  </style>
+  
+</head>
+<body>
+  <!-- Boutons côte à côte -->
+  <p>
+    <a href="https://www.linkedin.com/in/ma%C3%ABlys-fran%C3%A7ois" class="button linkedin">
+      <i class="fab fa-linkedin"></i> Mon LinkedIn
+    </a>
+    <a href="mailto:maelys.francois31@gmail.com" class="button email">
+      <i class="fas fa-envelope"></i> Mon Email
+    </a>
+    <a href="mesdocuments/cv.pdf" class="button cv" target="_blank" rel="noopener noreferrer">
+  <i class="fas fa-file-pdf"></i> Mon CV
+</a>
+  </p>
+
+  <!-- Ajouter le lien vers Font Awesome pour les icônes -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+</body>
+</html>
 ---
 
 ## 🎓 Formations
