@@ -107,15 +107,25 @@
 
 ### <span style="color:#2596BE;">📂 Projets</span>
 
-#### **[1 - Étude des Représentations Médiatiques des Jeux Vidéo et leur Monétisation**  
-**Méthode :** Analyse thématique par NLP et analyse des cooccurrences.  
-**Logiciels :** Python, Google Colaboratory, Europresse. 
-**Compétences :** Traitement du langage naturel (NLP), visualisation de données, clustering.
-**Objectif :** Étudier la manière dont les médias abordent la monétisation des jeux vidéo à l'échelle locale et internationale.
-**Livrable :** Rapport analytique comprenant les distributions thématiques, comparaisons par région et visualisations des résultats.  
+#### 1 - Étude des Représentations Médiatiques des Jeux Vidéo et leur Monétisation  
+**Méthode :**  
+Analyse thématique par NLP et analyse des cooccurrences.  
+
+**Logiciels :**  
+Python, Google Colaboratory, Europresse.  
+
+**Compétences :**  
+Traitement du langage naturel (NLP), visualisation de données, clustering.  
+
+**Objectif :**  
+Étudier la manière dont les médias abordent la monétisation des jeux vidéo à l'échelle locale et internationale.  
+
+**Livrable :**  
+Rapport analytique comprenant les distributions thématiques, comparaisons par région et visualisations des résultats.  
 
 **Représentation hiérarchique avec écart-type**  
 ![Représentation hiérarchique avec écart-type](/mesdocuments/representationhierarchique_ecart-type.JPG)
+
 
 ---
 
