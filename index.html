@@ -1,59 +1,56 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Portfolio</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 20px; }
-        h1 { color: #2596BE; }
-        a { color: #0077b5; text-decoration: none; }
-        .button {
-            display: inline-block;
-            margin: 10px;
-            padding: 12px 25px;
-            font-size: 16px;
-            font-weight: bold;
-            text-align: center;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-            background-color: #0077b5;
-            color: white;
-        }
-        .button:hover { background-color: #005f84; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mon Portfolio</title>
+   
+  <!-- CSS intégré pour les boutons -->
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; text-align: center; }
+    h1 { color: #2596BE; }
+    .button {
+      display: inline-block;
+      margin-right: 10px;
+      padding: 12px 25px;
+      font-size: 16px;
+      font-weight: bold;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+    }
+
+    .button.linkedin { background-color: #0077b5; color: white; }
+    .button.linkedin:hover { background-color: #005f84; }
+
+    .button.email { background-color: #e44d26; color: white; }
+    .button.email:hover { background-color: #b43d19; }
+
+    .button.cv { background-color: #4CAF50; color: white; }
+    .button.cv:hover { background-color: #45a049; }
+
+    .button.projects { background-color: #2596BE; color: white; display: block; margin: 15px auto; width: 250px; }
+    .button.projects:hover { background-color: #1d7fa4; }
+  </style>
 </head>
 <body>
-    <h1>🎓 Formations</h1>
-    <p><strong>Master Sociologie | Parcours Réseaux et Sociétés (RESO) (2023 - 2025)</strong></p>
-    <ul>
-        <li>Analyse de situations sociales complexes via l'analyse de réseaux d'acteurs</li>
-        <li>Maîtrise d'outils statistiques et numériques pour l'analyse de données</li>
-        <li>Spécialisation en réseaux sociaux et Web</li>
-    </ul>
+  
+  <h1>À la recherche d'un stage de Social Data Analyst</h1>
 
-    <p><strong>Licence Sociologie (2020 - 2023)</strong></p>
-    <ul>
-        <li>Regard analytique et critique sur le monde social contemporain</li>
-    </ul>
+  <!-- Boutons -->
+  <p>
+    <a href="https://www.linkedin.com/in/ma%C3%ABlys-fran%C3%A7ois" class="button linkedin">Mon LinkedIn</a>
+    <a href="mailto:maelys.francois31@gmail.com" class="button email">Mon Email</a>
+    <a href="mesdocuments/cv.pdf" class="button cv" target="_blank" rel="noopener noreferrer">Mon CV</a>
+  </p>
 
-    <h1>🏫 Expériences</h1>
-    <p><strong>Enquête-école - Enquêtrice @ Toulouse Tech Transfer (Octobre 2024 - Présent)</strong></p>
-    <p><strong>Stage - Chargée d'étude en sociologie @ CNRS-IPBS (Avril 2024 - Septembre 2024)</strong></p>
-    <ul>
-        <li>Conduite d'une enquête sur l'état des discriminations et de la qualité de vie au travail</li>
-        <li>Opérationnalisation et conduite d'un questionnaire</li>
-        <li>Analyse de données, passation d'entretiens, production d'un rapport de synthèse</li>
-        <li>Proposition de pistes d'amélioration et supports de communication</li>
-    </ul>
+  <h2>📂 Projets</h2>
+  <a href="projets/projet1.html" class="button projects">Projet 1 - NLP et Jeux Vidéo</a>
+  <a href="projets/projet2.html" class="button projects">Projet 2 - Santé Mentale & Isolement</a>
+  <a href="projets/projet3.html" class="button projects">Projet 3 - Réseaux de la Noblesse</a>
+  <a href="projets/projet4.html" class="button projects">Projet 4 - Sociabilités et Trajectoires</a>
 
-    <h1>📂 Projets</h1>
-    <p><strong>Projet 1 :</strong> <a href="projets/projet1.html">Étude des Représentations Médiatiques des Jeux Vidéo</a></p>
-    <p><strong>Projet 2 :</strong> <a href="projets/projet2.html">Extraction de thématiques sur la santé mentale et l'isolement</a></p>
-    <p><strong>Projet 3 :</strong> <a href="projets/projet3.html">Étude des réseaux de la noblesse européenne</a></p>
-    <p><strong>Projet 4 :</strong> <a href="projets/projet4.html">Étude des trajectoires de vie et des sociabilités</a></p>
-
-    <p><a href="https://www.linkedin.com/in/ma%C3%ABlys-fran%C3%A7ois" class="button">Mon LinkedIn</a></p>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
 </body>
 </html>
