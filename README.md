@@ -113,7 +113,9 @@
 **Compétences :** Traitement du langage naturel (NLP), visualisation de données, clustering.
 **Objectif :** Étudier la manière dont les médias abordent la monétisation des jeux vidéo à l'échelle locale et internationale.
 **Livrable :** Rapport analytique comprenant les distributions thématiques, comparaisons par région et visualisations des résultats.  
-**Graphique :** ![Représentation hiérarchique avec écart-type](/mesdocuments/representationhierarchique_ecart-type.JPG)
+
+**Représentation hiérarchique avec écart-type**  
+![Représentation hiérarchique avec écart-type](/mesdocuments/representationhierarchique_ecart-type.JPG)
 
 ---
 
