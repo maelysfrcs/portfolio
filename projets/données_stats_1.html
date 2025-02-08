@@ -7,22 +7,63 @@
     <style>
         body { font-family: Arial, sans-serif; margin: 20px; }
         h1 { color: #2596BE; }
+        h2 { color: #444; }
         a { color: #0077b5; text-decoration: none; }
-        .button { background-color: #4CAF50; color: white; padding: 10px 20px; border-radius: 5px; }
+        .button { background-color: #4CAF50; color: white; padding: 10px 20px; border-radius: 5px; display: inline-block; margin-top: 10px; }
+        .container { max-width: 800px; margin: auto; }
+        img { width: 100%; border-radius: 5px; margin-top: 10px; }
     </style>
 </head>
 <body>
 
-    <h1>📊 Analyse statistique de la fréquence et des supports de jeux vidéo</h1>
+    <div class="container">
+        <h1>📊 Analyse statistique de la fréquence et des supports de jeux vidéo</h1>
 
-    <p><strong>Compétences développées :</strong> Modèles linéaires, logistiques, tests statistiques.</p>
-    <p><strong>Outils :</strong> R, Jamovi.</p>
-    <p><strong>Résumé :</strong> Cette étude explore les facteurs influençant la fréquence de jeu et le choix du support en fonction de variables sociodémographiques.</p>
+        <h2>🔎 Contexte et Objectifs</h2>
+        <p>
+            Cette étude porte sur l’analyse des facteurs influençant la **fréquence de jeu** et le **choix des supports de jeux vidéo** 
+            en fonction des variables sociodémographiques (âge, genre, revenu, niveau d’études). L'objectif principal est de 
+            comprendre si certains profils de joueurs privilégient des supports spécifiques (téléphone, console, PC) 
+            et si ces choix sont liés à des dynamiques économiques ou générationnelles.
+        </p>
 
-    <h2>📄 Rapport complet</h2>
-    <p><a href="../dossier_statistiques.pdf" class="button">Télécharger le rapport</a></p>
+        <h2>🛠️ Méthodes et Outils</h2>
+        <p>
+            - Données issues de l’enquête **Ludespace** (N = 1641 individus)  
+            - **Méthodes statistiques :** Modèles linéaires, régressions logistiques, tests Khi² et ANOVA  
+            - **Logiciels utilisés :** R, Jamovi  
+        </p>
 
-    <p><a href="../index.html">⬅️ Retour au portfolio</a></p>
+        <h2>📈 Résultats Clés</h2>
+        <p>
+            - **Le genre et l'âge sont des déterminants majeurs** de la fréquence de jeu : les hommes et les jeunes jouent davantage.  
+            - **Le revenu et le niveau d’études n’ont pas d’impact significatif** sur la fréquence de jeu.  
+            - **Le téléphone est plus utilisé par les jeunes adultes (18-34 ans)** tandis que les plus âgés préfèrent l’ordinateur.  
+        </p>
+
+        <h2>📊 Visualisations</h2>
+        <p>Quelques représentations graphiques illustrant les tendances observées :</p>
+        
+        <img src="../mesdocuments/statistiques_frequence_jeu.png" alt="Fréquence de jeu selon l'âge et le genre">
+        <p><i>Graphique 1 : Fréquence de jeu selon l'âge et le genre.</i></p>
+
+        <img src="../mesdocuments/statistiques_supports_jeu.png" alt="Supports de jeu préférés par catégorie sociodémographique">
+        <p><i>Graphique 2 : Répartition des supports de jeu préférés.</i></p>
+
+        <h2>💡 Avis et Réflexions</h2>
+        <p>
+            Cette analyse met en évidence l’importance des **facteurs générationnels et culturels** dans la consommation des jeux vidéo, 
+            au détriment des contraintes économiques souvent supposées influentes. L'absence d'effet significatif du revenu et du niveau 
+            d’études sur la fréquence de jeu souligne que l’accessibilité aux jeux vidéo est aujourd’hui largement démocratisée. 
+            Il pourrait être intéressant d'explorer des aspects complémentaires tels que les préférences de genres de jeux 
+            ou les motivations sous-jacentes à ces choix de supports.
+        </p>
+
+        <h2>📄 Rapport complet</h2>
+        <p><a href="../dossier_statistiques.pdf" class="button">Télécharger le rapport</a></p>
+
+        <p><a href="../index.html">⬅️ Retour au portfolio</a></p>
+    </div>
 
 </body>
 </html>
