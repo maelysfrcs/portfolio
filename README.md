@@ -106,7 +106,7 @@
 
 ### **📉 Visualisation de données**
 - [Visualisation des réseaux matrimoniaux de la noblesse européenne](projets/visualisation_1.html)
-- [Visualisation des trajectoires de réseaux personnels](projets/visulisation_2.html)
+- [Visualisation des trajectoires de réseaux personnels](projets/visualisation_2.html)
 - [Analyse des dynamiques spatiales et temporelles des réseaux](projets/visualisation_3.html)
 
 ### **🧠 Analyse textuelle et NLP**
