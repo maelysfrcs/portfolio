@@ -101,23 +101,23 @@
 ## 📊 Projets par compétences
 
 ### **📈 Analyse de données et statistiques**
-- [Analyse statistique de la fréquence et des supports de jeux vidéo](projets/données_stats_1.html)
-- [Analyse des thématiques liées à la santé mentale en France et au Japon](projets/données_stats_2.html)
+- [Analyse statistique de la fréquence et des supports de jeux vidéo](projets/statistiques_jeux_video.html)
+- [Analyse des thématiques liées à la santé mentale en France et au Japon](projets/jamovi_sante_mentale.html)
 
 ### **📉 Visualisation de données**
-- [Visualisation des réseaux matrimoniaux de la noblesse européenne](projets/visualisation_1.html)
-- [Visualisation des trajectoires de réseaux personnels](projets/visualisation_2.html)
-- [Analyse des dynamiques spatiales et temporelles des réseaux](projets/visualisation_3.html)
+- [Visualisation des réseaux matrimoniaux de la noblesse européenne](projets/noblesse_europeenne.html)
+- [Visualisation des trajectoires de réseaux personnels](projets/reseaux_personnels.html)
+- [Analyse des dynamiques spatiales et temporelles des réseaux](projets/panel_caen.html)
 
 ### **🧠 Analyse textuelle et NLP**
-- [Étude de la monétisation des jeux vidéo à travers la presse](projets/analyse_textuelle_nlp_1.html)
-- [Comparaison des discours médiatiques sur la santé mentale](projets/données_stats_2.html)
+- [Étude de la monétisation des jeux vidéo à travers la presse](projets/europresse_jeux_videos.html)
+- [Analyse des thématiques liées à la santé mentale en France et au Japon](projets/jamovi_sante_mentale.html)
 
 ### **🔬 Sociologie des réseaux et des interactions**
-- [Étude des trajectoires de vie et des sociabilités](projets/visualisation_2.html)
-- [Dynamique des réseaux et mobilité sociale](projets/visualisation_3.html)
+- [Analyse des dynamiques spatiales et temporelles des réseaux](projets/panel_caen.html)
+- [Visualisation des trajectoires de réseaux personnels](projets/reseaux_personnels.html)
 
 ### **⚙️ Web Scraping et outils numériques**
-- [Extraction et analyse des données médiatiques sur les jeux vidéo](projets/visualisation_1.html)
+- [Étude de la monétisation des jeux vidéo à travers la presse](projets/europresse_jeux_videos.html)
 
 ---
