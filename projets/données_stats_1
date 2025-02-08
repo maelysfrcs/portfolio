@@ -1,1 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analyse statistique des jeux vidéo</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        h1 { color: #2596BE; }
+        a { color: #0077b5; text-decoration: none; }
+        .button { background-color: #4CAF50; color: white; padding: 10px 20px; border-radius: 5px; }
+    </style>
+</head>
+<body>
 
+    <h1>📊 Analyse statistique de la fréquence et des supports de jeux vidéo</h1>
+
+    <p><strong>Compétences développées :</strong> Modèles linéaires, logistiques, tests statistiques.</p>
+    <p><strong>Outils :</strong> R, Jamovi.</p>
+    <p><strong>Résumé :</strong> Cette étude explore les facteurs influençant la fréquence de jeu et le choix du support en fonction de variables sociodémographiques.</p>
+
+    <h2>📄 Rapport complet</h2>
+    <p><a href="../dossier_statistiques.pdf" class="button">Télécharger le rapport</a></p>
+
+    <p><a href="../index.html">⬅️ Retour au portfolio</a></p>
+
+</body>
+</html>
