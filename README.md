@@ -101,8 +101,8 @@
 ## 📊 Projets par compétences
 
 ### **📈 Analyse de données et statistiques**
-- [Analyse statistique de la fréquence et des supports de jeux vidéo](projets/statistiques.html)
-- [Analyse des thématiques liées à la santé mentale en France et au Japon](projets/jamovi.html)
+- [Analyse statistique de la fréquence et des supports de jeux vidéo](projets/données_stats_1.html)
+- [Analyse des thématiques liées à la santé mentale en France et au Japon](projets/données_stats_2.html)
 
 ### **📉 Visualisation de données**
 - [Visualisation des réseaux matrimoniaux de la noblesse européenne](projets/noblesse.html)
