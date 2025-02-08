@@ -111,13 +111,13 @@
 
 ### **🧠 Analyse textuelle et NLP**
 - [Étude de la monétisation des jeux vidéo à travers la presse](projets/analyse_textuelle_nlp_1.html)
-- [Comparaison des discours médiatiques sur la santé mentale](projets/analyse_textuelle_nlp_2.html)
+- [Comparaison des discours médiatiques sur la santé mentale](projets/données_stats_2.html)
 
 ### **🔬 Sociologie des réseaux et des interactions**
-- [Étude des trajectoires de vie et des sociabilités](projets/socio_réseaux_1.html)
-- [Dynamique des réseaux et mobilité sociale](projets/socio_réseaux_2.html)
+- [Étude des trajectoires de vie et des sociabilités](projets/visualisation_2.html)
+- [Dynamique des réseaux et mobilité sociale](projets/visualisation_3.html)
 
 ### **⚙️ Web Scraping et outils numériques**
-- [Extraction et analyse des données médiatiques sur les jeux vidéo](projets/web_scraping_1.html)
+- [Extraction et analyse des données médiatiques sur les jeux vidéo](projets/visualisation_1.html)
 
 ---
