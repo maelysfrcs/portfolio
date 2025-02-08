@@ -105,19 +105,19 @@
 - [Analyse des thématiques liées à la santé mentale en France et au Japon](projets/données_stats_2.html)
 
 ### **📉 Visualisation de données**
-- [Visualisation des réseaux matrimoniaux de la noblesse européenne](projets/noblesse.html)
-- [Visualisation des trajectoires de réseaux personnels](projets/reseaux_personnels.html)
-- [Analyse des dynamiques spatiales et temporelles des réseaux](projets/panel_caen.html)
+- [Visualisation des réseaux matrimoniaux de la noblesse européenne](projets/visualisation_1.html)
+- [Visualisation des trajectoires de réseaux personnels](projets/visulisation_2.html)
+- [Analyse des dynamiques spatiales et temporelles des réseaux](projets/visualisation_3.html)
 
 ### **🧠 Analyse textuelle et NLP**
-- [Étude de la monétisation des jeux vidéo à travers la presse](projets/topicmodeling.html)
-- [Comparaison des discours médiatiques sur la santé mentale](projets/jamovi.html)
+- [Étude de la monétisation des jeux vidéo à travers la presse](projets/analyse_textuelle_nlp_1.html)
+- [Comparaison des discours médiatiques sur la santé mentale](projets/analyse_textuelle_nlp_2.html)
 
 ### **🔬 Sociologie des réseaux et des interactions**
-- [Étude des trajectoires de vie et des sociabilités](projets/reseaux_personnels.html)
-- [Dynamique des réseaux et mobilité sociale](projets/panel_caen.html)
+- [Étude des trajectoires de vie et des sociabilités](projets/socio_réseaux_1.html)
+- [Dynamique des réseaux et mobilité sociale](projets/socio_réseaux_2.html)
 
 ### **⚙️ Web Scraping et outils numériques**
-- [Extraction et analyse des données médiatiques sur les jeux vidéo](projets/topicmodeling.html)
+- [Extraction et analyse des données médiatiques sur les jeux vidéo](projets/web_scraping_1.html)
 
 ---
