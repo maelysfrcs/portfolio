@@ -98,11 +98,26 @@
 
 ---
 
-## 📂 Projets
+## 📊 Projets par compétences
 
-1. **[Étude des Représentations Médiatiques des Jeux Vidéo et leur Monétisation](projets/projet1.html)**
-2. **[Extraction de thématiques sur la Santé Mentale et Isolement](projets/projet2.html)**
-3. **[Analyse des Réseaux de la Noblesse Européenne](projets/projet3.html)**
-4. **[Étude des Trajectoires de Vie et Sociabilités](projets/projet4.html)**
+### **📈 Analyse de données et statistiques**
+- [Analyse statistique de la fréquence et des supports de jeux vidéo](projets/statistiques.html)
+- [Analyse des thématiques liées à la santé mentale en France et au Japon](projets/jamovi.html)
+
+### **📉 Visualisation de données**
+- [Visualisation des réseaux matrimoniaux de la noblesse européenne](projets/noblesse.html)
+- [Visualisation des trajectoires de réseaux personnels](projets/reseaux_personnels.html)
+- [Analyse des dynamiques spatiales et temporelles des réseaux](projets/panel_caen.html)
+
+### **🧠 Analyse textuelle et NLP**
+- [Étude de la monétisation des jeux vidéo à travers la presse](projets/topicmodeling.html)
+- [Comparaison des discours médiatiques sur la santé mentale](projets/jamovi.html)
+
+### **🔬 Sociologie des réseaux et des interactions**
+- [Étude des trajectoires de vie et des sociabilités](projets/reseaux_personnels.html)
+- [Dynamique des réseaux et mobilité sociale](projets/panel_caen.html)
+
+### **⚙️ Web Scraping et outils numériques**
+- [Extraction et analyse des données médiatiques sur les jeux vidéo](projets/topicmodeling.html)
 
 ---
