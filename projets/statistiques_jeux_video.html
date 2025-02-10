@@ -18,14 +18,14 @@
         img { width: 100%; max-width: 700px; display: block; margin: 20px auto; border-radius: 5px; }
         .highlight { font-weight: bold; color: #1E88E5; }
         table {
-            width: 100%;
+            width: 90%;
             margin: 20px auto;
             border-collapse: collapse;
-            font-size: 16px;
+            font-size: 14px;
         }
         th, td {
             border: 1px solid #ddd;
-            padding: 10px;
+            padding: 8px;
             text-align: center;
         }
         th {
@@ -33,7 +33,7 @@
             color: white;
         }
         .note {
-            font-size: 14px;
+            font-size: 12px;
             font-style: italic;
         }
     </style>
@@ -44,7 +44,7 @@
 
     <h2>🔎 Contexte et Objectifs</h2>
     <p>
-        Cette étude explore les <u> facteurs influençant la fréquence de jeu et le choix des supports de jeux vidéo </u> , 
+        Cette étude explore les <u>facteurs influençant la fréquence de jeu et le choix des supports de jeux vidéo</u>, 
         en fonction de variables sociodémographiques (<b>âge, genre, revenu, niveau d’études</b>).  
         L’objectif est d’identifier si certains groupes privilégient des supports spécifiques 
         (<b>téléphone, console, PC</b>) et si ces choix sont liés à des dynamiques économiques ou générationnelles.
@@ -59,6 +59,9 @@
 
     <h2>📊 Visualisations</h2>
     <p>Quelques représentations illustrant les tendances observées :</p>
+    
+    <!-- Tableau 1 : Régression linéaire -->
+    <h2>📊 Tableau 1 : Régression linéaire – fréquence de jeu</h2>
     <table>
         <tr>
             <th>Variable</th>
@@ -66,39 +69,18 @@
             <th>Erreur standard</th>
             <th>p</th>
         </tr>
-        <tr>
-            <td>Constante</td>
-            <td>2.1658</td>
-            <td>0.1799</td>
-            <td>***</td>
-        </tr>
-        <tr>
-            <td>Sexe (Homme - Femme)</td>
-            <td>0.1979</td>
-            <td>0.0694</td>
-            <td>**</td>
-        </tr>
-        <tr>
-            <td>Âge simplifié (18-34 ans - 60 ans et plus)</td>
-            <td>-0.0780</td>
-            <td>0.1112</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>Niveau Bac+5 - Niveau CAP/BEP</td>
-            <td>-0.4908</td>
-            <td>0.2358</td>
-            <td>*</td>
-        </tr>
-        <tr>
-            <td>R²</td>
-            <td>0.0229</td>
-            <td colspan="2"></td>
-        </tr>
+        <tr><td>Constante</td><td>2.1658</td><td>0.1799</td><td>***</td></tr>
+        <tr><td>Sexe (Homme - Femme)</td><td>0.1979</td><td>0.0694</td><td>**</td></tr>
+        <tr><td>Âge < 18 ans - 60 ans et plus</td><td>0.4082</td><td>0.6083</td><td></td></tr>
+        <tr><td>18-34 ans - 60 ans et plus</td><td>-0.0780</td><td>0.1112</td><td></td></tr>
+        <tr><td>35-59 ans - 60 ans et plus</td><td>-0.2227</td><td>0.1070</td><td>*</td></tr>
+        <tr><td>Niveau Bac+5 - Niveau CAP/BEP</td><td>-0.4908</td><td>0.2358</td><td>*</td></tr>
+        <tr><td>R²</td><td>0.0229</td><td colspan="2"></td></tr>
     </table>
     <p class="note">Note: * p<.05, ** p<.01, *** p<.001</p>
-        <p><i>Tableau 1 : Régression linéaire – fréquence de jeu.</i></p>
- 
+
+    <!-- Tableau 2 : Régression logistique -->
+    <h2>📊 Tableau 2 : Régression logistique – support de jeu (Ordinateur)</h2>
     <table>
         <tr>
             <th>Variable</th>
@@ -106,38 +88,16 @@
             <th>Erreur standard</th>
             <th>p</th>
         </tr>
-        <tr>
-            <td>Constante</td>
-            <td>0.5735</td>
-            <td>0.754</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>Sexe (Homme - Femme)</td>
-            <td>0.2408</td>
-            <td>0.263</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>Âge simplifié (18-34 ans - 60 ans et plus)</td>
-            <td>-1.6527</td>
-            <td>0.539</td>
-            <td>**</td>
-        </tr>
-        <tr>
-            <td>Niveau Bac+5 - Niveau CAP/BEP</td>
-            <td>1.5341</td>
-            <td>1.257</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>R²</td>
-            <td>0.0653</td>
-            <td colspan="2"></td>
-        </tr>
+        <tr><td>Constante</td><td>0.5735</td><td>0.754</td><td></td></tr>
+        <tr><td>Sexe (Homme - Femme)</td><td>0.2408</td><td>0.263</td><td></td></tr>
+        <tr><td>Âge < 18 ans - 60 ans et plus</td><td>-15.1245</td><td>882.744</td><td></td></tr>
+        <tr><td>18-34 ans - 60 ans et plus</td><td>-1.6527</td><td>0.539</td><td>**</td></tr>
+        <tr><td>35-59 ans - 60 ans et plus</td><td>-1.5824</td><td>0.535</td><td>**</td></tr>
+        <tr><td>Niveau Bac+5 - Niveau CAP/BEP</td><td>1.5341</td><td>1.257</td><td></td></tr>
+        <tr><td>R²</td><td>0.0653</td><td colspan="2"></td></tr>
     </table>
     <p class="note">Note: * p<.05, ** p<.01, *** p<.001</p>
-    <p><i>Tableau 2 : Régression logistique – support de jeu (Ordinateur).</i></p>
+
     <div class="container">
         <p><a href="../index.html">⬅️ Retour au portfolio</a></p>
     </div>
