@@ -42,7 +42,45 @@
 
     <h1>📊 Analyse statistique de la fréquence et des supports de jeux vidéo</h1>
 
-    <h2>📊 Tableau 5 : Régression logistique – support de jeu (Ordinateur)</h2>
+    <h2>🔎 Contexte et Objectifs</h2>
+    <p>
+        Cette étude explore les <u>facteurs influençant la fréquence de jeu et le choix des supports de jeux vidéo</u>, 
+        en fonction de variables sociodémographiques (<b>âge, genre, revenu, niveau d’études</b>).  
+        L’objectif est d’identifier si certains groupes privilégient des supports spécifiques 
+        (<b>téléphone, console, PC</b>) et si ces choix sont liés à des dynamiques économiques ou générationnelles.
+    </p>
+
+    <h2>🛠️ Méthodes et Outils</h2>
+    <ul>
+        <li>📊 <span class="highlight">Données :</span> issues de l’enquête <b>Ludespace</b> (N = 1641 individus).</li>
+        <li>📈 <span class="highlight">Méthodes :</span> Modèles linéaires, régressions logistiques, tests Khi² et ANOVA.</li>
+        <li>🖥️ <span class="highlight">Logiciels :</span> <b>R, Jamovi</b>.</li>
+    </ul>
+
+    <h2>📊 Tableau 1 : Régression linéaire – fréquence de jeu</h2>
+    <table>
+        <tr>
+            <th>Variable</th>
+            <th>Coefficient</th>
+            <th>Erreur standard</th>
+            <th>p</th>
+        </tr>
+        <tr><td>Constante</td><td>2.1658</td><td>0.1799</td><td>***</td></tr>
+        <tr><td>Sexe (Homme - Femme)</td><td>0.1979</td><td>0.0694</td><td>**</td></tr>
+        <tr><td>Âge &lt;18 ans - 60 ans et plus</td><td>0.4082</td><td>0.6083</td><td></td></tr>
+        <tr><td>18-34 ans - 60 ans et plus</td><td>-0.0780</td><td>0.1112</td><td></td></tr>
+        <tr><td>35-59 ans - 60 ans et plus</td><td>-0.2227</td><td>0.1070</td><td>*</td></tr>
+        <tr><td>Niveau Bac à Bac+2 - Niveau CAP/BEP</td><td>-0.0550</td><td>0.0856</td><td></td></tr>
+        <tr><td>Niveau Bac+3 à Bac+5 - Niveau CAP/BEP</td><td>-0.1307</td><td>0.0985</td><td></td></tr>
+        <tr><td>Niveau supérieur à Bac+5 - Niveau CAP/BEP</td><td>-0.4908</td><td>0.2358</td><td>*</td></tr>
+        <tr><td>Revenu 1000-2000€ - &lt;1000€</td><td>0.1852</td><td>0.1601</td><td></td></tr>
+        <tr><td>Revenu 2000-4500€ - &lt;1000€</td><td>0.0739</td><td>0.1565</td><td></td></tr>
+        <tr><td>Revenu >4500€ - &lt;1000€</td><td>0.1442</td><td>0.1806</td><td></td></tr>
+        <tr><td>R²</td><td>0.0229</td><td colspan="2"></td></tr>
+    </table>
+    <p class="note">Note: * p<.05, ** p<.01, *** p<.001</p>
+
+    <h2>📊 Tableau 2 : Régression logistique – support de jeu (Ordinateur)</h2>
     <table>
         <tr>
             <th>Variable</th>
@@ -73,6 +111,7 @@
         <tr><td>R²</td><td>0.0653</td><td colspan="2"></td></tr>
     </table>
     <p class="note">Note: * p<.05, ** p<.01, *** p<.001</p>
+
 
     <div class="container">
         <p><a href="../index.html">⬅️ Retour au portfolio</a></p>
