@@ -48,13 +48,45 @@
     <p>Quelques représentations illustrant les transformations des réseaux :</p>
 
     <div class="container">
-        <img src="../mesdocuments/visualisation_familles.png" alt="Visualisation des mariages nobles">
-        <p><i>Graphique 1 : Représentation des alliances matrimoniales entre grandes familles nobles.</i></p>
+        <img src="../mesdocuments/visualisation_familles.png" alt="Visualisation des mariages nobles en 1788">
+        <p><i>Graphique 1 : Représentation des alliances matrimoniales entre grandes familles nobles en 1788.</i></p>
 
         <img src="../mesdocuments/evolution_reseaux.png" alt="Évolution des réseaux matrimoniaux">
         <p><i>Graphique 2 : Évolution des réseaux matrimoniaux entre l’Ancien Régime et le XIXe siècle.</i></p>
     </div>
 
+import matplotlib.pyplot as plt
+import pandas as pd
+
+# Données du tableau
+data = {
+    "Année": [1788, 1799, 1820],
+    "Odd-Ratio": [1.350288600, 2.174251577, 1.453934151]
+}
+
+# Création du DataFrame
+df = pd.DataFrame(data)
+
+# Création du graphique
+plt.figure(figsize=(8, 5))
+plt.bar(df["Année"], df["Odd-Ratio"], color=["#1E88E5", "#D81B60", "#FFC107"])
+
+# Ajout de labels et titre
+plt.xlabel("Année")
+plt.ylabel("Odd-Ratio")
+plt.title("Évolution de l’Odd-Ratio au fil du temps")
+plt.xticks(df["Année"])  # Pour s'assurer que chaque année est bien affichée
+plt.ylim(0, max(df["Odd-Ratio"]) + 0.5)  # Ajustement de l'échelle
+
+# Ajout des valeurs sur les barres
+for index, value in enumerate(df["Odd-Ratio"]):
+    plt.text(df["Année"][index], value + 0.1, f"{value:.2f}", ha='center', fontsize=12, fontweight='bold')
+
+# Affichage du graphique
+plt.grid(axis="y", linestyle="--", alpha=0.7)
+plt.show()
+
+    
     <h2>💡 Avis et Réflexions</h2>
     <p>
         Cette étude met en évidence <b>l’évolution des stratégies matrimoniales au fil du temps</b>.  
