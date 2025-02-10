@@ -29,32 +29,49 @@
         L’objectif est d’analyser comment les changements d’environnement (déménagements, mutations professionnelles, mobilités étudiantes) 
         influencent la structure des réseaux sociaux et les interactions entre individus.
     </p>
-
+L’étude sur le Panel de Caen est une enquête longitudinale
     <h2>🛠️ Méthodes et Outils</h2>
     <ul>
-        <li>📊 <span class="highlight">Données :</span> issues du panel longitudinal <b>"Caen Mobility Panel"</b>, collectées sur plusieurs années.</li>
+        <li>📊 <span class="highlight">Données :</span> issues d'une étude sur le Panel de Caen, collectées sur plusieurs années.</li>
         <li>📈 <span class="highlight">Méthodes :</span> Analyse des réseaux dynamiques, mesures de centralité et densité des interactions.</li>
         <li>🖥️ <span class="highlight">Logiciels :</span> <b>R</b> (Packages <code>igraph</code> et <code>sf</code> pour l’analyse spatiale).</li>
-    </ul>
-
-    <h2>📈 Résultats Clés</h2>
-    <ul>
-        <li>📍 <b>Les déménagements influencent la structure des réseaux</b> : certaines relations se renforcent tandis que d’autres disparaissent.</li>
-        <li>⏳ <b>Une forte persistance des liens forts</b>, malgré des distances croissantes entre individus.</li>
-        <li>🌍 <b>L’ancrage local diminue avec le temps</b>, favorisant des réseaux plus diffus et internationalisés.</li>
     </ul>
 
     <h2>📊 Visualisations</h2>
     <p>Quelques représentations illustrant les évolutions des réseaux :</p>
 
-    <div class="container">
-        <img src="../mesdocuments/evolution_reseaux_mobilite.png" alt="Évolution des réseaux sociaux en fonction de la mobilité">
-        <p><i>Graphique 1 : Cartographie de l’évolution des réseaux sociaux avant et après un déménagement.</i></p>
+<div class="container">
+    <div class="image-row">
+        <img src="../mesdocuments/régression_linéaire_panel_caen.png" alt="Régression linéaire">
+        <img src="../mesdocuments/cluster_panel_caen.png" alt="Cluster">
+    </div>
+    <p><i>Graphique 1 : Analyse des dynamiques des réseaux du Panel de Caen – Régression linéaire et cluster.</i></p>
+</div>
 
-        <img src="../mesdocuments/reseaux_centralite_mobilite.png" alt="Centralité des acteurs selon leur mobilité">
-        <p><i>Graphique 2 : Comparaison des centralités des individus en fonction de leur mobilité résidentielle.</i></p>
+<style>
+    .image-row {
+        display: flex;
+        justify-content: center;
+        gap: 20px; /* Espacement entre les images */
+    }
+    .image-row img {
+        width: 45%; /* Ajuster la taille pour qu'elles soient côte à côte */
+        max-width: 500px;
+        border-radius: 5px; /* Coins arrondis pour une meilleure esthétique */
+    }
+</style>
+
+        <img src="../mesdocuments/simon_all_waves_panel_caen.png" alt="Réseaux de Simon lors des vagues A, B, C et D">
+        <p><i>Graphique 2 : Représentation des réseaux de Simon lors des vagues A, B, C et D.</i></p>
     </div>
 
+     <h2>📈 Résultats Clés</h2>
+    <ul>
+        <li>📍 <b>Les déménagements influencent la structure des réseaux</b> : certaines relations se renforcent tandis que d’autres disparaissent.</li>
+        <li>⏳ <b>Une forte persistance des liens forts</b>, malgré des distances croissantes entre individus.</li>
+        <li>🌍 <b>L’ancrage local diminue avec le temps</b>, favorisant des réseaux plus diffus et internationalisés.</li>
+    </ul>
+    
     <h2>💡 Avis et Réflexions</h2>
     <p>
         Cette étude met en évidence <b>l’impact de la mobilité sur la transformation des réseaux sociaux</b>.  
