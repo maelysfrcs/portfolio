@@ -25,7 +25,7 @@
         }
         th, td {
             border: 1px solid #ddd;
-            padding: 8px;
+            padding: 6px;
             text-align: center;
         }
         th {
@@ -57,10 +57,6 @@
         <li>🖥️ <span class="highlight">Logiciels :</span> <b>R, Jamovi</b>.</li>
     </ul>
 
-    <h2>📊 Visualisations</h2>
-    <p>Quelques représentations illustrant les tendances observées :</p>
-    
-    <!-- Tableau 1 : Régression linéaire -->
     <h2>📊 Tableau 1 : Régression linéaire – fréquence de jeu</h2>
     <table>
         <tr>
@@ -71,15 +67,19 @@
         </tr>
         <tr><td>Constante</td><td>2.1658</td><td>0.1799</td><td>***</td></tr>
         <tr><td>Sexe (Homme - Femme)</td><td>0.1979</td><td>0.0694</td><td>**</td></tr>
-        <tr><td>Âge < 18 ans - 60 ans et plus</td><td>0.4082</td><td>0.6083</td><td></td></tr>
+        <tr><td>Âge &lt;18 ans - 60 ans et plus</td><td>0.4082</td><td>0.6083</td><td></td></tr>
         <tr><td>18-34 ans - 60 ans et plus</td><td>-0.0780</td><td>0.1112</td><td></td></tr>
         <tr><td>35-59 ans - 60 ans et plus</td><td>-0.2227</td><td>0.1070</td><td>*</td></tr>
-        <tr><td>Niveau Bac+5 - Niveau CAP/BEP</td><td>-0.4908</td><td>0.2358</td><td>*</td></tr>
+        <tr><td>Niveau Bac à Bac+2 - Niveau CAP/BEP</td><td>-0.0550</td><td>0.0856</td><td></td></tr>
+        <tr><td>Niveau Bac+3 à Bac+5 - Niveau CAP/BEP</td><td>-0.1307</td><td>0.0985</td><td></td></tr>
+        <tr><td>Niveau supérieur à Bac+5 - Niveau CAP/BEP</td><td>-0.4908</td><td>0.2358</td><td>*</td></tr>
+        <tr><td>Revenu 1000-2000€ - &lt;1000€</td><td>0.1852</td><td>0.1601</td><td></td></tr>
+        <tr><td>Revenu 2000-4500€ - &lt;1000€</td><td>0.0739</td><td>0.1565</td><td></td></tr>
+        <tr><td>Revenu >4500€ - &lt;1000€</td><td>0.1442</td><td>0.1806</td><td></td></tr>
         <tr><td>R²</td><td>0.0229</td><td colspan="2"></td></tr>
     </table>
     <p class="note">Note: * p<.05, ** p<.01, *** p<.001</p>
 
-    <!-- Tableau 2 : Régression logistique -->
     <h2>📊 Tableau 2 : Régression logistique – support de jeu (Ordinateur)</h2>
     <table>
         <tr>
@@ -90,10 +90,12 @@
         </tr>
         <tr><td>Constante</td><td>0.5735</td><td>0.754</td><td></td></tr>
         <tr><td>Sexe (Homme - Femme)</td><td>0.2408</td><td>0.263</td><td></td></tr>
-        <tr><td>Âge < 18 ans - 60 ans et plus</td><td>-15.1245</td><td>882.744</td><td></td></tr>
+        <tr><td>Âge &lt;18 ans - 60 ans et plus</td><td>-15.1245</td><td>882.744</td><td></td></tr>
         <tr><td>18-34 ans - 60 ans et plus</td><td>-1.6527</td><td>0.539</td><td>**</td></tr>
         <tr><td>35-59 ans - 60 ans et plus</td><td>-1.5824</td><td>0.535</td><td>**</td></tr>
-        <tr><td>Niveau Bac+5 - Niveau CAP/BEP</td><td>1.5341</td><td>1.257</td><td></td></tr>
+        <tr><td>Niveau Bac à Bac+2 - Niveau CAP/BEP</td><td>0.7975</td><td>0.325</td><td>*</td></tr>
+        <tr><td>Niveau Bac+3 à Bac+5 - Niveau CAP/BEP</td><td>1.1747</td><td>0.365</td><td>***</td></tr>
+        <tr><td>Niveau supérieur à Bac+5 - Niveau CAP/BEP</td><td>1.5341</td><td>1.257</td><td></td></tr>
         <tr><td>R²</td><td>0.0653</td><td colspan="2"></td></tr>
     </table>
     <p class="note">Note: * p<.05, ** p<.01, *** p<.001</p>
