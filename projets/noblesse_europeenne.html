@@ -8,14 +8,14 @@
         body { font-family: Arial, sans-serif; margin: 40px auto; max-width: 900px; line-height: 1.6; color: #333; }
         h1 { color: #1E88E5; text-align: center; font-size: 26px; margin-bottom: 20px; }
         h2 { color: #444; font-size: 22px; margin-top: 25px; border-bottom: 2px solid #1E88E5; padding-bottom: 5px; }
-        p { font-size: 18px; margin-bottom: 15px; }
+        p { font-size: 18px; margin-bottom: 15px; text-align: left; } /* Alignement du texte sur la gauche */
         ul { font-size: 18px; }
         .button {
             display: inline-block; background-color: #4CAF50; color: white; padding: 10px 15px;
             text-decoration: none; border-radius: 5px; margin-top: 10px; font-size: 18px;
         }
         .container { text-align: center; }
-        img { width: 100%; max-width: 700px; display: block; margin: 20px auto; border-radius: 5px; }
+        img { width: 80%; max-width: 500px; display: block; margin: 20px auto; border-radius: 5px; } /* Réduction du premier graphique */
         .highlight { font-weight: bold; color: #1E88E5; }
         table {
             width: 80%;
@@ -31,6 +31,11 @@
         th {
             background-color: #1E88E5;
             color: white;
+        }
+        .left-text {
+            text-align: left;
+            margin: 20px auto;
+            max-width: 800px;
         }
     </style>
 </head>
@@ -86,11 +91,14 @@
         </tr>
     </table>
          <p><i>Tableau : Évolution de la tendance aux mariages intrafamiliaux (Odd-Ratio) entre 1788 et 1820.</i></p>
-         <p>
-             L’évolution des Odd-Ratios indique une <b>forte montée de l’endogamie</b> en 1799, suivie d’un <b>déclin progressif</b> en 1820, mais sans revenir au niveau de 1788.
-             Ce pic en 1799 suggère que les familles nobles ont cherché à <b>préserver leur statut</b> en resserrant leurs alliances matrimoniales à une période d’incertitude politique et sociale.
-             Toutefois, dès 1820, la noblesse semble <b>s’ouvrir davantage à des alliances extérieures</b>, ce qui pourrait être le signe d’une <b>adaptation à un nouvel ordre social</b> et d’une acceptation progressive de l’<b>intégration de nouvelles élites</b>.
-         </p>
+         
+         <div class="left-text">
+            <p>
+                L’évolution des Odd-Ratios indique une <b>forte montée de l’endogamie</b> en 1799, suivie d’un <b>déclin progressif</b> en 1820, mais sans revenir au niveau de 1788.
+                Ce pic en 1799 suggère que les familles nobles ont cherché à <b>préserver leur statut</b> en resserrant leurs alliances matrimoniales à une période d’incertitude politique et sociale.
+                Toutefois, dès 1820, la noblesse semble <b>s’ouvrir davantage à des alliances extérieures</b>, ce qui pourrait être le signe d’une <b>adaptation à un nouvel ordre social</b> et d’une acceptation progressive de l’<b>intégration de nouvelles élites</b>.
+            </p>
+         </div>
 
     </div>
     
