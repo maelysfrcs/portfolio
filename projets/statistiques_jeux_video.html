@@ -17,6 +17,25 @@
         .container { text-align: center; }
         img { width: 100%; max-width: 700px; display: block; margin: 20px auto; border-radius: 5px; }
         .highlight { font-weight: bold; color: #1E88E5; }
+        table {
+            width: 100%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            font-size: 16px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #1E88E5;
+            color: white;
+        }
+        .note {
+            font-size: 14px;
+            font-style: italic;
+        }
     </style>
 </head>
 <body>
@@ -38,33 +57,87 @@
         <li>🖥️ <span class="highlight">Logiciels :</span> <b>R, Jamovi</b>.</li>
     </ul>
 
-    <h2>📈 Résultats Clés</h2>
-    <ul>
-        <li>👥 Le <b>genre</b> et l’<b>âge</b> sont des facteurs <b>déterminants</b> : les hommes et les jeunes jouent davantage.</li>
-        <li>💰 <b>Aucun impact significatif</b> du <b>revenu</b> ou du <b>niveau d’études</b> sur la fréquence de jeu.</li>
-        <li>📱 <b>Le téléphone</b> est le support préféré des <b>18-34 ans</b>, alors que les <b>plus âgés</b> privilégient l’<b>ordinateur</b>.</li>
-    </ul>
-
     <h2>📊 Visualisations</h2>
     <p>Quelques représentations illustrant les tendances observées :</p>
-
-    <div class="container">
-        <img src="../mesdocuments/statistiques_frequence_jeu.png" alt="Fréquence de jeu selon l'âge et le genre">
-        <p><i>Graphique 1 : Fréquence de jeu selon l'âge et le genre.</i></p>
-
-        <img src="../mesdocuments/statistiques_supports_jeu.png" alt="Répartition des supports de jeu">
-        <p><i>Graphique 2 : Répartition des supports de jeu par catégorie sociodémographique.</i></p>
-    </div>
-
-    <h2>💡 Avis et Réflexions</h2>
-    <p>
-        Cette analyse met en évidence l’<b>impact des facteurs générationnels et culturels</b> dans la consommation des jeux vidéo, 
-        bien plus que des critères économiques. Contrairement aux hypothèses énoncées, le revenu et le niveau d’études ne jouent qu’un rôle mineur, 
-        ce qui montre que les jeux vidéo sont devenus une <b>pratique culturelle accessible à tous</b>.  
-        Une exploration complémentaire pourrait examiner <b>les préférences de genres de jeux</b> et 
-        <b>les motivations derrière le choix du support</b>.
-    </p>
-
+    <table>
+        <tr>
+            <th>Variable</th>
+            <th>Coefficient</th>
+            <th>Erreur standard</th>
+            <th>p</th>
+        </tr>
+        <tr>
+            <td>Constante</td>
+            <td>2.1658</td>
+            <td>0.1799</td>
+            <td>***</td>
+        </tr>
+        <tr>
+            <td>Sexe (Homme - Femme)</td>
+            <td>0.1979</td>
+            <td>0.0694</td>
+            <td>**</td>
+        </tr>
+        <tr>
+            <td>Âge simplifié (18-34 ans - 60 ans et plus)</td>
+            <td>-0.0780</td>
+            <td>0.1112</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Niveau Bac+5 - Niveau CAP/BEP</td>
+            <td>-0.4908</td>
+            <td>0.2358</td>
+            <td>*</td>
+        </tr>
+        <tr>
+            <td>R²</td>
+            <td>0.0229</td>
+            <td colspan="2"></td>
+        </tr>
+    </table>
+    <p class="note">Note: * p<.05, ** p<.01, *** p<.001</p>
+        <p><i>Tableau 1 : Régression linéaire – fréquence de jeu.</i></p>
+ 
+    <table>
+        <tr>
+            <th>Variable</th>
+            <th>Coefficient</th>
+            <th>Erreur standard</th>
+            <th>p</th>
+        </tr>
+        <tr>
+            <td>Constante</td>
+            <td>0.5735</td>
+            <td>0.754</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Sexe (Homme - Femme)</td>
+            <td>0.2408</td>
+            <td>0.263</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Âge simplifié (18-34 ans - 60 ans et plus)</td>
+            <td>-1.6527</td>
+            <td>0.539</td>
+            <td>**</td>
+        </tr>
+        <tr>
+            <td>Niveau Bac+5 - Niveau CAP/BEP</td>
+            <td>1.5341</td>
+            <td>1.257</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>R²</td>
+            <td>0.0653</td>
+            <td colspan="2"></td>
+        </tr>
+    </table>
+    <p class="note">Note: * p<.05, ** p<.01, *** p<.001</p>
+    <p><i>Tableau 2 : Régression logistique – support de jeu (Ordinateur).</i></p>
     <div class="container">
         <p><a href="../index.html">⬅️ Retour au portfolio</a></p>
     </div>
