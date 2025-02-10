@@ -106,7 +106,6 @@
 
 ### **📉 Visualisation de données**
 - [Visualisation des réseaux matrimoniaux de la noblesse européenne](projets/noblesse_europeenne.html)
-- [Visualisation des trajectoires de réseaux personnels](projets/reseaux_personnels.html)
 - [Analyse des dynamiques spatiales et temporelles des réseaux](projets/panel_caen.html)
 
 ### **🧠 Analyse textuelle et NLP**
@@ -115,7 +114,6 @@
 
 ### **🔬 Sociologie des réseaux et des interactions**
 - [Analyse des dynamiques spatiales et temporelles des réseaux](projets/panel_caen.html)
-- [Visualisation des trajectoires de réseaux personnels](projets/reseaux_personnels.html)
 
 ### **⚙️ Web Scraping et outils numériques**
 - [Étude de la monétisation des jeux vidéo à travers la presse](projets/europresse_jeux_videos.html)
