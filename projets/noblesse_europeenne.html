@@ -17,7 +17,21 @@
         .container { text-align: center; }
         img { width: 100%; max-width: 700px; display: block; margin: 20px auto; border-radius: 5px; }
         .highlight { font-weight: bold; color: #1E88E5; }
-        canvas { margin: 20px auto; display: block; }
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            font-size: 18px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+        th {
+            background-color: #1E88E5;
+            color: white;
+        }
     </style>
 </head>
 <body>
@@ -56,12 +70,35 @@
         <p><i>Graphique 2 : Évolution des réseaux matrimoniaux entre l’Ancien Régime et le XIXe siècle.</i></p>
     </div>
 
-    <h2>📊 Graphique : Odd-Ratio des Réseaux Matrimoniaux</h2>
-    <p>Ce graphique illustre l'évolution de l'Odd-Ratio des alliances matrimoniales entre groupes avant, pendant et après la Révolution.</p>
-    
-    <div class="container">
-        <canvas id="oddRatioChart"></canvas>
-    </div>
+    <h2>📊 Tableau des Odd-Ratios des Réseaux Matrimoniaux</h2>
+    <p>Ce tableau présente l’évolution des **probabilités de mariage entre groupes** et l’**Odd-Ratio** des alliances matrimoniales.</p>
+
+    <table>
+        <tr>
+            <th>Année</th>
+            <th>Probabilité InGroup</th>
+            <th>Probabilité OutGroup</th>
+            <th>Odd-Ratio</th>
+        </tr>
+        <tr>
+            <td>1788</td>
+            <td>0.0100</td>
+            <td>0.0074</td>
+            <td>1.3503</td>
+        </tr>
+        <tr>
+            <td>1799</td>
+            <td>0.0138</td>
+            <td>0.0064</td>
+            <td>2.1743</td>
+        </tr>
+        <tr>
+            <td>1820</td>
+            <td>0.0071</td>
+            <td>0.0049</td>
+            <td>1.4539</td>
+        </tr>
+    </table>
 
     <h2>💡 Avis et Réflexions</h2>
     <p>
@@ -74,43 +111,6 @@
     <div class="container">
         <p><a href="../index.html">⬅️ Retour au portfolio</a></p>
     </div>
-
-    <!-- Ajout de la bibliothèque Chart.js -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script>
-        var ctx = document.getElementById('oddRatioChart').getContext('2d');
-        var oddRatioChart = new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: ['1788', '1799', '1820'],
-                datasets: [{
-                    label: 'Odd-Ratio des mariages nobles',
-                    data: [1.3503, 2.1743, 1.4539],
-                    backgroundColor: ['#1E88E5', '#4CAF50', '#E53935'],
-                    borderColor: ['#1565C0', '#388E3C', '#C62828'],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                responsive: true,
-                scales: {
-                    y: {
-                        beginAtZero: true,
-                        title: {
-                            display: true,
-                            text: 'Odd-Ratio'
-                        }
-                    },
-                    x: {
-                        title: {
-                            display: true,
-                            text: 'Années'
-                        }
-                    }
-                }
-            }
-        });
-    </script>
 
 </body>
 </html>
