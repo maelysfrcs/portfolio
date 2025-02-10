@@ -18,14 +18,14 @@
         img { width: 100%; max-width: 700px; display: block; margin: 20px auto; border-radius: 5px; }
         .highlight { font-weight: bold; color: #1E88E5; }
         table {
-            width: 90%;
+            width: 100%;
             margin: 20px auto;
             border-collapse: collapse;
-            font-size: 14px;
+            font-size: 16px;
         }
         th, td {
             border: 1px solid #ddd;
-            padding: 6px;
+            padding: 10px;
             text-align: center;
         }
         th {
@@ -33,7 +33,7 @@
             color: white;
         }
         .note {
-            font-size: 12px;
+            font-size: 14px;
             font-style: italic;
         }
     </style>
@@ -44,7 +44,7 @@
 
     <h2>🔎 Contexte et Objectifs</h2>
     <p>
-        Cette étude explore les <u>facteurs influençant la fréquence de jeu et le choix des supports de jeux vidéo</u>, 
+        Cette étude explore les <u> facteurs influençant la fréquence de jeu et le choix des supports de jeux vidéo </u> , 
         en fonction de variables sociodémographiques (<b>âge, genre, revenu, niveau d’études</b>).  
         L’objectif est d’identifier si certains groupes privilégient des supports spécifiques 
         (<b>téléphone, console, PC</b>) et si ces choix sont liés à des dynamiques économiques ou générationnelles.
@@ -57,7 +57,8 @@
         <li>🖥️ <span class="highlight">Logiciels :</span> <b>R, Jamovi</b>.</li>
     </ul>
 
-    <h2>📊 Tableau 1 : Régression linéaire – fréquence de jeu</h2>
+    <h2>📊 Visualisations</h2>
+    <p>Quelques représentations illustrant les tendances observées :</p>
     <table>
         <tr>
             <th>Variable</th>
@@ -79,8 +80,8 @@
         <tr><td>R²</td><td>0.0229</td><td colspan="2"></td></tr>
     </table>
     <p class="note">Note: * p<.05, ** p<.01, *** p<.001</p>
+    <p><i>Tableau 1 : Régression linéaire – fréquence de jeu.</i></p>
 
-    <h2>📊 Tableau 2 : Régression logistique – support de jeu (Ordinateur)</h2>
     <table>
         <tr>
             <th>Variable</th>
@@ -111,7 +112,7 @@
         <tr><td>R²</td><td>0.0653</td><td colspan="2"></td></tr>
     </table>
     <p class="note">Note: * p<.05, ** p<.01, *** p<.001</p>
-
+    <p><i>Tableau 2 : Régression logistique – support de jeu (Ordinateur).</i></p>
 
     <div class="container">
         <p><a href="../index.html">⬅️ Retour au portfolio</a></p>
