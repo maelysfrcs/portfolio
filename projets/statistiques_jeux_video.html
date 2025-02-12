@@ -68,21 +68,40 @@
         <th style="padding: 4px; border: 1px solid #ddd;">p</th>
     </tr>
     <tr><td style="padding: 4px; border: 1px solid #ddd;">Constante</td><td>2.1658</td><td>0.1799</td><td>***</td></tr>
+    <tr><td colspan="4" style="background-color: #f2f2f2;"><b>Q42 - Genre</b></td></tr>
     <tr><td style="padding: 4px; border: 1px solid #ddd;">Homme - Femme</td><td>0.1979</td><td>0.0694</td><td>**</td></tr>
+    
+    <tr><td colspan="4" style="background-color: #f2f2f2;"><b>Q44 - Âge simplifié</b></td></tr>
     <tr><td style="padding: 4px; border: 1px solid #ddd;">&lt;18 ans - 60 ans et plus</td><td>0.4082</td><td>0.6083</td><td></td></tr>
     <tr><td style="padding: 4px; border: 1px solid #ddd;">18-34 ans - 60 ans et plus</td><td>-0.0780</td><td>0.1112</td><td></td></tr>
     <tr><td style="padding: 4px; border: 1px solid #ddd;">35-59 ans - 60 ans et plus</td><td>-0.2227</td><td>0.1070</td><td>*</td></tr>
+    
+    <tr><td colspan="4" style="background-color: #f2f2f2;"><b>Q218 - Niveau d’études simplifié</b></td></tr>
     <tr><td style="padding: 4px; border: 1px solid #ddd;">Niveau Bac à Bac+2 - CAP/BEP</td><td>-0.0550</td><td>0.0856</td><td></td></tr>
     <tr><td style="padding: 4px; border: 1px solid #ddd;">Niveau Bac+3 à Bac+5 - CAP/BEP</td><td>-0.1307</td><td>0.0985</td><td></td></tr>
     <tr><td style="padding: 4px; border: 1px solid #ddd;">Niveau supérieur à Bac+5 - CAP/BEP</td><td>-0.4908</td><td>0.2358</td><td>*</td></tr>
+    
+    <tr><td colspan="4" style="background-color: #f2f2f2;"><b>Q72 - Revenu simplifié</b></td></tr>
     <tr><td style="padding: 4px; border: 1px solid #ddd;">Revenu 1000-2000€ - &lt;1000€</td><td>0.1852</td><td>0.1601</td><td></td></tr>
     <tr><td style="padding: 4px; border: 1px solid #ddd;">Revenu 2000-4500€ - &lt;1000€</td><td>0.0739</td><td>0.1565</td><td></td></tr>
     <tr><td style="padding: 4px; border: 1px solid #ddd;">Revenu &gt;4500€ - &lt;1000€</td><td>0.1442</td><td>0.1806</td><td></td></tr>
+    
     <tr><td style="padding: 4px; border: 1px solid #ddd;">R²</td><td>0.0229</td><td colspan="2"></td></tr>
 </table>
 
     <p class="note">Note: * p<.05, ** p<.01, *** p<.001</p>
 
+<p><b>📊 Interprétation :</b></p>
+<p style="font-size: 14px;">
+    Ce modèle de régression linéaire met en évidence plusieurs facteurs influençant la <b>fréquence de jeu</b>.  
+    <ul style="font-size: 14px;">
+        <li>📌 <b>Le sexe est un facteur déterminant</b> : les hommes jouent plus fréquemment que les femmes (<b>p < 0.01</b>).</li>
+        <li>📌 <b>L’âge joue un rôle modéré</b> : les 35-59 ans jouent moins que les plus de 60 ans, avec un effet significatif (<b>p < 0.05</b>).</li>
+        <li>📌 <b>Le niveau d’études semble avoir un impact</b>, notamment les individus ayant un niveau supérieur à Bac+5, qui ont une fréquence de jeu légèrement plus faible.</li>
+        <li>📌 <b>Le revenu n’apparaît pas comme un facteur significatif</b>, indiquant que la pratique des jeux vidéo pourrait être indépendante des contraintes économiques.</li>
+    </ul>
+</p>
+        
     <p><i>Tableau 2 : Régression logistique – support de jeu (Ordinateur).</i></p>
 <table style="width: 70%; font-size: 12px; border-collapse: collapse; margin: 10px auto;">
     <tr style="background-color: #1E88E5; color: white; font-size: 12px;">
@@ -93,7 +112,7 @@
     </tr>
     <tr><td style="padding: 4px; border: 1px solid #ddd;">Constante</td><td>0.5735</td><td>0.754</td><td></td></tr>
 
-    <tr><td colspan="4" style="background-color: #f2f2f2;"><b>Q42 - Sexe</b></td></tr>
+    <tr><td colspan="4" style="background-color: #f2f2f2;"><b>Q42 - Genre</b></td></tr>
     <tr><td style="padding: 4px; border: 1px solid #ddd;">Homme – Femme</td><td>0.2408</td><td>0.263</td><td></td></tr>
 
     <tr><td colspan="4" style="background-color: #f2f2f2;"><b>Q44 - Âge simplifié</b></td></tr>
@@ -115,6 +134,16 @@
 </table>
     <p class="note">Note: * p<.05, ** p<.01, *** p<.001</p>
 
+<p><b>💻 Interprétation :</b></p>
+<p style="font-size: 14px;">
+    Cette régression logistique analyse les facteurs influençant la <b>préférence pour l’ordinateur comme support de jeu</b>.  
+    <ul style="font-size: 14px;">
+        <li>📌 <b>L’âge a un impact important</b> : les individus de 18-34 ans et 35-59 ans utilisent significativement moins l’ordinateur comme support principal par rapport aux plus de 60 ans (<b>p < 0.01</b>).</li>
+        <li>📌 <b>Le niveau d’études joue un rôle clé</b> : les personnes avec un niveau Bac+3 à Bac+5 ont une probabilité plus élevée d’utiliser l’ordinateur pour jouer (<b>p < 0.001</b>).</li>
+        <li>📌 <b>Le revenu ne semble pas être un facteur déterminant</b>, aucun des coefficients liés à cette variable n'étant statistiquement significatif.</li>
+    </ul>
+</p>
+        
     <div class="container">
         <p><a href="../index.html">⬅️ Retour au portfolio</a></p>
     </div>
