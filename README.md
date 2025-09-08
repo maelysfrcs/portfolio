@@ -1,4 +1,4 @@
-# À la recherche d'un stage de Social Data Analyst
+# À la recherche d'un emploi de Social Data Analyst
 
 <html lang="fr">
 <head>
