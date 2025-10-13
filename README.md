@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -17,23 +16,20 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+            /* CORRECTION MARGE NOM/TITRE: Pousser tout le contenu vers le bas */
+            padding-top: 50px; 
         }
 
-        /* NOUVEAU CONTENEUR pour le contenu généré par l'utilisateur */
-        /* Ceci devrait créer la marge en haut nécessaire (surtout si le titre Jekyll est collé) */
-        #page-content {
-            padding-top: 50px; /* Augmentation de l'espace au-dessus du menu d'onglet */
-            flex-grow: 1; /* Permet au contenu de s'étendre et de pousser le footer vers le bas */
-        }
-        
         /* --- Style du Menu de Navigation (Onglets) --- */
         .nav-links {
             display: flex;
-            justify-content: flex-end; 
-            gap: 0; 
-            margin-right: 50px; 
+            justify-content: flex-end;
+            gap: 0;
+            /* Réglage de la marge pour l'alignement visuel */
+            margin-right: 50px; 
         }
 
+        /* NOUVEAU STYLE: Liens de navigation avec aspect d'onglet/cadre */
         .nav-link {
             font-size: 17px;
             font-weight: 600;
@@ -61,120 +57,122 @@
         
         .nav-link.active {
             color: #0077b5;
-            background-color: #f4f4f4; 
+            background-color: #f4f4f4;
             border-color: #f4f4f4;
-            /* Souligne l'onglet actif avec une ligne fine */
-            border-top: 2px solid #0077b5; 
         }
 
-        /* --- Style du Contenu Principal (Bouton Central) --- */
-        .main-content {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
+        /* --- Styles des Boutons de Contact (Footer) --- */
+        
+        .button {
+            display: inline-block;
+            /* Augmentation du padding horizontal pour que les boutons soient plus larges */
+            padding: 12px 24px; 
+            font-size: 16px; /* Texte légèrement plus grand */
+            font-weight: bold;
             text-align: center;
-            padding: 20px;
-        }
-
-        .main-button {
-            background-color: #0077b5;
-            color: white;
-            padding: 20px 40px;
-            font-size: 24px;
-            border-radius: 8px;
             text-decoration: none;
-            transition: background-color 0.3s ease;
-            margin-top: 20px;
+            border-radius: 8px; /* Coins plus arrondis pour un look moderne */
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        /* Harmonisation des couleurs du pied de page */
+        /* LinkedIn: Conservé */
+        .button.linkedin {
+            background-color: #0077b5; 
+            color: white;
         }
 
-        .main-button:hover {
-            background-color: #005f84;
+        .button.linkedin:hover {
+            background-color: #005f84; 
         }
 
-        .welcome-title {
-            font-size: 38px;
-            margin-bottom: 0;
-            font-weight: 300;
+        /* CV: Nouveau bleu-gris pour l'harmonie */
+        .button.cv {
+            background-color: #6c757d; 
+            color: white;
+        }
+
+        .button.cv:hover {
+            background-color: #5a6268; 
+        }
+
+        /* Email: Nouveau bleu clair pour l'harmonie */
+        .button.email {
+            background-color: #17a2b8; 
+            color: white;
+        }
+
+        .button.email:hover {
+            background-color: #138496; 
+        }
+        
+        .button i {
+            margin-right: 8px;
         }
 
         /* --- Style du Pied de Page (Footer) --- */
         .footer {
-            /* Le padding horizontal est retiré */
-            padding: 20px 0; 
+            padding: 20px 30px; 
             background-color: #fff;
             box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
             text-align: center;
-            width: 100%; /* S'assure qu'il prend toute la largeur */
         }
         
         .footer-buttons {
             display: flex;
-            /* Étire les boutons sur toute la largeur disponible */
-            width: 100%; 
-            /* Supprime le gap car les boutons sont censés se toucher */
-            gap: 0; 
-        }
-        
-        .footer-buttons .button {
-            flex-grow: 1; /* Chaque bouton prend une part égale de l'espace */
-            padding: 15px 10px; /* Augmente la hauteur pour le confort sur mobile */
-            border-radius: 0; /* Supprime les coins arrondis pour l'effet barre */
-            font-size: 16px;
-        }
-        
-        /* COULEURS DES BOUTONS (Nouvelle Palette) */
-        /* Utilisation de couleurs inspirées des onglets pour l'harmonie */
-        
-        .button.linkedin {
-            background-color: #0077b5; /* Bleu Principal */
+            justify-content: center;
+            gap: 20px; /* Plus d'espace entre les boutons */
         }
 
-        .button.linkedin:hover {
-            background-color: #005f84;
+        /* MEDIA QUERY pour l'adaptation Mobile */
+        @media (max-width: 600px) {
+            /* Le pied de page devient une colonne sur petit écran */
+            .footer-buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+            /* Les boutons prennent toute la largeur sur mobile */
+            .footer-buttons .button {
+                width: 100%; 
+                padding: 15px 10px;
+            }
+            /* Les onglets du menu de navigation passent aussi en colonne ou s'alignent mieux */
+            .nav-links {
+                justify-content: center;
+                margin-right: 0;
+                width: 100%;
+            }
+            .nav-link {
+                flex-grow: 1; /* Les onglets prennent la même largeur */
+                text-align: center;
+                padding: 10px 5px;
+            }
+            /* Le titre principal est plus petit sur mobile */
+            .welcome-title {
+                font-size: 28px;
+            }
         }
-
-        .button.cv {
-            background-color: #333; /* Gris foncé/Noir */
-        }
-
-        .button.cv:hover {
-            background-color: #111;
-        }
-        
-        .button.email {
-            background-color: #708090; /* Gris Ardoise (Slate Gray) */
-        }
-
-        .button.email:hover {
-            background-color: #5b6978;
-        }
-
-        /* Retrait des bords arrondis aux extrémités de la barre de boutons */
-        .footer-buttons a:first-child { border-bottom-left-radius: 0; }
-        .footer-buttons a:last-child { border-bottom-right-radius: 0; }
     </style>
 </head>
 <body>
 
-    <div id="page-content">
-        <div class="nav-links">
-            <a href="projets.html" class="nav-link">
-                Mes Projets
-            </a>
-            
-            <a href="about.html" class="nav-link active">
-                À Propos de moi
-            </a>
-        </div>
+    <div class="nav-links">
+        <a href="projets.html" class="nav-link">
+            Mes Projets
+        </a>
+        
+        <a href="about.html" class="nav-link active">
+            À Propos de moi
+        </a>
+    </div>
 
-        <div class="main-content">
-            <h1 class="welcome-title">Bienvenue sur mon Portfolio d'Analyste de données sociales</h1>
-            
-            <a href="projets.html" class="main-button">
-                Voir Mes Projets
-            </a>
-        </div>
+    <div class="main-content">
+        <h1 class="welcome-title">Bienvenue sur mon Portfolio d'Analyste de données sociales</h1>
+        
+        <a href="projets.html" class="main-button">
+            Voir Mes Projets
+        </a>
     </div>
 
     <footer class="footer">
