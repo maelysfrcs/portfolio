@@ -4,8 +4,7 @@
     body {
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         margin: 0;
-        /* MODIFICATION: Ajout d'une petite marge en haut pour pousser le contenu */
-        padding: 10px 0 0 0; 
+        padding: 0; /* REMPLACEMENT: Marge de la body supprimée pour utiliser le padding sur l'élément du nom */
         background-color: #f4f4f4;
         color: #333;
         display: flex;
@@ -14,13 +13,14 @@
     }
 
     /* -------------------------------------------------------------------------- */
-    /* CORRECTION MARGE SIMPLIFIÉE (Jekyll) */
+    /* CORRECTION MARGE ALTERNATIVE (Cible le contenu injecté) 💡 */
     /* -------------------------------------------------------------------------- */
     /* Cibler le nom si c'est la première chose dans le body (comme un <h1> ou <p>) */
     body > h1:first-child, body > h2:first-child, body > p:first-child {
-        /* MODIFICATION: Assure que le nom commence bien à 50px du bord gauche */
-        padding-left: 50px !important; 
-        /* !important est nécessaire ici pour forcer l'écrasement des styles Jekyll */
+        /* MODIFICATION: Assure une marge supérieure visible sur le nom et l'aligne */
+        padding: 30px 0 10px 50px !important; /* Haut, Droite, Bas, Gauche */
+        margin: 0 !important; /* Suppression des marges Jekyll par défaut */
+        /* La marge du header du thème Jekyll (s'il en a) peut être ciblée si cette solution ne marche pas */
     }
 
     /* -------------------------------------------------------------------------- */
@@ -82,10 +82,9 @@
     .footer-buttons {
         display: flex;
         justify-content: center;
-        /* MODIFICATION: Assure l'alignement horizontal par défaut sur tous les grands écrans */
-        flex-direction: row; 
+        flex-direction: row; /* Forcé à rester horizontal */
         gap: 0; 
-        flex-wrap: wrap; 
+        flex-wrap: nowrap; /* EMPÊCHE de passer à la ligne sur les grands écrans */
         align-items: center;
     }
 
@@ -104,6 +103,9 @@
         transition: color 0.3s ease, transform 0.2s ease;
         cursor: pointer;
         position: relative; 
+        
+        /* CORRECTION: Empêche le bouton de réduire sa taille et de passer à la ligne */
+        flex-shrink: 0; 
     }
     
     /* Séparateur vertical entre les liens */
@@ -133,7 +135,6 @@
     }
     
     /* --- Media Query pour l'adaptabilité mobile (Uniquement les petits téléphones) --- */
-    /* MODIFICATION: Réduction de la taille d'activation de la colonne */
     @media (max-width: 500px) {
         .footer-buttons {
             /* Passe en colonne uniquement sur les très petits écrans */
@@ -146,6 +147,7 @@
             border: 1px solid #ddd; 
             border-radius: 4px;
             min-width: unset; 
+            flex-shrink: 1; /* Permet de reprendre de la place sur mobile */
         }
         /* Suppression du séparateur sur mobile */
         .button:not(:last-child)::after {
