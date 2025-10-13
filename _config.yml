@@ -1,13 +1,13 @@
 title: Maëlys François
 logo: /mesdocuments/photocv.PNG
-description: À la recherche d’un emploi dans l’analyse de données sociales.
+description: |
+  Passionnée par l’analyse de données avec une expertise pour l’étude des comportements sur les réseaux sociaux numériques, je suis actuellement à la recherche de ma prochaine expérience professionnelle. 
 cv_url: "/mesdocuments/cv.pdf" # Lien relatif ou absolu vers votre CV
-cv_text: "Lien vers mon CV"                  # Texte à afficher pour le lien
+cv_text: "Lien vers mon CV"
 show_downloads: true
 theme: jekyll-theme-minimal
 sass:
   style: compressed
-
 
 # Si tu veux ajouter ton propre fichier CSS personnalisé
 theme: jekyll-theme-minimal
