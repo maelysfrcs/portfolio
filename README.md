@@ -67,7 +67,7 @@
     <a href="mailto:maelys.francois31@gmail.com" class="button email">
       <i class="fas fa-envelope"></i> Mon Email
     </a>
-    <a href="mesdocuments/cv.pdf" class="button cv" target="_blank" rel="noopener noreferrer">
+    <a href="mesdocuments/cv_maëlys_françois.pdf" class="button cv" target="_blank" rel="noopener noreferrer">
   <i class="fas fa-file-pdf"></i> Mon CV
 </a>
   </p>
@@ -79,8 +79,7 @@
 ---
 
 ## 🎓 Formations
-**Master Sociologie | Parcours Réseaux et Sociétés (RESO) (_2023 - 2025_)**  
-<p style="color: #0077B5; font-weight: bold; margin-top: 5px;">Obtenu avec mention Bien</p>
+**Master Sociologie | Parcours Réseaux et Sociétés (RESO) (_2023 - 2025_)** <span style="color: #0077B5; font-weight: bold;"><i class="fas fa-check-circle"></i> Obtenu avec mention Bien</span>
 - Analyse de situations sociales complexes via l'analyse de réseaux d'acteurs  
 - Maîtrise d'outils statistiques et numériques pour l'analyse de données  
 - Spécialisation en réseaux sociaux et Web  
