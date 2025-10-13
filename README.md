@@ -1,6 +1,9 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
 
 <style>
+    /* -------------------------------------------------------------------------- */
+    /* STYLES DE BASE (Pour garantir le positionnement du footer) */
+    /* -------------------------------------------------------------------------- */
     body {
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         margin: 0;
@@ -9,164 +12,95 @@
         color: #333;
         display: flex;
         flex-direction: column;
-        min-height: 100vh;
+        min-height: 100vh; /* S'assure que le footer est bien en bas de l'écran */
     }
 
     /* -------------------------------------------------------------------------- */
-    /* CORRECTION MARGE ALTERNATIVE (Cible le contenu injecté par Jekyll) */
+    /* FOOTER ISOLÉ ET ALIGNÉ HORIZONTALEMENT 💡 */
     /* -------------------------------------------------------------------------- */
-    body > .wrapper, .page-header {
-        padding-top: 30px !important; 
-        padding-left: 50px !important; 
-        margin-top: 0 !important; 
-        margin-bottom: 0 !important; 
+    .footer-fixed {
+        /* Donne l'effet de "cache blanc" et aligne le contenu */
+        background-color: white; 
+        box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
+        padding: 20px 0;
+        margin-top: auto; /* Pousse ce bloc en bas de la page */
+        width: 100%;
+        text-align: center;
+    }
+    
+    .contact-buttons-container {
+        display: inline-block; /* Permet de centrer les boutons en tant que bloc */
+        text-align: center; 
+        padding: 0 10px;
     }
 
-    .page-header h1 {
-        margin-top: 0 !important;
-        padding-top: 0 !important;
+    .contact-button {
+        display: inline-flex; /* Aligne les boutons horizontalement */
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        font-weight: 600;
+        padding: 10px 18px; 
+        min-width: 130px; 
+        color: #333; /* Couleur de base du texte */
+        transition: color 0.3s ease, transform 0.2s ease;
+        position: relative;
     }
     
-    .page-header p {
-        padding-left: 50px !important;
-        margin-left: -50px !important;
+    .contact-button i {
+        margin-right: 8px;
+        color: #777;
+        transition: color 0.3s ease;
+    }
+
+    /* Séparateur vertical: Bordure sur les boutons sauf le premier */
+    .contact-button:not(:first-child) {
+        border-left: 1px solid #ddd;
     }
     
+    .contact-button:hover {
+        color: #0077b5; 
+        transform: translateY(-1px); 
+    }
+    .contact-button:hover i {
+        color: #0077b5; 
+    }
+
+    /* --- Styles des boutons pour la couleur d'arrière-plan (optionnel) --- */
+    /* Si vous voulez un style de "bouton" coloré, vous pouvez utiliser ces classes */
+    .btn-linkedin { color: white !important; background-color: #0077b5; border-radius: 4px; border: none; }
+    .btn-cv { color: white !important; background-color: #28a745; border-radius: 4px; border: none; }
+    .btn-email { color: white !important; background-color: #dc3545; border-radius: 4px; border: none; }
+    
+    /* Retirer le séparateur quand les boutons sont colorés */
+    .btn-linkedin:not(:first-child),
+    .btn-cv:not(:first-child),
+    .btn-email:not(:first-child) {
+        border-left: none;
+    }
+    /* Marge entre les boutons colorés */
+    .btn-linkedin, .btn-cv, .btn-email {
+        margin: 0 5px; 
+    }
+
     /* -------------------------------------------------------------------------- */
-    /* Styles du Menu de Navigation (Onglets) - INCHANGÉS */
+    /* MASQUAGE DES TEXTES JEKYLL/GITHUB RÉSIDUELS */
     /* -------------------------------------------------------------------------- */
+    .view-on-github-link, .downloads, .site-footer, .project-tagline, .site-footer p {
+        display: none !important;
+    }
+
+
+    /* --- Styles existants (minimaux) pour ne rien retirer d'important --- */
+    /* Note : J'ai conservé uniquement les classes que vous avez utilisées */
+
     .nav-links {
         display: flex;
         justify-content: flex-end;
-        gap: 0;
         margin-top: 20px; 
         margin-right: 50px;
     }
 
-    .nav-link {
-        font-size: 17px;
-        font-weight: 600;
-        text-decoration: none;
-        color: #333;
-        padding: 10px 20px;
-        background-color: #fff;
-        border: 1px solid #ccc;
-        border-bottom: none;
-        transition: all 0.2s ease;
-    }
-
-    .nav-link:hover {
-        color: #0077b5;
-        background-color: #f0f0f0;
-        transform: translateY(-2px); 
-        box-shadow: 0 -2px 5px rgba(0,0,0,0.05); 
-    }
-    
-    .nav-links a:last-child {
-        border-top-right-radius: 6px;
-    }
-    
-    .nav-links a:first-child {
-        border-top-left-radius: 6px;
-    }
-    
-    .nav-link.active {
-        color: #0077b5;
-        background-color: #f4f4f4;
-        border-color: #ccc;
-        border-bottom-color: #f4f4f4; 
-        transform: none; 
-    }
-
-    /* -------------------------------------------------------------------------- */
-    /* NOUVELLE SOLUTION: Styles Pied de Page (Blocs en ligne avec marges) 💡 */
-    /* -------------------------------------------------------------------------- */
-    .footer {
-        padding: 20px 0; 
-        background-color: #fff;
-        box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
-        text-align: center;
-        width: 100%; 
-        margin-top: auto; 
-    }
-    
-    .footer-buttons {
-        /* MODIFICATION: Passage en block pour le conteneur principal */
-        display: block; 
-        /* Le text-align: center sur le .footer s'occupe de centrer le bloc */
-        padding: 0 20px; 
-        white-space: nowrap; /* Tente d'empêcher les sauts de ligne */
-    }
-
-    .button {
-        /* MODIFICATION: Affichage en tant que bloc en ligne */
-        display: inline-flex; 
-        align-items: center;
-        justify-content: center;
-        
-        padding: 10px 15px; 
-        min-width: 120px; 
-        font-size: 16px; 
-        font-weight: 600;
-        text-decoration: none;
-        background-color: transparent; 
-        color: #555; 
-        border: none;
-        transition: color 0.3s ease, transform 0.2s ease;
-        cursor: pointer;
-        position: relative; 
-        
-        /* MODIFICATION: Ajout d'une marge horizontale fixe pour l'espacement */
-        margin: 0 15px; 
-    }
-    
-    /* Séparateur vertical entre les liens */
-    /* Nous allons utiliser une bordure gauche sur les éléments, sauf le premier */
-    .button:not(:first-child) {
-        border-left: 1px solid #ddd;
-        padding-left: 30px; /* Plus d'espace après la ligne */
-        margin-left: 0; /* Annule la marge de séparation */
-    }
-
-    .button:hover {
-        color: #0077b5; 
-        transform: translateY(-1px); 
-        background-color: transparent; 
-    }
-
-    .button i {
-        margin-right: 8px;
-        color: #777; 
-        transition: color 0.3s ease;
-    }
-    .button:hover i {
-        color: #0077b5; 
-    }
-    
-    /* --- Media Query pour l'adaptabilité mobile --- */
-    @media (max-width: 500px) {
-        .footer-buttons {
-            display: flex; /* Repasse en Flexbox pour le mode colonne */
-            flex-direction: column; 
-            gap: 10px;
-            padding: 0; 
-        }
-        .button {
-            width: 80%; 
-            margin: 0 auto; 
-            border: 1px solid #ddd; 
-            border-radius: 4px;
-            min-width: unset; 
-            padding: 10px;
-            /* RÀZ des styles Desktop */
-            border-left: none; 
-            padding-left: 10px;
-        }
-    }
-
-    /* -------------------------------------------------------------------------- */
-    /* Style du Contenu Principal (INCHANGÉ) */
-    /* -------------------------------------------------------------------------- */
     .main-content {
         flex-grow: 1;
         display: flex;
@@ -177,40 +111,6 @@
         padding: 20px;
     }
 
-    .main-button {
-        background-color: #0077b5;
-        color: white;
-        padding: 20px 40px;
-        font-size: 24px;
-        border-radius: 8px;
-        text-decoration: none;
-        transition: background-color 0.3s ease, transform 0.2s ease;
-        margin-top: 20px;
-    }
-
-    .main-button:hover {
-        background-color: #005f84;
-        transform: scale(1.03); 
-    }
-
-    .welcome-title {
-        font-size: 38px;
-        margin-bottom: 0;
-        font-weight: 300;
-    }
-
-    /* -------------------------------------------------------------------------- */
-    /* Styles pour masquer TOUS les éléments GitHub générés par le thème Jekyll Minimal */
-    /* -------------------------------------------------------------------------- */
-    .view-on-github-link, 
-    .downloads,
-    .site-footer, 
-    /* AJOUTS pour masquer les autres textes */
-    .project-tagline, 
-    .site-footer p /* Cible le paragraphe contenant le texte de maintenance */
-    {
-        display: none !important;
-    }
 </style>
 
 <div class="nav-links">
@@ -231,18 +131,18 @@
     </a>
 </div>
 
-<footer class="footer">
-    <div class="footer-buttons">
-        <a href="https://www.linkedin.com/in/ma%C3%ABlys-fran%C3%A7ois" class="button" target="_blank">
+<div class="footer-fixed">
+    <div class="contact-buttons-container">
+        <a href="https://www.linkedin.com/in/ma%C3%ABlys-fran%C3%A7ois" class="contact-button btn-linkedin" target="_blank">
             <i class="fab fa-linkedin"></i> LinkedIn
         </a>
         
-        <a href="mesdocuments/cv_maëlys_françois.pdf" class="button" target="_blank" rel="noopener noreferrer">
+        <a href="mesdocuments/cv_maëlys_françois.pdf" class="contact-button btn-cv" target="_blank" rel="noopener noreferrer">
             <i class="fas fa-file-pdf"></i> Mon CV
         </a>
         
-        <a href="mailto:maelys.francois31@gmail.com" class="button" target="_blank">
+        <a href="mailto:maelys.francois31@gmail.com" class="contact-button btn-email" target="_blank">
             <i class="fas fa-envelope"></i> Mon Email
         </a>
     </div>
-</footer>
+</div>
