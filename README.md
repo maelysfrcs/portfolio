@@ -8,7 +8,7 @@
     
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Police moderne */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
@@ -18,63 +18,59 @@
             min-height: 100vh;
         }
 
-        /* CORRECTION: Ajout d'une marge au header et alignement du contenu */
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            /* Augmentation du padding pour plus d'espace en haut */
-            padding: 25px 50px; 
-            background-color: #fff;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1); /* Ombre plus légère */
-        }
+        /* --- Style du Menu de Navigation (Header) --- */
+        /* Nous n'utilisons plus l'élément .header dans le HTML, mais le style des liens est ici */
         
-        /* CORRECTION: Titre du site (votre nom) */
-        .site-title {
-            font-size: 1.8em; 
-            font-weight: 700; /* Plus marqué */
-            color: #0077b5; /* Couleur principale (bleu) */
-            text-decoration: none;
-            /* Suppression de margin-left: 10px; car le padding du header gère la marge */
-        }
-
         /* Conteneur des liens du menu */
         .nav-links {
             display: flex;
-            gap: 30px; /* Plus d'espace entre les liens */
+            /* Remplacement de space-between par flex-end pour les aligner à droite */
+            justify-content: flex-end; 
+            gap: 0; /* Suppression de l'espace entre les liens pour qu'ils soient collés comme des onglets */
+            
+            /* Ajout d'une marge pour les éloigner du bord droit */
+            margin-right: 50px; 
         }
 
-        /* NOUVEAU STYLE: Liens de navigation modernes */
+        /* NOUVEAU STYLE: Liens de navigation avec aspect d'onglet/cadre */
         .nav-link {
             font-size: 17px;
             font-weight: 600;
             text-decoration: none;
-            color: #555; /* Gris foncé pour le texte de base */
-            position: relative;
-            padding-bottom: 5px; /* Espace pour la barre de survol */
-            transition: color 0.3s ease;
+            color: #333; /* Texte noir */
+            padding: 10px 20px; /* Rembourrage pour donner la taille des onglets */
+            
+            /* Aspect onglet/cadre */
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-bottom: none; /* Pas de ligne en bas pour simuler l'attachement au contenu */
+            
+            transition: all 0.2s ease;
         }
 
         .nav-link:hover {
             color: #0077b5; /* Bleu au survol */
+            background-color: #f0f0f0; /* Léger changement de couleur au survol */
         }
         
-        /* Effet de soulignement moderne (barre en dessous) */
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 3px; /* Épaisseur de la barre */
-            background: #0077b5;
-            bottom: 0;
-            left: 0;
-            transition: width 0.3s ease;
+        /* Les deux coins du dernier onglet (à droite) sont arrondis */
+        .nav-links a:last-child {
+            border-top-right-radius: 6px;
         }
         
-        .nav-link:hover::after {
-            width: 100%; /* La barre apparaît au survol */
+        /* Les deux coins du premier onglet (à gauche) sont arrondis */
+        .nav-links a:first-child {
+            border-top-left-radius: 6px;
         }
         
+        /* Pour un effet "actif", où l'onglet est visuellement sélectionné */
+        /* Vous pouvez ajouter la classe 'active' à l'onglet de la page en cours */
+        .nav-link.active {
+            color: #0077b5;
+            background-color: #f4f4f4; /* Couleur de fond du body pour simuler la continuité */
+            border-color: #f4f4f4; /* Cache le bord du bas */
+        }
+
         /* --- Styles des Boutons de Contact (Footer) --- */
         
         .button {
@@ -140,7 +136,7 @@
             border-radius: 8px;
             text-decoration: none;
             transition: background-color 0.3s ease;
-            margin-top: 20px; /* Ajout d'une marge sous le titre */
+            margin-top: 20px;
         }
 
         .main-button:hover {
@@ -148,8 +144,8 @@
         }
 
         .welcome-title {
-            font-size: 38px; /* Légèrement plus grand */
-            margin-bottom: 0; /* Espacement géré par la marge du bouton */
+            font-size: 38px;
+            margin-bottom: 0;
             font-weight: 300;
         }
 
@@ -170,16 +166,17 @@
 </head>
 <body>
 
+    <br><br>
 
-        <div class="nav-links">
-            <a href="projets.html" class="nav-link">
-                Mes Projets
-            </a>
-            
-            <a href="about.html" class="nav-link">
-                À Propos de moi
-            </a>
-        </div>
+    <div class="nav-links">
+        <a href="projets.html" class="nav-link">
+            Mes Projets
+        </a>
+        
+        <a href="about.html" class="nav-link active">
+            À Propos de moi
+        </a>
+    </div>
 
     <div class="main-content">
         <h1 class="welcome-title">Bienvenue sur mon Portfolio d'Analyste de données sociales</h1>
