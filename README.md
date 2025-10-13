@@ -103,8 +103,8 @@
         /* Retire l'alignement justifié pour que la marge-droite fonctionne mieux */
         justify-content: flex-start;
         
-        padding: 5px 10px; 
-        min-width: 90px; 
+        padding: 10px 15px; 
+        min-width: 100px; 
         font-size: 14px; 
         font-weight: 500; 
         
