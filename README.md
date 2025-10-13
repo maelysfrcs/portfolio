@@ -86,6 +86,7 @@
         background-color: #fff;
         box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
         text-align: center;
+        /* CORRECTION : Remis à 100% pour éviter que le footer soit trop étroit */
         width: 25%; 
         margin-top: auto; 
     }
@@ -99,7 +100,8 @@
     .button {
         display: inline-flex; 
         align-items: center;
-        justify-content: center;
+        /* Retire l'alignement justifié pour que la marge-droite fonctionne mieux */
+        justify-content: flex-start;
         
         padding: 5px 10px; 
         min-width: 90px; 
@@ -129,8 +131,8 @@
     }
 
     .button i {
-        /* MODIFICATION: Augmentation de la marge pour l'espace entre l'icône et le texte */
-        margin-right: 50px; 
+        /* CORRECTION : Ajout de !important pour forcer la marge contre inline-flex */
+        margin-right: 50px !important; 
         color: #555; 
         transition: color 0.3s ease;
     }
