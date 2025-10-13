@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -18,108 +19,56 @@
             min-height: 100vh;
         }
 
-        /* --- Style du Menu de Navigation (Header) --- */
-        /* Nous n'utilisons plus l'élément .header dans le HTML, mais le style des liens est ici */
+        /* NOUVEAU CONTENEUR pour le contenu généré par l'utilisateur */
+        /* Ceci devrait créer la marge en haut nécessaire (surtout si le titre Jekyll est collé) */
+        #page-content {
+            padding-top: 50px; /* Augmentation de l'espace au-dessus du menu d'onglet */
+            flex-grow: 1; /* Permet au contenu de s'étendre et de pousser le footer vers le bas */
+        }
         
-        /* Conteneur des liens du menu */
+        /* --- Style du Menu de Navigation (Onglets) --- */
         .nav-links {
             display: flex;
-            /* Remplacement de space-between par flex-end pour les aligner à droite */
-            justify-content: flex-end; 
-            gap: 0; /* Suppression de l'espace entre les liens pour qu'ils soient collés comme des onglets */
-            
-            /* Ajout d'une marge pour les éloigner du bord droit */
-            margin-right: 50px; 
+            justify-content: flex-end; 
+            gap: 0; 
+            margin-right: 50px; 
         }
 
-        /* NOUVEAU STYLE: Liens de navigation avec aspect d'onglet/cadre */
         .nav-link {
             font-size: 17px;
             font-weight: 600;
             text-decoration: none;
-            color: #333; /* Texte noir */
-            padding: 10px 20px; /* Rembourrage pour donner la taille des onglets */
-            
-            /* Aspect onglet/cadre */
+            color: #333;
+            padding: 10px 20px;
             background-color: #fff;
             border: 1px solid #ccc;
-            border-bottom: none; /* Pas de ligne en bas pour simuler l'attachement au contenu */
-            
+            border-bottom: none;
             transition: all 0.2s ease;
         }
 
         .nav-link:hover {
-            color: #0077b5; /* Bleu au survol */
-            background-color: #f0f0f0; /* Léger changement de couleur au survol */
+            color: #0077b5;
+            background-color: #f0f0f0;
         }
         
-        /* Les deux coins du dernier onglet (à droite) sont arrondis */
         .nav-links a:last-child {
             border-top-right-radius: 6px;
         }
         
-        /* Les deux coins du premier onglet (à gauche) sont arrondis */
         .nav-links a:first-child {
             border-top-left-radius: 6px;
         }
         
-        /* Pour un effet "actif", où l'onglet est visuellement sélectionné */
-        /* Vous pouvez ajouter la classe 'active' à l'onglet de la page en cours */
         .nav-link.active {
             color: #0077b5;
-            background-color: #f4f4f4; /* Couleur de fond du body pour simuler la continuité */
-            border-color: #f4f4f4; /* Cache le bord du bas */
-        }
-
-        /* --- Styles des Boutons de Contact (Footer) --- */
-        
-        .button {
-            display: inline-block;
-            padding: 10px 18px;
-            font-size: 14px;
-            font-weight: bold;
-            text-align: center;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        /* Styles Pied de Page (inchangés) */
-        .button.linkedin {
-            background-color: #0077b5;
-            color: white;
-        }
-
-        .button.linkedin:hover {
-            background-color: #005f84;
-        }
-
-        .button.email {
-            background-color: #e44d26; 
-            color: white;
-        }
-
-        .button.email:hover {
-            background-color: #b43d19; 
-        }
-
-        .button.cv {
-            background-color: #4CAF50;
-            color: white;
-        }
-
-        .button.cv:hover {
-            background-color: #45a049;
-        }
-        
-        .button i {
-            margin-right: 8px;
+            background-color: #f4f4f4; 
+            border-color: #f4f4f4;
+            /* Souligne l'onglet actif avec une ligne fine */
+            border-top: 2px solid #0077b5; 
         }
 
         /* --- Style du Contenu Principal (Bouton Central) --- */
         .main-content {
-            flex-grow: 1;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -151,39 +100,81 @@
 
         /* --- Style du Pied de Page (Footer) --- */
         .footer {
-            padding: 20px 30px; 
+            /* Le padding horizontal est retiré */
+            padding: 20px 0; 
             background-color: #fff;
             box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
             text-align: center;
+            width: 100%; /* S'assure qu'il prend toute la largeur */
         }
         
         .footer-buttons {
             display: flex;
-            justify-content: center;
-            gap: 15px;
+            /* Étire les boutons sur toute la largeur disponible */
+            width: 100%; 
+            /* Supprime le gap car les boutons sont censés se toucher */
+            gap: 0; 
         }
+        
+        .footer-buttons .button {
+            flex-grow: 1; /* Chaque bouton prend une part égale de l'espace */
+            padding: 15px 10px; /* Augmente la hauteur pour le confort sur mobile */
+            border-radius: 0; /* Supprime les coins arrondis pour l'effet barre */
+            font-size: 16px;
+        }
+        
+        /* COULEURS DES BOUTONS (Nouvelle Palette) */
+        /* Utilisation de couleurs inspirées des onglets pour l'harmonie */
+        
+        .button.linkedin {
+            background-color: #0077b5; /* Bleu Principal */
+        }
+
+        .button.linkedin:hover {
+            background-color: #005f84;
+        }
+
+        .button.cv {
+            background-color: #333; /* Gris foncé/Noir */
+        }
+
+        .button.cv:hover {
+            background-color: #111;
+        }
+        
+        .button.email {
+            background-color: #708090; /* Gris Ardoise (Slate Gray) */
+        }
+
+        .button.email:hover {
+            background-color: #5b6978;
+        }
+
+        /* Retrait des bords arrondis aux extrémités de la barre de boutons */
+        .footer-buttons a:first-child { border-bottom-left-radius: 0; }
+        .footer-buttons a:last-child { border-bottom-right-radius: 0; }
     </style>
 </head>
 <body>
 
-    <br><br>
+    <div id="page-content">
+        <div class="nav-links">
+            <a href="projets.html" class="nav-link">
+                Mes Projets
+            </a>
+            
+            <a href="about.html" class="nav-link active">
+                À Propos de moi
+            </a>
+        </div>
 
-    <div class="nav-links">
-        <a href="projets.html" class="nav-link">
-            Mes Projets
-        </a>
-        
-        <a href="about.html" class="nav-link active">
-            À Propos de moi
-        </a>
-    </div>
-
-    <div class="main-content">
-        <h1 class="welcome-title">Bienvenue sur mon Portfolio d'Analyste de données sociales</h1>
-        
-        <a href="projets.html" class="main-button">
-            Voir Mes Projets
-        </a>
+        <div class="main-content">
+            <h1 class="welcome-title">Bienvenue sur mon Portfolio d'Analyste de données sociales</h1>
+            
+            <a href="projets.html" class="main-button">
+                Voir Mes Projets
+            </a>
+        </div>
     </div>
 
     <footer class="footer">
