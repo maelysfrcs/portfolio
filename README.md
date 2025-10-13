@@ -12,10 +12,7 @@
         min-height: 100vh;
     }
 
-    /* NOUVELLE MODIFICATION: Marge pour le Titre (Nom/Prénom) */
-    /* Ce sélecteur cible l'en-tête principal généré par Jekyll pour ajouter une marge. */
-    /* Il suppose que votre titre Maëlys François est le premier <h1> ou un équivalent direct. */
-    /* Si cela ne fonctionne pas, il faudra inspecter l'élément injecté. */
+
     .page-header { 
         padding-top: 30px; /* Augmente l'espace au-dessus du titre */
         padding-left: 50px; /* Aligne avec le reste du contenu */
