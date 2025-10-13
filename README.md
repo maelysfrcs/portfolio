@@ -136,7 +136,7 @@
 
         /* --- Style du Pied de Page (Footer) --- */
         .footer {
-            padding: 15px 30px;
+            padding: 30px 30px;
             background-color: #fff;
             box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
             text-align: center;
