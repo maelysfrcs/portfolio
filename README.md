@@ -14,6 +14,9 @@
             padding: 0;
             background-color: #f4f4f4;
             color: #333;
+            min-height: 100vh; /* Permet au footer de rester en bas */
+            display: flex;
+            flex-direction: column;
         }
 
         /* --- Style du Menu de Navigation (Header) --- */
@@ -32,11 +35,11 @@
             gap: 10px; /* Espace entre les boutons du menu */
         }
 
-        /* --- Style des Boutons (réutilisation de votre CSS) --- */
+        /* --- Style des Boutons Généraux --- */
         .button {
             display: inline-block;
             padding: 10px 18px;
-            font-size: 14px; /* Un peu plus petit pour le menu */
+            font-size: 14px;
             font-weight: bold;
             text-align: center;
             text-decoration: none;
@@ -44,17 +47,28 @@
             transition: all 0.3s ease;
             cursor: pointer;
         }
-        
+
+        /* Styles pour les boutons du Menu */
         .button.menu {
-            background-color: #555; /* Couleur de base pour les pages */
+            background-color: #555; /* Gris par défaut pour le menu principal */
             color: white;
         }
 
         .button.menu:hover {
             background-color: #333;
         }
+        
+        /* Style spécifique pour "À propos de moi" (Orange) */
+        .button.about {
+            background-color: #ff9800; /* Orange vif */
+            color: white;
+        }
 
-        /* Styles spécifiques pour le LinkedIn et l'Email (adaptés du code précédent) */
+        .button.about:hover {
+            background-color: #e68900;
+        }
+        
+        /* Styles pour les boutons du Footer */
         .button.linkedin {
             background-color: #0077b5;
             color: white;
@@ -62,15 +76,6 @@
 
         .button.linkedin:hover {
             background-color: #005f84;
-        }
-
-        .button.email {
-            background-color: #e44d26;
-            color: white;
-        }
-
-        .button.email:hover {
-            background-color: #b43d19;
         }
 
         .button.cv {
@@ -81,13 +86,23 @@
         .button.cv:hover {
             background-color: #45a049;
         }
+        
+        /* Style spécifique pour "Mon Email" (Vert Lime, remplace l'ancien Email/Contact) */
+        .button.email-footer {
+            background-color: #8bc34a; /* Vert Lime */
+            color: white;
+        }
+
+        .button.email-footer:hover {
+            background-color: #7cb342;
+        }
 
         /* --- Style du Contenu Principal (Bouton Central) --- */
         .main-content {
+            flex-grow: 1; /* Permet au contenu de prendre l'espace restant */
             display: flex;
-            justify-content: center; /* Centre horizontalement */
-            align-items: center; /* Centre verticalement */
-            min-height: 85vh; /* Assure que le contenu prend presque toute la hauteur visible */
+            justify-content: center;
+            align-items: center;
             flex-direction: column;
             text-align: center;
             padding: 20px;
@@ -107,11 +122,24 @@
             background-color: #005f84;
         }
 
-        /* Ajout du style pour le titre d'accueil */
         .welcome-title {
             font-size: 32px;
             margin-bottom: 30px;
             font-weight: 300;
+        }
+        
+        /* --- Style du Pied de Page (Footer) --- */
+        .footer {
+            padding: 20px;
+            background-color: #fff;
+            border-top: 1px solid #ddd;
+            text-align: center;
+        }
+        
+        .footer-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px; /* Espacement entre les boutons du footer */
         }
     </style>
 </head>
@@ -123,20 +151,8 @@
                 <i class="fas fa-code"></i> Mes Projets
             </a>
             
-            <a href="about.html" class="button menu">
-                <i class="fas fa-user"></i> À Propos
-            </a>
-            
-            <a href="https://www.linkedin.com/in/ma%C3%ABlys-fran%C3%A7ois" class="button linkedin" target="_blank">
-                <i class="fab fa-linkedin"></i> LinkedIn
-            </a>
-            
-            <a href="mesdocuments/cv_maëlys_françois.pdf" class="button cv" target="_blank" rel="noopener noreferrer">
-                <i class="fas fa-file-pdf"></i> Mon CV
-            </a>
-            
-            <a href="mailto:maelys.francois31@gmail.com" class="button email">
-                <i class="fas fa-envelope"></i> Contact
+            <a href="about.html" class="button about">
+                <i class="fas fa-user"></i> À propos de moi
             </a>
         </div>
     </div>
@@ -147,6 +163,22 @@
         <a href="projets.html" class="main-button">
             Voir Mes Projets
         </a>
+    </div>
+    
+    <div class="footer">
+        <div class="footer-buttons">
+            <a href="https://www.linkedin.com/in/ma%C3%ABlys-fran%C3%A7ois" class="button linkedin" target="_blank">
+                <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+            
+            <a href="mesdocuments/cv_maëlys_françois.pdf" class="button cv" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-file-pdf"></i> Mon CV
+            </a>
+            
+            <a href="mailto:maelys.francois31@gmail.com" class="button email-footer">
+                <i class="fas fa-envelope"></i> Mon Email
+            </a>
+        </div>
     </div>
 
 </body>
