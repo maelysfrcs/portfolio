@@ -1,121 +1,153 @@
-# À la recherche d'un emploi dans l'analyse de données sociales
-
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mon Portfolio</title>
-   
-  <!-- CSS intégré pour les boutons -->
-  <style>
-    /* Style général des boutons */
-    .button {
-      display: inline-block; /* Affichage en ligne pour être côte à côte */
-      margin-right: 10px; /* Espacement entre les boutons */
-      padding: 12px 25px;
-      font-size: 16px;
-      font-weight: bold;
-      text-align: center;
-      text-decoration: none;
-      border-radius: 5px;
-      transition: all 0.3s ease;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maëlys François - Portfolio</title>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
 
-    /* Style du bouton LinkedIn */
-    .button.linkedin {
-      background-color: #0077b5; /* Couleur de LinkedIn */
-      color: white;
-    }
+        /* --- Style du Menu de Navigation (Header) --- */
+        .header {
+            display: flex;
+            justify-content: flex-end; /* Aligne le contenu à droite */
+            align-items: center;
+            padding: 15px 30px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        /* Conteneur des boutons du menu */
+        .nav-buttons {
+            display: flex;
+            gap: 10px; /* Espace entre les boutons du menu */
+        }
 
-    .button.linkedin:hover {
-      background-color: #005f84; /* Couleur plus foncée au survol */
-    }
+        /* --- Style des Boutons (réutilisation de votre CSS) --- */
+        .button {
+            display: inline-block;
+            padding: 10px 18px;
+            font-size: 14px; /* Un peu plus petit pour le menu */
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .button.menu {
+            background-color: #555; /* Couleur de base pour les pages */
+            color: white;
+        }
 
-    /* Style du bouton Email */
-    .button.email {
-      background-color: #e44d26; /* Couleur de l'email */
-      color: white;
-    }
+        .button.menu:hover {
+            background-color: #333;
+        }
 
-    .button.email:hover {
-      background-color: #b43d19; /* Couleur plus foncée au survol */
-    }
+        /* Styles spécifiques pour le LinkedIn et l'Email (adaptés du code précédent) */
+        .button.linkedin {
+            background-color: #0077b5;
+            color: white;
+        }
 
-    /* Style du bouton CV */
-    .button.cv {
-      background-color: #4CAF50; /* Couleur du bouton CV */
-      color: white;
-    }
+        .button.linkedin:hover {
+            background-color: #005f84;
+        }
 
-    .button.cv:hover {
-      background-color: #45a049; /* Couleur plus foncée au survol */
-    }
+        .button.email {
+            background-color: #e44d26;
+            color: white;
+        }
 
-    /* Ajouter un peu d'espace entre l'icône et le texte */
-    .button i {
-      margin-right: 8px;
-    }
-  </style>
-  
+        .button.email:hover {
+            background-color: #b43d19;
+        }
+
+        .button.cv {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .button.cv:hover {
+            background-color: #45a049;
+        }
+
+        /* --- Style du Contenu Principal (Bouton Central) --- */
+        .main-content {
+            display: flex;
+            justify-content: center; /* Centre horizontalement */
+            align-items: center; /* Centre verticalement */
+            min-height: 85vh; /* Assure que le contenu prend presque toute la hauteur visible */
+            flex-direction: column;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .main-button {
+            background-color: #0077b5; /* Bleu principal */
+            color: white;
+            padding: 20px 40px;
+            font-size: 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .main-button:hover {
+            background-color: #005f84;
+        }
+
+        /* Ajout du style pour le titre d'accueil */
+        .welcome-title {
+            font-size: 32px;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+    </style>
 </head>
 <body>
-  <!-- Boutons côte à côte -->
-  <p>
-    <a href="https://www.linkedin.com/in/ma%C3%ABlys-fran%C3%A7ois" class="button linkedin">
-      <i class="fab fa-linkedin"></i> Mon LinkedIn
-    </a>
-    <a href="mailto:maelys.francois31@gmail.com" class="button email">
-      <i class="fas fa-envelope"></i> Mon Email
-    </a>
-    <a href="mesdocuments/cv_maëlys_françois.pdf" class="button cv" target="_blank" rel="noopener noreferrer">
-  <i class="fas fa-file-pdf"></i> Mon CV
-</a>
-  </p>
 
-  <!-- Ajouter le lien vers Font Awesome pour les icônes -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <div class="header">
+        <div class="nav-buttons">
+            <a href="projets.html" class="button menu">
+                <i class="fas fa-code"></i> Mes Projets
+            </a>
+            
+            <a href="about.html" class="button menu">
+                <i class="fas fa-user"></i> À Propos
+            </a>
+            
+            <a href="https://www.linkedin.com/in/ma%C3%ABlys-fran%C3%A7ois" class="button linkedin" target="_blank">
+                <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+            
+            <a href="mesdocuments/cv_maëlys_françois.pdf" class="button cv" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-file-pdf"></i> Mon CV
+            </a>
+            
+            <a href="mailto:maelys.francois31@gmail.com" class="button email">
+                <i class="fas fa-envelope"></i> Contact
+            </a>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <h1 class="welcome-title">Bienvenue sur mon Portfolio de Social Data Analyst</h1>
+        
+        <a href="projets.html" class="main-button">
+            Voir Mes Projets
+        </a>
+    </div>
+
 </body>
 </html>
----
-
-## 🎓 Formations
-**Master Sociologie | Parcours Réseaux et Sociétés (RESO) (_2023 - 2025_)** <span style="color: #0077B5; font-weight: bold;"><i class="fas fa-check-circle"></i> Obtenu avec mention Bien</span>
-- Analyse de situations sociales complexes. Maîtrise d’outils statistiques et numériques pour l’analyse de données. Spécialisation en réseaux sociaux et Web.
-- Mémoire de recherche : étude de l’évolution de la monétisation des jeux vidéos et son influence sur les pratiques et les communautés de joueurs (données Reddit).
-
-
-**Licence Sociologie (_2020 - 2023_)**  
-- Regard analytique et critique sur le monde social contemporain  
-
----
-
-## 💼 Expériences
-**Enquête-école - Enquêtrice @ Toulouse Tech Transfer (_Octobre 2024 à ce jour_)**  
-
-**Stage - Chargée d'étude en sociologie @ CNRS-IPBS (_Avril 2024 - Septembre 2024_)**  
-- Conduite d'une enquête sur l'état des discriminations et de la qualité de vie au travail.  
-- Analyse de données et rédaction d’un rapport de synthèse.  
-
----
-
-## 📊 Projets par compétences
-
-### **📈 Analyse de données et statistiques**
-- [Analyse statistique de la fréquence et des supports de jeux vidéo](projets/statistiques_jeux_video.html)
-- [Analyse des thématiques liées à la santé mentale en France et au Japon](projets/jamovi_sante_mentale.html)
-
-### **📉 Visualisation de données**
-- [Visualisation des réseaux matrimoniaux de la noblesse européenne](projets/noblesse_europeenne.html)
-- [Analyse des dynamiques spatiales et temporelles des réseaux](projets/panel_caen.html)
-
-### **🧠 Analyse textuelle et NLP**
-- [Étude de la monétisation des jeux vidéo à travers la presse](projets/europresse_jeux_videos.html)
-- [Analyse des thématiques liées à la santé mentale en France et au Japon](projets/jamovi_sante_mentale.html)
-
-### **🔬 Sociologie des réseaux et des interactions**
-- [Analyse des dynamiques spatiales et temporelles des réseaux](projets/panel_caen.html)
-
-### **⚙️ Web Scraping et outils numériques**
-- [Étude de la monétisation des jeux vidéo à travers la presse](projets/europresse_jeux_videos.html)
-
----
