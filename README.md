@@ -4,7 +4,7 @@
     body {
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         margin: 0;
-        padding: 0; /* REMPLACEMENT: Marge de la body supprimée pour utiliser le padding sur l'élément du nom */
+        padding: 0;
         background-color: #f4f4f4;
         color: #333;
         display: flex;
@@ -13,16 +13,29 @@
     }
 
     /* -------------------------------------------------------------------------- */
-    /* CORRECTION MARGE ALTERNATIVE (Cible le contenu injecté) 💡 */
+    /* CORRECTION MARGE ALTERNATIVE (Cible le contenu injecté par Jekyll) */
     /* -------------------------------------------------------------------------- */
-    /* Cibler le nom si c'est la première chose dans le body (comme un <h1> ou <p>) */
-    body > h1:first-child, body > h2:first-child, body > p:first-child {
-        /* MODIFICATION: Assure une marge supérieure visible sur le nom et l'aligne */
-        padding: 30px 0 10px 50px !important; /* Haut, Droite, Bas, Gauche */
-        margin: 0 !important; /* Suppression des marges Jekyll par défaut */
-        /* La marge du header du thème Jekyll (s'il en a) peut être ciblée si cette solution ne marche pas */
+    /* Ces sélecteurs tentent de cibler l'élément qui contient votre nom et description */
+    /* pour lui donner une marge correcte. */
+    body > .wrapper, .page-header {
+        padding-top: 30px !important; /* Ajoute de l'espace au-dessus du bloc de contenu */
+        padding-left: 50px !important; /* Alignement avec les liens de navigation */
+        margin-top: 0 !important; /* Annule toute marge supérieure par défaut */
+        margin-bottom: 0 !important; /* Annule toute marge inférieure par défaut */
     }
 
+    /* Le titre de la page spécifiquement (Maëlys François) */
+    .page-header h1 {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+    
+    /* La description sous votre nom (si elle est générée par Jekyll) */
+    .page-header p {
+        padding-left: 50px !important;
+        margin-left: -50px !important; /* Pour compenser le padding si besoin, à tester */
+    }
+    
     /* -------------------------------------------------------------------------- */
     /* Styles du Menu de Navigation (Onglets) */
     /* -------------------------------------------------------------------------- */
@@ -70,30 +83,37 @@
     }
 
     /* -------------------------------------------------------------------------- */
-    /* Styles Pied de Page (Liens Horizontaux avec Séparateur) */
+    /* REVISION MAJEURE: Styles Pied de Page (Liens Horizontaux sans découpe) 💡 */
     /* -------------------------------------------------------------------------- */
     .footer {
-        padding: 35px 30px; 
+        /* MODIFICATION: Réduction du padding car le footer-buttons gère mieux l'espace */
+        padding: 20px 0; 
         background-color: #fff;
         box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
         text-align: center;
+        width: 100%; /* S'assure que le footer prend toute la largeur */
+        margin-top: auto; /* Pousse le footer vers le bas */
     }
     
     .footer-buttons {
         display: flex;
         justify-content: center;
-        flex-direction: row; /* Forcé à rester horizontal */
+        flex-direction: row; 
         gap: 0; 
-        flex-wrap: nowrap; /* EMPÊCHE de passer à la ligne sur les grands écrans */
+        flex-wrap: nowrap; 
         align-items: center;
+        /* MODIFICATION: Ajout de padding horizontal au conteneur pour empêcher la découpe */
+        padding: 0 20px; 
     }
 
     .button {
         display: flex; 
         align-items: center;
         justify-content: center;
-        padding: 10px 25px; 
-        min-width: 150px; 
+        /* MODIFICATION: Réduction du padding horizontal pour économiser de l'espace */
+        padding: 10px 15px; 
+        /* MODIFICATION: Réduction de la largeur minimale pour qu'ils rentrent */
+        min-width: 120px; 
         font-size: 16px; 
         font-weight: 600;
         text-decoration: none;
@@ -103,8 +123,6 @@
         transition: color 0.3s ease, transform 0.2s ease;
         cursor: pointer;
         position: relative; 
-        
-        /* CORRECTION: Empêche le bouton de réduire sa taille et de passer à la ligne */
         flex-shrink: 0; 
     }
     
@@ -137,9 +155,9 @@
     /* --- Media Query pour l'adaptabilité mobile (Uniquement les petits téléphones) --- */
     @media (max-width: 500px) {
         .footer-buttons {
-            /* Passe en colonne uniquement sur les très petits écrans */
             flex-direction: column; 
             gap: 10px;
+            padding: 0; /* Suppression du padding latéral sur mobile pour optimiser l'espace */
         }
         .button {
             width: 80%; 
@@ -147,15 +165,17 @@
             border: 1px solid #ddd; 
             border-radius: 4px;
             min-width: unset; 
-            flex-shrink: 1; /* Permet de reprendre de la place sur mobile */
+            flex-shrink: 1; 
+            padding: 10px; /* Padding ajusté pour mobile */
         }
-        /* Suppression du séparateur sur mobile */
         .button:not(:last-child)::after {
             content: none;
         }
     }
 
-    /* --- Style du Contenu Principal (Inchangé) --- */
+    /* -------------------------------------------------------------------------- */
+    /* Style du Contenu Principal (Inchangé, mais s'assure d'un espacement suffisant) */
+    /* -------------------------------------------------------------------------- */
     .main-content {
         flex-grow: 1;
         display: flex;
@@ -186,6 +206,16 @@
         font-size: 38px;
         margin-bottom: 0;
         font-weight: 300;
+    }
+
+    /* -------------------------------------------------------------------------- */
+    /* Styles pour masquer les éléments GitHub générés par le thème Jekyll Minimal */
+    /* -------------------------------------------------------------------------- */
+    .view-on-github-link, /* Le lien "View the project on GitHub" */
+    .downloads, /* Le conteneur des boutons de téléchargement */
+    .site-footer /* Le pied de page par défaut du thème Jekyll Minimal */
+    {
+        display: none !important;
     }
 </style>
 
