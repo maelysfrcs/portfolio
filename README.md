@@ -12,24 +12,29 @@
         min-height: 100vh;
     }
 
-
-    .page-header { 
-        padding-top: 30px; /* Augmente l'espace au-dessus du titre */
-        padding-left: 50px; /* Aligne avec le reste du contenu */
-        margin-bottom: -10px; /* Réduit l'espace avec le contenu suivant */
+    /* -------------------------------------------------------------------------- */
+    /* CORRECTION MARGE (Jekyll) - TENTE DE POUSSER LE CONTENU AUTO-GÉNÉRÉ VERS LE BAS */
+    /* -------------------------------------------------------------------------- */
+    /* Cibler le nom si c'est la première chose dans le body (comme un <h1> ou <p>) */
+    /* Nous allons forcer l'ajout d'une marge supérieure */
+    body > h1:first-child, body > h2:first-child, body > p:first-child {
+        margin-top: 30px !important; /* Ajout d'une marge supérieure pour séparer du bord */
+        padding-left: 50px; /* Aligner avec les liens de navigation */
     }
 
-    /* --- Style du Menu de Navigation (Header) --- */
+    /* SÉPARATION : Espacement entre le contenu Jekyll et les onglets de navigation */
     .nav-links {
         display: flex;
         justify-content: flex-end;
         gap: 0;
+        /* MODIFICATION: Augmentation de la marge supérieure pour séparer le nom du menu */
+        margin-top: 20px; 
         margin-right: 50px;
-        /* AJOUT: S'assure que le menu n'est pas masqué par le reste */
-        z-index: 10; 
     }
 
-    /* NOUVEAU STYLE: Animation de Survol pour les onglets */
+    /* -------------------------------------------------------------------------- */
+    /* NOUVEAU STYLE: Liens de navigation avec aspect d'onglet/cadre & Animation */
+    /* -------------------------------------------------------------------------- */
     .nav-link {
         font-size: 17px;
         font-weight: 600;
@@ -40,17 +45,15 @@
         border: 1px solid #ccc;
         border-bottom: none;
         
-        /* MODIFICATION: Ajout d'une transition pour le survol (animation) */
-        transition: all 0.2s ease-in-out; 
+        transition: all 0.2s ease;
     }
 
+    /* MODIFICATION: Animation de décalage vers le haut */
     .nav-link:hover {
         color: #0077b5;
-        background-color: #f0f0f0; 
-        /* AJOUT: Légère élévation au survol */
+        background-color: #f0f0f0;
         transform: translateY(-2px); 
-        /* AJOUT: Ombre discrète au survol */
-        box-shadow: 0 4px 6px rgba(0, 119, 181, 0.1); 
+        box-shadow: 0 -2px 5px rgba(0,0,0,0.05); /* Petite ombre pour l'effet de "survol" */
     }
     
     .nav-links a:last-child {
@@ -64,22 +67,17 @@
     .nav-link.active {
         color: #0077b5;
         background-color: #f4f4f4;
-        border-color: #ccc; /* Laisse le bord visible mais change la couleur */
-        /* MODIFICATION: L'onglet actif ne bouge pas au survol */
-        transform: none; 
-        box-shadow: none;
-    }
-    
-    .nav-link.active:hover {
-        background-color: #f4f4f4; /* Maintient la couleur de fond */
-        color: #0077b5;
+        border-color: #ccc;
+        border-bottom-color: #f4f4f4; /* Simule la jonction avec le fond */
+        transform: none; /* Pas d'animation sur l'onglet actif */
     }
 
-    /* --- Styles NOUVEAUX pour le Footer (Cadres/Cartes de contact) --- */
-
-    /* MODIFICATION: Augmentation du padding du footer pour le rendre plus grand */
+    /* -------------------------------------------------------------------------- */
+    /* REFACTORING: Styles Pied de Page (Liens Textuels Modernes) */
+    /* -------------------------------------------------------------------------- */
     .footer {
-        padding: 30px 50px; /* Augmentation du padding vertical pour plus d'espace */
+        /* MODIFICATION: Augmentation du padding pour plus d'espace */
+        padding: 35px 30px; 
         background-color: #fff;
         box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
         text-align: center;
@@ -88,58 +86,68 @@
     .footer-buttons {
         display: flex;
         justify-content: center;
-        /* MODIFICATION: Utilisation de 'wrap' pour le responsive */
+        /* MODIFICATION: Augmentation de l'espace entre les liens */
+        gap: 40px; 
+        /* Rendre l'alignement vertical sur mobile plus gérable */
         flex-wrap: wrap; 
-        gap: 25px; /* Augmentation de l'espace entre les cartes */
     }
 
-    /* NOUVEAU STYLE: Le style de "cadre/carte" pour les liens du footer */
-    .contact-card {
-        display: flex;
-        flex-direction: column;
+    .button {
+        display: flex; /* Utilisation de flex pour centrer icône et texte */
         align-items: center;
+        justify-content: center;
+        padding: 10px 15px; /* Réduction du padding car ce n'est plus un bouton massif */
+        min-width: 120px; /* Garantir une largeur minimale pour l'harmonie */
+        font-size: 15px;
+        font-weight: 600;
         text-decoration: none;
+        border-radius: 0; /* Suppression des coins arrondis pour l'effet épuré/cadre */
+        transition: color 0.3s ease;
+        cursor: pointer;
         
-        /* Style de la carte */
-        padding: 20px 30px;
-        border-radius: 8px;
-        border: 1px solid #ddd;
-        min-width: 120px; /* Taille minimum pour l'harmonie */
-        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        transition: all 0.3s ease;
-        color: #333; /* Couleur de texte par défaut */
-    }
-
-    .contact-card:hover {
-        /* Effet d'élévation au survol */
-        transform: translateY(-3px); 
-        box-shadow: 0 8px 12px rgba(0,0,0,0.1);
+        /* NOUVEAU STYLE: Liens discrets, couleur sur survol */
+        background-color: transparent; 
+        color: #555; /* Couleur de texte gris par défaut */
+        border: none;
     }
     
-    .contact-card .icon {
-        font-size: 2.2em;
-        margin-bottom: 10px;
+    /* Animation et couleur au survol pour le pied de page */
+    .button:hover {
+        color: #0077b5; /* Bleu au survol pour tous */
+        transform: translateY(-2px); /* Légère animation d'élévation */
+        background-color: transparent; 
     }
 
-    .contact-card .label {
-        font-weight: 600;
-        font-size: 1em;
+    /* Styles d'icône (couleur au repos / couleur au survol) */
+    .button i {
+        margin-right: 8px;
+        color: #777; /* Icône grise au repos */
+        transition: color 0.3s ease;
+    }
+    .button:hover i {
+        color: #0077b5; /* Icône bleue au survol */
     }
 
-    /* Couleurs spécifiques des cartes */
-    .contact-card.linkedin .icon { color: #0077b5; }
-    .contact-card.cv .icon { color: #4CAF50; }
-    .contact-card.email .icon { color: #e44d26; }
-
-
-    /* Suppression des anciens styles de boutons du footer pour éviter les conflits */
-    .button, .button.linkedin, .button.cv, .button.email {
-        all: unset; /* Réinitialise tout style pour ne pas interférer avec .contact-card */
-        cursor: pointer;
-        /* Ajout de la classe .contact-card dans le HTML à la place de .button */
+    /* --- Styles Spécifiques (Conservés pour l'icône principale du pied de page si nécessaire) --- */
+    .button.linkedin { /* Conserve la classe pour des usages futurs si besoin, mais le style est neutralisé */ }
+    .button.email {}
+    .button.cv {}
+    
+    /* Media Query pour l'adaptabilité mobile */
+    @media (max-width: 600px) {
+        .footer-buttons {
+            flex-direction: column;
+            gap: 15px;
+        }
+        .button {
+            width: 80%; /* Occupe plus d'espace sur mobile */
+            margin: 0 auto; /* Centrage */
+            border: 1px solid #ddd; /* Ajout d'un léger cadre sur mobile */
+            border-radius: 4px;
+        }
     }
 
-    /* --- Style du Contenu Principal (Bouton Central) --- */
+    /* --- Style du Contenu Principal (Inchangé) --- */
     .main-content {
         flex-grow: 1;
         display: flex;
@@ -149,7 +157,7 @@
         text-align: center;
         padding: 20px;
     }
-    /* Styles main-button et welcome-title inchangés */
+
     .main-button {
         background-color: #0077b5;
         color: white;
@@ -157,12 +165,13 @@
         font-size: 24px;
         border-radius: 8px;
         text-decoration: none;
-        transition: background-color 0.3s ease;
+        transition: background-color 0.3s ease, transform 0.2s ease;
         margin-top: 20px;
     }
 
     .main-button:hover {
         background-color: #005f84;
+        transform: scale(1.03); /* Animation au survol */
     }
 
     .welcome-title {
@@ -170,5 +179,38 @@
         margin-bottom: 0;
         font-weight: 300;
     }
-
 </style>
+
+<div class="nav-links">
+    <a href="projets.html" class="nav-link">
+        Mes Projets
+    </a>
+    
+    <a href="about.html" class="nav-link active">
+        À Propos de moi
+    </a>
+</div>
+
+<div class="main-content">
+    <h1 class="welcome-title">Bienvenue sur mon Portfolio d'Analyste de données sociales</h1>
+    
+    <a href="projets.html" class="main-button">
+        Voir Mes Projets
+    </a>
+</div>
+
+<footer class="footer">
+    <div class="footer-buttons">
+        <a href="https://www.linkedin.com/in/ma%C3%ABlys-fran%C3%A7ois" class="button linkedin" target="_blank">
+            <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+        
+        <a href="mesdocuments/cv_maëlys_françois.pdf" class="button cv" target="_blank" rel="noopener noreferrer">
+            <i class="fas fa-file-pdf"></i> Mon CV
+        </a>
+        
+        <a href="mailto:maelys.francois31@gmail.com" class="button email">
+            <i class="fas fa-envelope"></i> Mon Email
+        </a>
+    </div>
+</footer>
