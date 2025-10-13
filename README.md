@@ -165,7 +165,7 @@
     </div>
 
     <div class="main-content">
-        <h1 class="welcome-title">Bienvenue sur mon Portfolio de Social Data Analyst</h1>
+        <h1 class="welcome-title">Bienvenue sur mon Portfolio d'Analyste de données sociales</h1>
         
         <a href="projets.html" class="main-button">
             Voir Mes Projets
