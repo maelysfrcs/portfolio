@@ -1,8 +1,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
 
 <style>
-    /* AJOUT DE .container ET MODIFICATION DES BOUTONS DU FOOTER */
-    
     body {
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         margin: 0;
@@ -14,35 +12,48 @@
         min-height: 100vh;
     }
 
-    /* AJOUT: Style pour le conteneur principal du thème Jekyll pour corriger la marge haute */
-    .container {
-        padding-top: 40px !important; 
+    /* NOUVELLE MODIFICATION: Marge pour le Titre (Nom/Prénom) */
+    /* Ce sélecteur cible l'en-tête principal généré par Jekyll pour ajouter une marge. */
+    /* Il suppose que votre titre Maëlys François est le premier <h1> ou un équivalent direct. */
+    /* Si cela ne fonctionne pas, il faudra inspecter l'élément injecté. */
+    .page-header { 
+        padding-top: 30px; /* Augmente l'espace au-dessus du titre */
+        padding-left: 50px; /* Aligne avec le reste du contenu */
+        margin-bottom: -10px; /* Réduit l'espace avec le contenu suivant */
     }
 
-    /* Conteneur des liens du menu */
+    /* --- Style du Menu de Navigation (Header) --- */
     .nav-links {
         display: flex;
-        justify-content: flex-end; 
-        gap: 0; 
-        margin-right: 50px; 
+        justify-content: flex-end;
+        gap: 0;
+        margin-right: 50px;
+        /* AJOUT: S'assure que le menu n'est pas masqué par le reste */
+        z-index: 10; 
     }
 
-    /* NOUVEAU STYLE: Liens de navigation avec aspect d'onglet/cadre */
+    /* NOUVEAU STYLE: Animation de Survol pour les onglets */
     .nav-link {
         font-size: 17px;
         font-weight: 600;
         text-decoration: none;
-        color: #333; 
-        padding: 10px 20px; 
+        color: #333;
+        padding: 10px 20px;
         background-color: #fff;
         border: 1px solid #ccc;
-        border-bottom: none; 
-        transition: all 0.2s ease;
+        border-bottom: none;
+        
+        /* MODIFICATION: Ajout d'une transition pour le survol (animation) */
+        transition: all 0.2s ease-in-out; 
     }
 
     .nav-link:hover {
         color: #0077b5;
-        background-color: #f0f0f0;
+        background-color: #f0f0f0; 
+        /* AJOUT: Légère élévation au survol */
+        transform: translateY(-2px); 
+        /* AJOUT: Ombre discrète au survol */
+        box-shadow: 0 4px 6px rgba(0, 119, 181, 0.1); 
     }
     
     .nav-links a:last-child {
@@ -56,56 +67,79 @@
     .nav-link.active {
         color: #0077b5;
         background-color: #f4f4f4;
-        border-color: #f4f4f4;
+        border-color: #ccc; /* Laisse le bord visible mais change la couleur */
+        /* MODIFICATION: L'onglet actif ne bouge pas au survol */
+        transform: none; 
+        box-shadow: none;
+    }
+    
+    .nav-link.active:hover {
+        background-color: #f4f4f4; /* Maintient la couleur de fond */
+        color: #0077b5;
     }
 
-    /* --- Styles des Boutons de Contact (Footer) --- */
-    
-    .button {
-        display: inline-block;
-        /* MODIFICATION: Augmentation du padding et des bords arrondis */
-        padding: 12px 25px;
-        font-size: 16px;
-        font-weight: bold;
+    /* --- Styles NOUVEAUX pour le Footer (Cadres/Cartes de contact) --- */
+
+    /* MODIFICATION: Augmentation du padding du footer pour le rendre plus grand */
+    .footer {
+        padding: 30px 50px; /* Augmentation du padding vertical pour plus d'espace */
+        background-color: #fff;
+        box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
         text-align: center;
-        text-decoration: none;
-        border-radius: 50px; 
-        transition: all 0.3s ease;
-        cursor: pointer;
-        /* AJOUT: Ombre pour le relief */
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
-    }
-
-    /* MODIFICATION: Couleurs des boutons du Footer */
-    .button.linkedin {
-        background-color: #0077b5;
-        color: white;
-    }
-
-    .button.linkedin:hover {
-        background-color: #005f84;
-    }
-
-    .button.email {
-        background-color: #6c757d; /* Bleu/Gris Élégant */
-        color: white;
-    }
-
-    .button.email:hover {
-        background-color: #5a6268;
-    }
-
-    .button.cv {
-        background-color: #28a745; /* Vert Vif */
-        color: white;
-    }
-
-    .button.cv:hover {
-        background-color: #1e7e34;
     }
     
-    .button i {
-        margin-right: 8px;
+    .footer-buttons {
+        display: flex;
+        justify-content: center;
+        /* MODIFICATION: Utilisation de 'wrap' pour le responsive */
+        flex-wrap: wrap; 
+        gap: 25px; /* Augmentation de l'espace entre les cartes */
+    }
+
+    /* NOUVEAU STYLE: Le style de "cadre/carte" pour les liens du footer */
+    .contact-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-decoration: none;
+        
+        /* Style de la carte */
+        padding: 20px 30px;
+        border-radius: 8px;
+        border: 1px solid #ddd;
+        min-width: 120px; /* Taille minimum pour l'harmonie */
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        transition: all 0.3s ease;
+        color: #333; /* Couleur de texte par défaut */
+    }
+
+    .contact-card:hover {
+        /* Effet d'élévation au survol */
+        transform: translateY(-3px); 
+        box-shadow: 0 8px 12px rgba(0,0,0,0.1);
+    }
+    
+    .contact-card .icon {
+        font-size: 2.2em;
+        margin-bottom: 10px;
+    }
+
+    .contact-card .label {
+        font-weight: 600;
+        font-size: 1em;
+    }
+
+    /* Couleurs spécifiques des cartes */
+    .contact-card.linkedin .icon { color: #0077b5; }
+    .contact-card.cv .icon { color: #4CAF50; }
+    .contact-card.email .icon { color: #e44d26; }
+
+
+    /* Suppression des anciens styles de boutons du footer pour éviter les conflits */
+    .button, .button.linkedin, .button.cv, .button.email {
+        all: unset; /* Réinitialise tout style pour ne pas interférer avec .contact-card */
+        cursor: pointer;
+        /* Ajout de la classe .contact-card dans le HTML à la place de .button */
     }
 
     /* --- Style du Contenu Principal (Bouton Central) --- */
@@ -118,7 +152,7 @@
         text-align: center;
         padding: 20px;
     }
-
+    /* Styles main-button et welcome-title inchangés */
     .main-button {
         background-color: #0077b5;
         color: white;
@@ -140,53 +174,4 @@
         font-weight: 300;
     }
 
-    /* --- Style du Pied de Page (Footer) --- */
-    .footer {
-        padding: 20px 30px; 
-        background-color: #fff;
-        box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
-        text-align: center;
-    }
-    
-    .footer-buttons {
-        display: flex;
-        justify-content: center;
-        gap: 20px; /* Plus d'espace entre les boutons */
-    }
 </style>
-
-<br><br>
-
-<div class="nav-links">
-    <a href="projets.html" class="nav-link">
-        Mes Projets
-    </a>
-    
-    <a href="about.html" class="nav-link active">
-        À Propos de moi
-    </a>
-</div>
-
-<div class="main-content">
-    <h1 class="welcome-title">Bienvenue sur mon Portfolio d'Analyste de données sociales</h1>
-    
-    <a href="projets.html" class="main-button">
-        Voir Mes Projets
-    </a>
-</div>
-
-<footer class="footer">
-    <div class="footer-buttons">
-        <a href="https://www.linkedin.com/in/ma%C3%ABlys-fran%C3%A7ois" class="button linkedin" target="_blank">
-            <i class="fab fa-linkedin"></i> LinkedIn
-        </a>
-        
-        <a href="mesdocuments/cv_maëlys_françois.pdf" class="button cv" target="_blank" rel="noopener noreferrer">
-            <i class="fas fa-file-pdf"></i> Mon CV
-        </a>
-        
-        <a href="mailto:maelys.francois31@gmail.com" class="button email">
-            <i class="fas fa-envelope"></i> Mon Email
-        </a>
-    </div>
-</footer>
