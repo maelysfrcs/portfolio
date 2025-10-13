@@ -4,7 +4,8 @@
     body {
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         margin: 0;
-        padding: 0;
+        /* MODIFICATION: Ajout d'une petite marge en haut pour pousser le contenu */
+        padding: 10px 0 0 0; 
         background-color: #f4f4f4;
         color: #333;
         display: flex;
@@ -13,19 +14,13 @@
     }
 
     /* -------------------------------------------------------------------------- */
-    /* NOUVELLE CORRECTION MARGE (Jekyll) 💡 */
+    /* CORRECTION MARGE SIMPLIFIÉE (Jekyll) */
     /* -------------------------------------------------------------------------- */
-    /* Ce conteneur "pousse" le contenu Jekyll invisiblement pour créer l'espace en haut */
-    .header-fix {
-        padding-top: 30px; 
-    }
-    
     /* Cibler le nom si c'est la première chose dans le body (comme un <h1> ou <p>) */
-    /* Nous allons forcer l'ajout d'une marge supérieure */
     body > h1:first-child, body > h2:first-child, body > p:first-child {
-        /* MODIFICATION: Assure que le nom est aligné avec la nouvelle structure */
-        margin-top: 0 !important; 
-        padding-left: 50px; 
+        /* MODIFICATION: Assure que le nom commence bien à 50px du bord gauche */
+        padding-left: 50px !important; 
+        /* !important est nécessaire ici pour forcer l'écrasement des styles Jekyll */
     }
 
     /* -------------------------------------------------------------------------- */
@@ -35,7 +30,6 @@
         display: flex;
         justify-content: flex-end;
         gap: 0;
-        /* MODIFICATION: Ajusté pour s'intégrer après le .header-fix */
         margin-top: 20px; 
         margin-right: 50px;
     }
@@ -76,7 +70,7 @@
     }
 
     /* -------------------------------------------------------------------------- */
-    /* REFACTORING: Styles Pied de Page (Liens Horizontaux avec Séparateur) */
+    /* Styles Pied de Page (Liens Horizontaux avec Séparateur) */
     /* -------------------------------------------------------------------------- */
     .footer {
         padding: 35px 30px; 
@@ -88,7 +82,8 @@
     .footer-buttons {
         display: flex;
         justify-content: center;
-        /* MODIFICATION: Rétablissement d'un gap horizontal */
+        /* MODIFICATION: Assure l'alignement horizontal par défaut sur tous les grands écrans */
+        flex-direction: row; 
         gap: 0; 
         flex-wrap: wrap; 
         align-items: center;
@@ -98,9 +93,9 @@
         display: flex; 
         align-items: center;
         justify-content: center;
-        padding: 10px 25px; /* MODIFICATION: Plus de padding horizontal */
-        min-width: 150px; /* MODIFICATION: Augmentation de la largeur minimale */
-        font-size: 16px; /* MODIFICATION: Texte un peu plus grand */
+        padding: 10px 25px; 
+        min-width: 150px; 
+        font-size: 16px; 
         font-weight: 600;
         text-decoration: none;
         background-color: transparent; 
@@ -108,10 +103,10 @@
         border: none;
         transition: color 0.3s ease, transform 0.2s ease;
         cursor: pointer;
-        position: relative; /* Nécessaire pour le séparateur */
+        position: relative; 
     }
     
-    /* AJOUT: Séparateur vertical entre les liens */
+    /* Séparateur vertical entre les liens */
     .button:not(:last-child)::after {
         content: '';
         position: absolute;
@@ -119,12 +114,12 @@
         top: 25%;
         height: 50%;
         width: 1px;
-        background-color: #ddd; /* Couleur de la ligne de séparation */
+        background-color: #ddd; 
     }
 
     .button:hover {
         color: #0077b5; 
-        transform: translateY(-1px); /* Légère animation d'élévation */
+        transform: translateY(-1px); 
         background-color: transparent; 
     }
 
@@ -137,10 +132,11 @@
         color: #0077b5; 
     }
     
-    /* --- Media Query pour l'adaptabilité mobile --- */
-    @media (max-width: 800px) {
+    /* --- Media Query pour l'adaptabilité mobile (Uniquement les petits téléphones) --- */
+    /* MODIFICATION: Réduction de la taille d'activation de la colonne */
+    @media (max-width: 500px) {
         .footer-buttons {
-            /* Garde la disposition en colonne pour un affichage propre sur mobile */
+            /* Passe en colonne uniquement sur les très petits écrans */
             flex-direction: column; 
             gap: 10px;
         }
@@ -149,9 +145,9 @@
             margin: 0 auto; 
             border: 1px solid #ddd; 
             border-radius: 4px;
-            /* Suppression du séparateur sur mobile */
             min-width: unset; 
         }
+        /* Suppression du séparateur sur mobile */
         .button:not(:last-child)::after {
             content: none;
         }
@@ -190,8 +186,6 @@
         font-weight: 300;
     }
 </style>
-
-<div class="header-fix"></div>
 
 <div class="nav-links">
     <a href="projets.html" class="nav-link">
