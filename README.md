@@ -86,7 +86,7 @@
         background-color: #fff;
         box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
         text-align: center;
-        width: 20%; 
+        width: 30%; 
         margin-top: auto; 
     }
     
@@ -129,6 +129,15 @@
         margin: 0; 
     }
 
+    .button i {
+    /* Ceci est l'élément icône (fab fa-linkedin, fas fa-file-pdf, etc.) */
+    margin-right: 5px; /* Valeur actuelle pour un petit espace */
+    color: #555; 
+    transition: color 0.3s ease;
+}
+.button:hover i {
+    color: #0077b5; 
+}
 
     .button:hover {
         color: #0077b5; /* Bleu au survol pour un look moderne */
@@ -238,7 +247,7 @@
 <footer class="footer">
     <div class="footer-buttons">
         <a href="https://www.linkedin.com/in/ma%C3%ABlys-fran%C3%A7ois" class="button" target="_blank">
-            <i class="fab fa-linkedin"></i> LinkedIn
+            <i class="fab fa-linkedin"></i>  LinkedIn
         </a>
         
         <a href="mesdocuments/cv_maëlys_françois.pdf" class="button" target="_blank" rel="noopener noreferrer">
