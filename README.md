@@ -14,7 +14,6 @@
             padding: 0;
             background-color: #f4f4f4;
             color: #333;
-            /* Utilisation du flex pour positionner le footer en bas */
             display: flex;
             flex-direction: column;
             min-height: 100vh;
@@ -23,23 +22,49 @@
         /* --- Style du Menu de Navigation (Header) --- */
         .header {
             display: flex;
-            justify-content: flex-end; /* Aligne le contenu à droite */
+            /* Changé pour aligner le titre à gauche et le menu à droite */
+            justify-content: space-between; 
             align-items: center;
             padding: 15px 30px;
             background-color: #fff;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         
-        /* Conteneur des boutons du menu */
-        .nav-buttons {
-            display: flex;
-            gap: 10px; /* Espace entre les boutons du menu */
+        /* Titre du site (votre nom) */
+        .site-title {
+            font-size: 1.5em; /* Taille légèrement augmentée */
+            font-weight: bold;
+            color: #333;
+            text-decoration: none;
+            /* Ajout d'une marge à gauche pour ne pas coller au bord */
+            margin-left: 10px; 
         }
 
-        /* --- Style des Boutons (réutilisation de votre CSS et ajouts) --- */
+        /* Conteneur des liens du menu */
+        .nav-links {
+            display: flex;
+            gap: 25px; /* Espace entre les liens du menu */
+        }
+
+        /* Nouveau style pour les liens du menu (simples liens de site web) */
+        .nav-link {
+            font-size: 16px;
+            font-weight: 500;
+            text-decoration: none;
+            color: #333; /* Couleur du texte noir/gris */
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #0077b5; /* Bleu au survol */
+        }
+
+        /* --- Style des Boutons de Contact (Footer) --- */
+        
+        /* Remise à zéro des styles de boutons non utilisés dans le header */
         .button {
             display: inline-block;
-            padding: 8px 30px;
+            padding: 10px 18px; /* Réajustement du padding pour les boutons du footer */
             font-size: 14px;
             font-weight: bold;
             text-align: center;
@@ -49,27 +74,7 @@
             cursor: pointer;
         }
 
-        /* Bouton Menu Principal (Mes Projets) */
-        .button.menu-projects {
-            background-color: #555; /* Gris */
-            color: white;
-        }
-
-        .button.menu-projects:hover {
-            background-color: #333;
-        }
-
-        /* Nouveau Style pour "À Propos de moi" (Orange de l'Email) */
-        .button.menu-about {
-            background-color: #e44d26; /* Orange souhaité */
-            color: white;
-        }
-        
-        .button.menu-about:hover {
-            background-color: #b43d19; /* Orange foncé */
-        }
-
-        /* Styles Pied de Page (réutilisés) */
+        /* Styles Pied de Page (inchangés) */
         .button.linkedin {
             background-color: #0077b5;
             color: white;
@@ -79,14 +84,14 @@
             background-color: #005f84;
         }
 
-        /* Nouveau Style pour "Mon Email" (couleur différente : Violet) */
+        /* Nouveau Style pour "Mon Email" - remis à la couleur de l'email pour uniformité si souhaité */
         .button.email {
-            background-color: #e44d26; /* Violet (BlueViolet) */
+            background-color: #e44d26; /* Couleur de l'email */
             color: white;
         }
 
         .button.email:hover {
-            background-color: #b43d19; /* Violet foncé */
+            background-color: #b43d19; /* Couleur plus foncée au survol */
         }
 
         .button.cv {
@@ -98,14 +103,14 @@
             background-color: #45a049;
         }
         
-        /* Ajouter un peu d'espace entre l'icône et le texte (réutilisation) */
+        /* Ajouter un peu d'espace entre l'icône et le texte */
         .button i {
             margin-right: 8px;
         }
 
         /* --- Style du Contenu Principal (Bouton Central) --- */
         .main-content {
-            flex-grow: 1; /* Permet au contenu principal de prendre tout l'espace restant */
+            flex-grow: 1;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -136,7 +141,8 @@
 
         /* --- Style du Pied de Page (Footer) --- */
         .footer {
-            padding: 15px 100px;
+            /* J'ai utilisé 20px pour la hauteur pour un bon équilibre */
+            padding: 20px 30px; 
             background-color: #fff;
             box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
             text-align: center;
@@ -153,13 +159,15 @@
 <body>
 
     <div class="header">
-        <div class="nav-buttons">
-            <a href="projets.html" class="button menu-projects">
+        <a href="index.html" class="site-title">Maëlys François</a>
+        
+        <div class="nav-links">
+            <a href="projets.html" class="nav-link">
                 Mes Projets
             </a>
             
-            <a href="about.html" class="button menu-about">
-                <i class="fas fa-user"></i> À Propos de moi
+            <a href="about.html" class="nav-link">
+                À Propos de moi
             </a>
         </div>
     </div>
