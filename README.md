@@ -9,7 +9,7 @@
     
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Police moderne */
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
@@ -19,52 +19,68 @@
             min-height: 100vh;
         }
 
-        /* --- Style du Menu de Navigation (Header) --- */
+        /* CORRECTION: Ajout d'une marge au header et alignement du contenu */
         .header {
             display: flex;
-            /* Changé pour aligner le titre à gauche et le menu à droite */
-            justify-content: space-between; 
+            justify-content: space-between;
             align-items: center;
-            padding: 15px 30px;
+            /* Augmentation du padding pour plus d'espace en haut */
+            padding: 25px 50px; 
             background-color: #fff;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1); /* Ombre plus légère */
         }
         
-        /* Titre du site (votre nom) */
+        /* CORRECTION: Titre du site (votre nom) */
         .site-title {
-            font-size: 1.5em; /* Taille légèrement augmentée */
-            font-weight: bold;
-            color: #333;
+            font-size: 1.8em; 
+            font-weight: 700; /* Plus marqué */
+            color: #0077b5; /* Couleur principale (bleu) */
             text-decoration: none;
-            /* Ajout d'une marge à gauche pour ne pas coller au bord */
-            margin-left: 10px; 
+            /* Suppression de margin-left: 10px; car le padding du header gère la marge */
         }
 
         /* Conteneur des liens du menu */
         .nav-links {
             display: flex;
-            gap: 25px; /* Espace entre les liens du menu */
+            gap: 30px; /* Plus d'espace entre les liens */
         }
 
-        /* Nouveau style pour les liens du menu (simples liens de site web) */
+        /* NOUVEAU STYLE: Liens de navigation modernes */
         .nav-link {
-            font-size: 16px;
-            font-weight: 500;
+            font-size: 17px;
+            font-weight: 600;
             text-decoration: none;
-            color: #333; /* Couleur du texte noir/gris */
+            color: #555; /* Gris foncé pour le texte de base */
+            position: relative;
+            padding-bottom: 5px; /* Espace pour la barre de survol */
             transition: color 0.3s ease;
         }
 
         .nav-link:hover {
             color: #0077b5; /* Bleu au survol */
         }
-
-        /* --- Style des Boutons de Contact (Footer) --- */
         
-        /* Remise à zéro des styles de boutons non utilisés dans le header */
+        /* Effet de soulignement moderne (barre en dessous) */
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px; /* Épaisseur de la barre */
+            background: #0077b5;
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%; /* La barre apparaît au survol */
+        }
+        
+        /* --- Styles des Boutons de Contact (Footer) --- */
+        
         .button {
             display: inline-block;
-            padding: 10px 18px; /* Réajustement du padding pour les boutons du footer */
+            padding: 10px 18px;
             font-size: 14px;
             font-weight: bold;
             text-align: center;
@@ -84,14 +100,13 @@
             background-color: #005f84;
         }
 
-        /* Nouveau Style pour "Mon Email" - remis à la couleur de l'email pour uniformité si souhaité */
         .button.email {
-            background-color: #e44d26; /* Couleur de l'email */
+            background-color: #e44d26; 
             color: white;
         }
 
         .button.email:hover {
-            background-color: #b43d19; /* Couleur plus foncée au survol */
+            background-color: #b43d19; 
         }
 
         .button.cv {
@@ -103,7 +118,6 @@
             background-color: #45a049;
         }
         
-        /* Ajouter un peu d'espace entre l'icône et le texte */
         .button i {
             margin-right: 8px;
         }
@@ -127,6 +141,7 @@
             border-radius: 8px;
             text-decoration: none;
             transition: background-color 0.3s ease;
+            margin-top: 20px; /* Ajout d'une marge sous le titre */
         }
 
         .main-button:hover {
@@ -134,14 +149,13 @@
         }
 
         .welcome-title {
-            font-size: 32px;
-            margin-bottom: 30px;
+            font-size: 38px; /* Légèrement plus grand */
+            margin-bottom: 0; /* Espacement géré par la marge du bouton */
             font-weight: 300;
         }
 
         /* --- Style du Pied de Page (Footer) --- */
         .footer {
-            /* J'ai utilisé 20px pour la hauteur pour un bon équilibre */
             padding: 20px 30px; 
             background-color: #fff;
             box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
@@ -153,7 +167,6 @@
             justify-content: center;
             gap: 15px;
         }
-
     </style>
 </head>
 <body>
