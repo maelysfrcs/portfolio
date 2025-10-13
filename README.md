@@ -1,4 +1,4 @@
-# À la recherche d'un emploi de Social Data Analyst
+# À la recherche d'un emploi dans l'analyse de données sociales
 
 <html lang="fr">
 <head>
