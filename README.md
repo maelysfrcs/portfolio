@@ -80,6 +80,7 @@
 
 ## 🎓 Formations
 **Master Sociologie | Parcours Réseaux et Sociétés (RESO) (_2023 - 2025_)**  
+<p style="color: #0077B5; font-weight: bold; margin-top: 5px;">Obtenu avec mention Bien</p>
 - Analyse de situations sociales complexes via l'analyse de réseaux d'acteurs  
 - Maîtrise d'outils statistiques et numériques pour l'analyse de données  
 - Spécialisation en réseaux sociaux et Web  
