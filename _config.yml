@@ -2,14 +2,14 @@ title: Maëlys François
 logo: /mesdocuments/photocv.PNG
 description: |
   Passionnée par l’analyse de données avec une expertise pour l’étude des comportements sur les **réseaux sociaux numériques**, je suis actuellement à la recherche de ma prochaine **expérience professionnelle**. 
-cv_url: "/mesdocuments/cv.pdf" # Lien relatif ou absolu vers votre CV
-cv_text: "Lien vers mon CV"
-show_downloads: true
+cv_url: "/mesdocuments/cv.pdf"
+cv_text: "Télécharger mon CV"
+# MODIFICATION IMPORTANTE : Désactiver les liens de téléchargement GitHub
+show_downloads: false 
 theme: jekyll-theme-minimal
 sass:
   style: compressed
 
-# Si tu veux ajouter ton propre fichier CSS personnalisé
 theme: jekyll-theme-minimal
 url: "https://maelysfrancois.github.io"
 css:
