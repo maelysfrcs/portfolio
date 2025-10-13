@@ -86,7 +86,7 @@
         background-color: #fff;
         box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
         text-align: center;
-        width: 100%; 
+        width: 25%; 
         margin-top: auto; 
     }
     
@@ -130,7 +130,7 @@
 
     .button i {
         /* MODIFICATION: Augmentation de la marge pour l'espace entre l'icône et le texte */
-        margin-right: 10px; 
+        margin-right: 50px; 
         color: #555; 
         transition: color 0.3s ease;
     }
