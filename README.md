@@ -81,12 +81,12 @@
 
         /* Nouveau Style pour "Mon Email" (couleur différente : Violet) */
         .button.email {
-            background-color: #8A2BE2; /* Violet (BlueViolet) */
+            background-color: #e44d26; /* Violet (BlueViolet) */
             color: white;
         }
 
         .button.email:hover {
-            background-color: #6A1FB8; /* Violet foncé */
+            background-color: #b43d19; /* Violet foncé */
         }
 
         .button.cv {
