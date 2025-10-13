@@ -14,9 +14,10 @@
             padding: 0;
             background-color: #f4f4f4;
             color: #333;
-            min-height: 100vh; /* Permet au footer de rester en bas */
+            /* Utilisation du flex pour positionner le footer en bas */
             display: flex;
             flex-direction: column;
+            min-height: 100vh;
         }
 
         /* --- Style du Menu de Navigation (Header) --- */
@@ -35,7 +36,7 @@
             gap: 10px; /* Espace entre les boutons du menu */
         }
 
-        /* --- Style des Boutons Généraux --- */
+        /* --- Style des Boutons (réutilisation de votre CSS et ajouts) --- */
         .button {
             display: inline-block;
             padding: 10px 18px;
@@ -48,27 +49,27 @@
             cursor: pointer;
         }
 
-        /* Styles pour les boutons du Menu */
-        .button.menu {
-            background-color: #555; /* Gris par défaut pour le menu principal */
+        /* Bouton Menu Principal (Mes Projets) */
+        .button.menu-projects {
+            background-color: #555; /* Gris */
             color: white;
         }
 
-        .button.menu:hover {
+        .button.menu-projects:hover {
             background-color: #333;
         }
-        
-        /* Style spécifique pour "À propos de moi" (Orange) */
-        .button.about {
-            background-color: #ff9800; /* Orange vif */
+
+        /* Nouveau Style pour "À Propos de moi" (Orange de l'Email) */
+        .button.menu-about {
+            background-color: #e44d26; /* Orange souhaité */
             color: white;
         }
-
-        .button.about:hover {
-            background-color: #e68900;
-        }
         
-        /* Styles pour les boutons du Footer */
+        .button.menu-about:hover {
+            background-color: #b43d19; /* Orange foncé */
+        }
+
+        /* Styles Pied de Page (réutilisés) */
         .button.linkedin {
             background-color: #0077b5;
             color: white;
@@ -76,6 +77,16 @@
 
         .button.linkedin:hover {
             background-color: #005f84;
+        }
+
+        /* Nouveau Style pour "Mon Email" (couleur différente : Violet) */
+        .button.email {
+            background-color: #8A2BE2; /* Violet (BlueViolet) */
+            color: white;
+        }
+
+        .button.email:hover {
+            background-color: #6A1FB8; /* Violet foncé */
         }
 
         .button.cv {
@@ -87,19 +98,14 @@
             background-color: #45a049;
         }
         
-        /* Style spécifique pour "Mon Email" (Vert Lime, remplace l'ancien Email/Contact) */
-        .button.email-footer {
-            background-color: #8bc34a; /* Vert Lime */
-            color: white;
-        }
-
-        .button.email-footer:hover {
-            background-color: #7cb342;
+        /* Ajouter un peu d'espace entre l'icône et le texte (réutilisation) */
+        .button i {
+            margin-right: 8px;
         }
 
         /* --- Style du Contenu Principal (Bouton Central) --- */
         .main-content {
-            flex-grow: 1; /* Permet au contenu de prendre l'espace restant */
+            flex-grow: 1; /* Permet au contenu principal de prendre tout l'espace restant */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -109,7 +115,7 @@
         }
 
         .main-button {
-            background-color: #0077b5; /* Bleu principal */
+            background-color: #0077b5;
             color: white;
             padding: 20px 40px;
             font-size: 24px;
@@ -127,32 +133,33 @@
             margin-bottom: 30px;
             font-weight: 300;
         }
-        
+
         /* --- Style du Pied de Page (Footer) --- */
         .footer {
-            padding: 20px;
+            padding: 15px 30px;
             background-color: #fff;
-            border-top: 1px solid #ddd;
+            box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
             text-align: center;
         }
         
         .footer-buttons {
             display: flex;
             justify-content: center;
-            gap: 15px; /* Espacement entre les boutons du footer */
+            gap: 15px;
         }
+
     </style>
 </head>
 <body>
 
     <div class="header">
         <div class="nav-buttons">
-            <a href="projets.html" class="button menu">
-                <i class="fas fa-code"></i> Mes Projets
+            <a href="projets.html" class="button menu-projects">
+                Mes Projets
             </a>
             
-            <a href="about.html" class="button about">
-                <i class="fas fa-user"></i> À propos de moi
+            <a href="about.html" class="button menu-about">
+                <i class="fas fa-user"></i> À Propos de moi
             </a>
         </div>
     </div>
@@ -164,8 +171,8 @@
             Voir Mes Projets
         </a>
     </div>
-    
-    <div class="footer">
+
+    <footer class="footer">
         <div class="footer-buttons">
             <a href="https://www.linkedin.com/in/ma%C3%ABlys-fran%C3%A7ois" class="button linkedin" target="_blank">
                 <i class="fab fa-linkedin"></i> LinkedIn
@@ -175,11 +182,11 @@
                 <i class="fas fa-file-pdf"></i> Mon CV
             </a>
             
-            <a href="mailto:maelys.francois31@gmail.com" class="button email-footer">
+            <a href="mailto:maelys.francois31@gmail.com" class="button email">
                 <i class="fas fa-envelope"></i> Mon Email
             </a>
         </div>
-    </div>
+    </footer>
 
 </body>
 </html>
