@@ -33,7 +33,7 @@
     }
     
     /* -------------------------------------------------------------------------- */
-    /* Styles du Menu de Navigation (Onglets) - INCHANGÉS */
+    /* Styles du Menu de Navigation (Onglets) */
     /* -------------------------------------------------------------------------- */
     .nav-links {
         display: flex;
@@ -79,73 +79,58 @@
     }
 
     /* -------------------------------------------------------------------------- */
-    /* NOUVEAUX STYLES: Pied de Page (Compact et Minimaliste) 💡 */
+    /* STYLES: Pied de Page (Compact et Minimaliste) */
     /* -------------------------------------------------------------------------- */
     .footer {
-        padding: 15px 0; /* Petit padding */
+        padding: 25px 0; 
         background-color: #fff;
         box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
         text-align: center;
-        width: 30%; 
+        width: 100%; 
         margin-top: auto; 
     }
     
     .footer-buttons {
         display: block; 
-        padding: 0 10px; /* Moins d'espace pour plus de compacité */
+        padding: 0 10px; 
         white-space: nowrap; 
     }
 
     .button {
-        /* Alignement forcé côte à côte */
         display: inline-flex; 
         align-items: center;
         justify-content: center;
         
-        /* Compactage des boutons */
         padding: 5px 10px; 
-        min-width: 90px; /* Petite largeur minimum */
-        font-size: 14px; /* Petite taille de police */
-        font-weight: 500; /* Poids normal */
+        min-width: 90px; 
+        font-size: 14px; 
+        font-weight: 500; 
         
         text-decoration: none;
         background-color: transparent; 
-        color: #333; /* Couleur de texte sombre standard */
+        color: #333; 
         border: none;
-        transition: color 0.3s ease; /* Transition simplifiée */
+        transition: color 0.3s ease; 
         cursor: pointer;
         position: relative; 
+        margin: 0; 
     }
     
     /* Séparateur vertical Minimaliste */
     .button:not(:first-child) {
-        border-left: 1px solid #ccc; /* Séparateur plus clair */
-        padding-left: 15px; /* Petit espace après la ligne */
-        margin-left: 15px; /* Petit espace avant la ligne */
+        border-left: 1px solid #ccc; 
+        padding-left: 15px; 
+        margin-left: 15px; 
     }
-    
-    /* Suppression des marges pour utiliser la séparation par bordure */
-    .button {
-        margin: 0; 
-    }
-
-    .button i {
-    /* Ceci est l'élément icône (fab fa-linkedin, fas fa-file-pdf, etc.) */
-    margin-right: 5px; /* Valeur actuelle pour un petit espace */
-    color: #555; 
-    transition: color 0.3s ease;
-}
-.button:hover i {
-    color: #0077b5; 
-}
 
     .button:hover {
-        color: #0077b5; /* Bleu au survol pour un look moderne */
-        transform: none; /* Pas de mouvement */
+        color: #0077b5; 
+        transform: none; 
     }
 
     .button i {
-        margin-right: 5px; /* Icônes plus proches */
+        /* MODIFICATION: Augmentation de la marge pour l'espace entre l'icône et le texte */
+        margin-right: 10px; 
         color: #555; 
         transition: color 0.3s ease;
     }
@@ -170,7 +155,7 @@
             padding: 10px;
             border-left: none; 
             padding-left: 10px;
-            font-size: 16px; /* Taille normale sur mobile pour la lisibilité */
+            font-size: 16px;
         }
     }
 
@@ -212,12 +197,10 @@
     /* -------------------------------------------------------------------------- */
     /* Styles pour masquer TOUS les éléments GitHub (Répétés et Renforcés) */
     /* -------------------------------------------------------------------------- */
-    /* Utilisation du sélecteur universel pour être sûr de masquer tous les enfants du footer par défaut */
     .site-footer * {
         display: none !important;
     }
     
-    /* Masquage des autres conteneurs par défaut de Jekyll */
     .view-on-github-link,
     .downloads,
     .site-footer,
@@ -247,7 +230,7 @@
 <footer class="footer">
     <div class="footer-buttons">
         <a href="https://www.linkedin.com/in/ma%C3%ABlys-fran%C3%A7ois" class="button" target="_blank">
-            <i class="fab fa-linkedin"></i>  LinkedIn
+            <i class="fab fa-linkedin"></i> LinkedIn
         </a>
         
         <a href="mesdocuments/cv_maëlys_françois.pdf" class="button" target="_blank" rel="noopener noreferrer">
