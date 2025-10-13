@@ -39,7 +39,7 @@
         /* --- Style des Boutons (réutilisation de votre CSS et ajouts) --- */
         .button {
             display: inline-block;
-            padding: 10px 18px;
+            padding: 10px 30px;
             font-size: 14px;
             font-weight: bold;
             text-align: center;
