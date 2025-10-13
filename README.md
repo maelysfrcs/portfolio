@@ -79,7 +79,7 @@
 ---
 
 ## 🎓 Formations
-**Master Sociologie | Parcours Réseaux et Sociétés (RESO) (_2023 - 2025_)** <span style="color: #0077B5; font-weight: bold;"></i> Obtenu avec mention Bien</span<i class="fas fa-check-circle">>
+**Master Sociologie | Parcours Réseaux et Sociétés (RESO) (_2023 - 2025_)** <span style="color: #0077B5; font-weight: bold;"><i class="fas fa-check-circle"></i> Obtenu avec mention Bien</span>
 <p Analyse de situations sociales complexes. Maîtrise d’outils statistiques et numériques pour l’analyse de données. Spécialisation en réseaux sociaux et Web. ></p>
 - Mémoire de recherche : étude de l’évolution de la monétisation des jeux vidéos et son influence sur les pratiques et les communautés de joueurs (données Reddit).
 
