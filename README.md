@@ -171,9 +171,7 @@
 </head>
 <body>
 
-    <div class="header">
-        <a href="index.html" class="site-title">Maëlys François</a>
-        
+
         <div class="nav-links">
             <a href="projets.html" class="nav-link">
                 Mes Projets
@@ -183,7 +181,6 @@
                 À Propos de moi
             </a>
         </div>
-    </div>
 
     <div class="main-content">
         <h1 class="welcome-title">Bienvenue sur mon Portfolio d'Analyste de données sociales</h1>
