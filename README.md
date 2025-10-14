@@ -92,6 +92,9 @@
 
     /* Technique alternative pour la photo : Utiliser le background-image */
     .profile-photo {
+        background-image: url('/mesdocuments/photocv.PNG'); /* Chemin ici */
+        background-size: cover; /* Pour qu'elle couvre la zone */
+        background-position: center; /* Pour la centrer */
         width: 120px;
         height: 120px;
         border-radius: 50%;
@@ -100,16 +103,7 @@
         box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         flex-shrink: 0;
         display: block !important;
-        
-        /* TECHNIQUE ALTERNATIVE POUR L'IMAGE (À SUPPRIMER SI LE CHEMIN FONCTIONNE) */
-        /* Si l'image locale ne charge pas, cette image de placeholder apparaitra. */
-        /* Supprimez les lignes ci-dessous dès que le chemin local fonctionne. */
-        /* background-image: url('https://via.placeholder.com/120/0077b5/ffffff?text=MF'); */
-        /* background-size: cover; */
-    }
-    
-    /* Cache la source de l'image si le background-image est utilisé comme solution de contournement */
-    /* .profile-photo[src*="photocv.PNG"] { content: ' '; } */
+
 
     .info-container h1 {
         margin: 0;
@@ -200,7 +194,7 @@
     }
     
     /* --- Media Query pour l'adaptabilité mobile (max-width: 768px) --- */
-    @media (max-width: 768px) {
+    @media (max-width: 0px) {
         .personal-header {
             flex-direction: column;
             text-align: center;
@@ -227,7 +221,7 @@
             /* Centre le contenu texte/icône dans le bouton */
             justify-content: center; 
             
-            border: 1px solid #ddd; 
+            border: 0px solid #ddd; 
             border-radius: 4px;
             min-width: unset; 
             padding: 10px;
@@ -256,7 +250,7 @@
     <div class="info-container">
         <h1>Maëlys François</h1>
         <p>Analyste de données sociales et experte en stratégies numériques.</p>
-        <p>Passionnée par l'**analyse de données** avec une expertise pour l'étude des **comportements sur les réseaux sociaux numériques**. Mon objectif est de transformer les données complexes en stratégies actionnables.</p>
+        <p>Passionnée par l'<strong>analyse de données</strong> avec une expertise pour l'étude des <strong>comportements sur les réseaux sociaux numériques</strong>.</p>
     </div>
 </div>
 
