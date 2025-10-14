@@ -110,7 +110,6 @@
         flex-shrink: 0;
         display: block !important;
         max-width: none !important; 
-        /* Tentez cette propriété pour éviter que l'image ne soit coupée si elle est trouvée */
         object-fit: contain; 
     }
 
@@ -136,11 +135,10 @@
     }
     
     .main-content-projects h2 {
-        /* Nouvelle police, couleur noire, et texte simple "Mes Projets" */
         font-family: 'Poppins', sans-serif;
         font-size: 38px; 
         font-weight: 700;
-        color: #333; /* Texte en noir */
+        color: #333; 
         margin-top: 0;
         margin-bottom: 30px; 
         text-align: center;
@@ -220,14 +218,16 @@
             gap: 10px;
             width: 100%; 
             padding: 0; 
-            /* CORRECTION: Centrage parfait des boutons au centre de l'écran */
+            /* Assure que le conteneur central aligne ses enfants au centre */
             align-items: center; 
             white-space: normal; 
         }
         .button {
-            width: 80%; 
+            /* Largeur légèrement augmentée et centrage du bouton */
+            width: 90%; /* Augmenté à 90% pour une meilleure visibilité */
             margin: 0 auto; 
-            justify-content: center; /* Centre le contenu dans le bouton */
+            /* Correction finale pour centrer le contenu (icône + texte) dans le bouton */
+            justify-content: center; 
             
             border: 1px solid #ddd; 
             border-radius: 4px;
