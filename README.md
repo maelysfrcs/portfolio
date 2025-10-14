@@ -1,5 +1,3 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
-
 <style>
     body {
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -13,8 +11,10 @@
     }
 
     /* -------------------------------------------------------------------------- */
-    /* CORRECTION MARGE ALTERNATIVE (Cible le contenu injecté par Jekyll) */
+    /* CORRECTION MARGE ET PRÉSENTATION */
     /* -------------------------------------------------------------------------- */
+    /* Masque le contenu principal par défaut du thème Minimal (H1 et P), 
+       mais maintient la structure pour l'injection si besoin. */
     body > .wrapper, .page-header {
         padding-top: 30px !important; 
         padding-left: 50px !important; 
@@ -22,16 +22,41 @@
         margin-bottom: 0 !important; 
     }
 
-    .page-header h1 {
-        margin-top: 0 !important;
-        padding-top: 0 !important;
+    /* -------------------------------------------------------------------------- */
+    /* NOUVEAUX STYLES: Section de Présentation (Nom, Photo, Description) */
+    /* -------------------------------------------------------------------------- */
+    .header-content {
+        display: flex;
+        align-items: center;
+        padding: 20px 50px 0 50px;
+        /* Aligne la section sous les onglets */
+        margin-top: 60px; 
     }
-    
-    .page-header p {
-        padding-left: 50px !important;
-        margin-left: -50px !important;
+
+    .profile-photo {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 30px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
-    
+
+    .info-container h1 {
+        /* Nom et Prénom */
+        margin: 0;
+        font-size: 32px;
+        color: #0077b5;
+    }
+
+    .info-container p {
+        /* Description */
+        margin-top: 5px;
+        font-size: 16px;
+        color: #555;
+        max-width: 600px;
+    }
+
     /* -------------------------------------------------------------------------- */
     /* Styles du Menu de Navigation (Onglets) */
     /* -------------------------------------------------------------------------- */
@@ -53,6 +78,7 @@
         border: 1px solid #ccc;
         border-bottom: none;
         transition: all 0.2s ease;
+        border-radius: 0; /* Annule tout rayon pour les bords supérieurs */
     }
 
     .nav-link:hover {
@@ -86,8 +112,8 @@
         background-color: #fff;
         box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
         text-align: center;
-        /* CORRECTION : Remis à 100% pour éviter que le footer soit trop étroit */
-        width: 25%; 
+        /* CORRECTION : Remis à 100% */
+        width: 100%; 
         margin-top: auto; 
     }
     
@@ -100,7 +126,7 @@
     .button {
         display: inline-flex; 
         align-items: center;
-        /* Retire l'alignement justifié pour que la marge-droite fonctionne mieux */
+        /* Nouveau: Alignement au début pour respecter le margin-right de l'icône */
         justify-content: flex-start;
         
         padding: 10px 15px; 
@@ -131,8 +157,9 @@
     }
 
     .button i {
-        /* CORRECTION : Ajout de !important pour forcer la marge contre inline-flex */
-        margin-right: 50px !important; 
+        /* CORRECTION FINALE : Ajout de display pour que margin-right fonctionne */
+        display: inline-block;
+        margin-right: 10px !important; /* Vous pouvez ajuster cette valeur */
         color: #555; 
         transition: color 0.3s ease;
     }
@@ -141,7 +168,17 @@
     }
     
     /* --- Media Query pour l'adaptabilité mobile --- */
-    @media (max-width: 500px) {
+    @media (max-width: 768px) {
+        .header-content {
+            flex-direction: column;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        .profile-photo {
+            margin-right: 0;
+            margin-bottom: 20px;
+        }
         .footer-buttons {
             display: flex; 
             flex-direction: column; 
@@ -210,6 +247,14 @@
         display: none !important;
     }
 </style>
+
+<div class="header-content">
+    <img src="/mesdocuments/photocv.PNG" alt="Maëlys François" class="profile-photo">
+    <div class="info-container">
+        <h1>Maëlys François</h1>
+        <p>Passionnée par l’analyse de données avec une expertise pour l’étude des comportements sur les réseaux sociaux numériques.</p>
+    </div>
+</div>
 
 <div class="nav-links">
     <a href="projets.html" class="nav-link">
