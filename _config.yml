@@ -1,1 +1,17 @@
+title: Maëlys François
+logo: /mesdocuments/photocv.PNG
+description: |
+  Passionnée par l’analyse de données avec une expertise pour l’étude des comportements sur les réseaux sociaux numériques. 
+cv_url: "/mesdocuments/cv.pdf"
+cv_text: "Télécharger mon CV"
+# MODIFICATION IMPORTANTE : Désactiver les liens de téléchargement GitHub
+show_downloads: false 
+theme: jekyll-theme-minimal
+sass:
+  style: compressed
+
+theme: jekyll-theme-minimal
+url: "https://maelysfrancois.github.io"
+css:
+  - "/assets/css/styles.css"
 
