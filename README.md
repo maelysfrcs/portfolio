@@ -1,5 +1,5 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
     /* Styles de base */
@@ -52,15 +52,44 @@
         border: 1px solid #ccc;
         border-bottom: none;
         transition: all 0.2s ease; 
+        
+        /* STYLE 'A PROPOS DE MOI' (Inactif/Normal) : Fond Blanc, Texte Noir */
+        color: #333;
+        background-color: #fff;
     }
-
+    
     .nav-link:hover {
-        color: #0077b5;
+        color: #0077b5; /* Bleu au survol */
         background-color: #f0f0f0;
         transform: translateY(-2px); 
         box-shadow: 0 -2px 5px rgba(0,0,0,0.05); 
     }
+
+    /* Le style actif (Mes Projets) doit être : Noir, Fond blanc */
+    .nav-link.active {
+        color: #333; /* Noir */
+        background-color: #f4f4f4; /* Fond légèrement gris (couleur du body) */
+        border-color: #ccc;
+        border-bottom-color: #f4f4f4; 
+        transform: none; 
+        box-shadow: none;
+    }
     
+    /* STYLE INVERSE (A propos de moi, si on souhaite ce style pour l'inactif) */
+    .nav-links a:nth-child(2) {
+        color: #0077b5; /* Texte Bleu */
+        background-color: #f0f0f0; /* Fond Gris */
+        border-color: #ccc;
+        border-bottom-color: #ccc;
+    }
+    /* Survol du bouton Inactif */
+    .nav-links a:nth-child(2):hover {
+        color: #0077b5;
+        background-color: #e0e0e0; 
+        transform: translateY(-2px); 
+        box-shadow: 0 -2px 5px rgba(0,0,0,0.05); 
+    }
+
     .nav-links a:last-child {
         border-top-right-radius: 6px;
     }
@@ -69,15 +98,6 @@
         border-top-left-radius: 6px;
     }
     
-    .nav-link.active {
-        color: #0077b5;
-        background-color: #f4f4f4;
-        border-color: #ccc;
-        border-bottom-color: #f4f4f4; 
-        transform: none; 
-        box-shadow: none;
-    }
-
     /* -------------------------------------------------------------------------- */
     /* STYLES: Header Personnel (Photo et Description) */
     /* -------------------------------------------------------------------------- */
@@ -99,14 +119,13 @@
         box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         flex-shrink: 0;
         display: block !important;
-        /* Règle forte pour l'affichage de l'image (peut être ignorée si le chemin est incorrect) */
         max-width: none !important; 
     }
 
     .info-container h1 {
         margin: 0;
-        font-size: 32px; /* Remis à la taille initiale */
-        color: #0077b5; /* Remis à la couleur initiale */
+        font-size: 32px; 
+        color: #0077b5;
     }
 
     .info-container p {
@@ -125,10 +144,11 @@
     }
     
     .main-content-projects h2 {
-        font-family: 'Montserrat', sans-serif;
-        font-size: 32px; 
-        font-weight: 700;
-        color: #0077b5;
+        /* Nouvelle police Poppins, en noir, seulement "Mes Projets" */
+        font-family: 'Poppins', sans-serif;
+        font-size: 40px; 
+        font-weight: 600; /* Plus moderne que le gras strict */
+        color: #333; /* Noir */
         margin-top: 0;
         margin-bottom: 30px; 
         text-align: center;
@@ -208,14 +228,14 @@
             gap: 10px;
             width: 100%; 
             padding: 0; 
-            /* Assure que les éléments colonnes sont bien centrés horizontalement */
+            /* CORRECTION: Centrer les boutons dans le conteneur */
             align-items: center; 
             white-space: normal; 
         }
         .button {
             width: 80%; 
             margin: 0 auto; 
-            /* Centre le contenu texte/icône dans le bouton */
+            /* CORRECTION: Centrer le contenu du bouton (texte + icône) */
             justify-content: center; 
             
             border: 1px solid #ddd; 
@@ -223,7 +243,6 @@
             min-width: unset; 
             padding: 10px;
         }
-        /* Supprime la bordure gauche et la marge des boutons pour le mobile */
         .button:not(:first-child) {
             border-left: none;
             padding-left: 10px;
@@ -251,7 +270,7 @@
 </div>
 
 <div class="main-content-projects">
-    <h2>Mes Projets d'Analyse de Données</h2>
+    <h2>Mes Projets</h2>
     <p>Cette section est l'endroit idéal pour commencer à lister vos projets. Vous pouvez enlever ce texte d'exemple.</p>
 </div>
 
