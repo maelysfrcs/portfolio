@@ -16,9 +16,8 @@
     /* -------------------------------------------------------------------------- */
     /* MASQUAGE ET CORRECTIONS JEKYLL */
     /* -------------------------------------------------------------------------- */
-    /* Masque le titre du site ("Portfolio") en haut à gauche */
+    /* Masque le titre du site ("Portfolio") en haut à gauche et les autres éléments GitHub */
     .page-header h1,
-    /* Masquage des éléments par défaut du thème GitHub/Jekyll */
     .view-on-github-link,
     .downloads,
     .site-footer,
@@ -54,14 +53,12 @@
         background-color: #fff;
         border: 1px solid #ccc;
         border-bottom: none;
-        /* Ajout de la transition à l'état normal pour que tout le monde l'ait */
         transition: all 0.2s ease; 
     }
 
     .nav-link:hover {
         color: #0077b5;
         background-color: #f0f0f0;
-        /* Animation de survol uniformisée */
         transform: translateY(-2px); 
         box-shadow: 0 -2px 5px rgba(0,0,0,0.05); 
     }
@@ -74,18 +71,17 @@
         border-top-left-radius: 6px;
     }
     
-    /* Le style actif doit AUSSI avoir l'animation de survol de base si on passe la souris dessus */
     .nav-link.active {
         color: #0077b5;
         background-color: #f4f4f4;
         border-color: #ccc;
         border-bottom-color: #f4f4f4; 
         transform: none; 
-        box-shadow: none; /* Annule l'ombre de survol en état actif par défaut */
+        box-shadow: none;
     }
 
     /* -------------------------------------------------------------------------- */
-    /* NOUVEAUX STYLES: Header Personnel (Photo et Description) */
+    /* STYLES: Header Personnel (Photo et Description) */
     /* -------------------------------------------------------------------------- */
     .personal-header {
         display: flex;
@@ -93,7 +89,7 @@
         padding: 40px 50px;
         background-color: #fff;
         border-bottom: 1px solid #ccc;
-        margin-top: -1px; /* Colle la section au bas des onglets */
+        margin-top: -1px; 
     }
 
     .profile-photo {
@@ -103,7 +99,9 @@
         object-fit: cover;
         margin-right: 30px;
         box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        flex-shrink: 0; /* Empêche la photo de se rétrécir */
+        flex-shrink: 0;
+        /* Ajout de display: block pour forcer l'affichage si le chemin est correct */
+        display: block !important;
     }
 
     .info-container h1 {
@@ -120,17 +118,20 @@
     }
 
     /* -------------------------------------------------------------------------- */
-    /* STYLES: Contenu Principal (Nouveau conteneur pour les futurs projets) */
+    /* STYLES: Contenu Principal (Mes Projets) */
     /* -------------------------------------------------------------------------- */
     .main-content-projects {
         flex-grow: 1;
         padding: 50px; 
+        text-align: center; /* Centre le contenu de la section principale */
     }
     
     .main-content-projects h2 {
-        font-size: 24px;
+        font-size: 32px; /* Taille légèrement augmentée pour le titre principal */
         color: #0077b5;
         margin-top: 0;
+        margin-bottom: 30px; /* Espace après le titre */
+        text-align: center; /* Assure que le titre est bien centré */
     }
 
     /* -------------------------------------------------------------------------- */
@@ -158,7 +159,6 @@
         
         padding: 10px 15px; 
         min-width: 100px; 
-        /* AUGMENTATION DE L'ÉCRITURE */
         font-size: 16px; 
         font-weight: 500; 
         
@@ -185,7 +185,6 @@
     }
 
     .button i {
-        /* Correction : display inline-block assure que la marge fonctionne */
         display: inline-block;
         margin-right: 10px; 
         color: #555; 
@@ -214,7 +213,10 @@
         }
         .button {
             width: 80%; 
+            /* Correction de l'alignement mobile */
             margin: 0 auto; 
+            justify-content: center; /* Centre le contenu des boutons (icône + texte) */
+            
             border: 1px solid #ddd; 
             border-radius: 4px;
             min-width: unset; 
@@ -237,16 +239,16 @@
 </div>
 
 <div class="personal-header">
-    <img src="/mesdocuments/photocv.PNG">
+    <img src="/mesdocuments/photocv.PNG" class="profile-photo" alt="Maëlys François">
     <div class="info-container">
         <h1>Maëlys François, Analyste de données sociales</h1>
-        <p>Passionnée par l’analyse de données avec une expertise pour l’étude des **comportements sur les réseaux sociaux numériques**. Mon objectif est de transformer les données complexes en stratégies actionnables.</p>
+        <p>Passionnée par l’**analyse de données** avec une expertise pour l’étude des **comportements sur les réseaux sociaux numériques**. Mon objectif est de transformer les données complexes en stratégies actionnables.</p>
     </div>
 </div>
 
 <div class="main-content-projects">
     <h2>Mes Projets d'Analyse de Données</h2>
-    <p>Cette section est prête à recevoir le détail de vos projets.</p>
+    <p>Cette section est l'endroit idéal pour commencer à lister vos projets. Vous pouvez enlever ce texte d'exemple.</p>
 </div>
 
 <footer class="footer">
