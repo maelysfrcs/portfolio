@@ -90,11 +90,7 @@
         margin-top: -1px; 
     }
 
-    /* Technique alternative pour la photo : Utiliser le background-image */
     .profile-photo {
-        background-image: url('/mesdocuments/photocv.PNG'); /* Chemin ici */
-        background-size: cover; /* Pour qu'elle couvre la zone */
-        background-position: center; /* Pour la centrer */
         width: 120px;
         height: 120px;
         border-radius: 50%;
@@ -103,12 +99,14 @@
         box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         flex-shrink: 0;
         display: block !important;
-
+        /* Règle forte pour l'affichage de l'image (peut être ignorée si le chemin est incorrect) */
+        max-width: none !important; 
+    }
 
     .info-container h1 {
         margin: 0;
-        font-size: 28px;
-        color: #0077b5; /* Changement de couleur pour Maëlys François */
+        font-size: 32px; /* Remis à la taille initiale */
+        color: #0077b5; /* Remis à la couleur initiale */
     }
 
     .info-container p {
@@ -194,7 +192,7 @@
     }
     
     /* --- Media Query pour l'adaptabilité mobile (max-width: 768px) --- */
-    @media (max-width: 0px) {
+    @media (max-width: 768px) {
         .personal-header {
             flex-direction: column;
             text-align: center;
@@ -208,20 +206,19 @@
             display: flex; 
             flex-direction: column; 
             gap: 10px;
-            /* Centre le conteneur lui-même */
             width: 100%; 
             padding: 0; 
-            align-items: center; /* Important pour centrer les boutons dans la colonne */
-            white-space: normal; /* Permet le retour à la ligne si besoin */
+            /* Assure que les éléments colonnes sont bien centrés horizontalement */
+            align-items: center; 
+            white-space: normal; 
         }
         .button {
-            /* Assure que le bouton utilise l'espace disponible */
             width: 80%; 
             margin: 0 auto; 
             /* Centre le contenu texte/icône dans le bouton */
             justify-content: center; 
             
-            border: 0px solid #ddd; 
+            border: 1px solid #ddd; 
             border-radius: 4px;
             min-width: unset; 
             padding: 10px;
@@ -249,8 +246,7 @@
     <img src="/mesdocuments/photocv.PNG" class="profile-photo" alt="Maëlys François">
     <div class="info-container">
         <h1>Maëlys François</h1>
-        <p>Analyste de données sociales et experte en stratégies numériques.</p>
-        <p>Passionnée par l'<strong>analyse de données</strong> avec une expertise pour l'étude des <strong>comportements sur les réseaux sociaux numériques</strong>.</p>
+        <p>Passionnée par l'<strong>analyse de données</strong> avec une expertise pour l'étude des <strong>comportements sur les réseaux sociaux numériques</strong>. Mon objectif est de transformer les données complexes en stratégies actionnables.</p>
     </div>
 </div>
 
