@@ -237,10 +237,10 @@
 </div>
 
 <div class="personal-header">
-    <img src="/mesdocuments/photocv.PNG" alt="Maëlys François" class="profile-photo">
+    <img src="/mesdocuments/photocv.PNG">
     <div class="info-container">
         <h1>Maëlys François, Analyste de données sociales</h1>
-        <p>Passionnée par l’**analyse de données** avec une expertise pour l’étude des **comportements sur les réseaux sociaux numériques**. Mon objectif est de transformer les données complexes en stratégies actionnables.</p>
+        <p>Passionnée par l’analyse de données avec une expertise pour l’étude des **comportements sur les réseaux sociaux numériques**. Mon objectif est de transformer les données complexes en stratégies actionnables.</p>
     </div>
 </div>
 
