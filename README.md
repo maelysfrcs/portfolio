@@ -1,4 +1,5 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
 
 <style>
     /* Styles de base */
@@ -100,7 +101,8 @@
         margin-right: 30px;
         box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         flex-shrink: 0;
-        /* Ajout de display: block pour forcer l'affichage si le chemin est correct */
+        /* Ajout d'une règle forte pour forcer l'affichage de l'image (si le chemin est bon) */
+        max-width: none !important;
         display: block !important;
     }
 
@@ -123,15 +125,17 @@
     .main-content-projects {
         flex-grow: 1;
         padding: 50px; 
-        text-align: center; /* Centre le contenu de la section principale */
     }
     
     .main-content-projects h2 {
-        font-size: 32px; /* Taille légèrement augmentée pour le titre principal */
+        /* Nouvelle police pour un titre plus moderne */
+        font-family: 'Montserrat', sans-serif;
+        font-size: 32px; 
+        font-weight: 700;
         color: #0077b5;
         margin-top: 0;
-        margin-bottom: 30px; /* Espace après le titre */
-        text-align: center; /* Assure que le titre est bien centré */
+        margin-bottom: 30px; 
+        text-align: center;
     }
 
     /* -------------------------------------------------------------------------- */
@@ -194,7 +198,7 @@
         color: #0077b5; 
     }
     
-    /* --- Media Query pour l'adaptabilité mobile --- */
+    /* --- Media Query pour l'adaptabilité mobile (max-width: 768px) --- */
     @media (max-width: 768px) {
         .personal-header {
             flex-direction: column;
@@ -209,13 +213,15 @@
             display: flex; 
             flex-direction: column; 
             gap: 10px;
+            /* Correction de l'alignement: étire le conteneur sur toute la largeur */
+            width: 100%; 
             padding: 0; 
         }
         .button {
-            width: 80%; 
-            /* Correction de l'alignement mobile */
-            margin: 0 auto; 
-            justify-content: center; /* Centre le contenu des boutons (icône + texte) */
+            width: 80%; /* Assure que le bouton prend 80% de l'espace disponible */
+            margin: 0 auto; /* Centre le bouton */
+            /* Centre le contenu texte/icône dans le bouton pour corriger le "décalage" */
+            justify-content: center; 
             
             border: 1px solid #ddd; 
             border-radius: 4px;
@@ -225,8 +231,16 @@
             padding-left: 10px;
             font-size: 16px;
         }
+        /* Supprime la bordure gauche et la marge des boutons pour le mobile */
+        .button:not(:first-child) {
+            border-left: none;
+            padding-left: 10px;
+            margin-left: 0;
+        }
     }
 </style>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
 
 <div class="nav-links">
     <a href="projets.html" class="nav-link active">
@@ -242,7 +256,7 @@
     <img src="/mesdocuments/photocv.PNG" class="profile-photo" alt="Maëlys François">
     <div class="info-container">
         <h1>Maëlys François, Analyste de données sociales</h1>
-        <p>Passionnée par l’**analyse de données** avec une expertise pour l’étude des **comportements sur les réseaux sociaux numériques**. Mon objectif est de transformer les données complexes en stratégies actionnables.</p>
+        <p>Passionnée par l'**analyse de données** avec une expertise pour l'étude des **comportements sur les réseaux sociaux numériques**. Mon objectif est de transformer les données complexes en stratégies actionnables.</p>
     </div>
 </div>
 
