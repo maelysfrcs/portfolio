@@ -1,5 +1,5 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
 
 <style>
     /* Styles de base */
@@ -46,58 +46,49 @@
         font-size: 17px;
         font-weight: 600;
         text-decoration: none;
-        color: #333;
         padding: 10px 20px;
-        background-color: #fff;
         border: 1px solid #ccc;
         border-bottom: none;
         transition: all 0.2s ease; 
-        
-        /* STYLE 'A PROPOS DE MOI' (Inactif/Normal) : Fond Blanc, Texte Noir */
-        color: #333;
-        background-color: #fff;
     }
     
+    /* Style par défaut pour les liens INACTIFS : 'À Propos de moi' */
+    .nav-link {
+        color: #0077b5; /* Texte bleu */
+        background-color: #f0f0f0; /* Fond gris */
+    }
+
     .nav-link:hover {
-        color: #0077b5; /* Bleu au survol */
-        background-color: #f0f0f0;
+        color: #005f96; /* Bleu foncé au survol */
+        background-color: #e0e0e0; /* Gris plus foncé */
         transform: translateY(-2px); 
         box-shadow: 0 -2px 5px rgba(0,0,0,0.05); 
     }
-
-    /* Le style actif (Mes Projets) doit être : Noir, Fond blanc */
+    
+    /* Style spécifique pour le lien ACTIF : 'Mes Projets' */
     .nav-link.active {
-        color: #333; /* Noir */
-        background-color: #f4f4f4; /* Fond légèrement gris (couleur du body) */
+        color: #333; /* Texte noir */
+        background-color: #fff; /* Fond blanc */
         border-color: #ccc;
-        border-bottom-color: #f4f4f4; 
+        border-bottom-color: #fff; /* Cache la bordure sur le fond blanc */
         transform: none; 
         box-shadow: none;
     }
-    
-    /* STYLE INVERSE (A propos de moi, si on souhaite ce style pour l'inactif) */
-    .nav-links a:nth-child(2) {
-        color: #0077b5; /* Texte Bleu */
-        background-color: #f0f0f0; /* Fond Gris */
-        border-color: #ccc;
-        border-bottom-color: #ccc;
-    }
-    /* Survol du bouton Inactif */
-    .nav-links a:nth-child(2):hover {
-        color: #0077b5;
-        background-color: #e0e0e0; 
-        transform: translateY(-2px); 
+    /* Survol pour le lien actif */
+    .nav-link.active:hover {
+        color: #333;
+        background-color: #fff;
+        transform: translateY(-2px);
         box-shadow: 0 -2px 5px rgba(0,0,0,0.05); 
     }
 
     .nav-links a:last-child {
         border-top-right-radius: 6px;
     }
-    
     .nav-links a:first-child {
         border-top-left-radius: 6px;
     }
-    
+
     /* -------------------------------------------------------------------------- */
     /* STYLES: Header Personnel (Photo et Description) */
     /* -------------------------------------------------------------------------- */
@@ -114,18 +105,19 @@
         width: 120px;
         height: 120px;
         border-radius: 50%;
-        object-fit: cover;
         margin-right: 30px;
         box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         flex-shrink: 0;
         display: block !important;
         max-width: none !important; 
+        /* Tentez cette propriété pour éviter que l'image ne soit coupée si elle est trouvée */
+        object-fit: contain; 
     }
 
     .info-container h1 {
         margin: 0;
         font-size: 32px; 
-        color: #0077b5;
+        color: #0077b5; 
     }
 
     .info-container p {
@@ -144,11 +136,11 @@
     }
     
     .main-content-projects h2 {
-        /* Nouvelle police Poppins, en noir, seulement "Mes Projets" */
+        /* Nouvelle police, couleur noire, et texte simple "Mes Projets" */
         font-family: 'Poppins', sans-serif;
-        font-size: 40px; 
-        font-weight: 600; /* Plus moderne que le gras strict */
-        color: #333; /* Noir */
+        font-size: 38px; 
+        font-weight: 700;
+        color: #333; /* Texte en noir */
         margin-top: 0;
         margin-bottom: 30px; 
         text-align: center;
@@ -228,15 +220,14 @@
             gap: 10px;
             width: 100%; 
             padding: 0; 
-            /* CORRECTION: Centrer les boutons dans le conteneur */
+            /* CORRECTION: Centrage parfait des boutons au centre de l'écran */
             align-items: center; 
             white-space: normal; 
         }
         .button {
             width: 80%; 
             margin: 0 auto; 
-            /* CORRECTION: Centrer le contenu du bouton (texte + icône) */
-            justify-content: center; 
+            justify-content: center; /* Centre le contenu dans le bouton */
             
             border: 1px solid #ddd; 
             border-radius: 4px;
@@ -262,7 +253,7 @@
 </div>
 
 <div class="personal-header">
-    <img src="/mesdocuments/photocv.PNG" class="profile-photo" alt="Maëlys François">
+    <img src="photocv.PNG" class="profile-photo" alt="Maëlys François">
     <div class="info-container">
         <h1>Maëlys François</h1>
         <p>Passionnée par l'<strong>analyse de données</strong> avec une expertise pour l'étude des <strong>comportements sur les réseaux sociaux numériques</strong>. Mon objectif est de transformer les données complexes en stratégies actionnables.</p>
@@ -280,7 +271,7 @@
             <i class="fab fa-linkedin"></i> LinkedIn
         </a>
         
-        <a href="mesdocuments/cv_maëlys_françois.pdf" class="button" target="_blank" rel="noopener noreferrer">
+        <a href="cv_maëlys_françois.pdf" class="button" target="_blank" rel="noopener noreferrer">
             <i class="fas fa-file-pdf"></i> Mon CV
         </a>
         
