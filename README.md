@@ -17,7 +17,6 @@
     /* -------------------------------------------------------------------------- */
     /* MASQUAGE ET CORRECTIONS JEKYLL */
     /* -------------------------------------------------------------------------- */
-    /* Masque le titre du site ("Portfolio") en haut à gauche et les autres éléments GitHub */
     .page-header h1,
     .view-on-github-link,
     .downloads,
@@ -25,8 +24,6 @@
     .project-tagline {
         display: none !important;
     }
-
-    /* Réaligne le contenu injecté par Jekyll pour éviter les marges supérieures inutiles */
     body > .wrapper, .page-header {
         padding-top: 0 !important;
         padding-left: 50px !important; 
@@ -93,6 +90,7 @@
         margin-top: -1px; 
     }
 
+    /* Technique alternative pour la photo : Utiliser le background-image */
     .profile-photo {
         width: 120px;
         height: 120px;
@@ -101,15 +99,22 @@
         margin-right: 30px;
         box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         flex-shrink: 0;
-        /* Ajout d'une règle forte pour forcer l'affichage de l'image (si le chemin est bon) */
-        max-width: none !important;
         display: block !important;
+        
+        /* TECHNIQUE ALTERNATIVE POUR L'IMAGE (À SUPPRIMER SI LE CHEMIN FONCTIONNE) */
+        /* Si l'image locale ne charge pas, cette image de placeholder apparaitra. */
+        /* Supprimez les lignes ci-dessous dès que le chemin local fonctionne. */
+        /* background-image: url('https://via.placeholder.com/120/0077b5/ffffff?text=MF'); */
+        /* background-size: cover; */
     }
+    
+    /* Cache la source de l'image si le background-image est utilisé comme solution de contournement */
+    /* .profile-photo[src*="photocv.PNG"] { content: ' '; } */
 
     .info-container h1 {
         margin: 0;
         font-size: 28px;
-        color: #333;
+        color: #0077b5; /* Changement de couleur pour Maëlys François */
     }
 
     .info-container p {
@@ -128,7 +133,6 @@
     }
     
     .main-content-projects h2 {
-        /* Nouvelle police pour un titre plus moderne */
         font-family: 'Montserrat', sans-serif;
         font-size: 32px; 
         font-weight: 700;
@@ -139,7 +143,7 @@
     }
 
     /* -------------------------------------------------------------------------- */
-    /* STYLES: Pied de Page (Compact et Minimaliste) */
+    /* STYLES: Pied de Page */
     /* -------------------------------------------------------------------------- */
     .footer {
         padding: 25px 0; 
@@ -160,12 +164,10 @@
         display: inline-flex; 
         align-items: center;
         justify-content: flex-start;
-        
         padding: 10px 15px; 
         min-width: 100px; 
         font-size: 16px; 
         font-weight: 500; 
-        
         text-decoration: none;
         background-color: transparent; 
         color: #333; 
@@ -176,7 +178,6 @@
         margin: 0; 
     }
     
-    /* Séparateur vertical Minimaliste */
     .button:not(:first-child) {
         border-left: 1px solid #ccc; 
         padding-left: 15px; 
@@ -213,23 +214,23 @@
             display: flex; 
             flex-direction: column; 
             gap: 10px;
-            /* Correction de l'alignement: étire le conteneur sur toute la largeur */
+            /* Centre le conteneur lui-même */
             width: 100%; 
             padding: 0; 
+            align-items: center; /* Important pour centrer les boutons dans la colonne */
+            white-space: normal; /* Permet le retour à la ligne si besoin */
         }
         .button {
-            width: 80%; /* Assure que le bouton prend 80% de l'espace disponible */
-            margin: 0 auto; /* Centre le bouton */
-            /* Centre le contenu texte/icône dans le bouton pour corriger le "décalage" */
+            /* Assure que le bouton utilise l'espace disponible */
+            width: 80%; 
+            margin: 0 auto; 
+            /* Centre le contenu texte/icône dans le bouton */
             justify-content: center; 
             
             border: 1px solid #ddd; 
             border-radius: 4px;
             min-width: unset; 
             padding: 10px;
-            border-left: none; 
-            padding-left: 10px;
-            font-size: 16px;
         }
         /* Supprime la bordure gauche et la marge des boutons pour le mobile */
         .button:not(:first-child) {
@@ -239,8 +240,6 @@
         }
     }
 </style>
-
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
 
 <div class="nav-links">
     <a href="projets.html" class="nav-link active">
@@ -255,7 +254,8 @@
 <div class="personal-header">
     <img src="/mesdocuments/photocv.PNG" class="profile-photo" alt="Maëlys François">
     <div class="info-container">
-        <h1>Maëlys François, Analyste de données sociales</h1>
+        <h1>Maëlys François</h1>
+        <p>Analyste de données sociales et experte en stratégies numériques.</p>
         <p>Passionnée par l'**analyse de données** avec une expertise pour l'étude des **comportements sur les réseaux sociaux numériques**. Mon objectif est de transformer les données complexes en stratégies actionnables.</p>
     </div>
 </div>
