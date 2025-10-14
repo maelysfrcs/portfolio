@@ -102,8 +102,8 @@
     }
 
     .profile-photo {
-        width: 120px;
-        height: 120px;
+        width: 150px;
+        height: 150px;
         border-radius: 50%;
         margin-right: 30px;
         box-shadow: 0 4px 8px rgba(0,0,0,0.1);
