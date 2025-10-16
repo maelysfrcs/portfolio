@@ -171,25 +171,43 @@
         font-size: 16px; 
         font-weight: 500; 
         text-decoration: none;
-        background-color: transparent; 
+        /* RETIRE : background-color: transparent; */
         color: #333; 
         border: none;
-        transition: color 0.3s ease; 
+        border-radius: 4px; 
+        transition: background-color 0.3s ease, color 0.3s ease; 
         cursor: pointer;
         position: relative; 
-        margin: 0; 
+        margin: 0 5px; 
     }
     
+    /* Supprime la bordure interne */
     .button:not(:first-child) {
-        border-left: 1px solid #ccc; 
+        border-left: none; 
         padding-left: 15px; 
-        margin-left: 15px; 
+        margin-left: 5px; 
+    }
+
+    /* Définition des couleurs de fond légères */
+    .linkedin-btn {
+        background-color: #E0F7FA; /* Bleu très clair */
+    }
+    .cv-btn {
+        background-color: #E8F5E9; /* Vert très clair (pour Mon CV) */
+    }
+    .email-btn {
+        background-color: #FFF3E0; /* Orange très clair (pour Mon Email) */
     }
 
     .button:hover {
         color: #0077b5; 
         transform: none; 
     }
+    /* Rendre le fond un peu plus foncé au survol */
+    .linkedin-btn:hover { background-color: #B3E5FC; }
+    .cv-btn:hover { background-color: #C8E6C9; }
+    .email-btn:hover { background-color: #FFECB3; }
+
 
     .button i {
         display: inline-block;
@@ -218,14 +236,14 @@
             gap: 10px;
             width: 100%; 
             padding: 0; 
-            /* CONTIENT LA CORRECTION: Alignement central des éléments enfants */
+            /* Alignement central des éléments enfants */
             align-items: center; 
             white-space: normal; 
         }
         .button {
             /* Largeur du bouton */
             width: 90%; 
-            /* SUPPRESSION de margin: 0 auto; on se repose sur align-items: center du parent */
+            margin: 0; 
             
             /* Centrage du contenu (texte + icône) à l'intérieur du bouton */
             justify-content: center; 
@@ -268,15 +286,15 @@
 
 <footer class="footer">
     <div class="footer-buttons">
-        <a href="https://www.linkedin.com/in/ma%C3%ABlys-fran%C3%A7ois" class="button" target="_blank">
+        <a href="https://www.linkedin.com/in/ma%C3%ABlys-fran%C3%A7ois" class="button linkedin-btn" target="_blank">
             <i class="fab fa-linkedin"></i> LinkedIn
         </a>
         
-        <a href="cv_maëlys_françois.pdf" class="button" target="_blank" rel="noopener noreferrer">
+        <a href="cv_maëlys_françois.pdf" class="button cv-btn" target="_blank" rel="noopener noreferrer">
             <i class="fas fa-file-pdf"></i> Mon CV
         </a>
         
-        <a href="mailto:maelys.francois31@gmail.com" class="button" target="_blank">
+        <a href="mailto:maelys.francois31@gmail.com" class="button email-btn" target="_blank">
             <i class="fas fa-envelope"></i> Mon Email
         </a>
     </div>
