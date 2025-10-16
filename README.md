@@ -144,6 +144,77 @@
         text-align: center;
     }
 
+    /* NOUVEAUX STYLES: Blocs Projet */
+    .project-detail {
+        background-color: #fff;
+        padding: 30px;
+        margin-bottom: 30px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    .project-detail h3 {
+        font-family: 'Poppins', sans-serif;
+        font-size: 28px;
+        color: #0077b5; /* Bleu LinkedIn */
+        margin-top: 0;
+        margin-bottom: 15px;
+        border-bottom: 3px solid #f0f0f0;
+        padding-bottom: 10px;
+    }
+    .project-detail h4 {
+        color: #333;
+        font-size: 18px;
+        margin-top: 20px;
+        margin-bottom: 8px;
+        font-weight: 600;
+    }
+    .project-detail p {
+        line-height: 1.6;
+        margin-bottom: 15px;
+    }
+    .skills-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 10px;
+    }
+    .skill-tag {
+        background-color: #e0f7fa; /* Fond très clair */
+        color: #0077b5; /* Texte bleu */
+        padding: 6px 12px;
+        border-radius: 4px;
+        font-size: 14px;
+        font-weight: 600;
+        white-space: nowrap;
+    }
+    /* Style pour les sections Méthodes/Compétences */
+    .method-box {
+        background-color: #f9f9f9;
+        padding: 15px;
+        border-radius: 6px;
+        border-left: 5px solid #0077b5;
+        margin-top: 15px;
+    }
+    .method-box ul {
+        list-style-type: none;
+        padding-left: 0;
+        margin: 0;
+    }
+    .method-box ul li {
+        margin-bottom: 5px;
+        padding-left: 20px;
+        position: relative;
+    }
+    .method-box ul li:before {
+        content: "\f058"; /* check-square icon */
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        color: #4CAF50; /* Vert pour valider */
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
     /* -------------------------------------------------------------------------- */
     /* STYLES: Pied de Page */
     /* -------------------------------------------------------------------------- */
@@ -245,6 +316,15 @@
             padding-left: 10px;
             margin-left: 0;
         }
+        .main-content-projects {
+            padding: 30px 20px;
+        }
+        .project-detail {
+            padding: 20px;
+        }
+        .project-detail h3 {
+            font-size: 24px;
+        }
     }
 </style>
 
@@ -268,8 +348,39 @@
 
 <div class="main-content-projects">
     <h2>Mes Projets</h2>
-    <p>Cette section est l'endroit idéal pour commencer à lister vos projets. Vous pouvez enlever ce texte d'exemple.</p>
-</div>
+
+    <div class="project-detail">
+        <h3>Analyse de l'impact des modèles Free-to-Play et 'Gacha' sur l'expérience et les communautés de joueurs</h3>
+        
+        <h4>Problématique & Objectif</h4>
+        <p>Ce mémoire a cherché à répondre à la question : <strong>Dans quelle mesure l'évolution des modèles de monétisation des jeux vidéo influence-t-elle les pratiques des joueurs ?</strong>. [cite_start]L'objectif principal était de cerner les conséquences socio-économiques et expérientielles des modèles actuels (Free-to-Play, microtransactions) sur l'expérience et les dynamiques communautaires des joueurs[cite: 25].</p>
+        
+        <h4>Résultats Clés & Conclusions</h4>
+        [cite_start]<p>L'analyse a révélé une <strong>tension significative</strong> : si les joueurs apprécient les mécaniques de base et la progression (suscitant des sentiments positifs), les aspects économiques et compétitifs du jeu génèrent une forte majorité de sentiments négatifs et des critiques importantes[cite: 25]. [cite_start]Les systèmes de dépenses *in-game* créent ainsi une frustration notable au sein de la communauté[cite: 25]. [cite_start]De plus, les pratiques de jeu sont principalement liées à des <strong>facteurs générationnels et culturels</strong> (genre, âge) plutôt qu'à des variables socio-économiques classiques comme le revenu ou le niveau d'études[cite: 26].</p>
+        
+        <h4>Finalité du Projet</h4>
+        [cite_start]<p>Ce travail a permis de combler une lacune dans la littérature existante (*game studies*) en apportant une analyse quantitative et qualitative des aspects économiques du jeu vidéo[cite: 26], essentielles pour comprendre l'industrie actuelle et ses implications sociales.</p>
+        
+        <h4>Apport Personnel & Compétences Clés</h4>
+        <p>Ce projet a été l'occasion de gérer l'intégralité du cycle d'un projet data complexe, de la collecte de données hétérogènes à la modélisation statistique avancée et à l'interprétation des discours sociaux.</p>
+
+        <div class="method-box">
+            <h4>Méthodologie et Outils Techniques</h4>
+            <div class="skills-list">
+                <span class="skill-tag">Analyses Statistiques Avancées</span>
+                <span class="skill-tag">Analyse Textuelle IA</span>
+                <span class="skill-tag">Web Scraping</span>
+                <span class="skill-tag">Gestion de Base de Données</span>
+                <span class="skill-tag">Visualisation de Données</span>
+            </div>
+            <ul>
+                [cite_start]<li>**Données :** Exploitation de l'enquête par questionnaire <strong>Ludespace</strong> (Université de Tours) [cite: 25, 26][cite_start], et corpus de données non structurées collectées par Web Scraping sur <strong>Reddit</strong> (étude de cas du jeu F2P "Genshin Impact")[cite: 25].</li>
+                [cite_start]<li>**Analyses Statistiques :** Tests d’hypothèses (t, χ², V de Cramer, Tau de Kendall B), Tri à plat, ACL, ACM, Régression Logistique, ANOVA[cite: 26].</li>
+                [cite_start]<li>**Analyse Textuelle IA :** <strong>Topic Modeling</strong> pour identifier les sujets majeurs de discussion (monétisation, bannières, quêtes, gameplay) [cite: 25, 27][cite_start], <strong>Sentiment Analysis</strong> pour évaluer les perceptions des joueurs (négatives vs positives) [cite: 25][cite_start], et **Clustering** des discours[cite: 27].</li>
+            </ul>
+        </div>
+    </div>
+    </div>
 
 <footer class="footer">
     <div class="footer-buttons">
@@ -277,7 +388,7 @@
             <i class="fab fa-linkedin"></i> LinkedIn
         </a>
         
-        <a href="cv_maëlys_françois.pdf" class="button" target="_blank" rel="noopener noreferrer">
+        <a href="mesdocuments/cv_maëlys_françois.pdf" class="button" target="_blank" rel="noopener noreferrer">
             <i class="fas fa-file-pdf"></i> Mon CV
         </a>
         
