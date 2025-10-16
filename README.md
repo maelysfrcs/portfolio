@@ -218,15 +218,16 @@
             gap: 10px;
             width: 100%; 
             padding: 0; 
-            /* Assure que le conteneur central aligne ses enfants au centre */
+            /* CONTIENT LA CORRECTION: Alignement central des éléments enfants */
             align-items: center; 
             white-space: normal; 
         }
         .button {
-            /* Largeur légèrement augmentée et centrage du bouton */
-            width: 90%; /* Augmenté à 90% pour une meilleure visibilité */
-            margin: 0 auto; 
-            /* Correction finale pour centrer le contenu (icône + texte) dans le bouton */
+            /* Largeur du bouton */
+            width: 90%; 
+            /* SUPPRESSION de margin: 0 auto; on se repose sur align-items: center du parent */
+            
+            /* Centrage du contenu (texte + icône) à l'intérieur du bouton */
             justify-content: center; 
             
             border: 1px solid #ddd; 
