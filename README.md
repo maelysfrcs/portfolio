@@ -171,43 +171,28 @@
         font-size: 16px; 
         font-weight: 500; 
         text-decoration: none;
-        /* RETIRE : background-color: transparent; */
+        /* RETOUR AU FOND BLANC PAR DÉFAUT */
+        background-color: #fff; 
         color: #333; 
         border: none;
-        border-radius: 4px; 
-        transition: background-color 0.3s ease, color 0.3s ease; 
+        border-radius: 0; /* Suppression du border-radius pour correspondre au style initial */
+        transition: color 0.3s ease; 
         cursor: pointer;
         position: relative; 
-        margin: 0 5px; 
+        margin: 0; 
     }
     
-    /* Supprime la bordure interne */
+    /* Rétablissement de la barre de séparation verticale entre les boutons sur PC */
     .button:not(:first-child) {
-        border-left: none; 
+        border-left: 1px solid #ccc; 
         padding-left: 15px; 
-        margin-left: 5px; 
-    }
-
-    /* Définition des couleurs de fond légères */
-    .linkedin-btn {
-        background-color: #E0F7FA; /* Bleu très clair */
-    }
-    .cv-btn {
-        background-color: #E8F5E9; /* Vert très clair (pour Mon CV) */
-    }
-    .email-btn {
-        background-color: #FFF3E0; /* Orange très clair (pour Mon Email) */
+        margin-left: 15px; 
     }
 
     .button:hover {
         color: #0077b5; 
         transform: none; 
     }
-    /* Rendre le fond un peu plus foncé au survol */
-    .linkedin-btn:hover { background-color: #B3E5FC; }
-    .cv-btn:hover { background-color: #C8E6C9; }
-    .email-btn:hover { background-color: #FFECB3; }
-
 
     .button i {
         display: inline-block;
@@ -248,11 +233,13 @@
             /* Centrage du contenu (texte + icône) à l'intérieur du bouton */
             justify-content: center; 
             
+            /* Rétablissement du border et border-radius pour la version mobile */
             border: 1px solid #ddd; 
             border-radius: 4px;
             min-width: unset; 
             padding: 10px;
         }
+        /* Suppression de la bordure verticale en mode colonne (mobile) */
         .button:not(:first-child) {
             border-left: none;
             padding-left: 10px;
@@ -286,15 +273,15 @@
 
 <footer class="footer">
     <div class="footer-buttons">
-        <a href="https://www.linkedin.com/in/ma%C3%ABlys-fran%C3%A7ois" class="button linkedin-btn" target="_blank">
+        <a href="https://www.linkedin.com/in/ma%C3%ABlys-fran%C3%A7ois" class="button" target="_blank">
             <i class="fab fa-linkedin"></i> LinkedIn
         </a>
         
-        <a href="cv_maëlys_françois.pdf" class="button cv-btn" target="_blank" rel="noopener noreferrer">
+        <a href="cv_maëlys_françois.pdf" class="button" target="_blank" rel="noopener noreferrer">
             <i class="fas fa-file-pdf"></i> Mon CV
         </a>
         
-        <a href="mailto:maelys.francois31@gmail.com" class="button email-btn" target="_blank">
+        <a href="mailto:maelys.francois31@gmail.com" class="button" target="_blank">
             <i class="fas fa-envelope"></i> Mon Email
         </a>
     </div>
