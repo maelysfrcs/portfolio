@@ -143,78 +143,102 @@
         margin-bottom: 30px; 
         text-align: center;
     }
-
-    /* NOUVEAUX STYLES: Blocs Projet */
-    .project-detail {
+    
+    /* -------------------------------------------------------------------------- */
+    /* NOUVEAUX STYLES: FICHE PROJET */
+    /* -------------------------------------------------------------------------- */
+    .project-card {
         background-color: #fff;
-        padding: 30px;
-        margin-bottom: 30px;
         border: 1px solid #ddd;
         border-radius: 8px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        padding: 30px;
+        margin-bottom: 40px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.05);
     }
-    .project-detail h3 {
+
+    .project-card h3 {
         font-family: 'Poppins', sans-serif;
-        font-size: 28px;
         color: #0077b5; /* Bleu LinkedIn */
+        font-size: 26px;
         margin-top: 0;
-        margin-bottom: 15px;
-        border-bottom: 3px solid #f0f0f0;
+        border-bottom: 2px solid #0077b5;
         padding-bottom: 10px;
+        margin-bottom: 20px;
     }
-    .project-detail h4 {
-        color: #333;
+
+    .project-section-title {
         font-size: 18px;
-        margin-top: 20px;
-        margin-bottom: 8px;
-        font-weight: 600;
+        font-weight: 700;
+        color: #333;
+        margin-top: 15px;
+        margin-bottom: 5px;
+        border-left: 4px solid #f0ad4e; /* Orange/jaune accent */
+        padding-left: 10px;
     }
-    .project-detail p {
+
+    .project-summary {
+        display: flex;
+        gap: 30px;
+        margin-bottom: 20px;
+    }
+
+    .project-summary > div {
+        flex: 1;
+    }
+
+    .project-summary p {
+        font-size: 15px;
         line-height: 1.6;
-        margin-bottom: 15px;
+        color: #555;
     }
-    .skills-list {
+    
+    /* Mise en évidence des listes de compétences et outils */
+    .skills-tech-container {
         display: flex;
         flex-wrap: wrap;
-        gap: 10px;
-        margin-top: 10px;
+        gap: 20px;
+        margin-top: 20px;
     }
-    .skill-tag {
-        background-color: #e0f7fa; /* Fond très clair */
-        color: #0077b5; /* Texte bleu */
-        padding: 6px 12px;
-        border-radius: 4px;
-        font-size: 14px;
-        font-weight: 600;
-        white-space: nowrap;
+
+    .skills-tech-block {
+        flex: 1;
+        min-width: 250px;
     }
-    /* Style pour les sections Méthodes/Compétences */
-    .method-box {
-        background-color: #f9f9f9;
-        padding: 15px;
-        border-radius: 6px;
-        border-left: 5px solid #0077b5;
-        margin-top: 15px;
-    }
-    .method-box ul {
-        list-style-type: none;
-        padding-left: 0;
+    
+    .skills-list, .tech-list {
+        list-style: none;
+        padding: 0;
         margin: 0;
     }
-    .method-box ul li {
-        margin-bottom: 5px;
-        padding-left: 20px;
-        position: relative;
+
+    .skills-list li, .tech-list li {
+        background-color: #f4f4f4;
+        margin-bottom: 8px;
+        padding: 8px 12px;
+        border-radius: 4px;
+        font-size: 14px;
+        border-left: 3px solid #0077b5; /* Bleu accent pour les compétences */
+        color: #333;
     }
-    .method-box ul li:before {
-        content: "\f058"; /* check-square icon */
-        font-family: "Font Awesome 5 Free";
-        font-weight: 900;
-        color: #4CAF50; /* Vert pour valider */
-        position: absolute;
-        left: 0;
-        top: 0;
+
+    .tech-list li {
+        border-left: 3px solid #6c757d; /* Gris pour les outils */
     }
+
+    .graph-suggestion-container {
+        margin-top: 30px;
+        padding-top: 20px;
+        border-top: 1px dashed #ccc;
+    }
+    .graph-suggestion-container p {
+        background-color: #e6f7ff; /* Fond bleu très clair */
+        padding: 15px;
+        border-radius: 4px;
+        border: 1px solid #b3e5fc;
+        font-size: 14px;
+        color: #004085;
+    }
+
     /* -------------------------------------------------------------------------- */
     /* STYLES: Pied de Page */
     /* -------------------------------------------------------------------------- */
@@ -316,14 +340,15 @@
             padding-left: 10px;
             margin-left: 0;
         }
-        .main-content-projects {
-            padding: 30px 20px;
+        
+        /* Adaptation mobile des fiches projet */
+        .project-summary {
+            flex-direction: column;
+            gap: 10px;
         }
-        .project-detail {
-            padding: 20px;
-        }
-        .project-detail h3 {
-            font-size: 24px;
+        .skills-tech-container {
+            flex-direction: column;
+            gap: 10px;
         }
     }
 </style>
@@ -348,39 +373,67 @@
 
 <div class="main-content-projects">
     <h2>Mes Projets</h2>
-
-    <div class="project-detail">
-        <h3>Analyse de l'impact des modèles Free-to-Play et 'Gacha' sur l'expérience et les communautés de joueurs</h3>
+    
+    <div class="project-card">
+        <h3>Analyse de l'Influence des Modèles Économiques (F2P/P2W) sur les Joueurs et les Communautés en Ligne</h3>
         
-        <h4>Problématique & Objectif</h4>
-        <p>Ce mémoire a cherché à répondre à la question : <strong>Dans quelle mesure l'évolution des modèles de monétisation des jeux vidéo influence-t-elle les pratiques des joueurs ?</strong>. [cite_start]L'objectif principal était de cerner les conséquences socio-économiques et expérientielles des modèles actuels (Free-to-Play, microtransactions) sur l'expérience et les dynamiques communautaires des joueurs[cite: 25].</p>
-        
-        <h4>Résultats Clés & Conclusions</h4>
-        [cite_start]<p>L'analyse a révélé une <strong>tension significative</strong> : si les joueurs apprécient les mécaniques de base et la progression (suscitant des sentiments positifs), les aspects économiques et compétitifs du jeu génèrent une forte majorité de sentiments négatifs et des critiques importantes[cite: 25]. [cite_start]Les systèmes de dépenses *in-game* créent ainsi une frustration notable au sein de la communauté[cite: 25]. [cite_start]De plus, les pratiques de jeu sont principalement liées à des <strong>facteurs générationnels et culturels</strong> (genre, âge) plutôt qu'à des variables socio-économiques classiques comme le revenu ou le niveau d'études[cite: 26].</p>
-        
-        <h4>Finalité du Projet</h4>
-        [cite_start]<p>Ce travail a permis de combler une lacune dans la littérature existante (*game studies*) en apportant une analyse quantitative et qualitative des aspects économiques du jeu vidéo[cite: 26], essentielles pour comprendre l'industrie actuelle et ses implications sociales.</p>
-        
-        <h4>Apport Personnel & Compétences Clés</h4>
-        <p>Ce projet a été l'occasion de gérer l'intégralité du cycle d'un projet data complexe, de la collecte de données hétérogènes à la modélisation statistique avancée et à l'interprétation des discours sociaux.</p>
-
-        <div class="method-box">
-            <h4>Méthodologie et Outils Techniques</h4>
-            <div class="skills-list">
-                <span class="skill-tag">Analyses Statistiques Avancées</span>
-                <span class="skill-tag">Analyse Textuelle IA</span>
-                <span class="skill-tag">Web Scraping</span>
-                <span class="skill-tag">Gestion de Base de Données</span>
-                <span class="skill-tag">Visualisation de Données</span>
+        <div class="project-summary">
+            <div>
+                <p class="project-section-title">Objectif et Problématique</p>
+                [cite_start]<p><strong>Problématique:</strong> Dans quelle mesure l'évolution des modèles de monétisation des jeux vidéo, des bornes d'arcade aux dépenses in-game, influence-t-elle les pratiques des joueurs ? [cite: 1] [cite_start]L'objectif était de combler le manque de recherche en sociologie économique sur les jeux vidéo en analysant comment les structures économiques (microtransactions, *loot boxes*, etc.) transforment l'expérience et l'identité des joueurs. [cite: 1, 15, 23]</p>
             </div>
-            <ul>
-                [cite_start]<li>**Données :** Exploitation de l'enquête par questionnaire <strong>Ludespace</strong> (Université de Tours) [cite: 25, 26][cite_start], et corpus de données non structurées collectées par Web Scraping sur <strong>Reddit</strong> (étude de cas du jeu F2P "Genshin Impact")[cite: 25].</li>
-                [cite_start]<li>**Analyses Statistiques :** Tests d’hypothèses (t, χ², V de Cramer, Tau de Kendall B), Tri à plat, ACL, ACM, Régression Logistique, ANOVA[cite: 26].</li>
-                [cite_start]<li>**Analyse Textuelle IA :** <strong>Topic Modeling</strong> pour identifier les sujets majeurs de discussion (monétisation, bannières, quêtes, gameplay) [cite: 25, 27][cite_start], <strong>Sentiment Analysis</strong> pour évaluer les perceptions des joueurs (négatives vs positives) [cite: 25][cite_start], et **Clustering** des discours[cite: 27].</li>
-            </ul>
+            <div>
+                <p class="project-section-title">Résultats Clés et Conclusions</p>
+                <ul>
+                    [cite_start]<li>L'évolution de la monétisation a rendu la relation entre le joueur et la valeur du contenu plus <strong>ambiguë et complexe</strong>, soulevant des questions d'équité et d'accessibilité. [cite: 15, 23]</li>
+                    <li>Les débats communautaires en ligne sont <strong>fortement polarisés</strong> (F2P vs P2W). [cite_start]Le sujet du Pay-to-Win génère un sentiment plus critique, mais aussi un engagement communautaire significativement plus élevé. [cite: 19, 21, 23, 137]</li>
+                    <li>Les facteurs socio-économiques modulent les pratiques, mais <strong>le genre et l'âge</strong> sont des déterminants plus significatifs de la fréquence de jeu que le revenu ou le niveau d'études. [cite_start]L'enjeu d'accessibilité est passé de financier à sociodémographique. [cite: 20, 22, 24, 150]</li>
+                </ul>
+            </div>
         </div>
+        
+        <div class="skills-tech-container">
+            
+            <div class="skills-tech-block">
+                <p class="project-section-title">Compétences Développées</p>
+                <ul class="skills-list">
+                    [cite_start]<li>**Analyses statistiques avancées :** Tests d’hypothèses (t, $\chi^2$, V de Cramer, Tau de Kendall B), ACL/ACM. [cite: 85]</li>
+                    [cite_start]<li>**Analyse Textuelle IA :** Topic Modeling, Sentiment Analysis (VADER de NLTK), Classification. [cite: 90, 128, 142]</li>
+                    [cite_start]<li>**Collecte & Gestion de Données :** Web Scraping (Reddit), Gestion de base de données (Enquête Ludespace 2012, Corpus Europresse). [cite: 87, 93, 107, 128]</li>
+                    [cite_start]<li>**Visualisation de données :** Réalisation de graphiques daltonien-friendly pour les analyses. [cite: 86, 92]</li>
+                </ul>
+            </div>
+            
+            <div class="skills-tech-block">
+                <p class="project-section-title">Méthodes et Logiciels</p>
+                <ul class="tech-list">
+                    [cite_start]<li>**Analyse Quantitative :** Jamovi, R. [cite: 85, 91]</li>
+                    [cite_start]<li>**Analyse Textuelle :** R (scripts spécifiques), Google Collaboratory. [cite: 87, 89, 90]</li>
+                    [cite_start]<li>**Préparation de Données :** LibreOffice Calc (pour le recodage des variables de l'enquête). [cite: 85, 87]</li>
+                    [cite_start]<li>**Méthode de recherche :** Étude de cas (Genshin Impact), Analyse de corpus médiatique (Europresse), Enquête par questionnaire (Ludespace). [cite: 93, 107, 128]</li>
+                </ul>
+            </div>
+
+            <div class="skills-tech-block">
+                <p class="project-section-title">Apport Personnel</p>
+                <p>Ce travail a affiné ma capacité à croiser des données issues de sources hétérogènes (enquêtes socio-démographiques, discours communautaires, articles de presse) pour répondre à une problématique complexe. [cite_start]J'ai acquis une maîtrise approfondie des techniques de traitement de données qualitatives et quantitatives pour dégager des tendances sociologiques. [cite: 24, 85, 128, 150]</p>
+            </div>
+        </div>
+        
+        <div class="graph-suggestion-container">
+            <p class="project-section-title">💡 Suggestion de Graphiques à Intégrer :</p>
+            <p>Pour rendre cette fiche plus visuelle, je vous recommande d'ajouter les graphiques suivants :
+            <ol>
+                [cite_start]<li>Un graphique illustrant la **Répartition des sentiments par topic** (Figure 32 du mémoire) : Cela met en évidence visuellement la forte corrélation entre les sujets liés à la monétisation et les sentiments négatifs/critiques de la communauté. [cite: 122]</li>
+                [cite_start]<li>Un graphique de **Comparaison des upvotes entre posts F2P et P2W** (Figure 35) : Il démontrerait clairement l'engagement accru suscité par le sujet Pay-to-Win, même s'il est controversé. [cite: 137]</li>
+                [cite_start]<li>Un tableau ou graphique synthétisant les **Variables Déterminantes de la Fréquence de Jeu** (âge et genre versus revenu) pour illustrer votre conclusion principale. [cite: 149]</li>
+            </ol>
+            </p>
+        </div>
+        
     </div>
-    </div>
+    
+</div>
 
 <footer class="footer">
     <div class="footer-buttons">
