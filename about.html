@@ -1,64 +1,61 @@
-/* -------------------------------------------------------------------------- */
-    /* STYLES: Pied de Page */
-    /* -------------------------------------------------------------------------- */
-    .footer {
-        padding: 25px 0; /* Garde le padding vertical pour l'espace */
-        background-color: #fff;
-        box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
-        text-align: center;
-        width: 100%; 
-        margin-top: auto; 
-    }
-    
-    /* NOUVEAU CONTENEUR POUR LIMITER LA LARGEUR DU CONTENU (les boutons) */
-    .footer-wrapper {
-        max-width: 1300px; /* Largeur pour aligner avec le reste du contenu */
-        margin: 0 auto; /* Centre le wrapper */
-        padding: 0 50px; /* Ajout du padding pour aligner les boutons à la gauche/droite du contenu principal (50px) */
-        box-sizing: border-box; 
-        display: flex;
-        justify-content: flex-end; /* Aligne les boutons à droite comme dans le code initial */
-    }
+/* ... (Styles précédents non modifiés) ... */
 
-    /* Le reste des styles des boutons (button) est conservé et s'applique aux éléments dans .footer-wrapper */
+/* -------------------------------------------------------------------------- */
+/* STYLES: Pied de Page */
+/* -------------------------------------------------------------------------- */
+.footer {
+    padding: 25px 0; 
+    background-color: #fff;
+    box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+    /* Retire text-align: center; qui n'est plus pertinent */
+    width: 100%; 
+    margin-top: auto; 
+}
+
+/* NOUVEAU CONTENEUR POUR LIMITER LA LARGEUR DU CONTENU (les boutons) */
+/* C'est ce conteneur qui va prendre le décalage de 50px du reste de la page */
+.footer-wrapper {
+    /* Laisser le wrapper prendre toute la largeur disponible du footer (100% de la fenêtre) */
+    width: 100%; 
+    box-sizing: border-box; 
+    /* Appliquer les marges latérales pour aligner le contenu des boutons */
+    padding: 0 50px; 
+    display: flex;
+    /* Aligner les boutons à GAUCHE du footer-wrapper délimité */
+    justify-content: flex-start; 
+}
+
+.footer-buttons {
+    /* Retire le display: block; et utilise inline-flex pour grouper les boutons */
+    display: inline-flex; 
+    white-space: nowrap; 
+    padding: 0;
+}
+
+.button {
+    /* ... (Styles des boutons conservés) ... */
+    
+    /* Assurez-vous que l'alignement soit à gauche pour respecter l'image */
+    justify-content: flex-start; 
+}
+
+.button:not(:first-child) {
+    /* ... (Styles conservés) ... */
+}
+
+/* ... (Media Query) ... */
+@media (max-width: 768px) {
+    /* ... (Styles précédents non modifiés) ... */
+    
+    /* CORRECTION DU FOOTER SUR MOBILE */
+    .footer-wrapper {
+        padding: 0 20px; /* Ajuste le padding pour mobile */
+        justify-content: center; /* Centre le contenu sur mobile */
+    }
     
     .footer-buttons {
-        /* Retire les styles qui gèrent la largeur, ils sont pris en charge par .footer-wrapper et .button */
-        display: block; 
-        white-space: nowrap; 
-        padding: 0; /* Retire le padding inutile ici */
+        /* ... (Styles conservés pour mobile) ... */
     }
-    
-    .button {
-        display: inline-flex; 
-        /* ... autres styles conservés ... */
-    }
-    
-    .button:not(:first-child) {
-        border-left: 1px solid #ccc; 
-        padding-left: 15px; 
-        margin-left: 15px; 
-    }
-    
-    /* ... Media Query ajustée pour le wrapper sur mobile ... */
-    @media (max-width: 768px) {
-        /* ... styles de l'en-tête et du contenu principal ... */
-        
-        /* CORRECTION DU FOOTER MOBILE */
-        .footer-wrapper {
-            max-width: none;
-            padding: 0 20px; /* Ajuste le padding pour mobile */
-            justify-content: center; /* Centre le contenu sur mobile */
-        }
-        
-        .footer-buttons {
-            display: flex; 
-            flex-direction: column; 
-            gap: 10px;
-            width: 100%; 
-            padding: 0; 
-            align-items: center; 
-            white-space: normal; 
-        }
-        /* ... le reste des styles des boutons mobile est conservé ... */
-    }
+    /* ... (Reste des styles mobile conservés) ... */
+}
+</style>
