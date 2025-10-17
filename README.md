@@ -375,19 +375,20 @@
     <h2>Mes Projets</h2>
     
     <div class="project-card">
-        <h3>Analyse de l'Influence des Modèles Économiques (F2P/P2W) sur les Joueurs et les Communautés en Ligne</h3>
+        <h3>Analyse de l'influence des modèles économiques sur les joueurs et les communautés en ligne</h3>
         
         <div class="project-summary">
             <div>
                 <p class="project-section-title">Objectif et Problématique</p>
-                [cite_start]<p><strong>Problématique:</strong> Dans quelle mesure l'évolution des modèles de monétisation des jeux vidéo, des bornes d'arcade aux dépenses in-game, influence-t-elle les pratiques des joueurs ? [cite: 1] [cite_start]L'objectif était de combler le manque de recherche en sociologie économique sur les jeux vidéo en analysant comment les structures économiques (microtransactions, *loot boxes*, etc.) transforment l'expérience et l'identité des joueurs. [cite: 1, 15, 23]</p>
+                <p><strong>Problématique :</strong> Dans quelle mesure l'évolution des modèles de monétisation des jeux vidéo, des bornes d'arcade aux dépenses in-game, influence-t-elle les <strong>pratiques des joueurs<\strong> ? 
+                <p><strong>Objectif :<\strong> Analyser comment les <strong> structures économiques <\strong> (microtransactions, loot boxes, etc.) transforment l'expérience et l'identité des joueurs.</p>
             </div>
             <div>
                 <p class="project-section-title">Résultats Clés et Conclusions</p>
                 <ul>
-                    [cite_start]<li>L'évolution de la monétisation a rendu la relation entre le joueur et la valeur du contenu plus <strong>ambiguë et complexe</strong>, soulevant des questions d'équité et d'accessibilité. [cite: 15, 23]</li>
-                    <li>Les débats communautaires en ligne sont <strong>fortement polarisés</strong> (F2P vs P2W). [cite_start]Le sujet du Pay-to-Win génère un sentiment plus critique, mais aussi un engagement communautaire significativement plus élevé. [cite: 19, 21, 23, 137]</li>
-                    <li>Les facteurs socio-économiques modulent les pratiques, mais <strong>le genre et l'âge</strong> sont des déterminants plus significatifs de la fréquence de jeu que le revenu ou le niveau d'études. [cite_start]L'enjeu d'accessibilité est passé de financier à sociodémographique. [cite: 20, 22, 24, 150]</li>
+                    [cite_start]<li>L'évolution de la monétisation a rendu la relation entre le joueur et la valeur du contenu plus <strong>ambiguë et complexe</strong>, soulevant des questions d'équité et d'accessibilité.</li>
+                    <li>Les débats communautaires en ligne sont <strong>fortement polarisés</strong> (F2P vs P2W). Le sujet du Pay-to-Win génère un sentiment plus critique, mais aussi un engagement communautaire significativement plus élevé.</li>
+                    <li>Les facteurs socio-économiques modulent les pratiques, mais <strong>le genre et l'âge</strong> sont des déterminants plus significatifs de la fréquence de jeu que le revenu ou le niveau d'études. L'enjeu d'accessibilité est passé de financier à sociodémographique. </li>
                 </ul>
             </div>
         </div>
@@ -395,28 +396,28 @@
         <div class="skills-tech-container">
             
             <div class="skills-tech-block">
-                <p class="project-section-title">Compétences Développées</p>
+                <p class="project-section-title">Compétences développées</p>
                 <ul class="skills-list">
-                    [cite_start]<li>**Analyses statistiques avancées :** Tests d’hypothèses (t, $\chi^2$, V de Cramer, Tau de Kendall B), ACL/ACM. [cite: 85]</li>
-                    [cite_start]<li>**Analyse Textuelle IA :** Topic Modeling, Sentiment Analysis (VADER de NLTK), Classification. [cite: 90, 128, 142]</li>
-                    [cite_start]<li>**Collecte & Gestion de Données :** Web Scraping (Reddit), Gestion de base de données (Enquête Ludespace 2012, Corpus Europresse). [cite: 87, 93, 107, 128]</li>
-                    [cite_start]<li>**Visualisation de données :** Réalisation de graphiques daltonien-friendly pour les analyses. [cite: 86, 92]</li>
+                    <li><strong>Analyses statistiques avancées :<\strong> Tests d’hypothèses (t, χ2, V de Cramer, Tau de Kendall B), ACL/ACM. </li>
+                    <li><strong>Analyse textuelle IA :<\strong> Topic Modeling, Sentiment Analysis (VADER de NLTK), Classification. </li>
+                    <li><strong>Collecte & gestion de données :<\strong> Web Scraping (Reddit), Gestion de base de données (Enquête Ludespace 2012, Corpus Europresse).</li>
+                    <li><strong>Visualisation de données :<\strong> Réalisation de graphiques avec Jamovi, Python, R,.</li>
                 </ul>
             </div>
             
             <div class="skills-tech-block">
-                <p class="project-section-title">Méthodes et Logiciels</p>
+                <p class="project-section-title">Méthodes et logiciels</p>
                 <ul class="tech-list">
-                    [cite_start]<li>**Analyse Quantitative :** Jamovi, R. [cite: 85, 91]</li>
-                    [cite_start]<li>**Analyse Textuelle :** R (scripts spécifiques), Google Collaboratory. [cite: 87, 89, 90]</li>
-                    [cite_start]<li>**Préparation de Données :** LibreOffice Calc (pour le recodage des variables de l'enquête). [cite: 85, 87]</li>
-                    [cite_start]<li>**Méthode de recherche :** Étude de cas (Genshin Impact), Analyse de corpus médiatique (Europresse), Enquête par questionnaire (Ludespace). [cite: 93, 107, 128]</li>
+                    <li><strong>Analyse quantitative :<\strong> R, Python, Jamovi. </li>
+                    <li><strong>Analyse textuelle :<\strong> R, Google Collaboratory. </li>
+                    <li><strong>Préparation des données :<\strong> Excel, Jamovi. </li>
+                    <li><strong>Méthode de recherche :<\strong> Étude de cas (Genshin Impact), Analyse de corpus médiatique (Europresse), Enquête par questionnaire (Ludespace). </li>
                 </ul>
             </div>
 
             <div class="skills-tech-block">
                 <p class="project-section-title">Apport Personnel</p>
-                <p>Ce travail a affiné ma capacité à croiser des données issues de sources hétérogènes (enquêtes socio-démographiques, discours communautaires, articles de presse) pour répondre à une problématique complexe. [cite_start]J'ai acquis une maîtrise approfondie des techniques de traitement de données qualitatives et quantitatives pour dégager des tendances sociologiques. [cite: 24, 85, 128, 150]</p>
+                <p>Ce travail a affiné ma capacité à croiser des données issues de sources hétérogènes (enquêtes socio-démographiques, discours communautaires, articles de presse) pour répondre à une problématique complexe. J'ai acquis une maîtrise approfondie des techniques de traitement de données qualitatives et quantitatives pour dégager des tendances sociologiques.</p>
             </div>
         </div>
         
