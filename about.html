@@ -1,307 +1,610 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
 
-<style>
-    /* Styles de base */
-    body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f4f4f4; /* Le fond gris (les marges) */
-        color: #333;
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-    }
 
-    /* NOUVELLE CLASSE CLÉ : Conteneur de largeur maximale et centrage pour tous les éléments de contenu */
-    /* MODIFIEZ max-width pour changer la taille de la zone de contenu */
-    .content-wrapper {
-        max-width: 1200px; 
-        width: 100%;
-        margin: 0 auto; /* Centre le contenu */
-        box-sizing: border-box;
-        padding: 0 50px; /* Padding interne de la zone blanche */
+
+<style>
+
+    /* Styles de base */
+
+    body {
+
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+        margin: 0;
+
+        padding: 0;
+
+        background-color: #f4f4f4;
+
+        color: #333;
+
+        display: flex;
+
+        flex-direction: column;
+
+        min-height: 100vh;
+
     }
 
-    /* -------------------------------------------------------------------------- */
-    /* MASQUAGE ET CORRECTIONS JEKYLL */
-    /* -------------------------------------------------------------------------- */
-    /* ... (Styles Jekyll non modifiés) ... */
-    .page-header h1,
-    .view-on-github-link,
-    .downloads,
-    .site-footer,
-    .project-tagline {
-        display: none !important;
-    }
-    /* Réinitialisation agressive du conteneur principal de Jekyll */
-    body > .wrapper, .page-header {
-        max-width: none !important; 
-        padding: 0 !important;
-        margin: 0 !important;
-        width: 100% !important;
-    }
+
 
     /* -------------------------------------------------------------------------- */
-    /* NOUVEAU STYLE: Titre Portfolio */
-    /* -------------------------------------------------------------------------- */
-    .portfolio-title {
-        font-family: 'Poppins', sans-serif;
-        font-size: 40px;
-        font-weight: 700;
-        color: #0077b5; 
-        padding: 20px 0 0 0; 
-        margin: 0;
+
+    /* MASQUAGE ET CORRECTIONS JEKYLL */
+
+    /* -------------------------------------------------------------------------- */
+
+    .page-header h1,
+
+    .view-on-github-link,
+
+    .downloads,
+
+    .site-footer,
+
+    .project-tagline {
+
+        display: none !important;
+
     }
 
-    /* -------------------------------------------------------------------------- */
-    /* Styles du Menu de Navigation (Onglets) */
-    /* CORRECTION: Inversion des styles Actif/Inactif */
-    /* -------------------------------------------------------------------------- */
-    .nav-bar {
-        display: flex;
-        justify-content: flex-end; 
-        padding: 0; /* Padding horizontal retiré pour le wrapper */
-        width: 100%;
-        box-sizing: border-box; 
-    }
-    /* ... (Reste des styles de navigation non modifiés) ... */
-    
+    /* Réinitialisation agressive du conteneur principal de Jekyll */
+
+    body > .wrapper, .page-header {
+
+        max-width: none !important; 
+
+        padding: 0 !important;
+
+        margin: 0 !important;
+
+        width: 100% !important;
+
+    }
+
+
+
+    /* -------------------------------------------------------------------------- */
+
+    /* Styles du Menu de Navigation (Onglets) */
+
+    /* CORRECTION: Inversion des styles Actif/Inactif */
+
+    /* -------------------------------------------------------------------------- */
+
+.nav-bar {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 50px;
+    margin: 0 auto; /* <-- centre horizontalement */
+    max-width: 1100px; /* <-- garde la même largeur que les autres bordereaux */
+    box-sizing: border-box;
+}
+
     .nav-links {
-        display: flex;
-        gap: 0;
-    }
 
-    .nav-link {
-        font-size: 17px;
-        font-weight: 600;
-        text-decoration: none;
-        padding: 10px 20px;
-        border: 1px solid #ccc;
-        border-bottom: none;
-        transition: all 0.2s ease;
-        color: #0077b5;
-        background-color: #f0f0f0;
-    }
-    
-    .nav-link:hover {
-        color: #005f96;
-        background-color: #e0e0e0;
-        transform: translateY(-2px);
-        box-shadow: 0 -2px 5px rgba(0,0,0,0.05);
-    }
-    
-    .nav-link.active {
-        color: #333;
-        background-color: #fff;
-        border-color: #ccc;
-        border-bottom-color: #fff;
-        transform: none;
-        box-shadow: none;
-    }
-    
-    .nav-link.active:hover {
-        color: #333;
-        background-color: #fff;
-        transform: translateY(-2px);
-        box-shadow: 0 -2px 5px rgba(0,0,0,0.05);
-    }
-    
-    .nav-links a:last-child {
-        border-top-right-radius: 6px;
-    }
-    .nav-links a:first-child {
-        border-top-left-radius: 6px;
-    }
-
-    /* -------------------------------------------------------------------------- */
-    /* STYLES: Header Personnel (Photo et Description) */
-    /* -------------------------------------------------------------------------- */
-    .personal-header {
-        /* Garde le fond blanc sur toute la largeur */
-        width: 100%; 
-        background-color: #fff;
-        border-bottom: 1px solid #ccc;
-        margin-top: -1px;
-        padding: 0; /* Padding horizontal/vertical sera dans le content-wrapper */
-    }
-    /* Ajoute le flex et le padding à l'intérieur du wrapper pour l'alignement */
-    .personal-header .content-wrapper {
         display: flex;
-        align-items: center;
-        padding-top: 40px; 
-        padding-bottom: 40px; 
-    }
 
-    .profile-photo {
-        width: 150px;
-        height: 150px;
-        border-radius: 50%;
-        margin-right: 30px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        flex-shrink: 0;
-        display: block !important;
-        max-width: none !important;
-        object-fit: contain;
-    }
+        gap: 0;
 
-    .info-container h1 {
-        margin: 0;
-        font-size: 32px;
-        color: #0077b5;
-    }
-
-    .info-container p {
-        margin-top: 5px;
-        font-size: 16px;
-        color: #555;
-        max-width: 800px;
-    }
-
-    /* -------------------------------------------------------------------------- */
-    /* STYLES: Contenu Principal (À Propos de moi / Chronologie) */
-    /* -------------------------------------------------------------------------- */
-    /* .main-content est maintenant à l'intérieur d'un .content-wrapper */
-    .main-content {
-        flex-grow: 1;
-        padding: 50px 0; /* Garde le padding vertical, supprime l'horizontal */
-        max-width: none;  /* Correction */
-        margin: 0; /* Correction */
-    }
-    
-    .main-content h2 {
-        font-family: 'Poppins', sans-serif;
-        font-size: 38px;
-        font-weight: 700;
-        color: #333;
-        margin-top: 0;
-        margin-bottom: 30px;
-        text-align: center;
-    }
-
-    .section-title {
-        font-family: 'Poppins', sans-serif;
-        font-size: 28px;
-        font-weight: 600;
-        color: #0077b5;
-        margin-top: 40px;
-        margin-bottom: 25px;
-        padding-bottom: 5px;
-        border-bottom: 3px solid #0077b5;
-    }
-
-    /* Styles de la chronologie (inchangés) */
-    .timeline {
-        border-left: 2px solid #ccc;
-        padding-left: 30px;
-        position: relative;
-    }
-    .timeline-item {
-        margin-bottom: 30px;
-        position: relative;
-    }
-    .timeline-item::before {
-        content: '';
-        position: absolute;
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        background-color: #0077b5;
-        border: 2px solid #fff;
-        left: -37px;
-        top: 6px;
-        z-index: 1;
-    }
-    .timeline-item.experience::before {
-        background-color: #005f96;
-    }
-    .timeline-item-content h4 {
-        margin: 0 0 5px 0;
-        font-size: 20px;
-        color: #333;
-    }
-    .details {
-        display: block;
-        font-size: 14px;
-        color: #777;
-        margin-bottom: 10px;
-    }
-    .date {
-        font-weight: bold;
-        color: #555;
-        margin-right: 10px;
-    }
-    .timeline-item-content p {
-        margin: 0 0 10px 0;
-        font-size: 16px;
-        line-height: 1.5;
-    }
-    .timeline-item-content ul {
-        list-style: disc;
-        padding-left: 20px;
-        margin-top: 5px;
-        font-size: 15px;
     }
 
 
-    /* -------------------------------------------------------------------------- */
-    /* STYLES: Pied de Page */
-    /* -------------------------------------------------------------------------- */
-    .footer {
-        /* Garde le fond blanc sur toute la largeur */
-        width: 100%;
-        background-color: #fff;
-        box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
-        text-align: center;
-        margin-top: auto;
-        padding: 0;
-    }
-    /* Le contenu du footer utilise le wrapper pour l'alignement */
-    .footer .content-wrapper {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 15px 50px;
-    }
-    
-    .footer-buttons {
-        display: inline-flex;
-        padding: 0;
-        white-space: nowrap;
-    }
 
-    /* Styles des boutons (inchangés) */
-    .button {
-        display: inline-flex;
-        align-items: center;
-        justify-content: flex-start;
-        padding: 10px 15px;
-        min-width: 100px;
-        font-size: 16px;
-        font-weight: 500;
+    .nav-link {
+
+        font-size: 17px;
+
+        font-weight: 600;
+
         text-decoration: none;
-        background-color: #fff;
-        color: #333;
-        border: none;
-        border-radius: 0;
-        transition: color 0.3s ease;
-        cursor: pointer;
-        position: relative;
-        margin: 0;
+
+        padding: 10px 20px;
+
+        border: 1px solid #ccc;
+
+        border-bottom: none;
+
+        transition: all 0.2s ease;
+
+        /* Style INACTIF (par défaut sur Mes Projets) */
+
+        color: #0077b5; /* Texte bleu */
+
+        background-color: #f0f0f0; /* Fond gris */
+
     }
-    .button:not(:first-child) {
-        border-left: 1px solid #ccc;
-        padding-left: 15px;
-        margin-left: 15px;
+
+    
+
+    .nav-link:hover {
+
+        color: #005f96; /* Bleu foncé au survol */
+
+        background-color: #e0e0e0; /* Gris plus foncé */
+
+        transform: translateY(-2px);
+
+        box-shadow: 0 -2px 5px rgba(0,0,0,0.05);
+
     }
-    .button:hover {
-        color: #0077b5;
+
+    
+
+    /* Style ACTIF (Appliqué sur À Propos de moi) */
+
+    .nav-link.active {
+
+        color: #333; /* Texte noir */
+
+        background-color: #fff; /* Fond blanc */
+
+        border-color: #ccc;
+
+        border-bottom-color: #fff; /* Cache la bordure sur le fond blanc */
+
         transform: none;
+
+        box-shadow: none;
+
     }
+
+    /* Survol pour le lien actif */
+
+    .nav-link.active:hover {
+
+        color: #333;
+
+        background-color: #fff;
+
+        transform: translateY(-2px);
+
+        box-shadow: 0 -2px 5px rgba(0,0,0,0.05);
+
+    }
+
+
+
+    .nav-links a:last-child {
+
+        border-top-right-radius: 6px;
+
+    }
+
+    .nav-links a:first-child {
+
+        border-top-left-radius: 6px;
+
+    }
+
+
+
+    /* -------------------------------------------------------------------------- */
+
+    /* STYLES: Header Personnel (Photo et Description) */
+
+    /* -------------------------------------------------------------------------- */
+
+.personal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 50px;
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    margin: 30px auto; /* <-- Ajoute des marges haut/bas et centre horizontalement */
+    max-width: 1100px; /* <-- Largeur maximale modifiable */
+    border-radius: 12px; /* <-- Optionnel, pour un effet de carte */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08); /* Optionnel, légère ombre */
+}
+
+    .profile-photo {
+
+        width: 150px;
+
+        height: 150px;
+
+        border-radius: 50%;
+
+        margin-right: 30px;
+
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+
+        flex-shrink: 0;
+
+        display: block !important;
+
+        max-width: none !important;
+
+        object-fit: contain;
+
+    }
+
+
+
+    .info-container h1 {
+
+        margin: 0;
+
+        font-size: 32px;
+
+        color: #0077b5;
+
+    }
+
+
+
+    .info-container p {
+
+        margin-top: 5px;
+
+        font-size: 16px;
+
+        color: #555;
+
+        max-width: 800px;
+
+    }
+
+
+
+    /* -------------------------------------------------------------------------- */
+
+    /* STYLES: Contenu Principal (À Propos de moi / Chronologie) */
+
+    /* -------------------------------------------------------------------------- */
+
+    .main-content {
+
+        flex-grow: 1;
+
+        padding: 50px;
+
+        max-width: 1000px; 
+
+        margin: 0 auto;
+
+    }
+
+    
+
+    .main-content h2 {
+
+        font-family: 'Poppins', sans-serif;
+
+        font-size: 38px;
+
+        font-weight: 700;
+
+        color: #333;
+
+        margin-top: 0;
+
+        margin-bottom: 30px;
+
+        text-align: center;
+
+    }
+
+
+
+    /* Styles pour les titres de section (FORMATION / EXPÉRIENCES) */
+
+    .section-title {
+
+        font-family: 'Poppins', sans-serif;
+
+        font-size: 28px;
+
+        font-weight: 600;
+
+        color: #0077b5;
+
+        margin-top: 40px;
+
+        margin-bottom: 25px;
+
+        padding-bottom: 5px;
+
+        border-bottom: 3px solid #0077b5;
+
+    }
+
+    
+
+    /* Styles de la chronologie (Timeline) */
+
+    .timeline {
+
+        position: relative;
+
+        padding: 20px 0;
+
+    }
+
+
+
+    /* Ligne verticale de la chronologie */
+
+    .timeline::before {
+
+        content: '';
+
+        position: absolute;
+
+        width: 3px;
+
+        background-color: #ccc;
+
+        top: 0;
+
+        bottom: 0;
+
+        left: 20px;
+
+    }
+
+
+
+    .timeline-item {
+
+        margin-bottom: 30px;
+
+        position: relative;
+
+        padding-left: 60px;
+
+    }
+
+
+
+    /* Cercle de la chronologie */
+
+    .timeline-item::before {
+
+        content: '\f0a1'; /* Icône Fa-lightbulb - Formation */
+
+        font-family: 'Font Awesome 5 Free';
+
+        font-weight: 900;
+
+        position: absolute;
+
+        width: 30px;
+
+        height: 30px;
+
+        line-height: 30px;
+
+        border-radius: 50%;
+
+        background-color: #0077b5;
+
+        color: #fff;
+
+        text-align: center;
+
+        border: 4px solid #fff;
+
+        left: 5px;
+
+        top: 0;
+
+        box-shadow: 0 0 0 2px #0077b5;
+
+        z-index: 10;
+
+        font-size: 14px;
+
+    }
+
+
+
+    .timeline-item.experience::before {
+
+        content: '\f0b1'; /* Icône Fa-briefcase pour Expérience */
+
+    }
+
+
+
+    .timeline-item-content {
+
+        background: #fff;
+
+        border: 1px solid #ddd;
+
+        border-radius: 6px;
+
+        padding: 20px;
+
+        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+
+        transition: all 0.3s ease;
+
+    }
+
+
+
+    .timeline-item-content:hover {
+
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+
+    }
+
+
+
+    .timeline-item h4 {
+
+        margin-top: 0;
+
+        font-size: 20px;
+
+        color: #333;
+
+        margin-bottom: 5px;
+
+    }
+
+
+
+    .timeline-item .details {
+
+        font-size: 14px;
+
+        color: #555;
+
+        margin-bottom: 10px;
+
+        display: block;
+
+    }
+
+
+
+    .timeline-item .date {
+
+        font-weight: 600;
+
+        color: #0077b5;
+
+        margin-right: 15px;
+
+    }
+
+
+
+    .timeline-item p {
+
+        font-size: 15px;
+
+        line-height: 1.5;
+
+        color: #555;
+
+    }
+
+    
+
+    .timeline-item ul {
+
+        margin-top: 10px;
+
+        padding-left: 20px;
+
+    }
+
+    .timeline-item li {
+
+        font-size: 14px;
+
+        color: #555;
+
+        margin-bottom: 5px;
+
+    }
+
+
+
+    /* -------------------------------------------------------------------------- */
+
+    /* STYLES: Pied de Page */
+
+    /* CORRECTION: Réduction de la taille du bordereau */
+
+    /* -------------------------------------------------------------------------- */
+
+.footer {
+    background-color: #fff;
+    box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+    text-align: center;
+    margin: 30px auto 0 auto; /* <-- Centre le pied de page */
+    max-width: 1100px; /* <-- Même largeur que le header */
+    border-radius: 12px; /* <-- Optionnel */
+    padding: 15px 0;
+}
+   
+
+    .footer-buttons {
+
+        display: block;
+
+        padding: 0 10px;
+
+        white-space: nowrap;
+
+    }
+
+
+
+    .button {
+
+        display: inline-flex;
+
+        align-items: center;
+
+        justify-content: flex-start;
+
+        padding: 8px 12px; /* Réduit le padding des boutons */
+
+        min-width: 80px; /* Légèrement réduit */
+
+        font-size: 15px; /* Réduit la taille du texte */
+
+        font-weight: 500;
+
+        text-decoration: none;
+
+        background-color: #fff;
+
+        color: #333;
+
+        border: none;
+
+        border-radius: 0;
+
+        transition: color 0.3s ease;
+
+        cursor: pointer;
+
+        position: relative;
+
+        margin: 0;
+
+    }
+
+    
+
+    .button:not(:first-child) {
+
+        border-left: 1px solid #ccc;
+
+        padding-left: 12px;
+
+        margin-left: 12px;
+
+    }
+
+
+
+    .button:hover {
+
+        color: #0077b5;
+
+        transform: none;
+
+    }
+
+
+
     .button i {
+
         display: inline-block;
-        margin-right: 10px;
+
+        margin-right: 8px; /* Réduit la marge icône */
+
         color: #555;
         transition: color 0.3s ease;
     }
@@ -311,184 +614,183 @@
     
     /* --- Media Query pour l'adaptabilité mobile (max-width: 768px) --- */
     @media (max-width: 768px) {
-        /* SUR MOBILE, on réduit le padding interne du wrapper */
-        .content-wrapper {
-            padding-left: 20px;
-            padding-right: 20px;
+        .portfolio-title {
+            padding: 20px 20px 0 20px;
+            font-size: 32px;
         }
 
-        .portfolio-title {
-            padding: 20px 0 0 0;
-            font-size: 32px;
-        }
+        .nav-bar {
+            padding: 0 20px;
+        }
 
-        .personal-header .content-wrapper {
+        .personal-header {
             flex-direction: column;
             text-align: center;
-            padding-top: 20px;
-            padding-bottom: 20px;
+            padding: 20px;
+        }
+        .profile-photo {
+            margin-right: 0;
+            margin-bottom: 20px;
         }
         
-        .profile-photo {
-            margin-right: 0;
-            margin-bottom: 20px;
-        }
-        
-        .main-content {
-            padding: 20px 0;
-        }
+        .main-content {
+            padding: 20px;
+        }
+
+        /* Adaptation de la chronologie sur mobile (texte moins décalé) */
+        .timeline::before {
+            left: 10px;
+        }
+        .timeline-item {
+            padding-left: 40px;
+        }
+        .timeline-item::before {
+            left: 0;
+        }
         
         /* Correction du footer mobile (taille adaptée) */
-        .footer .content-wrapper {
-            padding: 15px 20px;
+        .footer-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            width: 100%;
+            padding: 0;
+            align-items: center;
+            white-space: normal;
         }
-
-        .footer-buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            width: 100%;
-            align-items: center;
-            white-space: normal;
-        }
-        
         .button {
-            width: 90%;
-            margin: 0;
-            justify-content: center;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            min-width: unset;
-            padding: 10px;
-            font-size: 16px;
-        }
-        
+            width: 90%;
+            margin: 0;
+            justify-content: center;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            min-width: unset;
+            padding: 10px;
+            font-size: 16px; /* Remet le texte à 16px pour la lisibilité mobile */
+        }
         .button:not(:first-child) {
-            border-left: none;
-            padding-left: 10px;
-            margin-left: 0;
-        }
-    }
+            border-left: none;
+            padding-left: 10px;
+            margin-left: 0;
+        }
+    }
 </style>
 
-<div class="content-wrapper">
-    <h1 class="portfolio-title">Portfolio</h1>
+<h1 class="portfolio-title">Portfolio</h1>
 
-    <div class="nav-bar"> 
-        <div class="nav-links">
-            <a href="projets.html" class="nav-link">
-                Mes projets
-            </a>
-            
-            <a href="about.html" class="nav-link active">
-                À propos de moi
-            </a>
-        </div>
-    </div>
-</div>
-
-<div class="personal-header">
-    <div class="content-wrapper">
-        <img src="photocv.PNG" class="profile-photo" alt="Maëlys François">
-        <div class="info-container">
-            <h1>Maëlys François</h1>
-            <p>Passionnée par l'<strong>analyse de données</strong> avec une expertise pour l'étude des <strong>comportements sur les réseaux sociaux numériques</strong>.</p>
-        </div>
+<div class="container-layout"> 
+    <div class="nav-bar"> 
+        <div class="nav-links">
+            <a href="projets.html" class="nav-link">
+                Mes projets
+            </a>
+            
+            <a href="about.html" class="nav-link active">
+                À propos de moi
+            </a>
+        </div>
     </div>
-</div>
 
-<div class="content-wrapper">
+    <div class="personal-header">
+        <img src="photocv.PNG" class="profile-photo" alt="Maëlys François">
+        <div class="info-container">
+            <h1>Maëlys François</h1>
+            <p>Passionnée par l'<strong>analyse de données</strong> avec une expertise pour l'étude des <strong>comportements sur les réseaux sociaux numériques</strong>.</p>
+        </div>
+    </div>
+
     <div class="main-content">
-        <h2>Mon parcours</h2>
-        
-        <h3 class="section-title">Formations</h3>
-        <div class="timeline">
-            
-            <div class="timeline-item">
-                <div class="timeline-item-content">
-                    <h4>Master Sociologie : Réseaux et Sociétés (RESO)</h4>
-                    <span class="details">
-                        <span class="date">2023 - 2025</span>
-                        Université Toulouse - Jean Jaurès | Toulouse
-                    </span>
-                    <p>Spécialisation en **analyse de données** et maîtrise des techniques quantitatives et textuelles (ACL, ACM, Régression Logistique, Topic Modeling, Sentiment Analysis).</p>
-                    <ul>
-                        <li>Mémoire de recherche: analyse de l'influence des modèles de monétisation des jeux vidéo sur les pratiques des joueurs.</li>
-                        <li>Outils clés : <strong>R, Python, Excel, Jamovi</strong>.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        
-        <h3 class="section-title">Expériences professionnelles</h3>
-        <div class="timeline">
-            
-            <div class="timeline-item experience">
-                <div class="timeline-item-content">
-                    <h4>Assistante au projet AMULEX - Stage</h4>
-                    <span class="details">
-                        <span class="date">Mars 2025 - Juillet 2025</span>
-                        Université Paris-Est Créteil | Paris
-                    </span>
-                    <p>Collecte et analyse de données des réseaux sociaux numériques.</p>
-                    <ul>
-                        <li>Analyse de données.</li>
-                        <li>Conception et conduite d'un questionnaire.</li>
-                        <li>Mise en oeuvre de stratégie de collecte.</li>
-                    </ul>
-                </div>
-            </div>
+        <h2>Mon parcours</h2>
+        
+        <h3 class="section-title">Formations</h3>
+        <div class="timeline">
+            
+            <div class="timeline-item">
+                <div class="timeline-item-content">
+                    <h4>Master Sociologie : Réseaux et Sociétés (RESO)</h4>
+                    <span class="details">
+                        <span class="date">2023 - 2025</span>
+                        Université Toulouse - Jean Jaurès | Toulouse
+                    </span>
+                    <p>Spécialisation en **analyse de données** et maîtrise des techniques quantitatives et textuelles (ACL, ACM, Régression Logistique, Topic Modeling, Sentiment Analysis).</p>
+                    <ul>
+                        <li>Mémoire de recherche: analyse de l'influence des modèles de monétisation des jeux vidéo sur les pratiques des joueurs.</li>
+                        <li>Outils clés : <strong>R, Python, Excel, Jamovi</strong>.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <h3 class="section-title">Expériences professionnelles</h3>
+        <div class="timeline">
+            
+            <div class="timeline-item experience">
+                <div class="timeline-item-content">
+                    <h4>Assistante au projet AMULEX - Stage</h4>
+                    <span class="details">
+                        <span class="date">Mars 2025 - Juillet 2025</span>
+                        Université Paris-Est Créteil | Paris
+                    </span>
+                    <p>Collecte et analyse de données des réseaux sociaux numériques.</p>
+                    <ul>
+                        <li>Analyse de données.</li>
+                        <li>Conduite d'un questionnaire.</li>
+                        <li>Mise en oeuvre de stratégie de collecte.</li>
+                    </ul>
+                </div>
+            </div>
 
-            <div class="timeline-item experience">
-                <div class="timeline-item-content">
-                    <h4>Enquêtrice - Enquête-école</h4>
-                    <span class="details">
-                        <span class="date">Octobre 2024  - Janvier 2025</span>
-                        Toulouse Tech Transfer | Toulouse
-                    </span>
-                    <p>Enquête collaborative visant à cartographier les partenariats socio-économiques de l’UT2J.</p>
-                    <ul>
-                        <li>Cadrage méthodologique et définition des objectifs de l’étude avec les partenaires.</li>
-                        <li>Travail collaboratif.</li>
-                        <li>Conception et conduite d'un questionnaire.</li>
-                    </ul>
-                </div>
-            </div>
+            <div class="timeline-item experience">
+                <div class="timeline-item-content">
+                    <h4>Enquêtrice - Enquête-école</h4>
+                    <span class="details">
+                        <span class="date">Octobre 2024  - Janvier 2025</span>
+                        Toulouse Tech Transfer | Toulouse
+                    </span>
+                    <p>Enquête collaborative visant à cartographier les partenariats socio-économiques de l’UT2J.</p>
+                    <ul>
+                        <li>Cadrage méthodologique et définition des objectifs de l’étude avec les partenaires.</li>
+                        <li>Travail collaboratif.</li>
+                        <li>Conception et conduite d'un questionnaire.</li>
+                    </ul>
+                </div>
+            </div>
 
 
-            <div class="timeline-item experience">
-                <div class="timeline-item-content">
-                    <h4>Chargée d'étude en sociologie - Stage</h4>
-                    <span class="details">
-                        <span class="date">Avril 2024 - Septembre 2024</span>
-                        CNRS - IPBS | Toulouse
-                    </span>
-                    <p>Conduite d’une enquête sur l’état des discriminations et de la qualité de vie au travail, au sein d’un laboratoire.</p>
-                    <ul>
-                        <li>Analyse de données.</li>
-                        <li>Conception et conduite d'un questionnaire.</li>
-                        <li>Passation d'entretiens</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
+            <div class="timeline-item experience">
+                <div class="timeline-item-content">
+                    <h4>Chargée d'étude en sociologie - Stage</h4>
+                    <span class="details">
+                        <span class="date">Avril 2024 - Septembre 2024</span>
+                        CNRS - IPBS | Toulouse
+                    </span>
+                    <p>Conduite d’une enquête sur l’état des discriminations et de la qualité de vie au travail, au sein d’un laboratoire.</p>
+                    <ul>
+                        <li>Analyse de données.</li>
+                        <li>Conception et conduite d'un questionnaire.</li>
+                        <li>Passation d'entretiens</li>
+                    </ul>
+                </div>
+            </div>
+            
+        </div>
+        
+    </div>
 </div>
 
 <footer class="footer">
-    <div class="content-wrapper">
-        <div class="footer-buttons">
-            <a href="https://www.linkedin.com/in/ma%C3%ABlys-fran%C3%A7ois" class="button" target="_blank">
-                <i class="fab fa-linkedin"></i> LinkedIn
-            </a>
-            
-            <a href="mesdocuments/cv_maëlys_françois.pdf" class="button" target="_blank" rel="noopener noreferrer">
-                <i class="fas fa-file-pdf"></i> Mon CV
-            </a>
-            
-            <a href="mailto:maelys.francois31@gmail.com" class="button" target="_blank">
-                <i class="fas fa-envelope"></i> Mon Email
-            </a>
-        </div>
+    <div class="footer-buttons">
+        <a href="https://www.linkedin.com/in/ma%C3%ABlys-fran%C3%A7ois" class="button" target="_blank">
+            <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+        
+        <a href="mesdocuments/cv_maëlys_françois.pdf" class="button" target="_blank" rel="noopener noreferrer">
+            <i class="fas fa-file-pdf"></i> Mon CV
+        </a>
+        
+        <a href="mailto:maelys.francois31@gmail.com" class="button" target="_blank">
+            <i class="fas fa-envelope"></i> Mon Email
+        </a>
     </div>
+
 </footer>
