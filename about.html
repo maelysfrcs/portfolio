@@ -33,22 +33,17 @@
     }
 
     /* -------------------------------------------------------------------------- */
-    /* STYLE: Titre Portfolio */
+    /* NOUVEAU STYLE: Titre Portfolio (Manquant) */
     /* -------------------------------------------------------------------------- */
     .portfolio-title {
         font-family: 'Poppins', sans-serif;
         font-size: 40px;
         font-weight: 700;
-        color: #0077b5; /* Bleu */
+        color: #0077b5; /* Bleu du bordereau */
         padding: 20px 50px 0 50px; /* Aligné avec la nav */
         margin: 0;
     }
 
-    /* Conteneur principal de toute la mise en page */
-    .container-layout {
-        width: 100%;
-    }
-    
     /* -------------------------------------------------------------------------- */
     /* Styles du Menu de Navigation (Onglets) */
     /* CORRECTION: Inversion des styles Actif/Inactif */
@@ -56,9 +51,9 @@
     .nav-bar {
         display: flex;
         justify-content: flex-end; 
-        padding: 0 50px; 
+        padding: 0 50px;
         width: 100%;
-        box-sizing: border-box;
+        box-sizing: border-box; 
     }
 
     .nav-links {
@@ -74,27 +69,28 @@
         border: 1px solid #ccc;
         border-bottom: none;
         transition: all 0.2s ease;
-        /* Style INACTIF (Mes projets) */
-        color: #0077b5; 
-        background-color: #f0f0f0; 
+        /* Style INACTIF (par défaut sur Mes Projets) */
+        color: #0077b5; /* Texte bleu */
+        background-color: #f0f0f0; /* Fond gris */
     }
-
+    
     .nav-link:hover {
-        color: #005f96;
-        background-color: #e0e0e0;
+        color: #005f96; /* Bleu foncé au survol */
+        background-color: #e0e0e0; /* Gris plus foncé */
         transform: translateY(-2px);
         box-shadow: 0 -2px 5px rgba(0,0,0,0.05);
     }
     
-    /* Style ACTIF (À propos de moi) */
+    /* Style ACTIF (Appliqué sur À Propos de moi) */
     .nav-link.active {
-        color: #333;
-        background-color: #fff;
+        color: #333; /* Texte noir */
+        background-color: #fff; /* Fond blanc */
         border-color: #ccc;
-        border-bottom-color: #fff;
+        border-bottom-color: #fff; /* Cache la bordure sur le fond blanc */
         transform: none;
         box-shadow: none;
     }
+    /* Survol pour le lien actif */
     .nav-link.active:hover {
         color: #333;
         background-color: #fff;
@@ -152,7 +148,7 @@
     .main-content {
         flex-grow: 1;
         padding: 50px;
-        max-width: 1000px;
+        max-width: 1000px; 
         margin: 0 auto;
     }
     
@@ -276,40 +272,31 @@
     }
 
     /* -------------------------------------------------------------------------- */
-    /* STYLES: Pied de Page (Bordereau) */
-    /* FIX: Le footer lui-même prend 100% de la largeur pour le fond blanc, mais son contenu est contraint. */
+    /* STYLES: Pied de Page */
+    /* CORRECTION: Réduction de la taille du bordereau */
     /* -------------------------------------------------------------------------- */
     .footer {
-        padding: 15px 0;
+        padding: 15px 0; /* Réduit le padding vertical */
         background-color: #fff;
         box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
         text-align: center;
         width: 100%;
         margin-top: auto;
     }
-
-    /* WRAPPER pour contraindre le contenu du footer (les boutons) à la largeur principale */
-    .footer-wrapper {
-        max-width: 1000px; /* Largeur max alignée sur .main-content */
-        margin: 0 auto; /* Centrage */
-        padding: 0 50px; /* Padding latéral pour les bords */
-        box-sizing: border-box; 
-        display: flex; 
-        justify-content: flex-end; /* Aligne le groupe de boutons à droite */
-    }
     
     .footer-buttons {
-        display: inline-flex; /* Groupe les boutons */
-        gap: 15px;
+        display: block;
+        padding: 0 10px;
+        white-space: nowrap;
     }
 
     .button {
         display: inline-flex;
         align-items: center;
         justify-content: flex-start;
-        padding: 8px 12px; 
-        min-width: 80px; 
-        font-size: 15px; 
+        padding: 8px 12px; /* Réduit le padding des boutons */
+        min-width: 80px; /* Légèrement réduit */
+        font-size: 15px; /* Réduit la taille du texte */
         font-weight: 500;
         text-decoration: none;
         background-color: #fff;
@@ -325,7 +312,7 @@
     .button:not(:first-child) {
         border-left: 1px solid #ccc;
         padding-left: 12px;
-        margin-left: 0; /* Utilisation de 'gap' sur .footer-buttons */
+        margin-left: 12px;
     }
 
     .button:hover {
@@ -335,7 +322,7 @@
 
     .button i {
         display: inline-block;
-        margin-right: 8px;
+        margin-right: 8px; /* Réduit la marge icône */
         color: #555;
         transition: color 0.3s ease;
     }
@@ -379,18 +366,11 @@
             left: 0;
         }
         
-        /* Correction du footer mobile : pleine largeur et centré */
-        .footer-wrapper {
-            max-width: none; 
-            padding: 0;
-            flex-direction: column; /* Empile les boutons */
-            justify-content: center;
-        }
-
+        /* Correction du footer mobile (taille adaptée) */
         .footer-buttons {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 8px;
             width: 100%;
             padding: 0;
             align-items: center;
@@ -404,10 +384,12 @@
             border-radius: 4px;
             min-width: unset;
             padding: 10px;
-            font-size: 16px;
+            font-size: 16px; /* Remet le texte à 16px pour la lisibilité mobile */
         }
         .button:not(:first-child) {
             border-left: none;
+            padding-left: 10px;
+            margin-left: 0;
         }
     }
 </style>
@@ -465,3 +447,67 @@
                     <h4>Assistante au projet AMULEX - Stage</h4>
                     <span class="details">
                         <span class="date">Mars 2025 - Juillet 2025</span>
+                        Université Paris-Est Créteil | Paris
+                    </span>
+                    <p>Collecte et analyse de données des réseaux sociaux numériques.</p>
+                    <ul>
+                        <li>Analyse de données.</li>
+                        <li>Conduite d'un questionnaire.</li>
+                        <li>Mise en oeuvre de stratégie de collecte.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item experience">
+                <div class="timeline-item-content">
+                    <h4>Enquêtrice - Enquête-école</h4>
+                    <span class="details">
+                        <span class="date">Octobre 2024  - Janvier 2025</span>
+                        Toulouse Tech Transfer | Toulouse
+                    </span>
+                    <p>Enquête collaborative visant à cartographier les partenariats socio-économiques de l’UT2J.</p>
+                    <ul>
+                        <li>Cadrage méthodologique et définition des objectifs de l’étude avec les partenaires.</li>
+                        <li>Travail collaboratif.</li>
+                        <li>Conception et conduite d'un questionnaire.</li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="timeline-item experience">
+                <div class="timeline-item-content">
+                    <h4>Chargée d'étude en sociologie - Stage</h4>
+                    <span class="details">
+                        <span class="date">Avril 2024 - Septembre 2024</span>
+                        CNRS - IPBS | Toulouse
+                    </span>
+                    <p>Conduite d’une enquête sur l’état des discriminations et de la qualité de vie au travail, au sein d’un laboratoire.</p>
+                    <ul>
+                        <li>Analyse de données.</li>
+                        <li>Conception et conduite d'un questionnaire.</li>
+                        <li>Passation d'entretiens</li>
+                    </ul>
+                </div>
+            </div>
+            
+        </div>
+        
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="footer-buttons">
+        <a href="https://www.linkedin.com/in/ma%C3%ABlys-fran%C3%A7ois" class="button" target="_blank">
+            <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+        
+        <a href="mesdocuments/cv_maëlys_françois.pdf" class="button" target="_blank" rel="noopener noreferrer">
+            <i class="fas fa-file-pdf"></i> Mon CV
+        </a>
+        
+        <a href="mailto:maelys.francois31@gmail.com" class="button" target="_blank">
+            <i class="fas fa-envelope"></i> Mon Email
+        </a>
+    </div>
+</footer>
