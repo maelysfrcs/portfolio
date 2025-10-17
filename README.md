@@ -127,7 +127,7 @@
     }
 
     /* -------------------------------------------------------------------------- */
-    /* STYLES: Contenu Principal (Mes Projets) */
+    /* STYLES: Contenu Principal (Mes Projets) - GRILLE DE BOUTONS IMAGES */
     /* -------------------------------------------------------------------------- */
     .main-content-projects {
         flex-grow: 1;
@@ -144,99 +144,91 @@
         text-align: center;
     }
     
-    /* -------------------------------------------------------------------------- */
-    /* NOUVEAUX STYLES: FICHE PROJET */
-    /* -------------------------------------------------------------------------- */
-    .project-card {
-        background-color: #fff;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        padding: 30px;
-        margin-bottom: 40px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    }
-
-    .project-card h3 {
-        font-family: 'Poppins', sans-serif;
-        color: #0077b5; /* Bleu LinkedIn */
-        font-size: 26px;
-        margin-top: 0;
-        border-bottom: 2px solid #0077b5;
-        padding-bottom: 10px;
-        margin-bottom: 20px;
-    }
-
-    .project-section-title {
-        font-size: 18px;
-        font-weight: 700;
-        color: #333;
-        margin-top: 15px;
-        margin-bottom: 5px;
-        border-left: 4px solid #f0ad4e; /* Orange/jaune accent */
-        padding-left: 10px;
-    }
-
-    .project-summary {
-        display: flex;
+    /* Grille pour afficher les projets */
+    .project-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 30px;
-        margin-bottom: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding-top: 20px;
     }
 
-    .project-summary > div {
-        flex: 1;
+    /* Style du bouton/tuile de projet */
+    .project-tile {
+        position: relative;
+        overflow: hidden;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        text-decoration: none; /* Rendre l'ancre invisible pour un effet bouton */
+        display: block;
+        min-height: 200px; /* Hauteur minimale pour les tuiles */
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .project-summary p {
-        font-size: 15px;
-        line-height: 1.6;
+    .project-tile:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    }
+    
+    /* Conteneur pour le texte et l'image */
+    .project-image-text {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end; /* Texte en bas */
+        padding: 20px;
+        text-align: left;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 100%); /* Dégradé sombre en bas */
+    }
+    
+    .project-image-text h4 {
+        margin: 0;
+        font-size: 22px;
+        font-weight: 700;
+        font-family: 'Poppins', sans-serif;
+        line-height: 1.2;
+    }
+    
+    .project-image-text p {
+        margin-top: 5px;
+        font-size: 14px;
+        font-weight: 400;
+        opacity: 0.85;
+    }
+
+    /* Images de fond spécifiques (à remplacer par vos URLs d'images) */
+    .tile-webscraping {
+        background: url('image_78fe58.png') center/cover no-repeat;
+    }
+    
+    .tile-stat-adv {
+        background: url('image_6e149e.png') center/cover no-repeat;
+    }
+    
+    .tile-clustering {
+        background: url('image_6e1cb7.png') center/cover no-repeat;
+    }
+    
+    .tile-coming-soon {
+        background-color: #ddd;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .tile-coming-soon .project-image-text {
+        background: none;
         color: #555;
     }
-    
-    /* Mise en évidence des listes de compétences et outils */
-    .skills-tech-container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-        margin-top: 20px;
-    }
-
-    .skills-tech-block {
-        flex: 1;
-        min-width: 250px;
-    }
-    
-    .skills-list, .tech-list {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-
-    .skills-list li, .tech-list li {
-        background-color: #f4f4f4;
-        margin-bottom: 8px;
-        padding: 8px 12px;
-        border-radius: 4px;
-        font-size: 14px;
-        border-left: 3px solid #0077b5; /* Bleu accent pour les compétences */
-        color: #333;
-    }
-
-    .tech-list li {
-        border-left: 3px solid #6c757d; /* Gris pour les outils */
-    }
-
-    .graph-suggestion-container {
-        margin-top: 30px;
-        padding-top: 20px;
-        border-top: 1px dashed #ccc;
-    }
-    .graph-suggestion-container p {
-        background-color: #e6f7ff; /* Fond bleu très clair */
-        padding: 15px;
-        border-radius: 4px;
-        border: 1px solid #b3e5fc;
-        font-size: 14px;
-        color: #004085;
+    .tile-coming-soon h4 {
+        font-size: 20px;
+        color: #555;
     }
 
     /* -------------------------------------------------------------------------- */
@@ -266,18 +258,16 @@
         font-size: 16px; 
         font-weight: 500; 
         text-decoration: none;
-        /* RETOUR AU FOND BLANC PAR DÉFAUT */
         background-color: #fff; 
         color: #333; 
         border: none;
-        border-radius: 0; /* Suppression du border-radius pour correspondre au style initial */
+        border-radius: 0;
         transition: color 0.3s ease; 
         cursor: pointer;
         position: relative; 
         margin: 0; 
     }
     
-    /* Rétablissement de la barre de séparation verticale entre les boutons sur PC */
     .button:not(:first-child) {
         border-left: 1px solid #ccc; 
         padding-left: 15px; 
@@ -301,6 +291,7 @@
     
     /* --- Media Query pour l'adaptabilité mobile (max-width: 768px) --- */
     @media (max-width: 768px) {
+        /* Général */
         .personal-header {
             flex-direction: column;
             text-align: center;
@@ -310,45 +301,44 @@
             margin-right: 0;
             margin-bottom: 20px;
         }
+        
+        /* Grille Projets */
+        .project-grid {
+            padding: 0 20px;
+        }
+        .project-tile {
+             min-height: 150px;
+        }
+        .project-image-text h4 {
+            font-size: 20px;
+        }
+        .project-image-text p {
+            font-size: 13px;
+        }
+        
+        /* Footer */
         .footer-buttons {
             display: flex; 
             flex-direction: column; 
             gap: 10px;
             width: 100%; 
             padding: 0; 
-            /* Alignement central des éléments enfants */
             align-items: center; 
             white-space: normal; 
         }
         .button {
-            /* Largeur du bouton */
             width: 90%; 
             margin: 0; 
-            
-            /* Centrage du contenu (texte + icône) à l'intérieur du bouton */
             justify-content: center; 
-            
-            /* Rétablissement du border et border-radius pour la version mobile */
             border: 1px solid #ddd; 
             border-radius: 4px;
             min-width: unset; 
             padding: 10px;
         }
-        /* Suppression de la bordure verticale en mode colonne (mobile) */
         .button:not(:first-child) {
             border-left: none;
             padding-left: 10px;
             margin-left: 0;
-        }
-        
-        /* Adaptation mobile des fiches projet */
-        .project-summary {
-            flex-direction: column;
-            gap: 10px;
-        }
-        .skills-tech-container {
-            flex-direction: column;
-            gap: 10px;
         }
     }
 </style>
@@ -374,61 +364,34 @@
 <div class="main-content-projects">
     <h2>Mes Projets</h2>
     
-    <div class="project-card">
-        <h3>Analyse de l'influence des modèles économiques sur les joueurs et les communautés en ligne</h3>
+    <div class="project-grid">
+    
+        <a href="project-webscraping.html" class="project-tile tile-webscraping">
+            <div class="project-image-text">
+                <h4>Analyse de sentiment sur les communautés de joueurs (Python/R)</h4>
+                <p>Web Scraping, Topic Modeling, Sentiment Analysis par IA (VADER)</p>
+            </div>
+        </a>
         
-        <div class="project-summary">
-            <div>
-                <p class="project-section-title">Objectif et problématique</p>
-                <p><strong>Problématique :</strong> Dans quelle mesure l'évolution des modèles de monétisation des jeux vidéo, des bornes d'arcade aux dépenses in-game, influence-t-elle les <strong>pratiques des joueurs</strong> ? </p>
-                <p><strong>Objectif :</strong> Analyser comment les <strong> structures économiques </strong> (microtransactions, loot boxes, etc.) transforment l'expérience et l'identité des joueurs.</p>
+        <a href="project-stat.html" class="project-tile tile-stat-adv">
+            <div class="project-image-text">
+                <h4>Analyse factorielle des correspondances et Clustering (Jamovi)</h4>
+                <p>ACL/ACM, Tests d'hypothèses ($\chi^2$, t, ANOVA), Interprétation sociologique</p>
             </div>
-            <div>
-                <p class="project-section-title">Résultats clés et conclusions</p>
-                <ul>
-                    <li>L'évolution de la monétisation a rendu la relation entre le joueur et la valeur du contenu plus <strong>ambiguë et complexe</strong>, soulevant des questions d'équité et d'accessibilité.</li>
-                    <li>Les débats communautaires en ligne sont <strong>fortement polarisés</strong> (F2P vs P2W). Le sujet du Pay-to-Win génère un sentiment plus critique, mais aussi un engagement communautaire significativement plus élevé.</li>
-                    <li>Les facteurs socio-économiques modulent les pratiques, mais <strong>le genre et l'âge</strong> sont des déterminants plus significatifs de la fréquence de jeu que le revenu ou le niveau d'études. L'enjeu d'accessibilité est passé de financier à sociodémographique. </li>
-                </ul>
-            </div>
+        </a>
         
-        <div class="skills-tech-container">
-            
-            <div class="skills-tech-block">
-                <p class="project-section-title">Compétences développées</p>
-                <ul class="skills-list">
-                    <li><strong>Analyses statistiques avancées :<\strong> Tests d’hypothèses (t, χ2, V de Cramer, Tau de Kendall B), ACL/ACM. </li>
-                    <li><strong>Analyse textuelle IA :<\strong> Topic Modeling, Sentiment Analysis (VADER de NLTK), Classification. </li>
-                    <li><strong>Collecte & gestion de données :<\strong> Web Scraping (Reddit), Gestion de base de données (Enquête Ludespace 2012, Corpus Europresse).</li>
-                    <li><strong>Visualisation de données :<\strong> Réalisation de graphiques avec Jamovi, Python, R,.</li>
-                </ul>
+        <a href="project-future.html" class="project-tile tile-clustering">
+            <div class="project-image-text">
+                <h4>Classification de contenu pour les réseaux sociaux (Python)</h4>
+                <p>Régression Logistique, Random Forest, Scikit-learn</p>
             </div>
-            
-            <div class="skills-tech-block">
-                <p class="project-section-title">Méthodes et logiciels</p>
-                <ul class="tech-list">
-                    <li><strong>Analyse quantitative :<\strong> R, Python, Jamovi. </li>
-                    <li><strong>Analyse textuelle :<\strong> R, Google Collaboratory. </li>
-                    <li><strong>Préparation des données :<\strong> Excel, Jamovi. </li>
-                    <li><strong>Méthode de recherche :<\strong> Étude de cas (Genshin Impact), Analyse de corpus médiatique (Europresse), Enquête par questionnaire (Ludespace). </li>
-                </ul>
-            </div>
-
-            <div class="skills-tech-block">
-                <p class="project-section-title">Apport Personnel</p>
-                <p>Ce travail a affiné ma capacité à croiser des données issues de sources hétérogènes (enquêtes socio-démographiques, discours communautaires, articles de presse) pour répondre à une problématique complexe. J'ai acquis une maîtrise approfondie des techniques de traitement de données qualitatives et quantitatives pour dégager des tendances sociologiques.</p>
-            </div>
-        </div>
+        </a>
         
-        <div class="graph-suggestion-container">
-            <p class="project-section-title">💡 Suggestion de Graphiques à Intégrer :</p>
-            <p>Pour rendre cette fiche plus visuelle, je vous recommande d'ajouter les graphiques suivants :
-            <ol>
-                [cite_start]<li>Un graphique illustrant la **Répartition des sentiments par topic** (Figure 32 du mémoire) : Cela met en évidence visuellement la forte corrélation entre les sujets liés à la monétisation et les sentiments négatifs/critiques de la communauté. [cite: 122]</li>
-                [cite_start]<li>Un graphique de **Comparaison des upvotes entre posts F2P et P2W** (Figure 35) : Il démontrerait clairement l'engagement accru suscité par le sujet Pay-to-Win, même s'il est controversé. [cite: 137]</li>
-                [cite_start]<li>Un tableau ou graphique synthétisant les **Variables Déterminantes de la Fréquence de Jeu** (âge et genre versus revenu) pour illustrer votre conclusion principale. [cite: 149]</li>
-            </ol>
-            </p>
+        <div class="project-tile tile-coming-soon">
+            <div class="project-image-text">
+                <h4>Autres projets à venir...</h4>
+                <p>Analyse prédictive de tendances</p>
+            </div>
         </div>
         
     </div>
