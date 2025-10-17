@@ -350,7 +350,7 @@
     <img src="photocv.PNG" class="profile-photo" alt="Maëlys François">
     <div class="info-container">
         <h1>Maëlys François</h1>
-        <p>Passionnée par l'<strong>analyse de données</strong> avec une expertise pour l'étude des <strong>comportements sur les réseaux sociaux numériques</strong>. Mon objectif est de transformer les données complexes en stratégies actionnables.</p>
+        <p>Passionnée par l'<strong>analyse de données</strong> avec une expertise pour l'étude des <strong>comportements sur les réseaux sociaux numériques</strong>.</p>
     </div>
 </div>
 
