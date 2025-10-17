@@ -12,23 +12,14 @@
         display: flex;
         flex-direction: column;
         min-height: 100vh;
-        /* Le body ne doit plus avoir d'align-items: center; */
     }
 
-    /* NOUVELLE CLASSE CLÉ : Conteneur de largeur maximale et centrage pour tous les éléments de contenu */
-    /* MODIFIEZ max-width pour changer la taille de la zone de contenu */
-    .content-wrapper {
-        max-width: 1200px; 
-        width: 100%;
-        margin: 0 auto; /* Centre le contenu */
-        box-sizing: border-box;
-        padding: 0 50px; /* Padding interne de la zone blanche */
-    }
+    /* -------------------------------------------------------------------------- */
+    /* CORRECTION ULTIME JEKYLL: La source de tous les problèmes de marges */
+    /* -------------------------------------------------------------------------- */
 
-    /* -------------------------------------------------------------------------- */
-    /* MASQUAGE ET CORRECTIONS JEKYLL */
-    /* -------------------------------------------------------------------------- */
-    /* ... (Styles Jekyll non modifiés) ... */
+    /* Neutralisation agressive du conteneur principal de Jekyll */
+    /* Ceci force le conteneur à être pleine largeur et sans padding */
     .page-header h1,
     .view-on-github-link,
     .downloads,
@@ -36,8 +27,8 @@
     .project-tagline {
         display: none !important;
     }
-    /* Réinitialisation agressive du conteneur principal de Jekyll */
-    body > .wrapper, .page-header {
+    /* L'annihilation de tout ce qui restreint la largeur */
+    body > .wrapper, .page-header {
         max-width: none !important; 
         padding: 0 !important;
         margin: 0 !important;
@@ -45,6 +36,18 @@
     }
 
     /* -------------------------------------------------------------------------- */
+    /* CLASSE CLÉ: DÉFINITION DE LA ZONE DE CONTENU (le "bordereau") */
+    /* -------------------------------------------------------------------------- */
+    /* C'est la seule classe qui doit gérer la largeur limitée et les marges intérieures */
+    .content-wrapper {
+        max-width: 1200px; 
+        width: 100%;
+        margin: 0 auto; /* Centrage automatique */
+        box-sizing: border-box;
+        padding: 0 50px; /* **Marges de 50px** à gauche et à droite du contenu */
+    }
+    
+    /* -------------------------------------------------------------------------- */
     /* NOUVEAU STYLE: Titre Portfolio */
     /* -------------------------------------------------------------------------- */
     .portfolio-title {
@@ -52,26 +55,27 @@
         font-size: 40px;
         font-weight: 700;
         color: #0077b5; 
-        padding: 20px 0 0 0; 
+        padding: 20px 0 0 0; /* Padding vertical, l'horizontal est géré par .content-wrapper */
         margin: 0;
     }
 
     /* -------------------------------------------------------------------------- */
     /* Styles du Menu de Navigation (Onglets) */
-    /* CORRECTION: Inversion des styles Actif/Inactif */
     /* -------------------------------------------------------------------------- */
     .nav-bar {
         display: flex;
         justify-content: flex-end; 
-        padding: 0; /* Padding horizontal retiré pour le wrapper */
+        padding: 0; 
         width: 100%;
         box-sizing: border-box; 
     }
-    /* ... (Reste des styles de navigation non modifiés) ... */
     
     .nav-links {
         display: flex;
         gap: 0;
+        /* Correction de la marge de 50px qui était auparavant dans ce bloc */
+        margin-top: 20px;
+        margin-right: 0; 
     }
 
     .nav-link {
@@ -120,14 +124,14 @@
     /* STYLES: Header Personnel (Photo et Description) */
     /* -------------------------------------------------------------------------- */
     .personal-header {
-        /* Garde le fond blanc sur toute la largeur */
+        /* Le fond blanc s'étend sur toute la largeur de l'écran */
         width: 100%; 
         background-color: #fff;
         border-bottom: 1px solid #ccc;
         margin-top: -1px;
         padding: 0; /* Padding horizontal/vertical sera dans le content-wrapper */
     }
-    /* Ajoute le flex et le padding à l'intérieur du wrapper pour l'alignement */
+    /* Le wrapper à l'intérieur gère l'alignement et le padding interne */
     .personal-header .content-wrapper {
         display: flex;
         align-items: center;
@@ -170,7 +174,6 @@
         max-width: none;  /* Correction */
         margin: 0; /* Correction */
     }
-    /* ... (Reste des styles de chronologie non modifiés) ... */
     
     .main-content h2 {
         font-family: 'Poppins', sans-serif;
@@ -193,13 +196,65 @@
         border-bottom: 3px solid #0077b5;
     }
 
-    /* ... (Styles de la chronologie non modifiés) ... */
+    /* Styles de la chronologie (inchangés) */
+    .timeline {
+        border-left: 2px solid #ccc;
+        padding-left: 30px;
+        position: relative;
+    }
+    .timeline-item {
+        margin-bottom: 30px;
+        position: relative;
+    }
+    .timeline-item::before {
+        content: '';
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: #0077b5;
+        border: 2px solid #fff;
+        left: -37px;
+        top: 6px;
+        z-index: 1;
+    }
+    .timeline-item.experience::before {
+        background-color: #005f96;
+    }
+    .timeline-item-content h4 {
+        margin: 0 0 5px 0;
+        font-size: 20px;
+        color: #333;
+    }
+    .details {
+        display: block;
+        font-size: 14px;
+        color: #777;
+        margin-bottom: 10px;
+    }
+    .date {
+        font-weight: bold;
+        color: #555;
+        margin-right: 10px;
+    }
+    .timeline-item-content p {
+        margin: 0 0 10px 0;
+        font-size: 16px;
+        line-height: 1.5;
+    }
+    .timeline-item-content ul {
+        list-style: disc;
+        padding-left: 20px;
+        margin-top: 5px;
+        font-size: 15px;
+    }
+
 
     /* -------------------------------------------------------------------------- */
     /* STYLES: Pied de Page */
     /* -------------------------------------------------------------------------- */
     .footer {
-        /* Garde le fond blanc sur toute la largeur */
+        /* Le fond blanc s'étend sur toute la largeur */
         width: 100%;
         background-color: #fff;
         box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
@@ -210,7 +265,7 @@
     /* Le contenu du footer utilise le wrapper pour l'alignement */
     .footer .content-wrapper {
         display: flex;
-        justify-content: center;
+        justify-content: center; /* Pour centrer les boutons sur l'axe horizontal */
         align-items: center;
         padding: 15px 50px;
     }
@@ -221,7 +276,44 @@
         white-space: nowrap;
     }
 
-    /* ... (Reste des styles de boutons non modifiés) ... */
+    /* Styles des boutons (inchangés) */
+    .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 10px 15px;
+        min-width: 100px;
+        font-size: 16px;
+        font-weight: 500;
+        text-decoration: none;
+        background-color: #fff;
+        color: #333;
+        border: none;
+        border-radius: 0;
+        transition: color 0.3s ease;
+        cursor: pointer;
+        position: relative;
+        margin: 0;
+    }
+    .button:not(:first-child) {
+        border-left: 1px solid #ccc;
+        padding-left: 15px;
+        margin-left: 15px;
+    }
+    .button:hover {
+        color: #0077b5;
+        transform: none;
+    }
+    .button i {
+        display: inline-block;
+        margin-right: 10px;
+        color: #555;
+        transition: color 0.3s ease;
+    }
+    .button:hover i {
+        color: #0077b5;
+    }
+
     /* --- Media Query pour l'adaptabilité mobile (max-width: 768px) --- */
     @media (max-width: 768px) {
         /* SUR MOBILE, on réduit le padding interne du wrapper */
@@ -250,8 +342,6 @@
         .main-content {
             padding: 20px 0;
         }
-        
-        /* ... (Adaptation de la chronologie sur mobile non modifiée) ... */
         
         /* Correction du footer mobile (taille adaptée) */
         .footer .content-wrapper {
