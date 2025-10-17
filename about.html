@@ -20,15 +20,17 @@ body {
 /* MENU DE NAVIGATION */
 /* -------------------------------------------------------------------------- */
 .header-wrapper {
-  max-width: 1100px;
+  max-width: 900px; /* réduit le bordereau */
   margin: 0 auto;
+  position: relative; /* nécessaire pour positionnement absolu des boutons */
 }
 
 .nav-links {
   display: flex;
-  justify-content: center; /* centré */
   gap: 0;
-  margin: 20px 0;
+  position: absolute; /* position absolue pour les coller au bord */
+  top: 20px;          /* un peu d’espace par rapport au haut du bordereau */
+  right: 20px;        /* collé à droite */
 }
 
 .nav-link {
@@ -62,18 +64,15 @@ body {
 .nav-links a:last-child { border-top-right-radius: 6px; }
 .nav-links a:first-child { border-top-left-radius: 6px; }
 
-/* -------------------------------------------------------------------------- */
-/* HEADER PERSONNEL */
-/* -------------------------------------------------------------------------- */
 .personal-header {
   display: flex;
   align-items: center;
-  padding: 40px 50px;
+  padding: 30px 30px; /* réduit la taille du bordereau */
   background-color: #fff;
   border-bottom: 1px solid #ccc;
-  margin-top: -1px;
   border-radius: 10px;
 }
+
 
 .profile-photo {
   width: 150px;
