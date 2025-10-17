@@ -20,17 +20,18 @@ body {
 /* MENU DE NAVIGATION */
 /* -------------------------------------------------------------------------- */
 .header-wrapper {
-  max-width: 900px; /* réduit le bordereau */
+  max-width: 1000px; /* POUR MODIFIER TAILLE BORDEREAU */
   margin: 0 auto;
-  position: relative; /* nécessaire pour positionnement absolu des boutons */
+  display: flex;
+  flex-direction: column; /* boutons au-dessus */
+  gap: 0; /* pas d’espace vertical */
 }
-
+  
 .nav-links {
   display: flex;
+  justify-content: flex-end; /* boutons collés à droite */
   gap: 0;
-  position: absolute; /* position absolue pour les coller au bord */
-  top: 20px;          /* un peu d’espace par rapport au haut du bordereau */
-  right: 20px;        /* collé à droite */
+  margin-bottom: -10px; /* optionnel : pour coller légèrement au bordereau */
 }
 
 .nav-link {
@@ -67,12 +68,11 @@ body {
 .personal-header {
   display: flex;
   align-items: center;
-  padding: 30px 30px; /* réduit la taille du bordereau */
+  padding: 30px 30px; /* TAILLE DU BORDEREAU AUSSI APPAREMMENT */
   background-color: #fff;
   border-bottom: 1px solid #ccc;
   border-radius: 10px;
 }
-
 
 .profile-photo {
   width: 150px;
