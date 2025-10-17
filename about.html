@@ -7,27 +7,27 @@
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         margin: 0;
         padding: 0;
-        background-color: #f4f4f4;
+        background-color: #f4f4f4; /* Le fond gris sera la marge extérieure */
         color: #333;
         display: flex;
         flex-direction: column;
         min-height: 100vh;
-        align-items: center; /* Centre le page-container sur la page */
     }
 
-    /* CLASSE À AJUSTER MANUELLEMENT POUR LA MARGE LATÉRALE */
-    .page-container {
-        /* MARGE MANUELLE : 0 pour le haut/bas, 100px pour gauche/droite */
-        margin: 0 100px; 
-        width: 100%; /* Prend toute la largeur entre les marges */
-        max-width: 1400px; /* Empêche d'être trop grand sur écran large (optionnel) */
-        background-color: transparent; /* S'assure que le fond reste gris */
+    /* NOUVELLE CLASSE CLÉ : Conteneur de largeur maximale et centrage pour tous les éléments de contenu */
+    .content-wrapper {
+        /* C'est LA valeur à modifier pour changer la largeur de TOUT le contenu centré (le bordereau) */
+        max-width: 1200px; 
+        width: 100%;
+        margin: 0 auto; /* Centre le contenu */
         box-sizing: border-box;
+        padding: 0 50px; /* Marges internes de 50px (espace entre le contenu et les bords du wrapper) */
     }
 
     /* -------------------------------------------------------------------------- */
     /* MASQUAGE ET CORRECTIONS JEKYLL */
     /* -------------------------------------------------------------------------- */
+    /* ... (Styles Jekyll non modifiés) ... */
     .page-header h1,
     .view-on-github-link,
     .downloads,
@@ -35,7 +35,6 @@
     .project-tagline {
         display: none !important;
     }
-    /* Réinitialisation agressive du conteneur principal de Jekyll */
     body > .wrapper, .page-header {
         max-width: none !important; 
         padding: 0 !important;
@@ -46,14 +45,14 @@
     /* -------------------------------------------------------------------------- */
     /* NOUVEAU STYLE: Titre Portfolio */
     /* -------------------------------------------------------------------------- */
-    .portfolio-title {
-        font-family: 'Poppins', sans-serif;
-        font-size: 40px;
-        font-weight: 700;
-        color: #0077b5; 
-        padding: 20px 0 0 0; /* Padding horizontal retiré car géré par .container-layout */
-        margin: 0;
-    }
+    .portfolio-title {
+        font-family: 'Poppins', sans-serif;
+        font-size: 40px;
+        font-weight: 700;
+        color: #0077b5; 
+        padding: 20px 0 0 0; 
+        margin: 0;
+    }
 
     /* -------------------------------------------------------------------------- */
     /* Styles du Menu de Navigation (Onglets) */
@@ -61,138 +60,96 @@
     .nav-bar {
         display: flex;
         justify-content: flex-end; 
-        padding: 0; /* Padding horizontal retiré car géré par .container-layout */
+        padding: 0; /* Retiré car le wrapper le gère */
         width: 100%;
         box-sizing: border-box; 
     }
-
-    /* Le container-layout servira de marges internes de 50px */
-    .container-layout {
-        width: 100%;
-        box-sizing: border-box;
-        padding: 0 50px; 
-    }
-
-    .nav-links {
-        display: flex;
-        gap: 0;
-    }
-    /* ... (Styles des liens de navigation non modifiés) ... */
+    /* ... (Reste du .nav-bar non modifié) ... */
 
     /* -------------------------------------------------------------------------- */
     /* STYLES: Header Personnel (Photo et Description) */
     /* -------------------------------------------------------------------------- */
     .personal-header {
-        display: flex;
-        align-items: center;
-        padding: 40px 0; /* Retrait du padding horizontal, géré par .container-layout */
-        background-color: #fff;
-        border-bottom: 1px solid #ccc;
-        margin-top: -1px;
-        width: 100%; /* Important pour que le fond blanc remplisse le page-container */
+        /* Le fond blanc s'étend sur toute la largeur de l'écran */
+        width: 100%; 
+        background-color: #fff;
+        border-bottom: 1px solid #ccc;
+        margin-top: -1px;
+        padding: 0; /* Padding retiré pour laisser le wrapper le gérer */
     }
+    /* Le wrapper à l'intérieur gère l'alignement et le padding interne */
+    .personal-header .content-wrapper {
+        display: flex;
+        align-items: center;
+        padding-top: 40px; /* Padding vertical du header */
+        padding-bottom: 40px; /* Padding vertical du header */
+    }
 
-    /* ... (Styles .profile-photo et .info-container non modifiés) ... */
+    /* ... (Styles photo et info-container non modifiés) ... */
 
     /* -------------------------------------------------------------------------- */
     /* STYLES: Contenu Principal (À Propos de moi / Chronologie) */
     /* -------------------------------------------------------------------------- */
     .main-content {
         flex-grow: 1;
-        padding: 50px 0; /* Retrait du padding horizontal, géré par .container-layout */
-        max-width: none;  /* Supprimer la limite de largeur */
-        margin: 0; /* Supprimer l'auto-centrage */
+        padding: 50px 0; /* Conserve le padding vertical, retire l'horizontal */
+        max-width: none;  /* Supprimer */
+        margin: 0; /* Supprimer */
     }
-    /* ... (Reste des styles de la chronologie non modifiés) ... */
+    /* ... (Reste des styles de chronologie non modifiés) ... */
 
     /* -------------------------------------------------------------------------- */
     /* STYLES: Pied de Page */
     /* -------------------------------------------------------------------------- */
     .footer {
-        padding: 15px 0;
-        background-color: #fff;
-        box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
-        text-align: center;
-        width: 100%;
-        margin-top: auto;
+        width: 100%;
+        background-color: #fff;
+        box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+        text-align: center;
+        margin-top: auto;
+        padding: 0; /* Padding retiré pour laisser le wrapper le gérer */
     }
+    /* Le wrapper à l'intérieur gère l'alignement et le padding interne */
+    .footer .content-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 15px 50px; /* Padding vertical et horizontal du footer */
+    }
     
     .footer-buttons {
-        display: inline-flex; /* Utiliser inline-flex pour centrer le bloc */
-        padding: 0; /* Retrait du padding, géré par .container-layout */
+        display: inline-flex; /* Utilisez inline-flex pour centrer les boutons dans le wrapper */
+        padding: 0;
         white-space: nowrap;
-        /* Le footer a besoin de son propre container-layout pour s'aligner */
-        width: 100%; 
-        justify-content: flex-start;
     }
-    /* ... (Styles des boutons non modifiés) ... */
-    
-    /* --- Media Query pour l'adaptabilité mobile (max-width: 768px) --- */
-    @media (max-width: 768px) {
-        /* SUR MOBILE, LA MARGE EST RÉDUITE À 0 pour laisser de la place au padding */
-        .page-container {
-            margin: 0;
+
+    /* --- Media Query pour l'adaptabilité mobile (max-width: 768px) --- */
+    @media (max-width: 768px) {
+        /* SUR MOBILE, on réduit le padding du wrapper à 20px */
+        .content-wrapper {
+            padding-left: 20px;
+            padding-right: 20px;
         }
 
-        .portfolio-title {
-            padding: 20px 0 0 0; /* Le padding de 20px est déjà dans .container-layout */
-            font-size: 32px;
-        }
-
-        .container-layout {
-            padding: 0 20px; /* Réduit la marge interne pour mobile */
+        .personal-header .content-wrapper {
+            flex-direction: column;
+            text-align: center;
+            padding-top: 20px;
+            padding-bottom: 20px;
         }
 
-        .personal-header {
-            flex-direction: column;
-            text-align: center;
-            padding: 20px 0; /* Réduit le padding vertical et retire l'horizontal */
-        }
-        .profile-photo {
-            margin-right: 0;
-            margin-bottom: 20px;
-        }
-        
-        .main-content {
-            padding: 20px 0; /* Retire l'horizontal */
-        }
-        /* ... (Styles de la chronologie non modifiés) ... */
-        
-        /* Correction du footer mobile */
-        .footer-buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            width: 100%;
-            align-items: center;
-            white-space: normal;
-        }
-        .button {
-            width: 90%;
-            margin: 0;
-            justify-content: center;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            min-width: unset;
-            padding: 10px;
-            font-size: 16px;
-        }
-        .button:not(:first-child) {
-            border-left: none;
-            padding-left: 10px;
-            margin-left: 0;
-        }
-    }
+        /* ... (Reste des styles mobile non modifiés) ... */
+    }
+
 </style>
 
-<div class="page-container">
-
-    <h1 class="portfolio-title">Portfolio</h1>
-
-    <div class="container-layout"> 
-        <div class="nav-bar"> 
+<div class="container-layout">
+    <div class="content-wrapper">
+        <h1 class="portfolio-title">Portfolio</h1>
+    
+        <div class="nav-bar"> 
             <div class="nav-links">
-                <a href="portfolio" class="nav-link">
+                <a href="projets.html" class="nav-link">
                     Mes projets
                 </a>
                 
@@ -202,21 +159,21 @@
             </div>
         </div>
     </div>
-
-    <div class="container-layout">
-        <div class="personal-header">
-            <img src="photocv.PNG" class="profile-photo" alt="Maëlys François">
-            <div class="info-container">
-                <h1>Maëlys François</h1>
-                <p>Passionnée par l'<strong>analyse de données</strong> avec une expertise pour l'étude des <strong>comportements sur les réseaux sociaux numériques</strong>.</p>
-            </div>
-        </div>
-    </div>
     
-    <div class="container-layout">
-        <div class="main-content">
-            <h2>Mon parcours</h2>
-            
+        <div class="personal-header">
+        <div class="content-wrapper">
+            <img src="photocv.PNG" class="profile-photo" alt="Maëlys François">
+            <div class="info-container">
+                <h1>Maëlys François</h1>
+                <p>Passionnée par l'<strong>analyse de données</strong> avec une expertise pour l'étude des <strong>comportements sur les réseaux sociaux numériques</strong>.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-wrapper">
+        <div class="main-content">
+            <h2>Mon parcours</h2>
+                        
             <h3 class="section-title">Formations</h3>
             <div class="timeline">
                 
@@ -232,7 +189,6 @@
                             <li>Mémoire de recherche: analyse de l'influence des modèles de monétisation des jeux vidéo sur les pratiques des joueurs.</li>
                             <li>Outils clés : <strong>R, Python, Excel, Jamovi</strong>.</li>
                         </ul>
-                    </div>
                 </div>
             </div>
             
@@ -268,12 +224,12 @@
                             <li>Travail collaboratif.</li>
                             <li>Conception et conduite d'un questionnaire.</li>
                         </ul>
-                    </div>
                 </div>
+            </div>
 
 
-                <div class="timeline-item experience">
-                    <div class="timeline-item-content">
+            <div class="timeline-item experience">
+                <div class="timeline-item-content">
                         <h4>Chargée d'étude en sociologie - Stage</h4>
                         <span class="details">
                             <span class="date">Avril 2024 - Septembre 2024</span>
@@ -287,16 +243,14 @@
                         </ul>
                     </div>
                 </div>
-                
             </div>
-            
         </div>
     </div>
 </div>
 
 <footer class="footer">
-    <div class="container-layout">
-        <div class="footer-buttons">
+    <div class="content-wrapper">
+        <div class="footer-buttons">
             <a href="https://www.linkedin.com/in/ma%C3%ABlys-fran%C3%A7ois" class="button" target="_blank">
                 <i class="fab fa-linkedin"></i> LinkedIn
             </a>
