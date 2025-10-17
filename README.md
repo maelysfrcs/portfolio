@@ -338,11 +338,11 @@
 
 <div class="nav-links">
     <a href="projets.html" class="nav-link active">
-        Mes Projets
+        Mes projets
     </a>
     
     <a href="about.html" class="nav-link">
-        À Propos de moi
+        À propos de moi
     </a>
 </div>
 
