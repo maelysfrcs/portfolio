@@ -127,7 +127,7 @@
     }
 
     /* -------------------------------------------------------------------------- */
-    /* STYLES: Contenu Principal (Mes Projets) - GRILLE DE BOUTONS IMAGES */
+    /* STYLES: Contenu Principal (Mes Projets) */
     /* -------------------------------------------------------------------------- */
     .main-content-projects {
         flex-grow: 1;
@@ -144,91 +144,90 @@
         text-align: center;
     }
     
-    /* Grille pour afficher les projets */
+    /* -------------------------------------------------------------------------- */
+    /* NOUVEAUX STYLES: GRILLE DE BOUTONS DE PROJETS */
+    /* -------------------------------------------------------------------------- */
     .project-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 30px;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding-top: 20px;
+        /* Deux colonnes sur PC, une seule sur mobile via media query */
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 30px; 
+        padding-top: 10px;
     }
 
-    /* Style du bouton/tuile de projet */
-    .project-tile {
+    .project-button {
+        display: block;
+        height: 250px; /* Hauteur fixe pour les boutons/cartes */
+        text-decoration: none;
         position: relative;
         overflow: hidden;
         border-radius: 8px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        text-decoration: none; /* Rendre l'ancre invisible pour un effet bouton */
-        display: block;
-        min-height: 200px; /* Hauteur minimale pour les tuiles */
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .project-tile:hover {
+    .project-button:hover {
         transform: translateY(-5px);
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
     }
     
-    /* Conteneur pour le texte et l'image */
-    .project-image-text {
+    /* Styles pour l'image de fond */
+    .project-button-bg {
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        filter: grayscale(80%); /* Rendre l'image plus discrète */
+        transition: filter 0.5s ease;
         position: absolute;
         top: 0;
         left: 0;
-        width: 100%;
-        height: 100%;
-        color: #fff;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end; /* Texte en bas */
-        padding: 20px;
-        text-align: left;
-        background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 100%); /* Dégradé sombre en bas */
     }
     
-    .project-image-text h4 {
-        margin: 0;
-        font-size: 22px;
-        font-weight: 700;
-        font-family: 'Poppins', sans-serif;
-        line-height: 1.2;
-    }
-    
-    .project-image-text p {
-        margin-top: 5px;
-        font-size: 14px;
-        font-weight: 400;
-        opacity: 0.85;
+    .project-button:hover .project-button-bg {
+        filter: grayscale(0%); /* Couleur au survol */
     }
 
-    /* Images de fond spécifiques (à remplacer par vos URLs d'images) */
-    .tile-webscraping {
-        background: url('image_78fe58.png') center/cover no-repeat;
+    /* Styles pour le contenu texte */
+    .project-content {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        /* Dégradé noir en bas pour assurer la lisibilité du texte blanc */
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0) 100%);
+        padding: 20px;
+        color: #fff;
     }
-    
-    .tile-stat-adv {
-        background: url('image_6e149e.png') center/cover no-repeat;
-    }
-    
-    .tile-clustering {
-        background: url('image_6e1cb7.png') center/cover no-repeat;
-    }
-    
-    .tile-coming-soon {
-        background-color: #ddd;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-    }
-    .tile-coming-soon .project-image-text {
-        background: none;
-        color: #555;
-    }
-    .tile-coming-soon h4 {
+
+    .project-content h4 {
+        margin: 0 0 5px 0;
         font-size: 20px;
-        color: #555;
+        font-weight: 700;
+        line-height: 1.2;
+    }
+
+    .project-content p {
+        margin: 0;
+        font-size: 14px;
+        opacity: 0.9;
+    }
+
+    .project-tag {
+        display: inline-block;
+        font-size: 12px;
+        background-color: #0077b5; 
+        color: #fff;
+        padding: 4px 8px;
+        border-radius: 3px;
+        margin-top: 10px;
+        font-weight: 500;
+    }
+    
+    /* Images de fond spécifiques (à remplacer par vos images) */
+    .project-1-bg {
+        /* Ici, l'image représente une analyse textuelle ou du code */
+        background-image: url('data:image/jpeg;base64,...'); /* Placeholder */
     }
 
     /* -------------------------------------------------------------------------- */
@@ -261,7 +260,7 @@
         background-color: #fff; 
         color: #333; 
         border: none;
-        border-radius: 0;
+        border-radius: 0; 
         transition: color 0.3s ease; 
         cursor: pointer;
         position: relative; 
@@ -291,7 +290,6 @@
     
     /* --- Media Query pour l'adaptabilité mobile (max-width: 768px) --- */
     @media (max-width: 768px) {
-        /* Général */
         .personal-header {
             flex-direction: column;
             text-align: center;
@@ -302,21 +300,16 @@
             margin-bottom: 20px;
         }
         
-        /* Grille Projets */
+        /* Adaptation des boutons de projets en une seule colonne */
+        .main-content-projects {
+             padding: 20px;
+        }
         .project-grid {
-            padding: 0 20px;
-        }
-        .project-tile {
-             min-height: 150px;
-        }
-        .project-image-text h4 {
-            font-size: 20px;
-        }
-        .project-image-text p {
-            font-size: 13px;
+            grid-template-columns: 1fr; 
+            gap: 20px;
         }
         
-        /* Footer */
+        /* CORRECTION DE LA PRÉSENTATION DU FOOTER SUR MOBILE */
         .footer-buttons {
             display: flex; 
             flex-direction: column; 
@@ -365,34 +358,25 @@
     <h2>Mes Projets</h2>
     
     <div class="project-grid">
-    
-        <a href="project-webscraping.html" class="project-tile tile-webscraping">
-            <div class="project-image-text">
-                <h4>Analyse de sentiment sur les communautés de joueurs (Python/R)</h4>
-                <p>Web Scraping, Topic Modeling, Sentiment Analysis par IA (VADER)</p>
+        
+        <a href="projet-web-scraping.html" class="project-button">
+            <div class="project-button-bg project-1-bg" style="background-image: url('{{ contentFetchId "uploaded:image_eee1e3.jpg-da71224e-1e0d-4788-96d8-2d6c1aec30c6" }}');"></div>
+            
+            <div class="project-content">
+                <span class="project-tag">Méthode de Recherche</span>
+                <h4>Analyse du Sentiment et Web Scraping des communautés de joueurs</h4>
+                <p>Extraction des discussions Reddit et analyse par Topic Modeling pour comprendre la polarisation F2P vs P2W.</p>
             </div>
         </a>
         
-        <a href="project-stat.html" class="project-tile tile-stat-adv">
-            <div class="project-image-text">
-                <h4>Analyse factorielle des correspondances et Clustering (Jamovi)</h4>
-                <p>ACL/ACM, Tests d'hypothèses ($\chi^2$, t, ANOVA), Interprétation sociologique</p>
+        <a href="projet-2.html" class="project-button">
+            <div class="project-button-bg" style="background-image: url('images/placeholder_stats.jpg');"></div>
+            <div class="project-content">
+                <span class="project-tag">Statistiques Avancées</span>
+                <h4>Modélisation des déterminants sociaux de la pratique de jeu (ANOVA, ACL)</h4>
+                <p>Analyse des données Ludespace pour identifier les variables (âge, genre) expliquant la fréquence de jeu.</p>
             </div>
         </a>
-        
-        <a href="project-future.html" class="project-tile tile-clustering">
-            <div class="project-image-text">
-                <h4>Classification de contenu pour les réseaux sociaux (Python)</h4>
-                <p>Régression Logistique, Random Forest, Scikit-learn</p>
-            </div>
-        </a>
-        
-        <div class="project-tile tile-coming-soon">
-            <div class="project-image-text">
-                <h4>Autres projets à venir...</h4>
-                <p>Analyse prédictive de tendances</p>
-            </div>
-        </div>
         
     </div>
     
