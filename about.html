@@ -7,17 +7,27 @@
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         margin: 0;
         padding: 0;
-        background-color: #f4f4f4; /* Le fond gris (les marges extérieures) */
+        background-color: #f4f4f4; /* Le fond gris (les marges) */
         color: #333;
         display: flex;
         flex-direction: column;
         min-height: 100vh;
     }
 
-    /* -------------------------------------------------------------------------- */
-    /* CORRECTION CRITIQUE JEKYLL: La base des problèmes de marges */
-    /* Ces styles annulent les restrictions du thème GitHub Pages */
-    /* -------------------------------------------------------------------------- */
+    /* NOUVELLE CLASSE CLÉ : Conteneur de largeur maximale et centrage pour tous les éléments de contenu */
+    /* MODIFIEZ max-width pour changer la taille de la zone de contenu */
+    .content-wrapper {
+        max-width: 1200px; 
+        width: 100%;
+        margin: 0 auto; /* Centre le contenu */
+        box-sizing: border-box;
+        padding: 0 50px; /* Padding interne de la zone blanche */
+    }
+
+    /* -------------------------------------------------------------------------- */
+    /* MASQUAGE ET CORRECTIONS JEKYLL */
+    /* -------------------------------------------------------------------------- */
+    /* ... (Styles Jekyll non modifiés) ... */
     .page-header h1,
     .view-on-github-link,
     .downloads,
@@ -25,8 +35,8 @@
     .project-tagline {
         display: none !important;
     }
-    /* Neutralisation agressive du conteneur Jekyll */
-    body > .wrapper, .page-header {
+    /* Réinitialisation agressive du conteneur principal de Jekyll */
+    body > .wrapper, .page-header {
         max-width: none !important; 
         padding: 0 !important;
         margin: 0 !important;
@@ -34,56 +44,35 @@
     }
 
     /* -------------------------------------------------------------------------- */
-    /* CLASSE CLÉ: DÉFINITION DE LA ZONE DE CONTENU (le "bordereau") */
-    /* MODIFIEZ max-width pour changer la taille de TOUS les contenus centrés */
-    /* -------------------------------------------------------------------------- */
-    .content-wrapper {
-        max-width: 1200px; 
-        width: 100%;
-        margin: 0 auto; /* Centrage automatique */
-        box-sizing: border-box;
-        padding: 0 50px; /* **Marges de 50px** à gauche et à droite du contenu */
-    }
-
-    /* -------------------------------------------------------------------------- */
-    /* NOUVEAU STYLE: Titre Portfolio */
-    /* -------------------------------------------------------------------------- */
+    /* NOUVEAU STYLE: Titre Portfolio */
+    /* -------------------------------------------------------------------------- */
     .portfolio-title {
         font-family: 'Poppins', sans-serif;
         font-size: 40px;
         font-weight: 700;
         color: #0077b5; 
-        padding: 0; /* Pas de padding vertical ici, il sera sur le wrapper */
+        padding: 20px 0 0 0; 
         margin: 0;
-    }
-    
-    /* -------------------------------------------------------------------------- */
-    /* STYLES: Section Titre et Navigation (CORRECTION ALIGNEMENT HORIZONTAL) */
-    /* -------------------------------------------------------------------------- */
-    .header-main-content {
-        display: flex; /* Aligner le titre et la nav horizontalement */
-        justify-content: space-between; /* Écarter le titre (gauche) et la nav (droite) */
-        align-items: flex-end; /* Aligner les éléments par le bas (pour que les onglets soient alignés) */
-        padding-top: 20px; /* Ajout du padding vertical sur la section */
     }
 
     /* -------------------------------------------------------------------------- */
     /* Styles du Menu de Navigation (Onglets) */
+    /* CORRECTION: Inversion des styles Actif/Inactif */
     /* -------------------------------------------------------------------------- */
     .nav-bar {
-        /* Nous n'avons plus besoin de ces propriétés puisque le .content-wrapper est un flex container */
-        padding: 0; 
-        width: auto; 
+        display: flex;
+        justify-content: flex-end; 
+        padding: 0; /* Padding horizontal retiré pour le wrapper */
+        width: 100%;
+        box-sizing: border-box; 
     }
+    /* ... (Reste des styles de navigation non modifiés) ... */
     
     .nav-links {
         display: flex;
         gap: 0;
-        margin-top: 0; /* Retiré car align-items: flex-end gère le positionnement vertical */
-        margin-right: 0; 
     }
-    
-    /* Reste des styles de navigation (inchangés) */
+
     .nav-link {
         font-size: 17px;
         font-weight: 600;
@@ -95,49 +84,49 @@
         color: #0077b5;
         background-color: #f0f0f0;
     }
-    /* ... (Styles .nav-link:hover, .nav-link.active etc. inchangés) ... */
+    
     .nav-link:hover {
-        color: #005f96;
-        background-color: #e0e0e0;
-        transform: translateY(-2px);
-        box-shadow: 0 -2px 5px rgba(0,0,0,0.05);
-    }
+        color: #005f96;
+        background-color: #e0e0e0;
+        transform: translateY(-2px);
+        box-shadow: 0 -2px 5px rgba(0,0,0,0.05);
+    }
     
     .nav-link.active {
-        color: #333;
-        background-color: #fff;
-        border-color: #ccc;
-        border-bottom-color: #fff;
-        transform: none;
-        box-shadow: none;
-    }
+        color: #333;
+        background-color: #fff;
+        border-color: #ccc;
+        border-bottom-color: #fff;
+        transform: none;
+        box-shadow: none;
+    }
     
     .nav-link.active:hover {
-        color: #333;
-        background-color: #fff;
-        transform: translateY(-2px);
-        box-shadow: 0 -2px 5px rgba(0,0,0,0.05);
-    }
+        color: #333;
+        background-color: #fff;
+        transform: translateY(-2px);
+        box-shadow: 0 -2px 5px rgba(0,0,0,0.05);
+    }
     
     .nav-links a:last-child {
-        border-top-right-radius: 6px;
-    }
-    .nav-links a:first-child {
-        border-top-left-radius: 6px;
-    }
+        border-top-right-radius: 6px;
+    }
+    .nav-links a:first-child {
+        border-top-left-radius: 6px;
+    }
 
     /* -------------------------------------------------------------------------- */
     /* STYLES: Header Personnel (Photo et Description) */
     /* -------------------------------------------------------------------------- */
     .personal-header {
-        /* Permet la barre blanche PLEINE LARGEUR */
+        /* Garde le fond blanc sur toute la largeur */
         width: 100%; 
         background-color: #fff;
         border-bottom: 1px solid #ccc;
         margin-top: -1px;
-        padding: 0; 
+        padding: 0; /* Padding horizontal/vertical sera dans le content-wrapper */
     }
-    /* Le wrapper gère l'alignement centré du contenu à l'intérieur de la barre blanche */
+    /* Ajoute le flex et le padding à l'intérieur du wrapper pour l'alignement */
     .personal-header .content-wrapper {
         display: flex;
         align-items: center;
@@ -157,38 +146,110 @@
         object-fit: contain;
     }
 
-    /* ... (Styles info-container, h1, p inchangés) ... */
-    .info-container h1 {
-        margin: 0;
-        font-size: 32px;
-        color: #0077b5;
-    }
+    .info-container h1 {
+        margin: 0;
+        font-size: 32px;
+        color: #0077b5;
+    }
 
-    .info-container p {
-        margin-top: 5px;
-        font-size: 16px;
-        color: #555;
-        max-width: 800px;
-    }
+    .info-container p {
+        margin-top: 5px;
+        font-size: 16px;
+        color: #555;
+        max-width: 800px;
+    }
 
     /* -------------------------------------------------------------------------- */
-    /* STYLES: Contenu Principal (Mon parcours) */
+    /* STYLES: Contenu Principal (À Propos de moi / Chronologie) */
     /* -------------------------------------------------------------------------- */
     /* .main-content est maintenant à l'intérieur d'un .content-wrapper */
     .main-content {
         flex-grow: 1;
         padding: 50px 0; /* Garde le padding vertical, supprime l'horizontal */
-        max-width: none;  
-        margin: 0; 
+        max-width: none;  /* Correction */
+        margin: 0; /* Correction */
+    }
+    
+    .main-content h2 {
+        font-family: 'Poppins', sans-serif;
+        font-size: 38px;
+        font-weight: 700;
+        color: #333;
+        margin-top: 0;
+        margin-bottom: 30px;
+        text-align: center;
     }
 
-    /* ... (Styles h2, section-title, timeline inchangés) ... */
+    .section-title {
+        font-family: 'Poppins', sans-serif;
+        font-size: 28px;
+        font-weight: 600;
+        color: #0077b5;
+        margin-top: 40px;
+        margin-bottom: 25px;
+        padding-bottom: 5px;
+        border-bottom: 3px solid #0077b5;
+    }
+
+    /* Styles de la chronologie (inchangés) */
+    .timeline {
+        border-left: 2px solid #ccc;
+        padding-left: 30px;
+        position: relative;
+    }
+    .timeline-item {
+        margin-bottom: 30px;
+        position: relative;
+    }
+    .timeline-item::before {
+        content: '';
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: #0077b5;
+        border: 2px solid #fff;
+        left: -37px;
+        top: 6px;
+        z-index: 1;
+    }
+    .timeline-item.experience::before {
+        background-color: #005f96;
+    }
+    .timeline-item-content h4 {
+        margin: 0 0 5px 0;
+        font-size: 20px;
+        color: #333;
+    }
+    .details {
+        display: block;
+        font-size: 14px;
+        color: #777;
+        margin-bottom: 10px;
+    }
+    .date {
+        font-weight: bold;
+        color: #555;
+        margin-right: 10px;
+    }
+    .timeline-item-content p {
+        margin: 0 0 10px 0;
+        font-size: 16px;
+        line-height: 1.5;
+    }
+    .timeline-item-content ul {
+        list-style: disc;
+        padding-left: 20px;
+        margin-top: 5px;
+        font-size: 15px;
+    }
+
 
     /* -------------------------------------------------------------------------- */
     /* STYLES: Pied de Page */
     /* -------------------------------------------------------------------------- */
     .footer {
-        /* Permet la barre blanche PLEINE LARGEUR */
+        /* Garde le fond blanc sur toute la largeur */
         width: 100%;
         background-color: #fff;
         box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
@@ -196,7 +257,7 @@
         margin-top: auto;
         padding: 0;
     }
-    /* Le wrapper gère l'alignement centré du contenu à l'intérieur de la barre blanche */
+    /* Le contenu du footer utilise le wrapper pour l'alignement */
     .footer .content-wrapper {
         display: flex;
         justify-content: center;
@@ -209,23 +270,55 @@
         padding: 0;
         white-space: nowrap;
     }
-    /* ... (Styles de boutons et media queries inchangés) ... */
+
+    /* Styles des boutons (inchangés) */
+    .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 10px 15px;
+        min-width: 100px;
+        font-size: 16px;
+        font-weight: 500;
+        text-decoration: none;
+        background-color: #fff;
+        color: #333;
+        border: none;
+        border-radius: 0;
+        transition: color 0.3s ease;
+        cursor: pointer;
+        position: relative;
+        margin: 0;
+    }
+    .button:not(:first-child) {
+        border-left: 1px solid #ccc;
+        padding-left: 15px;
+        margin-left: 15px;
+    }
+    .button:hover {
+        color: #0077b5;
+        transform: none;
+    }
+    .button i {
+        display: inline-block;
+        margin-right: 10px;
+        color: #555;
+        transition: color 0.3s ease;
+    }
+    .button:hover i {
+        color: #0077b5;
+    }
+    
     /* --- Media Query pour l'adaptabilité mobile (max-width: 768px) --- */
     @media (max-width: 768px) {
+        /* SUR MOBILE, on réduit le padding interne du wrapper */
         .content-wrapper {
             padding-left: 20px;
             padding-right: 20px;
         }
 
-        .header-main-content {
-            flex-direction: column;
-            align-items: center;
-            padding-top: 20px;
-            padding-bottom: 0;
-        }
-        
         .portfolio-title {
-            padding: 0 0 10px 0;
+            padding: 20px 0 0 0;
             font-size: 32px;
         }
 
@@ -245,6 +338,7 @@
             padding: 20px 0;
         }
         
+        /* Correction du footer mobile (taille adaptée) */
         .footer .content-wrapper {
             padding: 15px 20px;
         }
@@ -277,8 +371,7 @@
     }
 </style>
 
-
-<div class="header-main-content content-wrapper">
+<div class="content-wrapper">
     <h1 class="portfolio-title">Portfolio</h1>
 
     <div class="nav-bar"> 
