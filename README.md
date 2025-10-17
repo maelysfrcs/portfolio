@@ -379,19 +379,18 @@
         
         <div class="project-summary">
             <div>
-                <p class="project-section-title">Objectif et Problématique</p>
-                <p><strong>Problématique :</strong> Dans quelle mesure l'évolution des modèles de monétisation des jeux vidéo, des bornes d'arcade aux dépenses in-game, influence-t-elle les <strong>pratiques des joueurs<\strong> ? 
-                <p><strong>Objectif :<\strong> Analyser comment les <strong> structures économiques <\strong> (microtransactions, loot boxes, etc.) transforment l'expérience et l'identité des joueurs.</p>
+                <p class="project-section-title">Objectif et problématique</p>
+                <p><strong>Problématique :</strong> Dans quelle mesure l'évolution des modèles de monétisation des jeux vidéo, des bornes d'arcade aux dépenses in-game, influence-t-elle les <strong>pratiques des joueurs</strong> ? </p>
+                <p><strong>Objectif :</strong> Analyser comment les <strong> structures économiques </strong> (microtransactions, loot boxes, etc.) transforment l'expérience et l'identité des joueurs.</p>
             </div>
             <div>
-                <p class="project-section-title">Résultats Clés et Conclusions</p>
+                <p class="project-section-title">Résultats clés et conclusions</p>
                 <ul>
-                    [cite_start]<li>L'évolution de la monétisation a rendu la relation entre le joueur et la valeur du contenu plus <strong>ambiguë et complexe</strong>, soulevant des questions d'équité et d'accessibilité.</li>
+                    <li>L'évolution de la monétisation a rendu la relation entre le joueur et la valeur du contenu plus <strong>ambiguë et complexe</strong>, soulevant des questions d'équité et d'accessibilité.</li>
                     <li>Les débats communautaires en ligne sont <strong>fortement polarisés</strong> (F2P vs P2W). Le sujet du Pay-to-Win génère un sentiment plus critique, mais aussi un engagement communautaire significativement plus élevé.</li>
                     <li>Les facteurs socio-économiques modulent les pratiques, mais <strong>le genre et l'âge</strong> sont des déterminants plus significatifs de la fréquence de jeu que le revenu ou le niveau d'études. L'enjeu d'accessibilité est passé de financier à sociodémographique. </li>
                 </ul>
             </div>
-        </div>
         
         <div class="skills-tech-container">
             
