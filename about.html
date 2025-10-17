@@ -32,6 +32,16 @@
         width: 100% !important;
     }
 
+    /* NOUVELLE CLASSE CLÉ : Conteneur de largeur maximale et centrage */
+    .content-area {
+        /* MODIFIEZ CETTE VALEUR pour changer la largeur de l'alignement */
+        max-width: 1000px; 
+        width: 100%;
+        margin: 0 auto; /* Centre le contenu */
+        box-sizing: border-box;
+        padding: 0 50px; /* Marges latérales de 50px pour le titre et le contenu principal */
+    }
+
     /* -------------------------------------------------------------------------- */
     /* NOUVEAU STYLE: Titre Portfolio (Manquant) */
     /* -------------------------------------------------------------------------- */
@@ -40,18 +50,17 @@
         font-size: 40px;
         font-weight: 700;
         color: #0077b5; /* Bleu du bordereau */
-        padding: 20px 50px 0 50px; /* Aligné avec la nav */
+        padding: 20px 0 0 0; /* Horizontal géré par .content-area */
         margin: 0;
     }
 
     /* -------------------------------------------------------------------------- */
     /* Styles du Menu de Navigation (Onglets) */
-    /* CORRECTION: Inversion des styles Actif/Inactif */
     /* -------------------------------------------------------------------------- */
     .nav-bar {
         display: flex;
         justify-content: flex-end; 
-        padding: 0 50px;
+        padding: 0; /* Horizontal géré par .content-area */
         width: 100%;
         box-sizing: border-box; 
     }
@@ -69,28 +78,25 @@
         border: 1px solid #ccc;
         border-bottom: none;
         transition: all 0.2s ease;
-        /* Style INACTIF (par défaut sur Mes Projets) */
-        color: #0077b5; /* Texte bleu */
-        background-color: #f0f0f0; /* Fond gris */
+        color: #0077b5;
+        background-color: #f0f0f0;
     }
     
     .nav-link:hover {
-        color: #005f96; /* Bleu foncé au survol */
-        background-color: #e0e0e0; /* Gris plus foncé */
+        color: #005f96;
+        background-color: #e0e0e0;
         transform: translateY(-2px);
         box-shadow: 0 -2px 5px rgba(0,0,0,0.05);
     }
     
-    /* Style ACTIF (Appliqué sur À Propos de moi) */
     .nav-link.active {
-        color: #333; /* Texte noir */
-        background-color: #fff; /* Fond blanc */
+        color: #333;
+        background-color: #fff;
         border-color: #ccc;
-        border-bottom-color: #fff; /* Cache la bordure sur le fond blanc */
+        border-bottom-color: #fff;
         transform: none;
         box-shadow: none;
     }
-    /* Survol pour le lien actif */
     .nav-link.active:hover {
         color: #333;
         background-color: #fff;
@@ -98,139 +104,148 @@
         box-shadow: 0 -2px 5px rgba(0,0,0,0.05);
     }
 
-    .nav-links a:last-child {
-        border-top-right-radius: 6px;
-    }
-    .nav-links a:first-child {
-        border-top-left-radius: 6px;
+    .nav-links a:last-child { border-top-right-radius: 6px; }
+    .nav-links a:first-child { border-top-left-radius: 6px; }
+
+    /* -------------------------------------------------------------------------- */
+    /* STYLES: Header Personnel (Photo et Description) */
+    /* -------------------------------------------------------------------------- */
+    .personal-header {
+        display: flex;
+        align-items: center;
+        padding: 0; 
+        background-color: #fff; /* Fond blanc pleine largeur */
+        border-bottom: 1px solid #ccc;
+        margin-top: -1px;
+        /* Force la disposition en colonne pour s'adapter au centrage du .header-content */
+        flex-direction: column; 
     }
 
-    /* -------------------------------------------------------------------------- */
-    /* STYLES: Header Personnel (Photo et Description) */
-    /* -------------------------------------------------------------------------- */
-    .personal-header {
-        display: flex;
-        align-items: center;
-        padding: 0; /* RETIRÉ pour appliquer au conteneur interne */
-        background-color: #fff;
-        border-bottom: 1px solid #ccc;
-        margin-top: -1px; 
-    }
-
-    /* NOUVEAU CONTENEUR POUR LIMITER LA LARGEUR */
+    /* Conteneur interne : c'est lui qui hérite de la largeur maximale pour l'alignement */
     .header-content {
         display: flex;
         align-items: center;
         width: 100%;
-        /* MODIFIEZ CETTE VALEUR POUR CHANGER LA LARGEUR DU BORDEREAU DU HAUT */
-        max-width: 1000px; 
-        margin: 0 auto; /* Centrage automatique */
-        padding: 40px 50px; /* Ajout des marges intérieures */
-        box-sizing: border-box; 
+        max-width: 1000px; /* Doit correspondre à .content-area */
+        margin: 0 auto; /* Centrage */
+        padding: 40px 50px; /* Marges internes photo/texte */
+        box-sizing: border-box;
     }
 
-    .profile-photo {
-        width: 150px;
-        height: 150px;
-        border-radius: 50%;
-        margin-right: 30px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        flex-shrink: 0;
-        display: block !important;
-        max-width: none !important;
-        object-fit: contain;
-    }
+    .profile-photo {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin-right: 30px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        flex-shrink: 0;
+        display: block !important;
+        max-width: none !important;
+        object-fit: contain;
+    }
 
-    .info-container h1 {
-        margin: 0;
-        font-size: 32px;
-        color: #0077b5;
-    }
+    .info-container h1 {
+        margin: 0;
+        font-size: 32px;
+        color: #0077b5;
+    }
 
-    .info-container p {
-        margin-top: 5px;
-        font-size: 16px;
-        color: #555;
-        max-width: 800px;
-    }
+    .info-container p {
+        margin-top: 5px;
+        font-size: 16px;
+        color: #555;
+        max-width: 800px;
+    }
 
     /* -------------------------------------------------------------------------- */
     /* STYLES: Contenu Principal (À Propos de moi / Chronologie) */
     /* -------------------------------------------------------------------------- */
     .main-content {
         flex-grow: 1;
-        padding: 50px;
-        max-width: 1000px; 
-        margin: 0 auto; /* La référence qui vous permet de centrer */
+        padding: 50px 0; /* Horizontal géré par .content-area */
+        max-width: none;  /* La largeur est gérée par .content-area */
+        margin: 0; /* Le centrage est géré par .content-area */
     }
-    
-    .main-content h2 {
-        font-family: 'Poppins', sans-serif;
-        font-size: 38px;
-        font-weight: 700;
-        color: #333;
-        margin-top: 0;
-        margin-bottom: 30px;
-        text-align: center;
-    }
-
-    /* ... (Styles de chronologie non modifiés) ... */
-    
+    /* ... (Reste des styles de la chronologie non modifiés) ... */
 
     /* -------------------------------------------------------------------------- */
     /* STYLES: Pied de Page */
     /* -------------------------------------------------------------------------- */
-    /* ... (Styles du footer non modifiés pour cet exemple, mais la logique est la même) ... */
+    /* Le pied de page n'est pas enveloppé par .content-area, mais nous allons
+       utiliser sa propre structure interne pour aligner les boutons.
+       Pour qu'il s'aligne, il faudrait soit l'envelopper, soit lui donner
+       les mêmes propriétés de centrage que .content-area. */
     .footer {
-        padding: 15px 0; /* Réduit le padding vertical */
+        padding: 15px 0;
         background-color: #fff;
         box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
-        text-align: center;
         width: 100%;
         margin-top: auto;
+        text-align: center; /* Permet au conteneur interne de se centrer */
     }
-    /* ... (Styles du footer buttons non modifiés) ... */
-   
-    /* --- Media Query pour l'adaptabilité mobile (max-width: 768px) --- */
+
+    .footer-buttons {
+        /* Application de la même logique d'alignement */
+        display: inline-flex;
+        max-width: 1000px; /* <== La même max-width que .content-area */
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0 50px; /* La même marge latérale que .content-area */
+        white-space: nowrap;
+        justify-content: flex-start; /* Aligner les boutons à gauche du conteneur limité */
+    }
+
+    .button {
+        /* ... (Styles des boutons non modifiés) ... */
+    }
+    .button:not(:first-child) {
+        /* ... (Styles des boutons non modifiés) ... */
+    }
+
+    /* --- Media Query pour l'adaptabilité mobile (max-width: 768px) --- */
     @media (max-width: 768px) {
-        .portfolio-title {
-            padding: 20px 20px 0 20px;
-            font-size: 32px;
-        }
+        /* Adaptation des largeurs et marges pour mobile (20px) */
+        .content-area, .header-content, .footer-buttons {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
 
-        .nav-bar {
-            padding: 0 20px;
-        }
-
-        /* MODIFICATION MOBILE pour le Header */
-        .header-content {
-            padding: 20px;
+        .personal-header {
             flex-direction: column;
             text-align: center;
         }
-
-        .personal-header {
-            /* Ces propriétés sont maintenant sur .header-content */
+        .header-content {
             flex-direction: column;
-            text-align: center;
-            padding: 20px;
+            padding-top: 20px;
+            padding-bottom: 20px;
         }
+
         .profile-photo {
             margin-right: 0;
             margin-bottom: 20px;
         }
         
         .main-content {
-            padding: 20px;
+            padding: 20px 0;
         }
-        /* ... (Reste des styles mobile non modifiés) ... */
+
+        /* Correction du footer mobile (taille adaptée) */
+        .footer-buttons {
+            /* On centre les boutons dans le conteneur centré */
+            justify-content: center; 
+        }
+        .footer-buttons > a {
+            /* Pour forcer les boutons à s'étendre un peu plus sur mobile */
+            width: 90%; 
+            margin: 0;
+        }
     }
 </style>
 
-<h1 class="portfolio-title">Portfolio</h1>
+<div class="content-area">
+    <h1 class="portfolio-title">Portfolio</h1>
 
-<div class="container-layout"> 
-    <div class="nav-bar"> 
+    <div class="nav-bar"> 
         <div class="nav-links">
             <a href="projets.html" class="nav-link">
                 Mes projets
@@ -242,23 +257,25 @@
         </div>
     </div>
 
-    <div class="personal-header">
-        <div class="header-content">
-            <img src="photocv.PNG" class="profile-photo" alt="Maëlys François">
-            <div class="info-container">
-                <h1>Maëlys François</h1>
-                <p>Passionnée par l'<strong>analyse de données</strong> avec une expertise pour l'étude des <strong>comportements sur les réseaux sociaux numériques</strong>.</p>
-            </div>
-        </div>
-    </div>
+    </div> 
 
+<div class="personal-header">
+    <div class="header-content">
+        <img src="photocv.PNG" class="profile-photo" alt="Maëlys François">
+        <div class="info-container">
+            <h1>Maëlys François</h1>
+            <p>Passionnée par l'<strong>analyse de données</strong> avec une expertise pour l'étude des <strong>comportements sur les réseaux sociaux numériques</strong>.</p>
+        </div>
+    </div>
+</div>
+
+<div class="content-area">
     <div class="main-content">
-                <h2>Mon parcours</h2>
+        <h2>Mon parcours</h2>
         
         <h3 class="section-title">Formations</h3>
         <div class="timeline">
-            
-            <div class="timeline-item">
+                        <div class="timeline-item">
                 <div class="timeline-item-content">
                     <h4>Master Sociologie : Réseaux et Sociétés (RESO)</h4>
                     <span class="details">
@@ -327,11 +344,8 @@
             </div>
             
         </div>
-        
     </div>
-</div>
-
-<footer class="footer">
+</div> <footer class="footer">
     <div class="footer-buttons">
         <a href="https://www.linkedin.com/in/ma%C3%ABlys-fran%C3%A7ois" class="button" target="_blank">
             <i class="fab fa-linkedin"></i> LinkedIn
