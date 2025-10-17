@@ -1,275 +1,125 @@
-<style>
-    /* Styles de base */
-    body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f4f4f4; /* Le fond gris (les marges extérieures) */
-        color: #333;
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-    }
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
 
-    /* -------------------------------------------------------------------------- */
-    /* CORRECTION CRITIQUE JEKYLL: La base des problèmes de marges */
-    /* Ces styles annulent les restrictions du thème GitHub Pages */
-    /* -------------------------------------------------------------------------- */
-    .page-header h1,
-    .view-on-github-link,
-    .downloads,
-    .site-footer,
-    .project-tagline {
-        display: none !important;
-    }
-    /* Neutralisation agressive du conteneur Jekyll */
-    body > .wrapper, .page-header {
-        max-width: none !important; 
-        padding: 0 !important;
-        margin: 0 !important;
-        width: 100% !important;
-    }
 
-    /* -------------------------------------------------------------------------- */
-    /* CLASSE CLÉ: DÉFINITION DE LA ZONE DE CONTENU (le "bordereau") */
-    /* MODIFIEZ max-width pour changer la taille de TOUS les contenus centrés */
-    /* -------------------------------------------------------------------------- */
-    .content-wrapper {
-        max-width: 1200px; 
-        width: 100%;
-        margin: 0 auto; /* Centrage automatique */
-        box-sizing: border-box;
-        padding: 0 50px; /* **Marges de 50px** à gauche et à droite du contenu */
-    }
+<div class="header-main-content content-wrapper">
+    <h1 class="portfolio-title">Portfolio</h1>
 
-    /* -------------------------------------------------------------------------- */
-    /* NOUVEAU STYLE: Titre Portfolio */
-    /* -------------------------------------------------------------------------- */
-    .portfolio-title {
-        font-family: 'Poppins', sans-serif;
-        font-size: 40px;
-        font-weight: 700;
-        color: #0077b5; 
-        padding: 0; /* Pas de padding vertical ici, il sera sur le wrapper */
-        margin: 0;
-    }
-    
-    /* -------------------------------------------------------------------------- */
-    /* STYLES: Section Titre et Navigation (CORRECTION ALIGNEMENT HORIZONTAL) */
-    /* -------------------------------------------------------------------------- */
-    .header-main-content {
-        display: flex; /* Aligner le titre et la nav horizontalement */
-        justify-content: space-between; /* Écarter le titre (gauche) et la nav (droite) */
-        align-items: flex-end; /* Aligner les éléments par le bas (pour que les onglets soient alignés) */
-        padding-top: 20px; /* Ajout du padding vertical sur la section */
-    }
+    <div class="nav-bar"> 
+        <div class="nav-links">
+            <a href="projets.html" class="nav-link">
+                Mes projets
+            </a>
+            
+            <a href="about.html" class="nav-link active">
+                À propos de moi
+            </a>
+        </div>
+    </div>
+</div>
 
-    /* -------------------------------------------------------------------------- */
-    /* Styles du Menu de Navigation (Onglets) */
-    /* -------------------------------------------------------------------------- */
-    .nav-bar {
-        /* Nous n'avons plus besoin de ces propriétés puisque le .content-wrapper est un flex container */
-        padding: 0; 
-        width: auto; 
-    }
-    
-    .nav-links {
-        display: flex;
-        gap: 0;
-        margin-top: 0; /* Retiré car align-items: flex-end gère le positionnement vertical */
-        margin-right: 0; 
-    }
-    
-    /* Reste des styles de navigation (inchangés) */
-    .nav-link {
-        font-size: 17px;
-        font-weight: 600;
-        text-decoration: none;
-        padding: 10px 20px;
-        border: 1px solid #ccc;
-        border-bottom: none;
-        transition: all 0.2s ease;
-        color: #0077b5;
-        background-color: #f0f0f0;
-    }
-    /* ... (Styles .nav-link:hover, .nav-link.active etc. inchangés) ... */
-    .nav-link:hover {
-        color: #005f96;
-        background-color: #e0e0e0;
-        transform: translateY(-2px);
-        box-shadow: 0 -2px 5px rgba(0,0,0,0.05);
-    }
-    
-    .nav-link.active {
-        color: #333;
-        background-color: #fff;
-        border-color: #ccc;
-        border-bottom-color: #fff;
-        transform: none;
-        box-shadow: none;
-    }
-    
-    .nav-link.active:hover {
-        color: #333;
-        background-color: #fff;
-        transform: translateY(-2px);
-        box-shadow: 0 -2px 5px rgba(0,0,0,0.05);
-    }
-    
-    .nav-links a:last-child {
-        border-top-right-radius: 6px;
-    }
-    .nav-links a:first-child {
-        border-top-left-radius: 6px;
-    }
+<div class="personal-header">
+    <div class="content-wrapper">
+        <img src="photocv.PNG" class="profile-photo" alt="Maëlys François">
+        <div class="info-container">
+            <h1>Maëlys François</h1>
+            <p>Passionnée par l'<strong>analyse de données</strong> avec une expertise pour l'étude des <strong>comportements sur les réseaux sociaux numériques</strong>.</p>
+        </div>
+    </div>
+</div>
 
-    /* -------------------------------------------------------------------------- */
-    /* STYLES: Header Personnel (Photo et Description) */
-    /* -------------------------------------------------------------------------- */
-    .personal-header {
-        /* Permet la barre blanche PLEINE LARGEUR */
-        width: 100%; 
-        background-color: #fff;
-        border-bottom: 1px solid #ccc;
-        margin-top: -1px;
-        padding: 0; 
-    }
-    /* Le wrapper gère l'alignement centré du contenu à l'intérieur de la barre blanche */
-    .personal-header .content-wrapper {
-        display: flex;
-        align-items: center;
-        padding-top: 40px; 
-        padding-bottom: 40px; 
-    }
+<div class="content-wrapper">
+    <div class="main-content">
+        <h2>Mon parcours</h2>
+        
+        <h3 class="section-title">Formations</h3>
+        <div class="timeline">
+            
+            <div class="timeline-item">
+                <div class="timeline-item-content">
+                    <h4>Master Sociologie : Réseaux et Sociétés (RESO)</h4>
+                    <span class="details">
+                        <span class="date">2023 - 2025</span>
+                        Université Toulouse - Jean Jaurès | Toulouse
+                    </span>
+                    <p>Spécialisation en **analyse de données** et maîtrise des techniques quantitatives et textuelles (ACL, ACM, Régression Logistique, Topic Modeling, Sentiment Analysis).</p>
+                    <ul>
+                        <li>Mémoire de recherche: analyse de l'influence des modèles de monétisation des jeux vidéo sur les pratiques des joueurs.</li>
+                        <li>Outils clés : <strong>R, Python, Excel, Jamovi</strong>.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <h3 class="section-title">Expériences professionnelles</h3>
+        <div class="timeline">
+            
+            <div class="timeline-item experience">
+                <div class="timeline-item-content">
+                    <h4>Assistante au projet AMULEX - Stage</h4>
+                    <span class="details">
+                        <span class="date">Mars 2025 - Juillet 2025</span>
+                        Université Paris-Est Créteil | Paris
+                    </span>
+                    <p>Collecte et analyse de données des réseaux sociaux numériques.</p>
+                    <ul>
+                        <li>Analyse de données.</li>
+                        <li>Conception et conduite d'un questionnaire.</li>
+                        <li>Mise en oeuvre de stratégie de collecte.</li>
+                    </ul>
+                </div>
+            </div>
 
-    .profile-photo {
-        width: 150px;
-        height: 150px;
-        border-radius: 50%;
-        margin-right: 30px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        flex-shrink: 0;
-        display: block !important;
-        max-width: none !important;
-        object-fit: contain;
-    }
+            <div class="timeline-item experience">
+                <div class="timeline-item-content">
+                    <h4>Enquêtrice - Enquête-école</h4>
+                    <span class="details">
+                        <span class="date">Octobre 2024  - Janvier 2025</span>
+                        Toulouse Tech Transfer | Toulouse
+                    </span>
+                    <p>Enquête collaborative visant à cartographier les partenariats socio-économiques de l’UT2J.</p>
+                    <ul>
+                        <li>Cadrage méthodologique et définition des objectifs de l’étude avec les partenaires.</li>
+                        <li>Travail collaboratif.</li>
+                        <li>Conception et conduite d'un questionnaire.</li>
+                    </ul>
+                </div>
+            </div>
 
-    /* ... (Styles info-container, h1, p inchangés) ... */
-    .info-container h1 {
-        margin: 0;
-        font-size: 32px;
-        color: #0077b5;
-    }
 
-    .info-container p {
-        margin-top: 5px;
-        font-size: 16px;
-        color: #555;
-        max-width: 800px;
-    }
+            <div class="timeline-item experience">
+                <div class="timeline-item-content">
+                    <h4>Chargée d'étude en sociologie - Stage</h4>
+                    <span class="details">
+                        <span class="date">Avril 2024 - Septembre 2024</span>
+                        CNRS - IPBS | Toulouse
+                    </span>
+                    <p>Conduite d’une enquête sur l’état des discriminations et de la qualité de vie au travail, au sein d’un laboratoire.</p>
+                    <ul>
+                        <li>Analyse de données.</li>
+                        <li>Conception et conduite d'un questionnaire.</li>
+                        <li>Passation d'entretiens</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-    /* -------------------------------------------------------------------------- */
-    /* STYLES: Contenu Principal (Mon parcours) */
-    /* -------------------------------------------------------------------------- */
-    /* .main-content est maintenant à l'intérieur d'un .content-wrapper */
-    .main-content {
-        flex-grow: 1;
-        padding: 50px 0; /* Garde le padding vertical, supprime l'horizontal */
-        max-width: none;  
-        margin: 0; 
-    }
-
-    /* ... (Styles h2, section-title, timeline inchangés) ... */
-
-    /* -------------------------------------------------------------------------- */
-    /* STYLES: Pied de Page */
-    /* -------------------------------------------------------------------------- */
-    .footer {
-        /* Permet la barre blanche PLEINE LARGEUR */
-        width: 100%;
-        background-color: #fff;
-        box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
-        text-align: center;
-        margin-top: auto;
-        padding: 0;
-    }
-    /* Le wrapper gère l'alignement centré du contenu à l'intérieur de la barre blanche */
-    .footer .content-wrapper {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 15px 50px;
-    }
-    
-    .footer-buttons {
-        display: inline-flex;
-        padding: 0;
-        white-space: nowrap;
-    }
-    /* ... (Styles de boutons et media queries inchangés) ... */
-    /* --- Media Query pour l'adaptabilité mobile (max-width: 768px) --- */
-    @media (max-width: 768px) {
-        .content-wrapper {
-            padding-left: 20px;
-            padding-right: 20px;
-        }
-
-        .header-main-content {
-            flex-direction: column;
-            align-items: center;
-            padding-top: 20px;
-            padding-bottom: 0;
-        }
-        
-        .portfolio-title {
-            padding: 0 0 10px 0;
-            font-size: 32px;
-        }
-
-        .personal-header .content-wrapper {
-            flex-direction: column;
-            text-align: center;
-            padding-top: 20px;
-            padding-bottom: 20px;
-        }
-        
-        .profile-photo {
-            margin-right: 0;
-            margin-bottom: 20px;
-        }
-        
-        .main-content {
-            padding: 20px 0;
-        }
-        
-        .footer .content-wrapper {
-            padding: 15px 20px;
-        }
-
-        .footer-buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            width: 100%;
-            align-items: center;
-            white-space: normal;
-        }
-        
-        .button {
-            width: 90%;
-            margin: 0;
-            justify-content: center;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            min-width: unset;
-            padding: 10px;
-            font-size: 16px;
-        }
-        
-        .button:not(:first-child) {
-            border-left: none;
-            padding-left: 10px;
-            margin-left: 0;
-        }
-    }
-</style>
+<footer class="footer">
+    <div class="content-wrapper">
+        <div class="footer-buttons">
+            <a href="https://www.linkedin.com/in/ma%C3%ABlys-fran%C3%A7ois" class="button" target="_blank">
+                <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+            
+            <a href="mesdocuments/cv_maëlys_françois.pdf" class="button" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-file-pdf"></i> Mon CV
+            </a>
+            
+            <a href="mailto:maelys.francois31@gmail.com" class="button" target="_blank">
+                <i class="fas fa-envelope"></i> Mon Email
+            </a>
+        </div>
+    </div>
+</footer>
