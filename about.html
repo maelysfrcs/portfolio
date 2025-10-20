@@ -2,389 +2,233 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
 
 <style>
-/* -------------------------------------------------------------------------- */
-/* STYLES DE BASE */
-/* -------------------------------------------------------------------------- */
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f4f4f4;
-  color: #333;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+:root {
+    --content-max-width: 1000px;
 }
 
+/* STYLES DE BASE */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* CONTAINER CENTRAL */
+.wrapper-limited {
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+    width: 90%;
+}
+
+/* Masquage Jekyll inutile */
+.page-header h1, .view-on-github-link, .downloads, .site-footer, .project-tagline { display: none !important; }
+
 /* -------------------------------------------------------------------------- */
-/* MENU DE NAVIGATION */
-/* -------------------------------------------------------------------------- */
+/* NAVIGATION (BOUTONS EN DEHORS DU BORDEREAU) */
 .header-wrapper {
-  max-width: 1000px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: 25px; /* espace avec le haut de la page */
+    margin-bottom: 15px; /* espace entre les boutons et le bordereau */
 }
 
 .nav-links {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 10px; /* espace réduit depuis le haut de la page */
-  margin-bottom: 0; /* supprime l’espace entre boutons et le bordereau */
+    display: flex;
+    justify-content: flex-end;
+    gap: 0;
 }
 
 .nav-link {
-  font-size: 17px;
-  font-weight: 600;
-  text-decoration: none;
-  padding: 10px 20px;
-  border: 1px solid #ccc;
-  border-bottom: none;
-  transition: all 0.2s ease;
-  color: #0077b5;
-  background-color: #f0f0f0;
+    font-size: 17px;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-bottom: none;
+    transition: all 0.2s ease;
+    color: #0077b5;
+    background-color: #f0f0f0;
 }
-
 .nav-link:hover {
-  color: #005f96;
-  background-color: #e0e0e0;
-  transform: translateY(-2px);
-  box-shadow: 0 -2px 5px rgba(0,0,0,0.05);
+    color: #005f96;
+    background-color: #e0e0e0;
+    transform: translateY(-2px);
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.05);
 }
-
 .nav-link.active {
-  color: #333;
-  background-color: #fff;
-  border-color: #ccc;
-  border-bottom-color: #fff;
-  transform: none;
-  box-shadow: none;
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+    border-bottom-color: #fff;
 }
-
 .nav-links a:last-child { border-top-right-radius: 6px; }
 .nav-links a:first-child { border-top-left-radius: 6px; }
 
 /* -------------------------------------------------------------------------- */
-/* BORDEREAU (photo + nom + description) */
-/* -------------------------------------------------------------------------- */
+/* HEADER PERSONNEL (BORDEREAU) */
 .personal-header {
-  display: flex;
-  align-items: center;
-  padding: 25px 30px;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  border-top: none; /* colle parfaitement aux boutons */
-  border-radius: 0 0 10px 10px; /* arrondis uniquement en bas */
+    display: flex;
+    align-items: center;
+    padding: 40px 50px;
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    border-radius: 12px;
+    margin-top: -1px;
 }
-
 .profile-photo {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  margin-right: 30px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  object-fit: contain;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-right: 30px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    object-fit: contain;
 }
-
 .info-container h1 {
-  margin: 0;
-  font-size: 32px;
-  color: #0077b5;
+    margin: 0;
+    font-size: 32px;
+    color: #0077b5;
 }
-
 .info-container p {
-  margin-top: 5px;
-  font-size: 16px;
-  color: #555;
-  max-width: 800px;
+    margin-top: 5px;
+    font-size: 16px;
+    color: #555;
+    max-width: 800px;
 }
 
 /* -------------------------------------------------------------------------- */
 /* CONTENU PRINCIPAL */
-/* -------------------------------------------------------------------------- */
-.main-wrapper {
-  max-width: 1000px;
-  margin: 25px auto; /* réduit l’espace vertical autour du contenu */
-  width: 100%;
-  flex-grow: 1;
-}
-
 .main-content-projects {
-  padding: 30px 45px; /* réduit légèrement la hauteur intérieure */
-  background-color: #f9f9f9;
-  border-radius: 12px;
+    flex-grow: 1;
+    padding: 50px 20px;
 }
-
 .main-content-projects h2 {
-  font-family: 'Poppins', sans-serif;
-  font-size: 34px;
-  font-weight: 700;
-  color: #333;
-  text-align: center;
-  margin-top: 0; /* supprime l’espace au-dessus */
-  margin-bottom: 20px; /* espace plus court dessous */
+    font-family: 'Poppins', sans-serif;
+    font-size: 38px;
+    font-weight: 700;
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
 }
-
-.section-title {
-  font-family: 'Poppins', sans-serif;
-  font-size: 24px;
-  font-weight: 600;
-  color: #0077b5;
-  margin-top: 35px;
-  margin-bottom: 12px;
-  text-align: left;
-  border-bottom: 2px solid #0077b5;
-  display: inline-block;
-  padding-bottom: 3px;
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
 }
-
-/* -------------------------------------------------------------------------- */
-/* TIMELINE */
-/* -------------------------------------------------------------------------- */
-.timeline {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+.project-button {
+    display: block;
+    height: 250px;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
-.timeline-item {
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-  padding: 18px 22px;
-  border-left: 4px solid #0077b5;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+.project-button:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
+.project-button-bg {
+    width: 100%; height: 100%;
+    background-size: cover; background-position: center;
+    filter: grayscale(80%);
+    transition: filter 0.5s ease;
 }
-
-.timeline-item:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+.project-button:hover .project-button-bg { filter: grayscale(0%); }
+.project-content {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0));
+    padding: 20px; color: #fff;
 }
-
-.timeline-item h4 {
-  margin: 0 0 5px 0;
-  font-size: 19px;
-  font-weight: 700;
-  color: #333;
-}
-
-.details {
-  font-size: 14px;
-  color: #666;
-  margin-bottom: 6px;
-  display: block;
-}
-
-.date {
-  font-weight: 600;
-  color: #0077b5;
-  margin-right: 5px;
-}
-
-.timeline-item p {
-  font-size: 15px;
-  color: #555;
-  line-height: 1.5;
-  margin-top: 4px;
-}
-
-.timeline-item ul {
-  margin-top: 5px;
-  padding-left: 20px;
-}
-
-.timeline-item li {
-  font-size: 14px;
-  color: #555;
-  margin-bottom: 4px;
-}
+.project-content h4 { margin: 0 0 5px; font-size: 20px; font-weight: 700; }
+.project-content p { margin: 0; font-size: 14px; opacity: 0.9; }
+.project-tag { font-size: 12px; background-color: #0077b5; color: #fff; padding: 4px 8px; border-radius: 3px; margin-top: 10px; display: inline-block; }
 
 /* -------------------------------------------------------------------------- */
-/* PIED DE PAGE */
-/* -------------------------------------------------------------------------- */
-.footer-wrapper {
-  max-width: 1000px;
-  margin: 0 auto;
-  width: 100%;
-}
-
+/* FOOTER */
 .footer {
-  padding: 25px 0;
-  background-color: #fff;
-  box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
-  text-align: center;
-  border-radius: 10px;
-  margin-top: auto;
+    padding: 25px 0;
+    background-color: #fff;
+    box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+    text-align: center;
+    border-radius: 12px;
 }
-
 .footer-buttons {
-  display: block;
-  padding: 0 10px;
-  white-space: nowrap;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
 }
-
 .button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 10px 15px;
-  min-width: 100px;
-  font-size: 16px;
-  font-weight: 500;
-  text-decoration: none;
-  background-color: #fff;
-  color: #333;
-  border: none;
-  transition: color 0.3s ease;
-  cursor: pointer;
-  position: relative;
-  margin: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
-
-.button:not(:first-child) {
-  border-left: 1px solid #ccc;
-  padding-left: 15px;
-  margin-left: 15px;
-}
-
 .button:hover { color: #0077b5; }
-
-.button i {
-  margin-right: 10px;
-  color: #555;
-  transition: color 0.3s ease;
-}
-
+.button i { color: #555; transition: color 0.3s ease; }
 .button:hover i { color: #0077b5; }
 
 /* -------------------------------------------------------------------------- */
-/* RESPONSIVE DESIGN */
-/* -------------------------------------------------------------------------- */
+/* MOBILE */
 @media (max-width: 768px) {
-  .personal-header {
-    flex-direction: column;
-    text-align: center;
-    padding: 20px;
-  }
-
-  .profile-photo {
-    margin-right: 0;
-    margin-bottom: 20px;
-  }
-
-  .main-content-projects {
-    padding: 20px;
-  }
-
-  .footer-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    width: 100%;
-    align-items: center;
-  }
-
-  .button {
-    width: 90%;
-    margin: 0;
-    justify-content: center;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-  }
-
-  .button:not(:first-child) {
-    border-left: none;
-    padding-left: 10px;
-    margin-left: 0;
-  }
+    .personal-header { flex-direction: column; text-align: center; padding: 20px; }
+    .profile-photo { margin-right: 0; margin-bottom: 20px; }
+    .footer-buttons { flex-direction: column; }
 }
 </style>
 
 <!-- -------------------------------------------------------------------------- -->
-<!-- CONTENU HTML -->
-<!-- -------------------------------------------------------------------------- -->
-<div class="header-wrapper">
-  <div class="nav-links">
-    <a href="index.html" class="nav-link">Mes projets</a>
-    <a href="about.html" class="nav-link active">À propos de moi</a>
-  </div>
-
-  <div class="personal-header">
-    <img src="photocv.PNG" class="profile-photo" alt="Maëlys François">
-    <div class="info-container">
-      <h1>Maëlys François</h1>
-      <p>Passionnée par <strong>l'analyse de données</strong> avec une expertise pour l'étude des comportements sur les <strong>réseaux sociaux</strong>.</p>
-    </div>
-  </div>
-</div>
-
-<div class="main-wrapper">
-  <div class="main-content-projects">
-    <h2>Mon parcours</h2>
-
-    <h3 class="section-title">Formations</h3>
-    <div class="timeline">
-      <div class="timeline-item">
-        <h4>Master Sociologie : Réseaux et Sociétés (RESO)</h4>
-        <span class="details"><span class="date">2023 - 2025</span> Université Toulouse - Jean Jaurès | Toulouse</span>
-        <p>Spécialisation en analyse de données et maîtrise des techniques quantitatives et textuelles (ACL, ACM, Régression Logistique, Topic Modeling, Sentiment Analysis).</p>
-        <ul>
-          <li>Mémoire : influence des modèles de monétisation des jeux vidéo sur les pratiques des joueurs.</li>
-          <li>Outils : <strong>R, Python, Excel, Jamovi</strong>.</li>
-        </ul>
-      </div>
+<div class="wrapper-limited">
+    <div class="header-wrapper">
+        <div class="nav-links">
+            <a href="index.html" class="nav-link active">Mes projets</a>
+            <a href="about.html" class="nav-link">À propos de moi</a>
+        </div>
     </div>
 
-    <h3 class="section-title">Expériences professionnelles</h3>
-    <div class="timeline">
-      <div class="timeline-item">
-        <h4>Assistante au projet AMULEX - Stage</h4>
-        <span class="details"><span class="date">Mars 2025 - Juillet 2025</span> Université Paris-Est Créteil | Paris</span>
-        <p>Collecte et analyse de données issues des réseaux sociaux numériques.</p>
-        <ul>
-          <li>Analyse de données</li>
-          <li>Conduite d’un questionnaire</li>
-          <li>Mise en œuvre d’une stratégie de collecte</li>
-        </ul>
-      </div>
-
-      <div class="timeline-item">
-        <h4>Enquêtrice - Enquête-école</h4>
-        <span class="details"><span class="date">Octobre 2024 - Janvier 2025</span> Toulouse Tech Transfer | Toulouse</span>
-        <p>Enquête collaborative visant à cartographier les partenariats socio-économiques de l’UT2J.</p>
-        <ul>
-          <li>Cadrage méthodologique et définition des objectifs avec les partenaires</li>
-          <li>Travail collaboratif</li>
-          <li>Conception et conduite d’un questionnaire</li>
-        </ul>
-      </div>
-
-      <div class="timeline-item">
-        <h4>Chargée d'étude en sociologie - Stage</h4>
-        <span class="details"><span class="date">Avril 2024 - Septembre 2024</span> CNRS - IPBS | Toulouse</span>
-        <p>Enquête sur les discriminations et la qualité de vie au travail au sein d’un laboratoire.</p>
-        <ul>
-          <li>Analyse de données</li>
-          <li>Conception et conduite d’un questionnaire</li>
-          <li>Passation d’entretiens</li>
-        </ul>
-      </div>
+    <div class="personal-header">
+        <img src="photocv.PNG" class="profile-photo" alt="Maëlys François">
+        <div class="info-container">
+            <h1>Maëlys François</h1>
+            <p>Passionnée par l'<strong>analyse de données</strong> avec une expertise pour l'étude des comportements sur les <strong>réseaux sociaux</strong>.</p>
+        </div>
     </div>
-  </div>
-</div>
 
-<div class="footer-wrapper">
-  <footer class="footer">
-    <div class="footer-buttons">
-      <a href="https://www.linkedin.com/in/ma%C3%ABlys-fran%C3%A7ois" class="button" target="_blank">
-        <i class="fab fa-linkedin"></i> LinkedIn
-      </a>
-      <a href="mesdocuments/cv_maëlys_françois.pdf" class="button" target="_blank" rel="noopener noreferrer">
-        <i class="fas fa-file-pdf"></i> Mon CV
-      </a>
-      <a href="mailto:maelys.francois31@gmail.com" class="button" target="_blank">
-        <i class="fas fa-envelope"></i> Mon Email
-      </a>
+    <div class="main-content-projects">
+        <h2>Mes Projets</h2>
+        <div class="project-grid">
+            <a href="projet-web-scraping.html" class="project-button">
+                <div class="project-button-bg" style="background-image: url('images/reddit_analysis.jpg');"></div>
+                <div class="project-content">
+                    <span class="project-tag">Méthode de Recherche</span>
+                    <h4>Analyse du Sentiment et Web Scraping des communautés de joueurs</h4>
+                    <p>Extraction des discussions Reddit et analyse par Topic Modeling.</p>
+                </div>
+            </a>
+            <a href="projet-2.html" class="project-button">
+                <div class="project-button-bg" style="background-image: url('images/placeholder_stats.jpg');"></div>
+                <div class="project-content">
+                    <span class="project-tag">Statistiques Avancées</span>
+                    <h4>Modélisation des déterminants sociaux du jeu</h4>
+                    <p>Analyse des données Ludespace (ANOVA, ACL).</p>
+                </div>
+            </a>
+        </div>
     </div>
-  </footer>
+
+    <footer class="footer">
+        <div class="footer-buttons">
+            <a href="https://www.linkedin.com/in/ma%C3%ABlys-fran%C3%A7ois" class="button" target="_blank"><i class="fab fa-linkedin"></i>LinkedIn</a>
+            <a href="mesdocuments/cv_maëlys_françois.pdf" class="button" target="_blank"><i class="fas fa-file-pdf"></i>Mon CV</a>
+            <a href="mailto:maelys.francois31@gmail.com" class="button"><i class="fas fa-envelope"></i>Mon Email</a>
+        </div>
+    </footer>
 </div>
