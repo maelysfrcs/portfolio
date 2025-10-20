@@ -1,3 +1,6 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
 <style>
@@ -205,21 +208,18 @@ body {
 /* -------------------------------------------------------------------------- */
 /* PIED DE PAGE */
 /* -------------------------------------------------------------------------- */
+/* FOOTER — version modernisée et épurée */
 .footer {
-  padding: 30px 20px;
-  width: 50%;                  /* largeur du footer */
-  max-width: none;             /* pas de limite supérieure */
+  padding: 30px 0;
+  margin: 10px auto 10px auto; /* <-- centrer horizontalement */
+  max-width: 1000px;
   background: linear-gradient(135deg, #ffffff 0%, #f7f9fb 100%);
   box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.08);
   text-align: center;
   border-radius: 16px;
   transition: all 0.3s ease;
-  box-sizing: border-box;      /* padding inclus dans la largeur */
-  margin: 0 auto 20px auto;    /* centré horizontalement et espace dessous */
 }
 
-
-/* Footer buttons restent centrés */
 .footer-buttons {
   display: flex;
   justify-content: center;
@@ -228,7 +228,6 @@ body {
   margin-top: 5px;
 }
 
-/* Buttons inchangés */
 .button {
   display: inline-flex;
   align-items: center;
@@ -262,118 +261,109 @@ body {
   color: #fff;
 }
 
-/* MOBILE */
+/* -------------------------------------------------------------------------- */
+/* RESPONSIVE DESIGN (MOBILE FIXÉ ET OPTIMISÉ) */
+/* -------------------------------------------------------------------------- */
 @media (max-width: 768px) {
-  .footer {
-    padding: 30px 15px;
-    width: 95%;           /* quasi pleine largeur sur mobile */
-  }
 
-  .footer-buttons {
-    flex-direction: column;
-    gap: 15px;
-    align-items: center;
-  }
+    /* *** FIX CRITIQUE POUR ÉVITER LE DÉBORDEMENT (BORDEREAU) *** */
+    .header-wrapper,
+    .main-wrapper,
+    .footer {
+        max-width: 100% !important; /* Force l'adaptation sur mobile */
+        width: auto;
+    }
 
-  .button {
-    width: 100%;         /* boutons pleine largeur sur mobile */
-    font-size: 16px;
-    padding: 14px 0;
-  }
+    .wrapper-limited {
+        width: 100%;
+        padding: 0 15px; /* Ajoute une aération générale */
+        box-sizing: border-box;
+    }
+    
+    /* Header compact et bien centré */
+    .header-wrapper {
+        align-items: center;
+        text-align: center;
+        padding: 0 10px;
+    }
+
+    /* Boutons de Navigation (Centrés et plus lisibles) */
+    .nav-links {
+        justify-content: center; /* FIX: Centre les liens de navigation */
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    .nav-link {
+        font-size: 16px; /* FIX: Taille de police augmentée */
+        padding: 10px 18px;
+        border-radius: 6px;
+        border-bottom-color: #ccc; /* Empêche le trou sous le bouton actif */
+    }
+
+    /* Photo et texte centrés */
+    .personal-header {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        text-align: center;
+        border-radius: 8px;
+    }
+
+    .profile-photo {
+        margin: 0 0 15px 0;
+        width: 120px;
+        height: 120px;
+    }
+
+    .info-container h1 {
+        font-size: 26px; /* FIX: Taille de police augmentée */
+    }
+
+    .info-container p {
+        font-size: 15px; /* FIX: Taille de police augmentée */
+        max-width: 90%;
+        margin: 5px auto 0 auto;
+    }
+
+    /* Contenu principal : moins de padding */
+    .main-content-projects {
+        padding: 25px 15px;
+    }
+    
+    /* Timeline (Amélioration de la lisibilité) */
+    .timeline-item h4 {
+        font-size: 18px;
+    }
+    
+    .details, .timeline-item p, .timeline-item li {
+        font-size: 15px;
+    }
+
+    /* Footer (Adaptation à la largeur mobile) */
+    .footer {
+        margin: 10px 15px 10px 15px; /* Marge latérale pour centrage/aération */
+        padding: 30px 15px;
+        border-radius: 8px;
+    }
+    
+    .footer-buttons {
+        flex-direction: column;
+        gap: 12px;
+        align-items: center;
+    }
+
+    .button {
+        width: 90%;
+        justify-content: center;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
 }
-
-
-/* sur téléphone */
-@media (max-width: 768px) {
-
-  /* Wrapper général pour éviter que le contenu touche les bords */
-  .wrapper-limited {
-    width: 95%;      /* légèrement plus large pour l'espace horizontal */
-    padding: 0 10px; /* espacement latéral */
-  }
-
-  /* Header et navigation */
-  .header-wrapper {
-    align-items: center;
-    text-align: center;
-    padding: 15px 10px;
-  }
-
-  .nav-links {
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 15px;       /* plus d’espace entre les boutons */
-    margin-top: 15px;
-    margin-bottom: 20px;
-  }
-
-  .nav-link {
-    font-size: 16px;    /* texte plus lisible */
-    padding: 10px 18px; /* boutons plus gros */
-    border-radius: 8px;
-  }
-
-  /* Photo et texte dans le header */
-  .personal-header {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 20px 10px;
-  }
-
-  .profile-photo {
-    width: 130px;
-    height: 130px;
-    margin-bottom: 15px;
-  }
-
-  .info-container h1 {
-    font-size: 28px; /* nom plus lisible sur mobile */
-  }
-
-  .info-container p {
-    font-size: 15px; /* texte descriptif plus lisible */
-    max-width: 90%;
-    margin: 5px auto 0 auto;
-  }
-
-  /* Contenu principal */
-  .main-content-projects {
-    padding: 30px 15px; /* plus de marge intérieure */
-  }
-
-  .main-content-projects h2 {
-    font-size: 28px;  /* titre "Mon parcours" plus lisible */
-  }
-
-  .section-title {
-    font-size: 20px;  /* sous-titres lisibles sur mobile */
-  }
-
-  /* Footer */
-  .footer {
-    padding: 30px 10px;
-  }
-
-  .footer-buttons {
-    flex-direction: column;  /* empile les boutons verticalement */
-    gap: 15px;               /* espace vertical plus confortable */
-    align-items: center;
-  }
-
-  .button {
-    width: 95%;              /* boutons presque pleine largeur */
-    justify-content: center;
-    padding: 14px 0;         /* hauteur des boutons adaptée */
-    font-size: 16px;         /* texte des boutons plus lisible */
-    border-radius: 8px;
-  }
-}  
 </style>
 
-<!-- -------------------------------------------------------------------------- -->
-<!-- CONTENU HTML -->
-<!-- -------------------------------------------------------------------------- -->
 <div class="header-wrapper">
   <div class="nav-links">
     <a href="index.html" class="nav-link">Mes projets</a>
@@ -444,7 +434,9 @@ body {
   </div>
 </div>
 
-<footer class="footer">
+
+<div class="wrapper-limited">
+  <footer class="footer">
     <div class="footer-buttons">
         <a href="https://www.linkedin.com/in/ma%C3%ABlys-fran%C3%A7ois" class="button" target="_blank">
             <i class="fab fa-linkedin"></i>LinkedIn
@@ -456,4 +448,5 @@ body {
             <i class="fas fa-envelope"></i>Mon Email
         </a>
     </div>
-</footer>
+  </footer>
+</div>
