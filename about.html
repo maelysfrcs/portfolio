@@ -266,116 +266,71 @@ body {
 /* -------------------------------------------------------------------------- */
 @media (max-width: 768px) {
 
-    /* --- FIX 1 & 3: BORDEREAU ET RETOUR À LA NORMALE SUR PC --- */
-    
-    /* 1. Force les conteneurs principaux à s'adapter au mobile pour corriger le débordement (bordereau) */
-    .header-wrapper,
-    .main-wrapper,
-    .footer {
-        max-width: 100% !important; /* Priorité pour l'affichage mobile */
-        width: auto;
-        margin: 0 auto;
-        padding: 0;
-        box-sizing: border-box;
-    }
-    
-    .wrapper-limited {
-        width: 100%;
-        padding: 0 10px; /* Laisse juste un petit padding sur les bords de l'écran */
-        box-sizing: border-box;
-    }
+  /* Header compact et bien centré */
+  .header-wrapper {
+    align-items: center;
+    text-align: center;
+    padding: 0 10px;
+  }
 
-    /* 2. Fixer le placement des boutons "Mes projets" / "À propos de moi" */
-    .nav-links {
-        justify-content: center; /* Centre les liens */
-        flex-wrap: wrap; 
-        gap: 10px;
-        margin-top: 15px;
-        margin-bottom: 10px; 
-        padding: 0 5px;
-    }
-    
-    .nav-link.active {
-        /* Assure que la bordure est correcte en mode mobile */
-        border-bottom-color: #ccc;
-    }
+  /* Boutons centrés et espacés */
+  .nav-links {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+  }
 
-    /* --- FIX 2: TAILLES DE POLICE TROP PETITES --- */
-    
-    .nav-link {
-        font-size: 16px; 
-        padding: 8px 15px;
-        border-radius: 6px;
-    }
-    
-    .personal-header {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 20px 15px; /* Réduction du padding */
-        border-radius: 8px;
-    }
+  .nav-link {
+    font-size: 15px;
+    padding: 8px 15px;
+    border-radius: 6px;
+  }
 
-    .profile-photo {
-        margin: 0 0 15px 0;
-        width: 120px;
-        height: 120px;
-    }
+  /* Photo et texte centrés */
+  .personal-header {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+  }
 
-    .info-container h1 {
-        font-size: 28px; 
-    }
+  .profile-photo {
+    margin: 0 0 15px 0;
+    width: 120px;
+    height: 120px;
+  }
 
-    .info-container p {
-        font-size: 15px; 
-        max-width: 95%; 
-        margin: 5px auto 0 auto;
-    }
+  .info-container h1 {
+    font-size: 26px;
+  }
 
-    /* Contenu principal (Timeline) */
-    .main-content-projects {
-        padding: 25px 15px; 
-    }
-    
-    .main-content-projects h2 {
-        font-size: 30px;
-        margin-bottom: 20px;
-    }
-    
-    .section-title {
-        font-size: 22px;
-        margin-top: 30px;
-    }
-    
-    .timeline-item {
-        padding: 15px;
-    }
-    
-    .timeline-item h4 {
-        font-size: 18px; 
-    }
-    
-    .details, .timeline-item p, .timeline-item li {
-        font-size: 15px; 
-    }
+  .info-container p {
+    font-size: 14px;
+    max-width: 90%;
+    margin: 5px auto 0 auto;
+  }
 
-    /* Footer */
-    .footer {
-        /* Ajuste la marge du footer pour l'aligner avec le wrapper-limited */
-        margin: 10px 10px 10px 10px; 
-    }
-    
-    .footer-buttons {
-        flex-direction: column; 
-        gap: 12px;
-        align-items: center;
-    }
+  /* Contenu principal : moins de padding */
+  .main-content-projects {
+    padding: 25px 15px;
+  }
 
-    .button {
-        width: 85%;
-        justify-content: center;
-        font-size: 16px; 
-    }
+  /* Footer plus vertical et clair */
+  .footer-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .button {
+    width: 90%;
+    justify-content: center;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
 }
 </style>
 
