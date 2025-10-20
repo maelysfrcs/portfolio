@@ -261,25 +261,78 @@ body {
 /* sur téléphone */
 @media (max-width: 768px) {
 
-  /* Footer */
+  /* HEADER */
+  .header-wrapper {
+    padding: 20px 15px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .nav-links {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 15px 0;
+  }
+
+  .nav-link {
+    font-size: 18px;
+    padding: 14px 24px;
+  }
+
+  .personal-header {
+    flex-direction: column;
+    padding: 25px 15px;
+  }
+
+  .profile-photo {
+    width: 140px;
+    height: 140px;
+    margin-bottom: 15px;
+  }
+
+  .info-container h1 {
+    font-size: 30px;
+  }
+
+  .info-container p {
+    font-size: 16px;
+    max-width: 90%;
+    margin: 5px auto 0 auto;
+  }
+
+  /* CONTENU PRINCIPAL */
+  .main-content-projects {
+    padding: 30px 15px;
+  }
+
+  .main-content-projects h2 {
+    font-size: 30px;
+  }
+
+  .section-title {
+    font-size: 22px;
+  }
+
+  /* FOOTER */
   .footer {
-    width: 100% !important;
-    max-width: 1000px !important;
-    padding: 30px 20px !important;
-    margin: 0 auto !important;
+    width: 100%;
+    padding: 35px 20px;
+    box-sizing: border-box;
   }
 
   .footer-buttons {
-    flex-direction: column !important;
-    gap: 15px !important;
-    align-items: center !important;
+    flex-direction: column;
+    gap: 18px;
+    align-items: center;
   }
 
   .button {
-    width: 90% !important;
-    font-size: 16px !important;
-    padding: 14px 0 !important;
+    width: 95%;
+    padding: 16px 0;
+    font-size: 18px;
   }
+
 }
 
 </style>
