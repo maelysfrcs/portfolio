@@ -30,7 +30,7 @@ body {
   display: flex;
   justify-content: flex-end;
   margin-top: 20px;
-  margin-bottom: 15px; /* espace entre boutons et bordereau */
+  margin-bottom: 0px; /* espace entre boutons et bordereau */
 }
 
 .nav-link {
@@ -108,7 +108,7 @@ body {
 .main-content-projects {
   padding: 40px 50px;
   background-color: #f9f9f9;
-  border-radius: 12px;
+  border-radius: 5px;
 }
 
 .main-content-projects h2 {
@@ -243,31 +243,74 @@ body {
 /* RESPONSIVE DESIGN */
 /* -------------------------------------------------------------------------- */
 @media (max-width: 768px) {
+
+  /* Header compact et bien centré */
+  .header-wrapper {
+    align-items: center;
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  /* Boutons centrés et espacés */
+  .nav-links {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+  }
+
+  .nav-link {
+    font-size: 15px;
+    padding: 8px 15px;
+    border-radius: 6px;
+  }
+
+  /* Photo et texte centrés */
   .personal-header {
     flex-direction: column;
-    text-align: center;
+    align-items: center;
     padding: 20px;
+    text-align: center;
   }
-  .profile-photo { margin-right: 0; margin-bottom: 20px; }
-  .main-content-projects { padding: 20px; }
+
+  .profile-photo {
+    margin: 0 0 15px 0;
+    width: 120px;
+    height: 120px;
+  }
+
+  .info-container h1 {
+    font-size: 26px;
+  }
+
+  .info-container p {
+    font-size: 14px;
+    max-width: 90%;
+    margin: 5px auto 0 auto;
+  }
+
+  /* Contenu principal : moins de padding */
+  .main-content-projects {
+    padding: 25px 15px;
+  }
+
+  /* Footer plus vertical et clair */
   .footer-buttons {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    width: 100%;
+    gap: 12px;
     align-items: center;
   }
+
   .button {
     width: 90%;
-    margin: 0;
     justify-content: center;
     border: 1px solid #ddd;
-    border-radius: 4px;
+    border-radius: 5px;
   }
-  .button:not(:first-child) {
-    border-left: none;
-    padding-left: 10px;
-    margin-left: 0;
+}
+
   }
 }
 </style>
