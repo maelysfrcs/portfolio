@@ -29,8 +29,8 @@ body {
 .nav-links {
   display: flex;
   justify-content: flex-end;
-  margin-top: 20px;
-  margin-bottom: 15px; /* espace entre boutons et bordereau */
+  margin-top: 10px; /* espace réduit depuis le haut de la page */
+  margin-bottom: 0; /* supprime l’espace entre boutons et le bordereau */
 }
 
 .nav-link {
@@ -64,13 +64,17 @@ body {
 .nav-links a:last-child { border-top-right-radius: 6px; }
 .nav-links a:first-child { border-top-left-radius: 6px; }
 
+/* -------------------------------------------------------------------------- */
+/* BORDEREAU (photo + nom + description) */
+/* -------------------------------------------------------------------------- */
 .personal-header {
   display: flex;
   align-items: center;
-  padding: 30px 30px;
+  padding: 25px 30px;
   background-color: #fff;
-  border-bottom: 1px solid #ccc;
-  border-radius: 10px;
+  border: 1px solid #ccc;
+  border-top: none; /* colle parfaitement aux boutons */
+  border-radius: 0 0 10px 10px; /* arrondis uniquement en bas */
 }
 
 .profile-photo {
@@ -100,24 +104,25 @@ body {
 /* -------------------------------------------------------------------------- */
 .main-wrapper {
   max-width: 1000px;
-  margin: 40px auto;
+  margin: 25px auto; /* réduit l’espace vertical autour du contenu */
   width: 100%;
   flex-grow: 1;
 }
 
 .main-content-projects {
-  padding: 40px 50px;
+  padding: 30px 45px; /* réduit légèrement la hauteur intérieure */
   background-color: #f9f9f9;
   border-radius: 12px;
 }
 
 .main-content-projects h2 {
   font-family: 'Poppins', sans-serif;
-  font-size: 36px;
+  font-size: 34px;
   font-weight: 700;
   color: #333;
   text-align: center;
-  margin-bottom: 30px;
+  margin-top: 0; /* supprime l’espace au-dessus */
+  margin-bottom: 20px; /* espace plus court dessous */
 }
 
 .section-title {
@@ -125,19 +130,21 @@ body {
   font-size: 24px;
   font-weight: 600;
   color: #0077b5;
-  margin-top: 40px;
-  margin-bottom: 15px;
+  margin-top: 35px;
+  margin-bottom: 12px;
   text-align: left;
   border-bottom: 2px solid #0077b5;
   display: inline-block;
   padding-bottom: 3px;
 }
 
+/* -------------------------------------------------------------------------- */
 /* TIMELINE */
+/* -------------------------------------------------------------------------- */
 .timeline {
   display: flex;
   flex-direction: column;
-  gap: 15px; /* réduit l’espace entre les blocs */
+  gap: 15px;
 }
 
 .timeline-item {
@@ -200,6 +207,7 @@ body {
   margin: 0 auto;
   width: 100%;
 }
+
 .footer {
   padding: 25px 0;
   background-color: #fff;
@@ -208,11 +216,13 @@ body {
   border-radius: 10px;
   margin-top: auto;
 }
+
 .footer-buttons {
   display: block;
   padding: 0 10px;
   white-space: nowrap;
 }
+
 .button {
   display: inline-flex;
   align-items: center;
@@ -230,13 +240,21 @@ body {
   position: relative;
   margin: 0;
 }
+
 .button:not(:first-child) {
   border-left: 1px solid #ccc;
   padding-left: 15px;
   margin-left: 15px;
 }
+
 .button:hover { color: #0077b5; }
-.button i { margin-right: 10px; color: #555; transition: color 0.3s ease; }
+
+.button i {
+  margin-right: 10px;
+  color: #555;
+  transition: color 0.3s ease;
+}
+
 .button:hover i { color: #0077b5; }
 
 /* -------------------------------------------------------------------------- */
@@ -248,8 +266,16 @@ body {
     text-align: center;
     padding: 20px;
   }
-  .profile-photo { margin-right: 0; margin-bottom: 20px; }
-  .main-content-projects { padding: 20px; }
+
+  .profile-photo {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .main-content-projects {
+    padding: 20px;
+  }
+
   .footer-buttons {
     display: flex;
     flex-direction: column;
@@ -257,6 +283,7 @@ body {
     width: 100%;
     align-items: center;
   }
+
   .button {
     width: 90%;
     margin: 0;
@@ -264,6 +291,7 @@ body {
     border: 1px solid #ddd;
     border-radius: 4px;
   }
+
   .button:not(:first-child) {
     border-left: none;
     padding-left: 10px;
