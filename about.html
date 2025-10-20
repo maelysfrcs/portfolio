@@ -206,17 +206,20 @@ body {
 /* PIED DE PAGE */
 /* -------------------------------------------------------------------------- */
 /* FOOTER — version modernisée et épurée */
+/* FOOTER — desktop et large screens */
 .footer {
-  padding: 30px 0;
-  margin: 10px auto 10px auto; /* <-- centrer horizontalement */
-  max-width: 2000px;
+  padding: 30px 20px;
+  width: 100%;              /* prendre toute la largeur de l’écran */
+  max-width: none;           /* désactive la limite de largeur */
   background: linear-gradient(135deg, #ffffff 0%, #f7f9fb 100%);
   box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.08);
   text-align: center;
   border-radius: 16px;
   transition: all 0.3s ease;
+  box-sizing: border-box;    /* pour inclure padding dans la largeur */
 }
 
+/* Footer buttons restent centrés */
 .footer-buttons {
   display: flex;
   justify-content: center;
@@ -225,6 +228,7 @@ body {
   margin-top: 5px;
 }
 
+/* Buttons inchangés */
 .button {
   display: inline-flex;
   align-items: center;
@@ -257,6 +261,27 @@ body {
 .button:hover i {
   color: #fff;
 }
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .footer {
+    padding: 30px 15px;
+    width: 95%;           /* quasi pleine largeur sur mobile */
+  }
+
+  .footer-buttons {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+
+  .button {
+    width: 100%;         /* boutons pleine largeur sur mobile */
+    font-size: 16px;
+    padding: 14px 0;
+  }
+}
+
 
 /* sur téléphone */
 @media (max-width: 768px) {
