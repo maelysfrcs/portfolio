@@ -1,3 +1,6 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
 
@@ -29,7 +32,7 @@ body {
 .page-header h1, .view-on-github-link, .downloads, .site-footer, .project-tagline { display: none !important; }
 
 /* -------------------------------------------------------------------------- */
-/* NAVIGATION */
+/* NAVIGATION (Desktop) */
 .nav-links {
     display: flex;
     justify-content: flex-end;
@@ -63,7 +66,7 @@ body {
 .nav-links a:first-child { border-top-left-radius: 6px; }
 
 /* -------------------------------------------------------------------------- */
-/* HEADER PERSONNEL */
+/* HEADER PERSONNEL (Desktop) */
 .personal-header {
     display: flex;
     align-items: center;
@@ -94,7 +97,7 @@ body {
 }
 
 /* -------------------------------------------------------------------------- */
-/* CONTENU PRINCIPAL */
+/* CONTENU PRINCIPAL (Desktop) */
 .main-content-projects {
     flex-grow: 1;
     padding: 50px 20px;
@@ -140,9 +143,7 @@ body {
 .project-tag { font-size: 12px; background-color: #0077b5; color: #fff; padding: 4px 8px; border-radius: 3px; margin-top: 10px; display: inline-block; }
 
 /* -------------------------------------------------------------------------- */
-/* FOOTER */
-/* FOOTER — version modernisée et épurée */
-
+/* FOOTER (Desktop) */
 .footer {
   padding: 30px 0;
   margin-bottom: 10px; /* <-- espace sous le footer */
@@ -152,8 +153,6 @@ body {
   border-radius: 16px;
   transition: all 0.3s ease;
 }
-
-
     
 .footer-buttons {
   display: flex;
@@ -197,60 +196,61 @@ body {
 }
 
 /* -------------------------------------------------------------------------- */
-/* MOBILE */
+/* RESPONSIVE DESIGN (MOBILE ADAPTÉ) */
 @media (max-width: 768px) {
-    /* Conteneurs principaux */
+    /* 1. Conteneurs principaux */
     .wrapper-limited {
-        width: 100%; /* Utiliser toute la largeur disponible */
-        padding: 0 15px; /* Ajouter un padding latéral pour l'aération */
+        width: 100%;
+        padding: 0 15px;
         box-sizing: border-box;
     }
-    
-    /* Navigation */
+
+    /* 2. Navigation */
     .nav-links {
-        justify-content: center; /* Centre les liens au lieu de les pousser à droite */
-        flex-wrap: wrap; /* Permet aux liens de passer à la ligne */
+        justify-content: center; /* Centre les liens */
+        flex-wrap: wrap;
         gap: 10px;
         margin-top: 15px;
-        margin-bottom: 5px;
+        margin-bottom: 20px; /* Espace sous les boutons de navigation (adapté) */
     }
 
     .nav-link {
-        font-size: 15px;
-        padding: 8px 15px;
-        /* Ajout de bordures pour les rendre visibles comme des boutons sur mobile, car border-bottom: none; peut être ambigu */
-        border: 1px solid #ccc; 
+        font-size: 16px;
+        padding: 10px 18px;
+        border: 1px solid #ccc; /* Affichage comme de vrais boutons */
         border-radius: 6px;
+        border-bottom: 1px solid #ccc; /* Correction de la bordure manquante */
     }
     
     .nav-link.active {
-        border-bottom-color: #fff;
+        /* Correction pour que le bouton actif s'affiche correctement */
+        border-bottom-color: #fff; 
     }
 
-    /* Header Personnel */
+    /* 3. Header Personnel */
     .personal-header {
         flex-direction: column; /* Empile la photo et le texte */
         text-align: center;
-        padding: 20px 15px; /* Réduit le padding */
+        padding: 20px 15px;
         border-radius: 8px;
     }
     
     .profile-photo { 
         margin: 0 0 15px 0; /* Centre la photo et ajoute de l'espace en bas */
-        width: 100px;
-        height: 100px;
+        width: 120px;
+        height: 120px;
     }
     
     .info-container h1 {
-        font-size: 24px;
+        font-size: 26px; /* Taille adaptée */
     }
 
     .info-container p {
-        font-size: 14px;
+        font-size: 15px; /* Taille adaptée */
         padding: 0 5px;
     }
-
-    /* Contenu Principal (Projets) */
+    
+    /* 4. Contenu Principal (Le reste du contenu est laissé pour s'adapter par défaut, sauf le titre) */
     .main-content-projects {
         padding: 25px 0; /* Réduit le padding du contenu */
     }
@@ -259,18 +259,8 @@ body {
         font-size: 28px;
         margin-bottom: 20px;
     }
-
-    .project-grid {
-        grid-template-columns: 1fr; /* Force la grille à n'avoir qu'une seule colonne */
-        gap: 20px; /* Réduit l'espace entre les projets */
-        padding: 0 15px; /* Assure un alignement cohérent */
-    }
     
-    .project-button {
-        height: 200px; /* Réduit un peu la hauteur des boutons de projet */
-    }
-
-    /* Footer */
+    /* 5. Footer */
     .footer {
         padding: 20px 0;
         margin-left: 15px;
@@ -279,15 +269,16 @@ body {
     }
 
     .footer-buttons {
-        flex-direction: column; /* Empile les boutons du pied de page */
-        gap: 10px;
-        align-items: center; /* Centre les boutons */
+        flex-direction: column; /* Empile les boutons */
+        gap: 15px; /* Espace entre les boutons empilés (adapté) */
+        align-items: center;
     }
     
     .button {
-        width: 85%; /* Donne une bonne largeur aux boutons du footer */
+        width: 90%; /* Boutons presque pleine largeur */
         justify-content: center;
-        padding: 12px 0;
+        padding: 14px 0;
+        font-size: 16px;
     }
 }
 </style>
