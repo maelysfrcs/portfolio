@@ -262,103 +262,119 @@ body {
 }
 
 /* -------------------------------------------------------------------------- */
-/* RESPONSIVE DESIGN */
-/* -------------------------------------------------------------------------- */
-/* -------------------------------------------------------------------------- */
-/* RESPONSIVE DESIGN (Nouveau et optimisé pour about.html) */
+/* RESPONSIVE DESIGN (Corrigé et Optimisé pour Mobile) */
 /* -------------------------------------------------------------------------- */
 @media (max-width: 768px) {
 
-    /* --- CORRECTION MAJEURE DU BORDEREAU --- */
-    /* Force les conteneurs de 1000px à s'adapter à la largeur mobile */
-    .header-wrapper,
-    .main-wrapper {
-        max-width: 100%;
-        width: 100%;
-        margin: 0;
-    }
+    /* --- FIX 1 & 3: BORDEREAU ET RETOUR À LA NORMALE SUR PC --- */
     
-    /* Le wrapper global doit aussi s'adapter */
-    .wrapper-limited {
-        width: 100%;
-        padding: 0 15px; /* Ajoute un padding latéral pour l'aération */
+    /* 1. Force les conteneurs principaux à s'adapter au mobile pour corriger le débordement (bordereau) */
+    .header-wrapper,
+    .main-wrapper,
+    .footer {
+        max-width: 100% !important; /* Priorité pour l'affichage mobile */
+        width: auto;
+        margin: 0 auto;
+        padding: 0;
         box-sizing: border-box;
     }
     
-    /* --- NAVIGATION / BOUTONS (Alignement à droite corrigé) --- */
-    .nav-links {
-        justify-content: center; /* Centre les liens (corrige le "trop à droite") */
-        flex-wrap: wrap; 
-        gap: 8px;
-        margin-top: 15px;
-        margin-bottom: 5px; /* Réduit l'espace */
+    .wrapper-limited {
+        width: 100%;
+        padding: 0 10px; /* Laisse juste un petit padding sur les bords de l'écran */
+        box-sizing: border-box;
     }
 
-    .nav-link {
-        font-size: 15px;
-        padding: 8px 12px;
-        border-radius: 6px;
+    /* 2. Fixer le placement des boutons "Mes projets" / "À propos de moi" */
+    .nav-links {
+        justify-content: center; /* Centre les liens */
+        flex-wrap: wrap; 
+        gap: 10px;
+        margin-top: 15px;
+        margin-bottom: 10px; 
+        padding: 0 5px;
     }
     
     .nav-link.active {
-        border-bottom-color: #ccc; /* Évite que la bordure ne disparaisse complètement */
+        /* Assure que la bordure est correcte en mode mobile */
+        border-bottom-color: #ccc;
     }
 
-    /* --- HEADER PERSONNEL (Photo/Texte) --- */
+    /* --- FIX 2: TAILLES DE POLICE TROP PETITES --- */
+    
+    .nav-link {
+        font-size: 16px; 
+        padding: 8px 15px;
+        border-radius: 6px;
+    }
+    
     .personal-header {
-        flex-direction: column; /* Empile la photo et le texte */
+        flex-direction: column;
         align-items: center;
         text-align: center;
-        padding: 20px 15px; /* Réduit le padding */
+        padding: 20px 15px; /* Réduction du padding */
         border-radius: 8px;
     }
 
     .profile-photo {
         margin: 0 0 15px 0;
-        width: 100px;
-        height: 100px;
+        width: 120px;
+        height: 120px;
     }
 
     .info-container h1 {
-        font-size: 24px;
+        font-size: 28px; 
     }
 
     .info-container p {
-        font-size: 14px;
-        max-width: none; /* Permet au texte de prendre toute la largeur */
+        font-size: 15px; 
+        max-width: 95%; 
+        margin: 5px auto 0 auto;
     }
 
-    /* --- CONTENU PRINCIPAL (Timeline) --- */
+    /* Contenu principal (Timeline) */
     .main-content-projects {
-        padding: 25px 15px; /* Réduit le padding du contenu */
+        padding: 25px 15px; 
+    }
+    
+    .main-content-projects h2 {
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+    
+    .section-title {
+        font-size: 22px;
+        margin-top: 30px;
     }
     
     .timeline-item {
-        padding: 15px; /* Réduit le padding des blocs de la timeline */
+        padding: 15px;
     }
     
     .timeline-item h4 {
-        font-size: 17px;
+        font-size: 18px; 
+    }
+    
+    .details, .timeline-item p, .timeline-item li {
+        font-size: 15px; 
     }
 
-    /* --- FOOTER --- */
+    /* Footer */
     .footer {
-        max-width: 100%; /* S'assure que le footer prend toute la largeur */
-        padding: 20px 0;
-        margin-left: 15px;
-        margin-right: 15px; /* Ajout de marges latérales pour alignement */
-        border-radius: 8px;
+        /* Ajuste la marge du footer pour l'aligner avec le wrapper-limited */
+        margin: 10px 10px 10px 10px; 
     }
-
+    
     .footer-buttons {
-        flex-direction: column; /* Empile les boutons */
-        gap: 10px;
+        flex-direction: column; 
+        gap: 12px;
         align-items: center;
     }
 
     .button {
-        width: 85%; /* Donne une bonne largeur aux boutons */
+        width: 85%;
         justify-content: center;
+        font-size: 16px; 
     }
 }
 </style>
