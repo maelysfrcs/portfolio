@@ -265,72 +265,89 @@ body {
 /* RESPONSIVE DESIGN */
 /* -------------------------------------------------------------------------- */
 @media (max-width: 768px) {
+    /* Conteneurs principaux */
+    .wrapper-limited {
+        width: 100%; /* Utiliser toute la largeur disponible */
+        padding: 0 15px; /* Ajouter un padding latéral pour l'aération */
+        box-sizing: border-box;
+    }
+    
+    /* Navigation */
+    .nav-links {
+        justify-content: center; /* Centre les liens au lieu de les pousser à droite */
+        flex-wrap: wrap; /* Permet aux liens de passer à la ligne */
+        gap: 10px;
+        margin-top: 15px;
+        margin-bottom: 5px;
+    }
 
-  /* Header compact et bien centré */
-  .header-wrapper {
-    align-items: center;
-    text-align: center;
-    padding: 0 10px;
-  }
+    .nav-link {
+        font-size: 15px;
+        padding: 8px 15px;
+        /* Ajout de bordures pour les rendre visibles comme des boutons sur mobile, car border-bottom: none; peut être ambigu */
+        border: 1px solid #ccc; 
+        border-radius: 6px; 
+    }
+    
+    .nav-link.active {
+        border-bottom-color: #fff;
+    }
 
-  /* Boutons centrés et espacés */
-  .nav-links {
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 15px;
-    margin-bottom: 10px;
-  }
+    /* Header Personnel */
+    .personal-header {
+        flex-direction: column; /* Empile la photo et le texte */
+        text-align: center;
+        padding: 20px 15px; /* Réduit le padding */
+        border-radius: 8px; /* Réduit le bordereau si 12px est trop gros */
+    }
 
-  .nav-link {
-    font-size: 15px;
-    padding: 8px 15px;
-    border-radius: 6px;
-  }
+    .profile-photo {
+        margin: 0 0 15px 0; /* Centre la photo et ajoute de l'espace en bas */
+        width: 100px;
+        height: 100px;
+    }
 
-  /* Photo et texte centrés */
-  .personal-header {
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    text-align: center;
-  }
+    .info-container h1 {
+        font-size: 24px;
+    }
 
-  .profile-photo {
-    margin: 0 0 15px 0;
-    width: 120px;
-    height: 120px;
-  }
+    .info-container p {
+        font-size: 14px;
+        padding: 0 5px;
+    }
 
-  .info-container h1 {
-    font-size: 26px;
-  }
+    /* Contenu Principal (Timeline) */
+    .main-content-projects {
+        padding: 25px 15px; /* Réduit le padding du contenu */
+    }
+    
+    .main-content-projects h2 {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+    
+    .section-title {
+        font-size: 20px;
+    }
 
-  .info-container p {
-    font-size: 14px;
-    max-width: 90%;
-    margin: 5px auto 0 auto;
-  }
+    /* Footer */
+    .footer {
+        padding: 20px 0;
+        margin: 10px 15px 10px 15px; /* Ajout de marges latérales pour qu'il soit à l'intérieur du 90% de .wrapper-limited */
+        border-radius: 8px;
+    }
 
-  /* Contenu principal : moins de padding */
-  .main-content-projects {
-    padding: 25px 15px;
-  }
+    .footer-buttons {
+        flex-direction: column; /* Empile les boutons du pied de page */
+        gap: 10px;
+        align-items: center; /* Centre les boutons */
+    }
 
-  /* Footer plus vertical et clair */
-  .footer-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    align-items: center;
-  }
-
-  .button {
-    width: 90%;
-    justify-content: center;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-  }
+    .button {
+        width: 85%; /* Donne une bonne largeur aux boutons du footer */
+        justify-content: center;
+        padding: 12px 0;
+    }
 }
 </style>
 
