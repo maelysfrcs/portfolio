@@ -209,15 +209,17 @@ body {
 /* FOOTER — desktop et large screens */
 .footer {
   padding: 30px 20px;
-  width: 50%;              /* prendre toute la largeur de l’écran */
-  max-width: none;           /* désactive la limite de largeur */
+  width: 50%;                  /* largeur du footer */
+  max-width: none;             /* pas de limite supérieure */
   background: linear-gradient(135deg, #ffffff 0%, #f7f9fb 100%);
   box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.08);
   text-align: center;
   border-radius: 16px;
   transition: all 0.3s ease;
-  box-sizing: border-box;    /* pour inclure padding dans la largeur */
+  box-sizing: border-box;      /* padding inclus dans la largeur */
+  margin: 0 auto 20px auto;    /* centré horizontalement et espace dessous */
 }
+
 
 /* Footer buttons restent centrés */
 .footer-buttons {
