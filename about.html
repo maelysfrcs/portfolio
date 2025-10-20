@@ -3,7 +3,7 @@
 
 <style>
 :root {
-    --content-max-width: 1000px;
+    --content-max-width: 1000px; /* largeur max du header/footer, modifiable */
 }
 
 /* STYLES DE BASE */
@@ -18,7 +18,7 @@ body {
     min-height: 100vh;
 }
 
-/* CONTAINER CENTRAL */
+/* Header et footer centrés avec marges */
 .wrapper-limited {
     max-width: var(--content-max-width);
     margin: 0 auto;
@@ -29,21 +29,13 @@ body {
 .page-header h1, .view-on-github-link, .downloads, .site-footer, .project-tagline { display: none !important; }
 
 /* -------------------------------------------------------------------------- */
-/* NAVIGATION (BOUTONS EN DEHORS DU BORDEREAU) */
-.header-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    margin-top: 25px; /* espace avec le haut de la page */
-    margin-bottom: 15px; /* espace entre les boutons et le bordereau */
-}
-
+/* NAVIGATION */
 .nav-links {
     display: flex;
     justify-content: flex-end;
-    gap: 0;
+    margin-top: 25px;        /* espace entre haut de la page et boutons */
+    margin-bottom: 20px;     /* espace entre boutons et le bordereau */
 }
-
 .nav-link {
     font-size: 17px;
     font-weight: 600;
@@ -71,7 +63,7 @@ body {
 .nav-links a:first-child { border-top-left-radius: 6px; }
 
 /* -------------------------------------------------------------------------- */
-/* HEADER PERSONNEL (BORDEREAU) */
+/* HEADER PERSONNEL */
 .personal-header {
     display: flex;
     align-items: center;
@@ -79,7 +71,6 @@ body {
     background-color: #fff;
     border-bottom: 1px solid #ccc;
     border-radius: 12px;
-    margin-top: -1px;
 }
 .profile-photo {
     width: 150px;
@@ -185,13 +176,10 @@ body {
 }
 </style>
 
-<!-- -------------------------------------------------------------------------- -->
 <div class="wrapper-limited">
-    <div class="header-wrapper">
-        <div class="nav-links">
-            <a href="index.html" class="nav-link active">Mes projets</a>
-            <a href="about.html" class="nav-link">À propos de moi</a>
-        </div>
+    <div class="nav-links">
+        <a href="index.html" class="nav-link">Mes projets</a>
+        <a href="about.html" class="nav-link active">À propos de moi</a>
     </div>
 
     <div class="personal-header">
@@ -203,25 +191,8 @@ body {
     </div>
 
     <div class="main-content-projects">
-        <h2>Mes Projets</h2>
-        <div class="project-grid">
-            <a href="projet-web-scraping.html" class="project-button">
-                <div class="project-button-bg" style="background-image: url('images/reddit_analysis.jpg');"></div>
-                <div class="project-content">
-                    <span class="project-tag">Méthode de Recherche</span>
-                    <h4>Analyse du Sentiment et Web Scraping des communautés de joueurs</h4>
-                    <p>Extraction des discussions Reddit et analyse par Topic Modeling.</p>
-                </div>
-            </a>
-            <a href="projet-2.html" class="project-button">
-                <div class="project-button-bg" style="background-image: url('images/placeholder_stats.jpg');"></div>
-                <div class="project-content">
-                    <span class="project-tag">Statistiques Avancées</span>
-                    <h4>Modélisation des déterminants sociaux du jeu</h4>
-                    <p>Analyse des données Ludespace (ANOVA, ACL).</p>
-                </div>
-            </a>
-        </div>
+        <h2>Mon Parcours</h2>
+        <!-- Ton contenu ici -->
     </div>
 
     <footer class="footer">
