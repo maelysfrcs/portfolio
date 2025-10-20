@@ -20,20 +20,18 @@ body {
 /* MENU DE NAVIGATION */
 /* -------------------------------------------------------------------------- */
 .header-wrapper {
-  max-width: 1000px; /* POUR MODIFIER TAILLE BORDEREAU */
+  max-width: 1000px;
   margin: 0 auto;
   display: flex;
-  flex-direction: column; /* boutons au-dessus */
-  gap: 0; /* pas d’espace vertical */
-}
-  
-.nav-links {
-  display: flex;
-  justify-content: flex-end; /* boutons collés à droite */
-  gap: 0;
-  margin-top: 20px;    /* espace depuis le haut de la page */
+  flex-direction: column;
 }
 
+.nav-links {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+  margin-bottom: 15px; /* espace entre boutons et bordereau */
+}
 
 .nav-link {
   font-size: 17px;
@@ -69,7 +67,7 @@ body {
 .personal-header {
   display: flex;
   align-items: center;
-  padding: 30px 30px; /* TAILLE DU BORDEREAU AUSSI APPAREMMENT */
+  padding: 30px 30px;
   background-color: #fff;
   border-bottom: 1px solid #ccc;
   border-radius: 10px;
@@ -101,18 +99,16 @@ body {
 /* CONTENU PRINCIPAL */
 /* -------------------------------------------------------------------------- */
 .main-wrapper {
-  max-width: 1100px;
-  margin: 0 auto;
+  max-width: 1000px;
+  margin: 40px auto;
   width: 100%;
   flex-grow: 1;
 }
-/* -------------------------------------------------------------------------- */
-/* SECTION "MON PARCOURS" – AMÉLIORATION VISUELLE */
-/* -------------------------------------------------------------------------- */
+
 .main-content-projects {
-  padding: 40px 60px;
+  padding: 40px 50px;
   background-color: #f9f9f9;
-  border-radius: 10px;
+  border-radius: 12px;
 }
 
 .main-content-projects h2 {
@@ -121,7 +117,7 @@ body {
   font-weight: 700;
   color: #333;
   text-align: center;
-  margin-bottom: 30px; /* Réduction de l’espace sous le titre principal */
+  margin-bottom: 30px;
 }
 
 .section-title {
@@ -129,29 +125,28 @@ body {
   font-size: 24px;
   font-weight: 600;
   color: #0077b5;
-  margin-top: 50px; /* espace avant chaque catégorie */
-  margin-bottom: 15px; /* espace réduit entre le titre et les cartes */
+  margin-top: 40px;
+  margin-bottom: 15px;
   text-align: left;
   border-bottom: 2px solid #0077b5;
   display: inline-block;
   padding-bottom: 3px;
 }
 
-/* Espacement général entre les timelines */
+/* TIMELINE */
 .timeline {
   display: flex;
   flex-direction: column;
-  gap: 18px; /* avant : 25px */
+  gap: 15px; /* réduit l’espace entre les blocs */
 }
 
-/* Cartes plus aérées, mais moins espacées entre elles */
 .timeline-item {
   background: #fff;
   border-radius: 8px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
   padding: 18px 22px;
+  border-left: 4px solid #0077b5;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  border-left: 4px solid #0077b5; /* repère visuel plus élégant */
 }
 
 .timeline-item:hover {
@@ -160,7 +155,7 @@ body {
 }
 
 .timeline-item h4 {
-  margin: 0 0 6px 0;
+  margin: 0 0 5px 0;
   font-size: 19px;
   font-weight: 700;
   color: #333;
@@ -169,26 +164,26 @@ body {
 .details {
   font-size: 14px;
   color: #666;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   display: block;
 }
 
 .date {
   font-weight: 600;
   color: #0077b5;
-  margin-right: 6px;
+  margin-right: 5px;
 }
 
 .timeline-item p {
   font-size: 15px;
   color: #555;
   line-height: 1.5;
-  margin-top: 6px;
+  margin-top: 4px;
 }
 
 .timeline-item ul {
-  margin-top: 6px;
-  padding-left: 18px;
+  margin-top: 5px;
+  padding-left: 20px;
 }
 
 .timeline-item li {
@@ -197,18 +192,14 @@ body {
   margin-bottom: 4px;
 }
 
-
-.details { font-size: 14px; color: #555; margin-bottom: 10px; display: block; }
-.date { font-weight: 600; color: #0077b5; margin-right: 10px; }
-
-.timeline-item p { font-size: 15px; color: #555; line-height: 1.5; }
-.timeline-item ul { margin-top: 10px; padding-left: 20px; }
-.timeline-item li { font-size: 14px; color: #555; }
-
 /* -------------------------------------------------------------------------- */
 /* PIED DE PAGE */
 /* -------------------------------------------------------------------------- */
-.footer-wrapper { max-width: 1100px; margin: 0 auto; width: 100%; }
+.footer-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+}
 .footer {
   padding: 25px 0;
   background-color: #fff;
@@ -252,12 +243,32 @@ body {
 /* RESPONSIVE DESIGN */
 /* -------------------------------------------------------------------------- */
 @media (max-width: 768px) {
-  .personal-header { flex-direction: column; text-align: center; padding: 20px; }
+  .personal-header {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
   .profile-photo { margin-right: 0; margin-bottom: 20px; }
   .main-content-projects { padding: 20px; }
-  .footer-buttons { display: flex; flex-direction: column; gap: 10px; width: 100%; align-items: center; }
-  .button { width: 90%; margin: 0; justify-content: center; border: 1px solid #ddd; border-radius: 4px; }
-  .button:not(:first-child) { border-left: none; padding-left: 10px; margin-left: 0; }
+  .footer-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    align-items: center;
+  }
+  .button {
+    width: 90%;
+    margin: 0;
+    justify-content: center;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  .button:not(:first-child) {
+    border-left: none;
+    padding-left: 10px;
+    margin-left: 0;
+  }
 }
 </style>
 
@@ -282,56 +293,58 @@ body {
 <div class="main-wrapper">
   <div class="main-content-projects">
     <h2>Mon parcours</h2>
+
     <h3 class="section-title">Formations</h3>
-<div class="timeline">
-            <div class="timeline-item">
-                <h4>Master Sociologie : Réseaux et Sociétés (RESO)</h4>
-                <span class="details"><span class="date">2023 - 2025</span> Université Toulouse - Jean Jaurès | Toulouse</span>
-                <p>Spécialisation en analyse de données et maîtrise des techniques quantitatives et textuelles (ACL, ACM, Régression Logistique, Topic Modeling, Sentiment Analysis).</p>
-                <ul>
-                    <li>Mémoire : influence des modèles de monétisation des jeux vidéo sur les pratiques des joueurs.</li>
-                    <li>Outils : <strong>R, Python, Excel, Jamovi</strong>.</li>
-                </ul>
-            </div>
-        </div>
+    <div class="timeline">
+      <div class="timeline-item">
+        <h4>Master Sociologie : Réseaux et Sociétés (RESO)</h4>
+        <span class="details"><span class="date">2023 - 2025</span> Université Toulouse - Jean Jaurès | Toulouse</span>
+        <p>Spécialisation en analyse de données et maîtrise des techniques quantitatives et textuelles (ACL, ACM, Régression Logistique, Topic Modeling, Sentiment Analysis).</p>
+        <ul>
+          <li>Mémoire : influence des modèles de monétisation des jeux vidéo sur les pratiques des joueurs.</li>
+          <li>Outils : <strong>R, Python, Excel, Jamovi</strong>.</li>
+        </ul>
+      </div>
+    </div>
 
-        <h3 class="section-title">Expériences professionnelles</h3>
-        <div class="timeline">
-            <div class="timeline-item">
-                <h4>Assistante au projet AMULEX - Stage</h4>
-                <span class="details"><span class="date">Mars 2025 - Juillet 2025</span> Université Paris-Est Créteil | Paris</span>
-                <p>Collecte et analyse de données issues des réseaux sociaux numériques.</p>
-                <ul>
-                    <li>Analyse de données</li>
-                    <li>Conduite d’un questionnaire</li>
-                    <li>Mise en œuvre d’une stratégie de collecte</li>
-                </ul>
-            </div>
+    <h3 class="section-title">Expériences professionnelles</h3>
+    <div class="timeline">
+      <div class="timeline-item">
+        <h4>Assistante au projet AMULEX - Stage</h4>
+        <span class="details"><span class="date">Mars 2025 - Juillet 2025</span> Université Paris-Est Créteil | Paris</span>
+        <p>Collecte et analyse de données issues des réseaux sociaux numériques.</p>
+        <ul>
+          <li>Analyse de données</li>
+          <li>Conduite d’un questionnaire</li>
+          <li>Mise en œuvre d’une stratégie de collecte</li>
+        </ul>
+      </div>
 
-            <div class="timeline-item">
-                <h4>Enquêtrice - Enquête-école</h4>
-                <span class="details"><span class="date">Octobre 2024 - Janvier 2025</span> Toulouse Tech Transfer | Toulouse</span>
-                <p>Enquête collaborative visant à cartographier les partenariats socio-économiques de l’UT2J.</p>
-                <ul>
-                    <li>Cadrage méthodologique et définition des objectifs avec les partenaires</li>
-                    <li>Travail collaboratif</li>
-                    <li>Conception et conduite d’un questionnaire</li>
-                </ul>
-            </div>
+      <div class="timeline-item">
+        <h4>Enquêtrice - Enquête-école</h4>
+        <span class="details"><span class="date">Octobre 2024 - Janvier 2025</span> Toulouse Tech Transfer | Toulouse</span>
+        <p>Enquête collaborative visant à cartographier les partenariats socio-économiques de l’UT2J.</p>
+        <ul>
+          <li>Cadrage méthodologique et définition des objectifs avec les partenaires</li>
+          <li>Travail collaboratif</li>
+          <li>Conception et conduite d’un questionnaire</li>
+        </ul>
+      </div>
 
-            <div class="timeline-item">
-                <h4>Chargée d'étude en sociologie - Stage</h4>
-                <span class="details"><span class="date">Avril 2024 - Septembre 2024</span> CNRS - IPBS | Toulouse</span>
-                <p>Enquête sur les discriminations et la qualité de vie au travail au sein d’un laboratoire.</p>
-                <ul>
-                    <li>Analyse de données</li>
-                    <li>Conception et conduite d’un questionnaire</li>
-                    <li>Passation d’entretiens</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-  
+      <div class="timeline-item">
+        <h4>Chargée d'étude en sociologie - Stage</h4>
+        <span class="details"><span class="date">Avril 2024 - Septembre 2024</span> CNRS - IPBS | Toulouse</span>
+        <p>Enquête sur les discriminations et la qualité de vie au travail au sein d’un laboratoire.</p>
+        <ul>
+          <li>Analyse de données</li>
+          <li>Conception et conduite d’un questionnaire</li>
+          <li>Passation d’entretiens</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="footer-wrapper">
   <footer class="footer">
     <div class="footer-buttons">
