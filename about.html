@@ -264,45 +264,57 @@ body {
 /* -------------------------------------------------------------------------- */
 /* RESPONSIVE DESIGN */
 /* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+/* RESPONSIVE DESIGN (Nouveau et optimisé pour about.html) */
+/* -------------------------------------------------------------------------- */
 @media (max-width: 768px) {
-    /* Conteneurs principaux */
+
+    /* --- CORRECTION MAJEURE DU BORDEREAU --- */
+    /* Force les conteneurs de 1000px à s'adapter à la largeur mobile */
+    .header-wrapper,
+    .main-wrapper {
+        max-width: 100%;
+        width: 100%;
+        margin: 0;
+    }
+    
+    /* Le wrapper global doit aussi s'adapter */
     .wrapper-limited {
-        width: 100%; /* Utiliser toute la largeur disponible */
-        padding: 0 15px; /* Ajouter un padding latéral pour l'aération */
+        width: 100%;
+        padding: 0 15px; /* Ajoute un padding latéral pour l'aération */
         box-sizing: border-box;
     }
     
-    /* Navigation */
+    /* --- NAVIGATION / BOUTONS (Alignement à droite corrigé) --- */
     .nav-links {
-        justify-content: center; /* Centre les liens au lieu de les pousser à droite */
-        flex-wrap: wrap; /* Permet aux liens de passer à la ligne */
-        gap: 10px;
+        justify-content: center; /* Centre les liens (corrige le "trop à droite") */
+        flex-wrap: wrap; 
+        gap: 8px;
         margin-top: 15px;
-        margin-bottom: 5px;
+        margin-bottom: 5px; /* Réduit l'espace */
     }
 
     .nav-link {
         font-size: 15px;
-        padding: 8px 15px;
-        /* Ajout de bordures pour les rendre visibles comme des boutons sur mobile, car border-bottom: none; peut être ambigu */
-        border: 1px solid #ccc; 
-        border-radius: 6px; 
+        padding: 8px 12px;
+        border-radius: 6px;
     }
     
     .nav-link.active {
-        border-bottom-color: #fff;
+        border-bottom-color: #ccc; /* Évite que la bordure ne disparaisse complètement */
     }
 
-    /* Header Personnel */
+    /* --- HEADER PERSONNEL (Photo/Texte) --- */
     .personal-header {
         flex-direction: column; /* Empile la photo et le texte */
+        align-items: center;
         text-align: center;
         padding: 20px 15px; /* Réduit le padding */
-        border-radius: 8px; /* Réduit le bordereau si 12px est trop gros */
+        border-radius: 8px;
     }
 
     .profile-photo {
-        margin: 0 0 15px 0; /* Centre la photo et ajoute de l'espace en bas */
+        margin: 0 0 15px 0;
         width: 100px;
         height: 100px;
     }
@@ -313,40 +325,40 @@ body {
 
     .info-container p {
         font-size: 14px;
-        padding: 0 5px;
+        max-width: none; /* Permet au texte de prendre toute la largeur */
     }
 
-    /* Contenu Principal (Timeline) */
+    /* --- CONTENU PRINCIPAL (Timeline) --- */
     .main-content-projects {
         padding: 25px 15px; /* Réduit le padding du contenu */
     }
     
-    .main-content-projects h2 {
-        font-size: 28px;
-        margin-bottom: 20px;
+    .timeline-item {
+        padding: 15px; /* Réduit le padding des blocs de la timeline */
     }
     
-    .section-title {
-        font-size: 20px;
+    .timeline-item h4 {
+        font-size: 17px;
     }
 
-    /* Footer */
+    /* --- FOOTER --- */
     .footer {
+        max-width: 100%; /* S'assure que le footer prend toute la largeur */
         padding: 20px 0;
-        margin: 10px 15px 10px 15px; /* Ajout de marges latérales pour qu'il soit à l'intérieur du 90% de .wrapper-limited */
+        margin-left: 15px;
+        margin-right: 15px; /* Ajout de marges latérales pour alignement */
         border-radius: 8px;
     }
 
     .footer-buttons {
-        flex-direction: column; /* Empile les boutons du pied de page */
+        flex-direction: column; /* Empile les boutons */
         gap: 10px;
-        align-items: center; /* Centre les boutons */
+        align-items: center;
     }
 
     .button {
-        width: 85%; /* Donne une bonne largeur aux boutons du footer */
+        width: 85%; /* Donne une bonne largeur aux boutons */
         justify-content: center;
-        padding: 12px 0;
     }
 }
 </style>
@@ -354,89 +366,84 @@ body {
 <!-- -------------------------------------------------------------------------- -->
 <!-- CONTENU HTML -->
 <!-- -------------------------------------------------------------------------- -->
-<div class="header-wrapper">
-  <div class="nav-links">
-    <a href="index.html" class="nav-link">Mes projets</a>
-    <a href="about.html" class="nav-link active">À propos de moi</a>
-  </div>
-
-  <div class="personal-header">
-    <img src="photocv.PNG" class="profile-photo" alt="Maëlys François">
-    <div class="info-container">
-      <h1>Maëlys François</h1>
-      <p>Passionnée par <strong>l'analyse de données</strong> avec une expertise pour l'étude des comportements sur les <strong>réseaux sociaux</strong>.</p>
-    </div>
-  </div>
-</div>
-
-<div class="main-wrapper">
-  <div class="main-content-projects">
-    <h2>Mon parcours</h2>
-
-    <h3 class="section-title">Formations</h3>
-    <div class="timeline">
-      <div class="timeline-item">
-        <h4>Master Sociologie : Réseaux et Sociétés (RESO)</h4>
-        <span class="details"><span class="date">2023 - 2025</span> Université Toulouse - Jean Jaurès | Toulouse</span>
-        <p>Spécialisation en analyse de données et maîtrise des techniques quantitatives et textuelles (ACL, ACM, Régression Logistique, Topic Modeling, Sentiment Analysis).</p>
-        <ul>
-          <li>Mémoire : influence des modèles de monétisation des jeux vidéo sur les pratiques des joueurs.</li>
-          <li>Outils : <strong>R, Python, Excel, Jamovi</strong>.</li>
-        </ul>
-      </div>
-    </div>
-
-    <h3 class="section-title">Expériences professionnelles</h3>
-    <div class="timeline">
-      <div class="timeline-item">
-        <h4>Assistante au projet AMULEX - Stage</h4>
-        <span class="details"><span class="date">Mars 2025 - Juillet 2025</span> Université Paris-Est Créteil | Paris</span>
-        <p>Collecte et analyse de données issues des réseaux sociaux numériques.</p>
-        <ul>
-          <li>Analyse de données</li>
-          <li>Conduite d’un questionnaire</li>
-          <li>Mise en œuvre d’une stratégie de collecte</li>
-        </ul>
-      </div>
-
-      <div class="timeline-item">
-        <h4>Enquêtrice - Enquête-école</h4>
-        <span class="details"><span class="date">Octobre 2024 - Janvier 2025</span> Toulouse Tech Transfer | Toulouse</span>
-        <p>Enquête collaborative visant à cartographier les partenariats socio-économiques de l’UT2J.</p>
-        <ul>
-          <li>Cadrage méthodologique et définition des objectifs avec les partenaires</li>
-          <li>Travail collaboratif</li>
-          <li>Conception et conduite d’un questionnaire</li>
-        </ul>
-      </div>
-
-      <div class="timeline-item">
-        <h4>Chargée d'étude en sociologie - Stage</h4>
-        <span class="details"><span class="date">Avril 2024 - Septembre 2024</span> CNRS - IPBS | Toulouse</span>
-        <p>Enquête sur les discriminations et la qualité de vie au travail au sein d’un laboratoire.</p>
-        <ul>
-          <li>Analyse de données</li>
-          <li>Conception et conduite d’un questionnaire</li>
-          <li>Passation d’entretiens</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-
-
 <div class="wrapper-limited">
-    <footer class="footer">
-        <div class="footer-buttons">
-            <a href="https://www.linkedin.com/in/ma%C3%ABlys-fran%C3%A7ois" class="button" target="_blank">
-                <i class="fab fa-linkedin"></i>LinkedIn
-            </a>
-            <a href="mesdocuments/cv_maëlys_françois.pdf" class="button" target="_blank">
-                <i class="fas fa-file-pdf"></i>Mon CV
-            </a>
-            <a href="mailto:maelys.francois31@gmail.com" class="button">
-                <i class="fas fa-envelope"></i>Mon Email
-            </a>
-        </div>
-    </footer>
+        <div class="nav-links">
+        <a href="index.html" class="nav-link">Mes projets</a>
+        <a href="about.html" class="nav-link active">À propos de moi</a>
+    </div>
+
+        <div class="personal-header">
+        <img src="photocv.PNG" class="profile-photo" alt="Maëlys François">
+        <div class="info-container">
+            <h1>Maëlys François</h1>
+            <p>Passionnée par <strong>l'analyse de données</strong> avec une expertise pour l'étude des comportements sur les <strong>réseaux sociaux</strong>.</p>
+        </div>
+    </div>
+
+        <div class="main-content-projects">
+        <h2>Mon parcours</h2>
+
+        <h3 class="section-title">Formations</h3>
+        <div class="timeline">
+            <div class="timeline-item">
+                <h4>Master Sociologie : Réseaux et Sociétés (RESO)</h4>
+                <span class="details"><span class="date">2023 - 2025</span> Université Toulouse - Jean Jaurès | Toulouse</span>
+                <p>Spécialisation en analyse de données et maîtrise des techniques quantitatives et textuelles (ACL, ACM, Régression Logistique, Topic Modeling, Sentiment Analysis).</p>
+                <ul>
+                    <li>Mémoire : influence des modèles de monétisation des jeux vidéo sur les pratiques des joueurs.</li>
+                    <li>Outils : <strong>R, Python, Excel, Jamovi</strong>.</li>
+                </ul>
+            </div>
+        </div>
+
+        <h3 class="section-title">Expériences professionnelles</h3>
+        <div class="timeline">
+            <div class="timeline-item">
+                <h4>Assistante au projet AMULEX - Stage</h4>
+                <span class="details"><span class="date">Mars 2025 - Juillet 2025</span> Université Paris-Est Créteil | Paris</span>
+                <p>Collecte et analyse de données issues des réseaux sociaux numériques.</p>
+                <ul>
+                    <li>Analyse de données</li>
+                    <li>Conduite d’un questionnaire</li>
+                    <li>Mise en œuvre d’une stratégie de collecte</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <h4>Enquêtrice - Enquête-école</h4>
+                <span class="details"><span class="date">Octobre 2024 - Janvier 2025</span> Toulouse Tech Transfer | Toulouse</span>
+                <p>Enquête collaborative visant à cartographier les partenariats socio-économiques de l’UT2J.</p>
+                <ul>
+                    <li>Cadrage méthodologique et définition des objectifs avec les partenaires</li>
+                    <li>Travail collaboratif</li>
+                    <li>Conception et conduite d’un questionnaire</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <h4>Chargée d'étude en sociologie - Stage</h4>
+                <span class="details"><span class="date">Avril 2024 - Septembre 2024</span> CNRS - IPBS | Toulouse</span>
+                <p>Enquête sur les discriminations et la qualité de vie au travail au sein d’un laboratoire.</p>
+                <ul>
+                    <li>Analyse de données</li>
+                    <li>Conception et conduite d’un questionnaire</li>
+                    <li>Passation d’entretiens</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+        <footer class="footer">
+        <div class="footer-buttons">
+            <a href="https://www.linkedin.com/in/ma%C3%ABlys-fran%C3%A7ois" class="button" target="_blank">
+                <i class="fab fa-linkedin"></i>LinkedIn
+            </a>
+            <a href="mesdocuments/cv_maëlys_françois.pdf" class="button" target="_blank">
+                <i class="fas fa-file-pdf"></i>Mon CV
+            </a>
+            <a href="mailto:maelys.francois31@gmail.com" class="button">
+                <i class="fas fa-envelope"></i>Mon Email
+            </a>
+        </div>
+    </footer>
 </div>
