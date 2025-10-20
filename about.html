@@ -258,18 +258,15 @@ body {
   color: #fff;
 }
 
-/* -------------------------------------------------------------------------- */
-/* RESPONSIVE DESIGN */
-/* -------------------------------------------------------------------------- */
 @media (max-width: 768px) {
 
-  /* Wrapper : s'assurer que le contenu ne touche pas les bords */
+  /* Wrapper général pour éviter que le contenu touche les bords */
   .wrapper-limited {
-    width: 95%;       /* un peu plus large que sur desktop */
-    padding: 0 10px;  /* espacement latéral */
+    width: 95%;      /* légèrement plus large pour l'espace horizontal */
+    padding: 0 10px; /* espacement latéral */
   }
 
-  /* Header et navigation : centrage et espacement */
+  /* Header et navigation */
   .header-wrapper {
     align-items: center;
     text-align: center;
@@ -279,63 +276,74 @@ body {
   .nav-links {
     justify-content: center;
     flex-wrap: wrap;
-    gap: 12px;        /* plus de souplesse entre boutons */
-    margin-top: 10px;
-    margin-bottom: 15px;
+    gap: 15px;       /* plus d’espace entre les boutons */
+    margin-top: 15px;
+    margin-bottom: 20px;
   }
 
   .nav-link {
-    font-size: 14px;
-    padding: 8px 12px;
+    font-size: 16px;    /* texte plus lisible */
+    padding: 10px 18px; /* boutons plus gros */
+    border-radius: 8px;
   }
 
-  /* Photo et texte : centrés verticalement et horizontalement */
+  /* Photo et texte dans le header */
   .personal-header {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 15px 10px;
+    padding: 20px 10px;
   }
 
   .profile-photo {
-    width: 120px;
-    height: 120px;
+    width: 130px;
+    height: 130px;
     margin-bottom: 15px;
   }
 
   .info-container h1 {
-    font-size: 24px;
+    font-size: 28px; /* nom plus lisible sur mobile */
   }
 
   .info-container p {
-    font-size: 14px;
+    font-size: 15px; /* texte descriptif plus lisible */
     max-width: 90%;
     margin: 5px auto 0 auto;
   }
 
-  /* Contenu principal : réduire le padding */
+  /* Contenu principal */
   .main-content-projects {
-    padding: 20px 15px;
+    padding: 30px 15px; /* plus de marge intérieure */
   }
 
-  /* Footer : boutons empilés et largeur plus adaptée */
+  .main-content-projects h2 {
+    font-size: 28px;  /* titre "Mon parcours" plus lisible */
+  }
+
+  .section-title {
+    font-size: 20px;  /* sous-titres lisibles sur mobile */
+  }
+
+  /* Footer */
   .footer {
-    padding: 25px 10px;
+    padding: 30px 10px;
   }
 
   .footer-buttons {
-    flex-direction: column;  /* empile les boutons */
-    gap: 12px;               /* espace vertical entre boutons */
+    flex-direction: column;  /* empile les boutons verticalement */
+    gap: 15px;               /* espace vertical plus confortable */
     align-items: center;
   }
 
   .button {
     width: 95%;              /* boutons presque pleine largeur */
     justify-content: center;
-    padding: 12px 0;         /* hauteur des boutons adaptée */
-    border-radius: 6px;
+    padding: 14px 0;         /* hauteur des boutons adaptée */
+    font-size: 16px;         /* texte des boutons plus lisible */
+    border-radius: 8px;
   }
 }
+
 </style>
 
 <!-- -------------------------------------------------------------------------- -->
