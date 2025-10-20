@@ -261,76 +261,11 @@ body {
 /* sur téléphone */
 @media (max-width: 768px) {
 
-  /* Wrapper général : occupe presque toute la largeur */
-  .wrapper-limited {
-    width: 100% !important;
-    max-width: 100% !important;
-    padding: 0 10px !important;
-  }
-
-  /* Header et navigation */
-  .header-wrapper {
-    width: 100% !important;
-    padding: 15px 10px !important;
-    align-items: center !important;
-    text-align: center !important;
-  }
-
-  .nav-links {
-    justify-content: center !important;
-    gap: 15px !important;
-    margin-top: 15px !important;
-    margin-bottom: 20px !important;
-    flex-wrap: wrap !important;
-  }
-
-  .nav-link {
-    font-size: 16px !important;
-    padding: 12px 20px !important;
-    border-radius: 8px !important;
-  }
-
-  /* Photo et texte dans le header */
-  .personal-header {
-    flex-direction: column !important;
-    align-items: center !important;
-    text-align: center !important;
-    padding: 20px 10px !important;
-  }
-
-  .profile-photo {
-    width: 130px !important;
-    height: 130px !important;
-    margin: 0 0 15px 0 !important;
-  }
-
-  .info-container h1 {
-    font-size: 28px !important;
-  }
-
-  .info-container p {
-    font-size: 15px !important;
-    max-width: 90% !important;
-    margin: 5px auto 0 auto !important;
-  }
-
-  /* Contenu principal */
-  .main-content-projects {
-    padding: 30px 15px !important;
-  }
-
-  .main-content-projects h2 {
-    font-size: 28px !important;
-  }
-
-  .section-title {
-    font-size: 20px !important;
-  }
-
   /* Footer */
   .footer {
     width: 100% !important;
-    padding: 30px 10px !important;
+    max-width: 1000px !important;
+    padding: 30px 20px !important;
     margin: 0 auto !important;
   }
 
@@ -341,13 +276,12 @@ body {
   }
 
   .button {
-    width: 95% !important;
-    justify-content: center !important;
-    padding: 14px 0 !important;
+    width: 90% !important;
     font-size: 16px !important;
-    border-radius: 8px !important;
+    padding: 14px 0 !important;
   }
 }
+
 </style>
 
 <!-- -------------------------------------------------------------------------- -->
@@ -423,19 +357,16 @@ body {
   </div>
 </div>
 
-
-<div class="wrapper-limited">
-    <footer class="footer">
-        <div class="footer-buttons">
-            <a href="https://www.linkedin.com/in/ma%C3%ABlys-fran%C3%A7ois" class="button" target="_blank">
-                <i class="fab fa-linkedin"></i>LinkedIn
-            </a>
-            <a href="mesdocuments/cv_maëlys_françois.pdf" class="button" target="_blank">
-                <i class="fas fa-file-pdf"></i>Mon CV
-            </a>
-            <a href="mailto:maelys.francois31@gmail.com" class="button">
-                <i class="fas fa-envelope"></i>Mon Email
-            </a>
-        </div>
-    </footer>
-</div>
+<footer class="footer">
+    <div class="footer-buttons">
+        <a href="https://www.linkedin.com/in/ma%C3%ABlys-fran%C3%A7ois" class="button" target="_blank">
+            <i class="fab fa-linkedin"></i>LinkedIn
+        </a>
+        <a href="mesdocuments/cv_maëlys_françois.pdf" class="button" target="_blank">
+            <i class="fas fa-file-pdf"></i>Mon CV
+        </a>
+        <a href="mailto:maelys.francois31@gmail.com" class="button">
+            <i class="fas fa-envelope"></i>Mon Email
+        </a>
+    </div>
+</footer>
