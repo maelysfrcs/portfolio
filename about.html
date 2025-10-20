@@ -259,82 +259,57 @@ body {
 }
 
 /* sur téléphone */
-@media (max-width: 768px) {
-
-  /* Header et nav mobile */
-  .header-wrapper {
-    padding: 20px 15px;
-    align-items: center;
-    text-align: center;
-  }
-
-  .nav-links {
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 15px;
-    margin: 15px 0;
-  }
-
-  .nav-link {
-    font-size: 18px;
-    padding: 14px 24px;
-  }
-
-  .personal-header {
-    flex-direction: column;
-    padding: 25px 15px;
-  }
-
-  .profile-photo {
-    width: 140px;
-    height: 140px;
-    margin-bottom: 15px;
-  }
-
-  .info-container h1 {
-    font-size: 30px;
-  }
-
-  .info-container p {
-    font-size: 16px;
-    max-width: 90%;
-    margin: 5px auto 0 auto;
-  }
-
-  /* Contenu principal */
-  .main-content-projects {
-    padding: 30px 15px;
-  }
-
-  .main-content-projects h2 {
-    font-size: 30px;
-  }
-
-  .section-title {
-    font-size: 22px;
-  }
-
-  /* Footer mobile */
-  .footer {
-    width: 100%;
-    padding: 35px 20px;
-    box-sizing: border-box;
-  }
-
-  .footer-buttons {
-    flex-direction: column;
-    gap: 18px;
-    align-items: center;
-  }
-
-  .button {
-    width: 95%;
-    padding: 16px 0;
-    font-size: 18px;
-  }
+.footer {
+  padding: 30px 0;
+  margin: 10px auto; /* centré horizontalement */
+  max-width: 1000px;
+  background: linear-gradient(135deg, #ffffff 0%, #f7f9fb 100%);
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  border-radius: 16px;
+  transition: all 0.3s ease;
 }
 
+.footer-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 5px;
+}
 
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 18px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #0077b5;
+  background-color: #f2f6f9;
+  text-decoration: none;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  transition: all 0.25s ease;
+}
+
+.button i {
+  color: #0077b5;
+  transition: color 0.3s ease;
+  font-size: 18px;
+}
+
+.button:hover {
+  background-color: #0077b5;
+  color: #fff;
+  border-color: #0077b5;
+  transform: translateY(-2px);
+  box-shadow: 0 3px 8px rgba(0, 119, 181, 0.25);
+}
+
+.button:hover i {
+  color: #fff;
+}
 </style>
 
 <!-- -------------------------------------------------------------------------- -->
