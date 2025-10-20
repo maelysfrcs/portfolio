@@ -2,195 +2,284 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
 
 <style>
-:root {
-    --content-max-width: 1000px;
-}
-
+/* -------------------------------------------------------------------------- */
 /* STYLES DE BASE */
+/* -------------------------------------------------------------------------- */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
-
-.wrapper-limited {
-    max-width: var(--content-max-width);
-    margin: 0 auto;
-    width: 90%;
-}
-
-/* Masquage Jekyll inutile */
-.page-header h1, .view-on-github-link, .downloads, .site-footer, .project-tagline { display: none !important; }
 
 /* -------------------------------------------------------------------------- */
-/* NAVIGATION (boutons en haut de page) */
+/* MENU DE NAVIGATION */
+/* -------------------------------------------------------------------------- */
 .header-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    margin-top: 20px; /* espace entre le haut de la page et les boutons */
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .nav-links {
-    display: flex;
-    justify-content: flex-end;
-    gap: 0;
-    margin-bottom: 20px; /* espace entre les boutons et le bordereau */
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+  margin-bottom: 15px; /* espace entre boutons et bordereau */
 }
 
 .nav-link {
-    font-size: 17px;
-    font-weight: 600;
-    text-decoration: none;
-    padding: 10px 20px;
-    border: 1px solid #ccc;
-    border-bottom: none;
-    transition: all 0.2s ease;
-    color: #0077b5;
-    background-color: #f0f0f0;
+  font-size: 17px;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  border-bottom: none;
+  transition: all 0.2s ease;
+  color: #0077b5;
+  background-color: #f0f0f0;
 }
 
 .nav-link:hover {
-    color: #005f96;
-    background-color: #e0e0e0;
-    transform: translateY(-2px);
-    box-shadow: 0 -2px 5px rgba(0,0,0,0.05);
+  color: #005f96;
+  background-color: #e0e0e0;
+  transform: translateY(-2px);
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.05);
 }
 
 .nav-link.active {
-    color: #333;
-    background-color: #fff;
-    border-color: #ccc;
-    border-bottom-color: #fff;
+  color: #333;
+  background-color: #fff;
+  border-color: #ccc;
+  border-bottom-color: #fff;
+  transform: none;
+  box-shadow: none;
 }
 
 .nav-links a:last-child { border-top-right-radius: 6px; }
 .nav-links a:first-child { border-top-left-radius: 6px; }
 
-/* -------------------------------------------------------------------------- */
-/* HEADER PERSONNEL */
 .personal-header {
-    display: flex;
-    align-items: center;
-    padding: 40px 50px;
-    background-color: #fff;
-    border-bottom: 1px solid #ccc;
-    border-radius: 12px;
-    margin-top: -1px;
+  display: flex;
+  align-items: center;
+  padding: 30px 30px;
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
+  border-radius: 10px;
 }
+
 .profile-photo {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin-right: 30px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    object-fit: contain;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-right: 30px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  object-fit: contain;
 }
+
 .info-container h1 {
-    margin: 0;
-    font-size: 32px;
-    color: #0077b5;
+  margin: 0;
+  font-size: 32px;
+  color: #0077b5;
 }
+
 .info-container p {
-    margin-top: 5px;
-    font-size: 16px;
-    color: #555;
-    max-width: 800px;
+  margin-top: 5px;
+  font-size: 16px;
+  color: #555;
+  max-width: 800px;
 }
 
 /* -------------------------------------------------------------------------- */
 /* CONTENU PRINCIPAL */
+/* -------------------------------------------------------------------------- */
+.main-wrapper {
+  max-width: 1000px;
+  margin: 40px auto;
+  width: 100%;
+  flex-grow: 1;
+}
+
 .main-content-projects {
-    flex-grow: 1;
-    padding: 50px 20px;
+  padding: 40px 50px;
+  background-color: #f9f9f9;
+  border-radius: 12px;
 }
+
 .main-content-projects h2 {
-    font-family: 'Poppins', sans-serif;
-    font-size: 38px;
-    font-weight: 700;
-    color: #333;
-    text-align: center;
-    margin-bottom: 30px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: #333;
+  text-align: center;
+  margin-bottom: 30px;
 }
-.project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
+
+.section-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: #0077b5;
+  margin-top: 40px;
+  margin-bottom: 15px;
+  text-align: left;
+  border-bottom: 2px solid #0077b5;
+  display: inline-block;
+  padding-bottom: 3px;
 }
-.project-button {
-    display: block;
-    height: 250px;
-    text-decoration: none;
-    position: relative;
-    overflow: hidden;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+/* TIMELINE */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* réduit l’espace entre les blocs */
 }
-.project-button:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
-.project-button-bg {
-    width: 100%; height: 100%;
-    background-size: cover; background-position: center;
-    filter: grayscale(80%);
-    transition: filter 0.5s ease;
+
+.timeline-item {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+  padding: 18px 22px;
+  border-left: 4px solid #0077b5;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-.project-button:hover .project-button-bg { filter: grayscale(0%); }
-.project-content {
-    position: absolute; bottom: 0; left: 0; right: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0));
-    padding: 20px; color: #fff;
+
+.timeline-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.12);
 }
-.project-content h4 { margin: 0 0 5px; font-size: 20px; font-weight: 700; }
-.project-content p { margin: 0; font-size: 14px; opacity: 0.9; }
-.project-tag { font-size: 12px; background-color: #0077b5; color: #fff; padding: 4px 8px; border-radius: 3px; margin-top: 10px; display: inline-block; }
+
+.timeline-item h4 {
+  margin: 0 0 5px 0;
+  font-size: 19px;
+  font-weight: 700;
+  color: #333;
+}
+
+.details {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.date {
+  font-weight: 600;
+  color: #0077b5;
+  margin-right: 5px;
+}
+
+.timeline-item p {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.5;
+  margin-top: 4px;
+}
+
+.timeline-item ul {
+  margin-top: 5px;
+  padding-left: 20px;
+}
+
+.timeline-item li {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 4px;
+}
 
 /* -------------------------------------------------------------------------- */
-/* FOOTER */
+/* PIED DE PAGE */
+/* -------------------------------------------------------------------------- */
+.footer-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+}
 .footer {
-    padding: 25px 0;
-    background-color: #fff;
-    box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
-    text-align: center;
-    border-radius: 12px;
+  padding: 25px 0;
+  background-color: #fff;
+  box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+  text-align: center;
+  border-radius: 10px;
+  margin-top: auto;
 }
 .footer-buttons {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
+  display: block;
+  padding: 0 10px;
+  white-space: nowrap;
 }
 .button {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 10px 20px;
-    font-size: 16px;
-    color: #333;
-    text-decoration: none;
-    transition: color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10px 15px;
+  min-width: 100px;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  background-color: #fff;
+  color: #333;
+  border: none;
+  transition: color 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  margin: 0;
+}
+.button:not(:first-child) {
+  border-left: 1px solid #ccc;
+  padding-left: 15px;
+  margin-left: 15px;
 }
 .button:hover { color: #0077b5; }
-.button i { color: #555; transition: color 0.3s ease; }
+.button i { margin-right: 10px; color: #555; transition: color 0.3s ease; }
 .button:hover i { color: #0077b5; }
+
 /* -------------------------------------------------------------------------- */
-/* MOBILE */
+/* RESPONSIVE DESIGN */
+/* -------------------------------------------------------------------------- */
 @media (max-width: 768px) {
-    .personal-header { flex-direction: column; text-align: center; padding: 20px; }
-    .profile-photo { margin-right: 0; margin-bottom: 20px; }
-    .footer-buttons { flex-direction: column; }
+  .personal-header {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+  .profile-photo { margin-right: 0; margin-bottom: 20px; }
+  .main-content-projects { padding: 20px; }
+  .footer-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    align-items: center;
+  }
+  .button {
+    width: 90%;
+    margin: 0;
+    justify-content: center;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  .button:not(:first-child) {
+    border-left: none;
+    padding-left: 10px;
+    margin-left: 0;
+  }
 }
 </style>
 
-<div class="wrapper-limited">
-    <div class="nav-links">
-        <a href="index.html" class="nav-link">Mes projets</a>
-        <a href="about.html" class="nav-link active">À propos de moi</a>
-    </div>
+<!-- -------------------------------------------------------------------------- -->
+<!-- CONTENU HTML -->
+<!-- -------------------------------------------------------------------------- -->
+<div class="header-wrapper">
+  <div class="nav-links">
+    <a href="index.html" class="nav-link">Mes projets</a>
+    <a href="about.html" class="nav-link active">À propos de moi</a>
+  </div>
 
   <div class="personal-header">
     <img src="photocv.PNG" class="profile-photo" alt="Maëlys François">
