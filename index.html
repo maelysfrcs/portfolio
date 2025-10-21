@@ -111,16 +111,13 @@ body {
     margin-bottom: 30px;
 }
 .project-grid {
-    display: grid;
-    /* FORCER 3 COLONNES DE TAILLE ÉGALE (33.33% de la largeur disponible) */
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
 }
 .project-button {
     display: block;
-    /* Crée le format carré (hauteur = largeur) */
-    padding-bottom: 100%; 
-    height: 0; /* Important pour que padding-bottom fonctionne comme hauteur */
+    height: 250px;
     text-decoration: none;
     position: relative;
     overflow: hidden;
@@ -130,9 +127,6 @@ body {
 }
 .project-button:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
 .project-button-bg {
-    /* Ajouté pour garantir que le fond couvre la totalité du padding-bottom */
-    position: absolute; 
-    top: 0; left: 0;
     width: 100%; height: 100%;
     background-size: cover; background-position: center;
     filter: grayscale(80%);
@@ -140,26 +134,12 @@ body {
 }
 .project-button:hover .project-button-bg { filter: grayscale(0%); }
 .project-content {
-    position: absolute; 
-    bottom: 0; left: 0; right: 0;
-    /* Nouveau fond : Bande noire semi-transparente pour contraster avec n'importe quelle image */
-    background: rgba(0, 0, 0, 0.7); 
-    padding: 20px 10px; /* Plus de padding pour centrer le texte verticalement */
-    color: #fff;
-    /* Utilisation de Flexbox pour centrer parfaitement le texte DANS LA BANDE */
-    display: flex;
-    align-items: center; /* Centrage vertical */
-    justify-content: center; /* Centrage horizontal */
-    text-align: center; /* Assure le centrage du texte multi-ligne si besoin */
-    min-height: 20%; /* Augmente légèrement la hauteur de la bande (20% du bouton) */
+    position: absolute; bottom: 0; left: 0; right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0));
+    padding: 20px; color: #fff;
 }
-.project-content p { 
-    margin: 0; 
-    font-size: 18px; /* Légèrement plus grand */
-    font-weight: 700; /* Bien en gras */
-    text-align: center;
-    line-height: 1.2; /* Pour que la ligne soit bien compacte */
-}
+.project-content p { margin: 0; font-size: 14px; opacity: 0.9; }
+
 
 /* -------------------------------------------------------------------------- */
 /* FOOTER (Desktop) */
