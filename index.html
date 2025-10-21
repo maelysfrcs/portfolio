@@ -135,20 +135,34 @@ body {
 }
 .project-button:hover .project-button-bg { filter: grayscale(0%); }
 
+/* Modification de .project-item */
 .project-item {
     display: flex;
-    flex-direction: column; /* Organise le titre puis le bouton verticalement */
+    flex-direction: column;
     text-align: center;
+    /* NOUVEAU : Ajout de la transition pour un mouvement fluide au survol */
+    transition: all 0.3s ease; 
 }
 
 .project-title {
-font-size: 18px;
-font-weight: 700; /* Mettre en gras pour qu'il soit bien visible */
-color: #333;
-margin: 0 0 10px 0; /* Marge en bas pour séparer du bouton */
-padding: 0 5px; /* Évite que le texte ne touche les bords du conteneur */
+    /* 1. Taille et Poids : Plus petit, mais toujours bien gras */
+    font-size: 17px; /* Légèrement réduit pour être moins écrasant */
+    font-weight: 600; /* Moins "lourd" que 700, plus professionnel */
+    font-family: 'Poppins', sans-serif; /* Utilise la police des titres (déclarée en haut du code) */
+    /* 2. Couleur : Utiliser la couleur bleue pour un effet "lien/important" */
+    color: #0077b5; 
+    /* 3. Marges : Ajout d'une petite marge en haut pour l'aérer */
+    margin: 5px 0 12px 0; 
+    padding: 0 5px;
 }
 
+.project-item:hover .project-title {
+    color: #005f96; /* Légèrement plus foncé au survol */
+    transform: translateY(-2px); /* Monte légèrement */
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Petite ombre légère */
+    transition: all 0.3s ease; /* Rend le changement de couleur/position fluide */
+}
+    
 /* -------------------------------------------------------------------------- */
 /* FOOTER (Desktop) */
 .footer {
