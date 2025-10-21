@@ -135,21 +135,21 @@ body {
 }
 .project-button:hover .project-button-bg { filter: grayscale(0%); }
 .project-content {
-    position: absolute; top: 0; bottom: 0; left: 0; right: 0; /* Prend toute la surface */
-    display: flex; /* Active Flexbox */
-    align-items: center; /* Centre verticalement */
-    justify-content: center; /* Centre horizontalement */
-    text-align: center;
-    background: rgba(0, 0, 0, 0.6); /* Fond semi-transparent couvrant pour meilleure lecture */
-    padding: 20px; 
+    position: absolute; 
+    /* Le texte revient en BAS pour laisser la majorité de l'image visible */
+    bottom: 0; left: 0; right: 0; 
+    /* Utilisation d'un fond de couleur opaque/semi-transparent qui contraste */
+    background: #0077b5; /* Exemple : couleur bleue de l'identité */
+    padding: 15px; /* Réduit un peu le padding */
     color: #fff;
+    /* Nous enlevons Flexbox ici pour revenir à la présentation originale en bas */
+    text-align: left;
 }
 .project-content p { 
     margin: 0; 
-    font-size: 18px; /* Augmentation de la taille */
-    font-weight: 700; /* Texte en gras (comme l'ancien h4) */
-    opacity: 1; /* Pleine opacité */
-    padding: 10px; /* Petit espacement pour l'aération */
+    font-size: 17px; /* Taille légèrement réduite pour l'harmonie */
+    font-weight: 600; /* Moins gras, mais toujours lisible */
+    text-align: center; /* Centrage du texte dans la bande bleue */
 }
 
 /* -------------------------------------------------------------------------- */
@@ -323,8 +323,6 @@ body {
             <a href="projet-2.html" class="project-button">
                 <div class="project-button-bg" style="background-image: url('mesdocuments/placeholder_stats.jpg');"></div>
                 <div class="project-content">
-                    <span class="project-tag">Statistiques Avancées</span>
-                    <h4>Modélisation Statistique du Jeu Vidéo</h4>
                     <p>Analyse des déterminants sociaux et des pratiques (R).</p>
                 </div>
             </a>
