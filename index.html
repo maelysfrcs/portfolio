@@ -112,7 +112,8 @@ body {
 }
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    /* Force 3 colonnes de taille égale (1fr) pour la disposition 3x1 */
+    grid-template-columns: repeat(3, 1fr); 
     gap: 30px;
 }
 .project-button {
@@ -133,12 +134,20 @@ body {
     transition: filter 0.5s ease;
 }
 .project-button:hover .project-button-bg { filter: grayscale(0%); }
-.project-content {
-    position: absolute; bottom: 0; left: 0; right: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0));
-    padding: 20px; color: #fff;
+
+.project-item {
+    display: flex;
+    flex-direction: column; /* Organise le titre puis le bouton verticalement */
+    text-align: center;
 }
-.project-content p { margin: 0; font-size: 14px; opacity: 0.9; }
+
+.project-title {
+font-size: 18px;
+font-weight: 700; /* Mettre en gras pour qu'il soit bien visible */
+color: #333;
+margin: 0 0 10px 0; /* Marge en bas pour séparer du bouton */
+padding: 0 5px; /* Évite que le texte ne touche les bords du conteneur */
+}
 
 /* -------------------------------------------------------------------------- */
 /* FOOTER (Desktop) */
@@ -301,28 +310,30 @@ body {
 
     <div class="main-content-projects">
         <h2>Mes projets</h2>
-        <div class="project-grid">
-            <a href="projet-web-scraping.html" class="project-button">
-                <div class="project-button-bg" style="background-image: url('mesdocuments/image_web_scraping.PNG');"></div>
-                <div class="project-content">
-                    <p>Extraction de données Reddit et analyse avec Python.</p>
-                </div>
-            </a>
-            <a href="projet-2.html" class="project-button">
-                <div class="project-button-bg" style="background-image: url('mesdocuments/placeholder_stats.jpg');"></div>
-                <div class="project-content">
-                    <p>Analyse des déterminants sociaux et des pratiques (R).</p>
-                </div>
-            </a>
-        </div>
+            <div class="project-grid">
 
-            <a href="projet-3.html" class="project-button">
-                <div class="project-button-bg" style="background-image: url('images/placeholder_projets.jpg');"></div>
-                <div class="project-content">
-                    <p>Visualisation de données et tableau de bord interactif (Tableau/PowerBI).</p>
+                <div class="project-item"> 
+                    <p class="project-title">Extraction de données Reddit et analyse avec Python.</p>
+                    <a href="projet-web-scraping.html" class="project-button">
+                        <div class="project-button-bg" style="background-image: url('mesdocuments/image_web_scraping.PNG');"></div>
+                    </a>
                 </div>
-            </a>
-    </div>
+    
+                <div class="project-item">
+                    <p class="project-title">Analyse des déterminants sociaux et des pratiques (R).</p>
+                    <a href="projet-2.html" class="project-button">
+                        <div class="project-button-bg" style="background-image: url('mesdocuments/placeholder_stats.jpg');"></div>
+                    </a>
+                </div>
+
+                <div class="project-item">
+                    <p class="project-title">Visualisation de données et tableau de bord interactif (Tableau/PowerBI).</p>
+                    <a href="projet-3.html" class="project-button">
+                        <div class="project-button-bg" style="background-image: url('images/placeholder_projets.jpg');"></div>
+                    </a>
+                </div>
+
+            </div>
 
     <footer class="footer">
         <div class="footer-buttons">
