@@ -118,7 +118,9 @@ body {
 }
 .project-button {
     display: block;
-    height: 250px;
+    /* Crée le format carré (hauteur = largeur) */
+    padding-bottom: 100%; 
+    height: 0; /* Important pour que padding-bottom fonctionne comme hauteur */
     text-decoration: none;
     position: relative;
     overflow: hidden;
@@ -128,6 +130,9 @@ body {
 }
 .project-button:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
 .project-button-bg {
+    /* Ajouté pour garantir que le fond couvre la totalité du padding-bottom */
+    position: absolute; 
+    top: 0; left: 0;
     width: 100%; height: 100%;
     background-size: cover; background-position: center;
     filter: grayscale(80%);
@@ -136,20 +141,24 @@ body {
 .project-button:hover .project-button-bg { filter: grayscale(0%); }
 .project-content {
     position: absolute; 
-    /* Le texte revient en BAS pour laisser la majorité de l'image visible */
-    bottom: 0; left: 0; right: 0; 
-    /* Utilisation d'un fond de couleur opaque/semi-transparent qui contraste */
-    background: #0077b5; /* Exemple : couleur bleue de l'identité */
-    padding: 15px; /* Réduit un peu le padding */
+    bottom: 0; left: 0; right: 0;
+    /* Nouveau fond : Bande noire semi-transparente pour contraster avec n'importe quelle image */
+    background: rgba(0, 0, 0, 0.7); 
+    padding: 20px 10px; /* Plus de padding pour centrer le texte verticalement */
     color: #fff;
-    /* Nous enlevons Flexbox ici pour revenir à la présentation originale en bas */
-    text-align: left;
+    /* Utilisation de Flexbox pour centrer parfaitement le texte DANS LA BANDE */
+    display: flex;
+    align-items: center; /* Centrage vertical */
+    justify-content: center; /* Centrage horizontal */
+    text-align: center; /* Assure le centrage du texte multi-ligne si besoin */
+    min-height: 20%; /* Augmente légèrement la hauteur de la bande (20% du bouton) */
 }
 .project-content p { 
     margin: 0; 
-    font-size: 17px; /* Taille légèrement réduite pour l'harmonie */
-    font-weight: 600; /* Moins gras, mais toujours lisible */
-    text-align: center; /* Centrage du texte dans la bande bleue */
+    font-size: 18px; /* Légèrement plus grand */
+    font-weight: 700; /* Bien en gras */
+    text-align: center;
+    line-height: 1.2; /* Pour que la ligne soit bien compacte */
 }
 
 /* -------------------------------------------------------------------------- */
@@ -327,6 +336,13 @@ body {
                 </div>
             </a>
         </div>
+
+            <a href="projet-3.html" class="project-button">
+                <div class="project-button-bg" style="background-image: url('images/placeholder_projets.jpg');"></div>
+                <div class="project-content">
+                    <p>Visualisation de données et tableau de bord interactif (Tableau/PowerBI).</p>
+                </div>
+            </a>
     </div>
 
     <footer class="footer">
