@@ -228,11 +228,12 @@ body {
     }
 
     /* 3. Header Personnel */
-    .personal-header {
-        flex-direction: column; /* Empile la photo et le texte */
+.personal-header {
+        flex-direction: column; 
         align-items: center;
         text-align: center;
-        padding: 20x 15px;
+        /* MODIFIER CETTE LIGNE : Réduisez le 15px (padding gauche/droite) à 5px ou 10px */
+        padding: 20px 10px; /* J'ai corrigé '20x' en '20px' et réduit la marge latérale à 10px */
         border-radius: 8px;
     }
     
@@ -246,10 +247,10 @@ body {
         font-size: 26px; /* Taille adaptée */
     }
 
-.info-container p {
+    .info-container p {
         font-size: 15px;
-        /* Modifier ou supprimer la ligne suivante pour utiliser toute la largeur disponible */
-        max-width: 100%; /* Élargit la description à la largeur maximale du conteneur */
+        /* Pour assurer qu'il utilise toute la place disponible par le padding du header */
+        max-width: 100%; 
         margin: 5px auto 0 auto;
     }
     
