@@ -111,9 +111,10 @@ body {
     margin-bottom: 30px;
 }
 .project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
+    display: grid;
+    /* FORCER 3 COLONNES DE TAILLE ÉGALE (33.33% de la largeur disponible) */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px;
 }
 .project-button {
     display: block;
@@ -134,13 +135,22 @@ body {
 }
 .project-button:hover .project-button-bg { filter: grayscale(0%); }
 .project-content {
-    position: absolute; bottom: 0; left: 0; right: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0));
-    padding: 20px; color: #fff;
+    position: absolute; top: 0; bottom: 0; left: 0; right: 0; /* Prend toute la surface */
+    display: flex; /* Active Flexbox */
+    align-items: center; /* Centre verticalement */
+    justify-content: center; /* Centre horizontalement */
+    text-align: center;
+    background: rgba(0, 0, 0, 0.6); /* Fond semi-transparent couvrant pour meilleure lecture */
+    padding: 20px; 
+    color: #fff;
 }
-.project-content h4 { margin: 0 0 5px; font-size: 20px; font-weight: 700; }
-.project-content p { margin: 0; font-size: 14px; opacity: 0.9; }
-.project-tag { font-size: 12px; background-color: #0077b5; color: #fff; padding: 4px 8px; border-radius: 3px; margin-top: 10px; display: inline-block; }
+.project-content p { 
+    margin: 0; 
+    font-size: 18px; /* Augmentation de la taille */
+    font-weight: 700; /* Texte en gras (comme l'ancien h4) */
+    opacity: 1; /* Pleine opacité */
+    padding: 10px; /* Petit espacement pour l'aération */
+}
 
 /* -------------------------------------------------------------------------- */
 /* FOOTER (Desktop) */
