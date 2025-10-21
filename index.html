@@ -26,6 +26,10 @@ body {
     max-width: var(--content-max-width);
     margin: 0 auto;
     width: 90%;
+    display: flex; 
+    flex-direction: column;
+    /* 2. FORCER le wrapper à grandir pour prendre toute la place libre du body */
+    flex-grow: 1;
 }
 
 /* Masquage Jekyll inutile */
