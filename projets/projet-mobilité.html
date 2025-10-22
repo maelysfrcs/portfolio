@@ -190,33 +190,32 @@ body {
 
 /* Amélioration visuelle pour les Vagues de données */
 .data-vagues {
-    /* Style du conteneur */
-    background-color: #f9f9f9;
-    padding: 10px 15px; /* Réduit le padding pour une petite boîte */
-    border-left: 5px solid #0077b5;
-    border-radius: 0 4px 4px 0;
-    margin: 10px 20px 10px 0; /* Marge à droite pour séparer le texte */
-    
-    /* Définition du Grid pour les colonnes */
-    display: grid;
-    grid-template-columns: 100px 1fr; /* 100px pour les vagues, 1fr pour le nombre */
-    gap: 2px 10px; /* Écart réduit */
+    /* Style du conteneur */
+    background-color: #f9f9f9;
+    padding: 10px 15px; 
+    border-left: 5px solid #0077b5;
+    border-radius: 0 4px 4px 0;
+    /* IMPORTANT : Réinitialisation de la marge pour utiliser celle du float */
+    margin: 0; 
+    
+    /* Définition du Grid pour les colonnes */
+    display: grid;
+    /* NOUVEAU : Augmenter la largeur de la première colonne pour mieux présenter les termes */
+    grid-template-columns: 130px 1fr; 
+    gap: 2px 10px;
 
-    /* NOUVEAU : Limiter la largeur du bloc pour qu'il ne prenne pas toute la ligne */
-    max-width: 250px; /* Vous pouvez ajuster cette largeur si nécessaire */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Ajout d'une ombre légère pour l'effet "boîte" */
+    /* NOUVEAU : Augmentation de la largeur maximale (maintenant 350px) */
+    max-width: 350px; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-/* Le reste du CSS pour data-vagues reste le même */
-.data-vagues dt {
-    font-weight: 600;
-    color: #333;
-    padding: 3px 0;
+/* NOUVEAU : Ajout de marges pour l'élément flottant (identiques à float-img-left) */
+/* C'est ce qui assure que le tableau a la même marge que les images */
+.data-vagues.float-img-left {
+    margin: 0 20px 15px 0; /* Marge : Haut, Droite, Bas, Gauche */
 }
-
-.data-vagues dd {
-    margin-left: 0;
-    padding: 3px 0;
+.data-vagues.float-img-right {
+    margin: 0 0 15px 20px;
 }
 
 /* Amélioration visuelle pour les Étapes de Nettoyage */
@@ -452,7 +451,8 @@ body {
                 
                 <p>
                     Dans le cadre de mon master, j'ai réalisé ce projet qui cherchait à répondre à cette question clé : Comment la dispersion géographique et l'évolution des réseaux personnels reflètent-elles les trajectoires
-                    de vie des individus ? Mon objectif était de démontrer comment l'éloignement ou la proximité des liens sociaux affecte l'évolution du réseau (sa taille, sa densité) lorsqu'un individu connaît un changement majeur (déménagement, nouvel emploi).
+                    de vie des individus ? <br>
+                    Mon objectif était de démontrer comment l'éloignement ou la proximité des liens sociaux affecte l'évolution du réseau (sa taille, sa densité) lorsqu'un individu connaît un changement majeur (déménagement, nouvel emploi).
                 </p>
                 </div>
             
