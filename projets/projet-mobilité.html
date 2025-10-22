@@ -121,8 +121,6 @@ body {
     grid-template-columns: repeat(3, 1fr); 
     gap: 30px;
 }
-/* ... (autres styles des projets non pertinents pour cette page) ... */
-
 
 /* -------------------------------------------------------------------------- */
 /* STYLE DÉDIÉ AUX PAGES PROJET (Simple Article) - COPIER/COLLER ICI */
@@ -189,7 +187,6 @@ body {
     display: table;
     clear: both;
 }
-
 
 /* -------------------------------------------------------------------------- */
 /* FOOTER (Desktop) */
@@ -378,30 +375,43 @@ body {
             
             <div class="clearfix">
                 <h3>1. Objectif de l'étude</h3>
-                <img src="../mesdocuments/image_mobilité_objectif.png" alt="Illustration de l'objectif" class="float-img-left">
+                <img src="../mesdocuments/mobilité_graphique1.png" alt="Graphique 1" class="float-img-left">
                 
                 <p>
-                    [INSÉRER TEXTE SUR L'OBJECTIF : Expliquer pourquoi cette analyse est cruciale (trajectoires de vie, mobilité, réseaux) et quelle est la question centrale à laquelle vous répondez. Par exemple : "Cette analyse vise à comprendre l'évolution des réseaux personnels sur le long terme et leur lien avec la mobilité géographique des individus. Nous étudions comment la taille, la densité et la dispersion des réseaux sont affectées par les changements de vie (déménagement, emploi) en utilisant des données longitudinales." ]
+                    [Dans le cadre de mon master, j'ai réalisé ce projet qui cherchait à répondre à cette question clé : Comment la dispersion géographique et l'évolution des réseaux personnels reflètent-elles les trajectoires
+                    de vie des individus ? Mon objectif était de démontrer comment l'éloignement ou la proximité des liens sociaux affecte l'évolution du réseau (sa taille, sa densité) lorsqu'un individu connaît un changement majeur (déménagement, nouvel emploi).]
                 </p>
                 </div>
             
             <div class="clearfix">
                 <h3>2. Données et Nettoyage</h3>
                 <p>
-                    [INSÉRER TEXTE SUR LES DONNÉES : Présenter le Panel de Caen (longitudinal, durée, nombre d'individus) et le type d'information (lieux de résidence, liens sociaux). Exemple : "Nous avons utilisé les données du Panel de Caen, une enquête longitudinale unique ayant suivi 87 jeunes sur 20 ans (1995-2015). Les données brutes nécessitaient un travail de nettoyage rigoureux..."]
+                    [Pour réaliser cette étude, j'ai utilisé les données du Panel de Caen. Ces données proviennent d'une étude longitudinale initiée par Claire Bidart, Marion Maisonobe et Gil Viry. Ce panel a suivi 87 jeunes adultes résidant à Caen, initialement âgés
+                    de 17 à 23 ans, sur une longue période s'étendant de 1995 à 2015. L'enquête a été menée en cinq vagues successives, permettant d'avoir une vision dynamique de non figée des relations.
+                    Vague A (1995) : 87 individus
+                    Vague B (1998) : 70 individus
+                    Vague C (2001) : 66 individus
+                    Vague D (2004) : 60 individus
+                    Vague F (2015) : 21 individus
+                    Au total, cette base de données permet d'analyser l’évolution des liens sociaux à travers le temps et la mobilité.]
                 </p>
 
                 <img src="../mesdocuments/image_mobilité_donnees.png" alt="Illustration des données brutes ou du nettoyage" class="float-img-right">
 
                 <p>
-                    [INSÉRER TEXTE SUR LE NETTOYAGE : Expliquer brièvement les étapes clés du nettoyage des données (standardisation, gestion des données manquantes, recodage des variables clés pour l'analyse).]
+                    [La préparation et le nettoyage des données ont été réalisés entièrement sous R. J'ai mobilisé plusieurs librairies clés : principalement tidyverse pour la manipulation et la transformation des données, igraph pour l'analyse des réseaux,
+                    et sf et mapsf pour le traitement et la cartographie des données spatiales.
+                    1. J'ai d'abord filtré la base pour isoler les informations pertinentes, notamment les lieux de résidence, les liens sociaux rapportés (taille du réseau) et les variables socio-démographiques (sexe et âge).
+                    2. J'ai ensuite créé et calculé pour chaque réseau (à chaque vague) les trois métriques essentielles : la taille du réseau (nombre total de relations), la densité du réseau (la proportion de liens réellement présents par rapport au nombre maximal
+                    possible, après avoir nettoyé les boucles), la transitivité (qui mesure la probabilité que les amis d'un individu soient amis entre eux). 
+                    3. J'ai finalement comparé la taille du réseau entre les vagues A et F pour déterminer le type de dynamique de chaque individu, expansion, contraction ou stable, créant ainsi une variable catégorielle indispensable pour l'analyse longitudinale. 
                 </p>
             </div>
 
             <div class="clearfix">
-                <h3>3. Intégration et Outils d'Analyse</h3>
+                <h3>3. Résultats et conclusions clés</h3>
                 <p>
-                    [INSÉRER TEXTE SUR L'INTÉGRATION R : Expliquer comment les données ont été importées et préparées pour l'analyse de réseaux sous R (packages utilisés : igraph, netgsa, etc.). Exemple : "L'ensemble des données a été structuré sous R, en créant des matrices d'adjacence pour chaque vague d'enquête. L'utilisation des packages R (igraph, netgsa, etc.) a été essentielle pour la manipulation et la visualisation des réseaux."]
+                     [Mes analyses confirment l'influence structurante de la mobilité sur les trajectoires sociales, mettant en évidence la gestion stratégique des liens par les individus au fil du temps.]
                 </p>
             </div>
             
