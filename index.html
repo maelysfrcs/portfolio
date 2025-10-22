@@ -293,20 +293,20 @@ body {
 
     .project-grid {
         /* CORRECTION CLÉ : Change la grille pour n'avoir qu'une seule colonne. */
-        grid-template-columns: 1fr; 
+        grid-template-columns: repeat(2, 1fr); 
         /* Diminue l'espace entre les projets verticaux pour gagner de la place. */
-        gap: 20px; 
+        gap: 15px; 
     }
 
     .project-item {
         /* Assure que chaque projet a une largeur maximale lisible */
-        max-width: 400px; 
-        margin: 0 auto; /* Centre l'élément s'il est plus petit que l'écran */
+        max-width: 0px; 
+        margin: 0; /* Centre l'élément s'il est plus petit que l'écran */
     }
 
     .project-button {
         /* Ajuste la hauteur si l'image est plus étroite */
-        height: 200px; 
+        height: 150px; 
     }
     
     /* Footer (Adaptation à la largeur mobile) */
@@ -351,35 +351,35 @@ body {
 
                 <div class="project-item"> 
                     <p class="project-title">Extraction de données Reddit et analyse avec Python.</p>
-                    <a href="projet-web-scraping.html" class="project-button">
+                    <a href="projets/projet-web-scraping.html" class="project-button">
                         <div class="project-button-bg" style="background-image: url('mesdocuments/image_web_scraping.PNG');"></div>
                     </a>
                 </div>
     
                 <div class="project-item">
                     <p class="project-title">Collecte et analyse de données issues des réseaux sociaux.</p>
-                    <a href="projet-stage-amulex.html" class="project-button">
+                    <a href="projets/projet-stage-amulex.html" class="project-button">
                         <div class="project-button-bg" style="background-image: url('mesdocuments/image_stage.jpg');"></div>
                     </a>
                 </div>
 
                 <div class="project-item">
                     <p class="project-title">Mobilité des individus et structure des réseaux avec R.</p>
-                    <a href="projet-mobilité.html" class="project-button">
+                    <a href="projets/projet-mobilité.html" class="project-button">
                         <div class="project-button-bg" style="background-image: url('mesdocuments/image_mobilité.png');"></div>
                     </a>
                 </div>
 
                 <div class="project-item">
                     <p class="project-title">Analyse quantitative des réseaux de la noblesse européenne avec R.</p>
-                    <a href="projet-noblesse.html" class="project-button">
+                    <a href="projets/projet-noblesse.html" class="project-button">
                         <div class="project-button-bg" style="background-image: url('mesdocuments/image_noblesse.jpg');"></div>
                     </a>
                 </div>
 
                 <div class="project-item">
                     <p class="project-title">Statistiques appliquées à la santé mentale avec Jamovi.</p>
-                    <a href="projet-santé-mentale.html" class="project-button">
+                    <a href="projets/projet-santé-mentale.html" class="project-button">
                         <div class="project-button-bg" style="background-image: url('mesdocuments/image_santé_mentale.jpg');"></div>
                     </a>
                 </div>                
