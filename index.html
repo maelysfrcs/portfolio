@@ -293,15 +293,15 @@ body {
 
     .project-grid {
         /* CORRECTION CLÉ : Change la grille pour n'avoir qu'une seule colonne. */
-        grid-template-columns: repeat(2, 1fr); 
+        grid-template-columns: 1fr; 
         /* Diminue l'espace entre les projets verticaux pour gagner de la place. */
-        gap: 15px; 
+        gap: 20px; 
     }
 
     .project-item {
         /* Assure que chaque projet a une largeur maximale lisible */
-        max-width: 0px; 
-        margin: 0; /* Centre l'élément s'il est plus petit que l'écran */
+        max-width: 400px; 
+        margin: 0 auto; /* Centre l'élément s'il est plus petit que l'écran */
     }
 
     .project-button {
