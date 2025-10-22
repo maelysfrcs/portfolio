@@ -1,1 +1,431 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobilité des individus et réseaux | Maëlys François</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* [COLLER ICI TOUT LE CONTENU DU <style> ENTIER (Desktop + Responsive + Nouveaux styles)] */
 
+        :root {
+            --content-max-width: 1000px; 
+        }
+
+        /* STYLES DE BASE */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        /* Header et footer centrés avec marges */
+        .wrapper-limited {
+            max-width: var(--content-max-width);
+            margin: 0 auto;
+            width: 90%;
+            display: flex; 
+            flex-direction: column;
+            /* 2. FORCER le wrapper à grandir pour prendre toute la place libre du body */
+            flex-grow: 1;
+        }
+
+        /* Masquage Jekyll inutile */
+        .page-header h1, .view-on-github-link, .downloads, .site-footer, .project-tagline { display: none !important; }
+
+        /* -------------------------------------------------------------------------- */
+        /* NAVIGATION (Desktop) */
+        .nav-links {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 20px;
+            gap: 0;
+        }
+        .nav-link {
+            font-size: 17px;
+            font-weight: 600;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 1px solid #ccc;
+            border-bottom: none;
+            transition: all 0.2s ease;
+            color: #0077b5;
+            background-color: #f0f0f0;
+        }
+        .nav-link:hover {
+            color: #005f96;
+            background-color: #e0e0e0;
+            transform: translateY(-2px);
+            box-shadow: 0 -2px 5px rgba(0,0,0,0.05);
+        }
+        /* ATTENTION : Le lien ACTIF est cette page (Mobilité) */
+        .nav-link.active {
+            color: #333;
+            background-color: #fff;
+            border-color: #ccc;
+            border-bottom-color: #fff;
+        }
+        .nav-links a:last-child { border-top-right-radius: 6px; }
+        .nav-links a:first-child { border-top-left-radius: 6px; }
+
+        /* -------------------------------------------------------------------------- */
+        /* HEADER PERSONNEL (Desktop) */
+        .personal-header {
+            display: flex;
+            align-items: center;
+            padding: 40px 50px;
+            background-color: #fff;
+            border-bottom: 1px solid #ccc;
+            border-radius: 12px;
+            margin-top: -1px;
+        }
+        .profile-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-right: 30px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            object-fit: contain;
+        }
+        .info-container h1 {
+            margin: 0;
+            font-size: 32px;
+            color: #0077b5;
+        }
+        .info-container p {
+            margin-top: 5px;
+            font-size: 16px;
+            color: #555;
+            max-width: 800px;
+        }
+
+        /* -------------------------------------------------------------------------- */
+        /* CONTENU PRINCIPAL (Desktop) - Pour les autres pages, on utilise .project-content */
+        .main-content-projects {
+            /* Styles de la page d'accueil, non utilisés ici mais gardés */
+            padding: 15px 20px 0px 20px;
+        }
+        /* ... (Les autres styles de la page d'accueil peuvent être laissés ou supprimés si inutiles) ... */
+
+        /* -------------------------------------------------------------------------- */
+        /* STYLES SPÉCIFIQUES AUX PAGES DE PROJETS (NOUVEAU) */
+        .project-content {
+            /* Utilise la même largeur max que le wrapper pour centrer */
+            max-width: 900px;
+            margin: 30px auto 50px auto;
+            padding: 0 40px 30px 40px; /* Ajout d'un padding en bas */
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .project-content h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 38px; /* Grande taille pour le titre */
+            color: #333; /* Couleur sombre */
+            text-align: center;
+            padding-top: 30px;
+            margin-bottom: 40px; /* Grand espace sous le titre */
+        }
+        
+        .project-content h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 28px;
+            color: #0077b5;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 5px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        .project-content h3 {
+            font-size: 22px;
+            color: #333;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 3px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        .text-with-image p {
+            line-height: 1.7;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        /* Style de l'image flottante à GAUCHE */
+        .image-left {
+            width: 45%; 
+            float: left;
+            margin-right: 25px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            object-fit: cover;
+        }
+
+        /* Style de l'image flottante à DROITE */
+        .image-right {
+            width: 45%;
+            float: right;
+            margin-left: 25px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            object-fit: cover;
+        }
+
+        /* Pour s'assurer que le texte ne se chevauche pas après une image flottante */
+        .clearfix::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        
+        /* -------------------------------------------------------------------------- */
+        /* FOOTER (Desktop) */
+        .footer {
+            padding: 30px 0;
+            margin-top: 40px; 
+            margin-bottom: 10px; 
+            background: linear-gradient(135deg, #ffffff 0%, #f7f9fb 100%);
+            box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+            
+        .footer-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 18px;
+            margin-top: 5px;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 18px;
+            font-size: 15px;
+            font-weight: 500;
+            color: #0077b5;
+            background-color: #f2f6f9;
+            text-decoration: none;
+            border-radius: 8px;
+            border: 1px solid transparent;
+            transition: all 0.25s ease;
+        }
+
+        .button i {
+            color: #0077b5;
+            transition: color 0.3s ease;
+            font-size: 18px;
+        }
+
+        .button:hover {
+            background-color: #0077b5;
+            color: #fff;
+            border-color: #0077b5;
+            transform: translateY(-2px);
+            box-shadow: 0 3px 8px rgba(0, 119, 181, 0.25);
+        }
+
+        .button:hover i {
+            color: #fff;
+        }
+
+        /* -------------------------------------------------------------------------- */
+        /* RESPONSIVE DESIGN (MOBILE ADAPTÉ) */
+        @media (max-width: 768px) {
+            /* ... (Règles générales responsive) ... */
+            .wrapper-limited {
+                width: 100%;
+                padding: 0 15px;
+                box-sizing: border-box;
+            }
+
+            .nav-links {
+                justify-content: center; 
+                flex-wrap: wrap;
+                gap: 10px;
+                margin-top: 15px;
+                margin-bottom: 0px;
+            }
+
+            .nav-link {
+                font-size: 16px;
+                padding: 10px 18px;
+                border: 1px solid #ccc;
+                border-radius: 6px;
+                border-bottom: 1px solid #ccc;
+            }
+            
+            .nav-link.active {
+                border-bottom-color: #fff; 
+            }
+
+            .personal-header {
+                flex-direction: column; 
+                align-items: center;
+                text-align: center;
+                padding: 20px 10px; 
+                border-radius: 8px;
+            }
+            
+            .profile-photo { 
+                margin: 0 0 15px 0; 
+                width: 120px;
+                height: 120px;
+            }
+            
+            .info-container h1 {
+                font-size: 26px; 
+            }
+
+            .info-container p {
+                font-size: 15px;
+                max-width: 100%; 
+                margin: 5px auto 0 auto;
+                padding: 0 12px 0px 12px;
+            }
+            
+            /* Styles PROJET en mobile */
+            .project-content {
+                margin: 20px 0; 
+                padding: 0 15px 30px 15px; /* Réduit le padding */
+                box-shadow: none; 
+            }
+            .project-content h1 {
+                font-size: 32px;
+                margin-bottom: 30px;
+            }
+            .project-content h2 {
+                font-size: 24px;
+            }
+            .project-content h3 {
+                font-size: 20px;
+            }
+
+            .image-left, .image-right {
+                /* Les images s'empilent et prennent toute la largeur en mobile */
+                width: 100%;
+                float: none;
+                margin-left: 0;
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+            
+            /* Footer (Adaptation à la largeur mobile) */
+            .footer {
+                margin: 10px 15px 10px 15px; 
+                padding: 30px 15px;
+                border-radius: 8px;
+                text-align: center;
+            }
+            
+            .footer-buttons {
+                flex-direction: column;
+                gap: 12px;
+                align-items: center;
+                width: 100%;
+            }
+
+            .button {
+                width: 90%;
+                justify-content: center;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+            }
+        }
+        
+    </style>
+    
+</head>
+<body>
+
+    <div class="wrapper-limited">
+        <div class="nav-links">
+            <a href="index.html" class="nav-link">Mes projets</a>
+            <a href="about.html" class="nav-link">À propos de moi</a>
+        </div>
+
+        <div class="personal-header">
+            <img src="../photocv.PNG" class="profile-photo" alt="Maëlys François">
+            <div class="info-container">
+                <h1>Maëlys François</h1>
+                <p>Passionnée par <strong>l'analyse de données</strong> avec une expertise pour l'étude des comportements sur les <strong> réseaux sociaux</strong>.</p>
+            </div>
+        </div>
+
+        <div class="project-content">
+            
+            <h1>Analyse spatiale et longitudinale des réseaux personnels : Mobilité, dispersion géographique et structuration des liens sociaux.</h1>
+            
+            <h2>Contexte de l'étude</h2>
+            <div class="text-with-image">
+                <p>
+                    [COLLER ICI LE TEXTE DE L'INTRODUCTION/CONTEXTE]
+                    Ce projet est basé sur l'exploitation des données longitudinales du Panel de Caen, une étude qui a suivi des jeunes sur une période de 20 ans. L'objectif était d'analyser comment leurs réseaux personnels (taille, densité, composition) évoluaient en fonction de leurs trajectoires de vie, en particulier la mobilité résidentielle et professionnelle.
+                </p>
+                <p>
+                    L'approche a nécessité la manipulation de données complexes issues de différentes vagues d'enquête (A à F) pour observer les changements de manière dynamique et spatiale, en utilisant des outils d'analyse de réseaux sociaux et des méthodes statistiques descriptives et inférentielles.
+                </p>
+            </div>
+            
+            <h2>Analyse des lieux comme ancrages des réseaux</h2>
+            <div class="text-with-image clearfix">
+                <img src="../mesdocuments/image_carte_reseau.png" alt="Carte de la dispersion des alters du Panel de Caen" class="image-left">
+                <p>
+                    [COLLER ICI LE TEXTE DE LA SECTION I. Lieux comme ancrages des réseaux]
+                    Nous avons commencé par une analyse spatiale, cherchant à identifier comment la dispersion géographique des membres des réseaux (alters) se corrélait avec les lieux de vie des individus (egos). 
+                    Cette analyse a permis de distinguer les réseaux locaux très concentrés des réseaux plus dispersés, souvent liés à des parcours académiques ou professionnels impliquant des déménagements successifs. L'étude de la proximité géographique a été cruciale pour comprendre l'intensité des liens.
+                </p>
+                </div>
+            <div class="clearfix"></div> 
+
+            <h2>Dynamique des réseaux au fil du temps</h2>
+            <div class="text-with-image clearfix">
+                <p>
+                    [COLLER ICI LE TEXTE DE LA SECTION II. Dynamique des réseaux au fil du temps]
+                    L'étude longitudinale a révélé une alternance entre phases de contraction, stabilisation et expansion des réseaux. L'analyse de la **densité** et de la **taille** des réseaux sur les six vagues (A à F) a montré que l'expansion est souvent associée à une baisse de densité, confirmant l'intégration de liens faibles (théorie de Granovetter), bénéfiques pour l'accès à de nouvelles ressources et opportunités.
+                </p>
+                <p>
+                    Nous avons utilisé des graphiques pour visualiser l'évolution des profils de réseaux, soulignant que les phases de grande mobilité (déménagement, nouveau travail) sont les moteurs principaux des restructurations de réseaux.
+                </p>
+                <img src="../mesdocuments/image_densite_reseau.png" alt="Graphique de l'évolution de la densité des réseaux" class="image-right">
+            </div>
+            <div class="clearfix"></div> 
+            
+            <h2>Facteurs explicatifs de la Mobilité</h2>
+            <div class="text-with-image clearfix">
+                <img src="../mesdocuments/image_stat_mobilite.png" alt="Tableau de statistiques sur la mobilité et le genre" class="image-left">
+                <p>
+                    [COLLER ICI LE TEXTE DE LA SECTION III. Facteurs explicatifs A. Mobilité et caractéristiques des Egos]
+                    Cette partie a été dédiée à l'analyse des facteurs socio-démographiques influençant la mobilité. Les résultats statistiques, réalisés avec le logiciel **R**, ont montré une corrélation entre la **taille initiale du réseau** et la **diversification géographique des interactions**. 
+                </p>
+                <p>
+                    De plus, des différences significatives ont été observées selon le **genre** et **l'âge**, les hommes affichant une mobilité légèrement supérieure et la structuration des réseaux personnels changeant nettement au cours des différentes étapes de l'âge adulte. L'interprétation de ces tests statistiques a permis de valider ou d'invalider les hypothèses initiales concernant la dispersion des liens sociaux.
+                </p>
+            </div>
+            <div class="clearfix"></div> 
+
+        </div>
+        
+        <footer class="footer">
+            <div class="footer-buttons">
+                <a href="https://www.linkedin.com/in/ma%C3%ABlys-fran%C3%A7ois" class="button" target="_blank"><i class="fab fa-linkedin"></i>LinkedIn</a>
+                <a href="../mesdocuments/cv_maëlys_françois.pdf" class="button" target="_blank"><i class="fas fa-file-pdf"></i>Mon CV</a>
+                <a href="mailto:maelys.francois31@gmail.com" class="button"><i class="fas fa-envelope"></i>Mon Email</a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
