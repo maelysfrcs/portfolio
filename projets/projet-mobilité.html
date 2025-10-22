@@ -166,7 +166,7 @@ body {
 .float-img-left {
     float: left;
     margin: 0 20px 15px 0; /* Haut, Droite, Bas, Gauche */
-    max-width: 40%;
+    max-width: 50%;
     height: auto;
     border-radius: 6px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -175,7 +175,7 @@ body {
 .float-img-right {
     float: right;
     margin: 0 0 15px 20px; /* Haut, Droite, Bas, Gauche */
-    max-width: 40%;
+    max-width: 50%;
     height: auto;
     border-radius: 6px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -188,6 +188,74 @@ body {
     clear: both;
 }
 
+    /* Amélioration visuelle pour les Vagues de données */
+.data-vagues {
+    /* Style du conteneur */
+    background-color: #f9f9f9;
+    padding: 15px 20px;
+    border-left: 5px solid #0077b5;
+    border-radius: 0 4px 4px 0;
+    margin: 20px 0;
+    display: grid;
+    grid-template-columns: 150px 1fr; /* Colonne 1 pour le terme, Colonne 2 pour la description */
+    gap: 5px 15px; /* Écart entre les lignes et les colonnes */
+}
+
+.data-vagues dt {
+    /* Termes (Vague A, B, C...) */
+    font-weight: 600;
+    color: #333;
+    padding: 5px 0;
+}
+
+.data-vagues dd {
+    /* Descriptions (87 individus) */
+    margin-left: 0;
+    padding: 5px 0;
+}
+
+/* Amélioration visuelle pour les Étapes de Nettoyage */
+.cleaning-steps {
+    list-style-type: none; /* Cache la puce par défaut */
+    padding-left: 0;
+    margin: 20px 0;
+}
+
+.cleaning-steps li {
+    padding: 10px 0 10px 30px;
+    position: relative;
+    line-height: 1.5;
+    border-bottom: 1px dashed #eee;
+}
+
+.cleaning-steps li:last-child {
+    border-bottom: none;
+}
+
+.cleaning-steps li::before {
+    /* Création du cercle numéroté bleu */
+    content: counter(section-step); /* Utilise un compteur pour la numérotation */
+    counter-increment: section-step;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    
+    /* Style du cercle */
+    width: 22px;
+    height: 22px;
+    line-height: 22px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: #0077b5;
+    color: white;
+    font-weight: 700;
+    font-size: 14px;
+}
+/* Réinitialisation du compteur pour les listes numérotées */
+.article-content {
+    counter-reset: section-step;
+}
 /* -------------------------------------------------------------------------- */
 /* FOOTER (Desktop) */
 .footer {
@@ -378,45 +446,59 @@ body {
                 <img src="../mesdocuments/mobilité_graphique1.png" alt="Graphique 1" class="float-img-left">
                 
                 <p>
-                    [Dans le cadre de mon master, j'ai réalisé ce projet qui cherchait à répondre à cette question clé : Comment la dispersion géographique et l'évolution des réseaux personnels reflètent-elles les trajectoires
-                    de vie des individus ? Mon objectif était de démontrer comment l'éloignement ou la proximité des liens sociaux affecte l'évolution du réseau (sa taille, sa densité) lorsqu'un individu connaît un changement majeur (déménagement, nouvel emploi).]
+                    Dans le cadre de mon master, j'ai réalisé ce projet qui cherchait à répondre à cette question clé : Comment la dispersion géographique et l'évolution des réseaux personnels reflètent-elles les trajectoires
+                    de vie des individus ? Mon objectif était de démontrer comment l'éloignement ou la proximité des liens sociaux affecte l'évolution du réseau (sa taille, sa densité) lorsqu'un individu connaît un changement majeur (déménagement, nouvel emploi).
                 </p>
                 </div>
             
             <div class="clearfix">
-                <h3>2. Données et Nettoyage</h3>
+                <h3>2. Présentation des données</h3>
                 <p>
-                    [Pour réaliser cette étude, j'ai utilisé les données du Panel de Caen. Ces données proviennent d'une étude longitudinale initiée par Claire Bidart, Marion Maisonobe et Gil Viry. Ce panel a suivi 87 jeunes adultes résidant à Caen, initialement âgés
+                    Pour réaliser cette étude, j'ai utilisé les données du Panel de Caen. Ces données proviennent d'une étude longitudinale initiée par Claire Bidart, Marion Maisonobe et Gil Viry. Ce panel a suivi 87 jeunes adultes résidant à Caen, initialement âgés
                     de 17 à 23 ans, sur une longue période s'étendant de 1995 à 2015. L'enquête a été menée en cinq vagues successives, permettant d'avoir une vision dynamique de non figée des relations.
-                    Vague A (1995) : 87 individus
-                    Vague B (1998) : 70 individus
-                    Vague C (2001) : 66 individus
-                    Vague D (2004) : 60 individus
-                    Vague F (2015) : 21 individus
-                    Au total, cette base de données permet d'analyser l’évolution des liens sociaux à travers le temps et la mobilité.]
                 </p>
-
+                <dl class="data-vagues">
+                    <dt>Vague A (1995) :</dt>
+                    <dd>87 individus</dd>
+                    <dt>Vague B (1998) :</dt>
+                    <dd>70 individus</dd>
+                    <dt>Vague C (2001) :</dt>
+                    <dd>66 individus</dd>
+                    <dt>Vague D (2004) :</dt>
+                    <dd>60 individus</dd>
+                    <dt>Vague F (2015) :</dt>
+                    <dd>21 individus</dd>
+                </dl>
+                <p>
+                    Au total, cette base de données permet d'analyser l’évolution des liens sociaux à travers le temps et la mobilité.
+                </p>
+                </div>
+            
+            <div class="clearfix">
+                <h3>3. Nettoyage des données</h3>
+                <p>                
                 <img src="../mesdocuments/image_mobilité_donnees.png" alt="Illustration des données brutes ou du nettoyage" class="float-img-right">
 
                 <p>
-                    [La préparation et le nettoyage des données ont été réalisés entièrement sous R. J'ai mobilisé plusieurs librairies clés : principalement tidyverse pour la manipulation et la transformation des données, igraph pour l'analyse des réseaux,
+                    La préparation et le nettoyage des données ont été réalisés entièrement sous R. J'ai mobilisé plusieurs librairies clés : principalement tidyverse pour la manipulation et la transformation des données, igraph pour l'analyse des réseaux,
                     et sf et mapsf pour le traitement et la cartographie des données spatiales.
-                    1. J'ai d'abord filtré la base pour isoler les informations pertinentes, notamment les lieux de résidence, les liens sociaux rapportés (taille du réseau) et les variables socio-démographiques (sexe et âge).
-                    2. J'ai ensuite créé et calculé pour chaque réseau (à chaque vague) les trois métriques essentielles : la taille du réseau (nombre total de relations), la densité du réseau (la proportion de liens réellement présents par rapport au nombre maximal
-                    possible, après avoir nettoyé les boucles), la transitivité (qui mesure la probabilité que les amis d'un individu soient amis entre eux). 
-                    3. J'ai finalement comparé la taille du réseau entre les vagues A et F pour déterminer le type de dynamique de chaque individu, expansion, contraction ou stable, créant ainsi une variable catégorielle indispensable pour l'analyse longitudinale. 
                 </p>
+                <ol class="cleaning-steps">
+                    <li>J'ai d'abord filtré la base pour isoler les informations pertinentes, notamment les lieux de résidence, les liens sociaux rapportés (taille du réseau) et les variables socio-démographiques (sexe et âge).</li>
+                    <li>J'ai ensuite créé et calculé pour chaque réseau (à chaque vague) les trois métriques essentielles : la taille du réseau (nombre total de relations), la densité du réseau (la proportion de liens réellement présents par rapport au nombre maximal possible, après avoir nettoyé les boucles), la transitivité (qui mesure la probabilité que les amis d'un individu soient amis entre eux). </li>
+                    <li>J'ai finalement comparé la taille du réseau entre les vagues A et F pour déterminer le type de dynamique de chaque individu, expansion, contraction ou stable, créant ainsi une variable catégorielle indispensable pour l'analyse longitudinale. </li>
+                </ol>
             </div>
 
             <div class="clearfix">
-                <h3>3. Résultats et conclusions clés</h3>
+                <h3>4. Résultats et conclusions clés</h3>
                 <p>
                      [Mes analyses confirment l'influence structurante de la mobilité sur les trajectoires sociales, mettant en évidence la gestion stratégique des liens par les individus au fil du temps.]
                 </p>
             </div>
             
             <div class="clearfix">
-                <h3>4. Analyse I : Dynamique et Évolution des Réseaux</h3>
+                <h3>5. Analyse I : Dynamique et évolution des réseaux</h3>
                 <p>
                     [INSÉRER TEXTE SUR L'ANALYSE LONGITUDINALE : Présenter les métriques étudiées (densité, taille, transitivité) et les résultats clés sur l'alternance entre contraction, stabilisation et expansion des réseaux au fil du temps (comme mentionné dans l'examen). Exemple : "L'analyse longitudinale a révélé une dynamique constante des réseaux, avec une corrélation forte entre les événements de vie et les changements de structure (contraction post-déménagement, expansion lors d'une nouvelle situation professionnelle)."]
                 </p>
@@ -429,7 +511,7 @@ body {
             </div>
             
             <div class="clearfix">
-                <h3>5. Analyse II : Mobilité Géographique et Facteurs Explicatifs</h3>
+                <h3>6. Analyse II : Mobilité Géographique et Facteurs Explicatifs</h3>
                 <p>
                     [INSÉRER TEXTE SUR L'ANALYSE SPATIALE ET FACTEURS : Discuter de la dispersion géographique des alters. Évoquer l'influence des caractéristiques des individus (sexe, âge) et de la structure du réseau (taille) sur la mobilité. Exemple : "L'étude de la dispersion géographique des membres du réseau a permis d'évaluer la mobilité des Egos. Nous avons confirmé que les individus ayant un réseau plus large tendent à avoir une dispersion géographique plus importante, confirmant le rôle des liens faibles (Granovetter)."]
                 </p>
@@ -442,7 +524,7 @@ body {
             </div>
             
             <div class="clearfix">
-                <h3>6. Conclusion et Compétences Clés</h3>
+                <h3>7. Conclusion et Compétences Clés</h3>
                 <p>
                     [RÉSUMER L'APPORT : Récapituler brièvement les conclusions majeures. Exemple : "Cette analyse met en lumière l'influence réciproque entre les réseaux personnels et les trajectoires de vie. Les compétences clés démontrées ici incluent : la **gestion de données longitudinales**, l'**analyse spatiale** des réseaux, la **maîtrise des packages R** (igraph, etc.), et l'**interprétation sociologique** de dynamiques complexes."]
                 </p>
