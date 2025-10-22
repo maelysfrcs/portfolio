@@ -290,6 +290,24 @@ body {
         font-size: 28px;
         margin-bottom: 20px;
     }
+
+    .project-grid {
+        /* CORRECTION CLÉ : Change la grille pour n'avoir qu'une seule colonne. */
+        grid-template-columns: 1fr; 
+        /* Diminue l'espace entre les projets verticaux pour gagner de la place. */
+        gap: 20px; 
+    }
+
+    .project-item {
+        /* Assure que chaque projet a une largeur maximale lisible */
+        max-width: 400px; 
+        margin: 0 auto; /* Centre l'élément s'il est plus petit que l'écran */
+    }
+
+    .project-button {
+        /* Ajuste la hauteur si l'image est plus étroite */
+        height: 200px; 
+    }
     
     /* Footer (Adaptation à la largeur mobile) */
     .footer {
