@@ -188,30 +188,35 @@ body {
     clear: both;
 }
 
-    /* Amélioration visuelle pour les Vagues de données */
+/* Amélioration visuelle pour les Vagues de données */
 .data-vagues {
     /* Style du conteneur */
     background-color: #f9f9f9;
-    padding: 15px 20px;
+    padding: 10px 15px; /* Réduit le padding pour une petite boîte */
     border-left: 5px solid #0077b5;
     border-radius: 0 4px 4px 0;
-    margin: 20px 0;
+    margin: 10px 20px 10px 0; /* Marge à droite pour séparer le texte */
+    
+    /* Définition du Grid pour les colonnes */
     display: grid;
-    grid-template-columns: 150px 1fr; /* Colonne 1 pour le terme, Colonne 2 pour la description */
-    gap: 5px 15px; /* Écart entre les lignes et les colonnes */
+    grid-template-columns: 100px 1fr; /* 100px pour les vagues, 1fr pour le nombre */
+    gap: 2px 10px; /* Écart réduit */
+
+    /* NOUVEAU : Limiter la largeur du bloc pour qu'il ne prenne pas toute la ligne */
+    max-width: 250px; /* Vous pouvez ajuster cette largeur si nécessaire */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Ajout d'une ombre légère pour l'effet "boîte" */
 }
 
+/* Le reste du CSS pour data-vagues reste le même */
 .data-vagues dt {
-    /* Termes (Vague A, B, C...) */
     font-weight: 600;
     color: #333;
-    padding: 5px 0;
+    padding: 3px 0;
 }
 
 .data-vagues dd {
-    /* Descriptions (87 individus) */
     margin-left: 0;
-    padding: 5px 0;
+    padding: 3px 0;
 }
 
 /* Amélioration visuelle pour les Étapes de Nettoyage */
@@ -457,7 +462,7 @@ body {
                     Pour réaliser cette étude, j'ai utilisé les données du Panel de Caen. Ces données proviennent d'une étude longitudinale initiée par Claire Bidart, Marion Maisonobe et Gil Viry. Ce panel a suivi 87 jeunes adultes résidant à Caen, initialement âgés
                     de 17 à 23 ans, sur une longue période s'étendant de 1995 à 2015. L'enquête a été menée en cinq vagues successives, permettant d'avoir une vision dynamique de non figée des relations.
                 </p>
-                <dl class="data-vagues">
+            <dl class="data-vagues float-img-left">
                     <dt>Vague A (1995) :</dt>
                     <dd>87 individus</dd>
                     <dt>Vague B (1998) :</dt>
