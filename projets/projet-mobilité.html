@@ -190,32 +190,35 @@ body {
 
 /* Amélioration visuelle pour les Vagues de données */
 .data-vagues {
-    /* Style du conteneur */
-    background-color: #f9f9f9;
-    padding: 10px 15px; 
-    border-left: 5px solid #0077b5;
-    border-radius: 0 4px 4px 0;
-    /* IMPORTANT : Réinitialisation de la marge pour utiliser celle du float */
-    margin: 0; 
-    
-    /* Définition du Grid pour les colonnes */
-    display: grid;
-    /* NOUVEAU : Augmenter la largeur de la première colonne pour mieux présenter les termes */
-    grid-template-columns: 130px 1fr; 
-    gap: 2px 10px;
+    /* Style du conteneur de base */
+    background-color: #f9f9f9;
+    padding: 10px 15px; 
+    border-left: 5px solid #0077b5;
+    border-radius: 0 4px 4px 0;
+    margin: 0; /* Réinitialisation pour utiliser les marges des classes flottantes */
+    
+    /* Configuration Grid pour les colonnes (clé pour la lisibilité) */
+    display: grid;
+    /* Ajustement de la largeur des colonnes : 150px pour le terme + reste pour le nombre */
+    grid-template-columns: 150px 1fr;
+    gap: 2px 10px;
 
-    /* NOUVEAU : Augmentation de la largeur maximale (maintenant 350px) */
-    max-width: 350px; 
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    /* Largeur maximale pour une bonne lisibilité */
+    max-width: 350px; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-/* NOUVEAU : Ajout de marges pour l'élément flottant (identiques à float-img-left) */
-/* C'est ce qui assure que le tableau a la même marge que les images */
+/* Style dédié pour le flottement à GAUCHE (comme pour les images) */
 .data-vagues.float-img-left {
-    margin: 0 20px 15px 0; /* Marge : Haut, Droite, Bas, Gauche */
+    float: left;
+    margin: 0 20px 15px 0; /* Haut, Droite, Bas, Gauche */
 }
+
+/* Style dédié pour le flottement à DROITE (comme pour les images) */
 .data-vagues.float-img-right {
-    margin: 0 20px 15px 0px;
+    float: right;
+    /* Marge : Haut=0, Droite=0 (collé à droite), Bas=15px, Gauche=20px (espace avec le texte) */
+    margin: 0 0 15px 20px; 
 }
 
 /* Amélioration visuelle pour les Étapes de Nettoyage */
