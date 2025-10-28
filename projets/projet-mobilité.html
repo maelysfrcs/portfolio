@@ -173,6 +173,12 @@ body {
     text-indent: 0 !important;
 }
 
+/* Solution de repli pour annuler les espaces invisibles en début de paragraphe */
+.article-content p::first-line {
+    /* Tentative de réinitialisation si l'espace est interprété comme un alinéa */
+    text-indent: 0 !important; 
+}
+
 /* Classe pour les images flottantes (gauche/droite) */
 .float-img-left {
     float: left;
@@ -247,7 +253,7 @@ body {
     margin: 20px 0;
     counter-reset: section-step;
 }
-
+    
 .cleaning-steps li {
     padding: 10px 0 10px 30px;
     position: relative;
@@ -516,7 +522,7 @@ body {
                 <h3>4. Résultats : dynamique et évolution des réseaux</h3>
                 
                 <p>
-                <img src="../mesdocuments/image_mobilité_densité.png" alt="Graphiques de la densité, taille et évolution des réseaux par vague" class="float-img-right">
+                    <img src="../mesdocuments/image_mobilité_densité.png" alt="Graphiques de la densité, taille et évolution des réseaux par vague" class="float-img-right">
                     L'analyse de la densité des réseaux révèle une <strong>diminution progressive</strong> entre les premières vagues (A et B) et les dernières (C, D et F). Cette tendance, où les liens se multiplient sans être très connectés entre eux, 
                     suggère une évolution des réseaux vers plus de diversité. Cela rejoint l'idée de <strong>Granovetter</strong> selon laquelle les liens faibles, bien qu’ils réduisent la densité, sont importants pour accéder à de nouvelles opportunités.
                 </p>
