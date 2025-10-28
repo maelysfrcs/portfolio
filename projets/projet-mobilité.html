@@ -490,9 +490,6 @@ body {
             
             <div class="clearfix">
                 <h3>3. Nettoyage des données</h3>
-                <p>                
-                <img src="../mesdocuments/image_mobilité_donnees.png" alt="Illustration des données brutes ou du nettoyage" class="float-img-right">
-
                 <p>
                     La préparation et le nettoyage des données ont été réalisés entièrement sous R. J'ai mobilisé plusieurs librairies clés : principalement tidyverse pour la manipulation et la transformation des données, igraph pour l'analyse des réseaux,
                     et sf et mapsf pour le traitement et la cartographie des données spatiales.
@@ -504,46 +501,95 @@ body {
                 </ol>
             </div>
 
-            <div class="clearfix">
-                <h3>4. Résultats et conclusions clés</h3>
-                <p>
-                     [Mes analyses confirment l'influence structurante de la mobilité sur les trajectoires sociales, mettant en évidence la gestion stratégique des liens par les individus au fil du temps.]
-                </p>
-            </div>
+<div class="clearfix">
+                <h3>4. Résultats : Dynamique et Évolution des Réseaux</h3>
+                
+                <img src="../mesdocuments/image_mobilité_dynamique.png" alt="Graphiques de la densité, taille et évolution des réseaux par vague" class="float-img-right">
+                
+                <h4>Densité et Transivité (Graphiques 3 & 4)</h4>
+                <p>
+                    L'analyse de la densité des réseaux (Graphique 3) révèle une **diminution progressive** entre les premières vagues (A et B) et les dernières (C, D et F). Cette tendance, où les liens se multiplient sans être très connectés entre eux, suggère une évolution des réseaux vers plus de diversité. Cela rejoint l'idée de **Granovetter (1973)** selon laquelle les liens faibles, bien qu’ils réduisent la densité, sont cruciaux pour l’accès à de nouvelles opportunités. La transitivité (Graphique 4) demeure, quant à elle, relativement stable.
+                </p>
+
+                <h4>Taille des réseaux (Graphique 5)</h4>
+                <p>
+                    Le graphique 5 montre que la taille des réseaux personnels est souvent concentrée autour de **petites ou moyennes valeurs (entre 3 et 8 relations)**. Ces variations sont fortement corrélées aux étapes de vie (passage aux études, emploi, relation amoureuse) qui ont pu influencer la taille des réseaux au fil des vagues (A à F).
+                </p>
+
+                <h4>Évolution des Types de Réseaux (Graphiques 6 & 7)</h4>
+                <p>
+                    Le graphique 6 montre une nette dominance des réseaux en **expansion**, traduisant une augmentation des interactions sociales et une diversification des lieux fréquentés. Le graphique 7 illustre cette dynamique : la **vague C marque une transition**, tandis que la **vague F montre plus de stabilité**, potentiellement en lien avec la consolidation des relations à l'âge adulte. Ces trajectoires variées mettent en lumière une **gestion stratégique des liens** par les individus.
+                </p>
+            </div>
+            <hr>
+                        <div class="clearfix">
+                <h3>5. Résultats Clés II : Mobilité et Facteurs Explicatifs</h3>
+                
+                <img src="../mesdocuments/image_mobilité_facteurs.png" alt="Graphiques de la mobilité en fonction du genre, âge et taille du réseau" class="float-img-left">
+
+                <h4>Mobilité et Caractéristiques des Egos (Tableau 1 & Tests Statistiques)</h4>
+                <p>
+                    L'analyse des facteurs (genre et âge) a permis de mieux comprendre la mobilité. Un **Test T** a confirmé une différence statistiquement significative (p-value = 0.01542) : les **hommes ont une mobilité légèrement plus élevée** (moyenne de 0.855) que les femmes (0.828).
+                    De plus, le **test ANOVA** révèle que la mobilité varie significativement selon les tranches d’âge, les individus plus âgés ayant une tendance à être un peu plus mobiles (Graphique 8).
+                </p>
+                
+                <h4>Relation avec la Taille du Réseau (Graphique 10)</h4>
+                <p>
+                    Le graphique 10 met en évidence une **relation forte et positive** entre la taille du réseau et la mobilité totale (pente montante sur la régression linéaire). Cette découverte est cruciale : les individus ayant un grand réseau ont tendance à avoir une mobilité plus élevée. Elle renforce les conclusions précédentes sur les liens faibles et la diversification géographique des *alters*.
+                </p>
+                
+                <h4>Typologie des Profils (Graphique 11)</h4>
+                <p>
+                    La **clusterisation** des profils (Graphique 11) révèle trois grands groupes d'individus :
+                    1. **Faible mobilité / Petit réseau** (réseaux localisés et stables).
+                    2. **Mobilité moyenne / Réseau moyen**.
+                    3. **Forte mobilité / Grand réseau** (réseaux étendus et dispersés).
+                    Ces typologies confirment que la mobilité est influencée par des facteurs personnels et structurels.
+                </p>
+
+                <div style="margin-top: 30px; margin-bottom: 30px; clear: both;">
+                    <table style="width: 100%; border-collapse: collapse; text-align: center; border: 1px solid #ccc;">
+                        <caption style="font-weight: bold; margin-bottom: 8px;">Tableau 1 : Moyenne et écart-type de la mobilité selon l'âge et le genre</caption>
+                        <thead>
+                            <tr style="background-color: #eee;">
+                                <th style="border: 1px solid #ccc; padding: 8px;">Âge</th>
+                                <th style="border: 1px solid #ccc; padding: 8px;">Genre</th>
+                                <th style="border: 1px solid #ccc; padding: 8px;">Moyenne</th>
+                                <th style="border: 1px solid #ccc; padding: 8px;">Écart-type</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td rowspan="2" style="border: 1px solid #ccc; padding: 8px;">17-23 ans</td><td style="border: 1px solid #ccc; padding: 8px;">Femme</td><td style="border: 1px solid #ccc; padding: 8px;">0.793</td><td style="border: 1px solid #ccc; padding: 8px;">0.406</td></tr>
+                            <tr><td style="border: 1px solid #ccc; padding: 8px;">Homme</td><td style="border: 1px solid #ccc; padding: 8px;">0.832</td><td style="border: 1px solid #ccc; padding: 8px;">0.375</td></tr>
+                            <tr><td rowspan="2" style="border: 1px solid #ccc; padding: 8px;">20-26 ans</td><td style="border: 1px solid #ccc; padding: 8px;">Femme</td><td style="border: 1px solid #ccc; padding: 8px;">0.836</td><td style="border: 1px solid #ccc; padding: 8px;">0.371</td></tr>
+                            <tr><td style="border: 1px solid #ccc; padding: 8px;">Homme</td><td style="border: 1px solid #ccc; padding: 8px;">0.818</td><td style="border: 1px solid #ccc; padding: 8px;">0.387</td></tr>
+                            <tr><td rowspan="2" style="border: 1px solid #ccc; padding: 8px;">23-29 ans</td><td style="border: 1px solid #ccc; padding: 8px;">Femme</td><td style="border: 1px solid #ccc; padding: 8px;">0.816</td><td style="border: 1px solid #ccc; padding: 8px;">0.388</td></tr>
+                            <tr><td style="border: 1px solid #ccc; padding: 8px;">Homme</td><td style="border: 1px solid #ccc; padding: 8px;">0.858</td><td style="border: 1px solid #ccc; padding: 8px;">0.350</td></tr>
+                            <tr><td rowspan="2" style="border: 1px solid #ccc; padding: 8px;">26-32 ans</td><td style="border: 1px solid #ccc; padding: 8px;">Femme</td><td style="border: 1px solid #ccc; padding: 8px;">0.830</td><td style="border: 1px solid #ccc; padding: 8px;">0.376</td></tr>
+                            <tr><td style="border: 1px solid #ccc; padding: 8px;">Homme</td><td style="border: 1px solid #ccc; padding: 8px;">0.876</td><td style="border: 1px solid #ccc; padding: 8px;">0.329</td></tr>
+                            <tr><td rowspan="2" style="border: 1px solid #ccc; padding: 8px;">37-43 ans</td><td style="border: 1px solid #ccc; padding: 8px;">Femme</td><td style="border: 1px solid #ccc; padding: 8px;">0.875</td><td style="border: 1px solid #ccc; padding: 8px;">0.332</td></tr>
+                            <tr><td style="border: 1px solid #ccc; padding: 8px;">Homme</td><td style="border: 1px solid #ccc; padding: 8px;">0.862</td><td style="border: 1px solid #ccc; padding: 8px;">0.346</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <hr>
+                        <div class="clearfix">
+                <h3>6. Conclusion et Compétences Clés</h3>
+                <p>
+                    En conclusion, ce projet met en lumière l'influence réciproque entre les réseaux personnels et les trajectoires de vie, confirmant que la **mobilité et la configuration des réseaux varient en fonction du genre, de l'âge et de la structure des liens**. Les résultats, notamment la forte corrélation entre la taille du réseau et la mobilité, s'alignent sur les concepts de liens forts et faibles de Granovetter et la diversification géographique des réseaux. Ce projet démontre non seulement l'influence de la mobilité sur les trajectoires sociales, mais aussi la capacité des individus à gérer stratégiquement leurs liens au fil du temps.
+                </p>
+
+                <h4>Compétences Clés Démontrées :</h4>
+                <ol class="cleaning-steps">
+                    <li>**Gestion de Données Longitudinales :** Traitement, manipulation et harmonisation de données complexes du Panel de Caen collectées sur une longue période (1995-2015).</li>
+                    <li>**Analyse Spatiale et des Réseaux :** Calcul d'indicateurs de réseaux (taille, densité, transitivité, mobilité) et typologie de profils (clusterisation).</li>
+                    <li>**Maîtrise de R pour l'Analyse Statistique :** Application de tests statistiques avancés (`Test T`, `ANOVA`) et utilisation des packages `tidyverse`, `igraph`, `sf` et `mapsf`.</li>
+                    <li>**Interprétation Sociologique :** Capacité à contextualiser les résultats statistiques dans un cadre théorique (Granovetter, trajectoires de vie, structuration sociale des réseaux).</li>
+                </ol>
+            </div>
+            ```
             
-            <div class="clearfix">
-                <h3>5. Analyse I : Dynamique et évolution des réseaux</h3>
-                <p>
-                    [INSÉRER TEXTE SUR L'ANALYSE LONGITUDINALE : Présenter les métriques étudiées (densité, taille, transitivité) et les résultats clés sur l'alternance entre contraction, stabilisation et expansion des réseaux au fil du temps (comme mentionné dans l'examen). Exemple : "L'analyse longitudinale a révélé une dynamique constante des réseaux, avec une corrélation forte entre les événements de vie et les changements de structure (contraction post-déménagement, expansion lors d'une nouvelle situation professionnelle)."]
-                </p>
-
-                <img src="../mesdocuments/image_mobilité_dynamique.png" alt="Graphique de l'évolution de la densité ou de la taille" class="float-img-left">
-                
-                <p>
-                    [POURSUIVRE L'ANALYSE : Détaillez l'interprétation d'un graphique clé sur l'évolution de la densité ou de la taille.]
-                </p>
-            </div>
-            
-            <div class="clearfix">
-                <h3>6. Analyse II : Mobilité Géographique et Facteurs Explicatifs</h3>
-                <p>
-                    [INSÉRER TEXTE SUR L'ANALYSE SPATIALE ET FACTEURS : Discuter de la dispersion géographique des alters. Évoquer l'influence des caractéristiques des individus (sexe, âge) et de la structure du réseau (taille) sur la mobilité. Exemple : "L'étude de la dispersion géographique des membres du réseau a permis d'évaluer la mobilité des Egos. Nous avons confirmé que les individus ayant un réseau plus large tendent à avoir une dispersion géographique plus importante, confirmant le rôle des liens faibles (Granovetter)."]
-                </p>
-
-                <img src="../mesdocuments/image_mobilité_facteurs.png" alt="Graphique de la mobilité en fonction du genre/âge" class="float-img-right">
-
-                <p>
-                    [POURSUIVRE L'ANALYSE : Expliquer la méthode utilisée (e.g., tests statistiques, clusterisation) pour dégager les profils types.]
-                </p>
-            </div>
-            
-            <div class="clearfix">
-                <h3>7. Conclusion et Compétences Clés</h3>
-                <p>
-                    [RÉSUMER L'APPORT : Récapituler brièvement les conclusions majeures. Exemple : "Cette analyse met en lumière l'influence réciproque entre les réseaux personnels et les trajectoires de vie. Les compétences clés démontrées ici incluent : la **gestion de données longitudinales**, l'**analyse spatiale** des réseaux, la **maîtrise des packages R** (igraph, etc.), et l'**interprétation sociologique** de dynamiques complexes."]
-                </p>
-            </div>
-
         </div>
     </div>
 
