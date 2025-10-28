@@ -160,7 +160,7 @@ body {
     line-height: 1.7;
     margin-bottom: 20px;
     text-align: justify;
-    text-indent: 0
+    text-indent: 0 !important;
 }
 
 /* Classe pour les images flottantes (gauche/droite) */
@@ -227,7 +227,7 @@ body {
 .data-vagues.float-img-right {
     float: right;
     /* Marge : Haut=0, Droite=0 (collé à droite), Bas=15px, Gauche=20px (espace avec le texte) */
-    margin: 0 20px 15px 0; 
+    margin: 0 20px 15px 20px; 
 }
 
 /* Amélioration visuelle pour les Étapes de Nettoyage */
@@ -505,33 +505,33 @@ body {
             <div class="clearfix">
                 <h3>4. Résultats : dynamique et évolution des réseaux</h3>
                 
+                <p>
                 <img src="../mesdocuments/image_mobilité_densité.png" alt="Graphiques de la densité, taille et évolution des réseaux par vague" class="float-img-right">
-                <p>
                     L'analyse de la densité des réseaux révèle une <strong>diminution progressive</strong> entre les premières vagues (A et B) et les dernières (C, D et F). Cette tendance, où les liens se multiplient sans être très connectés entre eux, 
                     suggère une évolution des réseaux vers plus de diversité. Cela rejoint l'idée de **Granovetter (1973)** selon laquelle les liens faibles, bien qu’ils réduisent la densité, sont importants pour accéder à de nouvelles opportunités.
                 </p>
 
-                <img src="../mesdocuments/image_mobilité_taille.png" alt="Distribution de la taille des réseaux" class="float-img-left">
                 <p>
+                <img src="../mesdocuments/image_mobilité_taille.png" alt="Distribution de la taille des réseaux" class="float-img-left">
                     La taille des réseaux personnels est souvent concentrée autour de <strong>petites ou moyennes valeurs (entre 3 et 8 relations)</strong>. Ces variations sont fortement corrélées aux étapes de vie (passage aux études, emploi, 
                     relation amoureuse) qui ont pu influencer la taille des réseaux au fil des vagues (A à F).
                 </p>
-
-                <img src="../mesdocuments/image_mobilité_répartition.png" alt="Répartition des Egos par type d'évolution" class="float-img-right">
+                
                 <p>
+                <img src="../mesdocuments/image_mobilité_répartition.png" alt="Répartition des Egos par type d'évolution" class="float-img-right">
                     Le graphique montre une nette dominance des réseaux en <strong>expansion</strong>, traduisant une augmentation des interactions sociales et une diversification des lieux fréquentés. 
                 </p>
             </div>
         <hr>
-                        <div class="clearfix">
+            <div class="clearfix">
                 <h3>5. Résultats : facteurs explicatifs</h3>
                 <p>
                     L'analyse des facteurs (genre et âge) est primordiale pour mieux comprendre la mobilité. Un <strong>test T</strong> a confirmé une différence statistiquement significative (p-value = 0.01542) : les <strong>hommes ont une mobilité légèrement plus 
                     élevée</strong> (moyenne de 0.855) que les femmes (0.828). De plus, le <strong>test ANOVA</strong> révèle que la mobilité varie significativement selon les tranches d’âge, les individus plus âgés ayant une tendance à être un peu plus mobiles.
                 </p>
-                            
-                <img src="../mesdocuments/image_mobilité_relation.png" alt="Relation entre la taille du réseau et la mobilité" class="float-img-left">
+
                 <p>
+                <img src="../mesdocuments/image_mobilité_relation.png" alt="Relation entre la taille du réseau et la mobilité" class="float-img-left">
                     Le graphique présente la relation entre la taille du réseau (le nombre de lieux différents visités), et la mobilité totale (la somme des déplacements) pour chaque individu. La ligne rouge représente la régression linéaire, c'est-à-dire la tendance
                     générale entre ces deux variables. Cela met en évidence une <strong>relation forte et positive</strong> entre la taille du réseau et la mobilité totale (pente montante sur la régression linéaire). 
                     Cette découverte est cruciale : les individus ayant un grand réseau ont tendance à avoir une mobilité plus élevée. Elle renforce les conclusions précédentes sur les liens faibles et la diversification géographique des <strong>alters</strong>.
