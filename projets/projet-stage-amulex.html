@@ -1,1 +1,577 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Projet - Collecte et analyse de données des réseaux sociaux numériques</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
 
+<style>
+:root {
+    --content-max-width: 1000px; /* largeur max du header/footer, modifiable */
+}
+
+/* STYLES DE BASE (Copier/coller tous vos styles de base) */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+/* Header et footer centrés avec marges */
+.wrapper-limited {
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+    width: 90%;
+    display: flex; 
+    flex-direction: column;
+    /* 2. FORCER le wrapper à grandir pour prendre toute la place libre du body */
+    flex-grow: 1;
+}
+
+/* Masquage Jekyll inutile */
+.page-header h1, .view-on-github-link, .downloads, .site-footer, .project-tagline { display: none !important; }
+
+/* -------------------------------------------------------------------------- */
+/* NAVIGATION (Desktop) */
+.nav-links {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+    gap: 0;
+}
+.nav-link {
+    font-size: 17px;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-bottom: none;
+    transition: all 0.2s ease;
+    color: #0077b5;
+    background-color: #f0f0f0;
+}
+.nav-link:hover {
+    color: #005f96;
+    background-color: #e0e0e0;
+    transform: translateY(-2px);
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.05);
+}
+.nav-link.active {
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+    border-bottom-color: #fff;
+}
+.nav-links a:last-child { border-top-right-radius: 6px; }
+.nav-links a:first-child { border-top-left-radius: 6px; }
+
+/* -------------------------------------------------------------------------- */
+/* HEADER PERSONNEL (Desktop) */
+.personal-header {
+    display: flex;
+    align-items: center;
+    padding: 40px 50px;
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    border-radius: 12px;
+    margin-top: -1px;
+}
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-right: 30px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    object-fit: contain;
+}
+.info-container h1 {
+    margin: 0;
+    font-size: 32px;
+    color: #0077b5;
+}
+.info-container p {
+    margin-top: 5px;
+    font-size: 16px;
+    color: #555;
+    max-width: 800px;
+}
+
+/* -------------------------------------------------------------------------- */
+/* CONTENU PRINCIPAL (Desktop) */
+.main-content-projects {
+    padding: 15px 20px 0px 20px;
+}
+.main-content-projects h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 38px;
+    font-weight: 700;
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.project-grid {
+    display: grid;
+    /* Force 3 colonnes de taille égale (1fr) pour la disposition 3x1 */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px;
+}
+
+/* -------------------------------------------------------------------------- */
+/* STYLE DÉDIÉ AUX PAGES PROJET (Simple Article) - COPIER/COLLER ICI */
+
+/* Conteneur principal de l'article */
+.article-content {
+    background-color: #fff;
+    padding: 30px 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+}
+
+/* Titre principal du projet */
+.article-content h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 32px;
+    color: #0077b5;
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #eee;
+}
+
+/* Sous-titres (Objectif, Données, Nettoyage, etc.) */
+.article-content h3 {
+    font-size: 22px;
+    color: #333;
+    border-left: 4px solid #0077b5;
+    padding-left: 10px;
+    margin-top: 35px;
+    margin-bottom: 15px;
+}
+
+/* Sous-titre de niveau 4 (Compétences Clés Démontrées) */
+.article-content h4 {
+    font-size: 18px; /* Taille légèrement inférieure à h3 (22px) pour maintenir la hiérarchie */
+    color: #333;
+    border-left: 2px solid #0077b5; /* Bordure gauche, légèrement plus fine que h3 (4px) */
+    padding-left: 10px;
+    margin-top: 5px; /* Moins d'espace au-dessus que h3 (35px) */
+    margin-bottom: 0px;
+}   
+    
+/* Paragraphes */
+.article-content p {
+    line-height: 1.7;
+    margin-bottom: 20px;
+    text-align: justify;
+    text-indent: 0 !important;
+}
+
+/* Solution de repli pour annuler les espaces invisibles en début de paragraphe */
+.article-content p::first-line {
+    /* Tentative de réinitialisation si l'espace est interprété comme un alinéa */
+    text-indent: 0 !important; 
+}
+
+/* Classe pour les images flottantes (gauche/droite) */
+.float-img-left {
+    float: left;
+    margin: 0 20px 15px 0; /* Haut, Droite, Bas, Gauche */
+    max-width: 50%;
+    height: auto;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.float-img-right {
+    float: right;
+    margin: 0 0 20px 15px; /* Haut, Droite, Bas, Gauche */
+    max-width: 50%;
+    height: auto;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Correction pour que l'élément suivant ne soit pas affecté par le 'float' */
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Amélioration visuelle pour les Vagues de données */
+.data-vagues {
+    /* Style du conteneur de base */
+    background-color: #f9f9f9;
+    padding: 10px 15px; 
+    border-left: 5px solid #0077b5;
+    border-radius: 0 4px 4px 0;
+    margin: 0; /* Réinitialisation pour utiliser les marges des classes flottantes */
+    
+    /* Configuration Grid pour les colonnes (clé pour la lisibilité) */
+    display: grid;
+    /* Ajustement de la largeur des colonnes : 150px pour le terme + reste pour le nombre */
+    grid-template-columns: 150px 1fr;
+    gap: 2px 10px;
+
+    /* Largeur maximale pour une bonne lisibilité */
+    max-width: 300px; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.data-vagues dt,
+.data-vagues dd {
+    /* Ajoute 5px de padding en haut et en bas de chaque ligne */
+    padding-top: 3px; 
+    padding-bottom: 3px;
+    margin: 0; /* Assurez-vous qu'aucune marge n'interfère */
+}
+    
+/* Style dédié pour le flottement à GAUCHE (comme pour les images) */
+.data-vagues.float-img-left {
+    float: left;
+    margin: 0 20px 15px 0; /* Haut, Droite, Bas, Gauche */
+}
+
+/* Style dédié pour le flottement à DROITE (comme pour les images) */
+.data-vagues.float-img-right {
+    float: right;
+    /* Marge : Haut=0, Droite=0 (collé à droite), Bas=15px, Gauche=20px (espace avec le texte) */
+    margin: 0 20px 15px 20px; 
+}
+
+/* Amélioration visuelle pour les Étapes de Nettoyage */
+.cleaning-steps {
+    list-style-type: none; /* Cache la puce par défaut */
+    padding-left: 0;
+    margin: 15px 0;
+    counter-reset: section-step;
+}
+    
+.cleaning-steps li {
+    padding: 10px 0 10px 30px;
+    position: relative;
+    line-height: 1.5;
+    border-bottom: 1px dashed #eee;
+}
+
+.cleaning-steps li:last-child {
+    border-bottom: none;
+}
+
+.cleaning-steps li::before {
+    /* Création du cercle numéroté bleu */
+    content: counter(section-step); /* Utilise un compteur pour la numérotation */
+    counter-increment: section-step;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    
+    /* Style du cercle */
+    width: 22px;
+    height: 22px;
+    line-height: 22px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: #0077b5;
+    color: white;
+    font-weight: 700;
+    font-size: 14px;
+}
+/* Réinitialisation du compteur pour les listes numérotées */
+.article-content {
+    counter-reset: section-step;
+}
+/* -------------------------------------------------------------------------- */
+/* FOOTER (Desktop) */
+.footer {
+ padding: 30px 0;
+ /* Utilisation d'une marge pour l'espace au-dessus du footer (séparation des projets) */
+ margin-top: 40px; 
+ /* Marge pour l'espace après le footer. 0px pour qu'il soit collé au bas du conteneur parent */
+ margin-bottom: 10px; 
+ background: linear-gradient(135deg, #ffffff 0%, #f7f9fb 100%);
+ box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.08);
+ text-align: center;
+ border-radius: 16px;
+ transition: all 0.3s ease;
+}
+    
+.footer-buttons {
+ display: flex;
+ justify-content: center;
+ flex-wrap: wrap;
+ gap: 18px;
+ margin-top: 5px;
+}
+
+.button {
+ display: inline-flex;
+ align-items: center;
+ gap: 10px;
+ padding: 10px 18px;
+ font-size: 15px;
+ font-weight: 500;
+ color: #0077b5;
+ background-color: #f2f6f9;
+ text-decoration: none;
+ border-radius: 8px;
+ border: 1px solid transparent;
+ transition: all 0.25s ease;
+}
+
+.button i {
+ color: #0077b5;
+ transition: color 0.3s ease;
+ font-size: 18px;
+}
+
+.button:hover {
+ background-color: #0077b5;
+ color: #fff;
+ border-color: #0077b5;
+ transform: translateY(-2px);
+ box-shadow: 0 3px 8px rgba(0, 119, 181, 0.25);
+}
+
+.button:hover i {
+ color: #fff;
+}
+
+/* -------------------------------------------------------------------------- */
+/* RESPONSIVE DESIGN (MOBILE ADAPTÉ) - COPIER/COLLER VOTRE BLOC CI-DESSOUS */
+@media (max-width: 768px) {
+    /* 1. Conteneurs principaux */
+    .wrapper-limited {
+        width: 100%;
+        padding: 0 15px;
+        box-sizing: border-box;
+    }
+
+    /* 2. Navigation */
+    .nav-links {
+        justify-content: center; /* Centre les liens */
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 15px;
+        margin-bottom: 0px; /* Espace sous les boutons de navigation (adapté) */
+    }
+
+    .nav-link {
+        font-size: 16px;
+        padding: 10px 18px;
+        border: 1px solid #ccc; /* Affichage comme de vrais boutons */
+        border-radius: 6px;
+        border-bottom: 1px solid #ccc; /* Correction de la bordure manquante */
+    }
+    
+    .nav-link.active {
+        /* Correction pour que le bouton actif s'affiche correctement */
+        border-bottom-color: #fff; 
+    }
+
+    /* 3. Header Personnel */
+    .personal-header {
+        flex-direction: column; 
+        align-items: center;
+        text-align: center;
+        padding: 20px 10px; 
+        border-radius: 8px;
+    }
+    
+    .profile-photo { 
+        margin: 0 0 15px 0; /* Centre la photo et ajoute de l'espace en bas */
+        width: 120px;
+        height: 120px;
+    }
+    
+    .info-container h1 {
+        font-size: 26px; /* Taille adaptée */
+    }
+
+    .info-container p {
+        font-size: 15px;
+        max-width: 100%; 
+        margin: 5px auto 0 auto;
+        padding: 0 12px 0px 12px;
+    }
+    
+    /* 4. Contenu Principal (Le reste du contenu est laissé pour s'adapter par défaut, sauf le titre) */
+    .main-content-projects {
+        padding: 25px 15px; /* Réduit le padding du contenu */
+    }
+    
+    .main-content-projects h2 {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+
+    /* Styles spécifiques pour l'article */
+    .article-content {
+        padding: 20px 20px;
+    }
+    .article-content h1 {
+        font-size: 26px;
+    }
+    /* Les images flottantes deviennent pleine largeur sur mobile */
+    .float-img-left, .float-img-right {
+        float: none;
+        max-width: 100%;
+        margin: 15px 0;
+    }
+
+
+    /* Footer (Adaptation à la largeur mobile) */
+    .footer {
+        margin: 10px 15px 10px 15px; /* Marge latérale pour centrage/aération */
+        padding: 30px 15px;
+        border-radius: 8px;
+        text-align: center; 
+    }
+    
+    .footer-buttons {
+        flex-direction: column;
+        gap: 12px;
+        align-items: center;
+        width: 100%; 
+    }
+
+    .button {
+        width: 90%;
+        justify-content: center;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+}
+</style>
+</head>
+
+<body>
+<div class="wrapper-limited">
+    
+    <div class="nav-links">
+        <a href="../index.html" class="nav-link">Mes projets</a>
+        <a href="../about.html" class="nav-link">À propos de moi</a>
+    </div>
+
+    <div class="personal-header">
+        <img src="../photocv.PNG" class="profile-photo" alt="Maëlys François">
+        <div class="info-container">
+            <h1>Maëlys François</h1>
+            <p>Passionnée par <strong>l'analyse de données</strong> avec une expertise pour l'étude des comportements sur les <strong> réseaux sociaux</strong>.</p>
+        </div>
+    </div>
+
+  <div class="main-content-projects">
+        
+        <div class="article-content">
+            <h1>Collecte et analyse de données des réseaux sociaux numériques : Assistance au projet ANR AMULEX</h1>
+            <div class="clearfix">
+                <h3>1. Objectif du stage et du projet</h3>
+                <img src="../mesdocuments/amullex_logo.png" alt="Logo du projet ANR AMULEX" class="float-img-left">
+                <p>
+                  Ce projet a été réalisé dans le cadre de mon stage en tant qu’assistante sur le projet <strong>ANR AMULEX</strong> (Analyse Multiplateforme de l’Expression politique en ligne), dont l'objectif prinfipal était de collecter et d'analyser les données
+                  issues des réseaux sociaux. <br>
+                  L'objectif de ma mission était de <strong>contribuer à l'administration d'un questionnaire en ligne</strong> (via LimeSurvey) aurpès d'un échantillon ciblé de commentateurs politiques, pour ensuite l'<strong>analyser statistiquement</strong>.
+                </p>
+                </div>
+        <hr>
+            <div class="clearfix">
+                <h3>2. Présentation des données</h3>
+                <p>
+                  Le base de données sur laquelle j'ai travaillé est constituée des réponses au questionnaire en ligne qui a été passé lors de la première partie de mon stage. L'échantillon a été constitué par contact direct (messagterie privée ou tag) auprès
+                  d'utilisateurs ayant <strong>commenté des interviews de candidat.e.s à l'élection présidentielle française sur les plateformes suivantes : </strong>
+                </p>
+                <ol class="cleaning-steps">
+                    <li><strong>X (anciennement Twitter)</strong></li>
+                    <li><strong>Instagram</strong></li>
+                    <li><strong>Youtube</strong></li>
+                </ol>
+              <p>
+                Les données recueillies permettent d'établir un profil des particiants en couvrant :
+              </p>
+              <ol classe="cleaning-steps">
+                  <li><strong>Les données sociodémographiques</strong> (âge, genre, CSP, niveau de diplôme...)</li>
+                  <li><strong>L'orientation politique</strong> (échelle gauche-droite)</li>
+                  <li><strong>Les pratiques numériques</strong> (fréquence d'utilisation des plateformes et types d'activités : commenter, liker, partager, consulter</li>
+            </div>
+        <hr>
+            <div class="clearfix">
+                <h3>3. Nettoyage et préparation des données</h3>
+                <img src="../mesdocuments/Rapport_Tableau_2.png" alt="Tableau de répartition du genre en fonction des classes" class="float-img-right">
+                <p>
+                  La préparation et le nettoyage des données ont été réalisés à l'aide de logiciels d'analyse statistique comme R et Jamovi, ainsi que des outils de gestion comme Excel. J'ai mobilisé plusieurs outils et méthodes clés pour structurer les données 
+                  issues du questionnaire et du processus de collecte :
+                </p>
+                <ol classe="cleaning-steps">
+                  <li><strong>Documentation et suivi de la collecte</strong> : J'ai utilisé un document Word partagé avec mes tuteurs et tutrices qui m'a servi à documenter de manière exhaustive les tentatives de contacte, garantissant la fiabilité des informations 
+                  et une maîtrise du suivi de la campagne d'enquête.</li>
+                  <li><strong>Transformation des varibales pour les analyses</strong> : Certaines données issues du questionnaire ont été transformées en variables ordinales (par exemple, "plusieurs fois par jour" est devenu "1"). Cette transformation était nécessaire
+                  pour l'analyse réalisée sur Jamovi.</li>
+            </div>
+        <hr>
+             <div class="clearfix">
+                <h3>4. Stratégies de collecte</h3>
+                <p>
+                  La collecte des données a été menée par vagues accompagnée d'une adaptation constant afin de surmonter les défis méthodologiques et techniques spécifiques à chaque plateforme. 
+                </p>
+                <ol classe="cleaning-steps">
+                  <li><strong>Objectif</strong> : Contacter le plus de commentateurs.</li>
+                  <li><strong>Processus</strong> : Utilisation d'un fichier Excel pour suivre les tentatives de contact.</li>
+                  <li><strong>Difficultés</strong> : Le principal obstacle a été le filtrage des messages par Instagram ("utilisateur qui restreint les nouveaux messages"), limitant l'efficacité des relances.</li>
+                  
+                <h4>Stratégie YouTube</h4>
+                  <li><strong>Problème</strong> : YouTube ne dispose pas d'une messagerie privée pour le contact direct.</li>
+                  <li><strong>Solution</strong> : Création d'une chaîne YouTube dédiée avec une vidéo explicative, et contact des enquêtés par tag sous le post de la vidéo.</li>
+                </ol>
+             </div>
+        <hr>
+            <div class="clearfix">
+                <h3>5. Résultats : dynamique et évolution des réseaux</h3>
+                <img src="../mesdocuments/image_mobilité_densité.png" alt="Graphiques de la densité, taille et évolution des réseaux par vague" class="float-img-right">
+                <p>
+                    L'analyse de la densité des réseaux révèle une <strong>diminution progressive</strong> entre les premières vagues (A et B) et les dernières (C, D et F). Cette tendance, où les liens se multiplient sans être très connectés entre eux, 
+                    suggère une évolution des réseaux vers plus de diversité. Cela rejoint l'idée de <strong>Granovetter</strong> selon laquelle les liens faibles, bien qu’ils réduisent la densité, sont importants pour accéder à de nouvelles opportunités.
+                </p>
+                <img src="../mesdocuments/image_mobilité_taille.png" alt="Distribution de la taille des réseaux" class="float-img-left">
+                <p>
+                    La taille des réseaux personnels est souvent concentrée autour de <strong>petites ou moyennes valeurs (entre 3 et 8 relations)</strong>. Ces variations sont fortement corrélées aux étapes de vie (passage aux études, emploi, 
+                    relation amoureuse) qui ont pu influencer la taille des réseaux au fil des vagues (A à F). <br>
+                </p>
+                <img src="../mesdocuments/image_mobilité_répartition.png" alt="Répartition des Egos par type d'évolution" class="float-img-right">
+                <p>
+                    <br> Le graphique montre une nette dominance des réseaux en <strong>expansion</strong>, traduisant une augmentation des interactions sociales et une diversification des lieux fréquentés. 
+                </p>
+            </div>
+
+
+
+                  
+                <h4>Compétences Clés Démontrées :</h4>
+                <ol class="cleaning-steps">
+                    <li>**Collecte de données (Web Scraping / API) :** Maîtrise des techniques de récupération de données complexes et multimodales sur les réseaux sociaux.</li>
+                    <li>**Analyse Statistique :** Application de méthodes statistiques (telles que l'ACL) à des données socio-numériques pour identifier des profils d'usagers.</li>
+                    <li>**Veille Scientifique :** Capacité à mobiliser la littérature sociologique récente sur les réseaux socionumériques (Neihouser et al., Pacouret et al.).</li>
+                    <li>**Adaptabilité et Résilience :** Gestion des imprévus techniques et des contraintes de la recherche en environnement professionnel.</li>
+                </ol>                  
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-buttons">
+            <a href="https://www.linkedin.com/in/ma%C3%ABlys-fran%C3%A7ois" class="button" target="_blank"><i class="fab fa-linkedin"></i>LinkedIn</a>
+            <a href="../mesdocuments/cv_maëlys_françois.pdf" class="button" target="_blank"><i class="fas fa-file-pdf"></i>Mon CV</a>
+            <a href="mailto:maelys.francois31@gmail.com" class="button"><i class="fas fa-envelope"></i>Mon Email</a>
+        </div>
+    </footer>
+</div>
+</body>
+</html>
