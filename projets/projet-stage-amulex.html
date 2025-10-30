@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <title>Projet - Collecte et analyse de données des réseaux sociaux numériques</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
-
+</head>
+    
 <style>
 :root {
     --content-max-width: 1000px; /* largeur max du header/footer, modifiable */
@@ -178,7 +180,19 @@ body {
     /* Tentative de réinitialisation si l'espace est interprété comme un alinéa */
     text-indent: 0 !important; 
 }
+.article-content hr {
+    /* Marge par défaut du hr, peut être ajustée */
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
 
+/* Ajoutez cette règle pour le hr spécifique qui suit un élément flottant */
+.article-content div.clearfix + hr {
+    margin-top: 10px; /* Réduit l'espace par défaut */
+    z-index: -1; /* Place la ligne derrière le contenu */
+    position: relative; /* Nécessaire pour que z-index fonctionne */
+}
+    
 /* Classe pour les images flottantes (gauche/droite) */
 .float-img-left {
     float: left;
@@ -256,12 +270,20 @@ body {
 
 /* NOUVEAU STYLE : Structure en 2 colonnes pour la présentation des données (Partie 2) */
 .data-presentation {
-    display: flex;
-    justify-content: space-around;
-    gap: 30px;
     margin-top: 20px;
     margin-bottom: 20px;
 }
+.data-presentation-column {
+    width: 48%; /* Près de 50%, laissant 4% de marge entre */
+    float: left; /* Aligner à gauche */
+    box-sizing: border-box; /* Inclusion des marges dans la largeur */
+}
+
+/* Option pour la seconde colonne si vous préférez: */
+.data-presentation-column.right {
+    float: right; /* Aligner à droite */
+}
+    
 .data-presentation ul {
     list-style-type: none;
     padding: 0;
@@ -302,7 +324,7 @@ body {
     border-bottom: none;
 }
 .strategy-list li::before {
-    font-family: "Font Awesome 5 Free";
+    font-family: 'Font Awesome 5 Free', 'Font Awesome 5 Brands', 'Font Awesome 5 Solid'; /* Inclure toutes les familles FA5 */
     font-weight: 900;
     position: absolute;
     left: 0;
@@ -551,8 +573,8 @@ body {
                 <p>La base de données sur laquelle j'ai travaillé est constituée des réponses au questionnaire en ligne qui a été passé lors de la première partie de mon stage. L'échantillon a été constitué par contact direct (messagerie privée ou tag) 
                     auprès d'utilisateurs ayant <strong>commenté des interviews de candidat.e.s à l'élection présidentielle française sur les plateformes suivantes</strong> :</p>
                     
-                <div class="data-presentation">
-                    <div>
+                <div class="data-presentation clearfix">
+                    <div class="data-presentation-column"> 
                         <h4>Plateformes sources :</h4>
                         <ul>
                             <li><strong>X</strong> (anciennement Twitter)</li>
@@ -560,8 +582,8 @@ body {
                             <li><strong>YouTube</strong></li>
                         </ul>
                     </div>
-                    <div>
-                        <h4>Catégories de Variables Recueillies :</h4>
+                    <div class="data-presentation-column right">
+                        <h4>Catégories de variables recueillies :</h4>
                         <ul>
                             <li>Données sociodémographiques (âge, genre, CSP, niveau de diplôme...)</li>
                             <li>Orientation politique (échelle gauche-droite)</li>
@@ -575,8 +597,7 @@ body {
             <!-- 3. Nettoyage -->
             <div class="clearfix">
                 <h3>3. Nettoyage et préparation des données</h3>
-                <img src="../mesdocuments/image_amulex_tableausuivi.PNG" alt="Graphique 1" class="float-img-left">
-                <br style="clear: both;"> 
+                <img src="../mesdocuments/image_amulex_tableausuivi.PNG" alt="Graphique 1" class="float-img-right">
                 <p>La préparation et le nettoyage des données ont été réalisés à l'aide de logiciels d'analyse statistique comme R et Jamovi, ainsi que des outils de gestion comme Excel. J'ai mobilisé plusieurs outils et méthodes clés pour structurer les données 
                     issues du questionnaire et du processus de collecte :</p>
                 <ol class="cleaning-steps">
@@ -589,8 +610,9 @@ body {
             <!-- 4. Résultats -->
             <div class="clearfix">
                 <h3>4. Stratégies de collecte</h3>
-                <img src="../mesdocuments/image_amulex_limitejournalière.jpg" alt="Graphique 1" class="float-img-right">    
-                <p>La collecte des données a été menée par vagues accompagnée d'une adaptation constante afin de surmonter les défis méthodologiques et techniques spécifiques à chaque plateforme.</p>
+                <img src="../mesdocuments/image_amulex_limitejournalière.jpg" alt="Graphique 1" class="float-img-left">    
+                <p>La collecte des données a été menée par vagues accompagnée d'une adaptation constante afin de surmonter les défis méthodologiques et techniques spécifiques à chaque plateforme.<br>
+                </p>
                 <ul class="strategy-list">
                     <li class="objective"><strong>Objectif</strong> : Contacter le plus de commentateurs.</li>
                     <li class="follow-up"><strong>Suivi</strong> : Utilisation d'un fichier Excel pour suivre les tentatives de contact.</li>
