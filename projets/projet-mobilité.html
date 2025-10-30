@@ -271,7 +271,7 @@ body {
 
 /* Styles pour le Modal */
 #lightbox-modal {
-    display: block;
+    display: none;
     position: fixed;
     z-index: 1000; /* Assurez-vous qu'il soit au-dessus de tout */
     left: 0;
@@ -781,50 +781,50 @@ body {
     </div>
 </div>
 <script>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // 1. Récupération des éléments HTML nécessaires
+    // 1. Récupération des éléments HTML du modal
     var modal = document.getElementById("lightbox-modal");
-    var imgModal = document.getElementById("lightbox-image");
+    var modalImg = document.getElementById("lightbox-image");
     var captionText = document.getElementById("lightbox-caption");
-    var closeBtn = document.getElementsByClassName("lightbox-close")[0];
-    
-    // Récupération de tous les éléments qui déclenchent la lightbox (vos images)
     var triggers = document.querySelectorAll(".lightbox-trigger");
+    var closeBtn = document.querySelector(".lightbox-close");
 
-    // 2. Logique d'OUVERTURE du modal (quand on clique sur une image)
+    // 2. Logique d'OUVERTURE : Ajout d'un écouteur d'événement à chaque lien d'image
     triggers.forEach(function(trigger) {
-        trigger.onclick = function(event) {
-            event.preventDefault(); // Empêche le lien de recharger la page
+        trigger.addEventListener('click', function(event) {
+            // Empêche le navigateur d'aller à l'URL de l'image
+            event.preventDefault(); 
             
-            // Récupère les informations de l'image à afficher
-            var imageElement = this.querySelector('img');
-            var imgSrc = this.getAttribute('href'); // L'URL de la grande image est dans le href
-            var imgAlt = this.getAttribute('data-alt'); // La légende est dans l'attribut data-alt
-            
-            modal.style.display = "block"; // Affiche le modal !
-            imgModal.src = imgSrc; // Charge la grande image
-            captionText.innerHTML = imgAlt; // Affiche la légende
-        }
+            // Récupère l'URL de l'image (dans le 'href' du lien <a>)
+            var imgSrc = this.getAttribute('href'); 
+            // Récupère la légende (dans le 'data-alt' du lien <a>)
+            var altText = this.getAttribute('data-alt');
+
+            // Affiche le modal et insère le contenu de l'image
+            modal.style.display = "block";
+            modalImg.src = imgSrc;
+            captionText.innerHTML = altText || this.querySelector('img').alt;
+        });
     });
 
-    // 3. Logique de FERMETURE du modal (quand on clique sur la croix)
+    // 3. Logique de FERMETURE 1 : Fermer en cliquant sur la croix
     closeBtn.onclick = function() {
-        modal.style.display = "none"; // Masque le modal
+        modal.style.display = "none";
     }
 
-    // 4. Logique de FERMETURE du modal (quand on clique sur le fond noir)
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none"; // Masque le modal
+    // 4. Logique de FERMETURE 2 : Fermer en cliquant sur le fond gris (l'extérieur de l'image)
+    modal.onclick = function(event) {
+        // S'assure que le clic est bien sur le fond et non sur l'image elle-même
+        if (event.target === modal) { 
+            modal.style.display = "none";
         }
     }
-});
-</script>
-</body>
-</html>
-
-
     
+    // 5. Logique de FERMETURE 3 : Fermer en appuyant sur la touche ÉCHAP
+    document.addEventListener('keydown', function(event) {
+        if (event.key === "Escape" && modal.style.display === "block") {
+            modal.style.display = "none";
+        }
+    });
+</script>
 </body>
 </html>
