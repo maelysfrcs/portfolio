@@ -604,8 +604,23 @@ body {
         
         <div class="article-content">
             <h1>Analyse spatiale et longitudinale des réseaux personnels : Mobilité, dispersion géographique et structuration des liens sociaux.</h1>
+            
+            <div style="margin-bottom: 30px; padding: 20px; background-color: #f7f9fb; border-left: 5px solid #0077b5; border-radius: 4px;">
+        <h2 style="font-family: 'Poppins', sans-serif; font-size: 24px; color: #0077b5; margin-top: 0; border: none; padding-bottom: 0;">Sommaire</h2>
+        <ul style="list-style: none; padding-left: 0;">
+            <li style="margin-bottom: 5px;"><a href="#objectif" style="color: #333; text-decoration: none; font-weight: 500;">1. Objectif du stage et du projet</a></li>
+            <li style="margin-bottom: 5px;"><a href="#donnees" style="color: #333; text-decoration: none; font-weight: 500;">2. Présentation des données</a></li>
+            <li style="margin-bottom: 5px;"><a href="#nettoyage" style="color: #333; text-decoration: none; font-weight: 500;">3. Nettoyage et préparation des données</a></li>
+            <li style="margin-bottom: 5px;"><a href="#strategies" style="color: #333; text-decoration: none; font-weight: 500;">4. Stratégies de collecte</a></li>
+            <li style="margin-bottom: 5px;"><a href="#resultats" style="color: #333; text-decoration: none; font-weight: 500;">5. Résultats : facteurs explicatifs</a></li>
+            <li style="margin-bottom: 5px;"><a href="#etude-cas" style="color: #333; text-decoration: none; font-weight: 500;">6. Étude de cas : Sylvain (Ego 40)</a></li>
+            <li style="margin-bottom: 5px;"><a href="#conclusion" style="color: #333; text-decoration: none; font-weight: 500;">7. Conclusion</a></li>
+            <li><a href="#competences" style="color: #333; text-decoration: none; font-weight: 500;">8. Compétences développées</a></li>
+        </ul>
+    </div>
+    <hr>          
             <div class="clearfix">
-                <h3>1. Objectif de l'étude</h3>
+                <h3 id="objectif">1. Objectif de l'étude</h3>
                 <a href="../mesdocuments/mobilité_graphique1.png" class="float-img-left lightbox-trigger" data-alt="Graphique 1 - Mobilité des individus">
                     <img src="../mesdocuments/mobilité_graphique1.png" alt="Graphique 1">
                 </a>
@@ -617,7 +632,7 @@ body {
             </div>
         <hr>
             <div class="clearfix">
-                <h3>2. Présentation des données</h3>
+                <h3 id="donnees">2. Présentation des données</h3>
             <dl class="data-vagues float-img-right">
                     <dt>Vague A (1995) :</dt>
                     <dd>87 individus</dd>
@@ -638,7 +653,7 @@ body {
             </div>
         <hr>
             <div class="clearfix">
-                <h3>3. Nettoyage des données</h3>
+                <h3 id="nettoyage">3. Nettoyage des données</h3>
                 <p>
                     La préparation et le nettoyage des données ont été réalisés entièrement sous R. J'ai mobilisé plusieurs librairies clés : principalement tidyverse pour la manipulation et la transformation des données, igraph pour l'analyse des réseaux,
                     et sf et mapsf pour le traitement et la cartographie des données spatiales.
@@ -651,7 +666,7 @@ body {
             </div>
         <hr>
             <div class="clearfix">
-                <h3>4. Résultats : dynamique et évolution des réseaux</h3>
+                <h3 id="strategies">4. Résultats : dynamique et évolution des réseaux</h3>
                 <a href="../mesdocuments/image_mobilité_densité.png" class="float-img-right lightbox-trigger" data-alt="Graphiques de la densité, taille et évolution des réseaux par vague">
                     <img src="../mesdocuments/image_mobilité_densité.png" alt="Graphiques de la densité, taille et évolution des réseaux par vague">
                 </a>
@@ -679,7 +694,7 @@ body {
             </div>
         <hr>
             <div class="clearfix">
-                <h3>5. Résultats : facteurs explicatifs</h3>
+                <h3 id="resultats">5. Résultats : facteurs explicatifs</h3>
                 <p>
                     L'analyse des facteurs (genre et âge) est primordiale pour mieux comprendre la mobilité. Un <strong>test T</strong> a confirmé une différence statistiquement significative (p-value = 0.01542) : les <strong>hommes ont une mobilité légèrement plus 
                     élevée</strong> (moyenne de 0.855) que les femmes (0.828). De plus, le <strong>test ANOVA</strong> révèle que la mobilité varie significativement selon les tranches d’âge, les individus plus âgés ayant une tendance à être un peu plus mobiles.
@@ -733,7 +748,7 @@ body {
                 </div> 
         <hr>
             <div class="clearfix">
-                <h3>6. Étude de cas : Sylvain (Ego 40)</h3>
+                <h3 id="etude-cas">6. Étude de cas : Sylvain (Ego 40)</h3>
                 <a href="../mesdocuments/image_mobilité_sylvain.png" class="float-img-right lightbox-trigger" data-alt="Graphique de la trajectoire du réseau de Sylvain (Ego 40) par vague">
                     <img src="../mesdocuments/image_mobilité_sylvain.png" alt="Graphique de la trajectoire du réseau de Sylvain (Ego 40) par vague">
                 </a>
@@ -745,7 +760,7 @@ body {
             </div>
         <hr>
             <div class="clearfix">
-                <h3>7. Conclusion</h3>
+                <h3 id="conclusion">7. Conclusion</h3>
                 <p>
                     En conclusion, ce projet met en lumière l'influence réciproque entre les réseaux personnels et les trajectoires de vie, confirmant que la <strong>mobilité et la configuration des réseaux varient en fonction du genre, de l'âge et de la structure
                     des liens</strong>. Les résultats, notamment la forte corrélation entre la taille du réseau et la mobilité, s'alignent sur les concepts de liens forts et faibles de Granovetter et la diversification géographique des réseaux. 
@@ -754,7 +769,7 @@ body {
             </div>
         <hr>
             <div class="clearfix">
-                <h3>8. Compétences développées</h3>
+                <h3 id="competences">8. Compétences développées</h3>
                 <ol class="cleaning-steps">
                     <li><strong>Maîtrise de R et d'analyse statistique</strong> : Application de tests statistiques avancés (Test T, ANOVA) et utilisation des packages "tidyverse", "igraph", "sf" et "mapsf".</li>
                     <li><strong>Gestion de données longitudinales</strong> : Traitement, manipulation et harmonisation de données complexes du Panel de Caen collectées sur une longue période (1995-2015).</li>
