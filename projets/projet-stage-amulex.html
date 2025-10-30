@@ -465,113 +465,145 @@ body {
         <img src="../photocv.PNG" class="profile-photo" alt="Maëlys François">
         <div class="info-container">
             <h1>Maëlys François</h1>
-            <p>Passionnée par <strong>l'analyse de données</strong> avec une expertise pour l'étude des comportements sur les <strong> réseaux sociaux</strong>.</p>
+            <p>Passionnée par <strong>l'analyse de données</strong> avec une expertise pour l'étude des comportements sur les <strong>réseaux sociaux</strong>.</p>
         </div>
     </div>
 
-  <div class="main-content-projects">
-        
-        <div class="article-content">
-            <h1>Collecte et analyse de données des réseaux sociaux numériques : Assistance au projet ANR AMULEX</h1>
-            <div class="clearfix">
-                <h3>1. Objectif du stage et du projet</h3>
-                <img src="../mesdocuments/amullex_logo.png" alt="Logo du projet ANR AMULEX" class="float-img-left">
-                <p>
-                  Ce projet a été réalisé dans le cadre de mon stage en tant qu’assistante sur le projet <strong>ANR AMULEX</strong> (Analyse Multiplateforme de l’Expression politique en ligne), dont l'objectif prinfipal était de collecter et d'analyser les données
-                  issues des réseaux sociaux. <br>
-                  L'objectif de ma mission était de <strong>contribuer à l'administration d'un questionnaire en ligne</strong> (via LimeSurvey) aurpès d'un échantillon ciblé de commentateurs politiques, pour ensuite l'<strong>analyser statistiquement</strong>.
-                </p>
-                </div>
-        <hr>
-            <div class="clearfix">
-                <h3>2. Présentation des données</h3>
-                <p>
-                  Le base de données sur laquelle j'ai travaillé est constituée des réponses au questionnaire en ligne qui a été passé lors de la première partie de mon stage. L'échantillon a été constitué par contact direct (messagterie privée ou tag) auprès
-                  d'utilisateurs ayant <strong>commenté des interviews de candidat.e.s à l'élection présidentielle française sur les plateformes suivantes : </strong>
-                </p>
-                <ol class="cleaning-steps">
-                    <li><strong>X (anciennement Twitter)</strong></li>
-                    <li><strong>Instagram</strong></li>
-                    <li><strong>Youtube</strong></li>
-                </ol>
-              <p>
-                Les données recueillies permettent d'établir un profil des particiants en couvrant :
-              </p>
-              <ol classe="cleaning-steps">
-                  <li><strong>Les données sociodémographiques</strong> (âge, genre, CSP, niveau de diplôme...)</li>
-                  <li><strong>L'orientation politique</strong> (échelle gauche-droite)</li>
-                  <li><strong>Les pratiques numériques</strong> (fréquence d'utilisation des plateformes et types d'activités : commenter, liker, partager, consulter</li>
-            </div>
-        <hr>
-            <div class="clearfix">
-                <h3>3. Nettoyage et préparation des données</h3>
-                <img src="../mesdocuments/Rapport_Tableau_2.png" alt="Tableau de répartition du genre en fonction des classes" class="float-img-right">
-                <p>
-                  La préparation et le nettoyage des données ont été réalisés à l'aide de logiciels d'analyse statistique comme R et Jamovi, ainsi que des outils de gestion comme Excel. J'ai mobilisé plusieurs outils et méthodes clés pour structurer les données 
-                  issues du questionnaire et du processus de collecte :
-                </p>
-                <ol classe="cleaning-steps">
-                  <li><strong>Documentation et suivi de la collecte</strong> : J'ai utilisé un document Word partagé avec mes tuteurs et tutrices qui m'a servi à documenter de manière exhaustive les tentatives de contacte, garantissant la fiabilité des informations 
-                  et une maîtrise du suivi de la campagne d'enquête.</li>
-                  <li><strong>Transformation des varibales pour les analyses</strong> : Certaines données issues du questionnaire ont été transformées en variables ordinales (par exemple, "plusieurs fois par jour" est devenu "1"). Cette transformation était nécessaire
-                  pour l'analyse réalisée sur Jamovi.</li>
-            </div>
-        <hr>
-             <div class="clearfix">
-                <h3>4. Stratégies de collecte</h3>
-                <p>
-                  La collecte des données a été menée par vagues accompagnée d'une adaptation constant afin de surmonter les défis méthodologiques et techniques spécifiques à chaque plateforme. 
-                </p>
-                <ol classe="cleaning-steps">
-                  <li><strong>Objectif</strong> : Contacter le plus de commentateurs.</li>
-                  <li><strong>Processus</strong> : Utilisation d'un fichier Excel pour suivre les tentatives de contact.</li>
-                  <li><strong>Difficultés</strong> : Le principal obstacle a été le filtrage des messages par Instagram ("utilisateur qui restreint les nouveaux messages"), limitant l'efficacité des relances.</li>
-                  
-                <h4>Stratégie YouTube</h4>
-                  <li><strong>Problème</strong> : YouTube ne dispose pas d'une messagerie privée pour le contact direct.</li>
-                  <li><strong>Solution</strong> : Création d'une chaîne YouTube dédiée avec une vidéo explicative, et contact des enquêtés par tag sous le post de la vidéo.</li>
-                </ol>
-             </div>
-        <hr>
+    <div class="main-content-projects">
+        <div class="article-content">
+
+            <h1>Analyse spatiale et longitudinale des réseaux personnels : Mobilité, dispersion géographique et structuration des liens sociaux.</h1>
+
+            <!-- 1. Objectif -->
             <div class="clearfix">
-                <h3>5. Résultats : dynamique et évolution des réseaux</h3>
-                <img src="../mesdocuments/image_mobilité_densité.png" alt="Graphiques de la densité, taille et évolution des réseaux par vague" class="float-img-right">
-                <p>
-                    L'analyse de la densité des réseaux révèle une <strong>diminution progressive</strong> entre les premières vagues (A et B) et les dernières (C, D et F). Cette tendance, où les liens se multiplient sans être très connectés entre eux, 
-                    suggère une évolution des réseaux vers plus de diversité. Cela rejoint l'idée de <strong>Granovetter</strong> selon laquelle les liens faibles, bien qu’ils réduisent la densité, sont importants pour accéder à de nouvelles opportunités.
-                </p>
-                <img src="../mesdocuments/image_mobilité_taille.png" alt="Distribution de la taille des réseaux" class="float-img-left">
-                <p>
-                    La taille des réseaux personnels est souvent concentrée autour de <strong>petites ou moyennes valeurs (entre 3 et 8 relations)</strong>. Ces variations sont fortement corrélées aux étapes de vie (passage aux études, emploi, 
-                    relation amoureuse) qui ont pu influencer la taille des réseaux au fil des vagues (A à F). <br>
-                </p>
-                <img src="../mesdocuments/image_mobilité_répartition.png" alt="Répartition des Egos par type d'évolution" class="float-img-right">
-                <p>
-                    <br> Le graphique montre une nette dominance des réseaux en <strong>expansion</strong>, traduisant une augmentation des interactions sociales et une diversification des lieux fréquentés. 
-                </p>
-            </div>
+                <h3>1. Objectif de l'étude</h3>
+                <img src="../mesdocuments/mobilité_graphique1.png" alt="Graphique 1" class="float-img-left">
+                <p>Dans le cadre de mon master, j'ai réalisé ce projet qui cherchait à répondre à cette question clé : Comment la dispersion géographique et l'évolution des réseaux personnels reflètent-elles les trajectoires
+                de vie des individus ?<br>
+                Mon objectif était de démontrer comment l'éloignement ou la proximité des liens sociaux affecte l'évolution du réseau (sa taille, sa densité) lorsqu'un individu connaît un changement majeur (déménagement, nouvel emploi).</p>
+            </div>
+            <hr>
 
+            <!-- 2. Présentation des données -->
+            <div class="clearfix">
+                <h3>2. Présentation des données</h3>
+                <dl class="data-vagues float-img-right">
+                    <dt>Vague A (1995) :</dt><dd>87 individus</dd>
+                    <dt>Vague B (1998) :</dt><dd>70 individus</dd>
+                    <dt>Vague C (2001) :</dt><dd>66 individus</dd>
+                    <dt>Vague D (2004) :</dt><dd>60 individus</dd>
+                    <dt>Vague F (2015) :</dt><dd>21 individus</dd>
+                </dl>
+                <p>Pour réaliser cette étude, j'ai utilisé les données du Panel de Caen. Ces données proviennent d'une étude longitudinale initiée par Claire Bidart, Marion Maisonobe et Gil Viry. Ce panel a suivi 87 jeunes adultes résidant à Caen, initialement âgés
+                de 17 à 23 ans, sur une longue période s'étendant de 1995 à 2015. L'enquête a été menée en cinq vagues successives, permettant d'avoir une vision dynamique de non figée des relations.<br>
+                Au total, cette base de données permet d'analyser l’évolution des liens sociaux à travers le temps et la mobilité.</p>
+            </div>
+            <hr>
 
+            <!-- 3. Nettoyage -->
+            <div class="clearfix">
+                <h3>3. Nettoyage des données</h3>
+                <p>La préparation et le nettoyage des données ont été réalisés entièrement sous R. J'ai mobilisé plusieurs librairies clés : principalement tidyverse pour la manipulation et la transformation des données, igraph pour l'analyse des réseaux,
+                et sf et mapsf pour le traitement et la cartographie des données spatiales.</p>
+                <ol class="cleaning-steps">
+                    <li>J'ai d'abord filtré la base pour isoler les informations pertinentes...</li>
+                    <li>J'ai ensuite créé et calculé pour chaque réseau (à chaque vague) les trois métriques essentielles...</li>
+                    <li>J'ai finalement comparé la taille du réseau entre les vagues A et F...</li>
+                </ol>
+            </div>
+            <hr>
 
-                  
-                <h4>Compétences Clés Démontrées :</h4>
-                <ol class="cleaning-steps">
-                    <li>**Collecte de données (Web Scraping / API) :** Maîtrise des techniques de récupération de données complexes et multimodales sur les réseaux sociaux.</li>
-                    <li>**Analyse Statistique :** Application de méthodes statistiques (telles que l'ACL) à des données socio-numériques pour identifier des profils d'usagers.</li>
-                    <li>**Veille Scientifique :** Capacité à mobiliser la littérature sociologique récente sur les réseaux socionumériques (Neihouser et al., Pacouret et al.).</li>
-                    <li>**Adaptabilité et Résilience :** Gestion des imprévus techniques et des contraintes de la recherche en environnement professionnel.</li>
-                </ol>                  
-            </div>
-        </div>
-    </div>
+            <!-- 4. Résultats -->
+            <div class="clearfix">
+                <h3>4. Résultats : dynamique et évolution des réseaux</h3>
+                <img src="../mesdocuments/image_mobilité_densité.png" alt="Graphiques densité" class="float-img-right">
+                <p>L'analyse de la densité des réseaux révèle une <strong>diminution progressive</strong> entre les premières vagues (A et B) et les dernières (C, D et F)...</p>
+            </div>
+            <hr>
 
-    <footer class="footer">
-        <div class="footer-buttons">
-            <a href="https://www.linkedin.com/in/ma%C3%ABlys-fran%C3%A7ois" class="button" target="_blank"><i class="fab fa-linkedin"></i>LinkedIn</a>
-            <a href="../mesdocuments/cv_maëlys_françois.pdf" class="button" target="_blank"><i class="fas fa-file-pdf"></i>Mon CV</a>
-            <a href="mailto:maelys.francois31@gmail.com" class="button"><i class="fas fa-envelope"></i>Mon Email</a>
-        </div>
-    </footer>
-</div>
+            <div class="clearfix">
+                <img src="../mesdocuments/image_mobilité_taille.png" alt="Distribution de la taille" class="float-img-left">
+                <p>La taille des réseaux personnels est souvent concentrée autour de <strong>petites ou moyennes valeurs</strong>...</p>
+            </div>
+            <hr>
+
+            <div class="clearfix">
+                <img src="../mesdocuments/image_mobilité_répartition.png" alt="Répartition des Egos" class="float-img-right">
+                <p>Le graphique montre une nette dominance des réseaux en <strong>expansion</strong>...</p>
+            </div>
+            <hr>
+
+            <!-- 5. Facteurs explicatifs -->
+            <div class="clearfix">
+                <h3>5. Résultats : facteurs explicatifs</h3>
+                <p>L'analyse des facteurs (genre et âge) est primordiale pour mieux comprendre la mobilité...</p>
+            </div>
+
+            <div class="clearfix">
+                <img src="../mesdocuments/image_mobilité_relation.png" alt="Relation réseau et mobilité" class="float-img-left">
+                <p>Le graphique présente la relation entre la taille du réseau et la mobilité totale...</p>
+            </div>
+
+            <div style="margin-top: 30px; margin-bottom: 30px; clear: both;">
+                <table style="width: 100%; border-collapse: collapse; text-align: center; border: 1px solid #ccc;">
+                    <caption style="font-weight: bold; margin-bottom: 8px;">Tableau 1 : Moyenne et écart-type de la mobilité selon l'âge et le genre</caption>
+                    <thead>
+                        <tr style="background-color: #eee;">
+                            <th>Âge</th><th>Genre</th><th>Moyenne</th><th>Écart-type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td rowspan="2">17-23 ans</td><td>Femme</td><td>0.793</td><td>0.406</td></tr>
+                        <tr><td>Homme</td><td>0.832</td><td>0.375</td></tr>
+                        <tr><td rowspan="2">20-26 ans</td><td>Femme</td><td>0.836</td><td>0.371</td></tr>
+                        <tr><td>Homme</td><td>0.818</td><td>0.387</td></tr>
+                        <tr><td rowspan="2">23-29 ans</td><td>Femme</td><td>0.816</td><td>0.388</td></tr>
+                        <tr><td>Homme</td><td>0.858</td><td>0.350</td></tr>
+                        <tr><td rowspan="2">26-32 ans</td><td>Femme</td><td>0.830</td><td>0.376</td></tr>
+                        <tr><td>Homme</td><td>0.876</td><td>0.329</td></tr>
+                        <tr><td rowspan="2">37-43 ans</td><td>Femme</td><td>0.875</td><td>0.332</td></tr>
+                        <tr><td>Homme</td><td>0.862</td><td>0.346</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <hr>
+
+            <!-- 6. Étude de cas -->
+            <div class="clearfix">
+                <h3>6. Étude de cas : Sylvain (Ego 40)</h3>
+                <img src="../mesdocuments/image_mobilité_sylvain.png" alt="Trajectoire Sylvain" class="float-img-right">
+                <p>L'analyse du parcours de Sylvain (Ego 40) offre un aperçu concret des dynamiques globales...</p>
+            </div>
+            <hr>
+
+            <!-- 7. Conclusion -->
+            <div class="clearfix">
+                <h3>7. Conclusion</h3>
+                <p>En conclusion, ce projet met en lumière l'influence réciproque entre les réseaux personnels et les trajectoires de vie...</p>
+            </div>
+            <hr>
+
+            <!-- 8. Compétences -->
+            <div class="clearfix">
+                <h3>8. Compétences développées :</h3>
+                <ol class="cleaning-steps">
+                    <li><strong>Maîtrise de R et d'analyse statistique</strong>...</li>
+                    <li><strong>Gestion de données longitudinales</strong>...</li>
+                    <li><strong>Analyse spatiale et des réseaux</strong>...</li>
+                    <li><strong>Interprétation sociologique</strong>...</li>
+                </ol>
+            </div>
+
+        </div> <!-- fin .article-content -->
+    </div> <!-- fin .main-content-projects -->
+
+    <footer class="footer">
+        <div class="footer-buttons">
+            <a href="https://www.linkedin.com/in/ma%C3%ABlys-fran%C3%A7ois" class="button" target="_blank"><i class="fab fa-linkedin"></i>LinkedIn</a>
+            <a href="../mesdocuments/cv_maëlys_françois.pdf" class="button" target="_blank"><i class="fas fa-file-pdf"></i>Mon CV</a>
+            <a href="mailto:maelys.francois31@gmail.com" class="button"><i class="fas fa-envelope"></i>Mon Email</a>
+        </div>
+    </footer>
+</div> <!-- fin .wrapper-limited -->
 </body>
 </html>
