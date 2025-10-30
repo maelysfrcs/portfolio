@@ -253,6 +253,68 @@ body {
     margin: 15px 0;
     counter-reset: section-step;
 }
+
+/* NOUVEAU STYLE : Structure en 2 colonnes pour la présentation des données (Partie 2) */
+.data-presentation {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.data-presentation ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    border-left: 3px solid #0077b5;
+    padding-left: 15px;
+}
+.data-presentation li {
+    line-height: 1.6;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+.data-presentation li strong {
+    color: #0077b5;
+    font-weight: 600;
+}
+.data-presentation h4 {
+    color: #0077b5;
+    margin-bottom: 10px;
+    font-size: 17px;
+    border-bottom: 1px dashed #eee;
+    padding-bottom: 5px;
+}
+
+/* NOUVEAU STYLE : Liste de stratégies/défis stylisée (Partie 4) */
+.strategy-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 15px 0;
+}
+.strategy-list li {
+    padding: 8px 0 8px 30px;
+    position: relative;
+    line-height: 1.5;
+    border-bottom: 1px dotted #ccc;
+}
+.strategy-list li:last-child {
+    border-bottom: none;
+}
+.strategy-list li::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    color: #0077b5;
+    font-size: 18px;
+}
+/* Icônes spécifiques pour la stratégie */
+.strategy-list li.objective::before { content: "\f058"; /* check-circle */ color: green; }
+.strategy-list li.follow-up::before { content: "\f02d"; /* book */ }
+.strategy-list li.difficulty::before { content: "\f06a"; /* exclamation-circle */ color: #cc0000; }
+.strategy-list li.problem::before { content: "\f057"; /* times-circle */ color: #cc0000; }
+.strategy-list li.solution::before { content: "\f0e7"; /* lightning-bolt */ color: orange; }
     
 .cleaning-steps li {
     padding: 10px 0 10px 30px;
@@ -488,24 +550,33 @@ body {
                 <h3>2. Présentation des données</h3>
                 <p>La base de données sur laquelle j'ai travaillé est constituée des réponses au questionnaire en ligne qui a été passé lors de la première partie de mon stage. L'échantillon a été constitué par contact direct (messagerie privée ou tag) 
                     auprès d'utilisateurs ayant <strong>commenté des interviews de candidat.e.s à l'élection présidentielle française sur les plateformes suivantes</strong> :</p>
-                    <ol class="cleaning-steps">
-                    <li>X (anciennement Twitter)</li>
-                    <li>Instagram</li>
-                    <li>YouTube</li>
-                    </ol>
-                <p>Les données recueillies permettent d'établir un profil des particiants en couvrant :</p>
-                    <ol class="cleaning-steps">
-                    <li>Les données sociodémographiques (âge, genre, CSP, niveau de diplôme...)</li>
-                    <li>L'orientation politique (échelle gauche-droite)</li>
-                    <li>Les pratiques numériques (fréquence d'utilisation des plateformes et types d'activités : commenter, liker, partager, consulter</li>
-                    </ol>
+                    
+                <div class="data-presentation">
+                    <div>
+                        <h4>Plateformes sources :</h4>
+                        <ul>
+                            <li><strong>X</strong> (anciennement Twitter)</li>
+                            <li><strong>Instagram</strong></li>
+                            <li><strong>YouTube</strong></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Catégories de Variables Recueillies :</h4>
+                        <ul>
+                            <li>Données sociodémographiques (âge, genre, CSP, niveau de diplôme...)</li>
+                            <li>Orientation politique (échelle gauche-droite)</li>
+                            <li>Pratiques numériques (fréquence d'utilisation et types d'activités : commenter, liker, partager, consulter)</li>
+                        </ul>
+                    </div>
                 </div>
+            </div>
             <hr>
 
             <!-- 3. Nettoyage -->
             <div class="clearfix">
                 <h3>3. Nettoyage et préparation des données</h3>
-                <img src="../mesdocuments/image_amulex_tableausuivi.PNG" alt="Graphique 1" class="float-img-left">    
+                <img src="../mesdocuments/image_amulex_tableausuivi.PNG" alt="Graphique 1" class="float-img-left">
+                <br style="clear: both;"> 
                 <p>La préparation et le nettoyage des données ont été réalisés à l'aide de logiciels d'analyse statistique comme R et Jamovi, ainsi que des outils de gestion comme Excel. J'ai mobilisé plusieurs outils et méthodes clés pour structurer les données 
                     issues du questionnaire et du processus de collecte :</p>
                 <ol class="cleaning-steps">
@@ -520,13 +591,13 @@ body {
                 <h3>4. Stratégies de collecte</h3>
                 <img src="../mesdocuments/image_amulex_limitejournalière.jpg" alt="Graphique 1" class="float-img-right">    
                 <p>La collecte des données a été menée par vagues accompagnée d'une adaptation constante afin de surmonter les défis méthodologiques et techniques spécifiques à chaque plateforme.</p>
-                <ol class="cleaning-steps">
-                    <li><strong>Objectif</strong> : Contacter le plus de commentateurs.</li>
-                    <li><strong>Suivi</strong> : Utilisation d'un fichier Excel pour suivre les tentatives de contact.</li>
-                    <li><strong>Difficultés</strong> : Le principal obstacle a été le filtrage des messages par Instagram ("utilisateur qui restreint les nouveaux messages"), limitant l'efficacité des relances.</li>
-                    <li><strong>Problème</strong> : YouTube ne dispose pas d'une messagerie privée pour le contact direct et ne permet le tag que de 100 comptes par jour.</li>
-                    <li><strong>Solution</strong> : Création d'une chaîne YouTube dédiée avec une vidéo explicative, et contact des enquêtés par tag sous le post de la vidéo par tranche de 100 suivi des relances sur Instagram.</li>
-                </ol>
+                <ul class="strategy-list">
+                    <li class="objective"><strong>Objectif</strong> : Contacter le plus de commentateurs.</li>
+                    <li class="follow-up"><strong>Suivi</strong> : Utilisation d'un fichier Excel pour suivre les tentatives de contact.</li>
+                    <li class="difficulty"><strong>Difficultés</strong> : Le principal obstacle a été le filtrage des messages par Instagram ("utilisateur qui restreint les nouveaux messages"), limitant l'efficacité des relances.</li>
+                    <li class="problem"><strong>Problème</strong> : YouTube ne dispose pas d'une messagerie privée pour le contact direct et ne permet le tag que de 100 comptes par jour.</li>
+                    <li class="solution"><strong>Solution</strong> : Création d'une chaîne YouTube dédiée avec une vidéo explicative, et contact des enquêtés par tag sous le post de la vidéo par tranche de 100 suivi des relances sur Instagram.</li>
+                </ul>
             </div>
             <hr>
             
