@@ -125,57 +125,103 @@ body {
 /* ************************************************************************** */
 /* NOUVEAU: STYLE SOMMAIRE (TOC) */
 /* ************************************************************************** */
-#table-of-contents-container {
-    background-color: #f8f8f8;
-    border: 1px solid #eee;
-    padding: 15px;
+:root {
+    /* Ajout d'une variable pour la couleur principale, si non définie */
+    --main-blue: #0077b5;
+}
+
+/* 1. Conteneur principal qui gère l'affichage du bouton et de la liste */
+#toc-wrapper {
+    /* Positionnement nécessaire pour que la liste soit affichée en dessous */
+    position: relative; 
+    display: inline-block; /* Le conteneur ne prend que la place nécessaire au bouton */
+    margin-bottom: 30px; 
+    z-index: 10; /* Assure que le menu est au-dessus du contenu en dessous */
+}
+
+/* 2. Style du bouton "Sommaire" (le déclencheur) */
+.toc-button {
+    background-color: var(--main-blue); /* Bleu principal */
+    color: white;
+    padding: 10px 20px;
+    border: none;
     border-radius: 6px;
-    margin-bottom: 30px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    display: flex; /* Permet d'aligner l'icône et le texte */
+    align-items: center;
+    gap: 8px; /* Espace entre l'icône et le texte */
+    box-shadow: 0 4px 6px rgba(0, 119, 181, 0.2);
 }
 
-#table-of-contents-container h3 {
-    /* Surcharge H3 par défaut pour le titre du sommaire */
-    font-family: 'Poppins', sans-serif;
-    font-size: 18px;
-    color: #333;
-    border-left: none;
-    padding-left: 0;
-    margin-top: 0;
-    margin-bottom: 10px;
+.toc-button:hover {
+    background-color: #005f96; /* Bleu plus foncé au survol */
+    box-shadow: 0 6px 10px rgba(0, 119, 181, 0.3);
 }
 
+/* 3. Conteneur de la liste (le menu déroulant) */
+#table-of-contents-container {
+    /* Positionnement absolu pour le dropdown */
+    position: absolute; 
+    top: 100%; /* Commence juste sous le bouton */
+    left: 0;
+    min-width: 300px;
+    
+    /* Style amélioré */
+    background-color: #fff; /* Fond blanc plus net */
+    border: 1px solid #ddd;
+    border-top: none; /* Collé au bouton */
+    padding: 15px 0; /* Pas de padding horizontal ici, géré par les liens */
+    border-radius: 0 0 8px 8px; /* Coins arrondis seulement en bas */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    
+    /* Masquer par défaut */
+    display: none; 
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* 4. LOGIQUE CLÉ : Affichage de la liste au survol du conteneur principal */
+#toc-wrapper:hover #table-of-contents-container {
+    display: block; /* Affiche la liste */
+    opacity: 1; /* Apparition fluide */
+}
+
+/* 5. Style de la liste des liens */
 #table-of-contents-list {
     list-style: none;
     padding-left: 0;
     margin: 0;
 }
-
 #table-of-contents-list li {
-    margin-bottom: 5px;
+    margin-bottom: 0;
+    /* Ligne de séparation subtile entre les liens */
+    border-bottom: 1px dashed #eee; 
 }
-
+#table-of-contents-list li:last-child {
+    border-bottom: none;
+}
 #table-of-contents-list a {
     text-decoration: none;
-    color: #555;
+    color: #333; /* Texte noir/gris foncé */
     font-size: 15px;
     display: block;
-    padding: 3px 0 3px 5px;
-    transition: color 0.2s, background-color 0.2s;
-    border-left: 2px solid transparent;
+    padding: 8px 15px; /* Padding pour une zone de clic confortable */
+    transition: all 0.2s;
+    border-left: 3px solid transparent; /* Bordure discrète */
 }
-
 #table-of-contents-list a:hover {
-    color: var(--main-blue);
-    background-color: #f0f0f0;
-    border-left: 2px solid var(--main-blue);
+    color: var(--main-blue); 
+    background-color: #f0f8ff; /* Très léger bleu de fond au survol */
+    border-left: 3px solid var(--main-blue);
 }
-
-/* Différenciation des sous-sections (H4) */
+/* Différenciation des sous-sections (H4 - si vous en ajoutez) */
 #table-of-contents-list li.level-4 a {
-    padding-left: 20px; /* Indentation pour H4 */
+    padding-left: 30px; /* Indentation pour H4 */
     font-size: 14px;
-    color: #777;
+    color: #555;
 }
     
 /* -------------------------------------------------------------------------- */
@@ -605,20 +651,24 @@ body {
         <div class="article-content">
             <h1>Analyse spatiale et longitudinale des réseaux personnels : Mobilité, dispersion géographique et structuration des liens sociaux.</h1>
             
-            <div style="margin-bottom: 30px; padding: 20px; background-color: #f7f9fb; border-left: 5px solid #0077b5; border-radius: 4px;">
-        <h2 style="font-family: 'Poppins', sans-serif; font-size: 24px; color: #0077b5; margin-top: 0; border: none; padding-bottom: 0;">Sommaire</h2>
-        <ul style="list-style: none; padding-left: 0;">
-            <li style="margin-bottom: 5px;"><a href="#objectif" style="color: #333; text-decoration: none; font-weight: 500;">1. Objectif du stage et du projet</a></li>
-            <li style="margin-bottom: 5px;"><a href="#donnees" style="color: #333; text-decoration: none; font-weight: 500;">2. Présentation des données</a></li>
-            <li style="margin-bottom: 5px;"><a href="#nettoyage" style="color: #333; text-decoration: none; font-weight: 500;">3. Nettoyage et préparation des données</a></li>
-            <li style="margin-bottom: 5px;"><a href="#strategies" style="color: #333; text-decoration: none; font-weight: 500;">4. Stratégies de collecte</a></li>
-            <li style="margin-bottom: 5px;"><a href="#resultats" style="color: #333; text-decoration: none; font-weight: 500;">5. Résultats : facteurs explicatifs</a></li>
-            <li style="margin-bottom: 5px;"><a href="#etude-cas" style="color: #333; text-decoration: none; font-weight: 500;">6. Étude de cas : Sylvain (Ego 40)</a></li>
-            <li style="margin-bottom: 5px;"><a href="#conclusion" style="color: #333; text-decoration: none; font-weight: 500;">7. Conclusion</a></li>
-            <li><a href="#competences" style="color: #333; text-decoration: none; font-weight: 500;">8. Compétences développées</a></li>
-        </ul>
-    </div>
-    <hr>          
+            <div id="toc-wrapper">
+                <div class="toc-button">
+                    <i class="fas fa-list-alt"></i> Sommaire
+                </div>
+                <div id="table-of-contents-container">
+                    <ul id="table-of-contents-list">
+                        <li><a href="#objectif">1. Objectif du stage et du projet</a></li>
+                        <li><a href="#donnees">2. Présentation des données</a></li>
+                        <li><a href="#nettoyage">3. Nettoyage et préparation des données</a></li>
+                        <li><a href="#strategies">4. Stratégies de collecte</a></li>
+                        <li><a href="#resultats">5. Résultats : facteurs explicatifs</a></li>
+                        <li><a href="#etude-cas">6. Étude de cas : Sylvain (Ego 40)</a></li>
+                        <li><a href="#conclusion">7. Conclusion</a></li>
+                        <li><a href="#competences">8. Compétences développées</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>        
             <div class="clearfix">
                 <h3 id="objectif">1. Objectif de l'étude</h3>
                 <a href="../mesdocuments/mobilité_graphique1.png" class="float-img-left lightbox-trigger" data-alt="Graphique 1 - Mobilité des individus">
