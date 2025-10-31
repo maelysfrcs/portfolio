@@ -124,6 +124,52 @@ body {
     gap: 30px;
 }
 
+/* ************************************************************************** */
+/* NOUVEAU: STYLE PLATEFORMES SOCIALES */
+/* ************************************************************************** */
+
+/* Conteneur des boutons */
+.platform-tags {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px 0;
+    flex-wrap: wrap; /* Assure un bon comportement sur mobile */
+}
+
+/* Style de chaque bouton/tag de plateforme */
+.platform-tag {
+    /* Style de base du tag */
+    padding: 8px 15px; /* Légèrement réduit pour l'image */
+    border: 2px solid #0077b5;
+    border-radius: 20px; /* Coins plus arrondis pour un look moderne */
+    background-color: #f0f8ff;
+    font-weight: 600;
+    color: #0077b5;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    cursor: default;
+
+    /* Configuration Flex pour aligner logo et texte */
+    display: inline-flex;
+    align-items: center;
+    gap: 8px; /* Espace entre le logo et le texte */
+    transition: all 0.3s;
+}
+
+.platform-tag:hover {
+    background-color: #e0f0ff; /* Léger changement de couleur au survol */
+    box-shadow: 0 4px 8px rgba(0, 119, 181, 0.15);
+}
+
+/* Style des images/logos */
+.platform-logo {
+    /* Règle principale pour le format carré */
+    width: 24px;
+    height: 24px; 
+    object-fit: contain; /* S'assure que le logo s'affiche entièrement sans déformation */
+    border-radius: 4px; /* Un léger arrondi sur le logo */
+}
+
 /* -------------------------------------------------------------------------- */
 /* STYLE DÉDIÉ AUX PAGES PROJET (Simple Article) - COPIER/COLLER ICI */
 
@@ -301,7 +347,7 @@ body {
 }
 .data-presentation h4 {
     color: #0077b5;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     font-size: 17px;
     border-bottom: 1px dashed #eee;
     padding-bottom: 5px;
@@ -572,11 +618,17 @@ body {
                 <p>La base de données sur laquelle j'ai travaillé est constituée des réponses au questionnaire en ligne qui a été passé lors de la première partie de mon stage. L'échantillon a été constitué par contact direct (messagerie privée ou tag) 
                     auprès d'utilisateurs ayant <strong>commenté des interviews de candidat.e.s à l'élection présidentielle française sur les plateformes suivantes</strong> :</p>
                     
-                <div style="display: flex; justify-content: center; gap: 20px; margin: 20px 0;">
-                    <span style="padding: 10px 20px; border: 1px solid #0077b5; border-radius: 5px; background-color: #f0f8ff; font-weight: 600; color: #0077b5; box-shadow: 0 2px 4px rgba(0,0,0,0.1); cursor: default;">X (anciennement Twitter)</span>
-                    <span style="padding: 10px 20px; border: 1px solid #0077b5; border-radius: 5px; background-color: #f0f8ff; font-weight: 600; color: #0077b5; box-shadow: 0 2px 4px rgba(0,0,0,0.1); cursor: default;">Instagram</span>
-                    <span style="padding: 10px 20px; border: 1px solid #0077b5; border-radius: 5px; background-color: #f0f8ff; font-weight: 600; color: #0077b5; box-shadow: 0 2px 4px rgba(0,0,0,0.1); cursor: default;">YouTube</span>
-                </div>
+            <div class="platform-tags">
+                <span class="platform-tag">
+                    <img src="../logo_X.png" alt="Logo X" class="platform-logo"> X (anciennement Twitter)
+                </span>
+                <span class="platform-tag">
+                    <img src="../logo_instagram.png" alt="Logo Instagram" class="platform-logo">Instagram
+                </span>
+                <span class="platform-tag">
+                    <img src="../logo_youtube.png" alt="Logo YouTube" class="platform-logo">YouTube
+                </span>
+            </div>
                 <h4 style="text-align: center; margin-top: 30px;">Catégories de variables recueillies</h4>
                 <div style="display: flex; justify-content: center; width: 100%;">
                     <table style="width: 80%; max-width: 600px; border-collapse: collapse; margin-bottom: 20px; border: 1px solid #ccc;">
