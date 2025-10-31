@@ -689,39 +689,99 @@ body {
             <hr>
             
             <!-- 5. Facteurs explicatifs -->
-            <div class="clearfix">
-                <h3>5. Résultats : facteurs explicatifs</h3>
-                <p>L'analyse des facteurs (genre et âge) est primordiale pour mieux comprendre la mobilité...</p>
-            </div>
-
-            <div class="clearfix">
-                <img src="../mesdocuments/image_mobilité_relation.png" alt="Relation réseau et mobilité" class="float-img-left">
-                <p>Le graphique présente la relation entre la taille du réseau et la mobilité totale...</p>
-            </div>
-
-            <div style="margin-top: 30px; margin-bottom: 30px; clear: both;">
-                <table style="width: 100%; border-collapse: collapse; text-align: center; border: 1px solid #ccc;">
-                    <caption style="font-weight: bold; margin-bottom: 8px;">Tableau 1 : Moyenne et écart-type de la mobilité selon l'âge et le genre</caption>
-                    <thead>
-                        <tr style="background-color: #eee;">
-                            <th>Âge</th><th>Genre</th><th>Moyenne</th><th>Écart-type</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td rowspan="2">17-23 ans</td><td>Femme</td><td>0.793</td><td>0.406</td></tr>
-                        <tr><td>Homme</td><td>0.832</td><td>0.375</td></tr>
-                        <tr><td rowspan="2">20-26 ans</td><td>Femme</td><td>0.836</td><td>0.371</td></tr>
-                        <tr><td>Homme</td><td>0.818</td><td>0.387</td></tr>
-                        <tr><td rowspan="2">23-29 ans</td><td>Femme</td><td>0.816</td><td>0.388</td></tr>
-                        <tr><td>Homme</td><td>0.858</td><td>0.350</td></tr>
-                        <tr><td rowspan="2">26-32 ans</td><td>Femme</td><td>0.830</td><td>0.376</td></tr>
-                        <tr><td>Homme</td><td>0.876</td><td>0.329</td></tr>
-                        <tr><td rowspan="2">37-43 ans</td><td>Femme</td><td>0.875</td><td>0.332</td></tr>
-                        <tr><td>Homme</td><td>0.862</td><td>0.346</td></tr>
-                    </tbody>
-                </table>
+<div class="clearfix">
+                <h3 id="statistiques-descriptives">5.1. Statistiques Descriptives (Jamovi)</h3>
+                <ul class="strategy-list">
+                    <li class="objective">
+                        <strong>Objectif (Pourquoi) : Cartographier la population enquêtée.</strong>
+                        <p>Analyser la distribution des variables sociodémographiques (âge, genre, CSP, niveau de diplôme) et des variables d'usage (fréquence de commentaire, de partage) pour obtenir une vue d'ensemble de l'échantillon de commentateurs politiques. Cela permet d'identifier des déséquilibres potentiels ou des caractéristiques saillantes.</p>
+                    </li>
+                    <li class="follow-up">
+                        <strong>Méthodologie (Comment) : Tableaux de fréquences et statistiques de base.</strong>
+                        <p>Utilisation de **Jamovi** (ou R) pour générer des statistiques descriptives univariées (moyennes, écarts-types) et des tableaux de fréquences pour les variables catégorielles. Ces résultats servent de base à l'interprétation des analyses multivariées ultérieures.</p>
+                    </li>
+                    <li class="solution">
+                        <strong>Contribution à l'Enquête (Qu'apporte-t-elle) : Validation et compréhension de l'échantillon.</strong>
+                        <p>Valider la représentativité ou les spécificités de l'échantillon et identifier les variables les plus discriminantes pour l'ACM/ACL. Par exemple, confirmer l'homogénéité/hétérogénéité des orientations politiques déclarées.</p>
+                    </li>
+                </ul>
             </div>
             <hr>
+
+            <div class="clearfix">
+                <h3 id="acm">5.2. Analyse des Correspondances Multiples (ACM)</h3>
+                <ul class="strategy-list">
+                    <li class="objective">
+                        <strong>Objectif (Pourquoi) : Structurer l'espace des pratiques politiques en ligne.</strong>
+                        <p>Identifier les dimensions latentes qui structurent les pratiques des commentateurs (type de commentaire, fréquence, plateformes utilisées, perception des autres) et leur positionnement politique. Le but est de simplifier et de visualiser des relations complexes entre de nombreuses variables qualitatives.</p>
+                    </li>
+                    <li class="follow-up">
+                        <strong>Méthodologie (Comment) : Réduction de dimensionnalité sous R ou Jamovi.</strong>
+                        <p>Application de l'ACM sur l'ensemble des variables liées aux pratiques numériques et à l'orientation politique. Interprétation des axes principaux et sélection des modalités les plus contributives à la formation des dimensions (utilisation potentielle du graphique des valeurs propres).</p>
+                    </li>
+                    <li class="solution">
+                        <strong>Contribution à l'Enquête (Qu'apporte-t-elle) : Base pour la typologie des profils.</strong>
+                        <p>L'ACM permet de confirmer l'existence d'un "espace social des réseaux sociaux" et de fournir des coordonnées pour chaque individu. Ces coordonnées sont l'input clé pour la classification, permettant de construire des groupes homogènes d'individus (profils).</p>
+                    </li>
+                </ul>
+            </div>
+            <hr>
+
+            <div class="clearfix">
+                <h3 id="acl">5.3. Classification Ascendante Hiérarchique (CAH / ACL)</h3>
+                <ul class="strategy-list">
+                    <li class="objective">
+                        <strong>Objectif (Pourquoi) : Déterminer une typologie de commentateurs.</strong>
+                        <p>Regrouper les individus en classes ou clusters homogènes en fonction de leurs coordonnées obtenues par l'ACM. Cela permet d'isoler des **"profils types"** de commentateurs politiques en ligne (ex. : "militants très actifs", "observateurs occasionnels").</p>
+                    </li>
+                    <li class="follow-up">
+                        <strong>Méthodologie (Comment) : Application de la CAH sur les facteurs de l'ACM.</strong>
+                        <p>Utilisation des coordonnées factorielles de l'ACM pour réaliser la CAH, en choisissant un critère d'agrégation (ex. : Ward) et une distance (ex. : euclidienne). La décision du nombre optimal de classes se fera par l'observation du dendrogramme.</p>
+                    </li>
+                    <li class="solution">
+                        <strong>Contribution à l'Enquête (Qu'apporte-t-elle) : Caractérisation sociologique des groupes.</strong>
+                        <p>Une fois les classes définies, l'objectif est de les caractériser avec les variables descriptives non utilisées dans l'ACM (âge, genre, CSP, etc.). Cela permet de donner un sens sociologique à chaque profil identifié, répondant directement à la question de la diversité des usages et des usagers (Projet ANR AMULEX).</p>
+                    </li>
+                </ul>
+            </div>
+            <hr>
+            
+            <div class="clearfix">
+                <h3 id="correlation">5.4. Analyse de Corrélation (Tests de liaison)</h3>
+                <ul class="strategy-list">
+                    <li class="objective">
+                        <strong>Objectif (Pourquoi) : Valider les liens entre les pratiques et les profils.</strong>
+                        <p>Vérifier la relation statistique entre les variables sociodémographiques (genre, âge) et la variable catégorielle de profil créée par l'ACL. Il s'agit de confirmer de manière rigoureuse si un profil est significativement plus masculin, ou s'il y a un lien statistiquement significatif entre l'âge et le type de plateforme utilisée.</p>
+                    </li>
+                    <li class="follow-up">
+                        <strong>Méthodologie (Comment) : Tests Khi-2, V de Cramer ou Tests T de Student.</strong>
+                        <p>Selon le type de variables testées (catégorielle vs. catégorielle pour les profils ; catégorielle vs. numérique pour l'âge), j'utiliserai le test approprié : Khi-2 (et V de Cramer pour la force) pour les variables catégorielles, ou un test T de Student/ANOVA si l'une des variables est numérique.</p>
+                    </li>
+                    <li class="solution">
+                        <strong>Contribution à l'Enquête (Qu'apporte-t-elle) : Solidification des résultats.</strong>
+                        <p>Ces tests statistiques fournissent la preuve scientifique (avec des p-values) que les différences observées entre les groupes (profils) ne sont pas dues au hasard. Cela ajoute de la rigueur et de la crédibilité à l'interprétation sociologique des profils identifiés lors de la classification.</p>
+                    </li>
+                </ul>
+            </div>
+            <hr>
+
+            <div class="clearfix">
+                <h3 id="conclusion">6. Conclusion</h3>
+                <p>En conclusion, ce projet met en lumière l'influence réciproque entre les réseaux personnels et les trajectoires de vie...</p>
+            </div>
+            <hr>
+
+            <div class="clearfix">
+                <h3 id="competences">7. Compétences développées</h3>
+                <ol class="cleaning-steps">
+                    <li><strong>Maîtrise de R et d'analyse statistique</strong>...</li>
+                    <li><strong>Gestion de données longitudinales</strong>...</li>
+                    <li><strong>Analyse spatiale et des réseaux</strong>...</li>
+                    <li><strong>Interprétation sociologique</strong>...</li>
+                </ol>
+            </div>
+        </div> </div> ```
+
 
             <!-- 6. Étude de cas -->
             <div class="clearfix">
