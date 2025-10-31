@@ -135,7 +135,7 @@ body {
     /* Positionnement nécessaire pour que la liste soit affichée en dessous */
     position: relative; 
     display: inline-block; /* Le conteneur ne prend que la place nécessaire au bouton */
-    margin-bottom: 30px; 
+    margin: 20px auto; /* Centrage si le parent utilise text-align: center */
     z-index: 10; /* Assure que le menu est au-dessus du contenu en dessous */
 }
 
@@ -145,20 +145,31 @@ body {
     color: white;
     padding: 10px 20px;
     border: none;
-    border-radius: 6px;
+    border-radius: 8px; /* Léger arrondi pour un look plus doux */
     cursor: pointer;
     font-size: 16px;
     font-weight: 600;
     transition: background-color 0.3s, box-shadow 0.3s;
-    display: flex; /* Permet d'aligner l'icône et le texte */
+    display: flex; 
     align-items: center;
-    gap: 8px; /* Espace entre l'icône et le texte */
-    box-shadow: 0 4px 6px rgba(0, 119, 181, 0.2);
+    gap: 10px; /* Augmentation de l'espace entre l'icône et le texte */
+    /* Box-shadow plus doux */
+    box-shadow: 0 4px 10px rgba(0, 119, 181, 0.25); 
 }
 
 .toc-button:hover {
     background-color: #005f96; /* Bleu plus foncé au survol */
-    box-shadow: 0 6px 10px rgba(0, 119, 181, 0.3);
+    box-shadow: 0 6px 12px rgba(0, 119, 181, 0.35);
+}
+
+/* Style de l'icône de flèche */
+.toc-button i.fa-caret-down {
+    transition: transform 0.3s ease;
+}
+
+/* Rotation de la flèche au survol pour indiquer que le menu s'ouvre */
+#toc-wrapper:hover .toc-button i.fa-caret-down {
+    transform: rotate(180deg);
 }
 
 /* 3. Conteneur de la liste (le menu déroulant) */
@@ -166,15 +177,19 @@ body {
     /* Positionnement absolu pour le dropdown */
     position: absolute; 
     top: 100%; /* Commence juste sous le bouton */
-    left: 0;
+    
+    /* LOGIQUE DE CENTRAGE DU MENU SOUS LE BOUTON */
+    left: 50%; 
+    transform: translateX(-50%);
+    
     min-width: 300px;
     
     /* Style amélioré */
-    background-color: #fff; /* Fond blanc plus net */
+    background-color: #fff; 
     border: 1px solid #ddd;
-    border-top: none; /* Collé au bouton */
-    padding: 5px 0; /* Pas de padding horizontal ici, géré par les liens */
-    border-radius: 0 0 8px 8px; /* Coins arrondis seulement en bas */
+    border-top: none; 
+    padding: 5px 0; 
+    border-radius: 0 0 8px 8px; 
     box-shadow: 0 8px 16px rgba(0,0,0,0.2);
     
     /* Masquer par défaut */
@@ -185,8 +200,8 @@ body {
 
 /* 4. LOGIQUE CLÉ : Affichage de la liste au survol du conteneur principal */
 #toc-wrapper:hover #table-of-contents-container {
-    display: block; /* Affiche la liste */
-    opacity: 1; /* Apparition fluide */
+    display: block; 
+    opacity: 1; 
 }
 
 /* 5. Style de la liste des liens */
@@ -205,21 +220,21 @@ body {
 }
 #table-of-contents-list a {
     text-decoration: none;
-    color: #333; /* Texte noir/gris foncé */
+    color: #333; 
     font-size: 15px;
     display: block;
-    padding: 3px 15px; /* Padding pour une zone de clic confortable */
+    padding: 5px 15px; /* Légère augmentation pour plus de confort de clic */
     transition: all 0.2s;
-    border-left: 3px solid transparent; /* Bordure discrète */
+    border-left: 3px solid transparent; 
 }
 #table-of-contents-list a:hover {
     color: var(--main-blue); 
-    background-color: #f0f8ff; /* Très léger bleu de fond au survol */
+    background-color: #f0f8ff; 
     border-left: 3px solid var(--main-blue);
 }
 /* Différenciation des sous-sections (H4 - si vous en ajoutez) */
 #table-of-contents-list li.level-4 a {
-    padding-left: 30px; /* Indentation pour H4 */
+    padding-left: 30px; 
     font-size: 14px;
     color: #555;
 }
@@ -234,6 +249,7 @@ body {
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     margin-bottom: 20px;
+    text-align: center;
 }
 
 /* Titre principal du projet */
@@ -651,10 +667,13 @@ body {
         <div class="article-content">
             <h1>Analyse spatiale et longitudinale des réseaux personnels : Mobilité, dispersion géographique et structuration des liens sociaux.</h1>
             
-            <div id="toc-wrapper">
+        <div id="toc-wrapper">
                 <div class="toc-button">
-                    <i class="fas fa-list-alt"></i> Sommaire
-                </div>
+                    <i class="fas fa-list-alt"></i> Sommaire <i class="fas fa-caret-down"></i>
+                </div>
+                <div id="table-of-contents-container">
+                </div>
+        </div>
                 <div id="table-of-contents-container">
                     <ul id="table-of-contents-list">
                         <li><a href="#objectif">1. Objectif du stage et du projet</a></li>
