@@ -783,7 +783,7 @@ body {
                     </li>
                     <li class="solution">
                         <strong>Contribution à l'enquête : Ciblage des profils et diversification de l'échantillon qualitatif.</strong>
-                        <p>L'identification de ces groupes est fondamentale. Elle a permis de guider la sélection des individus à recontacter pour la phase d'entretiens. En localisant les individus proches des pratiques d'engagement les plus extrêmes ou les plus 
+                        <p>L'identification de ces groupes a permis de guider la sélection des individus à recontacter pour la phase d'entretiens. En localisant les individus proches des pratiques d'engagement les plus extrêmes ou les plus 
                             diversifiées (ex: l'individu 126, très actif car proche des variables de fréquence élevée ("Plusieurs fois par jour") et de pratiques ("Partage", "Comment"...), l'ACM assure que l'échantillon couvre un large éventail de comportements en ligne.</p>
                     <img src="../mesdocuments/image_amulex_individus.jpg" alt="Graphique 1" class="float-img-left">
                     <img src="../mesdocuments/image_amulex_variables.jpg" alt="Graphique 1" class="float-img-right">                 
@@ -795,17 +795,28 @@ body {
     <ul class="strategy-list">
         <li class="objective">
             <strong>Objectif : Découvrir des groupes d'usagers aux profils similaires (classes latentes).</strong>
-            <p>S’appuyant sur les profils établis par les statistiques descriptives, l’ACL est une méthode statistique utilisée pour découvrir des groupes cachés (ou « latents ») d’individus à partir de leurs réponses à un ensemble de variables. Elle permet de segmenter les répondants pour identifier des profils typiques d’usagers des réseaux sociaux et de la politique en ligne (très actifs sur plusieurs plateformes, discrets, ou engagés sur une seule plateforme).</p>
+            <p>S’appuyant sur les profils établis par les statistiques descriptives, l’ACL est une méthode statistique utilisée pour découvrir des <strong>groupes cachés</strong> (ou « latents ») d’individus à partir de leurs réponses à un ensemble de variables. Elle permet de segmenter les répondants pour identifier des <strong>profils typiques d’usagers</strong> des réseaux sociaux et de la politique en ligne (très actifs sur plusieurs plateformes, discrets, ou engagés sur une seule plateforme).</p>
         </li>
         <li class="follow-up">
-            <strong>Méthodologie : ACL sur Jamovi (module snowRMM) et critère BIC.</strong>
-            <p>L’analyse a été réalisée sur le logiciel **Jamovi**, en utilisant le module « snowRMM ». Les données issues du questionnaire ont été transformées en variables ordinales. Pour déterminer le nombre optimal de classes, l’analyse s’est basée sur le critère du **BIC (Bayesian Information Criterion)**, en retenant le modèle présentant la valeur la plus basse, ce qui garantit la meilleure adéquation statistique (le **modèle à 2 classes** a été retenu).</p>
+            <strong>Méthodologie : ACL sur Jamovi.</strong>
+            <p>L’analyse a été réalisée sur le logiciel <strong>Jamovi</strong>, en utilisant le module <strong>snowRMM</strong>. Les données issues du questionnaire ont été transformées en variables ordinales. Pour déterminer le nombre optimal de classes, l’analyse s’est basée sur le critère du <strong>BIC</strong> (Bayesian Information Criterion), en retenant le modèle présentant la valeur la plus basse, ce qui garantit la meilleure adéquation statistique (le <strong>modèle à 2 classes</strong> a été retenu).</p>
         </li>
         <li class="solution">
             <strong>Contribution à l'enquête : Segmentation des usagers et corrélation sociodémographique.</strong>
             <p>L’ACL a permis d'identifier des groupes distincts d’individus basés sur la fréquence d’utilisation de différentes plateformes. Ces différences de genre, de CSP, de statut professionnel et d’orientation politique confirment que les pratiques en ligne sont étroitement liées à des facteurs sociodémographiques, renforçant l’idée que l’engagement numérique est structuré par des dynamiques sociales. Cette analyse est essentielle pour comprendre la dynamique des commentaires politiques en ligne, potentiellement dominés par une minorité de contributeurs assidus.</p>
-            
-            <div class="profile-summary" style="padding: 15px; border-left: 5px solid #0056b3; background-color: #f0f8ff; margin: 15px 0;">
+
+            <a href="../mesdocuments/image_amulex_ACL.jpg" class="float-img-right lightbox-trigger" data-alt="Figure 4 : Graphique de l'ACL montrant les 2 classes d'utilisateurs.">
+                <img src="../mesdocuments/image_amulex_ACL.jpg" alt="Figure 4 : Graphique ACL">
+            </a>
+
+            <div class="profile-summary" style="
+                float: left; /* Fait flotter l'élément à gauche */
+                max-width: 48%; /* Réduit la largeur pour qu'il tienne à côté de l'image */
+                padding: 15px; 
+                border-left: 5px solid #0056b3; 
+                background-color: #f0f8ff; 
+                margin: 0 20px 15px 0; /* Marge pour l'espace à droite et en bas */
+            ">
                 <h4 style="margin-top: 0; color: #0056b3;">Synthèse des 2 classes d'utilisateurs identifiées par l'ACL</h4>
                 <p>Le modèle à 2 classes est le plus pertinent. Les chiffres 1 à 4 représentent la fréquence d’utilisation des plateformes (1 = usage le plus fréquent).</p>
                 <ul style="list-style-type: disc; margin-left: 20px;">
@@ -829,13 +840,14 @@ body {
                     </li>
                 </ul>
             </div>
-            <p>
+
+            <p style="clear: both;">
                 La forte différence de fréquence d'utilisation entre les deux classes, confirmée par le croisement avec les données sociodémographiques, met en lumière une **minorité de contributeurs assidus** (Classe 1) qui pourrait avoir un rôle disproportionné dans la production de commentaires politiques en ligne.
             </p>
         </li>
     </ul>
 </div>
-<hr>            
+<hr>        
             <div class="clearfix">
                 <h3 id="correlation">5.4. Analyse de Corrélation (Tests de liaison)</h3>
                 <ul class="strategy-list">
