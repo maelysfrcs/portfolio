@@ -863,22 +863,20 @@ body {
             <p>Les résultats ont permis de structurer les pratiques numériques observées en ligne, démontrant qu'elles ne sont pas isolées mais s’organisent en <strong>écosystèmes d’usages</strong> propres à des typologies d’individus. Le tableau ci-dessous présente le Tau de Kendall B avec la p-value associée entre parenthèses.</p>
             
 <style>
-                /* STYLES GÉNÉRAUX ET COULEURS CONDITIONNELLES */
+                /* STYLES ESSENTIELS */
                 .correlation-table {
                     width: 100%;
                     border-collapse: collapse;
                     margin: 15px 0;
                     font-size: 0.9em; 
-                    /* Maintien de la police pour l'uniformité */
                     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-                    table-layout: fixed; /* Évite le dépassement */
+                    table-layout: fixed; /* GARANTIT LA TAILLE ET EVITE LE DEPASSEMENT */
                 }
                 .correlation-table th, .correlation-table td {
                     border: 1px solid #ddd;
-                    padding: 4px 2px;
+                    padding: 4px 1px; /* Padding minimal pour maximiser l'espace */
                     text-align: center;
                     vertical-align: middle;
-                    /* Assure que le contenu s'adapte dans les colonnes */
                     word-wrap: break-word; 
                 }
                 .correlation-table th {
@@ -887,22 +885,19 @@ body {
                     color: #333;
                 }
                 
-                /* COULEURS SELON |Tau| */
-                .color-red { background-color: #ffcccc; } /* |Tau| > 0.3 */
-                .color-orange { background-color: #ffe0b2; } /* 0.2 <= |Tau| <= 0.3 */
+                /* COULEURS DE FOND SELON |Tau| (CLASSES APPLIQUÉES AUX TD) */
+                .color-red { background-color: #ffcccc; }    /* |Tau| >= 0.3 */
+                .color-orange { background-color: #ffe0b2; } /* 0.2 <= |Tau| < 0.3 */
                 .color-yellow { background-color: #fffacd; } /* |Tau| < 0.2 */
-                
-                /* Mise en forme dans la cellule */
+
+                /* MISE EN FORME DES VALEURS DANS LA CELLULE */
                 .tau-value { font-weight: bold; color: #333; }
                 /* P-value significative (p < 0.05) */
                 .p-value-sig { color: #155724; font-weight: bold; font-size: 0.75em; }
                 /* P-value non significative (p >= 0.05) */
                 .p-value-insig { color: #6c757d; font-size: 0.75em; }
                 
-                /* Règle : Si p-value non significative, la cellule reste blanche, quelle que soit la valeur du Tau */
-                .insignificant-cell { background-color: #ffffff !important; }
-                
-                /* Styles pour le bloc de synthèse */
+                /* Styles pour le bloc de synthèse (inchangés) */
                 .profile-summary-reduced {
                     font-size: 0.95em; 
                     padding: 10px; 
@@ -955,37 +950,37 @@ body {
                     <tr>
                         <th>Facebook</th>
                         <td>—</td>
-                        <td class="insignificant-cell color-yellow"><span class="tau-value">-0.080</span><br><span class="p-value-insig">0.199</span></td>
-                        <td class="insignificant-cell color-yellow"><span class="tau-value">0.101</span><br><span class="p-value-insig">0.100</span></td>
+                        <td class="color-yellow"><span class="tau-value">-0.080</span><br><span class="p-value-insig">0.199</span></td>
+                        <td class="color-yellow"><span class="tau-value">0.101</span><br><span class="p-value-insig">0.100</span></td>
                         <td class="color-yellow"><span class="tau-value">0.137</span><br><span class="p-value-sig">0.025</span></td>
                         <td class="color-yellow"><span class="tau-value">-0.147</span><br><span class="p-value-sig">0.015</span></td>
-                        <td class="insignificant-cell color-yellow"><span class="tau-value">-0.010</span><br><span class="p-value-insig">0.875</span></td>
-                        <td class="insignificant-cell color-yellow"><span class="tau-value">0.008</span><br><span class="p-value-insig">0.904</span></td>
-                        <td class="insignificant-cell color-yellow"><span class="tau-value">0.108</span><br><span class="p-value-insig">0.085</span></td>
+                        <td class="color-yellow"><span class="tau-value">-0.010</span><br><span class="p-value-insig">0.875</span></td>
+                        <td class="color-yellow"><span class="tau-value">0.008</span><br><span class="p-value-insig">0.904</span></td>
+                        <td class="color-yellow"><span class="tau-value">0.108</span><br><span class="p-value-insig">0.085</span></td>
                         <td class="color-orange"><span class="tau-value">0.208</span><br><span class="p-value-sig">&lt; .001</span></td>
                     </tr>
                     <tr>
                         <th>Youtube</th>
                         <td>—</td>
                         <td>—</td>
-                        <td class="insignificant-cell color-yellow"><span class="tau-value">0.038</span><br><span class="p-value-insig">0.542</span></td>
-                        <td class="insignificant-cell color-yellow"><span class="tau-value">0.043</span><br><span class="p-value-insig">0.489</span></td>
+                        <td class="color-yellow"><span class="tau-value">0.038</span><br><span class="p-value-insig">0.542</span></td>
+                        <td class="color-yellow"><span class="tau-value">0.043</span><br><span class="p-value-insig">0.489</span></td>
                         <td class="color-orange"><span class="tau-value">0.233</span><br><span class="p-value-sig">&lt; .001</span></td>
-                        <td class="insignificant-cell color-yellow"><span class="tau-value">-0.032</span><br><span class="p-value-insig">0.627</span></td>
-                        <td class="insignificant-cell color-yellow"><span class="tau-value">-0.091</span><br><span class="p-value-insig">0.158</span></td>
-                        <td class="insignificant-cell color-yellow"><span class="tau-value">0.024</span><br><span class="p-value-insig">0.702</span></td>
-                        <td class="insignificant-cell color-yellow"><span class="tau-value">0.021</span><br><span class="p-value-insig">0.737</span></td>
+                        <td class="color-yellow"><span class="tau-value">-0.032</span><br><span class="p-value-insig">0.627</span></td>
+                        <td class="color-yellow"><span class="tau-value">-0.091</span><br><span class="p-value-insig">0.158</span></td>
+                        <td class="color-yellow"><span class="tau-value">0.024</span><br><span class="p-value-insig">0.702</span></td>
+                        <td class="color-yellow"><span class="tau-value">0.021</span><br><span class="p-value-insig">0.737</span></td>
                     </tr>
                     <tr>
                         <th>Instagram</th>
                         <td>—</td>
                         <td>—</td>
                         <td>—</td>
-                        <td class="insignificant-cell color-yellow"><span class="tau-value">0.079</span><br><span class="p-value-insig">0.197</span></td>
+                        <td class="color-yellow"><span class="tau-value">0.079</span><br><span class="p-value-insig">0.197</span></td>
                         <td class="color-yellow"><span class="tau-value">-0.123</span><br><span class="p-value-sig">0.040</span></td>
                         <td class="color-orange"><span class="tau-value">0.262</span><br><span class="p-value-sig">&lt; .001</span></td>
                         <td class="color-orange"><span class="tau-value">0.234</span><br><span class="p-value-sig">&lt; .001</span></td>
-                        <td class="insignificant-cell color-yellow"><span class="tau-value">0.078</span><br><span class="p-value-insig">0.207</span></td>
+                        <td class="color-yellow"><span class="tau-value">0.078</span><br><span class="p-value-insig">0.207</span></td>
                         <td class="color-yellow"><span class="tau-value">0.144</span><br><span class="p-value-sig">0.019</span></td>
                     </tr>
                     <tr>
@@ -994,11 +989,11 @@ body {
                         <td>—</td>
                         <td>—</td>
                         <td>—</td>
-                        <td class="insignificant-cell color-yellow"><span class="tau-value">0.003</span><br><span class="p-value-insig">0.966</span></td>
-                        <td class="insignificant-cell color-yellow"><span class="tau-value">0.027</span><br><span class="p-value-insig">0.673</span></td>
+                        <td class="color-yellow"><span class="tau-value">0.003</span><br><span class="p-value-insig">0.966</span></td>
+                        <td class="color-yellow"><span class="tau-value">0.027</span><br><span class="p-value-insig">0.673</span></td>
                         <td class="color-yellow"><span class="tau-value">0.185</span><br><span class="p-value-sig">0.004</span></td>
                         <td class="color-yellow"><span class="tau-value">0.132</span><br><span class="p-value-sig">0.033</span></td>
-                        <td class="insignificant-cell color-yellow"><span class="tau-value">0.063</span><br><span class="p-value-insig">0.303</span></td>
+                        <td class="color-yellow"><span class="tau-value">0.063</span><br><span class="p-value-insig">0.303</span></td>
                     </tr>
                     <tr>
                         <th>Twitch</th>
@@ -1009,8 +1004,8 @@ body {
                         <td>—</td>
                         <td class="color-yellow"><span class="tau-value">-0.170</span><br><span class="p-value-sig">0.007</span></td>
                         <td class="color-yellow"><span class="tau-value">-0.123</span><br><span class="p-value-sig">0.049</span></td>
-                        <td class="insignificant-cell color-yellow"><span class="tau-value">-0.012</span><br><span class="p-value-insig">0.842</span></td>
-                        <td class="insignificant-cell color-yellow"><span class="tau-value">-0.004</span><br><span class="p-value-insig">0.942</span></td>
+                        <td class="color-yellow"><span class="tau-value">-0.012</span><br><span class="p-value-insig">0.842</span></td>
+                        <td class="color-yellow"><span class="tau-value">-0.004</span><br><span class="p-value-insig">0.942</span></td>
                     </tr>
                     <tr>
                         <th>Snapchat</th>
@@ -1021,8 +1016,8 @@ body {
                         <td>—</td>
                         <td>—</td>
                         <td class="color-red"><span class="tau-value">0.329</span><br><span class="p-value-sig">&lt; .001</span></td>
-                        <td class="insignificant-cell color-yellow"><span class="tau-value">0.123</span><br><span class="p-value-insig">0.057</span></td>
-                        <td class="insignificant-cell color-yellow"><span class="tau-value">-0.068</span><br><span class="p-value-insig">0.289</span></td>
+                        <td class="color-yellow"><span class="tau-value">0.123</span><br><span class="p-value-insig">0.057</span></td>
+                        <td class="color-yellow"><span class="tau-value">-0.068</span><br><span class="p-value-insig">0.289</span></td>
                     </tr>
                     <tr>
                         <th>Tiktok</th>
@@ -1033,8 +1028,8 @@ body {
                         <td>—</td>
                         <td>—</td>
                         <td>—</td>
-                        <td class="insignificant-cell color-yellow"><span class="tau-value">0.081</span><br><span class="p-value-insig">0.213</span></td>
-                        <td class="insignificant-cell color-yellow"><span class="tau-value">-0.067</span><br><span class="p-value-insig">0.295</span></td>
+                        <td class="color-yellow"><span class="tau-value">0.081</span><br><span class="p-value-insig">0.213</span></td>
+                        <td class="color-yellow"><span class="tau-value">-0.067</span><br><span class="p-value-insig">0.295</span></td>
                     </tr>
                     <tr>
                         <th>Linkedin</th>
