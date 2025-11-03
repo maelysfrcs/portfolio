@@ -847,24 +847,227 @@ body {
 </div>
 <hr>
             
-            <div class="clearfix">
-                <h3 id="correlation">5.4. Analyse de Corrélation (Tests de liaison)</h3>
-                <ul class="strategy-list">
-                    <li class="objective">
-                        <strong>Objectif (Pourquoi) : Valider les liens entre les pratiques et les profils.</strong>
-                        <p>Vérifier la relation statistique entre les variables sociodémographiques (genre, âge) et la variable catégorielle de profil créée par l'ACL. Il s'agit de confirmer de manière rigoureuse si un profil est significativement plus masculin, ou s'il y a un lien statistiquement significatif entre l'âge et le type de plateforme utilisée.</p>
+<div class="clearfix">
+    <h3 id="correlations">5.4. Analyse de Corrélation Statistique</h3>
+    <ul class="strategy-list">
+        <li class="objective">
+            <strong>Objectif : Quantifier la relation entre les usages de différentes plateformes.</strong>
+            <p>L’analyse de corrélation statistique a servi à mesurer le lien entre deux variables et à déterminer si l’utilisation d’une plateforme (comme Snapchat) est associée à l’utilisation d’une autre (comme Tiktok).</p>
+        </li>
+        <li class="follow-up">
+            <strong>Méthodologie : Corrélation statistique par Tau de Kendall B.</strong>
+            <p>Le coefficient de **Tau de Kendall B**, une mesure de corrélation non paramétrique, a été utilisé pour évaluer la force et la direction de ces relations. Un Tau $&gt; 0$ indique une association positive, et un Tau $&lt; 0$ une association négative.</p>
+        </li>
+        <li class="solution">
+            <strong>Contribution à l'enquête : Mise en évidence d'écosystèmes d'usages spécifiques.</strong>
+            <p>Les résultats ont permis de structurer les pratiques numériques observées en ligne, démontrant qu'elles ne sont pas isolées mais s’organisent en **écosystèmes d’usages** propres à des typologies d’individus. Le tableau ci-dessous présente le Tau de Kendall B avec la p-value associée entre parenthèses.</p>
+            
+            <style>
+                /* Styles pour rendre le tableau plus compact et lisible */
+                .correlation-table {
+                    width: 100%;
+                    border-collapse: collapse;
+                    margin: 15px 0;
+                    font-size: 0.9em; /* Réduction de la taille de la police */
+                }
+                .correlation-table th, .correlation-table td {
+                    border: 1px solid #ddd;
+                    padding: 6px; /* Réduction du padding */
+                    text-align: center;
+                }
+                .correlation-table th {
+                    background-color: #f8f8f8;
+                    font-weight: bold;
+                    color: #333;
+                }
+                /* Couleurs pour les corrélations significatives (p < 0.05) */
+                .color-strong { background-color: #ffc107; } /* Orange foncé (Tau >= 0.25) */
+                .color-moderate { background-color: #ffeeba; } /* Jaune/Orange (0.15 <= Tau < 0.25) */
+                .color-weak { background-color: #fff3cd; } /* Jaune clair (Tau < 0.15) */
+                .color-insignificant { background-color: #ffffff; } /* Blanc (p >= 0.05) */
+
+                /* Style du bloc de synthèse réduit (basé sur 5.3) */
+                .profile-summary-reduced {
+                    font-size: 0.95em; 
+                    padding: 10px; 
+                    border-left: 5px solid #0056b3; 
+                    background-color: #f0f8ff; 
+                    margin: 20px 0; 
+                }
+                .profile-summary-reduced h4 {
+                    margin-top: 0; 
+                    color: #0056b3; 
+                    font-size: 1.1em;
+                }
+                .profile-summary-reduced ul {
+                    list-style-type: disc; 
+                    margin-left: 15px;
+                }
+                .profile-summary-reduced li {
+                    margin-top: 5px;
+                }
+            </style>
+
+            <table class="correlation-table">
+                <thead>
+                    <tr>
+                        <th>Plateforme</th>
+                        <th>Facebook</th>
+                        <th>Youtube</th>
+                        <th>Instagram</th>
+                        <th>X</th>
+                        <th>Twitch</th>
+                        <th>Snapchat</th>
+                        <th>Tiktok</th>
+                        <th>Linkedin</th>
+                        <th>Messagerie</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>Facebook</th>
+                        <td>—</td>
+                        <td class="color-insignificant">—</td>
+                        <td class="color-insignificant">—</td>
+                        <td class="color-insignificant">—</td>
+                        <td class="color-insignificant">—</td>
+                        <td class="color-insignificant">—</td>
+                        <td class="color-insignificant">—</td>
+                        <td class="color-insignificant">—</td>
+                        <td class="color-insignificant">—</td>
+                    </tr>
+                    <tr>
+                        <th>Youtube</th>
+                        <td class="color-insignificant">-0.080 (0.199)</td>
+                        <td>—</td>
+                        <td class="color-insignificant">—</td>
+                        <td class="color-insignificant">—</td>
+                        <td class="color-insignificant">—</td>
+                        <td class="color-insignificant">—</td>
+                        <td class="color-insignificant">—</td>
+                        <td class="color-insignificant">—</td>
+                        <td class="color-insignificant">—</td>
+                    </tr>
+                    <tr>
+                        <th>Instagram</th>
+                        <td class="color-insignificant">0.101 (0.100)</td>
+                        <td class="color-insignificant">0.038 (0.542)</td>
+                        <td>—</td>
+                        <td class="color-insignificant">—</td>
+                        <td class="color-insignificant">—</td>
+                        <td class="color-insignificant">—</td>
+                        <td class="color-insignificant">—</td>
+                        <td class="color-insignificant">—</td>
+                        <td class="color-insignificant">—</td>
+                    </tr>
+                    <tr>
+                        <th>X</th>
+                        <td class="color-weak">0.137 (**0.025**)</td>
+                        <td class="color-insignificant">0.043 (0.489)</td>
+                        <td class="color-insignificant">0.079 (0.197)</td>
+                        <td>—</td>
+                        <td class="color-insignificant">—</td>
+                        <td class="color-insignificant">—</td>
+                        <td class="color-insignificant">—</td>
+                        <td class="color-insignificant">—</td>
+                        <td class="color-insignificant">—</td>
+                    </tr>
+                    <tr>
+                        <th>Twitch</th>
+                        <td class="color-weak">-0.147 (**0.015**)</td>
+                        <td class="color-moderate">0.233 (**&lt;.001**)</td>
+                        <td class="color-weak">-0.123 (**0.040**)</td>
+                        <td class="color-insignificant">0.003 (0.966)</td>
+                        <td>—</td>
+                        <td class="color-insignificant">—</td>
+                        <td class="color-insignificant">—</td>
+                        <td class="color-insignificant">—</td>
+                        <td class="color-insignificant">—</td>
+                    </tr>
+                    <tr>
+                        <th>Snapchat</th>
+                        <td class="color-insignificant">-0.010 (0.875)</td>
+                        <td class="color-insignificant">-0.032 (0.627)</td>
+                        <td class="color-strong">0.262 (**&lt;.001**)</td>
+                        <td class="color-insignificant">0.027 (0.673)</td>
+                        <td class="color-moderate">-0.170 (**0.007**)</td>
+                        <td>—</td>
+                        <td class="color-insignificant">—</td>
+                        <td class="color-insignificant">—</td>
+                        <td class="color-insignificant">—</td>
+                    </tr>
+                    <tr>
+                        <th>Tiktok</th>
+                        <td class="color-insignificant">0.008 (0.904)</td>
+                        <td class="color-insignificant">-0.091 (0.158)</td>
+                        <td class="color-moderate">0.234 (**&lt;.001**)</td>
+                        <td class="color-moderate">0.185 (**0.004**)</td>
+                        <td class="color-weak">-0.123 (**0.049**)</td>
+                        <td class="color-strong">0.329 (**&lt;.001**)</td>
+                        <td>—</td>
+                        <td class="color-insignificant">—</td>
+                        <td class="color-insignificant">—</td>
+                    </tr>
+                    <tr>
+                        <th>Linkedin</th>
+                        <td class="color-insignificant">0.108 (0.085)</td>
+                        <td class="color-insignificant">0.024 (0.702)</td>
+                        <td class="color-insignificant">0.078 (0.207)</td>
+                        <td class="color-weak">0.132 (**0.033**)</td>
+                        <td class="color-insignificant">-0.012 (0.842)</td>
+                        <td class="color-insignificant">0.123 (0.057)</td>
+                        <td class="color-insignificant">0.081 (0.213)</td>
+                        <td>—</td>
+                        <td class="color-insignificant">—</td>
+                    </tr>
+                    <tr>
+                        <th>Messagerie</th>
+                        <td class="color-moderate">0.208 (**&lt;.001**)</td>
+                        <td class="color-insignificant">0.021 (0.737)</td>
+                        <td class="color-weak">0.144 (**0.019**)</td>
+                        <td class="color-insignificant">0.063 (0.303)</td>
+                        <td class="color-insignificant">-0.004 (0.942)</td>
+                        <td class="color-insignificant">-0.068 (0.289)</td>
+                        <td class="color-insignificant">-0.067 (0.295)</td>
+                        <td class="color-moderate">0.171 (**0.006**)</td>
+                        <td>—</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="profile-summary-reduced">
+                <h4 style="margin-top: 0; color: #0056b3; font-size: 1.1em;">Synthèse des corrélations significatives (p &lt; 0.05)</h4>
+                <p>L'analyse met en lumière des associations d'usages, créant des « écosystèmes » numériques distincts.</p>
+                <ul style="list-style-type: disc; margin-left: 15px;">
+                    <li style="margin-top: 5px;"><strong>Associations Positives Fortes (Même Public) :</strong>
+                        <ul style="list-style-type: circle; margin-top: 3px; margin-left: 10px;">
+                            <li><span style="background-color: #ffc107; padding: 2px 4px; border-radius: 3px;">**Snapchat et Tiktok**</span> (Tau = 0.329) : Très forte corrélation due à une utilisation massive par un public jeune.</li>
+                            <li><span style="background-color: #ffc107; padding: 2px 4px; border-radius: 3px;">**Instagram et Snapchat**</span> (Tau = 0.262) : Forte corrélation, confirmant un public qui se chevauche sur les contenus visuels.</li>
+                        </ul>
                     </li>
-                    <li class="follow-up">
-                        <strong>Méthodologie (Comment) : Tests Khi-2, V de Cramer ou Tests T de Student.</strong>
-                        <p>Selon le type de variables testées (catégorielle vs. catégorielle pour les profils ; catégorielle vs. numérique pour l'âge), j'utiliserai le test approprié : Khi-2 (et V de Cramer pour la force) pour les variables catégorielles, ou un test T de Student/ANOVA si l'une des variables est numérique.</p>
+                    <li style="margin-top: 10px;"><strong>Associations Positives Modérées (Usages Complémentaires) :</strong>
+                        <ul style="list-style-type: circle; margin-top: 3px; margin-left: 10px;">
+                            <li><span style="background-color: #ffeeba; padding: 2px 4px; border-radius: 3px;">**Youtube et Twitch**</span> (Tau = 0.233) : Liée aux utilisateurs assidus de contenus vidéo et de direct.</li>
+                            <li><span style="background-color: #ffeeba; padding: 2px 4px; border-radius: 3px;">**Facebook et Messagerie**</span> (Tau = 0.208) : Reflet d’un usage centré sur la communication avec les cercles sociaux proches.</li>
+                            <li><span style="background-color: #ffeeba; padding: 2px 4px; border-radius: 3px;">**X et Tiktok**</span> (Tau = 0.185).</li>
+                        </ul>
                     </li>
-                    <li class="solution">
-                        <strong>Contribution à l'Enquête (Qu'apporte-t-elle) : Solidification des résultats.</strong>
-                        <p>Ces tests statistiques fournissent la preuve scientifique (avec des p-values) que les différences observées entre les groupes (profils) ne sont pas dues au hasard. Cela ajoute de la rigueur et de la crédibilité à l'interprétation sociologique des profils identifiés lors de la classification.</p>
+                    <li style="margin-top: 10px;"><strong>Associations Négatives (Publics Opposés) :</strong>
+                        <ul style="list-style-type: circle; margin-top: 3px; margin-left: 10px;">
+                            <li><span style="background-color: #ffeeba; padding: 2px 4px; border-radius: 3px;">**Snapchat et Twitch**</span> (Tau = -0.170) : Les publics adeptes du contenu éphémère et visuel ne sont pas les mêmes que ceux de Twitch.</li>
+                            <li><span style="background-color: #fff3cd; padding: 2px 4px; border-radius: 3px;">**Facebook et Twitch**</span> (Tau = -0.147) : Les utilisateurs de Facebook sont moins présents sur Twitch (streaming/jeu vidéo).</li>
+                        </ul>
                     </li>
                 </ul>
             </div>
-            <hr>
+
+            <p>
+                Ces résultats confirment l'existence d'une segmentation des pratiques en ligne, avec des profils se chevauchant clairement sur certaines plateformes (Snapchat/Tiktok) et s’opposant clairement sur d’autres (Facebook/Twitch), structurant ainsi la cartographie des usagers.
+            </p>
+        </li>
+    </ul>
+</div>
+<hr>
 
             <div class="clearfix">
                 <h3 id="conclusion">6. Conclusion</h3>
