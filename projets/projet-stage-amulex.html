@@ -848,45 +848,54 @@ body {
 <hr>
             
 <div class="clearfix">
-    <h3 id="correlations">5.4. Analyse de Corrélation Statistique</h3>
+    <h3 id="correlations">5.4. Analyse de corrélation</h3>
     <ul class="strategy-list">
         <li class="objective">
             <strong>Objectif : Quantifier la relation entre les usages de différentes plateformes.</strong>
             <p>L’analyse de corrélation statistique a servi à mesurer le lien entre deux variables et à déterminer si l’utilisation d’une plateforme (comme Snapchat) est associée à l’utilisation d’une autre (comme Tiktok).</p>
         </li>
         <li class="follow-up">
-            <strong>Méthodologie : Corrélation statistique par Tau de Kendall B.</strong>
-            <p>Le coefficient de **Tau de Kendall B**, une mesure de corrélation non paramétrique, a été utilisé pour évaluer la force et la direction de ces relations. Un Tau $&gt; 0$ indique une association positive, et un Tau $&lt; 0$ une association négative.</p>
+            <strong>Méthodologie : Corrélation statistique sur Jamovi.</strong>
+            <p>Le coefficient de <strong>Tau de Kendall B</strong>, une mesure de corrélation non paramétrique, a été utilisé pour évaluer la force et la direction de ces relations. Un Tau &gt; 0 indique une association positive, et un Tau &lt; 0 une association négative.</p>
         </li>
         <li class="solution">
             <strong>Contribution à l'enquête : Mise en évidence d'écosystèmes d'usages spécifiques.</strong>
-            <p>Les résultats ont permis de structurer les pratiques numériques observées en ligne, démontrant qu'elles ne sont pas isolées mais s’organisent en **écosystèmes d’usages** propres à des typologies d’individus. Le tableau ci-dessous présente le Tau de Kendall B avec la p-value associée entre parenthèses.</p>
+            <p>Les résultats ont permis de structurer les pratiques numériques observées en ligne, démontrant qu'elles ne sont pas isolées mais s’organisent en <strong>écosystèmes d’usages</strong> propres à des typologies d’individus. Le tableau ci-dessous présente le Tau de Kendall B avec la p-value associée entre parenthèses.</p>
             
-            <style>
-                /* Styles pour rendre le tableau plus compact et lisible */
+<style>
+                /* Styles mis à jour pour la matrice de corrélation */
                 .correlation-table {
                     width: 100%;
                     border-collapse: collapse;
                     margin: 15px 0;
-                    font-size: 0.9em; /* Réduction de la taille de la police */
+                    font-size: 0.9em;
+                    /* Ajout de la police monospace pour la p-value pour une meilleure lisibilité */
+                    font-family: Arial, sans-serif;
                 }
                 .correlation-table th, .correlation-table td {
                     border: 1px solid #ddd;
-                    padding: 6px; /* Réduction du padding */
+                    padding: 4px; /* Réduction du padding */
                     text-align: center;
+                    vertical-align: middle;
                 }
                 .correlation-table th {
                     background-color: #f8f8f8;
                     font-weight: bold;
                     color: #333;
                 }
-                /* Couleurs pour les corrélations significatives (p < 0.05) */
-                .color-strong { background-color: #ffc107; } /* Orange foncé (Tau >= 0.25) */
-                .color-moderate { background-color: #ffeeba; } /* Jaune/Orange (0.15 <= Tau < 0.25) */
-                .color-weak { background-color: #fff3cd; } /* Jaune clair (Tau < 0.15) */
-                .color-insignificant { background-color: #ffffff; } /* Blanc (p >= 0.05) */
+                /* Nouvelle palette de couleurs basée sur la valeur absolue du Tau de Kendall B */
+                /* Rouge : |Tau| > 0.3 */
+                .color-red { background-color: #ffcccc; color: #cc0000; } 
+                /* Orange : 0.2 <= |Tau| <= 0.3 */
+                .color-orange { background-color: #ffe0b2; color: #ff6600; }
+                /* Jaune : |Tau| < 0.2 */
+                .color-yellow { background-color: #fffacd; color: #9c9200; }
+                /* Vert pour les p-values significatives (p < 0.05) */
+                .p-value-sig { background-color: #d4edda; color: #155724; font-weight: bold; font-family: 'Courier New', monospace; font-size: 0.8em;}
+                .p-value-insig { background-color: #f8f8f8; color: #6c757d; font-family: 'Courier New', monospace; font-size: 0.8em; }
+                .tau-value { font-weight: bold; }
 
-                /* Style du bloc de synthèse réduit (basé sur 5.3) */
+                /* Style du bloc de synthèse inchangé */
                 .profile-summary-reduced {
                     font-size: 0.95em; 
                     padding: 10px; 
@@ -911,151 +920,203 @@ body {
             <table class="correlation-table">
                 <thead>
                     <tr>
-                        <th>Plateforme</th>
-                        <th>Facebook</th>
-                        <th>Youtube</th>
-                        <th>Instagram</th>
-                        <th>X</th>
-                        <th>Twitch</th>
-                        <th>Snapchat</th>
-                        <th>Tiktok</th>
-                        <th>Linkedin</th>
-                        <th>Messagerie</th>
+                        <th rowspan="2">Plateforme</th>
+                        <th colspan="2">Facebook</th>
+                        <th colspan="2">Youtube</th>
+                        <th colspan="2">Instagram</th>
+                        <th colspan="2">X</th>
+                        <th colspan="2">Twitch</th>
+                        <th colspan="2">Snapchat</th>
+                        <th colspan="2">Tiktok</th>
+                        <th colspan="2">Linkedin</th>
+                        <th colspan="2">Messagerie</th>
+                    </tr>
+                    <tr>
+                        <th colspan="2">Tau (p)</th>
+                        <th colspan="2">Tau (p)</th>
+                        <th colspan="2">Tau (p)</th>
+                        <th colspan="2">Tau (p)</th>
+                        <th colspan="2">Tau (p)</th>
+                        <th colspan="2">Tau (p)</th>
+                        <th colspan="2">Tau (p)</th>
+                        <th colspan="2">Tau (p)</th>
+                        <th colspan="2">Tau (p)</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <th>Facebook</th>
-                        <td>—</td>
-                        <td class="color-insignificant">—</td>
-                        <td class="color-insignificant">—</td>
-                        <td class="color-insignificant">—</td>
-                        <td class="color-insignificant">—</td>
-                        <td class="color-insignificant">—</td>
-                        <td class="color-insignificant">—</td>
-                        <td class="color-insignificant">—</td>
-                        <td class="color-insignificant">—</td>
+                        <td colspan="2" class="tau-value">—</td>
+                        <td colspan="2"></td>
+                        <td colspan="2"></td>
+                        <td colspan="2"></td>
+                        <td colspan="2"></td>
+                        <td colspan="2"></td>
+                        <td colspan="2"></td>
+                        <td colspan="2"></td>
+                        <td colspan="2"></td>
                     </tr>
                     <tr>
                         <th>Youtube</th>
-                        <td class="color-insignificant">-0.080 (0.199)</td>
-                        <td>—</td>
-                        <td class="color-insignificant">—</td>
-                        <td class="color-insignificant">—</td>
-                        <td class="color-insignificant">—</td>
-                        <td class="color-insignificant">—</td>
-                        <td class="color-insignificant">—</td>
-                        <td class="color-insignificant">—</td>
-                        <td class="color-insignificant">—</td>
+                        <td class="color-yellow tau-value">-0.080</td>
+                        <td class="p-value-insig">0.199</td>
+                        <td colspan="2" class="tau-value">—</td>
+                        <td colspan="2"></td>
+                        <td colspan="2"></td>
+                        <td colspan="2"></td>
+                        <td colspan="2"></td>
+                        <td colspan="2"></td>
+                        <td colspan="2"></td>
+                        <td colspan="2"></td>
                     </tr>
                     <tr>
                         <th>Instagram</th>
-                        <td class="color-insignificant">0.101 (0.100)</td>
-                        <td class="color-insignificant">0.038 (0.542)</td>
-                        <td>—</td>
-                        <td class="color-insignificant">—</td>
-                        <td class="color-insignificant">—</td>
-                        <td class="color-insignificant">—</td>
-                        <td class="color-insignificant">—</td>
-                        <td class="color-insignificant">—</td>
-                        <td class="color-insignificant">—</td>
+                        <td class="color-yellow tau-value">0.101</td>
+                        <td class="p-value-insig">0.100</td>
+                        <td class="color-yellow tau-value">0.038</td>
+                        <td class="p-value-insig">0.542</td>
+                        <td colspan="2" class="tau-value">—</td>
+                        <td colspan="2"></td>
+                        <td colspan="2"></td>
+                        <td colspan="2"></td>
+                        <td colspan="2"></td>
+                        <td colspan="2"></td>
+                        <td colspan="2"></td>
                     </tr>
                     <tr>
                         <th>X</th>
-                        <td class="color-weak">0.137 (**0.025**)</td>
-                        <td class="color-insignificant">0.043 (0.489)</td>
-                        <td class="color-insignificant">0.079 (0.197)</td>
-                        <td>—</td>
-                        <td class="color-insignificant">—</td>
-                        <td class="color-insignificant">—</td>
-                        <td class="color-insignificant">—</td>
-                        <td class="color-insignificant">—</td>
-                        <td class="color-insignificant">—</td>
+                        <td class="color-yellow tau-value">0.137</td>
+                        <td class="p-value-sig">0.025</td>
+                        <td class="color-yellow tau-value">0.043</td>
+                        <td class="p-value-insig">0.489</td>
+                        <td class="color-yellow tau-value">0.079</td>
+                        <td class="p-value-insig">0.197</td>
+                        <td colspan="2" class="tau-value">—</td>
+                        <td colspan="2"></td>
+                        <td colspan="2"></td>
+                        <td colspan="2"></td>
+                        <td colspan="2"></td>
+                        <td colspan="2"></td>
                     </tr>
                     <tr>
                         <th>Twitch</th>
-                        <td class="color-weak">-0.147 (**0.015**)</td>
-                        <td class="color-moderate">0.233 (**&lt;.001**)</td>
-                        <td class="color-weak">-0.123 (**0.040**)</td>
-                        <td class="color-insignificant">0.003 (0.966)</td>
-                        <td>—</td>
-                        <td class="color-insignificant">—</td>
-                        <td class="color-insignificant">—</td>
-                        <td class="color-insignificant">—</td>
-                        <td class="color-insignificant">—</td>
+                        <td class="color-yellow tau-value">-0.147</td>
+                        <td class="p-value-sig">0.015</td>
+                        <td class="color-orange tau-value">0.233</td>
+                        <td class="p-value-sig">&lt; .001</td>
+                        <td class="color-yellow tau-value">-0.123</td>
+                        <td class="p-value-sig">0.040</td>
+                        <td class="color-yellow tau-value">0.003</td>
+                        <td class="p-value-insig">0.966</td>
+                        <td colspan="2" class="tau-value">—</td>
+                        <td colspan="2"></td>
+                        <td colspan="2"></td>
+                        <td colspan="2"></td>
+                        <td colspan="2"></td>
                     </tr>
                     <tr>
                         <th>Snapchat</th>
-                        <td class="color-insignificant">-0.010 (0.875)</td>
-                        <td class="color-insignificant">-0.032 (0.627)</td>
-                        <td class="color-strong">0.262 (**&lt;.001**)</td>
-                        <td class="color-insignificant">0.027 (0.673)</td>
-                        <td class="color-moderate">-0.170 (**0.007**)</td>
-                        <td>—</td>
-                        <td class="color-insignificant">—</td>
-                        <td class="color-insignificant">—</td>
-                        <td class="color-insignificant">—</td>
+                        <td class="color-yellow tau-value">-0.010</td>
+                        <td class="p-value-insig">0.875</td>
+                        <td class="color-yellow tau-value">-0.032</td>
+                        <td class="p-value-insig">0.627</td>
+                        <td class="color-orange tau-value">0.262</td>
+                        <td class="p-value-sig">&lt; .001</td>
+                        <td class="color-yellow tau-value">0.027</td>
+                        <td class="p-value-insig">0.673</td>
+                        <td class="color-yellow tau-value">-0.170</td>
+                        <td class="p-value-sig">0.007</td>
+                        <td colspan="2" class="tau-value">—</td>
+                        <td colspan="2"></td>
+                        <td colspan="2"></td>
+                        <td colspan="2"></td>
                     </tr>
                     <tr>
                         <th>Tiktok</th>
-                        <td class="color-insignificant">0.008 (0.904)</td>
-                        <td class="color-insignificant">-0.091 (0.158)</td>
-                        <td class="color-moderate">0.234 (**&lt;.001**)</td>
-                        <td class="color-moderate">0.185 (**0.004**)</td>
-                        <td class="color-weak">-0.123 (**0.049**)</td>
-                        <td class="color-strong">0.329 (**&lt;.001**)</td>
-                        <td>—</td>
-                        <td class="color-insignificant">—</td>
-                        <td class="color-insignificant">—</td>
+                        <td class="color-yellow tau-value">0.008</td>
+                        <td class="p-value-insig">0.904</td>
+                        <td class="color-yellow tau-value">-0.091</td>
+                        <td class="p-value-insig">0.158</td>
+                        <td class="color-orange tau-value">0.234</td>
+                        <td class="p-value-sig">&lt; .001</td>
+                        <td class="color-yellow tau-value">0.185</td>
+                        <td class="p-value-sig">0.004</td>
+                        <td class="color-yellow tau-value">-0.123</td>
+                        <td class="p-value-sig">0.049</td>
+                        <td class="color-red tau-value">0.329</td>
+                        <td class="p-value-sig">&lt; .001</td>
+                        <td colspan="2" class="tau-value">—</td>
+                        <td colspan="2"></td>
+                        <td colspan="2"></td>
                     </tr>
                     <tr>
                         <th>Linkedin</th>
-                        <td class="color-insignificant">0.108 (0.085)</td>
-                        <td class="color-insignificant">0.024 (0.702)</td>
-                        <td class="color-insignificant">0.078 (0.207)</td>
-                        <td class="color-weak">0.132 (**0.033**)</td>
-                        <td class="color-insignificant">-0.012 (0.842)</td>
-                        <td class="color-insignificant">0.123 (0.057)</td>
-                        <td class="color-insignificant">0.081 (0.213)</td>
-                        <td>—</td>
-                        <td class="color-insignificant">—</td>
+                        <td class="color-yellow tau-value">0.108</td>
+                        <td class="p-value-insig">0.085</td>
+                        <td class="color-yellow tau-value">0.024</td>
+                        <td class="p-value-insig">0.702</td>
+                        <td class="color-yellow tau-value">0.078</td>
+                        <td class="p-value-insig">0.207</td>
+                        <td class="color-yellow tau-value">0.132</td>
+                        <td class="p-value-sig">0.033</td>
+                        <td class="color-yellow tau-value">-0.012</td>
+                        <td class="p-value-insig">0.842</td>
+                        <td class="color-yellow tau-value">0.123</td>
+                        <td class="p-value-insig">0.057</td>
+                        <td class="color-yellow tau-value">0.081</td>
+                        <td class="p-value-insig">0.213</td>
+                        <td colspan="2" class="tau-value">—</td>
+                        <td colspan="2"></td>
                     </tr>
                     <tr>
                         <th>Messagerie</th>
-                        <td class="color-moderate">0.208 (**&lt;.001**)</td>
-                        <td class="color-insignificant">0.021 (0.737)</td>
-                        <td class="color-weak">0.144 (**0.019**)</td>
-                        <td class="color-insignificant">0.063 (0.303)</td>
-                        <td class="color-insignificant">-0.004 (0.942)</td>
-                        <td class="color-insignificant">-0.068 (0.289)</td>
-                        <td class="color-insignificant">-0.067 (0.295)</td>
-                        <td class="color-moderate">0.171 (**0.006**)</td>
-                        <td>—</td>
+                        <td class="color-orange tau-value">0.208</td>
+                        <td class="p-value-sig">&lt; .001</td>
+                        <td class="color-yellow tau-value">0.021</td>
+                        <td class="p-value-insig">0.737</td>
+                        <td class="color-yellow tau-value">0.144</td>
+                        <td class="p-value-sig">0.019</td>
+                        <td class="color-yellow tau-value">0.063</td>
+                        <td class="p-value-insig">0.303</td>
+                        <td class="color-yellow tau-value">-0.004</td>
+                        <td class="p-value-insig">0.942</td>
+                        <td class="color-yellow tau-value">-0.068</td>
+                        <td class="p-value-insig">0.289</td>
+                        <td class="color-yellow tau-value">-0.067</td>
+                        <td class="p-value-insig">0.295</td>
+                        <td class="color-yellow tau-value">0.171</td>
+                        <td class="p-value-sig">0.006</td>
+                        <td colspan="2" class="tau-value">—</td>
                     </tr>
                 </tbody>
             </table>
-            
+
             <div class="profile-summary-reduced">
                 <h4 style="margin-top: 0; color: #0056b3; font-size: 1.1em;">Synthèse des corrélations significatives (p &lt; 0.05)</h4>
                 <p>L'analyse met en lumière des associations d'usages, créant des « écosystèmes » numériques distincts.</p>
                 <ul style="list-style-type: disc; margin-left: 15px;">
-                    <li style="margin-top: 5px;"><strong>Associations Positives Fortes (Même Public) :</strong>
+                    <li style="margin-top: 5px;">**Corrélation Forte (Rouge, $|\tau| &gt; 0.3$) :**
                         <ul style="list-style-type: circle; margin-top: 3px; margin-left: 10px;">
-                            <li><span style="background-color: #ffc107; padding: 2px 4px; border-radius: 3px;">**Snapchat et Tiktok**</span> (Tau = 0.329) : Très forte corrélation due à une utilisation massive par un public jeune.</li>
-                            <li><span style="background-color: #ffc107; padding: 2px 4px; border-radius: 3px;">**Instagram et Snapchat**</span> (Tau = 0.262) : Forte corrélation, confirmant un public qui se chevauche sur les contenus visuels.</li>
+                            <li><span style="background-color: #ffcccc; padding: 2px 4px; border-radius: 3px; color: #cc0000;">**Snapchat et Tiktok**</span> (Tau = **0.329**) : Très forte corrélation due à une utilisation massive par un public jeune.</li>
                         </ul>
                     </li>
-                    <li style="margin-top: 10px;"><strong>Associations Positives Modérées (Usages Complémentaires) :</strong>
+                    <li style="margin-top: 10px;">**Corrélations Modérées (Orange, $0.2 \le |\tau| \le 0.3$) :**
                         <ul style="list-style-type: circle; margin-top: 3px; margin-left: 10px;">
-                            <li><span style="background-color: #ffeeba; padding: 2px 4px; border-radius: 3px;">**Youtube et Twitch**</span> (Tau = 0.233) : Liée aux utilisateurs assidus de contenus vidéo et de direct.</li>
-                            <li><span style="background-color: #ffeeba; padding: 2px 4px; border-radius: 3px;">**Facebook et Messagerie**</span> (Tau = 0.208) : Reflet d’un usage centré sur la communication avec les cercles sociaux proches.</li>
-                            <li><span style="background-color: #ffeeba; padding: 2px 4px; border-radius: 3px;">**X et Tiktok**</span> (Tau = 0.185).</li>
+                            <li><span style="background-color: #ffe0b2; padding: 2px 4px; border-radius: 3px; color: #ff6600;">**Youtube et Twitch**</span> (Tau = **0.233**) : Liée aux utilisateurs assidus de contenus vidéo et de direct.</li>
+                            <li><span style="background-color: #ffe0b2; padding: 2px 4px; border-radius: 3px; color: #ff6600;">**Facebook et Messagerie**</span> (Tau = **0.208**) : Reflet d’un usage centré sur la communication avec les cercles sociaux proches.</li>
+                            <li><span style="background-color: #ffe0b2; padding: 2px 4px; border-radius: 3px; color: #ff6600;">**Instagram et Snapchat**</span> (Tau = **0.262**).</li>
+                            <li><span style="background-color: #ffe0b2; padding: 2px 4px; border-radius: 3px; color: #ff6600;">**Instagram et Tiktok**</span> (Tau = **0.234**).</li>
                         </ul>
                     </li>
-                    <li style="margin-top: 10px;"><strong>Associations Négatives (Publics Opposés) :</strong>
+                    <li style="margin-top: 10px;">**Corrélation Faible (Jaune, $|\tau| &lt; 0.2$) :**
                         <ul style="list-style-type: circle; margin-top: 3px; margin-left: 10px;">
-                            <li><span style="background-color: #ffeeba; padding: 2px 4px; border-radius: 3px;">**Snapchat et Twitch**</span> (Tau = -0.170) : Les publics adeptes du contenu éphémère et visuel ne sont pas les mêmes que ceux de Twitch.</li>
-                            <li><span style="background-color: #fff3cd; padding: 2px 4px; border-radius: 3px;">**Facebook et Twitch**</span> (Tau = -0.147) : Les utilisateurs de Facebook sont moins présents sur Twitch (streaming/jeu vidéo).</li>
+                            <li><span style="background-color: #fffacd; padding: 2px 4px; border-radius: 3px; color: #9c9200;">**X et Tiktok**</span> (Tau = **0.185**).</li>
+                            <li><span style="background-color: #fffacd; padding: 2px 4px; border-radius: 3px; color: #9c9200;">**Facebook et Twitch**</span> (Tau = **-0.147**).</li>
+                            <li><span style="background-color: #fffacd; padding: 2px 4px; border-radius: 3px; color: #9c9200;">**Snapchat et Twitch**</span> (Tau = **-0.170**).</li>
+                            <li><span style="background-color: #fffacd; padding: 2px 4px; border-radius: 3px; color: #9c9200;">**Instagram et Twitch**</span> (Tau = **-0.123**).</li>
+                            <li><span style="background-color: #fffacd; padding: 2px 4px; border-radius: 3px; color: #9c9200;">**Instagram et Messagerie**</span> (Tau = **0.144**).</li>
+                            <li><span style="background-color: #fffacd; padding: 2px 4px; border-radius: 3px; color: #9c9200;">**Linkedin et Messagerie**</span> (Tau = **0.171**).</li>
+                            <li><span style="background-color: #fffacd; padding: 2px 4px; border-radius: 3px; color: #9c9200;">**X et Linkedin**</span> (Tau = **0.132**).</li>
                         </ul>
                     </li>
                 </ul>
