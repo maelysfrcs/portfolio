@@ -134,7 +134,8 @@ body {
 #toc-wrapper {
     /* Positionnement nécessaire pour que la liste soit affichée en dessous */
     position: relative; 
-    display: inline-block; /* Le conteneur ne prend que la place nécessaire au bouton */
+    display: block; /* Le conteneur ne prend que la place nécessaire au bouton */
+    width: fit-content;
     margin: 5px auto; /* Centrage si le parent utilise text-align: center */
     z-index: 10; /* Assure que le menu est au-dessus du contenu en dessous */
 }
@@ -681,11 +682,6 @@ body {
         border: 1px solid #ddd;
         border-radius: 5px;
     }
-    /* NOUVEAU: Correction Sommaire - Désactiver le survol et utiliser une classe au clic */
-    #toc-wrapper:hover #table-of-contents-container {
-        display: none !important;
-        opacity: 0 !important;
-    }
 
     .toc-button {
         display: block; 
@@ -693,9 +689,10 @@ body {
 
     /* 2. Positionnement et état INITIAL du Sommaire sur mobile/tablette */
     .toc-wrapper {
-        position: fixed;
+        position: relative;
+        display: block;
         top: 0; /* Prend toute la hauteur pour centrer */
-        width: 80%; /* Prend 80% de la largeur du viewport */
+        width: fit-content; /* Prend 80% de la largeur du viewport */
         max-width: 300px;
         height: 100%;
         
