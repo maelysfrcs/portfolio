@@ -862,89 +862,254 @@ body {
             <strong>Contribution à l'enquête : Mise en évidence d'écosystèmes d'usages spécifiques.</strong>
             <p>Les résultats ont permis de structurer les pratiques numériques observées en ligne, démontrant qu'elles ne sont pas isolées mais s’organisent en <strong>écosystèmes d’usages</strong> propres à des typologies d’individus. Le tableau ci-dessous présente le Tau de Kendall B avec la p-value associée entre parenthèses.</p>
             
-<div class="table-responsive-full" style="margin-top: 20px; margin-bottom: 20px; clear: both;">
-                <table class="correlation-table">
-                    <thead>
-                        <tr>
-                            <th>Plateforme</th>
-                            <th>Facebook</th>
-                            <th>Youtube</th>
-                            <th>Instagram</th>
-                            <th>X</th>
-                            <th>Twitch</th>
-                            <th>Snapchat</th>
-                            <th>Tiktok</th>
-                            <th>Linkedin</th>
-                            <th>Messagerie</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th>Facebook</th>
-                            <td class="diagonal-cell">—</td> <td class="color-yellow"><span class="tau-value">-0.080</span><span class="p-value-insig">0.199</span></td>
-                            <td class="color-yellow"><span class="tau-value">0.101</span><span class="p-value-insig">0.100</span></td>
-                            <td class="color-yellow"><span class="tau-value">0.137</span><span class="p-value-sig">0.025</span></td>
-                            <td class="color-yellow"><span class="tau-value">-0.147</span><span class="p-value-sig">0.015</span></td>
-                            <td class="color-yellow"><span class="tau-value">-0.010</span><span class="p-value-insig">0.875</span></td>
-                            <td class="color-yellow"><span class="tau-value">0.008</span><span class="p-value-insig">0.904</span></td>
-                            <td class="color-yellow"><span class="tau-value">0.108</span><span class="p-value-insig">0.085</span></td>
-                            <td class="color-orange"><span class="tau-value">0.208</span><span class="p-value-sig">&lt; .001</span></td>
-                        </tr>
-                        <tr>
-                            <th>Youtube</th>
-                            <td class="empty-cell"></td> <td class="diagonal-cell">—</td> <td class="color-yellow"><span class="tau-value">0.038</span><span class="p-value-insig">0.542</span></td>
-                            <td class="color-yellow"><span class="tau-value">0.043</span><span class="p-value-insig">0.489</span></td>
-                            <td class="color-orange"><span class="tau-value">0.233</span><span class="p-value-sig">&lt; .001</span></td>
-                            <td class="color-yellow"><span class="tau-value">-0.032</span><span class="p-value-insig">0.627</span></td>
-                            <td class="color-yellow"><span class="tau-value">-0.091</span><span class="p-value-insig">0.158</span></td>
-                            <td class="color-yellow"><span class="tau-value">0.024</span><span class="p-value-insig">0.702</span></td>
-                            <td class="color-yellow"><span class="tau-value">0.021</span><span class="p-value-insig">0.737</span></td>
-                        </tr>
-                        <tr>
-                            <th>Instagram</th>
-                            <td class="empty-cell"></td> <td class="empty-cell"></td> <td class="diagonal-cell">—</td> <td class="color-yellow"><span class="tau-value">0.079</span><span class="p-value-insig">0.197</span></td>
-                            <td class="color-yellow"><span class="tau-value">-0.123</span><span class="p-value-sig">0.040</span></td>
-                            <td class="color-orange"><span class="tau-value">0.262</span><span class="p-value-sig">&lt; .001</span></td>
-                            <td class="color-orange"><span class="tau-value">0.234</span><span class="p-value-sig">&lt; .001</span></td>
-                            <td class="color-yellow"><span class="tau-value">0.078</span><span class="p-value-insig">0.207</span></td>
-                            <td class="color-yellow"><span class="tau-value">0.144</span><span class="p-value-sig">0.019</span></td>
-                        </tr>
-                        <tr>
-                            <th>X</th>
-                            <td class="empty-cell"></td> <td class="empty-cell"></td> <td class="empty-cell"></td> <td class="diagonal-cell">—</td> <td class="color-yellow"><span class="tau-value">0.003</span><span class="p-value-insig">0.966</span></td>
-                            <td class="color-yellow"><span class="tau-value">0.027</span><span class="p-value-insig">0.673</span></td>
-                            <td class="color-yellow"><span class="tau-value">0.185</span><span class="p-value-sig">0.004</span></td>
-                            <td class="color-yellow"><span class="tau-value">0.132</span><span class="p-value-sig">0.033</span></td>
-                            <td class="color-yellow"><span class="tau-value">0.063</span><span class="p-value-insig">0.303</span></td>
-                        </tr>
-                        <tr>
-                            <th>Twitch</th>
-                            <td class="empty-cell"></td> <td class="empty-cell"></td> <td class="empty-cell"></td> <td class="empty-cell"></td> <td class="diagonal-cell">—</td> <td class="color-yellow"><span class="tau-value">-0.170</span><span class="p-value-sig">0.007</span></td>
-                            <td class="color-yellow"><span class="tau-value">-0.123</span><span class="p-value-sig">0.049</span></td>
-                            <td class="color-yellow"><span class="tau-value">-0.012</span><span class="p-value-insig">0.842</span></td>
-                            <td class="color-yellow"><span class="tau-value">-0.004</span><span class="p-value-insig">0.942</span></td>
-                        </tr>
-                        <tr>
-                            <th>Snapchat</th>
-                            <td class="empty-cell"></td> <td class="empty-cell"></td> <td class="empty-cell"></td> <td class="empty-cell"></td> <td class="empty-cell"></td> <td class="diagonal-cell">—</td> <td class="color-red"><span class="tau-value">0.329</span><span class="p-value-sig">&lt; .001</span></td>
-                            <td class="color-yellow"><span class="tau-value">0.123</span><span class="p-value-insig">0.057</span></td>
-                            <td class="color-yellow"><span class="tau-value">-0.068</span><span class="p-value-insig">0.289</span></td>
-                        </tr>
-                        <tr>
-                            <th>Tiktok</th>
-                            <td class="empty-cell"></td> <td class="empty-cell"></td> <td class="empty-cell"></td> <td class="empty-cell"></td> <td class="empty-cell"></td> <td class="empty-cell"></td> <td class="diagonal-cell">—</td> <td class="color-yellow"><span class="tau-value">0.081</span><span class="p-value-insig">0.213</span></td>
-                            <td class="color-yellow"><span class="tau-value">-0.067</span><span class="p-value-insig">0.295</span></td>
-                        </tr>
-                        <tr>
-                            <th>Linkedin</th>
-                            <td class="empty-cell"></td> <td class="empty-cell"></td> <td class="empty-cell"></td> <td class="empty-cell"></td> <td class="empty-cell"></td> <td class="empty-cell"></td> <td class="empty-cell"></td> <td class="diagonal-cell">—</td> <td class="color-yellow"><span class="tau-value">0.171</span><span class="p-value-sig">0.006</span></td>
-                        </tr>
-                        <tr>
-                            <th>Messagerie</th>
-                            <td class="empty-cell"></td> <td class="empty-cell"></td> <td class="empty-cell"></td> <td class="empty-cell"></td> <td class="empty-cell"></td> <td class="empty-cell"></td> <td class="empty-cell"></td> <td class="empty-cell"></td> <td class="diagonal-cell">—</td> </tr>
-                    </tbody>
-                </table>
-            </div>
+<div style="margin-top: 20px; margin-bottom: 20px; clear: both; overflow-x: auto;">
+            <table style="width: 100%; min-width: 800px; border-collapse: collapse; text-align: center; border: 1px solid #ccc;">
+                <caption style="font-weight: bold; margin-bottom: 8px;">Tableau : Matrice de Corrélation (Tau de Kendall B et p-value)</caption>
+                <thead>
+                    <tr style="background-color: #eee;">
+                        <th style="border: 1px solid #ccc; padding: 8px;">Plateforme</th>
+                        <th style="border: 1px solid #ccc; padding: 8px;">Indicateur</th>
+                        <th style="border: 1px solid #ccc; padding: 8px;">Facebook</th>
+                        <th style="border: 1px solid #ccc; padding: 8px;">Youtube</th>
+                        <th style="border: 1px solid #ccc; padding: 8px;">Instagram</th>
+                        <th style="border: 1px solid #ccc; padding: 8px;">X</th>
+                        <th style="border: 1px solid #ccc; padding: 8px;">Twitch</th>
+                        <th style="border: 1px solid #ccc; padding: 8px;">Snapchat</th>
+                        <th style="border: 1px solid #ccc; padding: 8px;">Tiktok</th>
+                        <th style="border: 1px solid #ccc; padding: 8px;">Linkedin</th>
+                        <th style="border: 1px solid #ccc; padding: 8px;">Messagerie</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td rowspan="2" style="border: 1px solid #ccc; padding: 8px; font-weight: bold; text-align: left;">Facebook</td>
+                        <td style="border: 1px solid #ccc; padding: 8px; font-style: italic;">Tau de Kendall B</td>
+                        <td style="border: 1px solid #ccc; padding: 8px;">—</td>
+                        <td style="border: 1px solid #ccc; padding: 8px;">-0.080</td>
+                        <td style="border: 1px solid #ccc; padding: 8px;">0.101</td>
+                        <td style="border: 1px solid #ccc; padding: 8px;">0.137</td>
+                        <td style="border: 1px solid #ccc; padding: 8px; background-color: #fdd;">-0.147</td>
+                        <td style="border: 1px solid #ccc; padding: 8px;">-0.010</td>
+                        <td style="border: 1px solid #ccc; padding: 8px;">0.008</td>
+                        <td style="border: 1px solid #ccc; padding: 8px;">0.180</td>
+                        <td style="border: 1px solid #ccc; padding: 8px; background-color: #dff;">0.287</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ccc; padding: 8px; font-style: italic;">p-value</td>
+                        <td style="border: 1px solid #ccc; padding: 8px;">—</td>
+                        <td style="border: 1px solid #ccc; padding: 8px;">0.199</td>
+                        <td style="border: 1px solid #ccc; padding: 8px;">0.100</td>
+                        <td style="border: 1px solid #ccc; padding: 8px; background-color: #dfd;">0.025</td>
+                        <td style="border: 1px solid #ccc; padding: 8px; background-color: #dfd;">0.015</td>
+                        <td style="border: 1px solid #ccc; padding: 8px;">0.875</td>
+                        <td style="border: 1px solid #ccc; padding: 8px;">0.904</td>
+                        <td style="border: 1px solid #ccc; padding: 8px; background-color: #dfd;">< .001</td>
+                        <td style="border: 1px solid #ccc; padding: 8px; background-color: #dfd;">< .001</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2" style="border: 1px solid #ccc; padding: 8px; font-weight: bold; text-align: left;">Youtube</td>
+                        <td style="border: 1px solid #ccc; padding: 8px; font-style: italic;">Tau de Kendall B</td>
+                        <td style="border: 1px solid #ccc; padding: 8px;"></td>
+                        <td style="border: 1px solid #ccc; padding: 8px;">—</td>
+                        <td style="border: 1px solid #ccc; padding: 8px;">0.038</td>
+                        <td style="border: 1px solid #ccc; padding: 8px;">0.043</td>
+                        <td style="border: 1px solid #ccc; padding: 8px; background-color: #dff;">0.233</td>
+                        <td style="border: 1px solid #ccc; padding: 8px;">-0.032</td>
+                        <td style="border: 1px solid #ccc; padding: 8px;">-0.091</td>
+                        <td style="border: 1px solid #ccc; padding: 8px;">0.052</td>
+                        <td style="border: 1px solid #ccc; padding: 8px;">0.076</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ccc; padding: 8px; font-style: italic;">p-value</td>
+                        <td style="border: 1px solid #ccc; padding: 8px;"></td>
+                        <td style="border: 1px solid #ccc; padding: 8px;">—</td>
+                        <td style="border: 1px solid #ccc; padding: 8px;">0.542</td>
+                        <td style="border: 1px solid #ccc; padding: 8px;">0.489</td>
+                        <td style="border: 1px solid #ccc; padding: 8px; background-color: #dfd;">< .001</td>
+                        <td style="border: 1px solid #ccc; padding: 8px;">0.627</td>
+                        <td style="border: 1px solid #ccc; padding: 8px;">0.158</td>
+                        <td style="border: 1px solid #ccc; padding: 8px;">0.414</td>
+                        <td style="border: 1px solid #ccc; padding: 8px;">0.211</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2" style="border: 1px solid #ccc; padding: 8px; font-weight: bold; text-align: left;">Instagram</td>
+                        <td style="border: 1px solid #ccc; padding: 8px; font-style: italic;">Tau de Kendall B</td>
+                        <td style="border: 1px solid #ccc; padding: 8px;"></td>
+                        <td style="border: 1px solid #ccc; padding: 8px;"></td>
+                        <td style="border: 1px solid #ccc; padding: 8px;">—</td>
+                        <td style="border: 1px solid #ccc; padding: 8px;">0.079</td>
+                        <td style="border: 1px solid #ccc; padding: 8px; background-color: #fdd;">-0.123</td>
+                        <td style="border: 1px solid #ccc; padding: 8px; background-color: #dff;">0.262</td>
+                        <td style="border: 1px solid #ccc; padding: 8px; background-color: #dff;">0.234</td>
+                        <td style="border: 1px solid #ccc; padding: 8px; background-color: #dff;">0.185</td>
+                        <td style="border: 1px solid #ccc; padding: 8px; background-color: #dff;">0.246</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ccc; padding: 8px; font-style: italic;">p-value</td>
+                        <td style="border: 1px solid #ccc; padding: 8px;"></td>
+                        <td style="border: 1px solid #ccc; padding: 8px;"></td>
+                        <td style="border: 1px solid #ccc; padding: 8px;">—</td>
+                        <td style="border: 1px solid #ccc; padding: 8px;">0.197</td>
+                        <td style="border: 1px solid #ccc; padding: 8px; background-color: #dfd;">0.040</td>
+                        <td style="border: 1px solid #ccc; padding: 8px; background-color: #dfd;">< .001</td>
+                        <td style="border: 1px solid #ccc; padding: 8px; background-color: #dfd;">< .001</td>
+                        <td style="border: 1px solid #ccc; padding: 8px; background-color: #dfd;">0.004</td>
+                        <td style="border: 1px solid #ccc; padding: 8px; background-color: #dfd;">< .001</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2" style="border: 1px solid #ccc; padding: 8px; font-weight: bold; text-align: left;">X</td>
+                        <td style="border: 1px solid #ccc; padding: 8px; font-style: italic;">Tau de Kendall B</td>
+                        <td style="border: 1px solid #ccc; padding: 8px;"></td>
+                        <td style="border: 1px solid #ccc; padding: 8px;"></td>
+                        <td style="border: 1px solid #ccc; padding: 8px;"></td>
+                        <td style="border: 1px solid #ccc; padding: 8px;">—</td>
+                        <td style="border: 1px solid #ccc; padding: 8px;">0.003</td>
+                        <td style="border: 1px solid #ccc; padding: 8px;">0.027</td>
+                        <td style="border: 1px solid #ccc; padding: 8px; background-color: #dff;">0.185</td>
+                        <td style="border: 1px solid #ccc; padding: 8px; background-color: #dff;">0.210</td>
+                        <td style="border: 1px solid #ccc; padding: 8px;">-0.013</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ccc; padding: 8px; font-style: italic;">p-value</td>
+                        <td style="border: 1px solid #ccc; padding: 8px;"></td>
+                        <td style="border: 1px solid #ccc; padding: 8px;"></td>
+                        <td style="border: 1px solid #ccc; padding: 8px;"></td>
+                        <td style="border: 1px solid #ccc; padding: 8px;">—</td>
+                        <td style="border: 1px solid #ccc; padding: 8px;">0.966</td>
+                        <td style="border: 1px solid #ccc; padding: 8px;">0.673</td>
+                        <td style="border: 1px solid #ccc; padding: 8px; background-color: #dfd;">0.004</td>
+                        <td style="border: 1px solid #ccc; padding: 8px; background-color: #dfd;">0.001</td>
+                        <td style="border: 1px solid #ccc; padding: 8px;">0.844</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2" style="border: 1px solid #ccc; padding: 8px; font-weight: bold; text-align: left;">Twitch</td>
+                        <td style="border: 1px solid #ccc; padding: 8px; font-style: italic;">Tau de Kendall B</td>
+                        <td style="border: 1px solid #ccc; padding: 8px;"></td>
+                        <td style="border: 1px solid #ccc; padding: 8px;"></td>
+                        <td style="border: 1px solid #ccc; padding: 8px;"></td>
+                        <td style="border: 1px solid #ccc; padding: 8px;"></td>
+                        <td style="border: 1px solid #ccc; padding: 8px;">—</td>
+                        <td style="border: 1px solid #ccc; padding: 8px; background-color: #fdd;">-0.170</td>
+                        <td style="border: 1px solid #ccc; padding: 8px; background-color: #fdd;">-0.123</td>
+                        <td style="border: 1px solid #ccc; padding: 8px;">-0.090</td>
+                        <td style="border: 1px solid #ccc; padding: 8px;">-0.045</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ccc; padding: 8px; font-style: italic;">p-value</td>
+                        <td style="border: 1px solid #ccc; padding: 8px;"></td>
+                        <td style="border: 1px solid #ccc; padding: 8px;"></td>
+                        <td style="border: 1px solid #ccc; padding: 8px;"></td>
+                        <td style="border: 1px solid #ccc; padding: 8px;"></td>
+                        <td style="border: 1px solid #ccc; padding: 8px;">—</td>
+                        <td style="border: 1px solid #ccc; padding: 8px; background-color: #dfd;">0.007</td>
+                        <td style="border: 1px solid #ccc; padding: 8px; background-color: #dfd;">0.049</td>
+                        <td style="border: 1px solid #ccc; padding: 8px;">0.173</td>
+                        <td style="border: 1px solid #ccc; padding: 8px;">0.490</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2" style="border: 1px solid #ccc; padding: 8px; font-weight: bold; text-align: left;">Snapchat</td>
+                        <td style="border: 1px solid #ccc; padding: 8px; font-style: italic;">Tau de Kendall B</td>
+                        <td style="border: 1px solid #ccc; padding: 8px;"></td>
+                        <td style="border: 1px solid #ccc; padding: 8px;"></td>
+                        <td style="border: 1px solid #ccc; padding: 8px;"></td>
+                        <td style="border: 1px solid #ccc; padding: 8px;"></td>
+                        <td style="border: 1px solid #ccc; padding: 8px;"></td>
+                        <td style="border: 1px solid #ccc; padding: 8px;">—</td>
+                        <td style="border: 1px solid #ccc; padding: 8px; background-color: #dff; font-weight: bold;">0.329</td>
+                        <td style="border: 1px solid #ccc; padding: 8px;">-0.004</td>
+                        <td style="border: 1px solid #ccc; padding: 8px;">0.012</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ccc; padding: 8px; font-style: italic;">p-value</td>
+                        <td style="border: 1px solid #ccc; padding: 8px;"></td>
+                        <td style="border: 1px solid #ccc; padding: 8px;"></td>
+                        <td style="border: 1px solid #ccc; padding: 8px;"></td>
+                        <td style="border: 1px solid #ccc; padding: 8px;"></td>
+                        <td style="border: 1px solid #ccc; padding: 8px;"></td>
+                        <td style="border: 1px solid #ccc; padding: 8px;">—</td>
+                        <td style="border: 1px solid #ccc; padding: 8px; background-color: #dfd;">< .001</td>
+                        <td style="border: 1px solid #ccc; padding: 8px;">0.947</td>
+                        <td style="border: 1px solid #ccc; padding: 8px;">0.864</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2" style="border: 1px solid #ccc; padding: 8px; font-weight: bold; text-align: left;">Tiktok</td>
+                        <td style="border: 1px solid #ccc; padding: 8px; font-style: italic;">Tau de Kendall B</td>
+                        <td style="border: 1px solid #ccc; padding: 8px;"></td>
+                        <td style="border: 1px solid #ccc; padding: 8px;"></td>
+                        <td style="border: 1px solid #ccc; padding: 8px;"></td>
+                        <td style="border: 1px solid #ccc; padding: 8px;"></td>
+                        <td style="border: 1px solid #ccc; padding: 8px;"></td>
+                        <td style="border: 1px solid #ccc; padding: 8px;"></td>
+                        <td style="border: 1px solid #ccc; padding: 8px;">—</td>
+                        <td style="border: 1px solid #ccc; padding: 8px; background-color: #fdd;">-0.100</td>
+                        <td style="border: 1px solid #ccc; padding: 8px;">0.076</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ccc; padding: 8px; font-style: italic;">p-value</td>
+                        <td style="border: 1px solid #ccc; padding: 8px;"></td>
+                        <td style="border: 1px solid #ccc; padding: 8px;"></td>
+                        <td style="border: 1px solid #ccc; padding: 8px;"></td>
+                        <td style="border: 1px solid #ccc; padding: 8px;"></td>
+                        <td style="border: 1px solid #ccc; padding: 8px;"></td>
+                        <td style="border: 1px solid #ccc; padding: 8px;"></td>
+                        <td style="border: 1px solid #ccc; padding: 8px;">—</td>
+                        <td style="border: 1px solid #ccc; padding: 8px;">0.119</td>
+                        <td style="border: 1px solid #ccc; padding: 8px;">0.231</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2" style="border: 1px solid #ccc; padding: 8px; font-weight: bold; text-align: left;">Linkedin</td>
+                        <td style="border: 1px solid #ccc; padding: 8px; font-style: italic;">Tau de Kendall B</td>
+                        <td style="border: 1px solid #ccc; padding: 8px;"></td>
+                        <td style="border: 1px solid #ccc; padding: 8px;"></td>
+                        <td style="border: 1px solid #ccc; padding: 8px;"></td>
+                        <td style="border: 1px solid #ccc; padding: 8px;"></td>
+                        <td style="border: 1px solid #ccc; padding: 8px;"></td>
+                        <td style="border: 1px solid #ccc; padding: 8px;"></td>
+                        <td style="border: 1px solid #ccc; padding: 8px;"></td>
+                        <td style="border: 1px solid #ccc; padding: 8px;">—</td>
+                        <td style="border: 1px solid #ccc; padding: 8px; background-color: #dff;">0.147</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ccc; padding: 8px; font-style: italic;">p-value</td>
+                        <td style="border: 1px solid #ccc; padding: 8px;"></td>
+                        <td style="border: 1px solid #ccc; padding: 8px;"></td>
+                        <td style="border: 1px solid #ccc; padding: 8px;"></td>
+                        <td style="border: 1px solid #ccc; padding: 8px;"></td>
+                        <td style="border: 1px solid #ccc; padding: 8px;"></td>
+                        <td style="border: 1px solid #ccc; padding: 8px;"></td>
+                        <td style="border: 1px solid #ccc; padding: 8px;"></td>
+                        <td style="border: 1px solid #ccc; padding: 8px;">—</td>
+                        <td style="border: 1px solid #ccc; padding: 8px; background-color: #dfd;">0.014</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2" style="border: 1px solid #ccc; padding: 8px; font-weight: bold; text-align: left;">Messagerie</td>
+                        <td style="border: 1px solid #ccc; padding: 8px; font-style: italic;">Tau de Kendall B</td>
+                        <td style="border: 1px solid #ccc; padding: 8px;"></td>
+                        <td style="border: 1px solid #ccc; padding: 8px;"></td>
+                        <td style="border: 1px solid #ccc; padding: 8px;"></td>
+                        <td style="border: 1px solid #ccc; padding: 8px;"></td>
+                        <td style="border: 1px solid #ccc; padding: 8px;"></td>
+                        <td style="border: 1px solid #ccc; padding: 8px;"></td>
+                        <td style="border: 1px solid #ccc; padding: 8px;"></td>
+                        <td style="border: 1px solid #ccc; padding: 8px;"></td>
+                        <td style="border: 1px solid #ccc; padding: 8px;">—</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ccc; padding: 8px; font-style: italic;">p-value</td>
+                        <td style="border: 1px solid #ccc; padding: 8px;"></td>
+                        <td style="border: 1px solid #ccc; padding: 8px;"></td>
+                        <td style="border: 1px solid #ccc; padding: 8px;"></td>
+                        <td style="border: 1px solid #ccc; padding: 8px;"></td>
+                        <td style="border: 1px solid #ccc; padding: 8px;"></td>
+                        <td style="border: 1px solid #ccc; padding: 8px;"></td>
+                        <td style="border: 1px solid #ccc; padding: 8px;"></td>
+                        <td style="border: 1px solid #ccc; padding: 8px;"></td>
+                        <td style="border: 1px solid #ccc; padding: 8px;">—</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <hr>
 
             <div class="profile-summary-reduced">
                 <h4 style="margin-top: 0; color: #0056b3; font-size: 1.1em;">Synthèse des corrélations significatives (p &lt; 0.05)</h4>
