@@ -644,6 +644,22 @@ body {
         margin: 0; 
         box-sizing: border-box;
     }
+    /* NOUVEAU: Correction Tableau pleine largeur */
+    .article-content .table-responsive-full {
+        /* Annule le padding horizontal de .article-content (20px) pour dépasser */
+        width: calc(100% + 40px) !important;
+        margin-left: -20px !important;
+        /* Ajoute un défilement horizontal pour les petits écrans */
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        padding: 0 10px; /* Petit espace de sécurité sur les côtés */
+        box-sizing: border-box;
+    }
+    
+    /* S'assurer que le tableau a une largeur minimale pour forcer le défilement */
+    .article-content .table-responsive-full table {
+        min-width: 500px;
+    }
     
     /* -------------------------------------------------------------------------- */
     /* 5. Footer (EXISTANT ET CONSERVÉ) */
@@ -664,6 +680,16 @@ body {
         justify-content: center;
         border: 1px solid #ddd;
         border-radius: 5px;
+    }
+    /* NOUVEAU: Correction Sommaire - Désactiver le survol et utiliser une classe au clic */
+    #toc-wrapper:hover #table-of-contents-container {
+        display: none !important;
+        opacity: 0 !important;
+    }
+    
+    .toc-open #table-of-contents-container {
+        display: block !important;
+        opacity: 1 !important;
     }
 }
 </style>
@@ -813,7 +839,7 @@ body {
         <hr>
                 <div style="margin-top: 20px; margin-bottom: 20px; clear: both;">
                     <table style="width: 100%; border-collapse: collapse; text-align: center; border: 1px solid #ccc;">
-                        <caption style="font-weight: bold; margin-bottom: 8px;">Tableau 1 : Moyenne et écart-type de la mobilité selon l'âge et le genre</caption>
+                        <caption style="font-weight: bold; margin-bottom: 8px;">Tableau : Moyenne et écart-type de la mobilité selon l'âge et le genre</caption>
                         <thead>
                             <tr style="background-color: #eee;">
                                 <th style="border: 1px solid #ccc; padding: 8px;">Âge</th>
