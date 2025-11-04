@@ -125,6 +125,124 @@ body {
 }
 
 /* ************************************************************************** */
+/* NOUVEAU: STYLE SOMMAIRE (TOC) */
+/* ************************************************************************** */
+:root {
+    /* Ajout d'une variable pour la couleur principale, si non définie */
+    --main-blue: #0077b5;
+}
+
+/* 1. Conteneur principal qui gère l'affichage du bouton et de la liste */
+#toc-wrapper {
+    /* Positionnement nécessaire pour que la liste soit affichée en dessous */
+    position: relative; 
+    display: block; /* Le conteneur ne prend que la place nécessaire au bouton */
+    width: fit-content;
+    margin: 5px auto; /* Centrage si le parent utilise text-align: center */
+    z-index: 10; /* Assure que le menu est au-dessus du contenu en dessous */
+}
+
+/* 2. Style du bouton "Sommaire" (le déclencheur) */
+.toc-button {
+    background-color: var(--main-blue); /* Bleu principal */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px; /* Léger arrondi pour un look plus doux */
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    display: flex; 
+    align-items: center;
+    gap: 10px; /* Augmentation de l'espace entre l'icône et le texte */
+    /* Box-shadow plus doux */
+    box-shadow: 0 4px 10px rgba(0, 119, 181, 0.25); 
+}
+
+.toc-button:hover {
+    background-color: #005f96; /* Bleu plus foncé au survol */
+    box-shadow: 0 6px 12px rgba(0, 119, 181, 0.35);
+}
+
+/* Style de l'icône de flèche */
+.toc-button i.fa-caret-down {
+    transition: transform 0.3s ease;
+}
+
+/* Rotation de la flèche au survol pour indiquer que le menu s'ouvre */
+#toc-wrapper:hover .toc-button i.fa-caret-down {
+    transform: rotate(180deg);
+}
+
+/* 3. Conteneur de la liste (le menu déroulant) */
+#table-of-contents-container {
+    /* Positionnement absolu pour le dropdown */
+    position: absolute; 
+    top: 100%; /* Commence juste sous le bouton */
+    
+    /* LOGIQUE DE CENTRAGE DU MENU SOUS LE BOUTON */
+    left: 50%; 
+    transform: translateX(-50%);
+    
+    min-width: 300px;
+    
+    /* Style amélioré */
+    background-color: #fff; 
+    border: 1px solid #ddd;
+    border-top: none; 
+    padding: 5px 0; 
+    border-radius: 0 0 8px 8px; 
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    
+    /* Masquer par défaut */
+    display: none; 
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* 4. LOGIQUE CLÉ : Affichage de la liste au survol du conteneur principal */
+#toc-wrapper:hover #table-of-contents-container {
+    display: block; 
+    opacity: 1; 
+}
+
+/* 5. Style de la liste des liens */
+#table-of-contents-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+#table-of-contents-list li {
+    margin-bottom: 0;
+    /* Ligne de séparation subtile entre les liens */
+    border-bottom: 1px dashed #eee; 
+}
+#table-of-contents-list li:last-child {
+    border-bottom: none;
+}
+#table-of-contents-list a {
+    text-decoration: none;
+    color: #333; 
+    font-size: 15px;
+    display: block;
+    padding: 5px 15px; /* Légère augmentation pour plus de confort de clic */
+    transition: all 0.2s;
+    border-left: 3px solid transparent; 
+}
+#table-of-contents-list a:hover {
+    color: var(--main-blue); 
+    background-color: #f0f8ff; 
+    border-left: 3px solid var(--main-blue);
+}
+/* Différenciation des sous-sections (H4 - si vous en ajoutez) */
+#table-of-contents-list li.level-4 a {
+    padding-left: 30px; 
+    font-size: 14px;
+    color: #555;
+}
+    
+/* ************************************************************************** */
 /* NOUVEAU: STYLE PLATEFORMES SOCIALES */
 /* ************************************************************************** */
 
@@ -237,12 +355,19 @@ body {
     margin-top: 10px; /* Réduit l'espace par défaut */
     position: relative; /* Nécessaire pour que z-index fonctionne */
 }
+
+/* ************************************************************************** */
+/* NOUVEAU: STYLES LIGHTBOX/MODAL (Zoom image) */
+/* ************************************************************************** */
+.lightbox-trigger {
+    cursor: zoom-in; /* Indique qu'on peut cliquer pour zoomer */
+}
     
 /* Classe pour les images flottantes (gauche/droite) */
 .float-img-left {
     float: left;
     margin: 0 20px 15px 0; /* Haut, Droite, Bas, Gauche */
-    max-width: 45%;
+    max-width: 50%;
     height: auto;
     border-radius: 6px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -251,12 +376,80 @@ body {
 .float-img-right {
     float: right;
     margin: 0 0 20px 15px; /* Haut, Droite, Bas, Gauche */
-    max-width: 45%;
+    max-width: 50%;
     height: auto;
     border-radius: 6px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
+/* L'image elle-même dans la Lightbox (pour s'assurer qu'elle n'est pas trop petite/grande) */
+.float-img-left img, .float-img-right img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: inherit; /* Hérite du border-radius du conteneur */
+}
+
+/* Styles pour le Modal */
+#lightbox-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000; /* Assurez-vous qu'il soit au-dessus de tout */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9); /* Fond semi-transparent noir */
+    backdrop-filter: blur(5px); /* Optionnel : effet de flou */
+}
+
+#lightbox-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 1000px; /* Largeur max pour la fenêtre */
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#lightbox-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 6px;
+}
+
+#lightbox-caption {
+    margin: 15px auto;
+    width: 80%;
+    max-width: 1000px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    font-size: 17px;
+}
+
+/* Bouton de fermeture (Close Button) */
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.lightbox-close:hover,
+.lightbox-close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+    
 /* Correction pour que l'élément suivant ne soit pas affecté par le 'float' */
 .clearfix::after {
     content: "";
@@ -634,12 +827,33 @@ body {
 
     <div class="main-content-projects">
         <div class="article-content">
-
             <h1>Collecte et analyse de données des réseaux sociaux numériques : Assistance au projet ANR AMULEX</h1>
 
+    <div class="center-content"> 
+        <div id="toc-wrapper">
+        <div class="toc-button">
+        <i class="fas fa-list-alt"></i> Sommaire <i class="fas fa-caret-down"></i>
+        </div>
+        <div id="table-of-contents-container">
+            <ul id="table-of-contents-list">
+                <li><a href="#objectif">1. Objectif du stage et du projet</a></li>
+                <li><a href="#donnees">2. Présentation des données</a></li>
+                <li><a href="#nettoyage">3. Nettoyage et préparation des données</a></li>
+                <li><a href="#strategies">4. Stratégies de collecte</a></li>
+                <li><a href="#statistiques">5.1 Statistiques descriptives</a></li>
+                <li><a href="#acm">5.2 Analyse des Correspondances Multiples (ACM)</a></li>
+                <li><a href="#acl">5.3 Analyse en Classes Latentes (ACL)</a></li>
+                <li><a href="#correlation">5.4 Analyse de corrélation</a></li>
+                <li><a href="#conclusion">6. Conclusion</a></li>
+                <li><a href="#competences">7. Compétences développées</a></li>
+
+            </ul>
+        </div>
+        </div>
+    </div>          
             <!-- 1. Objectif -->
             <div class="clearfix">
-                <h3>1. Objectif du stage et du projet</h3>
+                <h3 id="objectif">1. Objectif du stage et du projet</h3>
                 <p>Ce projet a été réalisé dans le cadre de mon stage en tant qu’assistante sur le projet <strong>ANR AMULEX</strong> (Analyse Multiplateforme de l’Expression politique en ligne), dont l'objectif principal était de collecter et d'analyser les données 
                     issues des réseaux sociaux. <br>
                     L'objectif de ma mission était de <strong>contribuer à l'administration d'un questionnaire en ligne</strong> (via LimeSurvey) aurpès d'un échantillon ciblé de commentateurs politiques, pour ensuite l'<strong>analyser statistiquement</strong>.</p>
@@ -648,7 +862,7 @@ body {
 
             <!-- 2. Présentation des données -->
             <div class="clearfix">
-                <h3>2. Présentation des données</h3>
+                <h3 id="donnees">2. Présentation des données</h3>
                 <p>La base de données sur laquelle j'ai travaillé est constituée des réponses au questionnaire en ligne qui a été passé lors de la première partie de mon stage. L'échantillon a été constitué par contact direct (messagerie privée ou tag) 
                     auprès d'utilisateurs ayant <strong>commenté des interviews de candidat.e.s à l'élection présidentielle française sur les plateformes suivantes</strong> :</p>
                     
@@ -701,7 +915,7 @@ body {
 
             <!-- 3. Nettoyage -->
             <div class="clearfix">
-                <h3>3. Nettoyage et préparation des données</h3>
+                <h3 id=nettoyage">3. Nettoyage et préparation des données</h3>
                 <img src="../mesdocuments/image_amulex_tableausuivi.PNG" alt="Graphique 1" class="float-img-right">
                 <p>La préparation et le nettoyage des données ont été réalisés à l'aide de logiciels d'analyse statistique comme R et Jamovi, ainsi que des outils de gestion comme Excel. J'ai mobilisé plusieurs outils et méthodes clés pour structurer les données 
                     issues du questionnaire et du processus de collecte :</p>
@@ -714,7 +928,7 @@ body {
 
             <!-- 4. Résultats -->
             <div class="clearfix">
-                <h3>4. Stratégies de collecte</h3>
+                <h3 id="strategies">4. Stratégies de collecte</h3>
                 <img src="../mesdocuments/image_amulex_limitejournalière.jpg" alt="Graphique 1" class="float-img-left">    
                 <p>La collecte des données a été menée par vagues accompagnée d'une adaptation constante afin de surmonter les défis méthodologiques et techniques spécifiques à chaque plateforme.
                 </p>
@@ -731,7 +945,7 @@ body {
             
             <!-- 5. Facteurs explicatifs -->
 <div class="clearfix">
-                <h3 id="statistiques-descriptives">5.1. Statistiques descriptives</h3>
+                <h3 id="statistiques">5.1. Statistiques descriptives</h3>
                 <ul class="strategy-list">
                     <li class="objective">
                         <strong>Objectif : Cartographier la population enquêtée.</strong>
@@ -766,7 +980,7 @@ body {
             <hr>
 
 <div class="clearfix">
-    <h3 id="ACM">5.2. Analyse des Correspondances Multiples (ACM)</h3>
+    <h3 id="acm">5.2. Analyse des Correspondances Multiples (ACM)</h3>
                 <ul class="strategy-list">
                     <li class="objective">
                         <strong>Objectif : Visualiser la relation entre plusieurs variables et les individus qui y sont associés</strong>
@@ -790,7 +1004,7 @@ body {
 </div>
 <hr>
 <div class="clearfix">
-    <h3 id="analyse-acl">5.3. Analyse en Classes Latentes (ACL)</h3>
+    <h3 id="acl">5.3. Analyse en Classes Latentes (ACL)</h3>
     <ul class="strategy-list">
         <li class="objective">
             <strong>Objectif : Découvrir des groupes d'usagers aux profils similaires (classes latentes).</strong>
@@ -848,7 +1062,7 @@ body {
 <hr>
             
 <div class="clearfix">
-    <h3 id="correlations">5.4. Analyse de corrélation</h3>
+    <h3 id="correlation">5.4. Analyse de corrélation</h3>
     <ul class="strategy-list">
         <li class="objective">
             <strong>Objectif : Quantifier la relation entre les usages de différentes plateformes.</strong>
@@ -1206,14 +1420,12 @@ body {
         </div>
     </footer>
         </div>
- <!-- </div> fin .wrapper-limited -->
 <div id="lightbox-modal">
     <span class="lightbox-close">&times;</span>
     <div id="lightbox-content">
         <img id="lightbox-image" src="">
         <div id="lightbox-caption"></div>
     </div>
-
 </div>
 <script>
     // **************************************************************************
