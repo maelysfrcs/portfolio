@@ -547,36 +547,34 @@ body {
 /* -------------------------------------------------------------------------- */
 /* RESPONSIVE DESIGN (MOBILE ADAPTÉ) - COPIER/COLLER VOTRE BLOC CI-DESSOUS */
 @media (max-width: 768px) {
-    /* 1. Conteneurs principaux */
+    /* -------------------------------------------------------------------------- */
+    /* 1. Conteneurs principaux (EXISTANT ET CONSERVÉ) */
     .wrapper-limited {
         width: 100%;
         padding: 0 15px;
         box-sizing: border-box;
     }
 
-    /* 2. Navigation */
+    /* 2. Navigation (EXISTANT ET CONSERVÉ) */
     .nav-links {
-        justify-content: center; /* Centre les liens */
+        justify-content: center;
         flex-wrap: wrap;
         gap: 10px;
         margin-top: 15px;
-        margin-bottom: 0px; /* Espace sous les boutons de navigation (adapté) */
+        margin-bottom: 0px;
     }
-
     .nav-link {
         font-size: 16px;
         padding: 10px 18px;
-        border: 1px solid #ccc; /* Affichage comme de vrais boutons */
+        border: 1px solid #ccc;
         border-radius: 6px;
-        border-bottom: 1px solid #ccc; /* Correction de la bordure manquante */
+        border-bottom: 1px solid #ccc;
     }
-    
     .nav-link.active {
-        /* Correction pour que le bouton actif s'affiche correctement */
-        border-bottom-color: #fff; 
+        border-bottom-color: #fff;
     }
 
-    /* 3. Header Personnel */
+    /* 3. Header Personnel (EXISTANT ET CONSERVÉ) */
     .personal-header {
         flex-direction: column; 
         align-items: center;
@@ -584,17 +582,14 @@ body {
         padding: 20px 10px; 
         border-radius: 8px;
     }
-    
     .profile-photo { 
-        margin: 0 0 15px 0; /* Centre la photo et ajoute de l'espace en bas */
+        margin: 0 0 15px 0;
         width: 120px;
         height: 120px;
     }
-    
     .info-container h1 {
-        font-size: 26px; /* Taille adaptée */
+        font-size: 26px;
     }
-
     .info-container p {
         font-size: 15px;
         max-width: 100%; 
@@ -602,46 +597,68 @@ body {
         padding: 0 12px 0px 12px;
     }
     
-    /* 4. Contenu Principal (Le reste du contenu est laissé pour s'adapter par défaut, sauf le titre) */
+    /* 4. Contenu Principal et Article (EXISTANT ET CONSERVÉ) */
     .main-content-projects {
-        padding: 25px 15px; /* Réduit le padding du contenu */
+        padding: 25px 15px;
     }
-    
     .main-content-projects h2 {
         font-size: 28px;
         margin-bottom: 20px;
     }
-
-    /* Styles spécifiques pour l'article */
     .article-content {
         padding: 20px 20px;
     }
     .article-content h1 {
         font-size: 26px;
     }
-    /* Les images flottantes deviennent pleine largeur sur mobile */
+    
+    /* -------------------------------------------------------------------------- */
+    /* NOUVEAUX STYLES CLÉS POUR LE FLUIDITÉ SUR MOBILE */
+    
+    /* A. Neutralisation du flottement pour images et blocs d'informations (.data-vagues) */
     .float-img-left, .float-img-right {
-        float: none;
+        float: none; /* CLÉ: Supprime le flottement */
         max-width: 100%;
-        margin: 15px 0;
+        margin: 15px auto; /* Centre le bloc entier */
+        display: block; /* Assure le centrage par 'margin: auto' */
     }
 
+    /* B. Adaptation de la table (.article-content table) */
+    
+    /* Cible le conteneur du Tableau 1 (div avec styles inline) pour gérer le défilement horizontal. */
+    /* Cette solution permet à la table de déborder visuellement tout en permettant le scroll. */
+    .article-content > div[style*="clear: both;"] {
+        overflow-x: auto; /* CLÉ: Permet le défilement horizontal */
+        /* Ajustements pour que le défilement prenne toute la largeur de l'écran */
+        padding-left: 20px; 
+        padding-right: 20px;
+        margin-left: -20px; 
+        margin-right: -20px;
+        padding-bottom: 15px; /* Marge pour la barre de défilement */
+    }
 
-    /* Footer (Adaptation à la largeur mobile) */
+    /* Force la table à l'intérieur à avoir une largeur minimale pour déclencher le défilement */
+    .article-content table {
+        min-width: 600px; /* Assure une lisibilité minimale des colonnes */
+        width: auto !important; /* Annule le 'width: 100%' pour permettre le min-width */
+        margin: 0; 
+        box-sizing: border-box;
+    }
+    
+    /* -------------------------------------------------------------------------- */
+    /* 5. Footer (EXISTANT ET CONSERVÉ) */
     .footer {
-        margin: 10px 15px 10px 15px; /* Marge latérale pour centrage/aération */
+        margin: 10px 15px 10px 15px;
         padding: 30px 15px;
         border-radius: 8px;
         text-align: center; 
     }
-    
     .footer-buttons {
         flex-direction: column;
         gap: 12px;
         align-items: center;
         width: 100%; 
     }
-
     .button {
         width: 90%;
         justify-content: center;
