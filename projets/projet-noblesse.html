@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Projet - Mobilité des individus et réseaux avec R</title>
+    <title>Projet - Analyse quantitative des réseaux de la noblesse européenne avec R.</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
@@ -751,7 +751,7 @@ body {
     <div class="main-content-projects">
         
 <div class="article-content">
-    <h1>Analyse spatiale et longitudinale des réseaux personnels : Mobilité, dispersion géographique et structuration des liens sociaux.</h1>
+    <h1>Comment la Révolution française a-t-elle influencé la structure du réseau de la noblesse européenne ?</h1>
     
     <div class="center-content"> 
         <div id="toc-wrapper">
@@ -774,34 +774,49 @@ body {
     </div>    
             <div class="clearfix">
                 <h3 id="objectif">1. Objectif de l'étude</h3>
-                <a href="../mesdocuments/mobilité_graphique1.png" class="float-img-left lightbox-trigger" data-alt="Graphique 1 - Mobilité des individus">
+                <a href="../mesdocuments/console_noblesse.png" class="float-img-left lightbox-trigger" data-alt="Graphique 1">
                     <img src="../mesdocuments/mobilité_graphique1.png" alt="Graphique 1">
                 </a>
                 <p>
-                    Cette étude a pour objectif principal d'explorer les réseaux de la noblesse européenne avant, pendant et après la Révolution française (période 1720-1820). La question centrale est : **Comment la Révolution française a-t-elle influencé la structure du réseau de la noblesse européenne ?** Le travail s'est concentré sur l'évolution des réseaux des familles jusqu’à l’avènement de Napoléon Bonaparte, en utilisant la sociologie des réseaux comme cadre d'analyse.
+                    Cette étude, réalisée dans le cadre de mon master, a pour objectif principal d'explorer les réseaux de la noblesse européenne avant (en 1720), pendant (en 1788) et après la Révolution française (en 1820). Ma problématique étant : <strong>Comment la Révolution française a-t-elle influencé la structure du réseau de la noblesse européenne ?</strong> Le travail s'est concentré sur l'évolution des réseaux des familles jusqu’à l’avènement de Napoléon Bonaparte, en utilisant la sociologie des réseaux comme cadre d'analyse.
                 </p>
             </div>
         <hr>
             <div class="clearfix">
                 <h3 id="donnees">2. Présentation des données</h3>
                 <p>
-                    Les données sont constituées des attributs codés d'individus de la noblesse européenne entre 1720 et 1820. Ces informations ont été organisées en fichiers CSV distincts, regroupant les attributs individuels, les conjoints, les enfants et les parents de la population étudiée. Ces données ont servi de base à la construction des matrices de réseau.
-                </p>
-        <hr>
-            <div class="clearfix">
-                <h3 id="nettoyage">3. Nettoyage des données</h3>
-                <p>
-                    Une étape de nettoyage rigoureuse a été indispensable pour standardiser les données. Elle a consisté à corriger les noms en supprimant les accents, les tirets et les virgules, et en uniformisant la casse (minuscules) pour garantir la fiabilité des appariements.
+                    L'étude repose sur des données historiques de la noblesse européenne (période 1720-1820), récoltées sur Wikipédia et structurées en quatre fichiers CSV distincts pour être analysées dans l'environnement R. Ces fichiers ont été importés et immédiatement convertis en <strong>matrices d'adjacence</strong> (`as.matrix()`).
                 </p>
                 <p>
-                    Deux réseaux principaux ont ensuite été construits :
+                    Ces sources se répartissent comme suit :
                 </p>
-            <ul>
-                <li>Un <strong>réseau de frères et sœurs</strong> (créé via une matrice identifiant les dyades partageant au moins un parent).</li>
-                <li>Un <strong>réseau des liens directs</strong> (incluant les conjoints, les enfants et les parents).</li>
-            </ul>
-            </div>
-        <hr>
+                <ul class="cleaning-steps" style="list-style-type: none; padding-left: 0; margin-left: 0;">
+        <li style="border-bottom: 1px dashed #ddd; padding-left: 0;"><strong style="color: #0077b5;">Attributs des individus (Nœuds) :</strong> <code>attributs_compnet.csv</code>, contenant les données biographiques (famille d'appartenance, dates de vie) des personnes étudiées.</li>
+        <li style="border-bottom: 1px dashed #ddd; padding-left: 0;"><strong style="color: #0077b5;">Liens matrimoniaux :</strong> <code>conjoints_compnet.csv</code>.</li>
+        <li style="border-bottom: none; padding-left: 0;"><strong style="color: #0077b5;">Liens de parenté verticaux :</strong> <code>enfants_compnet.csv</code> et <code>parents_compnet.csv</code>, essentiels pour reconstituer les matrices de réseau (arêtes) sur différentes générations.</li>
+    </ul>
+</div>
+<hr>
+    <div class="clearfix">
+    <h3 id="nettoyage">3. Nettoyage et construction des réseaux</h3>
+    
+    <h4 style="margin-top: 15px;">A. Harmonisation des noms</h4>
+    <p>Une étape de nettoyage rigoureuse a été indispensable pour garantir l'uniformité des noms. Cette uniformisation est indispensable pour le logiciel R pour qu'il puisse reconnaître les mêmes individus dans tous les fichiers (attributs, conjoints, parents) et ainsi construire correctement les liens du réseau. Cette étape a été automatisée grâce à une fonction personnalisée en R (<code>fonction_correc_texte</code>) qui a permis de :</p>
+    <ul class="cleaning-steps">
+        <li><strong>Normaliser la casse</strong> : Conversion de tous les noms en minuscules (<code>tolower()</code>).</li>
+        <li><strong>Gérer les caractères spéciaux</strong> : Suppression des accents et des caractères non-ASCII (<code>iconv(..., to = "ASCII//TRANSLIT")</code>).</li>
+        <li><strong>Standardiser la ponctuation</strong> : Remplacement des tirets (<code>-</code>) et des virgules (<code>,</code>) par des espaces pour simplifier les correspondances.</li>
+    </ul>
+
+    <h4 style="margin-top: 15px;">B. Construction des matrices de réseau</h4>
+    <p>Une fois les données harmonisées, deux matrices d'adjacence relationnelles ont été construites, servant de base aux analyses des vagues temporelles (1720, 1788, 1820) :</p>
+    <ol class="cleaning-steps" style="list-style-type: decimal; counter-reset: none;">
+        <li><strong>Réseau des liens directs</strong> : Fusion des matrices de conjoints, enfants et parents, modélisant les relations immédiates d'alliance et de descendance.</li>
+        <li><strong>Réseau de frères et sœurs (Fratrie)</strong> : Création d'une matrice spécifique où deux individus sont liés s'ils partagent au moins un parent en commun. Ce réseau permet d'analyser la cohésion et le renforcement des liens familiaux horizontaux.</li>
+    </ol>
+</div>
+<hr>
+   
             <div class="clearfix">
                 <h3 id="strategies">4. Résultats : influence de la révolution et alliances stratégiques</h3>
                 <a href="../mesdocuments/image_mobilité_densité.png" class="float-img-right lightbox-trigger" data-alt="Graphiques de la densité, taille et évolution des réseaux par vague">
