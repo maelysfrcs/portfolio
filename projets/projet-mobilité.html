@@ -686,6 +686,46 @@ body {
         display: none !important;
         opacity: 0 !important;
     }
+
+    .toc-button {
+        display: block; 
+    }
+
+    /* 2. Positionnement et état INITIAL du Sommaire sur mobile/tablette */
+    .toc-wrapper {
+        position: fixed;
+        top: 0; /* Prend toute la hauteur pour centrer */
+        width: 80%; /* Prend 80% de la largeur du viewport */
+        max-width: 300px;
+        height: 100%;
+        
+        /* TRANSFORME : Cache le menu à gauche de l'écran */
+        transform: translateX(-100%);
+        
+        /* Centrage du contenu du wrapper sur mobile */
+        left: 50%;
+        transform: translateX(-150%); /* Décalage pour le centrer hors champ */
+        
+        /* Assure que la zone de contenu principal est poussée (si nécessaire) */
+        margin-left: 0;
+    }
+    
+    /* 3. État OUVERT (géré par le JavaScript) */
+    .toc-wrapper.toc-open {
+        /* Fait glisser le menu pour le rendre visible, centré */
+        left: 50%;
+        transform: translateX(-50%); /* Centre le menu sur l'écran */
+    }
+
+    /* 4. Gestion de l'arrière-plan (optionnel mais recommandé pour les menus modaux) */
+    body.toc-active {
+        overflow: hidden; /* Empêche le défilement du contenu principal */
+    }
+
+    /* Optionnel : Masque l'icône de fermeture du bouton, car on utilise le clic externe/lien */
+    .toc-button .fa-times {
+        display: none;
+    }
     
     .toc-open #table-of-contents-container {
         display: block !important;
@@ -966,42 +1006,52 @@ body {
     // **************************************************************************
     // 6. Logique SOMMAIRE/TOC pour mobile (Activation/Désactivation au clic)
     // **************************************************************************
-    var tocWrapper = document.getElementById('toc-wrapper');
+var tocWrapper = document.getElementById('toc-wrapper');
     var tocButton = document.querySelector('.toc-button');
+    var body = document.body; // Référence au body
 
     if (tocWrapper && tocButton) {
-        // Ajoute un écouteur d'événement au clic du bouton "Sommaire"
-        tocButton.addEventListener('click', function(event) {
-            // Empêche le comportement de lien par défaut (si le bouton était un <a>)
-            event.preventDefault(); 
-            // Alterne la classe 'toc-open' sur le conteneur principal. 
-            // Cette classe est détectée par votre CSS mobile.
+        
+        // Fonction pour ouvrir/fermer le menu
+        function toggleToc() {
+            // Alterne la classe 'toc-open' sur le conteneur principal.
             tocWrapper.classList.toggle('toc-open');
+            // Alterne la classe 'toc-active' sur le body pour bloquer le défilement et gérer l'overlay si besoin.
+            body.classList.toggle('toc-active');
+        }
+
+        // 1. Ajoute un écouteur d'événement au clic du bouton "Sommaire"
+        tocButton.addEventListener('click', function(event) {
+            event.preventDefault(); 
+            toggleToc();
         });
 
-        // Ferme le sommaire si l'utilisateur clique sur un lien à l'intérieur
+        // 2. Ferme le sommaire si l'utilisateur clique sur un lien à l'intérieur
         var tocLinks = document.querySelectorAll('#table-of-contents-list a');
         tocLinks.forEach(function(link) {
             link.addEventListener('click', function() {
                 // Ferme le menu après avoir cliqué sur le lien (avec un léger délai pour la navigation)
-                setTimeout(function() {
-                    tocWrapper.classList.remove('toc-open');
-                }, 50);
+                if (tocWrapper.classList.contains('toc-open')) {
+                    setTimeout(function() {
+                        toggleToc();
+                    }, 50); 
+                }
             });
         });
         
-        // Ferme le menu si l'utilisateur clique à l'extérieur
+        // 3. Ferme le menu si l'utilisateur clique à l'extérieur (dans la zone de contenu)
         document.addEventListener('click', function(event) {
-            // Si le clic n'est PAS à l'intérieur du conteneur du sommaire
-            if (tocWrapper && !tocWrapper.contains(event.target)) {
-                // S'assure de ne fermer QUE si le menu est ouvert
-                if (tocWrapper.classList.contains('toc-open')) {
-                    tocWrapper.classList.remove('toc-open');
-                }
+            // Si le clic n'est PAS à l'intérieur du conteneur du sommaire ET PAS sur le bouton lui-même
+            if (
+                tocWrapper.classList.contains('toc-open') &&
+                !tocWrapper.contains(event.target) &&
+                !tocButton.contains(event.target)
+            ) {
+                // Fermer le menu
+                toggleToc();
             }
         });
     }
-
 </script>
 </body>
 </html>
