@@ -775,7 +775,7 @@ body {
             <div class="clearfix">
                 <h3 id="objectif">1. Objectif de l'étude</h3>
                 <a href="../mesdocuments/console_noblesse.png" class="float-img-left lightbox-trigger" data-alt="Graphique 1">
-                    <img src="../mesdocuments/mobilité_graphique1.png" alt="Graphique 1">
+                    <img src="../mesdocuments/console_noblesse.png" alt="Graphique 1">
                 </a>
                 <p>
                     Cette étude, réalisée dans le cadre de mon master, a pour objectif principal d'explorer les réseaux de la noblesse européenne avant (en 1720), pendant (en 1788) et après la Révolution française (en 1820). Ma problématique étant : <strong>Comment la Révolution française a-t-elle influencé la structure du réseau de la noblesse européenne ?</strong> Le travail s'est concentré sur l'évolution des réseaux des familles jusqu’à l’avènement de Napoléon Bonaparte, en utilisant la sociologie des réseaux comme cadre d'analyse.
@@ -785,15 +785,21 @@ body {
             <div class="clearfix">
                 <h3 id="donnees">2. Présentation des données</h3>
                 <p>
-                    L'étude repose sur des données historiques de la noblesse européenne (période 1720-1820), récoltées sur Wikipédia et structurées en quatre fichiers CSV distincts pour être analysées dans l'environnement R. Ces fichiers ont été importés et immédiatement convertis en <strong>matrices d'adjacence</strong> (`as.matrix()`).
+                    L'étude repose sur des données historiques de la noblesse européenne (période 1720-1820), récoltées sur Wikipédia et structurées en quatre fichiers CSV distincts pour être analysées dans l'environnement R. Ces fichiers ont été importés et immédiatement convertis en <strong>matrices d'adjacence</strong>.
                 </p>
                 <p>
                     Ces sources se répartissent comme suit :
                 </p>
-                <ul class="cleaning-steps" style="list-style-type: none; padding-left: 0; margin-left: 0;">
-        <li style="border-bottom: 1px dashed #ddd; padding-left: 0;"><strong style="color: #0077b5;">Attributs des individus (Nœuds) :</strong> <code>attributs_compnet.csv</code>, contenant les données biographiques (famille d'appartenance, dates de vie) des personnes étudiées.</li>
-        <li style="border-bottom: 1px dashed #ddd; padding-left: 0;"><strong style="color: #0077b5;">Liens matrimoniaux :</strong> <code>conjoints_compnet.csv</code>.</li>
-        <li style="border-bottom: none; padding-left: 0;"><strong style="color: #0077b5;">Liens de parenté verticaux :</strong> <code>enfants_compnet.csv</code> et <code>parents_compnet.csv</code>, essentiels pour reconstituer les matrices de réseau (arêtes) sur différentes générations.</li>
+    <ul class="cleaning-steps" style="list-style-type: none; padding-left: 0; margin-left: 0;">
+        <li style="border-bottom: 1px dashed #ddd;">
+            <strong style="color: #0077b5;">Attributs des individus (Nœuds) :</strong> <code>attributs_compnet.csv</code>, contenant les données biographiques (famille d'appartenance, dates de vie) des personnes étudiées.
+        </li>
+        <li style="border-bottom: 1px dashed #ddd;">
+            <strong style="color: #0077b5;">Liens Matrimoniaux :</strong> <code>conjoints_compnet.csv</code>.
+        </li>
+        <li style="border-bottom: none;">
+            <strong style="color: #0077b5;">Liens de parenté verticaux :</strong> <code>enfants_compnet.csv</code> et <code>parents_compnet.csv</code>, essentiels pour reconstituer les matrices de réseau (arêtes) sur différentes générations.
+        </li>
     </ul>
 </div>
 <hr>
@@ -801,31 +807,57 @@ body {
     <h3 id="nettoyage">3. Nettoyage et construction des réseaux</h3>
     
     <h4 style="margin-top: 15px;">A. Harmonisation des noms</h4>
-    <p>Une étape de nettoyage rigoureuse a été indispensable pour garantir l'uniformité des noms. Cette uniformisation est indispensable pour le logiciel R pour qu'il puisse reconnaître les mêmes individus dans tous les fichiers (attributs, conjoints, parents) et ainsi construire correctement les liens du réseau. Cette étape a été automatisée grâce à une fonction personnalisée en R (<code>fonction_correc_texte</code>) qui a permis de :</p>
+    <p>
+        Une étape de nettoyage rigoureuse a été indispensable pour garantir l'uniformité des noms. Cette uniformisation est indispensable pour le logiciel R pour qu'il puisse reconnaître les mêmes individus dans tous les fichiers (attributs, conjoints, parents) et ainsi construire correctement les liens du réseau. Cette étape a été automatisée grâce à une fonction personnalisée en R (<code>fonction_correc_texte</code>) qui a permis de :
+    </p>
     <ul class="cleaning-steps">
         <li><strong>Normaliser la casse</strong> : Conversion de tous les noms en minuscules (<code>tolower()</code>).</li>
-        <li><strong>Gérer les caractères spéciaux</strong> : Suppression des accents et des caractères non-ASCII (<code>iconv(..., to = "ASCII//TRANSLIT")</code>).</li>
+        <li><strong>Gérer les caractères spéciaux</strong> : Suppression des accents et des caractères.</li>
         <li><strong>Standardiser la ponctuation</strong> : Remplacement des tirets (<code>-</code>) et des virgules (<code>,</code>) par des espaces pour simplifier les correspondances.</li>
     </ul>
 
     <h4 style="margin-top: 15px;">B. Construction des matrices de réseau</h4>
-    <p>Une fois les données harmonisées, deux matrices d'adjacence relationnelles ont été construites, servant de base aux analyses des vagues temporelles (1720, 1788, 1820) :</p>
-    <ol class="cleaning-steps" style="list-style-type: decimal; counter-reset: none;">
-        <li><strong>Réseau des liens directs</strong> : Fusion des matrices de conjoints, enfants et parents, modélisant les relations immédiates d'alliance et de descendance.</li>
+    <p>
+        Une fois les données harmonisées, deux matrices d'adjacence relationnelles ont été construites, servant de base aux analyses des vagues temporelles (1720, 1788, 1820) :
+    </p>
+        <ul class="cleaning-steps">
+        <li><strong>Réseau des liens directs</strong> : Fusion des matrices de conjoints, enfants et parents, modélisant les relations immédiates d'alliance et de descendance..</li>
         <li><strong>Réseau de frères et sœurs (Fratrie)</strong> : Création d'une matrice spécifique où deux individus sont liés s'ils partagent au moins un parent en commun. Ce réseau permet d'analyser la cohésion et le renforcement des liens familiaux horizontaux.</li>
-    </ol>
+    </ul>
 </div>
 <hr>
    
             <div class="clearfix">
                 <h3 id="strategies">4. Résultats : influence de la révolution et alliances stratégiques</h3>
-                <a href="../mesdocuments/image_mobilité_densité.png" class="float-img-right lightbox-trigger" data-alt="Graphiques de la densité, taille et évolution des réseaux par vague">
-                    <img src="../mesdocuments/image_mobilité_densité.png" alt="Graphiques de la densité, taille et évolution des réseaux par vague">
-                </a>
                 <h4 style="margin-top: 15px;">Évolution des schémas matrimoniaux</h4>
                 <p>
                     L'analyse révèle que la Révolution française a significativement influencé les schémas matrimoniaux. Les données montrent une tendance marquée à l'<strong>augmentation des mariages au sein de la même famille</strong> pendant la période révolutionnaire, suggérant un <strong>renforcement des liens familiaux</strong> comme mécanisme de cohésion face aux bouleversements politiques et sociaux.
                 </p>
+                <p>
+                    Cette dynamique est particulièrement visible à travers l'analyse des <strong>graphes Shrink</strong>, où les nœuds représentent les familles et l’épaisseur du lien le nombre de mariages entre elles.
+                </p>
+                <a href="../mesdocuments/image_noblesse_shrink_1788.png" class="float-img-left lightbox-trigger" data-alt="Graphe Shrink 1788 : Représentation des mariages inter-familles avant la Révolution.">
+                    <img src="../mesdocuments/image_noblesse_shrink_1788.png" alt="Graphe Shrink 1788 : Représentation des mariages inter-familles avant la Révolution.">
+                </a>
+                <p>
+                    Le <strong>Shrink de 1788</strong> illustre un réseau encore largement interconnecté. Seules les familles <strong>Linange</strong> et <strong>Lucchesi Palli</strong> n'affichent pas de liens matrimoniaux en dehors de leur propre lignée. On observe déjà l'importance centrale des alliances entre les <strong>Bourbon</strong> et les <strong>Habsbourg Lorraine</strong>, indiquant leur forte position (haute centralité d’intermédiarité) au sein de la noblesse européenne.
+                </p>
+                <a href="../mesdocuments/image_noblesse_shrink_1799.png" class="float-img-right lightbox-trigger" data-alt="Graphe Shrink 1799 : Représentation des mariages inter-familles pendant la Révolution.">
+                    <img src="../mesdocuments/image_noblesse_shrink_1799.png" alt="Graphe Shrink 1799 : Représentation des mariages inter-familles pendant la Révolution.">
+                </a>
+                <p>
+                    En <strong>1799</strong> , le réseau se resserre. Le phénomène de repli s’accentue : la famille <strong>Este</strong> et les <strong>Habsbourg Toscane</strong> rejoignent les familles sans mariage extérieur. Ce changement pour <strong>Este</strong> est notamment lié à l'absence de la famille Cybo Malaspina dans le réseau à cette date. Par ailleurs, on note une <strong>intensification des mariages</strong> entre les <strong>Habsbourg Lorraine</strong> et les <strong>Habsbourg Este</strong>, signalant une concentration stratégique des alliances en période de crise.
+                </p>
+                <a href="../mesdocuments/image_noblesse_shrink_1820.png" class="float-img-left lightbox-trigger" data-alt="Graphe Shrink 1820 : Représentation des mariages inter-familles après la Révolution.">
+                    <img src="../mesdocuments/image_noblesse_shrink_1820.png" alt="Graphe Shrink 1820 : Représentation des mariages inter-familles après la Révolution.">
+                </a>
+                <p>
+                    Le réseau de 1820 subit un <strong>éclatement structurel.</strong> Le bouleversement des États germaniques par Napoléon Ier (fin du Saint-Empire romain germanique) est visible : les alliances entre Habsbourg Lorraine et Habsbourg Este disparaissent. Des familles comme <strong>Trauner Von Adlstetten</strong> et <strong>Hesse</strong> se retrouvent isolées. Ce graphe final montre un réseau profondément fragmenté et réorganisé.
+                </p>    
+                <p>
+                    Cette analyse exhaustive des graphes Shrink confirme l'impact direct des crises géopolitiques sur la structure matrimoniale de la noblesse : le réseau bascule d'un système d'alliances ouvertes à un repli <strong>endogame défensif</strong> (1799), avant de connaître un <strong>éclatement structurel</strong> (1820). Ce démantèlement est la conséquence des recompositions territoriales majeures, notamment la disparition du Saint-Empire romain germanique, signée par Napoléon Ier.
+                </p>
+
                 <h4 style="margin-top: 15px;">Centralité et familles dominantes</h4>
                 <p>
                     L'analyse des <strong>centralités d'intermédiarité</strong> a été cruciale pour identifier les acteurs clés du réseau. Elle a mis en évidence l'importance stratégique de certaines familles, telles que les <strong>Wittelsbach</strong> et les <strong>Habsbourg Lorraine</strong>, dans la formation d'alliances matrimoniales. Ces familles ont réussi à maintenir une forte influence tout au long de la période, consolidant leur pouvoir et leur prestige en tant qu'intermédiaires centraux.
