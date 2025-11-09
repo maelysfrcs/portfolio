@@ -798,11 +798,11 @@ body {
                 <a href="../mesdocuments/image_scraping_console.PNG" class="float-img-right lightbox-trigger" data-alt="Graphique 1 - Console">
                     <img src="../mesdocuments/image_scraping_console.PNG" alt="Graphique 1 : Console">
                 </a>
-            </div>
-            <div class="clearfix">
                 <p>
                     La collecte des données a été réalisée sur Google Colaboratory en utilisant l'API officielle de Reddit.
                 </p>
+            </div>
+            <div class="clearfix">
                 <ol class="cleaning-steps">
                     <li><strong>Outil</strong> : Utilisation de la librairie <strong>"asyncpraw"</strong> en Python pour interroger l'API Reddit.</li>
                     <li><strong>Méthode</strong> : Le processus s'est déroulé en deux phases : d'abord la collecte des <strong>posts</strong> contenant le mot-clé spécifique, puis une boucle pour collecter l'intégralité des <strong>commentaires</strong> associés à chacun des posts trouvés.</li>
@@ -819,6 +819,8 @@ body {
                 <p>
                   Un processus de <strong>Natural Language Processing (NLP)</strong> a été appliqué aux données textuelles brutes pour les prochaines analyses.
                 </p>
+            </div>
+            <div class="clearfix">
                 <ol class="cleaning-steps">
                   <li><strong>Lemmatisation et filtrage sémantique</strong> : Utilisation de la librairie <strong>spaCy</strong> pour réduire chaque mot à sa racine (lemmatisation) et pour ne conserver que les mots ayant un sens analytique fort (<strong>noms</strong>, <strong>verbes</strong> et <strong>noms propres</strong>).</li>
                   <li><strong>Suppression des mots vides (stop words)</strong> : Retrait des mots courants de la langue anglaise pour augmenter la pertinence des mots-clés dans l'analyse.</li>
@@ -839,12 +841,13 @@ body {
                     <img src="../mesdocuments/image_scraping_motspartopic.png" alt="Graphique 3 : Nettoyage">
                 </a>
         <p>
-            Sur la <strong>Figure 1</strong>, les topics 2, 3 et 9 ont été filtrés, car ils traitaient d’informations peu pertinentes pour l’analyse (Topic 2 : <em>png, redd, webp</em>; Topic 3 : <em>megathread, restrict_sr, 22</em>; Topic 9 : <em>com, https, www</em>). Ce graphique montre que certains topics sont fortement liés à l’expérience de jeu, comme ceux concernant les <strong>quêtes</strong>, les <strong>bannières de personnages</strong>, et les <strong>équipes optimales</strong>. D’autres sujets portent davantage sur des aspects financiers, notamment les <strong>microtransactions</strong>, les <em>purchases</em> de <em>genesis crystals</em>, et les mécaniques de <strong>gacha</strong>.
+            Les topics 2, 3 et 9 ont été filtrés, car ils traitaient d’informations peu pertinentes pour l’analyse (Topic 2 : <em>png, redd, webp</em>; Topic 3 : <em>megathread, restrict_sr, 22</em>; Topic 9 : <em>com, https, www</em>). Ce graphique montre que certains topics sont fortement liés à l’expérience de jeu, comme ceux concernant les <strong>quêtes</strong>, les <strong>bannières de personnages</strong>, et les <strong>équipes optimales</strong>. D’autres sujets portent davantage sur des aspects financiers, notamment les <strong>microtransactions</strong>, les <em>purchases</em> de <em>genesis crystals</em>, et les mécaniques de <strong>gacha</strong>.
         </p>
-
+            </div>
+            <div class="clearfix">
         <h4>Projection des discussions (PCA)</h4>
-                <a href="../mesdocuments/image_scraping_motspartopic.png" class="float-img-left lightbox-trigger" data-alt="Graphique 4 - Projection 2D des topics avec PCA (colorée par topic)">
-                    <img src="../mesdocuments/image_scraping_motspartopic.png" alt="Graphique 4 : Projection 2D des topics avec PCA (colorée par topic)">
+                <a href="../mesdocuments/image_scraping_projection2d.png" class="float-img-left lightbox-trigger" data-alt="Graphique 4 - Projection 2D des topics avec PCA (colorée par topic)">
+                    <img src="../mesdocuments/image_scraping_projection2d.png" alt="Graphique 4 : Projection 2D des topics avec PCA (colorée par topic)">
                 </a>
         <p>
             Pour mieux comprendre la structuration des discussions, une projection PCA (Analyse en Composantes Principales) a été réalisée, appliquée aux résultats du NMF. Les posts sont d'abord vectorisés avec TF-IDF, puis classés en topics grâce à NMF, et enfin projetés en 2D pour observer la répartition des discussions selon leurs similarités thématiques.
@@ -853,16 +856,14 @@ body {
             Il est possible d'observer que les discussions se regroupent en <strong>clusters bien définis</strong>, ce qui suggère une segmentation forte des échanges entre joueurs. Certains points isolés indiquent des conversations plus atypiques ou spécifiques.
         </p>
     </div>
-
     <div class="clearfix" style="margin-top: 40px;">
-        <h3 id="topic-sentiment">5.2 Analyse de sentiment par topic</h3>
-        
+      
         <h4>Association sentiment-thème</h4>
                 <a href="../mesdocuments/image_scraping_tcsentiment.png" class="float-img-right lightbox-trigger" data-alt="Graphique 5 - Répartition des sentiments par topic">
                     <img src="../mesdocuments/image_scraping_tcsentiment.png" alt="Graphique 5 - Répartition des sentiments par topic">
                 </a>
         <p>
-            Ce graphique révèle un contraste marqué dans la tonalité des discussions. Les topics 0 (**gameplay**) et 5 (**gestion des ressources**) suscitent principalement des réactions **positives**, tandis que les topics 1 (**bannières**), 2 (**quêtes**), 3 (**monétisation**), 4 (**équilibrage des équipes**) et 6 (**mises à jour**) génèrent une majorité de sentiments **négatifs**. Cela indique que les joueurs apprécient les mécaniques de base du jeu mais critiquent fortement les aspects économiques et compétitifs.
+            Ce graphique révèle un contraste marqué dans la tonalité des discussions. Les topics 0 (gameplay) et 5 (gestion des ressources) suscitent principalement des réactions <strong>positives</strong>, tandis que les topics 1 (bannières), 2 (quêtes), 3 (monétisation), 4 (équilibrage des équipes) et 6 (mises à jour) génèrent une majorité de sentiments <strong>négatifs</strong>. Cela indique que les joueurs apprécient les mécaniques de base du jeu mais critiquent fortement les aspects économiques et compétitifs.
         </p>
 
         <h4>Visualisation du Sentiment sur la Projection PCA</h4>
