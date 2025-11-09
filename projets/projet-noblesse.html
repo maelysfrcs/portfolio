@@ -792,10 +792,10 @@ body {
                 </p>
     <ul class="cleaning-steps" style="list-style-type: none; padding-left: 0; margin-left: 0;">
         <li style="border-bottom: 1px dashed #ddd;">
-            <strong style="color: #0077b5;">Attributs des individus (Nœuds) :</strong> <code>attributs_compnet.csv</code>, contenant les données biographiques (famille d'appartenance, dates de vie) des personnes étudiées.
+            <strong style="color: #0077b5;">Attributs des individus (nœuds) :</strong> <code>attributs_compnet.csv</code>, contenant les données biographiques (famille d'appartenance, dates de vie) des personnes étudiées.
         </li>
         <li style="border-bottom: 1px dashed #ddd;">
-            <strong style="color: #0077b5;">Liens Matrimoniaux :</strong> <code>conjoints_compnet.csv</code>.
+            <strong style="color: #0077b5;">Liens matrimoniaux :</strong> <code>conjoints_compnet.csv</code>.
         </li>
         <li style="border-bottom: none;">
             <strong style="color: #0077b5;">Liens de parenté verticaux :</strong> <code>enfants_compnet.csv</code> et <code>parents_compnet.csv</code>, essentiels pour reconstituer les matrices de réseau (arêtes) sur différentes générations.
@@ -822,7 +822,7 @@ body {
     </p>
         <ul class="cleaning-steps">
         <li><strong>Réseau des liens directs</strong> : Fusion des matrices de conjoints, enfants et parents, modélisant les relations immédiates d'alliance et de descendance..</li>
-        <li><strong>Réseau de frères et sœurs (Fratrie)</strong> : Création d'une matrice spécifique où deux individus sont liés s'ils partagent au moins un parent en commun. Ce réseau permet d'analyser la cohésion et le renforcement des liens familiaux horizontaux.</li>
+        <li><strong>Réseau de frères et sœurs (fratrie)</strong> : Création d'une matrice spécifique où deux individus sont liés s'ils partagent au moins un parent en commun. Ce réseau permet d'analyser la cohésion et le renforcement des liens familiaux horizontaux.</li>
     </ul>
 </div>
 <hr>
@@ -840,21 +840,27 @@ body {
                 <p>
                     Le <strong>Shrink de 1788</strong> illustre un réseau encore largement interconnecté. Seules les familles <strong>Linange</strong> et <strong>Lucchesi Palli</strong> n'affichent pas de liens matrimoniaux en dehors de leur propre lignée. On observe déjà l'importance centrale des alliances entre les <strong>Bourbon</strong> et les <strong>Habsbourg Lorraine</strong>, indiquant leur forte position (haute centralité d’intermédiarité) au sein de la noblesse européenne. <br>
                 </p>
-        <hr>
+    </div>
+    <hr>
+            <div class="clearfix">
                 <a href="../mesdocuments/image_noblesse_shrink_1799.png" class="float-img-right lightbox-trigger" data-alt="Graphe Shrink 1799 : Représentation des mariages inter-familles pendant la Révolution.">
                     <img src="../mesdocuments/image_noblesse_shrink_1799.png" alt="Graphe Shrink 1799 : Représentation des mariages inter-familles pendant la Révolution.">
                 </a>
                 <p>
                     En <strong>1799</strong> , le réseau se resserre. Le phénomène de repli s’accentue : la famille <strong>Este</strong> et les <strong>Habsbourg Toscane</strong> rejoignent les familles sans mariage extérieur. Ce changement pour <strong>Este</strong> est notamment lié à l'absence de la famille Cybo Malaspina dans le réseau à cette date. Par ailleurs, on note une <strong>intensification des mariages</strong> entre les <strong>Habsbourg Lorraine</strong> et les <strong>Habsbourg Este</strong>, signalant une concentration stratégique des alliances en période de crise. <br>
                 </p>
-        <hr>
+            </div>
+    <hr>
+            <div class="clearfix">
                 <a href="../mesdocuments/image_noblesse_shrink_1820.png" class="float-img-left lightbox-trigger" data-alt="Graphe Shrink 1820 : Représentation des mariages inter-familles après la Révolution.">
                     <img src="../mesdocuments/image_noblesse_shrink_1820.png" alt="Graphe Shrink 1820 : Représentation des mariages inter-familles après la Révolution.">
                 </a>
                 <p>
                     Le réseau de 1820 subit un <strong>éclatement structurel.</strong> Le bouleversement des États germaniques par Napoléon Ier (fin du Saint-Empire romain germanique) est visible : les alliances entre Habsbourg Lorraine et Habsbourg Este disparaissent. Des familles comme <strong>Trauner Von Adlstetten</strong> et <strong>Hesse</strong> se retrouvent isolées. Ce graphe final montre un réseau profondément fragmenté et réorganisé. <br>
                 </p>
-        <hr>
+            </div>
+    <hr>
+            <div class="clearfix">
                 <p>
                     Cette analyse exhaustive des graphes Shrink confirme l'impact direct des crises géopolitiques sur la structure matrimoniale de la noblesse : le réseau bascule d'un système d'alliances ouvertes à un repli <strong>endogame défensif</strong> (1799), avant de connaître un <strong>éclatement structurel</strong> (1820). Ce démantèlement est la conséquence des recompositions territoriales majeures, notamment la disparition du Saint-Empire romain germanique, signée par Napoléon Ier.
                 </p>
@@ -864,7 +870,7 @@ body {
                 </p>
                 <div style="width: 50%; margin: 20px auto; text-align: center;">
                     <table border="1" style="width: 100%; border-collapse: collapse;">
-                        <caption><strong>Tableau 2 : Évolution de l'odd ratio (ingroup vs. outgroup)</strong></caption>
+                        <caption><strong>Tableau 1 : Évolution de l'odd ratio (ingroup vs. outgroup)</strong></caption>
                         <thead>
                             <tr>
                                 <th style="padding: 8px; background-color: #f2f2f2;">Année</th>
@@ -906,11 +912,11 @@ body {
                     
         <h3 id="strategies">4.3 Centralité et familles dominantes</h3>
                 <p>
-                    L'analyse des <strong>centralités d'intermédiarité</strong> a été cruciale pour identifier les familles les plus importantes selon les années. Elle a mis en évidence l'importance stratégique de certaines familles, telles que les <strong>Wittelsbach</strong> et les <strong>Habsbourg Lorraine</strong>, dans la formation d'alliances matrimoniales. Ces familles ont réussi à maintenir une forte influence tout au long de la période, consolidant leur pouvoir et leur prestige en tant qu'intermédiaires centraux.
+                    L'analyse des <strong>centralités d'intermédiarité</strong> a été cruciale pour identifier les familles les plus influentes concernant les alliances matrimoniales selon les années. Elle a mis en évidence l'importance stratégique de certaines familles, telles que les <strong>Wittelsbach</strong> et les <strong>Habsbourg Lorraine</strong>, dans la formation d'alliances matrimoniales. Ces familles ont réussi à maintenir une forte influence tout au long de la période, consolidant leur pouvoir et leur prestige en tant qu'intermédiaires centraux.
                 </p>
                 <div style="margin: 20px 0;">
                     <table style="width: 100%; border-collapse: collapse; text-align: left;">
-                        <caption><strong>Tableau 3 : Évolution des centralités d'intermédiarité des familles nobles (1788-1820)</strong></caption>
+                        <caption><strong>Tableau 2 : Évolution des centralités d'intermédiarité des familles nobles (1788-1820)</strong></caption>
                         <thead>
                             <tr style="background-color: #f2f2f2;">
                                 <th style="padding: 10px; border: 1px solid #ddd;">Famille</th>
@@ -954,13 +960,13 @@ body {
                     </table>
                 </div>
     
-        <h3 id="strategies">4.4 Dynamique des liens et ouverture</h3>
-<h4 style="margin-top: 15px;">🔗 Distances Géodésiques et Proximité Matrimoniale</h4>
+<h3 id="strategies">4.4 Dynamique des liens et ouverture</h3>
+<h4 style="margin-top: 15px;">Distances géodésiques et proximité matrimoniale</h4>
 <p>
-    Pour compléter l'analyse de l'endogamie, nous avons calculé les <strong>distances géodésiques</strong>, c'est-à-dire la longueur du chemin le plus court entre deux individus dans le réseau familial. J'ai cherché à déterminer si les individus privilégient les mariages avec des personnes proches de leur réseau familial (faible distance) ou s'ils cherchent des alliances plus lointaines.
+    Pour compléter l'analyse de l'endogamie, j'ai calculé les <strong>distances géodésiques</strong>, c'est-à-dire la longueur du chemin le plus court entre deux individus dans le réseau familial. J'ai cherché à déterminer si les individus privilégient les mariages avec des personnes proches de leur réseau familial (faible distance) ou s'ils cherchent des alliances plus lointaines.
 </p>
 <p>
-    J'ai concentré cette analyse sur les trois familles les plus peuplées du réseau : <strong>Bourbon</strong>, <strong>Habsbourg Lorraine</strong> et <strong>Wittelsbach.</strong> Pour chacune ont été comparé :
+    J'ai concentré cette analyse sur la famille <strong>Habsbourg-Lorraine</strong>, l'une des familles les plus peuplées du réseau. Pour celle-ci ont été comparées :
     <ul>
         <li>La moyenne des distances entre individus appartenant à la même famille (<strong>Intra-famille</strong>).</li>
         <li>La moyenne des distances entre les individus de cette famille et les individus du reste du réseau (<strong>Inter-famille</strong>).</li>
@@ -969,46 +975,12 @@ body {
 
 <div style="margin: 20px 0;">
     <table style="width: 100%; border-collapse: collapse; text-align: left;">
-        <caption><strong>Tableau 4 : Distances géodésiques moyennes - famille Bourbon</strong></caption>
+        <caption><strong>Tableau 3 : Distances géodésiques moyennes - famille Habsbourg-Lorraine</strong></caption>
         <thead>
             <tr style="background-color: #f2f2f2;">
                 <th style="padding: 10px; border: 1px solid #ddd; width: 10%;">Année</th>
-                <th style="padding: 10px; border: 1px solid #ddd; text-align: center;">Distance intra-Bourbon</th>
-                <th style="padding: 10px; border: 1px solid #ddd; text-align: center;">Distance inter-famille (non-Bourbon)</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td style="padding: 10px; border: 1px solid #ddd; text-align: center;">1788</td>
-                <td style="padding: 10px; border: 1px solid #ddd; text-align: center;">3.97</td>
-                <td style="padding: 10px; border: 1px solid #ddd; text-align: center;">5.00</td>
-            </tr>
-            <tr>
-                <td style="padding: 10px; border: 1px solid #ddd; text-align: center;">1799</td>
-                <td style="padding: 10px; border: 1px solid #ddd; text-align: center;">3.34</td>
-                <td style="padding: 10px; border: 1px solid #ddd; text-align: center;">4.66</td>
-            </tr>
-            <tr>
-                <td style="padding: 10px; border: 1px solid #ddd; text-align: center;">1820</td>
-                <td style="padding: 10px; border: 1px solid #ddd; text-align: center;">2.72</td>
-                <td style="padding: 10px; border: 1px solid #ddd; text-align: center;">4.98</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-
-<p>
-    L'analyse pour la famille <strong>Bourbon</strong> révèle une <strong>nette consolidation interne</strong> : la distance moyenne intra-Bourbon diminue de 3.97 à 2.72 entre 1788 et 1820. Simultanément, la distance inter-famille (non-Bourbon) diminue en 1799 (5.00 à 4.66), suggérant une brève **ouverture sélective** vers l'extérieur en période de crise, avant de remonter à 4.98 en 1820. Cette dynamique suggère une plus grande proximité entre les membres de la famille Bourbon au fil du temps.
-</p>
-
-<div style="margin: 20px 0;">
-    <table style="width: 100%; border-collapse: collapse; text-align: left;">
-        <caption><strong>Tableau 5 : Distances géodésiques moyennes - famille Habsbourg Lorraine</strong></caption>
-        <thead>
-            <tr style="background-color: #f2f2f2;">
-                <th style="padding: 10px; border: 1px solid #ddd; width: 10%;">Année</th>
-                <th style="padding: 10px; border: 1px solid #ddd; text-align: center;">Distance intra-Habsbourg Lorraine</th>
-                <th style="padding: 10px; border: 1px solid #ddd; text-align: center;">Distance inter-famille (non-Habsbourg Lorraine)</th>
+                <th style="padding: 10px; border: 1px solid #ddd; text-align: center;">Distance intra-Habsbourg-Lorraine</th>
+                <th style="padding: 10px; border: 1px solid #ddd; text-align: center;">Distance inter-famille (non-Habsbourg-Lorraine)</th>
             </tr>
         </thead>
         <tbody>
@@ -1032,41 +1004,10 @@ body {
 </div>
 
 <p>
-    Pour la famille <strong>Habsbourg Lorraine</strong>, le resserrement interne est particulièrement marqué en <strong>1799</strong>, où la distance intra-famille atteint son minimum (2.02). Simultanément, la distance inter-famille diminue aussi (3.76), indiquant une plus grande proximité avec le reste du réseau, probablement due à l'importance de leurs alliances stratégiques (comme avec Habsbourg Este, vu dans l'analyse Shrink). Cependant, en 1820, la distance inter-famille augmente fortement à 4.77, confirmant le <strong>repli et l'isolement</strong> observés dans le graphe Shrink post-Napoléon.
+    L'analyse pour la famille <strong>Habsbourg-Lorraine</strong> montre que le resserrement interne est particulièrement marqué en <strong>1799</strong>, où la distance intra-famille atteint son minimum (2.02). Simultanément, la distance inter-famille diminue aussi (3.76), indiquant une plus grande proximité avec le reste du réseau, probablement due à l'importance de leurs alliances stratégiques (comme avec Habsbourg Este, vu dans l'analyse Shrink). Cependant, en 1820, la distance inter-famille augmente fortement à 4.77, confirmant le <strong>repli et l'isolement</strong> observés dans le graphe Shrink post-Napoléon.
 </p>
-
-<div style="margin: 20px 0;">
-    <table style="width: 100%; border-collapse: collapse; text-align: left;">
-        <caption><strong>Tableau 6 : Distances Géodésiques Moyennes - Famille Wittelsbach</strong></caption>
-        <thead>
-            <tr style="background-color: #f2f2f2;">
-                <th style="padding: 10px; border: 1px solid #ddd; width: 10%;">Année</th>
-                <th style="padding: 10px; border: 1px solid #ddd; text-align: center;">Distance intra-Wittelsbach</th>
-                <th style="padding: 10px; border: 1px solid #ddd; text-align: center;">Distance inter-famille (non-Wittelsbach)</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td style="padding: 10px; border: 1px solid #ddd; text-align: center;">1788</td>
-                <td style="padding: 10px; border: 1px solid #ddd; text-align: center;">3.33</td>
-                <td style="padding: 10px; border: 1px solid #ddd; text-align: center;">6.40</td>
-            </tr>
-            <tr style="background-color: #e0f7fa;">
-                <td style="padding: 10px; border: 1px solid #ddd; text-align: center;">1799</td>
-                <td style="padding: 10px; border: 1px solid #ddd; text-align: center; font-weight: bold;">1.84</td>
-                <td style="padding: 10px; border: 1px solid #ddd; text-align: center;">6.36</td>
-            </tr>
-            <tr>
-                <td style="padding: 10px; border: 1px solid #ddd; text-align: center;">1820</td>
-                <td style="padding: 10px; border: 1px solid #ddd; text-align: center;">2.54</td>
-                <td style="padding: 10px; border: 1px solid #ddd; text-align: center;">5.55</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-
 <p>
-    Enfin, pour la famille <strong>Wittelsbach</strong>, le pic de resserrement interne est le plus spectaculaire, avec une distance intra-famille qui passe de 3.33 à <strong>1.84 en 1799</strong>. Leur distance inter-famille est toujours très élevée (6.40), confirmant qu'ils se marient très peu avec les non-Wittelsbach en général. L'analyse des distances confirme donc que les trois familles dominantes ont utilisé le mariage endogame comme principale stratégie de survie pendant la période de crise.
+    L'analyse des distances confirme ainsi que la famille <strong>Habsbourg-Lorraine</strong> a utilisé le mariage endogame comme stratégie principale de survie pendant la période de crise.
 </p>
                 <div class="clearfix">
                 <h3 id="conclusion">5. Conclusion</h3>
