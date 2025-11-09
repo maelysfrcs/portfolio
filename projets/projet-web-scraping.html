@@ -822,14 +822,58 @@ body {
             </div>
         <hr>
             <div class="clearfix">
-                <h3 id="strategies">4. Résultats : dynamique et évolution des réseaux</h3>
-                <a href="../mesdocuments/image_mobilité_densité.png" class="float-img-right lightbox-trigger" data-alt="Graphiques de la densité, taille et évolution des réseaux par vague">
-                    <img src="../mesdocuments/image_mobilité_densité.png" alt="Graphiques de la densité, taille et évolution des réseaux par vague">
-                </a>
-                <p>
-                    L'analyse de la densité des réseaux révèle une <strong>diminution progressive</strong> entre les premières vagues (A et B) et les dernières (C, D et F). Cette tendance, où les liens se multiplient sans être très connectés entre eux, suggère une évolution des réseaux vers plus de diversité. Cela rejoint l'idée de <strong>Granovetter</strong> selon laquelle les liens faibles, bien qu’ils réduisent la densité, sont importants pour accéder à de nouvelles opportunités.
-                </p>
-            </div>
+                <h3 id="strategies">5. Résultats : modélisation par thématique (Topic Modeling NMF)</h3>
+        <p>
+            L’analyse thématique a été réalisée à l’aide de la **Factorisation en Matrices Non-Négatives (NMF)**, une méthode permettant d’identifier des thèmes récurrents dans les discussions Reddit. Le corpus a été transformé en une matrice **TF-IDF** avant d’être décomposé en **10 topics principaux**. Chaque topic est caractérisé par un ensemble de mots-clés représentatifs.
+        </p>
+        <p>
+            Les discussions autour de Genshin Impact sur Reddit sont structurées en plusieurs grands thèmes qui révèlent les préoccupations majeures des joueurs. Le Topic Modeling avec NMF a permis d’identifier 10 topics principaux (W : Association documents-topics, H = Association mots-topics), couvrant des aspects variés du jeu, allant de la progression des personnages aux systèmes de monétisation.
+        </p>
+
+        <h4>Analyse des contributions par mots</h4>
+        <p>
+            <center><strong>Figure 1 : Contribution des mots par topic</strong></center>
+            [Image de la Figure 1 : Contribution des mots par topic]
+        </p>
+        <p>
+            Sur la **Figure 1**, les topics 2, 3 et 9 ont été filtrés, car ils traitaient d’informations peu pertinentes pour l’analyse (Topic 2 : <em>png, redd, webp</em>; Topic 3 : <em>megathread, restrict_sr, 22</em>; Topic 9 : <em>com, https, www</em>). Ce graphique montre que certains topics sont fortement liés à l’expérience de jeu, comme ceux concernant les **quêtes**, les **bannières de personnages**, et les **équipes optimales**. D’autres sujets portent davantage sur des aspects financiers, notamment les **microtransactions**, les <em>purchases</em> de <em>genesis crystals</em>, et les mécaniques de **gacha**.
+        </p>
+
+        <h4>Projection des discussions (PCA)</h4>
+        <p>
+            Pour mieux comprendre la structuration des discussions, une projection **PCA** (Analyse en Composantes Principales) a été réalisée, appliquée aux résultats du NMF. Les posts sont d'abord vectorisés avec TF-IDF, puis classés en topics grâce à NMF, et enfin projetés en 2D pour observer la répartition des discussions selon leurs similarités thématiques.
+        </p>
+        <p>
+            <center><strong>Figure 2 : Projection 2D des topics avec PCA (colorée par topic)</strong></center>
+            [Image de la Figure 2 : Projection 2D des topics avec PCA (colorée par topic)]
+        </p>
+        <p>
+            Sur la **Figure 2**, on observe que les discussions se regroupent en **clusters bien définis**, ce qui suggère une segmentation forte des échanges entre joueurs. Certains points isolés indiquent des conversations plus atypiques ou spécifiques.
+        </p>
+    </div>
+
+    <div class="clearfix" style="margin-top: 40px;">
+        <h3 id="topic-sentiment">5.2 Répartition du Sentiment par Topic</h3>
+        
+        <h4>Association sentiment-thème</h4>
+        <p>
+            <center><strong>Figure 3 : Répartition des sentiments par topic</strong></center>
+            [Image de la Figure 3 : Répartition des sentiments par topic]
+        </p>
+        <p>
+            La **Figure 3** révèle un contraste marqué dans la tonalité des discussions. Les topics 0 (**gameplay**) et 5 (**gestion des ressources**) suscitent principalement des réactions **positives**, tandis que les topics 1 (**bannières**), 2 (**quêtes**), 3 (**monétisation**), 4 (**équilibrage des équipes**) et 6 (**mises à jour**) génèrent une majorité de sentiments **négatifs**. Cela indique que les joueurs apprécient les mécaniques de base du jeu mais critiquent fortement les aspects économiques et compétitifs.
+        </p>
+
+        <h4>Visualisation du Sentiment sur la Projection PCA</h4>
+        <p>
+            <center><strong>Figure 4 : Projection 2D des topics avec PCA (colorée par sentiment)</strong></center>
+            [Image de la Figure 4 : Projection 2D des topics avec PCA (colorée par sentiment)]
+        </p>
+        <p>
+            La **Figure 4** représente la même projection PCA mais colorée selon le sentiment (bleu pour positif, gris pour neutre et rouge pour négatif). L'analyse montre une **prédominance des sentiments positifs ou neutres**, mais avec une **dispersion notable des sentiments négatifs**, particulièrement concentrés dans certaines zones du nuage de points. Cela suggère que si l'expérience globale est acceptable, certains aspects, notamment liés à la monétisation ou aux mises à jour, suscitent des critiques importantes et ciblées.
+        </p>
+    </div>
+                
         <hr>
             <div class="clearfix">
                 <a href="../mesdocuments/image_mobilité_taille.png" class="float-img-left lightbox-trigger" data-alt="Distribution de la taille des réseaux">
