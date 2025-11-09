@@ -863,43 +863,38 @@ body {
     <div class="clearfix">
         <h3 id="sentiment-analysis">5.2 Analyse de Sentiments</h3>
         <p>
-            L’analyse de sentiment repose sur le modèle **VADER (Valence Aware Dictionary and sEntiment Reasoner)** de NLTK, un modèle adapté aux textes courts et informels typiques des réseaux sociaux. Chaque post a été classé selon son score en cinq catégories : **fortement positif, légèrement positif, neutre, légèrement négatif ou fortement négatif**. Ces scores ont ensuite été agrégés en classes (positif, négatif, neutre) pour l'interprétation.
-        </p>
-        <p>
-            L’objectif de cette section est d’identifier la perception des joueurs sur la monétisation en visualisant la répartition des sentiments associés aux mots-clés liés aux microtransactions, au *loot boxes* et aux autres systèmes économiques des jeux *freemium*.
+            L’analyse de sentiment, réalisée via le modèle <strong>VADER</strong> (adapté aux échanges informels), a permis de quantifier la tonalité émotionnelle des <strong>259 488 posts</strong> discutant des mécanismes de monétisation. Cette approche vise à identifier les <strong>tensions critiques</strong> et les <strong>leviers d'engagement</strong> au sein de la communauté.
         </p>
     </div>
 
     <div class="clearfix">
-        <h4>5.2.1 Analyse générale des discours</h4>
+        <h4> Impact et engagement des discussions sur les dépenses</h4>
         <p>
-            L’analyse porte sur un total de **259 488 posts** publiés sur Reddit. L'engagement sur ces sujets est jugé significatif, avec une moyenne de **52 commentaires** par post dans le corpus étudié.
+            Cette section compare le discours général aux posts contenant des mots-clés liés aux dépenses directes (microtransactions, battlepass, etc.), avec une validation statistique par Test T de Student.
         </p>
-        <p>
-            Les mots-clés ciblés pour cette analyse de sentiment sont : <em>'money', 'spend', 'purchase', 'buy', 'cost', 'payment', 'microtransaction', 'summon', 'pull', 'wallet', 'expensive', 'price', 'pay', 'wish', 'freemium', 'free-to-play', 'F2P', 'pay-to-win', 'P2W', 'whale', 'grind', 'grinder', 'battlepass', 'premium', 'VIP', 'skin', 'pack', 'genesis crystals'</em>.
-        </p>
-        <p><center>[Tableau 1 : Moyenne de commentaires par mot-clé]</center></p>
+                <a href="../mesdocuments/image_scraping_moycommentaires.png" class="float-img-right lightbox-trigger" data-alt="Graphique 5 - Moyenne de commentaires par mot-clé">
+                    <img src="../mesdocuments/image_scraping_moycommentaires.png" alt="Graphique 5 - Moyenne de commentaires par mot-clé">
+                </a>
     </div>
 
     <div class="clearfix">
         <hr>
-        <h4>5.2.2 Analyses liées aux dépenses en jeu</h4>
+        <h4>Analyses liées aux dépenses en jeu</h4>
         <p>
-            Afin d'évaluer l'impact direct des discussions sur l'argent, la moyenne des scores de sentiment a été comparée entre l’ensemble du corpus et les posts contenant des mots-clés liés aux dépenses en jeu. Un **test t de Student** a été effectué pour évaluer la signification statistique de la différence.
+            Afin d'évaluer l'impact direct des discussions sur l'argent, la moyenne des scores de sentiment a été comparée entre l’ensemble du corpus et les posts contenant des mots-clés liés aux dépenses en jeu. Un <strong>test t de Student</strong> a été effectué pour évaluer la signification statistique de la différence.
         </p>
-        
-        <p>
-            <a href="../mesdocuments/figure5.png" class="float-img-right lightbox-trigger" data-alt="Figure 5 - Comparaison des sentiments : Mots-clés dépenses vs Corpus">
-                <img src="../mesdocuments/figure5.png" alt="Figure 5 : Comparaison des sentiments : Mots-clés dépenses vs Corpus">
+            <a href="../mesdocuments/image_scraping_sentiment_motsclés.png" class="float-img-left lightbox-trigger" data-alt="Graphique 6 - Comparaison des sentiments : Mots-clés dépenses vs corpus">
+                <img src="../mesdocuments/image_scraping_sentiment_motsclés.png" alt="Graphique 6 - Comparaison des sentiments : Mots-clés dépenses vs corpus">
             </a>
-            La **Figure 5** montre que les posts évoquant les dépenses en jeu ont un score de sentiment légèrement plus élevé (**0.4046**) que la moyenne globale des discussions (**0.3817**). Les discussions sur les dépenses ne sont donc pas systématiquement négatives, ce qui suggère une diversité d’opinions. Toutefois, la différence étant faible, la perception des dépenses reste intégrée à l’expérience globale des joueurs.
+        <p>
+            Le sentiment moyen des discussions sur les dépenses est légèrement supérieur (0.4046) à celui du corpus global (0.3817). Les échanges ne sont donc <strong>pas systématiquement négatifs</strong>; la critique est intégrée à une discussion plus large, suggérant une réception mitigée plutôt qu'un rejet massif.
         </p>
 
         <p style="clear: both;">
-            <a href="../mesdocuments/figure6.png" class="float-img-left lightbox-trigger" data-alt="Figure 6 - Comparaison des upvotes : Mots-clés dépenses vs Corpus">
-                <img src="../mesdocuments/figure6.png" alt="Figure 6 : Comparaison des upvotes : Mots-clés dépenses vs Corpus">
+            <a href="../mesdocuments/figure6.png" class="float-img-right lightbox-trigger" data-alt="Graphique 7 - Comparaison des upvotes : Mots-clés dépenses vs Corpus">
+                <img src="../mesdocuments/image_scraping_upvotes_motsclés.png" alt="Graphique 7 - Comparaison des upvotes : Mots-clés dépenses vs Corpus">
             </a>
-            La **Figure 6** révèle que les posts liés aux dépenses en jeu reçoivent en moyenne plus d’upvotes (**238.82**) que ceux du corpus global (**212.59**). Cela suggère que les discussions autour des achats en jeu attirent davantage l'attention et l'engagement de la communauté. Un test T a été utilisé pour vérifier la signification de cet écart.
+            Les posts liés aux dépenses en jeu reçoivent en moyenne plus d’upvotes (238.82) que ceux du corpus global (212.59). Cela suggère que les discussions autour des achats en jeu attirent davantage l'attention et l'engagement de la communauté. Un test T a été utilisé pour vérifier la signification de cet écart.
         </p>
 
         <p style="clear: both;">
