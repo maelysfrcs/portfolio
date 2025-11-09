@@ -774,11 +774,11 @@ body {
     </div>    
             <div class="clearfix">
                 <h3 id="objectif">1. Objectif de l'étude</h3>
-                <a href="../mesdocuments/mobilité_graphique1.png" class="float-img-left lightbox-trigger" data-alt="Graphique 1 - Mobilité des individus">
-                    <img src="../mesdocuments/mobilité_graphique1.png" alt="Graphique 1">
+                <a href="../mesdocuments/image_scraping_console.PNG" class="float-img-right lightbox-trigger" data-alt="Graphique 1 - Console">
+                    <img src="../mesdocuments/image_scraping_console.PNG" alt="Graphique 1 : Console">
                 </a>
                 <p>
-                  Cette étude vise à analyser l’impact des nouveaux modèles économiques des jeux vidéo, notamment le système <strong>Free-to-Play</strong> (F2P) et les pratiques de <strong>monétisation</strong> comme le <strong>Pay-to-Win</strong> (P2W), sur les échanges et les perceptions des joueurs au sein des communautés en ligne.
+                  Cette étude vise à analyser l’impact des nouveaux modèles économiques des jeux vidéo, notamment les pratiques de monétisation comme le système <strong>Free-to-Play</strong> (F2P) et le <strong>Pay-to-Win</strong> (P2W), sur les échanges et les perceptions des joueurs au sein des communautés en ligne.
                 </p>
                 <p>
                   Le questionnement principal est de comprendre <strong>comment la monétisation façonne le discours des joueurs</strong> sur les plateformes communautaires.
@@ -789,9 +789,9 @@ body {
         <hr>
             <div class="clearfix">
                 <h3 id="donnees">2. Présentation des données</h3>
-              <p>L'analyse s'est concentrée sur la plateforme <strong>Reddit</strong>, en ciblant spécifiquement le subreddit <strong>r/Genshin\_Impact</strong>. Ce jeu a été choisi pour son modèle free-to-play et ses mécanismes de microtransactions actifs.</p>
+              <p>L'analyse s'est concentrée sur la plateforme <strong>Reddit</strong>, en ciblant spécifiquement le subreddit <strong>r/Genshin_Impact</strong>. Ce jeu a été choisi pour son modèle free-to-play et ses mécanismes de microtransactions actifs.</p>
               <ol class="cleaning-steps">
-                <li><strong>Source de collecte</strong> : Le subreddit r/Genshin\_Impact sur Reddit.</li>
+                <li><strong>Source de collecte</strong> : Le subreddit r/Genshin_Impact sur Reddit.</li>
                 <li><strong>Mot-clé principal</strong> : La recherche a été centrée autour de plusieurs termes reliés à la monétisation : « free-to-play », « genesis crystals » (la monnaie dans le jeu) ou encore « battlepass » (abonnement payant dans le jeu).</li>
               </ol>
             </div>
@@ -816,7 +816,7 @@ body {
                 </p>
                 <ol class="cleaning-steps">
                   <li><strong>Lemmatisation et filtrage sémantique</strong> : Utilisation de la librairie <strong>spaCy</strong> pour réduire chaque mot à sa racine (lemmatisation) et pour ne conserver que les mots ayant un sens analytique fort (<strong>noms</strong>, <strong>verbes</strong> et <strong>noms propres</strong>).</li>
-                  <li><strong>Suppression des mots vides (stop words)</strong> : Retrait des mots courants de la langue anglaise (le, la...) pour augmenter la pertinence des mots-clés dans l'analyse.</li>
+                  <li><strong>Suppression des mots vides (stop words)</strong> : Retrait des mots courants de la langue anglaise pour augmenter la pertinence des mots-clés dans l'analyse.</li>
                   <li><strong>Filtrage et standardisation</strong> : Les posts vides ou peu informatifs (moins de <strong>10 mots</strong>) ont été écartés, et les textes ont été limités à un maximum de <strong>500 mots</strong> pour optimiser le temps de traitement sans perdre le contexte essentiel.</li>                
                 </ol>
             </div>
@@ -824,7 +824,7 @@ body {
             <div class="clearfix">
                 <h3 id="strategies">5. Résultats : modélisation par thématique (Topic Modeling NMF)</h3>
         <p>
-            L’analyse thématique a été réalisée à l’aide de la **Factorisation en Matrices Non-Négatives (NMF)**, une méthode permettant d’identifier des thèmes récurrents dans les discussions Reddit. Le corpus a été transformé en une matrice **TF-IDF** avant d’être décomposé en **10 topics principaux**. Chaque topic est caractérisé par un ensemble de mots-clés représentatifs.
+            L’analyse thématique a été réalisée à l’aide de la <strong>Factorisation en Matrices Non-Négatives (NMF)</strong>, une méthode permettant d’identifier des thèmes récurrents dans les discussions Reddit. Le corpus a été transformé en une matrice <strong>TF-IDF</strong> avant d’être décomposé en <strong>10 topics principaux</strong>. Chaque topic est caractérisé par un ensemble de mots-clés représentatifs.
         </p>
         <p>
             Les discussions autour de Genshin Impact sur Reddit sont structurées en plusieurs grands thèmes qui révèlent les préoccupations majeures des joueurs. Le Topic Modeling avec NMF a permis d’identifier 10 topics principaux (W : Association documents-topics, H = Association mots-topics), couvrant des aspects variés du jeu, allant de la progression des personnages aux systèmes de monétisation.
