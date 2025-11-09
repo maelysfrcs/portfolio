@@ -836,6 +836,7 @@ body {
         <p>
             Les discussions autour de Genshin Impact sur Reddit sont structurées en plusieurs grands thèmes qui révèlent les préoccupations majeures des joueurs. Le Topic Modeling avec NMF a permis d’identifier 10 topics principaux (W : Association documents-topics, H = Association mots-topics), couvrant des aspects variés du jeu, allant de la progression des personnages aux systèmes de monétisation.
         </p>
+        <hr>
         <h4>Analyse des contributions par mots</h4>
                 <a href="../mesdocuments/image_scraping_motspartopic.png" class="float-img-right lightbox-trigger" data-alt="Graphique 3 - Contribution des mots par topic">
                     <img src="../mesdocuments/image_scraping_motspartopic.png" alt="Graphique 3 : Nettoyage">
@@ -845,6 +846,7 @@ body {
         </p>
             </div>
             <div class="clearfix">
+        <hr>
         <h4>Projection des discussions (PCA)</h4>
                 <a href="../mesdocuments/image_scraping_projection2d.png" class="float-img-left lightbox-trigger" data-alt="Graphique 4 - Projection 2D des topics avec PCA (colorée par topic)">
                     <img src="../mesdocuments/image_scraping_projection2d.png" alt="Graphique 4 : Projection 2D des topics avec PCA (colorée par topic)">
@@ -856,46 +858,8 @@ body {
             Il est possible d'observer que les discussions se regroupent en <strong>clusters bien définis</strong>, ce qui suggère une segmentation forte des échanges entre joueurs. Certains points isolés indiquent des conversations plus atypiques ou spécifiques.
         </p>
     </div>
-    <div class="clearfix" style="margin-top: 40px;">
-      
-        <h4>Association sentiment-thème</h4>
-                <a href="../mesdocuments/image_scraping_tcsentiment.png" class="float-img-right lightbox-trigger" data-alt="Graphique 5 - Répartition des sentiments par topic">
-                    <img src="../mesdocuments/image_scraping_tcsentiment.png" alt="Graphique 5 - Répartition des sentiments par topic">
-                </a>
-        <p>
-            Ce graphique révèle un contraste marqué dans la tonalité des discussions. Les topics 0 (gameplay) et 5 (gestion des ressources) suscitent principalement des réactions <strong>positives</strong>, tandis que les topics 1 (bannières), 2 (quêtes), 3 (monétisation), 4 (équilibrage des équipes) et 6 (mises à jour) génèrent une majorité de sentiments <strong>négatifs</strong>. Cela indique que les joueurs apprécient les mécaniques de base du jeu mais critiquent fortement les aspects économiques et compétitifs.
-        </p>
+     
 
-        <h4>Visualisation du Sentiment sur la Projection PCA</h4>
-        <p>
-            <center><strong>Figure 4 : Projection 2D des topics avec PCA (colorée par sentiment)</strong></center>
-            [Image de la Figure 4 : Projection 2D des topics avec PCA (colorée par sentiment)]
-        </p>
-        <p>
-            La **Figure 4** représente la même projection PCA mais colorée selon le sentiment (bleu pour positif, gris pour neutre et rouge pour négatif). L'analyse montre une **prédominance des sentiments positifs ou neutres**, mais avec une **dispersion notable des sentiments négatifs**, particulièrement concentrés dans certaines zones du nuage de points. Cela suggère que si l'expérience globale est acceptable, certains aspects, notamment liés à la monétisation ou aux mises à jour, suscitent des critiques importantes et ciblées.
-        </p>
-    </div>
-                
-        <hr>
-            <div class="clearfix">
-                <a href="../mesdocuments/image_mobilité_taille.png" class="float-img-left lightbox-trigger" data-alt="Distribution de la taille des réseaux">
-                    <img src="../mesdocuments/image_mobilité_taille.png" alt="Distribution de la taille des réseaux">
-                </a>
-                <p>
-                    La taille des réseaux personnels est souvent concentrée autour de <strong>petites ou moyennes valeurs (entre 3 et 8 relations)</strong>. Ces variations sont fortement corrélées aux étapes de vie (passage aux études, emploi, relation amoureuse) qui ont pu influencer la taille des réseaux au fil des vagues (A à F).
-                </p>
-            </div>
-        <hr>
-            <div class="clearfix">
-                <a href="../mesdocuments/image_mobilité_répartition.png" class="float-img-right lightbox-trigger" data-alt="Répartition des Egos par type d'évolution">
-                    <img src="../mesdocuments/image_mobilité_répartition.png" alt="Répartition des Egos par type d'évolution">
-                </a>
-                <p> 
-                    Le graphique montre une nette dominance des réseaux en <strong>expansion</strong>, traduisant une augmentation des interactions sociales et une diversification des lieux fréquentés.
-                </p>
-            </div>
-        <hr>
-            <div class="clearfix">
                 <h3 id="resultats">5. Résultats : facteurs explicatifs</h3>
                 <p>
                     L'analyse des facteurs (genre et âge) est primordiale pour mieux comprendre la mobilité. Un <strong>test T</strong> a confirmé une différence statistiquement significative (p-value = 0.01542) : les <strong>hommes ont une mobilité légèrement plus 
