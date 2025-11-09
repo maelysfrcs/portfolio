@@ -774,9 +774,6 @@ body {
     </div>    
             <div class="clearfix">
                 <h3 id="objectif">1. Objectif de l'étude</h3>
-                <a href="../mesdocuments/image_scraping_console.PNG" class="float-img-right lightbox-trigger" data-alt="Graphique 1 - Console">
-                    <img src="../mesdocuments/image_scraping_console.PNG" alt="Graphique 1 : Console">
-                </a>
                 <p>
                   Cette étude vise à analyser l’impact des nouveaux modèles économiques des jeux vidéo, notamment les pratiques de monétisation comme le système <strong>Free-to-Play</strong> (F2P) et le <strong>Pay-to-Win</strong> (P2W), sur les échanges et les perceptions des joueurs au sein des communautés en ligne.
                 </p>
@@ -798,6 +795,9 @@ body {
         <hr>
             <div class="clearfix">
                 <h3 id="strategie">3. Stratégie de collecte</h3>
+                <a href="../mesdocuments/image_scraping_console.PNG" class="float-img-right lightbox-trigger" data-alt="Graphique 1 - Console">
+                    <img src="../mesdocuments/image_scraping_console.PNG" alt="Graphique 1 : Console">
+                </a>
                 <p>
                     La collecte des données a été réalisée sur Google Colaboratory en utilisant l'API officielle de Reddit.
                 </p>
@@ -811,6 +811,9 @@ body {
         <hr>
               <div class="clearfix">
                 <h3 id="nettoyage">4. Nettoyage et préparation des données.</h3>
+                <a href="../mesdocuments/image_scraping_nettoyage.PNG" class="float-img-left lightbox-trigger" data-alt="Graphique 2 - Nettoyage">
+                    <img src="../mesdocuments/image_scraping_nettoyage.PNG" alt="Graphique 2 : Nettoyage">
+                </a>
                 <p>
                   Un processus de <strong>Natural Language Processing (NLP)</strong> a été appliqué aux données textuelles brutes pour les prochaines analyses.
                 </p>
@@ -829,31 +832,28 @@ body {
         <p>
             Les discussions autour de Genshin Impact sur Reddit sont structurées en plusieurs grands thèmes qui révèlent les préoccupations majeures des joueurs. Le Topic Modeling avec NMF a permis d’identifier 10 topics principaux (W : Association documents-topics, H = Association mots-topics), couvrant des aspects variés du jeu, allant de la progression des personnages aux systèmes de monétisation.
         </p>
-
         <h4>Analyse des contributions par mots</h4>
+                <a href="../mesdocuments/image_scraping_motspartopic.png" class="float-img-right lightbox-trigger" data-alt="Graphique 3 - Contribution des mots par topic">
+                    <img src="../mesdocuments/image_scraping_motspartopic.png" alt="Graphique 3 : Nettoyage">
+                </a>
         <p>
-            <center><strong>Figure 1 : Contribution des mots par topic</strong></center>
-            [Image de la Figure 1 : Contribution des mots par topic]
-        </p>
-        <p>
-            Sur la **Figure 1**, les topics 2, 3 et 9 ont été filtrés, car ils traitaient d’informations peu pertinentes pour l’analyse (Topic 2 : <em>png, redd, webp</em>; Topic 3 : <em>megathread, restrict_sr, 22</em>; Topic 9 : <em>com, https, www</em>). Ce graphique montre que certains topics sont fortement liés à l’expérience de jeu, comme ceux concernant les **quêtes**, les **bannières de personnages**, et les **équipes optimales**. D’autres sujets portent davantage sur des aspects financiers, notamment les **microtransactions**, les <em>purchases</em> de <em>genesis crystals</em>, et les mécaniques de **gacha**.
+            Sur la <strong>Figure 1</strong>, les topics 2, 3 et 9 ont été filtrés, car ils traitaient d’informations peu pertinentes pour l’analyse (Topic 2 : <em>png, redd, webp</em>; Topic 3 : <em>megathread, restrict_sr, 22</em>; Topic 9 : <em>com, https, www</em>). Ce graphique montre que certains topics sont fortement liés à l’expérience de jeu, comme ceux concernant les <strong>quêtes</strong>, les <strong>bannières de personnages</strong>, et les <strong>équipes optimales</strong>. D’autres sujets portent davantage sur des aspects financiers, notamment les <strong>microtransactions</strong>, les <em>purchases</em> de <em>genesis crystals</em>, et les mécaniques de <strong>gacha</strong>.
         </p>
 
         <h4>Projection des discussions (PCA)</h4>
+                <a href="../mesdocuments/image_scraping_motspartopic.png" class="float-img-left lightbox-trigger" data-alt="Graphique 4 - Projection 2D des topics avec PCA (colorée par topic)">
+                    <img src="../mesdocuments/image_scraping_motspartopic.png" alt="Graphique 4 : Projection 2D des topics avec PCA (colorée par topic)">
+                </a>
         <p>
-            Pour mieux comprendre la structuration des discussions, une projection **PCA** (Analyse en Composantes Principales) a été réalisée, appliquée aux résultats du NMF. Les posts sont d'abord vectorisés avec TF-IDF, puis classés en topics grâce à NMF, et enfin projetés en 2D pour observer la répartition des discussions selon leurs similarités thématiques.
+            Pour mieux comprendre la structuration des discussions, une projection PCA (Analyse en Composantes Principales) a été réalisée, appliquée aux résultats du NMF. Les posts sont d'abord vectorisés avec TF-IDF, puis classés en topics grâce à NMF, et enfin projetés en 2D pour observer la répartition des discussions selon leurs similarités thématiques.
         </p>
         <p>
-            <center><strong>Figure 2 : Projection 2D des topics avec PCA (colorée par topic)</strong></center>
-            [Image de la Figure 2 : Projection 2D des topics avec PCA (colorée par topic)]
-        </p>
-        <p>
-            Sur la **Figure 2**, on observe que les discussions se regroupent en **clusters bien définis**, ce qui suggère une segmentation forte des échanges entre joueurs. Certains points isolés indiquent des conversations plus atypiques ou spécifiques.
+            Il est possible d'observer que les discussions se regroupent en <strong>clusters bien définis</strong>, ce qui suggère une segmentation forte des échanges entre joueurs. Certains points isolés indiquent des conversations plus atypiques ou spécifiques.
         </p>
     </div>
 
     <div class="clearfix" style="margin-top: 40px;">
-        <h3 id="topic-sentiment">5.2 Répartition du Sentiment par Topic</h3>
+        <h3 id="topic-sentiment">5.2 Analyse de sentiment par topic</h3>
         
         <h4>Association sentiment-thème</h4>
         <p>
