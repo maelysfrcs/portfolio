@@ -859,7 +859,97 @@ body {
         </p>
     </div>
      
+<hr>
+    <div class="clearfix">
+        <h3 id="sentiment-analysis">5.2 Analyse de Sentiments</h3>
+        <p>
+            L’analyse de sentiment repose sur le modèle **VADER (Valence Aware Dictionary and sEntiment Reasoner)** de NLTK, un modèle adapté aux textes courts et informels typiques des réseaux sociaux. Chaque post a été classé selon son score en cinq catégories : **fortement positif, légèrement positif, neutre, légèrement négatif ou fortement négatif**. Ces scores ont ensuite été agrégés en classes (positif, négatif, neutre) pour l'interprétation.
+        </p>
+        <p>
+            L’objectif de cette section est d’identifier la perception des joueurs sur la monétisation en visualisant la répartition des sentiments associés aux mots-clés liés aux microtransactions, au *loot boxes* et aux autres systèmes économiques des jeux *freemium*.
+        </p>
+    </div>
 
+    <div class="clearfix">
+        <h4>5.2.1 Analyse générale des discours</h4>
+        <p>
+            L’analyse porte sur un total de **259 488 posts** publiés sur Reddit. L'engagement sur ces sujets est jugé significatif, avec une moyenne de **52 commentaires** par post dans le corpus étudié.
+        </p>
+        <p>
+            Les mots-clés ciblés pour cette analyse de sentiment sont : <em>'money', 'spend', 'purchase', 'buy', 'cost', 'payment', 'microtransaction', 'summon', 'pull', 'wallet', 'expensive', 'price', 'pay', 'wish', 'freemium', 'free-to-play', 'F2P', 'pay-to-win', 'P2W', 'whale', 'grind', 'grinder', 'battlepass', 'premium', 'VIP', 'skin', 'pack', 'genesis crystals'</em>.
+        </p>
+        <p><center>[Tableau 1 : Moyenne de commentaires par mot-clé]</center></p>
+    </div>
+
+    <div class="clearfix">
+        <hr>
+        <h4>5.2.2 Analyses liées aux dépenses en jeu</h4>
+        <p>
+            Afin d'évaluer l'impact direct des discussions sur l'argent, la moyenne des scores de sentiment a été comparée entre l’ensemble du corpus et les posts contenant des mots-clés liés aux dépenses en jeu. Un **test t de Student** a été effectué pour évaluer la signification statistique de la différence.
+        </p>
+        
+        <p>
+            <a href="../mesdocuments/figure5.png" class="float-img-right lightbox-trigger" data-alt="Figure 5 - Comparaison des sentiments : Mots-clés dépenses vs Corpus">
+                <img src="../mesdocuments/figure5.png" alt="Figure 5 : Comparaison des sentiments : Mots-clés dépenses vs Corpus">
+            </a>
+            La **Figure 5** montre que les posts évoquant les dépenses en jeu ont un score de sentiment légèrement plus élevé (**0.4046**) que la moyenne globale des discussions (**0.3817**). Les discussions sur les dépenses ne sont donc pas systématiquement négatives, ce qui suggère une diversité d’opinions. Toutefois, la différence étant faible, la perception des dépenses reste intégrée à l’expérience globale des joueurs.
+        </p>
+
+        <p style="clear: both;">
+            <a href="../mesdocuments/figure6.png" class="float-img-left lightbox-trigger" data-alt="Figure 6 - Comparaison des upvotes : Mots-clés dépenses vs Corpus">
+                <img src="../mesdocuments/figure6.png" alt="Figure 6 : Comparaison des upvotes : Mots-clés dépenses vs Corpus">
+            </a>
+            La **Figure 6** révèle que les posts liés aux dépenses en jeu reçoivent en moyenne plus d’upvotes (**238.82**) que ceux du corpus global (**212.59**). Cela suggère que les discussions autour des achats en jeu attirent davantage l'attention et l'engagement de la communauté. Un test T a été utilisé pour vérifier la signification de cet écart.
+        </p>
+
+        <p style="clear: both;">
+            <a href="../mesdocuments/figure7.png" class="float-img-right lightbox-trigger" data-alt="Figure 7 - Distribution des sentiments : Mots-clés dépenses vs Corpus">
+                <img src="../mesdocuments/figure7.png" alt="Figure 7 : Distribution des sentiments : Mots-clés dépenses vs Corpus">
+            </a>
+            La **Figure 7** compare la distribution des sentiments pour les posts liés aux dépenses (rouge) et le corpus global (bleu). Les pics observés à -1, 0 et 1 indiquent une **polarisation des opinions**. L’absence de différences majeures entre les deux distributions, confirmée par un test T (Sentiment moyen des posts liés à l'argent : 0.403, Sentiment moyen du corpus global : 0.382), suggère que les discussions sur les dépenses ne sont pas significativement plus négatives ou positives que la tendance générale.
+        </p>
+    </div>
+
+    <div class="clearfix">
+        <hr>
+        <h4>5.2.3 Comparaison Joueurs F2P vs P2W</h4>
+        <p>
+            L’analyse compare les sentiments exprimés dans les posts évoquant les pratiques **F2P (Free-to-Play)** et **P2W (Pay-to-Win)**. Le test t de Student a été réalisé pour vérifier si la différence des scores moyens de sentiment entre ces deux groupes est statistiquement significative.
+        </p>
+
+        <p>
+            <a href="../mesdocuments/figure8.png" class="float-img-left lightbox-trigger" data-alt="Figure 8 - Comparaison des sentiments entre Free-To-Play et Pay-To-Win">
+                <img src="../mesdocuments/figure8.png" alt="Figure 8 : Comparaison des sentiments entre Free-To-Play et Pay-To-Win">
+            </a>
+            Comme le montre la **Figure 8**, les posts mentionnant les pratiques **F2P ont un sentiment moyen plus positif** que ceux parlant de P2W, avec une différence jugée **hautement significative (p-value < 0.05)**. Cela suggère que les discussions sur le Pay-to-Win suscitent plus de critiques et d’insatisfaction. Les mécaniques P2W sont souvent perçues comme injustes, générant davantage de réactions négatives, tandis que le F2P, bien que potentiellement frustrant, est moins négatif.
+        </p>
+    </div>
+    
+    <div class="clearfix">
+        <hr>
+        <h4>5.2.4 Relation entre Upvotes et Sentiment</h4>
+        <p>
+            <a href="../mesdocuments/figure9.png" class="float-img-right lightbox-trigger" data-alt="Figure 9 - Corrélation entre le score du post et le sentiment score">
+                <img src="../mesdocuments/figure9.png" alt="Figure 9 : Corrélation entre le score du post et le sentiment score">
+            </a>
+            La **Figure 9** montre une **absence de corrélation claire** entre le sentiment d’un post et son nombre d'upvotes. La majorité des posts ont des scores de sentiment positifs ou neutres, mais cela n’impacte pas nécessairement leur popularité. Le succès d’un post dépend davantage du sujet abordé et de l’engagement de la communauté que du ton utilisé, suggérant que les critiques négatives ne sont pas toujours celles qui suscitent le plus d’adhésion.
+        </p>
+    </div>
+
+    <div class="clearfix">
+        <hr>
+        <h4>5.2.5 Distribution des Upvotes selon F2P vs P2W</h4>
+        <p>
+            La **Figure 10** compare la distribution des upvotes entre les posts F2P et P2W. Un histogramme avec KDE (Kernel Density Estimation) visualise la répartition des scores, et un test T de Student a été utilisé pour évaluer la signification statistique de la différence.
+        </p>
+        <p>
+            <a href="../mesdocuments/figure10.png" class="float-img-left lightbox-trigger" data-alt="Figure 10 - Distribution des upvotes pour Free-To-Play et Pay-To-Win">
+                <img src="../mesdocuments/figure10.png" alt="Figure 10 : Distribution des upvotes pour Free-To-Play et Pay-To-Win">
+            </a>
+            Le graphique montre que les posts liés aux joueurs **P2W reçoivent en moyenne plus d’upvotes** (**257.57**) que ceux des F2P (**90.02**). Cette différence est confirmée comme étant **statistiquement significative (p-value < 0.05)** par le test T. Cela indique que les discussions sur le Pay-to-Win génèrent plus d’engagement et sont davantage mises en avant par la communauté.
+        </p>
+    </div>
+<hr>
                 <h3 id="resultats">5. Résultats : facteurs explicatifs</h3>
                 <p>
                     L'analyse des facteurs (genre et âge) est primordiale pour mieux comprendre la mobilité. Un <strong>test T</strong> a confirmé une différence statistiquement significative (p-value = 0.01542) : les <strong>hommes ont une mobilité légèrement plus 
