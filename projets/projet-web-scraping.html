@@ -789,7 +789,7 @@ body {
               <p>L'analyse s'est concentrée sur la plateforme <strong>Reddit</strong>, en ciblant spécifiquement le subreddit <strong>r/Genshin_Impact</strong>. Ce jeu a été choisi pour son modèle free-to-play et ses mécanismes de microtransactions actifs.</p>
               <ol class="cleaning-steps">
                 <li><strong>Source de collecte</strong> : Le subreddit r/Genshin_Impact sur Reddit.</li>
-                <li><strong>Mot-clé principal</strong> : La recherche a été centrée autour de plusieurs termes reliés à la monétisation : « free-to-play », « genesis crystals » (la monnaie dans le jeu) ou encore « battlepass » (abonnement payant dans le jeu).</li>
+                <li><strong>Mots-clés principaux</strong> : La recherche a été centrée autour de plusieurs termes reliés à la monétisation : « free-to-play », « genesis crystals » (la monnaie dans le jeu) ou encore « battlepass » (abonnement payant dans le jeu).</li>
               </ol>
             </div>
         <hr>
@@ -842,7 +842,7 @@ body {
                     <img src="../mesdocuments/image_scraping_motspartopic.png" alt="Graphique 3 : Nettoyage">
                 </a>
         <p>
-            Les topics 2, 3 et 9 ont été filtrés, car ils traitaient d’informations peu pertinentes pour l’analyse (Topic 2 : <em>png, redd, webp</em>; Topic 3 : <em>megathread, restrict_sr, 22</em>; Topic 9 : <em>com, https, www</em>). Ce graphique montre que certains topics sont fortement liés à l’expérience de jeu, comme ceux concernant les <strong>quêtes</strong>, les <strong>bannières de personnages</strong>, et les <strong>équipes optimales</strong>. D’autres sujets portent davantage sur des aspects financiers, notamment les <strong>microtransactions</strong>, les <em>purchases</em> de <em>genesis crystals</em>, et les mécaniques de <strong>gacha</strong>.
+            Les topics 2, 3 et 9 ont été enlevés de l'analyse, car ils traitaient d’informations peu pertinentes pour mon questionnement (Topic 2 : <em>png, redd, webp</em>; Topic 3 : <em>megathread, restrict_sr, 22</em>; Topic 9 : <em>com, https, www</em>). Ce graphique montre que certains topics sont fortement liés à l’expérience de jeu, comme ceux concernant les <strong>quêtes</strong>, les <strong>bannières de personnages</strong>, et l'<strong>optimisation des équipes</strong>. D’autres sujets portent davantage sur des aspects financiers, notamment les <strong>microtransactions</strong>, <strong>l'achat de genesis crystals</strong>, et les mécaniques de <strong>gacha</strong>.
         </p>
             </div>
             <div class="clearfix">
@@ -866,8 +866,9 @@ body {
             L’analyse de sentiment, réalisée via le modèle <strong>VADER</strong> (adapté aux échanges informels), a permis de quantifier la tonalité émotionnelle des <strong>259 488 posts</strong> discutant des mécanismes de monétisation. Cette approche vise à identifier les <strong>tensions critiques</strong> et les <strong>leviers d'engagement</strong> au sein de la communauté.
         </p>
     </div>
-
-<div class="clearfix definition-block" style="border-left: 5px solid #007bff; padding: 15px; margin: 15px 0; background-color: #f7f9fc;">
+    <div class="clearfix">
+        <h4>Tension critique entre le modèle Free-to-Play (F2P) et le modèle Pay-to-Win (P2W)</h4>
+        <div class="clearfix definition-block" style="border-left: 5px solid #007bff; padding: 15px; margin: 15px 0; background-color: #f7f9fc;">
         <div style="display: flex; justify-content: space-around;">
             <div style="flex: 1; margin-right: 10px;">
                 <strong style="color: #28a745;">Free-to-Play (F2P)</strong>
@@ -878,9 +879,7 @@ body {
                 <p style="font-size: 0.9em; margin-bottom: 0;">Le joueur progresse en investissant de l'<strong>argent réel</strong> pour obtenir des avantages significatifs.</p>
             </div>
         </div>
-    </div>
-    <div class="clearfix">
-        <h4>Tension critique entre le modèle Free-to-Play (F2P) et le modèle Pay-to-Win (P2W)</h4>
+        </div>
         <p>
             L'analyse distingue l'impact émotionnel des deux principaux modèles de progression sur les perceptions des joueurs.
         </p>
@@ -891,7 +890,7 @@ body {
         Le graphique compare les sentiments exprimés dans les posts évoquant les pratiques F2P et P2W. Les sentiments ont été classés en cinq catégories (Mixed Negative, Negative, Neutral, Mixed Positive, Positive).
     </p>
     <p>
-        Les posts mentionnant les pratiques <strong>F2P ont un sentiment moyen significativement plus positif</strong> que ceux parlant de P2W, avec une <strong>différence hautement significative</strong> confirmée par un test t de Student (p-value < 0.05).
+        Les posts mentionnant les pratiques <strong>F2P ont un sentiment moyen significativement plus positif</strong> que ceux parlant de P2W, avec une différence hautement significative confirmée par un test t de Student (p-value < 0.05).
     </p>
     <p>
         Ce résultat suggère que les discussions sur le <strong>Pay-to-Win suscitent plus de critiques et d’insatisfaction</strong> en raison de la perception de mécanismes injustes ou déséquilibrés. À l’inverse, bien que le F2P puisse générer de la frustration (face aux limites imposées), les échanges restent globalement moins négatifs.
@@ -911,11 +910,11 @@ body {
             <div class="clearfix">
                 <h3 id="conclusion">7. Conclusion</h3>
                 <p>
-                    Cette étude a réussi à analyser l'influence des modèles de monétisation <strong>Free-to-Play (F2P)</strong> et <strong>Pay-to-Win (P2W)</strong> sur le discours des joueurs au sein de la communauté Reddit de Genshin Impact. L'analyse par <strong>Topic Modeling (NMF)</strong> a révélé une segmentation claire entre les discussions sur l'expérience de jeu (quêtes, personnages) et les mécanismes financiers (microtransactions, gacha). Le <strong>P2W</strong> est identifié comme le point central de la tension communautaire :
+                    Cette étude a analyser l'influence des modèles de monétisation <strong>Free-to-Play (F2P)</strong> et <strong>Pay-to-Win (P2W)</strong> sur le discours des joueurs au sein de la communauté Reddit de Genshin Impact. L'analyse par <strong>Topic Modeling (NMF)</strong> a révélé une segmentation claire entre les discussions sur l'expérience de jeu (quêtes, personnages) et les mécanismes financiers (microtransactions, gacha). <br> Le P2W est identifié comme le point central de la tension communautaire :
             </p>
             <ul>
                 <li>Bien que les discussions sur l'argent ne soient pas systématiquement négatives, le modèle P2W génère un sentiment moyen <strong>significativement plus critique</strong> que le F2P, car il est perçu comme une menace à l'équité du jeu.</li>
-                <li>Surtout, le P2W est le principal moteur d'engagement : les posts à ce sujet reçoivent un nombre d'upvotes nettement supérieur, confirmant qu'il s'agit du sujet le plus polarisant et stimulant des débats.</li>
+                <li>Les posts P2W reçoivent un nombre d'upvotes nettement supérieur, confirmant qu'il s'agit du sujet le plus polarisant et stimulant des débats.</li>
             </ul>
             <p>
                 En synthèse, le projet démontre que la <strong>vitalité des échanges</strong> ne réside pas dans la positivité ou la négativité du ton, mais dans le <strong>controversé sujet de la monétisation</strong> qui remet en cause l'équité. Les résultats invitent à poursuivre l’analyse pour mieux comprendre comment ces pratiques façonnent l’engagement des joueurs sur le long terme.
