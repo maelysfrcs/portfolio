@@ -866,15 +866,59 @@ body {
             L’analyse de sentiment, réalisée via le modèle <strong>VADER</strong> (adapté aux échanges informels), a permis de quantifier la tonalité émotionnelle des <strong>259 488 posts</strong> discutant des mécanismes de monétisation. Cette approche vise à identifier les <strong>tensions critiques</strong> et les <strong>leviers d'engagement</strong> au sein de la communauté.
         </p>
     </div>
+
+<div class="clearfix definition-block" style="border-left: 5px solid #007bff; padding: 15px; margin: 15px 0; background-color: #f7f9fc;">
+        <h4 style="margin-top: 0; color: #007bff;">Clarification des modèles économiques</h4>
+        <div style="display: flex; justify-content: space-around;">
+            <div style="flex: 1; margin-right: 10px;">
+                <strong style="color: #28a745;">Free-to-Play (F2P)</strong>
+                <p style="font-size: 0.9em; margin-bottom: 0;">Le joueur progresse par son <strong>temps et son effort</strong>.</p>
+            </div>
+            <div style="flex: 1; margin-left: 10px;">
+                <strong style="color: #dc3545;">Pay-to-Win (P2W)</strong>
+                <p style="font-size: 0.9em; margin-bottom: 0;">Le joueur progresse en investissant de l'<strong>argent réel</strong> pour obtenir des avantages significatifs.</p>
+            </div>
+        </div>
+    </div>
+
+    
 <hr>
     <div class="clearfix">
-        <h4> Impact et engagement des discussions sur les dépenses</h4>
                 <a href="../mesdocuments/image_scraping_moycommentaires.png" class="float-img-right lightbox-trigger" data-alt="Graphique 5 - Moyenne de commentaires par mot-clé">
                     <img src="../mesdocuments/image_scraping_moycommentaires.png" alt="Graphique 5 - Moyenne de commentaires par mot-clé">
                 </a>
         <p>
-            Ce graphique permet de comparer le discours général aux posts contenant des mots-clés liés aux dépenses directes (microtransactions, battlepass, etc.), avec une validation statistique par Test T de Student.
+            L'analyse des scores de sentiment et d'engagement a été appliquée aux posts contenant des mots-clés de dépense ("battlepass", "crystals", etc.) par rapport au corpus total.
         </p>
+
+<div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 20px;">
+            <div style="flex: 1;">
+                <a href="../mesdocuments/image_scraping_sentiment_motsclés.png" class="lightbox-trigger" data-alt="Graphique 6 - Comparaison des sentiments : Mots-clés dépenses vs corpus">
+                    <img src="../mesdocuments/image_scraping_sentiment_motsclés.png" alt="Graphique 6 - Comparaison des sentiments : Mots-clés dépenses vs corpus">
+                </a>
+                <p style="text-align: center; font-size: 0.8em; margin-top: 5px;">*Graphique 6 : Sentiment moyen*</p>
+            </div>
+            <div style="flex: 1;">
+                <a href="../mesdocuments/image_scraping_upvotes_motsclés.png" class="lightbox-trigger" data-alt="Graphique 7 - Comparaison des upvotes : Mots-clés dépenses vs Corpus">
+                    <img src="../mesdocuments/image_scraping_upvotes_motsclés.png" alt="Graphique 7 - Comparaison des upvotes : Mots-clés dépenses vs Corpus">
+                </a>
+                <p style="text-align: center; font-size: 0.8em; margin-top: 5px;">*Graphique 7 : Upvotes moyens*</p>
+            </div>
+        </div>
+
+<ul style="list-style-type: none; padding-left: 0;">
+            <li><strong style="color: #007bff;">Pourquoi cette analyse ?</strong> Pour vérifier si l'argent est synonyme de colère et si l'engagement est plus fort sur ces sujets.</li>
+            <li><strong style="color: #007bff;">Résultats Sentiment (G. 6) :</strong> Le sentiment moyen des discussions sur les dépenses (**0.4046**) est très légèrement supérieur à celui du corpus global (**0.3817**). Un Test T a confirmé que cette différence n'est pas significative.
+                <ul>
+                    <li>**Conclusion :** La perception est **nuancée et non-négative**. Les critiques existent, mais sont intégrées à des discussions variées (neutres ou positives), sans créer de rejet massif.</li>
+                </ul>
+            </li>
+            <li><strong style="color: #007bff;">Résultats Engagement (G. 7) :</strong> Les posts liés aux dépenses reçoivent en moyenne **plus d’upvotes (238.82)** que la moyenne globale (**212.59**).
+                <ul>
+                    <li>**Conclusion :** La monétisation est un **sujet à fort intérêt et engagement** pour la communauté, même si elle n'est pas systématiquement critiquée.</li>
+                </ul>
+            </li>
+        </ul>
     </div>
             <hr>
     <div class="clearfix">
@@ -900,9 +944,9 @@ body {
     </div>
     <div class="clearfix">
         <hr>
-        <h4>5.3 Tension critique entre le modèle Free-to-Play (F2P) et le modèle Pay-to-Win (P2W)</h4>
+        <h4>Tension critique entre le modèle Free-to-Play (F2P) et le modèle Pay-to-Win (P2W)</h4>
         <p>
-            L'analyse distingue l'impact émotionnel des deux principaux modèles de progression sur les perceptions des joueurs (effort vs. achat).
+            L'analyse distingue l'impact émotionnel des deux principaux modèles de progression sur les perceptions des joueurs.
         </p>        
         <p style="clear: both;">
             <a href="../mesdocuments/image_scraping_distributionupvotes.png" class="float-img-left lightbox-trigger" data-alt="Graphique 8 - Distribution des upvotes pour Free-To-Play et Pay-To-Win">
