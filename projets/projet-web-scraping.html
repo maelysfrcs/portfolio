@@ -829,7 +829,7 @@ body {
             </div>
         <hr>
             <div class="clearfix">
-                <h3 id="strategies">5.1 : Modélisation par thématique (Topic Modeling NMF)</h3>
+                <h3 id="strategies">5. Résultats : Modélisation par thématique (Topic Modeling NMF)</h3>
         <p>
             L’analyse thématique a été réalisée à l’aide de la <strong>Factorisation en Matrices Non-Négatives (NMF)</strong>, une méthode permettant d’identifier des thèmes récurrents dans les discussions Reddit. Le corpus a été transformé en une matrice <strong>TF-IDF</strong> avant d’être décomposé en <strong>10 topics principaux</strong>. Chaque topic est caractérisé par un ensemble de mots-clés représentatifs.
         </p>
@@ -861,7 +861,7 @@ body {
      
 <hr>
     <div class="clearfix">
-        <h3 id="sentiment-analysis">5.2 Analyse de sentiments</h3>
+        <h3 id="sentiment-analysis">6. Résultats : Analyse de sentiments</h3>
         <p>
             L’analyse de sentiment, réalisée via le modèle <strong>VADER</strong> (adapté aux échanges informels), a permis de quantifier la tonalité émotionnelle des <strong>259 488 posts</strong> discutant des mécanismes de monétisation. Cette approche vise à identifier les <strong>tensions critiques</strong> et les <strong>leviers d'engagement</strong> au sein de la communauté.
         </p>
@@ -904,33 +904,33 @@ body {
             Les posts liés au <strong>P2W</strong> génèrent un engagement nettement supérieur, avec une moyenne d’upvotes de <strong>257.57</strong> contre <strong>90.02</strong> pour le F2P (différence statistiquement significative). Le P2W est le sujet le <strong>plus polarisant et le plus discuté</strong>.
         </p>
         <p>
-            Ce graphique permet de quantifier la tension autour de l'équité du jeu et déterminer quel modèle génère le plus de débats.
-        </p>
-        <p>
-            Ce résultat suggère que les discussions sur le Pay-to-Win suscitent plus d'engouement. <br>
-        </p>
-        <p>
-            Ainsi, le Pay-to-win est fréquemment perçu comme injuste ou déséquilibré, provoquant des débats et réactions fortes, tout en attirant en moyenne plus d'attention et d'interactions. Les échanges sur le Free-to-play génèrent moins de frustration et portent plus sur des conseils ou astuces, tout en attirant moins d'attention et d'interactions.
+            Ce graphique permet de quantifier la tension autour de l'équité du jeu et déterminer quel modèle génère le plus de débats. Ce résultat suggère que les discussions sur le Pay-to-Win suscitent plus d'engouement. <br>
         </p>
     </div>
 <hr>
             <div class="clearfix">
                 <h3 id="conclusion">7. Conclusion</h3>
                 <p>
-                    En conclusion, ce projet met en lumière l'influence réciproque entre les réseaux personnels et les trajectoires de vie, confirmant que la <strong>mobilité et la configuration des réseaux varient en fonction du genre, de l'âge et de la structure
-                    des liens</strong>. Les résultats, notamment la forte corrélation entre la taille du réseau et la mobilité, s'alignent sur les concepts de liens forts et faibles de Granovetter et la diversification géographique des réseaux. 
-                    Ce projet démontre l'influence de la mobilité sur les trajectoires sociales et la capacité des individus à gérer stratégiquement leurs liens au fil du temps.
-                </p>
+                    Cette étude a réussi à analyser l'influence des modèles de monétisation <strong>Free-to-Play (F2P)</strong> et <strong>Pay-to-Win (P2W)</strong> sur le discours des joueurs au sein de la communauté Reddit de Genshin Impact. L'analyse par <strong>Topic Modeling (NMF)</strong> a révélé une segmentation claire entre les discussions sur l'expérience de jeu (quêtes, personnages) et les mécanismes financiers (microtransactions, gacha). Le <strong>P2W</strong> est identifié comme le point central de la tension communautaire :
+            </p>
+            <ul>
+                <li>Bien que les discussions sur l'argent ne soient pas systématiquement négatives, le modèle P2W génère un sentiment moyen <strong>significativement plus critique</strong> que le F2P, car il est perçu comme une menace à l'équité du jeu.</li>
+                <li>Surtout, le P2W est le principal moteur d'engagement : les posts à ce sujet reçoivent un nombre d'upvotes nettement supérieur, confirmant qu'il s'agit du sujet le plus polarisant et stimulant des débats.</li>
+            </ul>
+            <p>
+                En synthèse, le projet démontre que la <strong>vitalité des échanges</strong> ne réside pas dans la positivité ou la négativité du ton, mais dans le <strong>controversé sujet de la monétisation</strong> qui remet en cause l'équité. Les résultats invitent à poursuivre l’analyse pour mieux comprendre comment ces pratiques façonnent l’engagement des joueurs sur le long terme.
+            </p>
             </div>
         <hr>
             <div class="clearfix">
                 <h3 id="competences">8. Compétences développées</h3>
                 <ol class="cleaning-steps">
-                    <li><strong>Compétences analytiques</strong> : Application de tests statistiques avancés (Test T, ANOVA).</li>
-                    <li><strong>Maîtrise de R</strong> : Complétion d'un script R et utilisation des packages "tidyverse", "igraph", "sf" et "mapsf".</li>
-                    <li><strong>Gestion de données longitudinales</strong> : Traitement, manipulation et harmonisation de données complexes du Panel de Caen collectées sur une longue période (1995-2015).</li>
-                    <li><strong>Analyse spatiale et des réseaux</strong> : Calcul d'indicateurs de réseaux (taille, densité, transitivité, mobilité) et typologie de profils.</li>
-                    <li><strong>Interprétation sociologique</strong> : Capacité à contextualiser les résultats statistiques dans un cadre théorique (Granovetter, trajectoires de vie, structuration sociale des réseaux).</li>
+                    <li><strong>Collecte de données massives :</strong> Maîtrise de l'API Reddit (librairie asyncpraw en Python) pour l'extraction de corpus textuels à grande échelle.</li>
+                    <li><strong>Traitement du Langage Naturel (NLP) :</strong> Mise en œuvre des techniques de lemmatisation, gestion des stop words et filtrage sémantique (spaCy) pour préparer des données textuelles à l'analyse.</li>
+                    <li><strong>Modélisation et analyse thématique :</strong> Application et interprétation de la factorisation en matrices non-négatives (NMF) et de la réduction de dimensionnalité (PCA) pour la structuration de corpus.</li>
+                    <li><strong>Analyse de sentiments :</strong> Utilisation et interprétation du modèle VADER pour quantifier la tonalité émotionnelle des échanges communautaires.</li>
+                    <li><strong>Analyse statistique :</strong> Application de tests statistiques (Test T de Student) pour valider la signification des différences de sentiments et d'engagement (upvotes) entre groupes.</li>
+                    <li><strong>Interprétation stratégique :</strong> Capacité à traduire des métriques techniques (scores de sentiment, upvotes) en conclusions claires et concises.</li>
                 </ol>
             </div>
         </div>
