@@ -779,14 +779,14 @@ body {
                     <img src="../mesdocuments/console_noblesse.png" alt="Graphique 1 - Script R">
                 </a>
                 <p>
-                    Cette étude, réalisée dans le cadre de mon master, a pour objectif principal d'explorer les réseaux de la noblesse européenne avant (en 1720), pendant (en 1788) et après la Révolution française (en 1820). Ma problématique étant : <strong>Comment la Révolution française a-t-elle influencé la structure du réseau de la noblesse européenne ?</strong> Le travail s'est concentré sur l'évolution des réseaux des familles jusqu’à l’avènement de Napoléon Bonaparte, en utilisant la sociologie des réseaux comme cadre d'analyse.
+                    Cette étude, réalisée dans le cadre de mon master, a pour objectif principal d'explorer les réseaux de la noblesse européenne avant (en 1788), pendant (en 1799) et après la Révolution française (en 1820). Le travail s'est concentré sur l'évolution des réseaux des familles jusqu’à l’avènement de Napoléon Bonaparte, en utilisant la sociologie des réseaux comme cadre d'analyse.
                 </p>
             </div>
         <hr>
             <div class="clearfix">
                 <h3 id="donnees">2. Présentation des données</h3>
                 <p>
-                    L'étude repose sur des données historiques de la noblesse européenne (période 1720-1820), récoltées sur Wikipédia et structurées en quatre fichiers CSV distincts pour être analysées dans l'environnement R. Ces fichiers ont été importés et immédiatement convertis en <strong>matrices d'adjacence</strong>.
+                    L'étude repose sur des données historiques de la noblesse européenne (période 1788-1820), récoltées sur Wikipédia et structurées en quatre fichiers CSV distincts pour être analysées dans l'environnement R. Ces fichiers ont été importés et immédiatement convertis en <strong>matrices d'adjacence</strong>.
                 </p>
                 <p>
                     Ces sources se répartissent comme suit :
@@ -796,7 +796,7 @@ body {
             <strong style="color: #0077b5;">Attributs des individus (nœuds) :</strong> <code>attributs_compnet.csv</code>, contenant les données biographiques (famille d'appartenance, dates de vie) des personnes étudiées.
         </li>
         <li style="border-bottom: 1px dashed #ddd;">
-            <strong style="color: #0077b5;">Liens matrimoniaux :</strong> <code>conjoints_compnet.csv</code>.
+            <strong style="color: #0077b5;">Liens matrimoniaux :</strong> <code>conjoints_compnet.csv</code>, contenant les relations matrimoniales. 
         </li>
         <li style="border-bottom: none;">
             <strong style="color: #0077b5;">Liens de parenté verticaux :</strong> <code>enfants_compnet.csv</code> et <code>parents_compnet.csv</code>, essentiels pour reconstituer les matrices de réseau (arêtes) sur différentes générations.
@@ -819,10 +819,10 @@ body {
 
     <h4 style="margin-top: 15px;">B. Construction des matrices de réseau</h4>
     <p>
-        Une fois les données harmonisées, deux matrices d'adjacence relationnelles ont été construites, servant de base aux analyses des vagues temporelles (1720, 1788, 1820) :
+        Une fois les données harmonisées, deux matrices d'adjacence relationnelles ont été construites, servant de base aux analyses des vagues (1788, 1799, 1820) :
     </p>
         <ul class="cleaning-steps">
-        <li><strong>Réseau des liens directs</strong> : Fusion des matrices de conjoints, enfants et parents, modélisant les relations immédiates d'alliance et de descendance..</li>
+        <li><strong>Réseau des liens directs</strong> : Fusion des matrices de conjoints, enfants et parents, modélisant les relations immédiates d'alliance et de descendance.</li>
         <li><strong>Réseau de frères et sœurs (fratrie)</strong> : Création d'une matrice spécifique où deux individus sont liés s'ils partagent au moins un parent en commun. Ce réseau permet d'analyser la cohésion et le renforcement des liens familiaux horizontaux.</li>
     </ul>
 </div>
@@ -842,7 +842,7 @@ body {
                     <img src="../mesdocuments/image_noblesse_shrink_1788.png" alt="Graphique 2 - Shrink 1788 : Représentation des mariages inter-familles avant la Révolution.">
                 </a>
                 <p>
-                    Le <strong>Shrink de 1788</strong> illustre un réseau encore largement interconnecté. Seules les familles <strong>Linange</strong> et <strong>Lucchesi Palli</strong> n'affichent pas de liens matrimoniaux en dehors de leur propre lignée. On observe déjà l'importance centrale des alliances entre les <strong>Bourbon</strong> et les <strong>Habsbourg Lorraine</strong>, indiquant leur forte position (haute centralité d’intermédiarité) au sein de la noblesse européenne. <br>
+                    Le <strong>Shrink de 1788</strong> illustre un réseau encore largement interconnecté. Seules les familles <strong>Linange</strong> et <strong>Lucchesi Palli</strong> n'affichent pas de liens matrimoniaux en dehors de leur propre lignée. On observe une forte alliances entre les <strong>Bourbon</strong> et les <strong>Habsbourg Lorraine</strong>, indiquant leur forte position (haute centralité d’intermédiarité) au sein de la noblesse européenne. <br>
                 </p>
             </div>
     <hr>
@@ -851,7 +851,7 @@ body {
                     <img src="../mesdocuments/image_noblesse_shrink_1799.png" alt="Graphique 3 - Shrink 1799 : Représentation des mariages inter-familles pendant la Révolution.">
                 </a>
                 <p>
-                    En <strong>1799</strong> , le réseau se resserre. Le phénomène de repli s’accentue : la famille <strong>Este</strong> et les <strong>Habsbourg Toscane</strong> rejoignent les familles sans mariage extérieur. Ce changement pour <strong>Este</strong> est notamment lié à l'absence de la famille Cybo Malaspina dans le réseau à cette date. Par ailleurs, on note une <strong>intensification des mariages</strong> entre les <strong>Habsbourg Lorraine</strong> et les <strong>Habsbourg Este</strong>, signalant une concentration stratégique des alliances en période de crise. <br>
+                    En <strong>1799</strong> , le réseau se resserre : la famille <strong>Este</strong> et les <strong>Habsbourg Toscane</strong> rejoignent les familles sans mariage extérieur. Ce changement pour <strong>Este</strong> est notamment lié à l'absence de la famille Cybo Malaspina dans le réseau à cette date. Par ailleurs, on note une <strong>intensification des mariages</strong> entre les <strong>Habsbourg Lorraine</strong> et les <strong>Habsbourg Este</strong>, signalant une concentration stratégique des alliances en période de crise. <br>
                 </p>
             </div>
     <hr>
