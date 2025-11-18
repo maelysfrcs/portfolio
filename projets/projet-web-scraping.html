@@ -764,10 +764,10 @@ body {
                 <li><a href="#donnees">2. Présentation des données</a></li>
                 <li><a href="#strategie">3. Stratégie de collecte</a></li>
                 <li><a href="#nettoyage">4. Nettoyage et préparation des données</a></li>
-                <li><a href="#topicmodeling">5. Résultats : Modéliisation par thématique (Topic Modeling NMF)</a></li>
-                <li><a href="#sentiments">6. Résultats : Analyse de sentiments</a></li>
-                <li><a href="#conclusion">7. Conclusion</a></li>
-                <li><a href="#competences">8. Compétences développées</a></li>
+                <li><a href="#topicmodeling">5.1 Résultats : Modéliisation par thématique (Topic Modeling NMF)</a></li>
+                <li><a href="#sentiments">5.2 Résultats : Analyse de sentiments</a></li>
+                <li><a href="#conclusion">6. Conclusion</a></li>
+                <li><a href="#competences">7. Compétences développées</a></li>
             </ul>
         </div>
         </div>
@@ -800,8 +800,8 @@ body {
         <hr>
             <div class="clearfix">
                 <h3 id="strategie">3. Stratégie de collecte</h3>
-                <a href="../mesdocuments/image_scraping_console.PNG" class="float-img-right lightbox-trigger" data-alt="Graphique 1 - Console">
-                    <img src="../mesdocuments/image_scraping_console.PNG" alt="Graphique 1 : Console">
+                <a href="../mesdocuments/image_scraping_console.PNG" class="float-img-right lightbox-trigger" data-alt="Graphique 1 - Script Python">
+                    <img src="../mesdocuments/image_scraping_console.PNG" alt="Graphique 1 : Script Python">
                 </a>
                 <p>
                     La collecte des données a été réalisée sur Google Colaboratory en utilisant l'API officielle de Reddit.
@@ -818,8 +818,8 @@ body {
         <hr>
               <div class="clearfix">
                 <h3 id="nettoyage">4. Nettoyage et préparation des données.</h3>
-                <a href="../mesdocuments/image_scraping_nettoyage.PNG" class="float-img-left lightbox-trigger" data-alt="Graphique 2 - Nettoyage">
-                    <img src="../mesdocuments/image_scraping_nettoyage.PNG" alt="Graphique 2 : Nettoyage">
+                <a href="../mesdocuments/image_scraping_nettoyage.PNG" class="float-img-left lightbox-trigger" data-alt="Graphique 2 - Script Python : Nettoyage">
+                    <img src="../mesdocuments/image_scraping_nettoyage.PNG" alt="Graphique 2 - Script Python : Nettoyage">
                 </a>
                 <p>
                   Un processus de <strong>Natural Language Processing (NLP)</strong> a été appliqué aux données textuelles brutes pour les prochaines analyses.
@@ -834,7 +834,7 @@ body {
             </div>
         <hr>
             <div class="clearfix">
-                <h3 id="topicmodeling">5. Résultats : Modélisation par thématique (Topic Modeling NMF)</h3>
+                <h3 id="topicmodeling">5.1 Résultats : Modélisation par thématique (Topic Modeling NMF)</h3>
         <p>
             L’analyse thématique a été réalisée à l’aide de la <strong>Factorisation en Matrices Non-Négatives (NMF)</strong>, une méthode permettant d’identifier des thèmes récurrents dans les discussions Reddit. Le corpus a été transformé en une matrice <strong>TF-IDF</strong> avant d’être décomposé en <strong>10 topics principaux</strong>. Chaque topic est caractérisé par un ensemble de mots-clés représentatifs.
         </p>
@@ -866,7 +866,7 @@ body {
      
 <hr>
     <div class="clearfix">
-        <h3 id="sentiments">6. Résultats : Analyse de sentiments</h3>
+        <h3 id="sentiments">5.2 Résultats : Analyse de sentiments</h3>
         <p>
             L’analyse de sentiment, réalisée via le modèle <strong>VADER</strong> (adapté aux échanges informels), a permis de quantifier la tonalité émotionnelle des <strong>259 488 posts</strong> discutant des mécanismes de monétisation. Cette approche vise à identifier les <strong>tensions critiques</strong> et les <strong>leviers d'engagement</strong> au sein de la communauté.
         </p>
@@ -888,8 +888,8 @@ body {
         <p>
             L'analyse distingue l'impact émotionnel des deux principaux modèles de progression sur les perceptions des joueurs.
         </p>
-        <a href="../mesdocuments/image_scraping_comparaisonsentiments.png" class="float-img-left lightbox-trigger" data-alt="Graphique 8 - Comparaison des sentiments entre Free-To-Play et Pay-To-Win">
-            <img src="../mesdocuments/image_scraping_comparaisonsentiments.png" alt="Graphique 8 - Comparaison des sentiments entre Free-To-Play et Pay-To-Win">
+        <a href="../mesdocuments/image_scraping_comparaisonsentiments.png" class="float-img-left lightbox-trigger" data-alt="Graphique 5 - Comparaison des sentiments entre Free-To-Play et Pay-To-Win">
+            <img src="../mesdocuments/image_scraping_comparaisonsentiments.png" alt="Graphique 5 - Comparaison des sentiments entre Free-To-Play et Pay-To-Win">
         </a>
         <p>
         Le graphique compare les sentiments exprimés dans les posts évoquant les pratiques F2P et P2W. Les sentiments ont été classés en cinq catégories (Mixed Negative, Negative, Neutral, Mixed Positive, Positive).
@@ -902,8 +902,8 @@ body {
     </p>
         
         <p style="clear: both;">
-            <a href="../mesdocuments/image_scraping_distributionupvotes.png" class="float-img-right lightbox-trigger" data-alt="Graphique 9 - Distribution des upvotes pour Free-To-Play et Pay-To-Win">
-                <img src="../mesdocuments/image_scraping_distributionupvotes.png" alt="Graphique 9 - Distribution des upvotes pour Free-To-Play et Pay-To-Win">
+            <a href="../mesdocuments/image_scraping_distributionupvotes.png" class="float-img-right lightbox-trigger" data-alt="Graphique 6 - Distribution des upvotes pour Free-To-Play et Pay-To-Win">
+                <img src="../mesdocuments/image_scraping_distributionupvotes.png" alt="Graphique 6 - Distribution des upvotes pour Free-To-Play et Pay-To-Win">
             </a>
             Les posts liés au <strong>P2W</strong> génèrent un engagement nettement supérieur, avec une moyenne d’upvotes de <strong>257.57</strong> contre <strong>90.02</strong> pour le F2P (différence statistiquement significative). Le P2W est le sujet le <strong>plus polarisant et le plus discuté</strong>.
         </p>
@@ -913,7 +913,7 @@ body {
     </div>
 <hr>
             <div class="clearfix">
-                <h3 id="conclusion">7. Conclusion</h3>
+                <h3 id="conclusion">6. Conclusion</h3>
                 <p>
                     Cette étude a analyser l'influence des modèles de monétisation <strong>Free-to-Play (F2P)</strong> et <strong>Pay-to-Win (P2W)</strong> sur le discours des joueurs au sein de la communauté Reddit de Genshin Impact. L'analyse par <strong>Topic Modeling (NMF)</strong> a révélé une segmentation claire entre les discussions sur l'expérience de jeu (quêtes, personnages) et les mécanismes financiers (microtransactions, gacha). <br> Le P2W est identifié comme le point central de la tension communautaire :
             </p>
@@ -927,7 +927,7 @@ body {
             </div>
         <hr>
             <div class="clearfix">
-                <h3 id="competences">8. Compétences développées</h3>
+                <h3 id="competences">7. Compétences développées</h3>
                 <ol class="cleaning-steps">
                     <li><strong>Collecte de données massives :</strong> Maîtrise de l'API Reddit (librairie asyncpraw en Python) pour l'extraction de corpus textuels à grande échelle.</li>
                     <li><strong>Traitement du Langage Naturel (NLP) :</strong> Mise en œuvre des techniques de lemmatisation, gestion des stop words et filtrage sémantique (spaCy) pour préparer des données textuelles à l'analyse.</li>
