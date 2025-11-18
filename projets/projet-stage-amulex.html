@@ -254,39 +254,38 @@ body {
     flex-wrap: wrap; /* Assure un bon comportement sur mobile */
 }
 
-/* Style de chaque bouton/tag de plateforme */
+/* Style de chaque tag de plateforme mis à jour */
 .platform-tag {
-    /* Style de base du tag */
-    padding: 8px 15px; /* Légèrement réduit pour l'image */
-    border: 2px solid #0077b5;
-    border-radius: 20px; /* Coins plus arrondis pour un look moderne */
-    background-color: #f0f8ff;
-    font-weight: 600;
-    color: #0077b5;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    cursor: default;
+    /* Rendu moins "bouton" */
+    padding: 6px 10px; /* Réduction du padding */
+    border: 1px solid #ccc; /* Bordure plus fine et neutre */
+    border-radius: 4px; /* Coins légèrement arrondis, aspect "étiquette" */
+    background-color: #f9f9f9; /* Fond très léger, aspect neutre */
+    font-weight: 500; /* Moins gras que le 600 initial */
+    color: #333; /* Couleur de texte neutre */
+    box-shadow: none; /* Suppression complète de l'ombre */
+    cursor: default; /* Maintient le curseur par défaut */
 
-    /* Configuration Flex pour aligner logo et texte */
+    /* Configuration Flex pour aligner logo et texte (inchangé) */
     display: inline-flex;
     align-items: center;
-    gap: 8px; /* Espace entre le logo et le texte */
-    transition: all 0.3s;
+    gap: 8px; 
+    transition: none; /* Désactivation des transitions */
 }
 
+/* Suppression des effets de survol */
 .platform-tag:hover {
-    background-color: #e0f0ff; /* Léger changement de couleur au survol */
-    box-shadow: 0 4px 8px rgba(0, 119, 181, 0.15);
+    background-color: #f9f9f9; /* Reste identique à la couleur de base */
+    box-shadow: none; /* Suppression de l'ombre au survol */
 }
 
-/* Style des images/logos */
+/* Style des images/logos (inchangé) */
 .platform-logo {
-    /* Règle principale pour le format carré */
     width: 24px;
     height: 24px; 
-    object-fit: contain; /* S'assure que le logo s'affiche entièrement sans déformation */
-    border-radius: 4px; /* Un léger arrondi sur le logo */
+    object-fit: contain; 
+    border-radius: 4px; 
 }
-
 /* -------------------------------------------------------------------------- */
 /* STYLE DÉDIÉ AUX PAGES PROJET (Simple Article) - COPIER/COLLER ICI */
 
