@@ -803,6 +803,29 @@ body {
         border: 1px solid #ddd;
         border-radius: 5px;
     }
+
+    /* Rendre le conteneur du tableau scrollable horizontalement */
+    .strategy-list li.solution {
+        overflow-x: auto; 
+        /* Ajoute de l'espace pour que la barre de défilement ne coupe pas le contenu */
+        padding-bottom: 10px; 
+    }
+
+    /* Le tableau lui-même doit avoir une largeur suffisante pour être lisible */
+    .correlation-table {
+        /* Annule le table-layout: fixed qui écrase les colonnes */
+        table-layout: auto; 
+        /* Force une largeur minimale pour un affichage lisible de 10 colonnes */
+        min-width: 800px; 
+        /* Permet à la table de dépasser son conteneur */
+        width: auto;
+    }
+    
+    /* Ajuster la taille de police pour gagner encore un peu de place dans les cellules */
+    .correlation-table th, .correlation-table td {
+        font-size: 0.8em;
+        padding: 4px 1px; 
+    }
 }
 </style>
 </head>
