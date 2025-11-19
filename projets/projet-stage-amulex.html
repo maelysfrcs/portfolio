@@ -920,8 +920,8 @@ body {
                 <p>La préparation et le nettoyage des données ont été réalisés à l'aide de logiciels d'analyse statistique comme R et Jamovi, ainsi que des outils de gestion comme Excel. J'ai mobilisé plusieurs outils et méthodes clés pour structurer les données 
                     issues du questionnaire et du processus de collecte :</p>
                 <ol class="cleaning-steps">
-                    <li><strong>Documentation et suivi de la collecte</strong> : J'ai utilisé un document Word partagé avec mes tuteurs et tutrices qui m'a servi à documenter de manière exhaustive les tentatives de contacte, garantissant la fiabilité des informations et une maîtrise du suivi de la campagne d'enquête.</li>
-                    <li><strong>Transformation des varibales pour les analyses</strong> : Certaines données issues du questionnaire ont été transformées en variables ordinales (par exemple, "plusieurs fois par jour" est devenu "1"). Cette transformation était nécessaire pour l'analyse réalisée sur Jamovi.</li>
+                    <li><strong>Documentation et suivi de la collecte</strong> : J'ai utilisé un document Word partagé avec mes tuteurs et tutrices qui m'a servi à documenter de manière exhaustive les tentatives de contact, garantissant la fiabilité des informations et une maîtrise du suivi de la campagne d'enquête.</li>
+                    <li><strong>Transformation des varibales pour les analyses</strong> : Certaines données issues du questionnaire ont été transformées en variables ordinales (par exemple, "plusieurs fois par jour" est devenu "1", "une fois par jour" est devenu "2"...). Cette transformation était nécessaire pour l'analyse réalisée sur Jamovi.</li>
                 </ol>
             </div>
             <hr>
@@ -969,13 +969,13 @@ body {
                             <h4 style="margin-top: 0; color: #0056b3;">Profil sociodémographique de l'échantillon global</h4>
                             <ul style="list-style-type: disc; margin-left: 20px;">
                                 <li><strong>Genre</strong> : Très largement <strong>masculin</strong>, les hommes représentant environ <strong>72%</strong> de l'échantillon.</li>
-                                <li><strong>Âge</strong> : Un échantillon relativement <strong>jeune</strong>, avec une moyenne d'âge nettement <strong>inférieure à 35 ans</strong>(moyenne d'année de naissance autour de 1989).</li>
+                                <li><strong>Âge</strong> : Un échantillon relativement <strong>jeune</strong>, avec une moyenne d'âge <strong>inférieure à 35 ans</strong> (moyenne d'année de naissance autour de 1989).</li>
                                 <li><strong>Diplôme</strong> : Un niveau d'éducation <strong>élevé</strong>, avec une forte concentration de personnes <strong>très diplômées</strong> (Bac+4 et Bac+5).</li>
-                                <li><strong>Orientation politique</strong> : Tendance politique fortement polarisée <strong>à gauche.</strong> Environ 70% des répondants se positionnent à gauche et à l'extrême-gauche de l'échiquier politique.</li>
+                                <li><strong>Orientation politique</strong> : Tendance politique fortement polarisée <strong>à gauche.</strong> Environ 70% des répondants se positionnent à gauche et à l'extrême-gauche sur l'échelle politique.</li>
                             </ul>
                         </div>
                         <p>
-                            Ce profil met en lumière une population de commentateurs en ligne spécifique et peu représentative de la population française générale. 
+                            Ce profil met en lumière une population de commentateurs en ligne spécifique et différente de la population française générale. 
                         </p>
                     </li>
                 </ul>
@@ -986,14 +986,14 @@ body {
     <h3 id="acm">5.2. Analyse des Correspondances Multiples (ACM)</h3>
                 <ul class="strategy-list">
                     <li class="objective">
-                        <strong>Objectif : Visualiser la relation entre plusieurs variables et les individus qui y sont associés</strong>
+                        <strong>Objectif : Visualiser la relation entre plusieurs variables et les individus qui y sont associés.</strong>
                         <p>Elle permet de représenter sur un graphique les liens entre les différentes modalités de réponse, ainsi que la proximité entre les individus qui partagent des profils de réponse similaires. L'ACM a été employée pour définir les <strong>profils 
                             des enquêtés</strong>. En projetant sur un graphique les liens entre la fréquence d'utilisation de chaque plateforme et les types de comptes suivis, cette analyse permet d'identifier des groupes d'individus (chaque point sur le graphique représente 
                             un enquêté) ayant des pratiques numériques similaires. Cette méthode permet de révéler la <strong>diversité des profils d'utilisateurs</strong> et de s'assurer que l'échantillon recueilli représente un large éventail de comportements en ligne.
                         </p>                        
                     </li>
                     <li class="follow-up">
-                        <strong>Méthodologie : ACM sur R</strong>
+                        <strong>Méthodologie : ACM sur R.</strong>
                         <p>Le travail a été effectué à l'aide du package <strong>FactoMineR sous R</strong>. Les données ont été préparées en sélectionnant les variables pertinentes pour l'analyse, ici la fréquence d'utilisation et les types 
                             de comptes suivis sur la plateforme. Après avoir exécuté le script, l'ACM génère deux graphiques principaux : le <strong>graphique des individus</strong> (qui montre le positionnement de chaque enquêté) et le <strong>graphique des 
                                 variables</strong> (qui visualise les liens entre les différentes catégories de réponses).</p>
