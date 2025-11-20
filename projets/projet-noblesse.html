@@ -661,6 +661,39 @@ body {
     .article-content .table-responsive-full table {
         min-width: 500px;
     }
+
+/* 1. Rendre les conteneurs de tableaux (les divs) pleine largeur et scrollables */
+    /* Ciblage : div avec style="width: 50%;..." et div avec style="margin: 20px 0;" */
+    div[style*="width: 50%"],
+    div[style*="margin: 20px 0"] {
+        /* Force les conteneurs à prendre toute la largeur disponible sur mobile */
+        width: 100% !important; 
+        margin: 10px 0 !important;
+        padding: 0 5px; /* Ajout d'un petit padding pour la zone de défilement */
+        
+        /* CLÉ: Permet le défilement horizontal pour les tables qui dépassent */
+        overflow-x: auto; 
+        -webkit-overflow-scrolling: touch; /* Améliore le défilement sur iOS */
+    }
+
+    /* 2. Forcer les tables à avoir une largeur minimale pour déclencher le défilement */
+    div[style*="width: 50%"] table,
+    div[style*="margin: 20px 0"] table {
+        /* Assure une largeur minimale pour que les données ne soient pas trop écrasées */
+        min-width: 650px; 
+        width: auto !important; /* Annule le 'width: 100%' pour permettre au min-width de s'appliquer */
+        font-size: 0.9em;
+        /* Les tables utiliseront donc leur min-width, et le div parent gérera le scroll */
+    }
+    
+    /* 3. Ajustement de la taille de police et du padding pour maximiser l'espace à l'intérieur des cellules */
+    div[style*="width: 50%"] table th,
+    div[style*="width: 50%"] table td,
+    div[style*="margin: 20px 0"] table th,
+    div[style*="margin: 20px 0"] table td {
+        padding: 6px 4px !important; /* Réduit le padding des cellules */
+    }
+
     
     /* -------------------------------------------------------------------------- */
     /* 5. Footer (EXISTANT ET CONSERVÉ) */
