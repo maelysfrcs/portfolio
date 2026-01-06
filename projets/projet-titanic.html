@@ -874,68 +874,67 @@ body {
                 <a href="../mesdocuments/Console_SQL_données.png" class="float-img-left lightbox-trigger" data-alt="Graphique 1 - Script SQL">
                     <img src="../mesdocuments/Console_SQL_données.png" alt="Graphique 1 - Script SQL">
                 </a>
-                <p>Ce projet a été réalisée dans le cadre d'un <strong>Datathon</strong> que j'ai organisé durant la semaine du 08/12/2025<br>. L’objectif principal était de monter en compétence sur des outils de <strong>Business Intelligence</strong> et d'analyse de données, notamment <strong>SQL</strong> pour la gestion et l'exploration, ainsi que <strong>Tableau</strong> pour la conception de visualisations professionnelles.
+                <p>Ce projet a été réalisée dans le cadre d'un <strong>Datathon</strong> que j'ai organisé durant la semaine du 08/12/2025.<br> L’objectif principal était de monter en compétence sur des outils de <strong>Business Intelligence</strong> et d'analyse de données, notamment <strong>SQL</strong> pour la gestion et l'exploration, ainsi que <strong>Tableau</strong> pour la conception de visualisations professionnelles.
                   L'étude se concentre sur les facteurs ayant influencé la survie des passagers du Titanic afin d'identifier précisément <strong>les profils les plus à risque</strong>.
                 </p>
             </div>
-            <hr>
 
-<h4 style="text-align: center; margin-top: 15px; margin-bottom: 10px;">Objectifs d'apprentissage</h4>
-                <div style="display: flex; justify-content: center; width: 100%;">
-                    <table style="width: 80%; max-width: 600px; border-collapse: collapse; margin-bottom: 20px; border: 1px solid #ccc;">
-                        <thead>
-                            <tr style="background-color: #eee;">
-                                <th style="border: 1px solid #ccc; padding: 10px; text-align: left; width: 30%;">Outil</th>
-                                <th style="border: 1px solid #ccc; padding: 10px; text-align: left;">Compétences visées</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td style="border: 1px solid #ccc; padding: 10px; font-weight: bold;">SQL</td>
-                                <td style="border: 1px solid #ccc; padding: 10px;">Gestion, exploration et analyse de données (agrégations complexes)[cite: 6, 76].</td>
-                            </tr>
-                            <tr>
-                                <td style="border: 1px solid #ccc; padding: 10px; font-weight: bold;">Tableau</td>
-                                <td style="border: 1px solid #ccc; padding: 10px;">Conception de visualisations professionnelles et Business Intelligence[cite: 7, 77].</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <hr>
+<p><strong>Objectifs d'apprentissage :</strong></p>
+    <ul style="list-style-type: none; padding-left: 20px;">
+        <li style="margin-bottom: 8px;">🔹 <strong>SQL</strong> : Gestion, exploration et analyse approfondie des données.</li>
+        <li>🔹 <strong>Tableau</strong> : Conception de visualisations dynamiques et professionnelles.</li>
+    </ul>
+</div>
+<hr>
 
-            <div class="clearfix">
-                <h3 id="donnees">2. Présentation des données</h3>
-                <p>L'étude repose sur la base de données <em>passengers</em>, couvrant un échantillon de <strong>714 passagers</strong>[cite: 12, 13].</p>
-                
-                <div class="platform-tags">
-                    <span class="platform-tag">Classe (Pclass) [cite: 18]</span>
-                    <span class="platform-tag">Sexe (Sex) [cite: 22]</span>
-                    <span class="platform-tag">Âge [cite: 24]</span>
-                    <span class="platform-tag">Tarif (Fare) [cite: 32]</span>
-                    <span class="platform-tag">Famille (SibSp/Parch) [cite: 26, 28]</span>
-                </div>
-                <p style="margin-top: 20px;">
-                    Chaque variable a été exploitée pour comprendre la corrélation entre le statut social, les consignes d'évacuation et les chances de survie[cite: 42].
-                </p>
-            </div>
-            <hr>    
+<div class="clearfix">
+    <h3 id="donnees">2. Présentation des données</h3>
+    <p>
+        L'étude repose sur la base de données <strong>passengers</strong> (tiré du jeu de données Titanic), regroupant des informations sur <strong>714 passagers</strong>. Ces données ont été extraites et explorées à l'aide de <strong>SQL</strong> afin de structurer les variables clés nécessaires à l'analyse de survie et à la création de visualisations sous Tableau.
+    </p>
+    <p>
+        Le jeu de données se décompose en plusieurs catégories de variables essentielles :
+    </p>
+    <ul class="cleaning-steps" style="list-style-type: none; padding-left: 0; margin-left: 0;">
+        <li style="border-bottom: 1px dashed #ddd; padding: 10px 0;">
+            <strong>Identité et profil (individus) :</strong> <code>Name</code>, <code>Sex</code> et <code>Age</code>. 
+        </li>
+        <li style="border-bottom: 1px dashed #ddd; padding: 10px 0;">
+            <strong>Statut socio-économique :</strong> <code>Pclass</code> (classe de 1 à 3) et <code>Fare</code> (prix du billet). Ces données permetttent de mesurer l'influence de la richesse sur les chances de survie.
+        </li>
+        <li style="border-bottom: 1px dashed #ddd; padding: 10px 0;">
+            <strong>Structure familiale :</strong> <code>SibSp</code> (frères, sœurs, époux) et <code>Parch</code> (parents, enfants). Ces variables ont été fusionnées en SQL pour créer l'indicateur "Statut de voyage" (Seul.e vs En famille).
+        </li>
+        <li style="border-bottom: none; padding: 10px 0;">
+            <strong>Port d'embarquement :</strong> <code>Embarked</code> (port d'embarquement).
+        </li>
+        <li style="border-bottom: none; padding: 10px 0;">
+            <strong>Survie :</strong> <code>Survived</code> (indicateur binaire de survie) constitue la variable cible de toute l'analyse statistique.
+        </li>
+    </ul>
 
+        <p style="margin-top: 20px;">
+            Chaque variable a été exploitée pour comprendre la corrélation entre le statut social et les chances de survie.
+        </p>
+</div>
+        <hr>    
+        
             <!-- 3. Nettoyage -->
-            <div class="clearfix">
-                <h3 id=nettoyage">3. Nettoyage et préparation des données</h3>
-                <a href="../mesdocuments/image_amulex_tableausuivi.PNG" class="float-img-right lightbox-trigger" data-alt="Graphique 1 - Tableau de suivi du stage">
-                    <img src="../mesdocuments/image_amulex_tableausuivi.PNG" alt="Graphique 1 - Tableau de suivi du stage">    
-                </a>
-                <p>La préparation et le nettoyage des données ont été réalisés à l'aide de logiciels d'analyse statistique comme R et Jamovi, ainsi que des outils de gestion comme Excel. J'ai mobilisé plusieurs outils et méthodes clés pour structurer les données 
-                    issues du questionnaire et du processus de collecte :</p>
+        <div class="clearfix">
+                <h3 id="nettoyage">3. Nettoyage et préparation des données</h3>
+                <p>Le nettoyage et la structuration des données ont été intégralement réalisés en <strong>SQL</strong>. Cette étape de <em>Data Preparation</em> a été cruciale pour transformer la base brute en un jeu de données exploitable pour l'analyse statistique et la visualisation :</p>
+                
                 <ol class="cleaning-steps">
-                    <li><strong>Documentation et suivi de la collecte</strong> : J'ai utilisé un document Word partagé avec mes tuteurs et tutrices qui m'a servi à documenter de manière exhaustive les tentatives de contact, garantissant la fiabilité des informations et une maîtrise du suivi de la campagne d'enquête.</li>
-                    <li><strong>Transformation des varibales pour les analyses</strong> : Certaines données issues du questionnaire ont été transformées en variables ordinales (par exemple, "plusieurs fois par jour" est devenu "1", "une fois par jour" est devenu "2"...). Cette transformation était nécessaire pour l'analyse réalisée sur Jamovi.</li>
+                    <li><strong>Ingénierie de variables (Feature Engineering)</strong> : Pour affiner l'analyse, j'ai créé de nouvelles dimensions via des instructions <code>CASE WHEN</code> :
+                        <ul style="margin-top: 10px; list-style-type: circle; padding-left: 20px;">
+                            <li><strong>Statut de voyage</strong> : Regroupement des passagers en catégories 'Seul.e' ou 'En famille' en calculant la somme des proches à bord <code>WHEN (SibSp + Parch) = 0 THEN 'Seul' ELSE 'En famille'</code>.</li>
+                            <li><strong>Segmentation démographique</strong> : Création de tranches d'âge (ex: 'Moins de 18 ans', '18-35 ans', etc.).</li>
+                            <li><strong>Segmentation tarifaire</strong> : Définition de catégories de billets (Bas, Milieu et Haut de gamme) basée sur le calcul des <strong>quartiles</strong> (Q1=8.05, Q3=33.0) pour isoler l'impact du niveau de richesse.</li>
+                        </ul>
+                    </li>
                 </ol>
             </div>
             <hr>
-
             <!-- 4. Résultats -->
             <div class="clearfix">
                 <h3 id="strategies">4. Stratégies de collecte</h3>
