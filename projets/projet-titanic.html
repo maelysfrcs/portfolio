@@ -991,10 +991,6 @@ body {
                     À l'inverse, le <strong>« privilège du prix »</strong> est flagrant : à âge égal, un passager du segment « Haut de gamme » (ligne bleue) conservait un taux de mortalité nettement inférieur, illustrant un accès facilité aux dispositifs de sauvetage.
                 </p>
 
-                <p style="clear: both; margin-top: 20px;">
-                    <a href="../mesdocuments/Console_SQL_port_embarquement.png" class="float-img-right lightbox-trigger" data-alt="Requête SQL - Répartition par port">
-                        <img src="../mesdocuments/Console_SQL_port_embarquement.png" alt="Requête SQL : Port d'embarquement">
-                    </a>
 <div class="table-container" style="margin: 20px 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
     <table style="width: 100%; border-collapse: collapse; background-color: #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-radius: 8px; overflow: hidden;">
         <thead>
@@ -1043,35 +1039,27 @@ body {
             </div>
             <hr>
 
-            <div class="clearfix">
-                <h3 id="statut_voyage">5.3 Influence du statut de voyage</h3>
-                <a href="../mesdocuments/image_titanic_SurvieStatut.png" class="float-img-left lightbox-trigger" data-alt="Graphique 3 - Survie selon le statut de voyage">
-                    <img src="../mesdocuments/image_titanic_SurvieStatut.png" alt="Graphique 3 : Survie selon le statut de voyage">
-                </a>
-                <p>
-                    Le destin des passagers a également été marqué par leur environnement social immédiat.
-                </p>
-                <p>
-                    <strong>Solidarité familiale :</strong> Les passagers voyageant <strong>« En famille »</strong> ont un taux de survie de <strong>51 %</strong>, contre seulement <strong>32 %</strong> pour les passagers voyageant seuls. Cette différence de 19 points souligne l’importance du groupe familial dans la réactivité et l’entraide lors de l’évacuation d'urgence.
-                </p>
-            </div>
-
 <div class="clearfix">
-    <h4>4.2 L'environnement social : entre entraide et fardeau logistique</h4>
+    <h3 id="statut_voyage">4.3 L'influence du statut de voyage</h3>
+    <a href="../mesdocuments/image_titanic_SurvieStatut.png" class="float-img-left lightbox-trigger" data-alt="Graphique 5 - Survie selon le statut de voyage">
+        <img src="../mesdocuments/image_titanic_SurvieStatut.png" alt="Graphique 5 : Survie selon le statut de voyage">
+    </a>
     <p>
-        Le destin des passagers a également été marqué par leur environnement social immédiat. La <strong>solidarité familiale</strong> a joué un rôle de catalyseur : les passagers voyageant « En famille » affichent un taux de survie de <strong>51 %</strong>, contre seulement <strong>32 %</strong> pour les isolés.
+        Le destin des passagers a également été marqué par leur environnement social. La <strong>solidarité familiale</strong> a joué un rôle de catalyseur : les passagers voyageant « En famille » affichent un taux de survie de <strong>51%</strong>, contre seulement <strong>32%</strong> pour les isolés.
     </p>
-
-    <div style="margin: 20px 0; border-left: 5px solid #28a745; padding: 15px; background-color: #fafffa;">
+    <a href="../mesdocuments/Console_SQL_SibSp.png" class="float-img-left lightbox-trigger" data-alt="Graphique 6 - Survie selon le statut de voyage - descriptif">
+        <img src="../mesdocuments/Console_SQL_SibSp.png" alt="Graphique 6 : Survie selon le statut de voyage - descriptif">
+    </a>    
+    <div style="margin: 10px 0; border-left: 5px solid #28a745; padding: 15px; background-color: #fafffa;">
         <p>
             L'analyse détaillée des structures familiales (variables <code>SibSp</code> et <code>Parch</code>) révèle une dynamique en "cloche" :
         </p>
         <ul style="list-style-type: none; padding-left: 0;">
             <li style="margin-bottom: 10px;">
-                💎 <strong>La taille idéale :</strong> Le taux de survie culmine pour les passagers accompagnés d'<strong>une seule personne</strong> (53,01 % pour SibSp = 1) ou de <strong>1 à 3 membres</strong> de leur parenté/enfants (jusqu'à 60 % de survie). La présence d'un noyau restreint semble avoir facilité la réactivité et l'accès prioritaire aux canots.
+                <strong>La taille idéale :</strong> Le taux de survie culmine pour les passagers accompagnés d'<strong>une seule personne</strong> (53,01 % pour SibSp = 1) ou de <strong>1 à 3 membres</strong> de leur parenté/enfants (jusqu'à 60 % de survie). La présence d'un noyau restreint semble avoir facilité la réactivité et l'accès prioritaire aux canots.
             </li>
             <li>
-                ⚠️ <strong>Le fardeau des familles nombreuses :</strong> Au-delà de 4 accompagnateurs, les chances de survie s'effondrent brutalement, tombant à <strong>10 % voire 0 %</strong> pour les familles les plus larges. La difficulté de regrouper tous les membres dans la panique a transformé le groupe en un obstacle logistique mortel.
+                <strong>Le fardeau des familles nombreuses :</strong> Au-delà de 4 accompagnateurs, les chances de survie s'effondrent brutalement, tombant à <strong>10 % voire 0 %</strong> pour les familles les plus larges. La difficulté de regrouper tous les membres dans la panique a transformé le groupe en un obstacle mortel.
             </li>
         </ul>
     </div>
