@@ -1072,31 +1072,42 @@ body {
 
 <div class="clearfix">
     <h3 id="conclusion">6. Conclusion</h3>
-    <ul class="strategy-list">
-        <li class="objective">
-            <strong>Apports scientifiques et interprétation</strong>
-            <p>Les analyses menées dans le cadre du projet AMULEX corroborent et enrichissent les travaux sociologiques majeurs sur la diversification des usages numériques (Pacouret et al., 2024 ; Neihouser et al., 2022).</p>
-            <p>L'<strong>Analyse en Classes Latentes (ACL)</strong> a permis d'établir une typologie claire des utilisateurs, révélant notamment l'existence d'un <strong>petit groupe multiplateforme très actif, jeune, diplômé et politiquement engagé à gauche</strong>. L'<strong>ACM</strong> et les <strong>corrélations</strong> ont quant à elles démontré l'existence d'« <strong>écosystèmes d'usages</strong> » distincts : l'association forte entre <strong>Snapchat et TikTok</strong> (public jeune) d'un côté, et celle entre <strong>YouTube et Twitch</strong> (public vidéo assidu) de l'autre. Ces résultats confirment que les pratiques numériques sont le reflet direct de variables sociodémographiques.</p>
-        </li>
-        <li class="follow-up">
-            <strong>Nuances et limites du projet</strong>
-            <p>L'étude a fait face à plusieurs limites : un <strong>biais de recrutement</strong> ayant surreprésenté les profils très actifs et des <strong>contraintes techniques</strong> liés aux plateformes (Instagram, YouTube) qui ont orienté les choix méthodologiques.</p>
-        </li>
-        <li class="solution">
-            <strong>Bilan du stage</strong>
-            <p>Ce stage a été une transition concrète de la théorie à la pratique. Malgré les obstacles, mon travail de conception et de traitement a permis de créer une base de données solide pour le projet. Cette expérience a confirmé mon intérêt pour l'analyse de données sociologiques et m'a appris l'importance de la flexibilité face aux imprévus.</p>
+    <p>
+        Ce projet démontre que la survie sur le Titanic n'était pas une simple question de chance, mais le résultat d'une <strong>hiérarchie sociale et éthique rigide</strong>. L'analyse a permis d'isoler trois facteurs déterminants ayant scellé le destin des passagers :
+    </p>
+
+    <div style="display: flex; gap: 15px; margin: 20px 0; flex-wrap: wrap;">
+        <div style="flex: 1; min-width: 200px; padding: 15px; background: #fff; border-top: 4px solid #007bff; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+            <strong style="color: #007bff;">L'éthique & l'âge</strong>
+            <p style="font-size: 0.85em; margin-top: 10px;">Le principe "les femmes et les enfants d'abord" a protégé <strong>76%</strong> des femmes, tandis que les hommes adultes devenaient les sacrifiés du sauvetage.</p>
+        </div>
+        <div style="flex: 1; min-width: 200px; padding: 15px; background: #fff; border-top: 4px solid #28a745; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+            <strong style="color: #28a745;">Le statut économique</strong>
+            <p style="font-size: 0.85em; margin-top: 10px;">L'accès aux canots était un privilège financier : la 1ère classe affiche <strong>70%</strong> de survie contre seulement <strong>22%</strong> en 3ème classe.</p>
+        </div>
+        <div style="flex: 1; min-width: 200px; padding: 15px; background: #fff; border-top: 4px solid #ffc107; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+            <strong style="color: #ffc107;">La structure familiale</strong>
+            <p style="font-size: 0.85em; margin-top: 10px;">Le noyau familial restreint a agi comme un catalyseur de survie, là où les familles nombreuses ont été freinées par leur propre nombre.</p>
+        </div>
+    </div>
+
+    <p style="font-style: italic; border-top: 1px solid #dee2e6; padding-top: 15px;">
+        D'un point de vue technique, ce datathon a validé la puissance du combo <strong>SQL & Tableau</strong> : le premier pour transformer des données brutes en informations structurées (segmentation tarifaire, calculs de parenté), le second pour rendre ces statistiques parlantes et visuelles.
+    </p>
+    <p>
+        Cependant, le format de 5 jours a représenté un défi de taille. La phase de familiarisation avec les logiciels a été plus chronophage que prévu, réduisant le temps imparti aux analyses approfondies. Bien que j'aie encore plusieurs pistes de réflexion pour obtenir une vision exhaustive de ce jeu de données, le délai imparti m'a obligé à me concentrer sur les variables les plus significatives de cette étude.
+    </p>
 </div>
 <hr>
 
 <div class="clearfix">
     <h3 id="competences">7. Compétences développées</h3>
     <ol class="cleaning-steps">
-        <li><strong>Compétences analytiques :</strong> Expertise dans l'application de l'ACL, l'ACM et des corrélations pour structurer et interpréter des données sociologiques complexes.</li>
-        <li><strong>Maîtrise de R :</strong> Conception d'un script R fonctionnel pour l'ACM.</li>
-        <li><strong>Maîtrise de Jamovi :</strong> Utilisation de Jamovi pour les statistiques descriptives, l'ACL et l'analyse de corrélation.</li>
-        <li><strong>Gestion de données complexes et structuration de BDD :</strong> Traitement et nettoyage de données qualitatives et quantitatives pour garantir la solidité et la pérennité de la base de données du projet AMULEX.</li>
-        <li><strong>Conception et adaptation de protocoles de collecte :</strong> Élaboration d'une stratégie de recrutement spécifique à YouTube et ajustement des méthodes face aux contraintes techniques des plateformes.</li>
-        <li><strong>Interprétation sociologique :</strong> Capacité à mettre en perspective les résultats statistiques avec les travaux théoriques pour enrichir les conclusions de l'étude.</li>
+        <li><strong>Maîtrise de SQL :</strong> Capacité à extraire, nettoyer et structurer des données brutes (nettoyage des valeurs nulles, calcul de colonnes complexes...).</li>
+        <li><strong>Maîtrise de Tableau :</strong> Conception de visualisations dynamiques et professionnelles permettant de transformer des statistiques abstraites en indicateurs visuels parlants.</li>
+        <li><strong>Analyse statistique et segmentation :</strong> Expertise dans la création de segments (tarifaires via les quartiles, tranches d'âge) pour isoler des facteurs de corrélation significatifs.</li>
+        <li><strong>Gestion de projet en temps limité (Datathon) :</strong> Capacité à monter en compétence sur de nouveaux logiciels de manière intensive et à produire une analyse cohérente sous une contrainte de 5 jours.</li>
+        <li><strong>Esprit critique et rigueur analytique :</strong> Identification des biais (données manquantes, anomalies tarifaires à 0) et des limites de l'étude pour garantir la fiabilité des résultats.</li>
     </ol>
 </div>
 </div>
