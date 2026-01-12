@@ -929,13 +929,7 @@ body {
 <hr>
         
 <div class="clearfix">
-                <h3 id="resultats">4. Résultats de l'analyse</h3>
-                <p>
-                    L'analyse des données révèle que la survie sur le Titanic est le résultat d'une hiérarchie complexe mêlant éthique, richesse et structure familiale.
-                </p>
-                <hr>
-                
-                <h4>"Les femmes et les enfants d'abord !"</h4>
+                <h3 id="resultats">4.1 "Les femmes et les enfants d'abord !"e</h3>
                 <a href="../mesdocuments/image_titanic_SurvieGenre.png" class="float-img-right lightbox-trigger" data-alt="Graphique 1 - Survie selon le genre">
                     <img src="../mesdocuments/image_titanic_SurvieGenre.png" alt="Graphique 1 : Survie selon le genre">
                 </a>
@@ -967,9 +961,9 @@ body {
             <hr>
 
             <div class="clearfix">
-                <h3 id="socioeconomique">5.2 Influence du statut socio-économique</h3>
+                <h3 id="socioeconomique">L'influence du statut socio-économique</h3>
                 <p>
-                    Au-delà du genre et de l’âge, l’analyse démontre que le statut financier agissait comme un filtre déterminant, de l'embarquement jusqu'à l'accès aux canots de sauvetage.
+                    Au-delà du genre et de l’âge, l’analyse démontre que le statut financier était un facteur déterminant, de l'embarquement jusqu'à l'accès aux canots de sauvetage.
                 </p>
                 
                 <div class="clearfix definition-block" style="border-left: 5px solid #007bff; padding: 15px; margin: 15px 0; background-color: #f7f9fc;">
@@ -980,13 +974,13 @@ body {
                         </div>
                         <div style="flex: 1; margin-left: 10px;">
                             <strong style="color: #dc3545;">3ème Classe (22,37 % de survie)</strong>
-                            <p style="font-size: 0.9em; margin-bottom: 0;">Éloignement des secours et barrières linguistiques/sociales.</p>
+                            <p style="font-size: 0.9em; margin-bottom: 0;">Isolement dans les ponts inférieurs et accès restreints aux canots.</p>
                         </div>
                     </div>
                 </div>
 
-                <a href="../mesdocuments/image_titanic_SurvieAgeTarif.png" class="float-img-left lightbox-trigger" data-alt="Graphique 2 - Survie selon le tarif et l'âge">
-                    <img src="../mesdocuments/image_titanic_SurvieAgeTarif.png" alt="Graphique 2 : Survie selon le tarif et l'âge">
+                <a href="../mesdocuments/image_titanic_SurvieAgeTarif.png" class="float-img-left lightbox-trigger" data-alt="Graphique 3 - Survie selon le tarif et l'âge">
+                    <img src="../mesdocuments/image_titanic_SurvieAgeTarif.png" alt="Graphique 3 : Survie selon le tarif et l'âge">
                 </a>
                 <p>
                     <strong>Le tarif face à l’âge :</strong> L'analyse des segments tarifaires affine cette observation. Pour le segment <strong>« Bas de gamme »</strong> (ligne verte), le taux de mortalité augmente de façon exponentielle avec l'âge. Plus un passager modeste était âgé, plus sa vulnérabilité était grande.
@@ -996,13 +990,16 @@ body {
                 </p>
 
                 <p style="clear: both; margin-top: 20px;">
-                    <a href="../mesdocuments/image_titanic_Console_SQL_port_embarquement.png" class="float-img-right lightbox-trigger" data-alt="Requête SQL - Répartition par port">
-                        <img src="../mesdocuments/image_titanic_Console_SQL_port_embarquement.png" alt="Requête SQL : Port d'embarquement">
+                    <a href="../mesdocuments/Console_SQL_port_embarquement.png" class="float-img-right lightbox-trigger" data-alt="Requête SQL - Répartition par port">
+                        <img src="../mesdocuments/Console_SQL_port_embarquement.png" alt="Requête SQL : Port d'embarquement">
                     </a>
-                    <strong>Le port d'embarquement (Cherbourg) :</strong> Les passagers ayant embarqué à Cherbourg affichent le taux de survie le plus élevé (<strong>60 %</strong>). Cette statistique est un indicateur indirect de richesse : les requêtes SQL confirment que ce port a accueilli une proportion significativement plus élevée de passagers de 1ère et 2ème classe.
+                    <p>
+                        <strong>Le port d'embarquement comme marqueur social :</strong> Les passagers ayant embarqué à <strong>Cherbourg</strong> affichent le taux de survie le plus élevé (<strong>60 %</strong>).
+                    </p>
+                <p>
+                    Comme le montre la requête SQL, cette survie exceptionnelle s'explique par la nature des billets : <strong>Cherbourg a accueilli une proportion majoritaire de passagers en 1ère classe, donc ayant un billet "Haut de gamme"</strong> (56,92% de 1ère classe). Ce contraste avec les autres ports, où les billets de 3ème classe prédominaient, confirme que l'origine géographique du passager servait d'indicateur indirect de son futur accès aux canots de sauvetage.
                 </p>
             </div>
-
             <hr>
 
             <div class="clearfix">
