@@ -897,9 +897,9 @@ body {
     <ol class="cleaning-steps">
         <li><strong>Identité et profil (individus)</strong> : <code>Name</code>, <code>Sex</code> et <code>Age</code>. </li>
         <li><strong>Statut socio-économique</strong> : <code>Pclass</code> (classe de 1 à 3) et <code>Fare</code> (prix du billet). Ces données permetttent de mesurer l'influence de la richesse sur les chances de survie.</li>
-        <li><strong>Structure familiale</strong> : <code>SibSp</code> (frères, sœurs, époux) et <code>Parch</code> (parents, enfants). Ces variables ont été fusionnées en SQL pour créer l'indicateur "Statut de voyage" (Seul.e vs En famille).</li>
+        <li><strong>Structure familiale</strong> : <code>SibSp</code> (frères, sœurs, époux) et <code>Parch</code> (parents, enfants). Ces variables ont été fusionnées avec SQL pour créer l'indicateur "Statut de voyage" (Seul.e vs En famille).</li>
         <li><strong>Port d'embarquement</strong> : <code>Embarked</code> (port d'embarquement).</li>
-        <li><strong>Survie</strong> : <code>Survived</code> (indicateur binaire de survie) constitue la variable cible de toute l'analyse statistique.</li>
+        <li><strong>Survie</strong> : <code>Survived</code> est l'indicateur binaire de survie.</li>
     </ol>
     <p style="margin-top: 20px;">
             Chaque variable a été exploitée pour comprendre la corrélation entre le statut social et les chances de survie.
@@ -908,21 +908,17 @@ body {
         <hr>    
         
             <!-- 3. Nettoyage -->
-        <div class="clearfix">
-                <h3 id="nettoyage">3. Nettoyage et préparation des données</h3>
-                <p>Le nettoyage et la structuration des données ont été intégralement réalisés en <strong>SQL</strong>. Cette étape de <em>Data Preparation</em> a été cruciale pour transformer la base brute en un jeu de données exploitable pour l'analyse statistique et la visualisation :</p>
-                
-                <ol class="cleaning-steps">
-                    <li><strong>Ingénierie de variables (Feature Engineering)</strong> : Pour affiner l'analyse, j'ai créé de nouvelles dimensions via des instructions <code>CASE WHEN</code> :
-                        <ul style="margin-top: 10px; list-style-type: circle; padding-left: 20px;">
-                            <li><strong>Statut de voyage</strong> : Regroupement des passagers en catégories 'Seul.e' ou 'En famille' en calculant la somme des proches à bord <code>WHEN (SibSp + Parch) = 0 THEN 'Seul' ELSE 'En famille'</code>.</li>
-                            <li><strong>Segmentation démographique</strong> : Création de tranches d'âge (ex: 'Moins de 18 ans', '18-35 ans', etc.).</li>
-                            <li><strong>Segmentation tarifaire</strong> : Définition de catégories de billets (Bas, Milieu et Haut de gamme) basée sur le calcul des <strong>quartiles</strong> (Q1=8.05, Q3=33.0) pour isoler l'impact du niveau de richesse.</li>
-                        </ul>
-                    </li>
-                </ol>
-            </div>
-            <hr>
+<div class="clearfix">
+    <h3 id="nettoyage">3. Nettoyage et préparation des données</h3>
+    <p>Le nettoyage et la structuration des données ont été intégralement réalisés en <strong>SQL</strong>. Cette étape de <em>Data Preparation</em> a été cruciale pour transformer la base brute en un jeu de données exploitable pour l'analyse statistique et la 
+        visualisation. Pour affiner l'analyse, j'ai créé de nouvelles dimensions via des instructions <code> CASE WHEN</code> :</p>
+    <ol class="cleaning-steps">
+        <li><strong>Statut de voyage</strong> : Regroupement des passagers en catégories 'Seul.e' ou 'En famille' en calculant la somme des proches à bord <code>WHEN (SibSp + Parch) = 0 THEN 'Seul' ELSE 'En famille'</code>.</li>
+        <li><strong>Segmentation démographique</strong> : Création de tranches d'âge (ex: 'Moins de 18 ans', '18-35 ans', etc.).</li>
+        <li><strong>Segmentation tarifaire</strong> : Définition de catégories de billets (Bas, Milieu et Haut de gamme) basée sur le calcul des <strong>quartiles</strong> (Q1=8.05, Q3=33.0) pour isoler l'impact du niveau de richesse.</li>
+    </ol>
+</div>
+<hr>
         
 <div class="clearfix">
                 <h3 id="resultats">4. Résultats de l'analyse</h3>
