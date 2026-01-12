@@ -893,28 +893,17 @@ body {
     </p>
     <p>
         Le jeu de données se décompose en plusieurs catégories de variables essentielles :
-    </p>
-    <ul class="cleaning-steps" style="list-style-type: none; padding-left: 0; margin-left: 0;">
-        <li style="border-bottom: 1px dashed #ddd; padding: 10px 0;">
-            <strong>Identité et profil (individus) :</strong> <code>Name</code>, <code>Sex</code> et <code>Age</code>. 
-        </li>
-        <li style="border-bottom: 1px dashed #ddd; padding: 10px 0;">
-            <strong>Statut socio-économique :</strong> <code>Pclass</code> (classe de 1 à 3) et <code>Fare</code> (prix du billet). Ces données permetttent de mesurer l'influence de la richesse sur les chances de survie.
-        </li>
-        <li style="border-bottom: 1px dashed #ddd; padding: 10px 0;">
-            <strong>Structure familiale :</strong> <code>SibSp</code> (frères, sœurs, époux) et <code>Parch</code> (parents, enfants). Ces variables ont été fusionnées en SQL pour créer l'indicateur "Statut de voyage" (Seul.e vs En famille).
-        </li>
-        <li style="border-bottom: none; padding: 10px 0;">
-            <strong>Port d'embarquement :</strong> <code>Embarked</code> (port d'embarquement).
-        </li>
-        <li style="border-bottom: none; padding: 10px 0;">
-            <strong>Survie :</strong> <code>Survived</code> (indicateur binaire de survie) constitue la variable cible de toute l'analyse statistique.
-        </li>
-    </ul>
-
-        <p style="margin-top: 20px;">
+    </p> 
+    <ol class="cleaning-steps">
+        <li><strong>Identité et profil (individus)</strong> : <code>Name</code>, <code>Sex</code> et <code>Age</code>. </li>
+        <li><strong>Statut socio-économique</strong> : <code>Pclass</code> (classe de 1 à 3) et <code>Fare</code> (prix du billet). Ces données permetttent de mesurer l'influence de la richesse sur les chances de survie.</li>
+        <li><strong>Structure familiale</strong> : <code>SibSp</code> (frères, sœurs, époux) et <code>Parch</code> (parents, enfants). Ces variables ont été fusionnées en SQL pour créer l'indicateur "Statut de voyage" (Seul.e vs En famille).</li>
+        <li><strong>Port d'embarquement</strong> : <code>Embarked</code> (port d'embarquement).</li>
+        <li><strong>Survie</strong> : <code>Survived</code> (indicateur binaire de survie) constitue la variable cible de toute l'analyse statistique.</li>
+    </ol>
+    <p style="margin-top: 20px;">
             Chaque variable a été exploitée pour comprendre la corrélation entre le statut social et les chances de survie.
-        </p>
+    </p>
 </div>
         <hr>    
         
