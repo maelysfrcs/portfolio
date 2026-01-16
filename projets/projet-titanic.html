@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Projet - Étude des facteurs de survie du naufrage du Titanic avec SQL et Tableau.</title>
+    <title>Projet - Étude des facteurs de survie du naufrage du Titanic avec SQL et Power BI.</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
@@ -852,7 +852,7 @@ body {
 
     <div class="main-content-projects">
         <div class="article-content">
-            <h1>Étude des facteurs de survie du Titanic avec SQL et Tableau.</h1>
+            <h1>Étude des facteurs de survie du Titanic avec SQL et Power BI</h1>
 
     <div class="center-content"> 
         <div id="toc-wrapper">
@@ -880,7 +880,7 @@ body {
                 <a href="../mesdocuments/Console_SQL_données.png" class="float-img-left lightbox-trigger" data-alt="Graphique 1 - Script SQL">
                     <img src="../mesdocuments/Console_SQL_données.png" alt="Graphique 1 - Script SQL">
                 </a>
-                <p>Ce projet a été réalisée dans le cadre d'un <strong>Datathon</strong> que j'ai organisé durant la semaine du 08/12/2025.<br> L’objectif principal était de monter en compétence sur des outils de <strong>Business Intelligence</strong> et d'analyse de données, notamment <strong>SQL</strong> pour la gestion et l'exploration, ainsi que <strong>Tableau</strong> pour la conception de visualisations professionnelles.
+                <p>Ce projet a été réalisée dans le cadre d'un <strong>Datathon</strong> que j'ai organisé durant la semaine du 08/12/2025.<br> L’objectif principal était de monter en compétence sur des outils de <strong>Business Intelligence</strong> et d'analyse de données, notamment <strong>SQL</strong> pour la gestion et l'exploration, ainsi que <strong>Power BI</strong> pour la conception de visualisations professionnelles.
                   L'étude se concentre sur les facteurs ayant influencé la survie des passagers du Titanic afin d'identifier précisément <strong>les profils les plus à risque</strong>.
                 </p>
             </div>
@@ -888,14 +888,14 @@ body {
 <p><strong>Objectifs d'apprentissage :</strong></p>
     <ul style="list-style-type: none; padding-left: 20px;">
         <li style="margin-bottom: 8px;">🔹 <strong>SQL</strong> : Gestion, exploration et analyse approfondie des données.</li>
-        <li>🔹 <strong>Tableau</strong> : Conception de visualisations dynamiques et professionnelles.</li>
+        <li>🔹 <strong>Power BI</strong> : Conception de visualisations dynamiques et professionnelles.</li>
     </ul>
 <hr>
 
 <div class="clearfix">
     <h3 id="donnees">2. Présentation des données</h3>
     <p>
-        L'étude repose sur la base de données <strong>passengers</strong> (tiré du jeu de données Titanic), regroupant des informations sur <strong>714 passagers</strong>. Ces données ont été extraites et explorées à l'aide de <strong>SQL</strong> afin de structurer les variables clés nécessaires à l'analyse de survie et à la création de visualisations sous Tableau.
+        L'étude repose sur la base de données <strong>passengers</strong> (tiré du jeu de données Titanic), regroupant des informations sur <strong>714 passagers</strong>. Ces données ont été extraites et explorées à l'aide de <strong>SQL</strong> afin de structurer les variables clés nécessaires à l'analyse de survie et à la création de visualisations sous Power BI.
     </p>
     <p>
         Le jeu de données se décompose en plusieurs catégories de variables essentielles :
@@ -935,8 +935,8 @@ body {
                     Le premier niveau de survie repose sur la règle "Les femmes et les enfants d'abord !". Le croisement <strong>âge et genre</strong> révèle des contrastes très marqués.
                 </p>
                 <ul style="list-style-type: none; padding-left: 0;">
-                    <li>✅ <strong>Le profil le moins à risque :</strong> Les femmes ont un taux de survie très élevé avec un taux de <strong>76,37%</strong> de survie.</li>
-                    <li>❌ <strong>Le profil le plus à risque :</strong> Le risque de mortalité est concentré sur les hommes avec un taux de (<strong>21,91%</strong> de survie).</li>
+                    <li>✅ <strong>Le profil le moins à risque :</strong> Les femmes ont un taux de survie très élevé avec un taux de <strong>74,20%</strong> de survie.</li>
+                    <li>❌ <strong>Le profil le plus à risque :</strong> Le risque de mortalité est concentré sur les hommes avec un taux de (<strong>18,89%</strong> de survie).</li>
                 </ul>
 
 </div>
@@ -949,10 +949,10 @@ body {
                     <li>👶 <strong>Priorité à la jeunesse :</strong> Les passagers de moins de 18 ans ont bénéficié d'une plus grande protection que les plus âgés.</li>
                 </ul>
     <p>
-        Cependant, le taux de survie des femmes progresse avec les années, passant de 72,72% pour les moins de 18 ans à <strong>81,1%</strong> pour les plus de 56 ans.
+        Cependant, le taux de survie des femmes progresse avec les années, passant de 69,23% pour les moins de 18 ans à <strong>88,89%</strong> pour les plus de 56 ans.
     </p>
     <p>
-        Dès 18 ans, la survie masculine s'effondre et stagne autour de <strong>18%</strong>. La tranche 18-35 ans est la plus durement touchée, montrant que les hommes adultes ont été les principaux sacrifiés lors des opérations de sauvetage.
+        Dès 18 ans, la survie masculine s'effondre et stagne autour de <strong>36,96%</strong>. Les 18-35 ans a été l'une des tranches d'âges les plus touchées, montrant que les hommes adultes ont été les principaux sacrifiés lors des opérations de sauvetage.
     </p>
     <p style="clear: both; padding-top: 10px;">
         <strong>Le genre reste le facteur prédominant</strong>, mais l'âge a agi comme un multiplicateur de chance pour les femmes et un facteur d'exclusion radical pour les hommes dès l'entrée dans l'âge adulte. 
@@ -1040,15 +1040,15 @@ body {
 <div class="clearfix">
     <h3 id="statut_voyage">4.3 L'influence du statut de voyage</h3>
     <a href="../mesdocuments/image_titanic_SurvieStatut_PowerBI.png" class="float-img-left lightbox-trigger" data-alt="Graphique 5 - Survie selon le statut de voyage">
-        <img src="../mesdocuments/image_titanic_SurvieStatut_PowerBI.png" alt="Graphique 5 : Survie selon le statut de voyage">
+        <img src="../mesdocuments/image_titanic_SurvieStatut_PowerBI.png" alt="Graphique 5 : Survie selon le statut de voyage" style="width: 300px">
     </a>
     <p>
         Le destin des passagers a également été marqué par leur environnement social. La <strong>solidarité familiale</strong> a joué un rôle de catalyseur : les passagers voyageant « En famille » affichent un taux de survie de <strong>51%</strong>, contre seulement <strong>32%</strong> pour les isolés.
     </p>
 </div>
 <div class="clearfix">
-    <a href="../mesdocuments/Console_SQL_SibSp.png" class="float-img-right lightbox-trigger" data-alt="Graphique 6 - Survie selon le statut de voyage - descriptif">
-        <img src="../mesdocuments/Console_SQL_SibSp.png" alt="Graphique 6 : Survie selon le statut de voyage - descriptif">
+    <a href="../mesdocuments/image_titanic_SurvieTailleFamille_PowerBI.png" class="float-img-right lightbox-trigger" data-alt="Graphique 6 - Survie selon le statut de voyage - descriptif">
+        <img src="../mesdocuments/image_titanic_SurvieTailleFamille_PowerBI.png" alt="Graphique 6 : Survie selon le statut de voyage - descriptif">
     </a>    
     <div style="margin: 0px 0; border-left: 5px solid #28a745; padding: 15px; background-color: #fafffa;">
         <p>
@@ -1056,10 +1056,10 @@ body {
         </p>
         <ul style="list-style-type: none; padding-left: 0;">
             <li style="margin-bottom: 10px;">
-                <strong>La taille idéale :</strong> Le taux de survie culmine pour les passagers accompagnés d'<strong>une seule personne</strong> (53,01% pour SibSp = 1) ou de <strong>1 à 3 membres</strong> de leur parenté/enfants (jusqu'à 60% de survie). La présence d'un noyau restreint semble avoir facilité la réactivité et l'accès prioritaire aux canots.
+                <strong>La taille idéale :</strong> Le taux de survie est optimal pour les familles de <strong>3 personnes</strong>, atteignant un sommet de <strong>72,41 %</strong>. Plus globalement, les groupes restreints de 1 à 3 personnes affichent des taux de survie très élevés, compris entre 55 % et 72 %.
             </li>
             <li>
-                <strong>Le fardeau des familles nombreuses :</strong> Au-delà de 4 accompagnateurs, les chances de survie s'effondrent brutalement, tombant à <strong>10% voire 0%</strong> pour les familles les plus larges. La difficulté de regrouper tous les membres dans la panique a transformé le groupe en un obstacle mortel.
+                <strong>Le fardeau des familles nombreuses :</strong> Au-delà de 3 accompagnateurs, les chances de survie chutent drastiquement, tombant à <strong>20 %</strong> pour les familles de 4 personnes et s'effondrant à <strong>0 %</strong> pour les familles de 7 personnes. La difficulté de coordination dans l'urgence semble avoir transformé le grand nombre de membres en un obstacle fatal.
             </li>
         </ul>
     </div>
@@ -1092,10 +1092,10 @@ body {
     </div>
 
     <p style="font-style: italic; border-top: 1px solid #dee2e6; padding-top: 15px;">
-        D'un point de vue technique, ce datathon a validé la puissance du combo <strong>SQL & Tableau</strong> : le premier pour transformer des données brutes en informations structurées (segmentation tarifaire, calculs de parenté), le second pour rendre ces statistiques parlantes et visuelles.
+        D'un point de vue technique, ce datathon a validé la puissance du combo <strong>SQL et Power BI</strong> : le premier pour transformer des données brutes en informations structurées (segmentation tarifaire, calculs de parenté), le second pour rendre ces statistiques parlantes et visuelles.
     </p>
     <p>
-        Cependant, le format de 5 jours a représenté un défi de taille. La phase de familiarisation avec les logiciels a été plus chronophage que prévu, réduisant le temps imparti aux analyses approfondies. Bien que j'aie encore plusieurs pistes de réflexion pour obtenir une vision exhaustive de ce jeu de données, le délai imparti m'a obligé à me concentrer sur les variables les plus significatives de cette étude.
+        Cependant, le format de 5 jours a représenté un défi de taille. La phase de familiarisation avec les logiciels a été plus chronophage que prévu, réduisant le temps imparti aux analyses approfondies. Bien que j'ai encore plusieurs pistes de réflexion pour obtenir une vision exhaustive de ce jeu de données, le délai imparti m'a obligé à me concentrer sur les variables les plus significatives de cette étude.
     </p>
 </div>
 <hr>
@@ -1104,7 +1104,7 @@ body {
     <h3 id="competences">6. Compétences développées</h3>
     <ol class="cleaning-steps">
         <li><strong>Maîtrise de SQL :</strong> Capacité à extraire, nettoyer et structurer des données brutes (nettoyage des valeurs nulles, calcul de colonnes complexes...).</li>
-        <li><strong>Maîtrise de Tableau :</strong> Conception de visualisations dynamiques et professionnelles permettant de transformer des statistiques abstraites en indicateurs visuels parlants.</li>
+        <li><strong>Maîtrise de Power BI :</strong> Conception de visualisations dynamiques et professionnelles permettant de transformer des statistiques abstraites en indicateurs visuels parlants.</li>
         <li><strong>Analyse statistique et segmentation :</strong> Expertise dans la création de segments (tarifaires via les quartiles, tranches d'âge) pour isoler des facteurs de corrélation significatifs.</li>
         <li><strong>Gestion de projet en temps limité (Datathon) :</strong> Capacité à monter en compétence sur de nouveaux logiciels de manière intensive et à produire une analyse cohérente sous une contrainte de 5 jours.</li>
         <li><strong>Esprit critique et rigueur analytique :</strong> Identification des biais (données manquantes, anomalies tarifaires à 0) et des limites de l'étude pour garantir la fiabilité des résultats.</li>
