@@ -919,7 +919,7 @@ body {
     <p>Le nettoyage et la structuration des données ont été intégralement réalisés en <strong>SQL</strong>. Cette préparation a été cruciale pour transformer la base brute en un jeu de données exploitable pour l'analyse statistique et la 
         visualisation. Pour affiner l'analyse, j'ai créé de nouvelles dimensions via des instructions <code> CASE WHEN</code> :</p>
     <ol class="cleaning-steps">
-        <li><strong>Statut de voyage</strong> : Regroupement des passagers en catégories 'Seul.e' ou 'En famille' en calculant la somme des proches à bord <code>WHEN (SibSp + Parch) = 0 THEN 'Seul' ELSE 'En famille'</code>.</li>
+        <li><strong>Statut de voyage</strong> : Regroupement des passagers en catégories "Seul.e" ou "En famille" en calculant la somme des proches à bord <code>WHEN (SibSp + Parch) = 0 THEN 'Seul' ELSE 'En famille'</code>.</li>
         <li><strong>Segmentation démographique</strong> : Création de tranches d'âge (ici : 'Moins de 18 ans', '18-35 ans', etc.).</li>
         <li><strong>Segmentation tarifaire</strong> : Définition de catégories de billets (bas, milieu et haut de gamme) basée sur le calcul des <strong>quartiles</strong> (Q1=8.05, Q3=33.0) pour isoler l'impact du niveau de richesse.</li>
     </ol>
@@ -939,8 +939,8 @@ body {
                     Le premier niveau de survie repose sur la règle "Les femmes et les enfants d'abord !". Le croisement <strong>âge et genre</strong> révèle des contrastes très marqués.
                 </p>
                 <ul style="list-style-type: none; padding-left: 0;">
-                    <li>✅ <strong>Le profil le moins à risque :</strong> Les femmes ont un taux de survie très élevé avec un taux de <strong>74,20%</strong> de survie.</li>
-                    <li>❌ <strong>Le profil le plus à risque :</strong> Le risque de mortalité est concentré sur les hommes avec un taux de (<strong>18,89%</strong> de survie).</li>
+                    <li>✅ <strong>Le genre le moins à risque :</strong> Les femmes ont un taux de survie très élevé avec un taux de <strong>74,04%</strong> de survie.</li>
+                    <li>❌ <strong>Le genre le plus à risque :</strong> Le risque de mortalité est concentré sur les hommes avec un taux de (<strong>18,89%</strong> de survie).</li>
                 </ul>
 
 </div>
@@ -950,7 +950,7 @@ body {
                     <img src="../mesdocuments/image_titanic_SurvieÂgeGenre_PowerBI.png" alt="Graphique 2 : Survie selon l'âge et le genre">
                 </a>
                 <ul style="list-style-type: none; padding-left: 0;">
-                    <li>👶 <strong>Priorité à la jeunesse :</strong> Les passagers de moins de 18 ans ont bénéficié d'une plus grande protection que les plus âgés.</li>
+                    <li> <strong>Priorité à la jeunesse :</strong> Les passagers de moins de 18 ans ont bénéficié d'une plus grande protection que les plus âgés.</li>
                 </ul>
     <p>
         Cependant, le taux de survie des femmes progresse avec les années, passant de 69,23% pour les moins de 18 ans à <strong>88,89%</strong> pour les plus de 56 ans.
@@ -959,7 +959,7 @@ body {
         Dès 18 ans, la survie masculine s'effondre et stagne autour de <strong>36,96%</strong>. Les 18-35 ans a été l'une des tranches d'âges les plus touchées, montrant que les hommes adultes ont été les principaux sacrifiés lors des opérations de sauvetage.
     </p>
     <p style="clear: both; padding-top: 10px;">
-        <strong>Le genre reste le facteur prédominant</strong>, mais l'âge a agi comme un multiplicateur de chance pour les femmes et un facteur d'exclusion radical pour les hommes dès l'entrée dans l'âge adulte. 
+        <strong>Le genre est donc un facteur prédominant</strong>, mais l'âge a agi comme un multiplicateur de chance pour les femmes et un facteur d'exclusion radical pour les hommes dès l'entrée dans l'âge adulte. On peut supposer que les hommes aidaient les femmes et les enfants à monter dans les canots de sauvetage, au péril de leur propre vie.
     </p>
 </div>
             <hr>
@@ -992,16 +992,19 @@ body {
                 <p>
                     À l'inverse, le <strong>« privilège du prix »</strong> est flagrant : à âge égal, un passager du segment « Haut de gamme » (ligne bleue) conservait un taux de mortalité nettement inférieur, illustrant un accès facilité aux dispositifs de sauvetage.
                 </p>
+
+                <a href="../mesdocuments/Console_SQL_port_embarquementPclass.png" class="float-img-right lightbox-trigger" data-alt="Graphique 4 - Console SQL - Port d'embarquement selon la classe">
+                    <img src="../mesdocuments/Console_SQL_port_embarquementPclass.png" alt="Graphique 4 - Console SQL - Port d'embarquement selon la classe">
+                </a>
                     <p>
                         <strong>Le port d'embarquement comme marqueur social :</strong> Les passagers ayant embarqué à <strong>Cherbourg</strong> affichent le taux de survie le plus élevé (<strong>60%</strong>).
                     </p>
                     <p>
-                    Comme le montre la requête SQL, cette survie exceptionnelle s'explique par la nature des billets : <strong>Cherbourg a accueilli une proportion majoritaire de passagers en 1ère classe, donc ayant un billet "Haut de gamme"</strong> (56,92% de 1ère classe). Ce contraste avec les autres ports, où les billets de 3ème classe prédominaient, confirme que l'origine géographique du passager servait d'indicateur indirect de son futur accès aux canots de sauvetage.
+                    Ainsi, comme le montre la requête SQL, cette survie exceptionnelle s'explique par la nature des billets : <strong>Cherbourg a accueilli une proportion majoritaire de passagers en 1ère classe, donc ayant un billet "Haut de gamme"</strong> (56,92% de 1ère classe). Ce contraste avec les autres ports, où les billets de 3ème classe prédominaient, confirme que l'origine géographique du passager servait d'indicateur indirect de son futur accès aux canots de sauvetage.
                     </p>
-                <a href="../mesdocuments/Console_SQL_port_embarquementPclass.png" class="float-img-right lightbox-trigger" data-alt="Graphique 4 - Console SQL - Port d'embarquement selon la classe">
-                    <img src="../mesdocuments/Console_SQL_port_embarquementPclass.png" alt="Graphique 4 - Console SQL - Port d'embarquement selon la classe">
-                </a>
-
+<p>
+    En résumé, le statut socio-économique a agi comme un filtre déterminant sur les chances de survie. Que ce soit par la proximité physique des canots (classe), la protection contre l'aléa de l'âge (tarif) ou le profil du port d'embarquement (Cherbourg), le <strong>privilège financier</strong> a systématiquement prévalu sur le risque, creusant un fossé de près de 50 points de survie entre l'élite et les classes les plus modestes.
+</p>
             </div>
             <hr>
 
@@ -1011,23 +1014,23 @@ body {
         <img src="../mesdocuments/image_titanic_SurvieStatut_PowerBI.PNG" alt="Graphique 5 : Survie selon le statut de voyage" style="width: 300px">
     </a>
     <p>
-        Le destin des passagers a également été marqué par leur environnement social. La <strong>solidarité familiale</strong> a joué un rôle de catalyseur : les passagers voyageant « En famille » affichent un taux de survie de <strong>51%</strong>, contre seulement <strong>32%</strong> pour les isolés.
+        Le destin des passagers a également été marqué par leur environnement social. La <strong>solidarité familiale</strong> a joué un rôle principal : les passagers voyageant « En famille » affichent un taux de survie de <strong>50%</strong>, contre seulement <strong>30%</strong> pour les isolés.
     </p>
 </div>
-<div class="clearfix">
     <a href="../mesdocuments/image_titanic_SurvieTailleFamille_PowerBI.PNG" class="float-img-right lightbox-trigger" data-alt="Graphique 6 - Survie selon le statut de voyage - descriptif">
         <img src="../mesdocuments/image_titanic_SurvieTailleFamille_PowerBI.PNG" alt="Graphique 6 : Survie selon le statut de voyage - descriptif">
-    </a>    
+    </a>
+<div class="clearfix">    
     <div style="margin: 0px 0; border-left: 5px solid #28a745; padding: 15px; background-color: #fafffa;">
         <p>
             L'analyse détaillée des structures familiales (variables <code>SibSp</code> et <code>Parch</code>) révèle une dynamique en "cloche" :
         </p>
         <ul style="list-style-type: none; padding-left: 0;">
             <li style="margin-bottom: 10px;">
-                <strong>La taille idéale :</strong> Le taux de survie est optimal pour les familles de <strong>3 personnes</strong>, atteignant un sommet de <strong>72,41 %</strong>. Plus globalement, les groupes restreints de 1 à 3 personnes affichent des taux de survie très élevés, compris entre 55 % et 72 %.
+                <strong>La taille idéale :</strong> Le taux de survie est optimal pour les petites familles composées de <strong>2 à 4 personnes</strong>, atteignant un sommet de <strong>57%</strong>.
             </li>
             <li>
-                <strong>Le fardeau des familles nombreuses :</strong> Au-delà de 3 accompagnateurs, les chances de survie chutent drastiquement, tombant à <strong>20 %</strong> pour les familles de 4 personnes et s'effondrant à <strong>0 %</strong> pour les familles de 7 personnes. La difficulté de coordination dans l'urgence semble avoir transformé le grand nombre de membres en un obstacle fatal.
+                <strong>Le fardeau des familles nombreuses :</strong> Au-delà de 3 accompagnateurs, les chances de survie chutent drastiquement, tombant à <strong>16%</strong>. 
             </li>
         </ul>
     </div>
@@ -1041,17 +1044,17 @@ body {
 <div class="clearfix">
     <h3 id="conclusion">5. Conclusion</h3>
     <p>
-        Ce projet démontre que la survie sur le Titanic n'était pas une simple question de chance, mais le résultat d'une <strong>hiérarchie sociale et éthique rigide</strong>. L'analyse a permis d'isoler trois facteurs déterminants ayant scellé le destin des passagers :
+        Ce projet démontre que la survie sur le Titanic n'était pas une simple question de chance, mais le résultat d'une <strong>hiérarchie sociale</strong>. L'analyse a permis d'isoler trois facteurs déterminants ayant scellé le destin des passagers :
     </p>
 
     <div style="display: flex; gap: 15px; margin: 20px 0; flex-wrap: wrap;">
         <div style="flex: 1; min-width: 200px; padding: 15px; background: #fff; border-top: 4px solid #007bff; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
             <strong style="color: #007bff;">L'éthique & l'âge</strong>
-            <p style="font-size: 0.85em; margin-top: 10px;">Le principe "les femmes et les enfants d'abord" a protégé <strong>76%</strong> des femmes, tandis que les hommes adultes devenaient les sacrifiés du sauvetage.</p>
+            <p style="font-size: 0.85em; margin-top: 10px;">Le principe "les femmes et les enfants d'abord" a protégé <strong>51%</strong> des enfants et <strong>74%</strong> des femmes, tandis que les hommes adultes devenaient les sacrifiés du sauvetage.</p>
         </div>
         <div style="flex: 1; min-width: 200px; padding: 15px; background: #fff; border-top: 4px solid #28a745; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
             <strong style="color: #28a745;">Le statut économique</strong>
-            <p style="font-size: 0.85em; margin-top: 10px;">L'accès aux canots était un privilège financier : la 1ère classe affiche <strong>70%</strong> de survie contre seulement <strong>22%</strong> en 3ème classe.</p>
+            <p style="font-size: 0.85em; margin-top: 10px;">L'accès aux canots était un privilège financier : la 1ère classe affiche <strong>62%</strong> de survie contre seulement <strong>24%</strong> en 3ème classe.</p>
         </div>
         <div style="flex: 1; min-width: 200px; padding: 15px; background: #fff; border-top: 4px solid #ffc107; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
             <strong style="color: #ffc107;">La structure familiale</strong>
