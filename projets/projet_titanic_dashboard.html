@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Projet - Étude des facteurs de survie du naufrage du Titanic avec SQL et Power BI.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+    
+<style>
+:root {
+    --content-max-width: 1000px; /* largeur max du header/footer, modifiable */
+}
+
+/* STYLES DE BASE (Copier/coller tous vos styles de base) */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+/* Header et footer centrés avec marges */
+.wrapper-limited {
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+    width: 90%;
+    display: flex; 
+    flex-direction: column;
+    /* 2. FORCER le wrapper à grandir pour prendre toute la place libre du body */
+    flex-grow: 1;
+}
+
+/* Masquage Jekyll inutile */
+.page-header h1, .view-on-github-link, .downloads, .site-footer, .project-tagline { display: none !important; }
+
+/* -------------------------------------------------------------------------- */
+/* NAVIGATION (Desktop) */
+.nav-links {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+    gap: 0;
+}
+.nav-link {
+    font-size: 17px;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-bottom: none;
+    transition: all 0.2s ease;
+    color: #0077b5;
+    background-color: #f0f0f0;
+}
+.nav-link:hover {
+    color: #005f96;
+    background-color: #e0e0e0;
+    transform: translateY(-2px);
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.05);
+}
+.nav-link.active {
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+    border-bottom-color: #fff;
+}
+.nav-links a:last-child { border-top-right-radius: 6px; }
+.nav-links a:first-child { border-top-left-radius: 6px; }
+
+/* -------------------------------------------------------------------------- */
+/* HEADER PERSONNEL (Desktop) */
+.personal-header {
+    display: flex;
+    align-items: center;
+    padding: 40px 50px;
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    border-radius: 12px;
+    margin-top: -1px;
+}
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-right: 30px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    object-fit: contain;
+}
+.info-container h1 {
+    margin: 0;
+    font-size: 32px;
+    color: #0077b5;
+}
+.info-container p {
+    margin-top: 5px;
+    font-size: 16px;
+    color: #555;
+    max-width: 800px;
+}
+
+/* -------------------------------------------------------------------------- */
+/* CONTENU PRINCIPAL (Desktop) */
+.main-content-projects {
+    padding: 15px 20px 0px 20px;
+}
+.main-content-projects h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 38px;
+    font-weight: 700;
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.project-grid {
+    display: grid;
+    /* Force 3 colonnes de taille égale (1fr) pour la disposition 3x1 */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px;
+}
+
+/* ************************************************************************** */
+/* NOUVEAU: STYLE SOMMAIRE (TOC) */
+/* ************************************************************************** */
+:root {
+    /* Ajout d'une variable pour la couleur principale, si non définie */
+    --main-blue: #0077b5;
+}
+
+/* 1. Conteneur principal qui gère l'affichage du bouton et de la liste */
+#toc-wrapper {
+    /* Positionnement nécessaire pour que la liste soit affichée en dessous */
+    position: relative; 
+    display: block; /* Le conteneur ne prend que la place nécessaire au bouton */
+    width: fit-content;
+    margin: 5px auto; /* Centrage si le parent utilise text-align: center */
+    z-index: 10; /* Assure que le menu est au-dessus du contenu en dessous */
+}
+
+/* 2. Style du bouton "Sommaire" (le déclencheur) */
+.toc-button {
+    background-color: var(--main-blue); /* Bleu principal */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px; /* Léger arrondi pour un look plus doux */
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    display: flex; 
+    align-items: center;
+    gap: 10px; /* Augmentation de l'espace entre l'icône et le texte */
+    /* Box-shadow plus doux */
+    box-shadow: 0 4px 10px rgba(0, 119, 181, 0.25); 
+}
+
+.toc-button:hover {
+    background-color: #005f96; /* Bleu plus foncé au survol */
+    box-shadow: 0 6px 12px rgba(0, 119, 181, 0.35);
+}
+
+/* Style de l'icône de flèche */
+.toc-button i.fa-caret-down {
+    transition: transform 0.3s ease;
+}
+
+/* Rotation de la flèche au survol pour indiquer que le menu s'ouvre */
+#toc-wrapper:hover .toc-button i.fa-caret-down {
+    transform: rotate(180deg);
+}
+
+/* 3. Conteneur de la liste (le menu déroulant) */
+#table-of-contents-container {
+    /* Positionnement absolu pour le dropdown */
+    position: absolute; 
+    top: 100%; /* Commence juste sous le bouton */
+    
+    /* LOGIQUE DE CENTRAGE DU MENU SOUS LE BOUTON */
+    left: 50%; 
+    transform: translateX(-50%);
+    
+    min-width: 300px;
+    
+    /* Style amélioré */
+    background-color: #fff; 
+    border: 1px solid #ddd;
+    border-top: none; 
+    padding: 5px 0; 
+    border-radius: 0 0 8px 8px; 
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    
+    /* Masquer par défaut */
+    display: none; 
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* 4. LOGIQUE CLÉ : Affichage de la liste au survol du conteneur principal */
+#toc-wrapper:hover #table-of-contents-container {
+    display: block; 
+    opacity: 1; 
+}
+
+/* 5. Style de la liste des liens */
+#table-of-contents-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+#table-of-contents-list li {
+    margin-bottom: 0;
+    /* Ligne de séparation subtile entre les liens */
+    border-bottom: 1px dashed #eee; 
+}
+#table-of-contents-list li:last-child {
+    border-bottom: none;
+}
+#table-of-contents-list a {
+    text-decoration: none;
+    color: #333; 
+    font-size: 15px;
+    display: block;
+    padding: 5px 15px; /* Légère augmentation pour plus de confort de clic */
+    transition: all 0.2s;
+    border-left: 3px solid transparent; 
+}
+#table-of-contents-list a:hover {
+    color: var(--main-blue); 
+    background-color: #f0f8ff; 
+    border-left: 3px solid var(--main-blue);
+}
+/* Différenciation des sous-sections (H4 - si vous en ajoutez) */
+#table-of-contents-list li.level-4 a {
+    padding-left: 30px; 
+    font-size: 14px;
+    color: #555;
+}
+    
+/* ************************************************************************** */
+/* NOUVEAU: STYLE PLATEFORMES SOCIALES */
+/* ************************************************************************** */
+
+/* Conteneur des boutons */
+.platform-tags {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px 0;
+    flex-wrap: wrap; /* Assure un bon comportement sur mobile */
+}
+
+/* Style de chaque tag de plateforme mis à jour */
+.platform-tag {
+    /* Rendu moins "bouton" */
+    padding: 6px 10px; /* Réduction du padding */
+    border: 1px solid #ccc; /* Bordure plus fine et neutre */
+    border-radius: 4px; /* Coins légèrement arrondis, aspect "étiquette" */
+    background-color: #f9f9f9; /* Fond très léger, aspect neutre */
+    font-weight: 500; /* Moins gras que le 600 initial */
+    color: #333; /* Couleur de texte neutre */
+    box-shadow: none; /* Suppression complète de l'ombre */
+    cursor: default; /* Maintient le curseur par défaut */
+
+    /* Configuration Flex pour aligner logo et texte (inchangé) */
+    display: inline-flex;
+    align-items: center;
+    gap: 8px; 
+    transition: none; /* Désactivation des transitions */
+}
+
+/* Suppression des effets de survol */
+.platform-tag:hover {
+    background-color: #f9f9f9; /* Reste identique à la couleur de base */
+    box-shadow: none; /* Suppression de l'ombre au survol */
+}
+
+/* Style des images/logos (inchangé) */
+.platform-logo {
+    width: 24px;
+    height: 24px; 
+    object-fit: contain; 
+    border-radius: 4px; 
+}
+/* -------------------------------------------------------------------------- */
+/* STYLE DÉDIÉ AUX PAGES PROJET (Simple Article) - COPIER/COLLER ICI */
+
+/* Conteneur principal de l'article */
+.article-content {
+    background-color: #fff;
+    padding: 30px 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+}
+
+/* Titre principal du projet */
+.article-content h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 32px;
+    color: #0077b5;
+    text-align: center;
+    margin-bottom: 0px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #eee;
+}
+
+/* Sous-titres (Objectif, Données, Nettoyage, etc.) */
+.article-content h3 {
+    font-size: 22px;
+    color: #333;
+    border-left: 4px solid #0077b5;
+    padding-left: 10px;
+    margin-top: 35px;
+    margin-bottom: 15px;
+}
+
+/* Sous-titre de niveau 4 (Compétences Clés Démontrées) */
+.article-content h4 {
+    font-size: 18px; /* Taille légèrement inférieure à h3 (22px) pour maintenir la hiérarchie */
+    color: #333;
+    border-left: 0px solid #0077b5; /* Bordure gauche, légèrement plus fine que h3 (4px) */
+    padding-left: 10px;
+    margin-top: 5px; /* Moins d'espace au-dessus que h3 (35px) */
+    margin-bottom: 0px;
+}   
+    
+/* Paragraphes */
+.article-content p {
+    line-height: 1.7;
+    margin-bottom: 20px;
+    text-align: justify;
+    text-indent: 0 !important;
+}
+
+/* Solution de repli pour annuler les espaces invisibles en début de paragraphe */
+.article-content p::first-line {
+    /* Tentative de réinitialisation si l'espace est interprété comme un alinéa */
+    text-indent: 0 !important; 
+}
+.article-content hr {
+    /* Marge par défaut du hr, peut être ajustée */
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Ajoutez cette règle pour le hr spécifique qui suit un élément flottant */
+.article-content div.clearfix + hr {
+    margin-top: 10px; /* Réduit l'espace par défaut */
+    position: relative; /* Nécessaire pour que z-index fonctionne */
+}
+
+/* ************************************************************************** */
+/* NOUVEAU: STYLES LIGHTBOX/MODAL (Zoom image) */
+/* ************************************************************************** */
+.lightbox-trigger {
+    cursor: zoom-in; /* Indique qu'on peut cliquer pour zoomer */
+}
+    
+/* Classe pour les images flottantes (gauche/droite) */
+.float-img-left {
+    float: left;
+    margin: 0 20px 15px 0; /* Haut, Droite, Bas, Gauche */
+    max-width: 45%;
+    height: auto;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.float-img-right {
+    float: right;
+    margin: 0 0 20px 15px; /* Haut, Droite, Bas, Gauche */
+    max-width: 45%;
+    height: auto;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* L'image elle-même dans la Lightbox (pour s'assurer qu'elle n'est pas trop petite/grande) */
+.float-img-left img, .float-img-right img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: inherit; /* Hérite du border-radius du conteneur */
+}
+
+/* Styles pour le Modal */
+#lightbox-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000; /* Assurez-vous qu'il soit au-dessus de tout */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9); /* Fond semi-transparent noir */
+    backdrop-filter: blur(5px); /* Optionnel : effet de flou */
+}
+
+#lightbox-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 1000px; /* Largeur max pour la fenêtre */
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#lightbox-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 6px;
+}
+
+#lightbox-caption {
+    margin: 15px auto;
+    width: 80%;
+    max-width: 1000px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    font-size: 17px;
+}
+
+/* Bouton de fermeture (Close Button) */
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.lightbox-close:hover,
+.lightbox-close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+    
+/* Correction pour que l'élément suivant ne soit pas affecté par le 'float' */
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Amélioration visuelle pour les Vagues de données */
+.data-vagues {
+    /* Style du conteneur de base */
+    background-color: #f9f9f9;
+    padding: 10px 15px; 
+    border-left: 5px solid #0077b5;
+    border-radius: 0 4px 4px 0;
+    margin: 0; /* Réinitialisation pour utiliser les marges des classes flottantes */
+    
+    /* Configuration Grid pour les colonnes (clé pour la lisibilité) */
+    display: grid;
+    /* Ajustement de la largeur des colonnes : 150px pour le terme + reste pour le nombre */
+    grid-template-columns: 150px 1fr;
+    gap: 2px 10px;
+
+    /* Largeur maximale pour une bonne lisibilité */
+    max-width: 300px; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.data-vagues dt,
+.data-vagues dd {
+    /* Ajoute 5px de padding en haut et en bas de chaque ligne */
+    padding-top: 3px; 
+    padding-bottom: 3px;
+    margin: 0; /* Assurez-vous qu'aucune marge n'interfère */
+}
+    
+/* Style dédié pour le flottement à GAUCHE (comme pour les images) */
+.data-vagues.float-img-left {
+    float: left;
+    margin: 0 20px 15px 0; /* Haut, Droite, Bas, Gauche */
+}
+
+/* Style dédié pour le flottement à DROITE (comme pour les images) */
+.data-vagues.float-img-right {
+    float: right;
+    /* Marge : Haut=0, Droite=0 (collé à droite), Bas=15px, Gauche=20px (espace avec le texte) */
+    margin: 0 20px 15px 20px; 
+}
+
+/* Amélioration visuelle pour les Étapes de Nettoyage */
+.cleaning-steps {
+    list-style-type: none; /* Cache la puce par défaut */
+    padding-left: 0;
+    margin: 15px 0;
+    counter-reset: section-step;
+}
+
+/* NOUVEAU STYLE : Structure en 2 colonnes pour la présentation des données (Partie 2) */
+.data-presentation {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.data-presentation-column {
+    width: 48%; /* Près de 50%, laissant 4% de marge entre */
+    float: left; /* Aligner à gauche */
+    box-sizing: border-box; /* Inclusion des marges dans la largeur */
+}
+
+/* Option pour la seconde colonne si vous préférez: */
+.data-presentation-column.right {
+    float: right; /* Aligner à droite */
+}
+    
+.data-presentation ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    border-left: 3px solid #0077b5;
+    padding-left: 15px;
+}
+.data-presentation li {
+    line-height: 1.6;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+.data-presentation li strong {
+    color: #0077b5;
+    font-weight: 600;
+}
+.data-presentation h4 {
+    color: #0077b5;
+    margin-bottom: 20px;
+    font-size: 17px;
+    border-bottom: 1px dashed #eee;
+    padding-bottom: 5px;
+}
+
+/* NOUVEAU STYLE : Liste de stratégies/défis stylisée (Partie 4) */
+.strategy-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 15px 0;
+}
+.strategy-list li {
+    padding: 8px 0 8px 30px;
+    position: relative;
+    line-height: 1.5;
+    border-bottom: 1px dotted #ccc;
+}
+.strategy-list li:last-child {
+    border-bottom: none;
+}
+.strategy-list li::before {
+    font-family: 'Font Awesome 5 Free', 'Font Awesome 5 Brands', 'Font Awesome 5 Solid'; /* Inclure toutes les familles FA5 */
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    color: #0077b5;
+    font-size: 18px;
+}
+/* Icônes spécifiques pour la stratégie */
+.strategy-list li.objective::before { content: "\f058"; /* check-circle */ color: green; }
+.strategy-list li.follow-up::before { content: "\f02d"; /* book */ }
+.strategy-list li.difficulty::before { content: "\f06a"; /* exclamation-circle */ color: #cc0000; }
+.strategy-list li.problem::before { content: "\f057"; /* times-circle */ color: #cc0000; }
+.strategy-list li.solution::before { content: "\f0e7"; /* lightning-bolt */ color: orange; }
+    
+.cleaning-steps li {
+    padding: 10px 0 10px 30px;
+    position: relative;
+    line-height: 1.5;
+    border-bottom: 1px dashed #eee;
+}
+
+.cleaning-steps li:last-child {
+    border-bottom: none;
+}
+
+.cleaning-steps li::before {
+    /* Création du cercle numéroté bleu */
+    content: counter(section-step); /* Utilise un compteur pour la numérotation */
+    counter-increment: section-step;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    
+    /* Style du cercle */
+    width: 22px;
+    height: 22px;
+    line-height: 22px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: #0077b5;
+    color: white;
+    font-weight: 700;
+    font-size: 14px;
+}
+/* Réinitialisation du compteur pour les listes numérotées */
+.article-content {
+    counter-reset: section-step;
+}
+
+/* Style spécifique pour le Tableau 2 pour l'alignement et la lisibilité */
+.tableau-sodemo {
+    width: 100%;
+    border-collapse: collapse; /* Enlève l'espace entre les cellules */
+    margin: 20px 0; /* Marge au-dessus et en dessous du tableau */
+    font-size: 0.9em;
+}
+
+.tableau-sodemo th, .tableau-sodemo td {
+    border: 1px solid #ddd; /* Bordure légère */
+    padding: 8px;
+    text-align: left; /* Alignement par défaut à gauche pour les en-têtes de ligne */
+}
+
+.tableau-sodemo th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    text-align: center; /* Centrage des en-têtes de colonne */
+}
+
+/* Alignement à droite pour toutes les données numériques (pourcentages) */
+.tableau-sodemo td:nth-child(2),
+.tableau-sodemo td:nth-child(3),
+.tableau-sodemo td:nth-child(4) {
+    text-align: right;
+    font-family: monospace; /* Utilisation d'une police à chasse fixe pour un alignement parfait des nombres */
+}
+
+/* Style pour mettre en évidence les catégories principales */
+.cat-principale {
+    font-weight: bold;
+    background-color: #e9e9e9;
+}
+/* -------------------------------------------------------------------------- */
+/* FOOTER (Desktop) */
+.footer {
+ padding: 30px 0;
+ /* Utilisation d'une marge pour l'espace au-dessus du footer (séparation des projets) */
+ margin-top: 40px; 
+ /* Marge pour l'espace après le footer. 0px pour qu'il soit collé au bas du conteneur parent */
+ margin-bottom: 10px; 
+ background: linear-gradient(135deg, #ffffff 0%, #f7f9fb 100%);
+ box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.08);
+ text-align: center;
+ border-radius: 16px;
+ transition: all 0.3s ease;
+}
+    
+.footer-buttons {
+ display: flex;
+ justify-content: center;
+ flex-wrap: wrap;
+ gap: 18px;
+ margin-top: 5px;
+}
+
+.button {
+ display: inline-flex;
+ align-items: center;
+ gap: 10px;
+ padding: 10px 18px;
+ font-size: 15px;
+ font-weight: 500;
+ color: #0077b5;
+ background-color: #f2f6f9;
+ text-decoration: none;
+ border-radius: 8px;
+ border: 1px solid transparent;
+ transition: all 0.25s ease;
+}
+
+.button i {
+ color: #0077b5;
+ transition: color 0.3s ease;
+ font-size: 18px;
+}
+
+.button:hover {
+ background-color: #0077b5;
+ color: #fff;
+ border-color: #0077b5;
+ transform: translateY(-2px);
+ box-shadow: 0 3px 8px rgba(0, 119, 181, 0.25);
+}
+
+.button:hover i {
+ color: #fff;
+}
+
+/* -------------------------------------------------------------------------- */
+/* RESPONSIVE DESIGN (MOBILE ADAPTÉ) - COPIER/COLLER VOTRE BLOC CI-DESSOUS */
+@media (max-width: 768px) {
+    /* 1. Conteneurs principaux */
+    .wrapper-limited {
+        width: 100%;
+        padding: 0 15px;
+        box-sizing: border-box;
+    }
+
+    /* 2. Navigation */
+    .nav-links {
+        justify-content: center; /* Centre les liens */
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 15px;
+        margin-bottom: 0px; /* Espace sous les boutons de navigation (adapté) */
+    }
+
+    .nav-link {
+        font-size: 16px;
+        padding: 10px 18px;
+        border: 1px solid #ccc; /* Affichage comme de vrais boutons */
+        border-radius: 6px;/* Sous-titre de niveau 4 (Compétences Clés Démontrées) */
+.article-content h4 {
+    font-size: 18px; /* Taille légèrement inférieure à h3 (22px) pour maintenir la hiérarchie */
+    color: #333;
+    border-left: 2px solid #0077b5; /* Bordure gauche, légèrement plus fine que h3 (4px) */
+    padding-left: 10px;
+    margin-top: 5px; /* Moins d'espace au-dessus que h3 (35px) */
+    margin-bottom: 0px;
+}   
+        border-bottom: 1px solid #ccc; /* Correction de la bordure manquante */
+    }
+    
+    .nav-link.active {
+        /* Correction pour que le bouton actif s'affiche correctement */
+        border-bottom-color: #fff; 
+    }
+
+    /* 3. Header Personnel */
+    .personal-header {
+        flex-direction: column; 
+        align-items: center;
+        text-align: center;
+        padding: 20px 10px; 
+        border-radius: 8px;
+    }
+    
+    .profile-photo { 
+        margin: 0 0 15px 0; /* Centre la photo et ajoute de l'espace en bas */
+        width: 120px;
+        height: 120px;
+    }
+    
+    .info-container h1 {
+        font-size: 26px; /* Taille adaptée */
+    }
+
+    .info-container p {
+        font-size: 15px;
+        max-width: 100%; 
+        margin: 5px auto 0 auto;
+        padding: 0 12px 0px 12px;
+    }
+    
+    /* 4. Contenu Principal (Le reste du contenu est laissé pour s'adapter par défaut, sauf le titre) */
+    .main-content-projects {
+        padding: 25px 15px; /* Réduit le padding du contenu */
+    }
+    
+    .main-content-projects h2 {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+
+    /* Styles spécifiques pour l'article */
+    .article-content {
+        padding: 20px 20px;
+    }
+    .article-content h1 {
+        font-size: 26px;
+    }
+    /* Les images flottantes deviennent pleine largeur sur mobile */
+    .float-img-left, .float-img-right {
+        float: none;
+        max-width: 100%;
+        margin: 15px 0;
+    }
+
+
+    /* Footer (Adaptation à la largeur mobile) */
+    .footer {
+        margin: 10px 15px 10px 15px; /* Marge latérale pour centrage/aération */
+        padding: 30px 15px;
+        border-radius: 8px;
+        text-align: center; 
+    }
+    
+    .footer-buttons {
+        flex-direction: column;
+        gap: 12px;
+        align-items: center;
+        width: 100%; 
+    }
+
+    .button {
+        width: 90%;
+        justify-content: center;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+    
+    div table {
+        /* Force la table à prendre 100% de l'espace disponible */
+        width: 100% !important; 
+        max-width: 100% !important;
+        font-size: 0.95em; 
+    }
+    
+    div table th, div table td {
+        /* Réduction du padding pour maximiser l'espace du texte */
+        padding: 8px 5px; 
+    }
+
+    /* La div de centrage doit également être ajustée pour s'assurer qu'elle n'interfère pas */
+    div[style*="display: flex"] {
+        width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+}
+</style>
+</head>
+
+<body>
+<div class="wrapper-limited">
+    
+    <div class="nav-links">
+        <a href="../index.html" class="nav-link">Mes projets</a>
+        <a href="../about.html" class="nav-link">À propos de moi</a>
+    </div>
+
+    <div class="personal-header">
+        <img src="../photocv.PNG" class="profile-photo" alt="Maëlys François">
+        <div class="info-container">
+            <h1>Maëlys François</h1>
+            <p>Passionnée par <strong>l'analyse de données</strong> avec une expertise pour l'étude des comportements sur les <strong>réseaux sociaux</strong>.</p>
+        </div>
+    </div>
+
+    <div class="main-content-projects">
+        <div class="article-content">
+            <h1>Étude des facteurs de survie du Titanic avec SQL et Power BI</h1>
+
+    <div class="center-content"> 
+        <div id="toc-wrapper">
+        <div class="toc-button">
+        <i class="fas fa-list-alt"></i> Sommaire <i class="fas fa-caret-down"></i>
+        </div>
+        <div id="table-of-contents-container">
+            <ul id="table-of-contents-list">
+                <li><a href="#objectif">1. Objectif du projet</a></li>
+                <li><a href="#donnees">2. Présentation des données</a></li>
+                <li><a href="#nettoyage">3. Nettoyage et préparation des données</a></li>
+                <li><a href="#strategies">4.1 "Les femmes et les enfants d'abord !"</a></li>
+                <li><a href="#statistiques">4.2 L'influence du statut socio-économique</a></li>
+                <li><a href="#acm">4.3 L'influence du statut de voyage</a></li>
+                <li><a href="#acl">5. Conclusion</a></li>
+                <li><a href="#correlation">6. Compétences développées</a></li>
+
+            </ul>
+        </div>
+        </div>
+    </div>          
+            <!-- 1. Objectif -->
+            <div class="clearfix">
+                <h3 id="objectif">1. Objectif du projet</h3>
+                <a href="../mesdocuments/Console_SQL_données.png" class="float-img-left lightbox-trigger" data-alt="Graphique 1 - Script SQL">
+                    <img src="../mesdocuments/Console_SQL_données.png" alt="Graphique 1 - Script SQL">
+                </a>
+                <p>Ce projet a été réalisée dans le cadre d'un <strong>Datathon</strong> que j'ai organisé durant la semaine du 08/12/2025.<br> L’objectif principal était de monter en compétence sur des outils de <strong>Business Intelligence</strong> et d'analyse de données, notamment <strong>SQL</strong> pour la gestion et l'exploration, ainsi que <strong>Power BI</strong> pour la conception de visualisations professionnelles.
+                  L'étude se concentre sur les facteurs ayant influencé la survie des passagers du Titanic afin d'identifier précisément <strong>les profils les plus à risque</strong>. Le dashboard Power BI sera disponible ultérieurement.
+                </p>
+            </div>
+
+<p><strong>Objectifs d'apprentissage :</strong></p>
+    <ul style="list-style-type: none; padding-left: 20px;">
+        <li style="margin-bottom: 8px;">🔹 <strong>SQL</strong> : Gestion, exploration et analyse approfondie des données.</li>
+        <li>🔹 <strong>Power BI</strong> : Conception de visualisations dynamiques.</li>
+    </ul>
+<hr>
+
+<div class="clearfix">
+    <h3 id="donnees">2. Présentation des données</h3>
+    <p>
+        L'étude repose sur la base de données <strong>passengers</strong> (tiré du jeu de données Titanic), regroupant des informations sur <strong>714 passagers</strong>. Ces données ont été extraites et explorées à l'aide de <strong>SQL</strong> afin de structurer les variables clés nécessaires à l'analyse de survie et à la création de visualisations sous Power BI.
+    </p>
+    <p>
+        Le jeu de données se décompose en plusieurs catégories de variables essentielles :
+    </p> 
+    <ol class="cleaning-steps">
+        <li><strong>Identité et profil (individus)</strong> : <code>Name</code>, <code>Sex</code> et <code>Age</code>. </li>
+        <li><strong>Statut socio-économique</strong> : <code>Pclass</code> (classe de 1 à 3) et <code>Fare</code> (prix du billet). Ces données permetttent de mesurer l'influence de la richesse sur les chances de survie.</li>
+        <li><strong>Structure familiale</strong> : <code>SibSp</code> (frères, sœurs, époux) et <code>Parch</code> (parents, enfants). Ces variables ont été fusionnées avec SQL pour créer l'indicateur "Statut de voyage" (Seul.e vs En famille).</li>
+        <li><strong>Port d'embarquement</strong> : <code>Embarked</code> (port d'embarquement).</li>
+        <li><strong>Survie</strong> : <code>Survived</code> est l'indicateur binaire de survie.</li>
+    </ol>
+    <p style="margin-top: 20px;">
+            Chaque variable a été exploitée pour comprendre la corrélation entre le statut social et les chances de survie.
+    </p>
+</div>
+        <hr>    
+        
+            <!-- 3. Nettoyage -->
+<div class="clearfix">
+    <h3 id="nettoyage">3. Nettoyage et préparation des données</h3>
+    <p>Le nettoyage et la structuration des données ont été intégralement réalisés en <strong>SQL</strong>. Cette préparation a été cruciale pour transformer la base brute en un jeu de données exploitable pour l'analyse statistique et la 
+        visualisation. Pour affiner l'analyse, j'ai créé de nouvelles dimensions via des instructions <code> CASE WHEN</code> :</p>
+    <ol class="cleaning-steps">
+        <li><strong>Statut de voyage</strong> : Regroupement des passagers en catégories "Seul.e" ou "En famille" en calculant la somme des proches à bord <code>WHEN (SibSp + Parch) = 0 THEN 'Seul' ELSE 'En famille'</code>.</li>
+        <li><strong>Segmentation démographique</strong> : Création de tranches d'âge (ici : 'Moins de 18 ans', '18-35 ans', etc.).</li>
+        <li><strong>Segmentation tarifaire</strong> : Définition de catégories de billets (bas, milieu et haut de gamme) basée sur le calcul des <strong>quartiles</strong> (Q1=8.05, Q3=33.0) pour isoler l'impact du niveau de richesse.</li>
+    </ol>
+</div>
+<hr>
+
+<div style="width: 100%; height: 60vh; overflow: hidden;">
+<iframe title="Titanic" width="100%" height="100%" src="https://app.powerbi.com/view?r=eyJrIjoiZmJmN2M0NzQtMmE2MC00MWY5LThmMmUtZWVhNzQ2NTdmYmJjIiwidCI6IjFjODIyMDY5LTEzZTMtNGI3Mi1iNzZlLTY2Y2E1NjA0NWYwZSJ9" frameborder="0" allowFullScreen="true"></iframe>
+</div>
+            
+<div class="clearfix">
+                <h3 id="resultats">4.1 "Les femmes et les enfants d'abord !"</h3>
+                <a href="../mesdocuments/image_titanic_SurvieGenre_PowerBI.png" class="float-img-right lightbox-trigger" data-alt="Graphique 1 - Survie selon le genre">
+                    <img src="../mesdocuments/image_titanic_SurvieGenre_PowerBI.png" alt="Graphique 1 : Survie selon le genre">
+                </a>
+                <p>
+                    Le premier niveau de survie repose sur la règle "Les femmes et les enfants d'abord !". Le croisement <strong>âge et genre</strong> révèle des contrastes très marqués.
+                </p>
+                <ul style="list-style-type: none; padding-left: 0;">
+                    <li>✅ <strong>Le genre le moins à risque :</strong> Les femmes ont un taux de survie très élevé avec un taux de <strong>74,04%</strong> de survie.</li>
+                    <li>❌ <strong>Le genre le plus à risque :</strong> Le risque de mortalité est concentré sur les hommes avec un taux de (<strong>18,89%</strong> de survie).</li>
+                </ul>
+
+</div>
+<div class="clearfix">
+                    
+                <a href="../mesdocuments/image_titanic_SurvieÂgeGenre_PowerBI.png" class="float-img-left lightbox-trigger" data-alt="Graphique 2 - Survie selon l'âge et le genre">
+                    <img src="../mesdocuments/image_titanic_SurvieÂgeGenre_PowerBI.png" alt="Graphique 2 : Survie selon l'âge et le genre">
+                </a>
+                <ul style="list-style-type: none; padding-left: 0;">
+                    <li> <strong>Priorité à la jeunesse :</strong> Les passagers de moins de 18 ans ont bénéficié d'une plus grande protection que les plus âgés.</li>
+                </ul>
+    <p>
+        Cependant, le taux de survie des femmes progresse avec les années, passant de 69,23% pour les moins de 18 ans à <strong>88,89%</strong> pour les plus de 56 ans.
+    </p>
+    <p>
+        Dès 18 ans, la survie masculine s'effondre et stagne autour de <strong>36,96%</strong>. Les 18-35 ans a été l'une des tranches d'âges les plus touchées, montrant que les hommes adultes ont été les principaux sacrifiés lors des opérations de sauvetage.
+    </p>
+    <p style="clear: both; padding-top: 10px;">
+        <strong>Le genre est donc un facteur prédominant</strong>, mais l'âge a agi comme un multiplicateur de chance pour les femmes et un facteur d'exclusion radical pour les hommes dès l'entrée dans l'âge adulte. On peut supposer que les hommes aidaient les femmes et les enfants à monter dans les canots de sauvetage, au péril de leur propre vie.
+    </p>
+</div>
+            <hr>
+
+            <div class="clearfix">
+                <h3 id="socioeconomique">4.2 L'influence du statut socio-économique</h3>
+                <p>
+                    Au-delà du genre et de l’âge, l’analyse démontre que le statut financier était un facteur déterminant, de l'embarquement jusqu'à l'accès aux canots de sauvetage.
+                </p>
+                
+                <div class="clearfix definition-block" style="border-left: 5px solid #007bff; padding: 15px; margin: 15px 0; background-color: #f7f9fc;">
+                    <div style="display: flex; justify-content: space-around; text-align: center;">
+                        <div style="flex: 1; margin-right: 10px;">
+                            <strong style="color: #28a745;">1ère Classe (70,67% de survie)</strong>
+                            <p style="font-size: 0.9em; margin-bottom: 0;">Accès prioritaire et proximité des ponts supérieurs.</p>
+                        </div>
+                        <div style="flex: 1; margin-left: 10px;">
+                            <strong style="color: #dc3545;">3ème Classe (22,37% de survie)</strong>
+                            <p style="font-size: 0.9em; margin-bottom: 0;">Isolement dans les ponts inférieurs et accès restreints aux canots.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="../mesdocuments/image_titanic_SurvieAgeTarif_PowerBI.png" class="float-img-left lightbox-trigger" data-alt="Graphique 3 - Survie selon le port d'embarquement">
+                    <img src="../mesdocuments/image_titanic_SurvieAgeTarif_PowerBI.png" alt="Graphique 3 : Survie selon le port d'embarquement">
+                </a>
+                <p>
+                    <strong>Le tarif face à l’âge :</strong> L'analyse des segments tarifaires affine cette observation. Pour le segment <strong>« Bas de gamme »</strong> (ligne verte), le taux de mortalité augmente de façon exponentielle avec l'âge. Plus un passager modeste était âgé, plus sa vulnérabilité était grande.
+                </p>
+                <p>
+                    À l'inverse, le <strong>« privilège du prix »</strong> est flagrant : à âge égal, un passager du segment « Haut de gamme » (ligne bleue) conservait un taux de mortalité nettement inférieur, illustrant un accès facilité aux dispositifs de sauvetage.
+                </p>
+
+                <a href="../mesdocuments/Console_SQL_port_embarquementPclass.png" class="float-img-right lightbox-trigger" data-alt="Graphique 4 - Console SQL - Port d'embarquement selon la classe">
+                    <img src="../mesdocuments/Console_SQL_port_embarquementPclass.png" alt="Graphique 4 - Console SQL - Port d'embarquement selon la classe">
+                </a>
+                    <p>
+                        <strong>Le port d'embarquement comme marqueur social :</strong> Les passagers ayant embarqué à <strong>Cherbourg</strong> affichent le taux de survie le plus élevé (<strong>60%</strong>).
+                    </p>
+                    <p>
+                    Ainsi, comme le montre la requête SQL, cette survie exceptionnelle s'explique par la nature des billets : <strong>Cherbourg a accueilli une proportion majoritaire de passagers en 1ère classe, donc ayant un billet "Haut de gamme"</strong> (56,92% de 1ère classe). Ce contraste avec les autres ports, où les billets de 3ème classe prédominaient, confirme que l'origine géographique du passager servait d'indicateur indirect de son futur accès aux canots de sauvetage.
+                    </p>
+<p>
+    En résumé, le statut socio-économique a agi comme un filtre déterminant sur les chances de survie. Que ce soit par la proximité physique des canots (classe), la protection contre l'aléa de l'âge (tarif) ou le profil du port d'embarquement (Cherbourg), le <strong>privilège financier</strong> a systématiquement prévalu sur le risque, creusant un fossé de près de 50 points de survie entre l'élite et les classes les plus modestes.
+</p>
+            </div>
+            <hr>
+
+<div class="clearfix">
+    <h3 id="statut_voyage">4.3 L'influence du statut de voyage</h3>
+    <a href="../mesdocuments/image_titanic_SurvieStatut_PowerBI.PNG" class="float-img-left lightbox-trigger" data-alt="Graphique 5 - Survie selon le statut de voyage">
+        <img src="../mesdocuments/image_titanic_SurvieStatut_PowerBI.PNG" alt="Graphique 5 : Survie selon le statut de voyage" style="width: 300px">
+    </a>
+    <p>
+        Le destin des passagers a également été marqué par leur environnement social. La <strong>solidarité familiale</strong> a joué un rôle principal : les passagers voyageant « En famille » affichent un taux de survie de <strong>50%</strong>, contre seulement <strong>30%</strong> pour les isolés.
+    </p>
+</div>
+    <a href="../mesdocuments/image_titanic_SurvieTailleFamille_PowerBI.PNG" class="float-img-right lightbox-trigger" data-alt="Graphique 6 - Survie selon le statut de voyage - descriptif">
+        <img src="../mesdocuments/image_titanic_SurvieTailleFamille_PowerBI.PNG" alt="Graphique 6 : Survie selon le statut de voyage - descriptif">
+    </a>
+<div class="clearfix">    
+    <div style="margin: 0px 0; border-left: 5px solid #28a745; padding: 15px; background-color: #fafffa;">
+        <p>
+            L'analyse détaillée des structures familiales (variables <code>SibSp</code> et <code>Parch</code>) révèle une dynamique en "cloche" :
+        </p>
+        <ul style="list-style-type: none; padding-left: 0;">
+            <li style="margin-bottom: 10px;">
+                <strong>La taille idéale :</strong> Le taux de survie est optimal pour les petites familles composées de <strong>2 à 4 personnes</strong>, atteignant un sommet de <strong>57%</strong>.
+            </li>
+            <li>
+                <strong>Le fardeau des familles nombreuses :</strong> Au-delà de 3 accompagnateurs, les chances de survie chutent drastiquement, tombant à <strong>16%</strong>. 
+            </li>
+        </ul>
+    </div>
+
+    <p style="clear: both;">
+        Cette corrélation démontre que si l'entraide familiale a sauvé des vies, elle a aussi été un facteur de risque majeur pour les clans les plus nombreux, incapables de se déplacer rapidement vers les ponts supérieurs.
+    </p>
+</div>
+<hr style="clear: both; margin: 20px 0;">        
+
+<div class="clearfix">
+    <h3 id="conclusion">5. Conclusion</h3>
+    <p>
+        Ce projet démontre que la survie sur le Titanic n'était pas une simple question de chance, mais le résultat d'une <strong>hiérarchie sociale</strong>. L'analyse a permis d'isoler trois facteurs déterminants ayant scellé le destin des passagers :
+    </p>
+
+    <div style="display: flex; gap: 15px; margin: 20px 0; flex-wrap: wrap;">
+        <div style="flex: 1; min-width: 200px; padding: 15px; background: #fff; border-top: 4px solid #007bff; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+            <strong style="color: #007bff;">L'éthique & l'âge</strong>
+            <p style="font-size: 0.85em; margin-top: 10px;">Le principe "les femmes et les enfants d'abord" a protégé <strong>51%</strong> des enfants et <strong>74%</strong> des femmes, tandis que les hommes adultes devenaient les sacrifiés du sauvetage.</p>
+        </div>
+        <div style="flex: 1; min-width: 200px; padding: 15px; background: #fff; border-top: 4px solid #28a745; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+            <strong style="color: #28a745;">Le statut économique</strong>
+            <p style="font-size: 0.85em; margin-top: 10px;">L'accès aux canots était un privilège financier : la 1ère classe affiche <strong>62%</strong> de survie contre seulement <strong>24%</strong> en 3ème classe.</p>
+        </div>
+        <div style="flex: 1; min-width: 200px; padding: 15px; background: #fff; border-top: 4px solid #ffc107; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+            <strong style="color: #ffc107;">La structure familiale</strong>
+            <p style="font-size: 0.85em; margin-top: 10px;">Le noyau familial restreint a agi comme un catalyseur de survie, là où les familles nombreuses ont été freinées par leur propre nombre.</p>
+        </div>
+    </div>
+
+    <p style="font-style: italic; border-top: 1px solid #dee2e6; padding-top: 15px;">
+        D'un point de vue technique, ce datathon a validé la puissance du combo <strong>SQL et Power BI</strong> : le premier pour transformer des données brutes en informations structurées (segmentation tarifaire, calculs de parenté), le second pour rendre ces statistiques parlantes et visuelles.
+    </p>
+    <p>
+        Cependant, le format de 5 jours a représenté un défi de taille. La phase de familiarisation avec les logiciels a été plus chronophage que prévu, réduisant le temps imparti aux analyses approfondies. Bien que j'ai encore plusieurs pistes de réflexion pour obtenir une vision exhaustive de ce jeu de données, le délai imparti m'a obligé à me concentrer sur les variables les plus significatives de cette étude.
+    </p>
+</div>
+<hr>
+
+<div class="clearfix">
+    <h3 id="competences">6. Compétences développées</h3>
+    <ol class="cleaning-steps">
+        <li><strong>Maîtrise de SQL :</strong> Capacité à extraire, nettoyer et structurer des données brutes (nettoyage des valeurs nulles, calcul de colonnes complexes...).</li>
+        <li><strong>Maîtrise de Power BI :</strong> Conception de visualisations dynamiques et professionnelles permettant de transformer des statistiques abstraites en indicateurs visuels parlants.</li>
+        <li><strong>Analyse statistique et segmentation :</strong> Expertise dans la création de segments (tarifaires via les quartiles, tranches d'âge) pour isoler des facteurs de corrélation significatifs.</li>
+        <li><strong>Gestion de projet en temps limité (Datathon) :</strong> Capacité à monter en compétence sur de nouveaux logiciels de manière intensive et à produire une analyse cohérente sous une contrainte de 5 jours.</li>
+        <li><strong>Esprit critique et rigueur analytique :</strong> Identification des biais (données manquantes, anomalies tarifaires à 0) et des limites de l'étude pour garantir la fiabilité des résultats.</li>
+    </ol>
+</div>
+</div>
+</div>            
+    <footer class="footer">
+        <div class="footer-buttons">
+            <a href="https://www.linkedin.com/in/ma%C3%ABlys-fran%C3%A7ois" class="button" target="_blank"><i class="fab fa-linkedin"></i>LinkedIn</a>
+            <a href="../mesdocuments/cv_maëlys_françois.pdf" class="button" target="_blank"><i class="fas fa-file-pdf"></i>Mon CV</a>
+            <a href="mailto:maelys.francois31@gmail.com" class="button"><i class="fas fa-envelope"></i>Mon Email</a>
+        </div>
+    </footer>
+        </div>
+<div id="lightbox-modal">
+    <span class="lightbox-close">&times;</span>
+    <div id="lightbox-content">
+        <img id="lightbox-image" src="">
+        <div id="lightbox-caption"></div>
+    </div>
+</div>
+<script>
+    // **************************************************************************
+    // 1. Logique LIGHTBOX/MODAL (pour le zoom des images)
+    // **************************************************************************
+    var modal = document.getElementById("lightbox-modal");
+    var modalImg = document.getElementById("lightbox-image");
+    var captionText = document.getElementById("lightbox-caption");
+    var closeBtn = document.getElementsByClassName("lightbox-close")[0];
+    var triggers = document.querySelectorAll(".lightbox-trigger");
+
+    // 2. Ajout d'événement à chaque lien d'image
+    triggers.forEach(function(trigger) {
+        trigger.addEventListener('click', function(event) {
+            // Empêche le navigateur d'aller à l'URL de l'image
+            event.preventDefault(); 
+            
+            // Récupère l'URL de l'image (dans le 'href' du lien <a>)
+            var imgSrc = this.getAttribute('href'); 
+            // Récupère la légende (dans le 'data-alt' du lien <a>)
+            var altText = this.getAttribute('data-alt');
+
+            // Affiche le modal et insère le contenu de l'image
+            modal.style.display = "block";
+            modalImg.src = imgSrc;
+            captionText.innerHTML = altText || this.querySelector('img').alt;
+        });
+    });
+
+    // 3. Logique de FERMETURE 1 : Fermer en cliquant sur la croix
+    if (closeBtn) {
+        closeBtn.onclick = function() {
+            modal.style.display = "none";
+        }
+    }
+
+    // 4. Logique de FERMETURE 2 : Fermer en cliquant sur le fond gris (l'extérieur de l'image)
+    if (modal) {
+        modal.onclick = function(event) {
+            // S'assure que le clic est bien sur le fond et non sur l'image elle-même
+            if (event.target === modal) { 
+                modal.style.display = "none";
+            }
+        }
+    }
+    
+    // 5. Logique de FERMETURE 3 : Fermer en appuyant sur la touche ÉCHAP
+    document.addEventListener('keydown', function(event) {
+        if (event.key === "Escape") {
+            modal.style.display = "none";
+        }
+    });
+
+    // **************************************************************************
+    // 6. Logique SOMMAIRE/TOC pour mobile (Activation/Désactivation au clic)
+    // **************************************************************************
+var tocWrapper = document.getElementById('toc-wrapper');
+    var tocButton = document.querySelector('.toc-button');
+    var body = document.body; // Référence au body
+
+    if (tocWrapper && tocButton) {
+        
+        // Fonction pour ouvrir/fermer le menu
+        function toggleToc() {
+            // Alterne la classe 'toc-open' sur le conteneur principal.
+            tocWrapper.classList.toggle('toc-open');
+            // Alterne la classe 'toc-active' sur le body pour bloquer le défilement et gérer l'overlay si besoin.
+            body.classList.toggle('toc-active');
+        }
+
+        // 1. Ajoute un écouteur d'événement au clic du bouton "Sommaire"
+        tocButton.addEventListener('click', function(event) {
+            event.preventDefault(); 
+            toggleToc();
+        });
+
+        // 2. Ferme le sommaire si l'utilisateur clique sur un lien à l'intérieur
+        var tocLinks = document.querySelectorAll('#table-of-contents-list a');
+        tocLinks.forEach(function(link) {
+            link.addEventListener('click', function() {
+                // Ferme le menu après avoir cliqué sur le lien (avec un léger délai pour la navigation)
+                if (tocWrapper.classList.contains('toc-open')) {
+                    setTimeout(function() {
+                        toggleToc();
+                    }, 50); 
+                }
+            });
+        });
+        
+        // 3. Ferme le menu si l'utilisateur clique à l'extérieur (dans la zone de contenu)
+        document.addEventListener('click', function(event) {
+            // Si le clic n'est PAS à l'intérieur du conteneur du sommaire ET PAS sur le bouton lui-même
+            if (
+                tocWrapper.classList.contains('toc-open') &&
+                !tocWrapper.contains(event.target) &&
+                !tocButton.contains(event.target)
+            ) {
+                // Fermer le menu
+                toggleToc();
+            }
+        });
+    }
+</script>
+</body>
+</html>
